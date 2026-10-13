@@ -1,0 +1,7 @@
+^website$
+^data-raw$
+^inst/context$
+^\.claude$
+^.*\.Rproj$
+^\.Rproj\.user$
+^LICENSE\.md$
