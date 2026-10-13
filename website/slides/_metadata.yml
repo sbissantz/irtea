@@ -1,0 +1,46 @@
+# shared settings for all slide decks
+slide-level: 2
+format:
+  revealjs:
+    theme: simple
+    logo: images/rptu-logo.png
+    slide-number: true
+    width: 1280
+    height: 720
+    embed-resources: true
+    mermaid-format: svg
+    include-in-header:
+      text: |
+        <style>
+        .reveal .cell-output-display svg {
+          width: 100% !important;
+          height: auto !important;
+          max-height: 520px;
+        }
+        .reveal .cell-output-display svg foreignObject * {
+          white-space: normal !important;
+        }
+        .reveal table {
+          font-size: 20px;
+          margin-left: 0;
+        }
+        .reveal table th,
+        .reveal table td {
+          padding: 0.2em 0.6em;
+        }
+        </style>
+        <script>
+        // quarto's mermaid script reads desc.id and fails without a desc
+        document.addEventListener("DOMContentLoaded", () => {
+          const ns = "http://www.w3.org/2000/svg";
+          for (const svg of document.querySelectorAll("div.cell-output-display svg")) {
+            if (!svg.querySelector("desc")) svg.prepend(document.createElementNS(ns, "desc"));
+          }
+        });
+        </script>
+  beamer:
+    aspectratio: 169
+    theme: Madrid
+    colortheme: dolphin
+    pdf-engine: lualatex
+    include-in-header: beamer-header.tex

@@ -1,0 +1,154 @@
+---
+title: "1 Rechenkompetenzen"
+---
+
+::: {#exr-potpourri}
+## Potpourri
+
+Berechnen Sie die folgenden Ausdrücke.
+
+a)  $$\frac{1}{8}+\frac{3}{4}$$
+b)  $$\frac{1}{8}\times \frac{3}{4}$$
+c)  $$3+2\times\frac{1}{7}$$
+d)  $$e^{7-3*2}$$
+e)  $$1+ \frac{e^{5-3}-2}{e^0}$$
+:::
+
+::: {#exr-logarithms}
+## Logarithmusfunktionen
+
+Vereinfachen Sie die folgenden Ausdrücke so weit wie möglich.
+
+a)  $$\ln(a \cdot b)$$
+b)  $$\ln(a^n)$$
+c)  $$\ln\left(\frac{a}{b}\right)$$
+d)  $$\ln\left(\sum_{i=1}^{n} a_i\right)$$
+e)  $$\ln\left( \prod_{i=1}^n a_i \right)$$
+f)  $$\ln\left( \prod_{i=1}^n a_i^{b_i} \right)$$
+g)  $$\ln\left(\prod_{i=1}^n e^{x_i}\right)$$
+
+Die vorherigen Aufgaben dienten als Vorbereitung für die folgenden zwei
+Vereinfachungen.
+
+h)  $$\ln \left( \prod_{i=1}^n \theta^{y_i}(1 - \theta)^{1 - y_i} \right)$$
+i)  $$\ln \left( \prod_{i=1}^n \frac{1}{\sqrt{2\pi\sigma^2}} \exp\left(
+    -\frac{(y_i - \mu)^2}{2\sigma^2} \right) \right)$$
+j)  $$\ln \left( \prod_{i=1}^n \theta^{y_i}(1 - \theta)^{1 - y_i} \right)$$
+k)  Recherchieren Sie die Ausdrücke aus den letzten beiden Aufgabenteilen.
+    Bestimmen Sie, um welche Funktion es sich jeweils handelt, welche
+    Wahrscheinlichkeitsverteilungen ihnen zugrundeliegen und welche Parameter
+    die Verteilungen besitzen. Geben Sie zum Schluss ein Beispiel aus ihrem
+    Studium, in dem Ihnen diese Funktionen bereits begegnet sind.
+:::
+
+::: {#exr-covariance-matrix}
+## Kovarianz- und Korrelationsmatrix
+
+Stellen Sie sich vor, Sie hätten mit SoSci Survey im Rahmen einer
+Studienarbeit eine Erhebung mittels Persönlichkeitsinventar durchgeführt, das
+unter anderem die Konstrukte „Introversion", „Extraversion" und „Soziale
+Kompetenz" beinhaltet. Dabei haben Sie den Befragten auch die folgenden drei
+Items vorgelegt:
+
+- Item 1 ($i_1$): „Ich ziehe es vor, meine Zeit alleine zu verbringen, als mit
+  anderen Menschen zu interagieren."
+- Item 2 ($i_2$): „Ich genieße es, im Mittelpunkt der Aufmerksamkeit zu
+  stehen."
+- Item 3 ($i_3$): „Ich finde es wichtig, in sozialen Situationen höflich und
+  respektvoll zu sein."
+
+Ihre Stichprobe besteht aus $P=7$ Teilnehmenden, die alle auf einer
+Schiebereglerskala mit den Endpunkten -12 und 12 geantwortet haben
+($y_1, \dots, y_7$). Positive Werte bedeuten Zustimmung, negative Werte
+Ablehnung. Die Antworten sind in der folgenden Tabelle dargestellt:
+
+|         | $y_1$ | $y_2$ | $y_3$ | $y_4$ | $y_5$ | $y_6$ | $y_7$ |
+|---------|------:|------:|------:|------:|------:|------:|------:|
+| $i_1$   |  7.68 |  7.40 |  7.28 |  6.80 |  7.38 |  7.48 |  7.72 |
+| $i_2$   |  1.16 |  4.42 |  7.39 | 11.89 |  2.31 |  5.87 |  6.34 |
+| $i_3$   | -3.58 | -2.69 | -2.00 | -0.32 | -3.3  | -2.95 | -4.74 |
+
+: Transponierte Datenmatrix aus SoSci Survey {#tbl-data}
+
+a)  Sie interessiert, ob zwischen den Items ein linearer Zusammenhang besteht
+    und, falls ja, wie stark dieser jeweils ist. Skizzieren Sie zunächst Ihre
+    theoretischen Erwartungen zu den Zusammenhängen in einer Tabelle oder einer
+    Erwartungsmatrix. Für stark positive Zusammenhänge können Sie
+    beispielsweise „++" und für schwache negative Zusammenhänge „-" verwenden.
+b)  Um Ihre Erwartungen bezüglich der Richtung des Zusammenhangs anhand von
+    Daten zu überprüfen, berechnen Sie zunächst die Inter-Item-Kovarianzmatrix
+    $V$. Interpretieren Sie anschließend die Itemvarianzen und -kovarianzen und
+    setzen Sie sie zueinander in Bezug. Welche Hinweise liefern Ihnen die
+    Itemvarianzen über die vorhandene Stichprobe bzw. den Inhalt des jeweiligen
+    Items? Nutzen Sie zur Beurteilung auch den Itemmittelwert und den gegebenen
+    Antwortbereich. Evaluieren Sie abschließend Ihre theoretischen Erwartungen
+    mithilfe der Itemkovarianzen. Welche Rückschlüsse lassen die Ergebnisse
+    bereits zu und welche müssen noch offen bleiben?
+c)  Um abschließend auch die Stärke der linearen Zusammenhänge beurteilen zu
+    können, berechnen Sie die Inter-Item-Korrelationsmatrix $R$. Formalisieren
+    Sie dazu zunächst die Beziehung zwischen Item-Varianz, Inter-Item-Kovarianz
+    und Inter-Item-Korrelation. Wie hilft Ihnen diese Formalisierung bei der
+    Berechnung der Inter-Item-Korrelationsmatrix?
+
+::: {.callout-note title="Hinweise"}
+Die *Item-Kovarianzmatrix* ist eine $I\times I$-Matrix, also ein
+quadratisches Zahlenraster, das aus Item-Varianzen und
+Inter-Item-Kovarianzen besteht. Auf der Hauptdiagonalen der Matrix befinden
+sich die Itemvarianzen und auf der Nebendiagonalen die nicht
+standardisierten linearen Zusammenhänge, die Itemkovarianzen (siehe
+@eq-covmat). Die *Item-Korrelationsmatrix* ist ebenfalls eine
+$I \times I$-Matrix, die jedoch aus Inter-Item-Korrelationen (und Einsen)
+besteht. Im Gegensatz zur Item-Kovarianzmatrix werden auf den
+Nebendiagonalen die standardisierten linearen Beziehungen zwischen den
+Items, also deren Korrelationen, abgetragen. Auf der Hauptdiagonalen stehen
+Einsen (siehe @eq-cormat). Eine wichtige Eigenschaft solcher Matrizen ist
+ihre Symmetrie. Kovarianz- und Korrelationsmatrizen sind symmetrisch, d.h.
+die Einträge oberhalb und unterhalb der Hauptdiagonalen sind identisch.
+Beide Matrizen sind eng miteinander verbunden, und die Kovarianzmatrix kann
+durch geeignete Standardisierung in eine Korrelationsmatrix umgewandelt
+werden.
+
+$$
+V =
+\begin{pmatrix}
+s^2_{i_1} & s_{i_1,i_2} & s_{i_1,i_3} \\
+s_{i_2,i_1} & s^2_{i_2} & s_{i_2,i_3} \\
+s_{i_3,i_1} & s_{i_3,i_2} & s^2_{i_3}
+\end{pmatrix}
+$$ {#eq-covmat}
+
+$$
+R =
+\begin{pmatrix}
+1 & r_{i_1,i_2} & r_{i_1,i_3} \\
+r_{i_2,i_1} & 1 & r_{i_2,i_3} \\
+r_{i_3,i_1} & r_{i_3,i_2} & 1
+\end{pmatrix}
+$$ {#eq-cormat}
+:::
+
+d)  Interpretieren Sie abschließend die Ergebnisse der berechneten
+    Inter-Item-Korrelationsmatrix und setzen Sie diese in Bezug zu Ihren
+    theoretischen Erwartungen. Überrascht Sie das Ergebnis? Begründen Sie Ihre
+    Antwort kurz. Stellen Sie im selben Zug auch eine Vermutung über einen
+    möglichen datengenerierenden Prozess auf.
+e)  Nach erfolgreicher händischer Berechnung laden Sie den Datensatz
+    `personality_items` aus dem R-Paket `irtea` in R:
+    `data(personality_items, package = "irtea")`. Berechnen Sie erneut die
+    Kovarianzmatrix $V$ und die Korrelationsmatrix $R$; runden Sie die
+    Ergebnisse auf zwei Nachkommastellen und überprüfen Sie Ihre Ergebnisse.
+:::
+
+Diskussionsbedarf und Überlegungen:
+
+- Item 3 spiegelt eine soziale Kompetenz wider. Wie plausibel ist die
+  Korrelation mit dem Introversionsitem bzw. dem Extraversionsitem auf
+  theoretischer Ebene?
+- Was könnte (neben einer inhaltlichen Erklärung) noch Ursache sein, dass die
+  Items derart hoch miteinander korrelieren?
+
+<!--
+not converted yet: exercises commented out in irtworkbook/ch01-basics.tex
+(Produkte; Plug-and-Play; Varianz, Kovarianz und Korrelation),
+see ch01-basics.tex lines 87-88, 258-331, 334-424 and 782-792
+-->

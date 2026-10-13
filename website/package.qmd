@@ -1,0 +1,26 @@
+---
+title: "R-Paket irtea"
+---
+
+![](images/logo.png){width="120" .float-end fig-alt="irtea-Logo"}
+
+Das Paket `irtea` enthält die Datensätze für die Aufgaben im Übungsheft.
+
+## Installation
+
+```r
+install.packages("pak")
+pak::pak("sbissantz/irtea")
+```
+
+## Datensätze
+
+| Datensatz | Inhalt | Übungsheft |
+|-----------|--------|------------|
+| `personality_items` | Antworten von 7 Personen auf 3 Items | [Kapitel 1](workbook/01-basics.qmd) |
+
+Einen Datensatz laden Sie mit:
+
+```r
+data(personality_items, package = "irtea")
+```

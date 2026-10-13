@@ -1,0 +1,139 @@
+---
+title: "B.F.3 Übung zur Diagnostik/Testtheorie"
+subtitle: "Einführung & Rechenkompetenzen"
+author: "Bißantz, S., Kuch, N., & Gürtler, R-M."
+institute: "Rheinland-Pfälzische Technische Universität Kaiserslautern-Landau"
+---
+
+# Einführung
+
+B.F.3 Übung zur Diagnostik/Testtheorie
+
+## Einordnung
+
+Basis dieser Übung bilden die zwei Vorlesungen
+
+- B.F.1 Grundlagen der Diagnostik
+- B.F.2 Grundlagen der Testtheorie
+
+Weitere Informationen finden Sie im [Modulhandbuch](https://modhb.rptu.de/mhb/FB-PSY/cos-842/).
+
+## Rahmenbedingungen
+
+::: {.callout-important}
+## Voraussetzungen für die Vergabe von Leistungspunkten 
+  
+- Insgesamt **vier** unangekündigte Übungsaufgaben 
+- Bearbeitung der Übungsaufgaben in Pränsenzsitzungen
+- Aktive Teilnahme an mindestens **zwei** Übungsaufgaben 
+- Unterschrift auf der Anwesenheitsliste gilt als Nachweis
+:::
+
+## Auswahl an Lernzielen
+
+- Formulierung einer diagnostischen Fragestellung
+- Verständnis der Gütekriterien für Erfassungsmethoden
+- Verständnis der Stärken und Schwächen gängiger Testtheorien
+- Bestimmung von Itemkennwerte und Gütekriterien 
+- Informationen zu einem diagnostischen Urteil verdichten
+
+## Semesterübersicht {.smaller}
+
+| Nr. | Datum     | Thema                                                        |
+|-----|-----------|--------------------------------------------------------------|
+| 1   | ab 20.10. | Rechengrundlagen                                       |
+| 2   | ab 27.10. | Gütekriterien I                                |
+| 3   | ab 03.11. | Schritte der Testkonstruktion                                |
+| 4   | ab 10.11. | Erstellung eines Testentwurfs                             |
+|     |           | **Lektürewoche**                   |
+| 5   | ab 24.11. | *Diagnostische Rechenkompetenzen I*   |
+| 6   | ab 01.12. | Klassische Testtheorie                                       |
+| 7   | ab 08.12. | *Item Response Theorie*                      |
+| 8   | ab 15.12. | Exploratorische Faktorenanalyse I                            |
+|     |           | **Weihnachtsferien**           | 
+| 9   | ab 05.01. | *Exploratorische Faktorenanalyse* II                            |
+| 10  | ab 12.01. | Itemanalyse I                                                |
+| 11  | ab 19.01. | Itemanalyse II, Itemselektion und Testrevision               |
+| 12  | ab 26.01. | *Diagnostische Rechenkompetenzen* II                            |
+| 13  | ab 02.02. | Gütekriterien II  |
+
+# Einführung in die Übung
+
+## Übungsmöglichkeiten & Kommunikation
+
+- Synchron: Zu den offiziellen Gruppen-Zeiten 
+- Asynchron: z.B.
+  - Selbstorganisierte Lerngruppen 
+  - Olat-Forum 
+
+## Synchrone Übungsmöglichkeiten 
+
+Die Übung bietet die Möglichkeit 
+
+- Fragen zu stellen 
+- Aufgaben zu bearbeiten 
+- Ergebnisse zu diskutieren
+  
+## Übungsaufgaben
+
+Es gibt zahlreiche Übungsaufgaben 
+
+- Nicht alle sind Fokus der Präsenzsitzungen 
+- (Lösungen werden nur teilweise bereitgestellt)
+- Selbststudium ist ein elementarer Bestandteil 
+- Selbstorganiserte Lerngruppen ein bewährtes Mittel
+
+## Lernressourcen
+
+- Vorlesungsfolien und -inhalte
+- Übungsinhalte und -aufgaben
+**TODO**: Verlinken der Homepage
+- Weiterführende Literatur (z.B. [Moosbrugger & Kelava, 2020](https://hbz-rptu.primo.exlibrisgroup.com/permalink/49HBZ_RTU/no4nsq/alma990009797090107476))
+- Künstliche Intelligenz
+
+Maßgeblich sind die Inhalte der Vorlesung; danach die der Übung. 
+
+## Eine Frage im Olat-Forum stellen
+
+Entscheiden Sie mithilfe des Flowcharts
+
+```{mermaid}
+%%| fig-width: 5
+%%{init: {"htmlLabels": false}}%%
+flowchart LR
+  q1["Antwort in den Lernressourcen?"]
+  q3["Frage im OLAT-Forum stellen"]
+  ok(["Gelöst"])
+  peer["Gelöst – falsche Antworten kommentieren wir"]
+  talk["In Übung mit Übungsleitung klären"]
+  q1 -- Ja --> ok
+  q1 -- Nein --> q3
+  q3 -- "> 2 Antworten" --> peer
+  q3 -- "≤ 2 Antworten" --> talk
+  classDef step fill:#4844BC,stroke:#2a2870,color:#fff
+  classDef done fill:#e8e8f7,stroke:#4844BC,color:#1a1a40
+  class q1,q3 step
+  class ok,peer,talk done
+```
+
+# Rechenkompetenzen
+
+Übungen zu diesem Thema: [Übungsheft, Kapitel 1]({{< var site-url >}}/workbook/01-basics.html)
+
+
+# Danke & bis nächste Woche! {.unlisted}
+
+
+
+
+## Was ist ein psychologischer Test?
+
+Ein Test ist ein **wissenschaftliches Routineverfahren** zur Erfassung eines oder
+mehrerer empirisch **abgrenzbarer psychologischer Merkmale** mit dem Ziel,
+möglichst **genaue** Aussagen über den (relativen) quantitativen **Grad** oder
+die qualitative **Kategorie** der individuellen Merkmalsausprägungen zu gewinnen.
+(Moosbrugger & Kelava, 2020, S. 16)
+
+# Literaturverzeichnis
+
+**TODO** APA7 eintrag mosbrugger un kelava

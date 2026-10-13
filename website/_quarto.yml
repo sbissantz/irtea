@@ -1,0 +1,41 @@
+profile:
+  default: public
+
+project:
+  type: website
+  output-dir: _site
+
+lang: de
+
+website:
+  title: "B.F.3 Diagnostik & Testtheorie"
+  site-url: https://sbissantz.github.io/irtea/
+  favicon: images/logo.png
+  navbar:
+    logo: images/logo.png
+    left:
+      - href: index.qmd
+        text: Start
+      - text: Folien
+        menu:
+          - href: slides/01-intro.qmd
+            text: "01 Grundlagen (HTML)"
+          - href: slides/01-intro.pdf
+            text: "01 Grundlagen (PDF)"
+      - text: Übungsheft
+        menu:
+          - href: workbook/01-basics.qmd
+            text: "1. Rechenkompetenzen"
+      - href: package.qmd
+        text: R-Paket
+  page-footer:
+    center: "Lizenz: GPL-3"
+
+format:
+  html:
+    theme: cosmo
+    toc: true
+
+crossref:
+  exr-title: "Aufgabe"
+  exr-prefix: "Aufgabe"

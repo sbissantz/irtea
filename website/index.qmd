@@ -1,0 +1,10 @@
+---
+title: "B.F.3 Übung zur Diagnostik/Testtheorie"
+---
+
+Diese Seite bündelt die Materialien zur Übung B.F.3 an der RPTU
+Kaiserslautern-Landau.
+
+- **Folien:** die Folien jeder Sitzung, als Präsentation (HTML) und als PDF.
+- **Übungsheft:** Aufgaben zu jedem Thema.
+- **R-Paket:** Datensätze für die Aufgaben, installierbar in R.
