@@ -1,7 +1,7 @@
 ---
 title: "B.F.3 Übung zu Diagnostik/Testtheorie"
 subtitle: "Einführung & Rechenkompetenzen"
-author: "Bißantz, S., Kuch, N., & Gürtler, R-M."
+author: "Bißantz, S., Kuch, N. & Gürtler, R-M."
 institute: "Rheinland-Pfälzische Technische Universität Kaiserslautern-Landau"
 ---
 
@@ -87,10 +87,10 @@ Es gibt zahlreiche Übungsaufgaben
 
 - Vorlesungsfolien und -inhalte
 - Übungsinhalte und -aufgaben auf der [Homepage]({{< var site-url >}})
-- Weiterführende Literatur [z.B. @moosbrugger2020], [in der RPTU-Bibliothek](https://hbz-rptu.primo.exlibrisgroup.com/permalink/49HBZ_RTU/no4nsq/alma990009797090107476)
+- Weiterführende Literatur [z.B. @moosbrugger2020]
 - Künstliche Intelligenz
 
-Maßgeblich sind die Inhalte der Vorlesung; danach die der Übung. 
+Maßgeblich sind die Inhalte der Vorlesung, danach die der Übung. Die weiterführende Literatur ethalten Sie in der [RPTU-Bibliothek](https://hbz-rptu.primo.exlibrisgroup.com/permalink/49HBZ_RTU/no4nsq/alma990009797090107476)
 
 ## Eine Frage im Olat-Forum stellen
 
