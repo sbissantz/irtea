@@ -129,7 +129,7 @@ i_3 & & &
 \end{array}
 $$
 
-Introversion ($i_1$), Extraversion ($i_2$) und Höflichkeit & Respekt ($i_3$). 
+Introversion ($i_1$), Extraversion ($i_2$) und soziale Kompetenz ($i_3$). 
 :::
 
 b. Um Ihre Erwartungen bezüglich der Richtung des Zusammenhangs anhand von Daten zu überprüfen, berechnen Sie zunächst die Inter-Item-Kovarianzmatrix $V$. Interpretieren Sie anschließend die Itemvarianzen und Inter-Item-Kovarianzen und setzen Sie sie zueinander in Bezug. Welche Hinweise liefern Ihnen die Itemvarianzen über die vorhandene Stichprobe bzw. den Inhalt des jeweiligen Items? Nutzen Sie zur Beurteilung auch den Itemmittelwert und den gegebenen Antwortbereich. Evaluieren Sie abschließend Ihre theoretischen Erwartungen mithilfe der Inter-Item-Kovarianzen. Welche Rückschlüsse lassen die Ergebnisse bereits zu und welche müssen noch offen bleiben?
