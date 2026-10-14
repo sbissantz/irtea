@@ -80,16 +80,31 @@ source("data-raw/personality-items.R")  # rebuild the dataset
 - **Slide deck:** `website/slides/NN-topic.qmd` with `title`, `subtitle`, `author`,
   `institute` in the header. The look comes from `slides/_metadata.yml` automatically.
 - **Workbook chapter:** `website/workbook/NN-topic.qmd`. Exercises as
-  `::: {#exr-short-name}` with a `## Title` inside, parts as `a.`, `b.`, ... At the end
-  of each exercise, two collapsed boxes:
+  `::: {#exr-short-name}` with a `## Title` inside, parts as `a.`, `b.`, ... After each
+  part a collapsed solution box (result only, no steps); hints in a collapsed box where
+  needed:
 
   ```markdown
+  ::: {#exr-short-name}
+  ## Title
+
+  Intro text.
+
   ::: {.callout-note title="Hinweise" collapse="true"}
   Hints for the students.
   :::
 
+  a.  First part.
+
   ::: {.callout-tip title="Lösung" collapse="true"}
-  a.  Result only, no steps
+  Result of part a
+  :::
+
+  b.  Second part.
+
+  ::: {.callout-tip title="Lösung" collapse="true"}
+  Result of part b
+  :::
   :::
   ```
 
