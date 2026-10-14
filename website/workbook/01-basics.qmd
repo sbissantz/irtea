@@ -5,7 +5,7 @@ title: "1 Rechenkompetenzen"
 ::: {#exr-normal-likelihood}
 ## Likelihood der Normalverteilung
 
-Gegeben sei das Normalverteilungsmodell $Y \sim \mathcal{N}(\mu, \sigma^2)$. Beobachtet wurde ein einziger Datenpunkt, $y = 2$. Die Likelihood und die Log-Likelihood lauten
+Gegeben sei das Zufallsvariable $Y$ mit $Y \sim \mathcal{N}(\mu, \sigma^2)$. Beobachtet wurde ein einziger Datenpunkt, $y = 2$. Die Likelihood und die Log-Likelihood lauten
 
 $$
 \begin{aligned}
@@ -114,25 +114,25 @@ r_{i_3,i_1} & r_{i_3,i_2} & 1
 $$ {#eq-cormat}
 :::
 
-a.  Sie interessiert, ob zwischen den Items ein linearer Zusammenhang besteht und, falls ja, wie stark dieser jeweils ist. Skizzieren Sie zunächst Ihre theoretischen Erwartungen zu den Zusammenhängen in einer Tabelle oder einer Erwartungsmatrix. Für stark positive Zusammenhänge können Sie beispielsweise „++“ und für schwache negative Zusammenhänge „−“ verwenden.
+a. Sie interessiert, ob zwischen den Items ein linearer Zusammenhang besteht und, falls ja, wie stark dieser jeweils ist. Skizzieren Sie zunächst Ihre theoretischen Erwartungen zu den Zusammenhängen in einer Tabelle oder einer Erwartungsmatrix. Für stark positive Zusammenhänge können Sie beispielsweise „++“ und für schwache negative Zusammenhänge „−“ verwenden.
 
 ::: {.callout-tip title="Lösung" collapse="true"}
-Individuelle Lösung. Eine plausible Erwartungsmatrix (die Matrix ist symmetrisch, daher genügt der Teil oberhalb der Hauptdiagonalen):
+Eine mögliche Erwartungsmatrix:
 
 $$
 \begin{array}{c|ccc}
  & i_1 & i_2 & i_3 \\
 \hline
-i_1 & & {-}{-} & {-} \\
+i_1 & & {-}{-} & - \\
 i_2 & & & {+} \\
 i_3 & & &
 \end{array}
 $$
 
-Introversion ($i_1$) und Extraversion ($i_2$) sind Gegenpole, daher stark negativ („−−“). Höflichkeit und Respekt ($i_3$) hängen kaum mit Introversion zusammen, höchstens schwach negativ („−“), und eher schwach positiv mit Extraversion („+“).
+Introversion ($i_1$), Extraversion ($i_2$) und Höflichkeit & Respekt ($i_3$). 
 :::
 
-b.  Um Ihre Erwartungen bezüglich der Richtung des Zusammenhangs anhand von Daten zu überprüfen, berechnen Sie zunächst die Inter-Item-Kovarianzmatrix $V$. Interpretieren Sie anschließend die Itemvarianzen und Inter-Item-Kovarianzen und setzen Sie sie zueinander in Bezug. Welche Hinweise liefern Ihnen die Itemvarianzen über die vorhandene Stichprobe bzw. den Inhalt des jeweiligen Items? Nutzen Sie zur Beurteilung auch den Itemmittelwert und den gegebenen Antwortbereich. Evaluieren Sie abschließend Ihre theoretischen Erwartungen mithilfe der Inter-Item-Kovarianzen. Welche Rückschlüsse lassen die Ergebnisse bereits zu und welche müssen noch offen bleiben?
+b. Um Ihre Erwartungen bezüglich der Richtung des Zusammenhangs anhand von Daten zu überprüfen, berechnen Sie zunächst die Inter-Item-Kovarianzmatrix $V$. Interpretieren Sie anschließend die Itemvarianzen und Inter-Item-Kovarianzen und setzen Sie sie zueinander in Bezug. Welche Hinweise liefern Ihnen die Itemvarianzen über die vorhandene Stichprobe bzw. den Inhalt des jeweiligen Items? Nutzen Sie zur Beurteilung auch den Itemmittelwert und den gegebenen Antwortbereich. Evaluieren Sie abschließend Ihre theoretischen Erwartungen mithilfe der Inter-Item-Kovarianzen. Welche Rückschlüsse lassen die Ergebnisse bereits zu und welche müssen noch offen bleiben?
 
 ::: {.callout-tip title="Lösung" collapse="true"}
 Itemmittelwerte $\bar{y} \approx (7.39, 5.63, -2.80)^\top$ und
@@ -145,10 +145,12 @@ V \approx
 \end{pmatrix}
 $$
 
-Wer mit gerundeten Zwischenergebnissen rechnet, erhält leicht abweichende Werte. Item 1 erhält nahezu geschlossene Zustimmung (sehr kleine Varianz bei einem Antwortbereich von $-12$ bis $12$). Die Vorzeichen der Kovarianzen passen zu den Erwartungen aus Teil a; über die Stärke der Zusammenhänge sagen sie noch nichts.
+Wer mit gerundeten Zwischenergebnissen rechnet, erhält leicht abweichende Werte. 
+
+Item 1 erhält nahezu geschlossene Zustimmung (sehr kleine Varianz bei einem Antwortbereich von $-12$ bis $12$). Die Vorzeichen der Kovarianzen passen zu den Erwartungen aus Teil a; über die Stärke der Zusammenhänge sagen sie noch nichts.
 :::
 
-c.  Um abschließend auch die Stärke der linearen Zusammenhänge beurteilen zu können, berechnen Sie die Inter-Item-Korrelationsmatrix $R$. Formalisieren Sie dazu zunächst die Beziehung zwischen Itemvarianz, Inter-Item-Kovarianz und Inter-Item-Korrelation. Wie hilft Ihnen diese Formalisierung bei der Berechnung der Inter-Item-Korrelationsmatrix?
+c. Um abschließend auch die Stärke der linearen Zusammenhänge beurteilen zu können, berechnen Sie die Inter-Item-Korrelationsmatrix $R$. Formalisieren Sie dazu zunächst die Beziehung zwischen Itemvarianz, Inter-Item-Kovarianz und Inter-Item-Korrelation. Wie hilft Ihnen diese Formalisierung bei der Berechnung der Inter-Item-Korrelationsmatrix?
 
 ::: {.callout-tip title="Lösung" collapse="true"}
 $r_{i,j} = \dfrac{s_{i,j}}{\sqrt{s_i^2 \cdot s_j^2}}$ und
@@ -165,11 +167,7 @@ $$
 Wer mit gerundeten Zwischenergebnissen rechnet, erhält leicht abweichende Werte.
 :::
 
-d.  Interpretieren Sie abschließend die Ergebnisse der berechneten
-    Inter-Item-Korrelationsmatrix und setzen Sie diese in Bezug zu Ihren
-    theoretischen Erwartungen. Überrascht Sie das Ergebnis? Begründen Sie Ihre
-    Antwort kurz. Stellen Sie im selben Zug auch eine Vermutung über einen
-    möglichen datengenerierenden Prozess auf.
+d. Interpretieren Sie abschließend die Ergebnisse der berechneten Inter-Item-Korrelationsmatrix und setzen Sie diese in Bezug zu Ihren theoretischen Erwartungen. Überrascht Sie das Ergebnis? Begründen Sie Ihre Antwort kurz. Stellen Sie im selben Zug auch eine Vermutung über einen möglichen datengenerierenden Prozess auf.
 
 ::: {.callout-tip title="Lösung" collapse="true"}
 Alle Zusammenhänge sind sehr stark. Die negative Korrelation von Item 1 (Introversion) und Item 2 (Extraversion) ist plausibel, die sehr hohen
@@ -178,14 +176,6 @@ Korrelationen von Item 3 (soziale Kompetenz) mit beiden anderen Items kaum.
 Vermutung: Die Daten sind simuliert, z. B. aus einer multivariaten Normalverteilung mit zufällig gezogener Korrelationsmatrix.
 :::
 :::
-
-Diskussionsbedarf und Überlegungen:
-
-- Item 3 spiegelt eine soziale Kompetenz wider. Wie plausibel ist die
-  Korrelation mit dem Introversionsitem bzw. dem Extraversionsitem auf
-  theoretischer Ebene?
-- Was könnte (neben einer inhaltlichen Erklärung) noch Ursache sein, dass die
-  Items derart hoch miteinander korrelieren?
 
 <!--
 not converted yet: exercises commented out in irtworkbook/ch01-basics.tex
