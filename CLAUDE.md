@@ -16,16 +16,19 @@ Commands for preview, render, publish, and git: see `WORKFLOW.md`.
 
 ## Look (do not change per deck or page)
 
-All decks share one look, Moloch, in both formats. Set it only in these files:
+All decks share one look, Moloch, in both formats. The PDF (beamer theme Moloch) is the
+reference; the HTML copies it. Set the look only in these files:
 
 - PDF: `website/slides/_metadata.yml` (`format: beamer`) and `website/slides/beamer-header.tex`.
-  Theme `moloch` with `progressbar=frametitle`, `titlepage=plain`; `classoption: [t]`
+  Theme `moloch` with `progressbar=frametitle`, `titlepage=moloch`; `classoption: [t]`
   (top-aligned frames); `fontsize: 12pt`; `section-titles: false` (Moloch draws the section pages).
-  Font Fira Sans Light (text) and Fira Sans (titles). Logo `images/rptu-logo.png`, 3 cm,
-  centered at the bottom of the title page. Page numbers "n / N".
+  Font Fira Sans Light (text) and Fira Sans (titles). Course logo `images/bf3-logo.png`
+  (transparent PNG), 2.5 cm, above the title. Page numbers "n / N".
 - HTML slides: `website/slides/_metadata.yml` (`format: revealjs`, CSS in `include-in-header`).
   Mirrors the PDF: Fira Sans, dark title bar with orange progress line, section slides with
-  title over a progress line, centered title slide with orange underline and logo at the bottom.
+  title over a progress line, and the Moloch title page (left-aligned, logo on top, orange
+  line between subtitle and authors). Title slide sizes and gaps are measured from the PDF;
+  if the PDF title page changes, measure again.
 - Website and workbook: `website/theme.scss` (Bootstrap layer on `cosmo`).
 
 Colors (the same four everywhere):

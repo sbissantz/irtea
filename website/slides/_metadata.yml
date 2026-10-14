@@ -10,10 +10,6 @@ format:
     margin: 0
     embed-resources: true
     mermaid-format: svg
-    title-slide-attributes:
-      data-background-image: images/rptu-logo.png
-      data-background-size: 240px
-      data-background-position: 50% 84%
     include-in-header:
       text: |
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@300;400;500&display=swap">
@@ -98,22 +94,51 @@ format:
           width: var(--progress);
           background: var(--mtr-orange);
         }
-        /* title slide: centered, logo at the bottom (moloch "plain") */
+        /* title slide like the moloch title page: left-aligned, logo on top, orange
+           line between subtitle and authors; sizes and gaps measured from the pdf */
         .reveal #title-slide {
-          padding-bottom: 120px;
+          padding: 0 80px 51px !important;
+          box-sizing: border-box;
+          text-align: left;
+        }
+        .reveal #title-slide::before {
+          content: "";
+          display: block;
+          width: 200px;
+          height: 87px;
+          margin-bottom: 72px;
+          background: url("images/bf3-logo.png") no-repeat left top / contain;
         }
         .reveal #title-slide .title {
-          display: inline-block;
-          font-size: 1.8em;
+          font-size: 41px;
           font-weight: 400;
-          margin-bottom: 0.3em;
-          padding-bottom: 0.15em;
-          border-bottom: 3px solid var(--mtr-orange);
+          line-height: 1.2;
+          margin: 0 0 38px;
         }
         .reveal #title-slide .subtitle {
-          font-size: 1.1em;
+          font-size: 34px;
           font-weight: 300;
-          margin-bottom: 1em;
+          line-height: 1.2;
+          margin: 0;
+          padding-bottom: 52px;
+          border-bottom: 2px solid var(--mtr-orange);
+        }
+        .reveal #title-slide .quarto-title-authors {
+          display: block;
+          margin-top: 55px;
+        }
+        .reveal #title-slide .quarto-title-author {
+          padding: 0;
+        }
+        .reveal #title-slide .quarto-title-author-name {
+          font-size: 26px;
+          line-height: 1.2;
+        }
+        .reveal #title-slide .quarto-title-affiliation {
+          font-size: 19px;
+          line-height: 1.2;
+          margin-top: 35px;
+          color: #4e5e61;
         }
         .reveal ul > li::marker,
         .reveal ol > li::marker {
@@ -226,7 +251,7 @@ format:
     theme: moloch
     themeoptions:
       - progressbar=frametitle
-      - titlepage=plain
+      - titlepage=moloch
     classoption: [t]
     fontsize: 12pt
     pdf-engine: lualatex
