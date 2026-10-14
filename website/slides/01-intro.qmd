@@ -123,17 +123,6 @@ flowchart LR
 
 # Danke & bis nächste Woche! {.unlisted}
 
-
-
-
-## Was ist ein psychologischer Test?
-
-Ein Test ist ein **wissenschaftliches Routineverfahren** zur Erfassung eines oder
-mehrerer empirisch **abgrenzbarer psychologischer Merkmale** mit dem Ziel,
-möglichst **genaue** Aussagen über den (relativen) quantitativen **Grad** oder
-die qualitative **Kategorie** der individuellen Merkmalsausprägungen zu gewinnen.
-(Moosbrugger & Kelava, 2020, S. 16)
-
 # Literaturverzeichnis
 
 **TODO** APA7 eintrag mosbrugger un kelava

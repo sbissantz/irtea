@@ -4,6 +4,15 @@
 \definecolor{madridlightblue}{RGB}{131, 131, 210}
 \setbeamersize{text margin left=1.5cm, text margin right=1.5cm}
 \titlegraphic{\includegraphics[width=4.5cm]{images/rptu-logo.png}}
-\AtBeginSection{\begin{frame}\vspace{42pt}{\Large\textbf{\insertsectionhead}}\end{frame}}
 \usepackage{etoolbox}
 \AtBeginEnvironment{longtable}{\footnotesize}
+% footer: authors only, without the institute
+\makeatletter
+\AtBeginDocument{\def\beamer@shortinstitute{}}
+\makeatother
+% same space between all list items, also before a sublist
+\newlength{\listgap}
+\AtBeginDocument{%
+  \setlength{\listgap}{0.5\baselineskip}%
+  \renewcommand{\tightlist}{\setlength{\itemsep}{\listgap}\setlength{\parskip}{0pt}}}
+\addtobeamertemplate{itemize/enumerate subbody begin}{\vspace{\listgap}}{}

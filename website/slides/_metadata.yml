@@ -3,15 +3,90 @@ slide-level: 2
 format:
   revealjs:
     theme: simple
-    logo: images/rptu-logo.png
     slide-number: true
+    progress: false
     width: 1280
     height: 720
     embed-resources: true
     mermaid-format: svg
+    title-slide-attributes:
+      data-background-image: images/rptu-logo.png
+      data-background-size: 220px
+      data-background-position: 50% 88%
     include-in-header:
       text: |
         <style>
+        /* smaller text than the simple theme's 40px */
+        :root {
+          --r-main-font-size: 30px;
+          --r-heading2-size: 1.5em;
+        }
+        /* look of the pdf (beamer madrid/dolphin colors) */
+        :root {
+          --madrid-title: #3333b2;
+          --madrid-dark: #4747ba;
+          --madrid-mid: #8585d1;
+          --madrid-light: #adade0;
+          --madrid-bar: 3.2vh;
+        }
+        .reveal h1,
+        .reveal h2,
+        .reveal h3 {
+          color: var(--madrid-title);
+          font-family: var(--r-main-font);
+          font-weight: normal;
+        }
+        .reveal #title-slide .subtitle {
+          color: var(--madrid-title);
+        }
+        .reveal ul > li::marker,
+        .reveal ol > li::marker {
+          color: var(--madrid-title);
+        }
+        .reveal .madrid-footer {
+          position: absolute;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          z-index: 30;
+          display: flex;
+          height: var(--madrid-bar);
+          font-size: calc(var(--madrid-bar) * 0.5);
+          line-height: var(--madrid-bar);
+          font-family: var(--r-main-font);
+        }
+        .reveal .madrid-footer span {
+          flex: 1;
+          overflow: hidden;
+          padding: 0 1em;
+          white-space: nowrap;
+          text-overflow: ellipsis;
+          text-align: center;
+          color: #fff;
+        }
+        .reveal .madrid-footer .left {
+          background: var(--madrid-dark);
+        }
+        .reveal .madrid-footer .middle {
+          background: var(--madrid-mid);
+        }
+        .reveal .madrid-footer .right {
+          background: var(--madrid-light);
+        }
+        .reveal .slide-number {
+          right: 0 !important;
+          bottom: 0 !important;
+          z-index: 31;
+          padding: 0 1.5em;
+          background: transparent !important;
+          color: #000 !important;
+          font-family: var(--r-main-font);
+          font-size: calc(var(--madrid-bar) * 0.5);
+          line-height: var(--madrid-bar);
+        }
+        .reveal .slide-menu-button {
+          bottom: calc(var(--madrid-bar) + 6px) !important;
+        }
         .reveal .cell-output-display svg {
           width: 100% !important;
           height: auto !important;
@@ -60,10 +135,25 @@ format:
             close.before(button);
           }, 100);
         });
+
+        // footer bar like the pdf: names | title | slide number
+        window.addEventListener("load", () => {
+          const authors = [...document.querySelectorAll("#title-slide .quarto-title-author-name")]
+            .map((author) => author.textContent.trim())
+            .join(", ");
+          const title = document.querySelector("#title-slide .title")?.textContent.trim() ?? "";
+          const bar = document.createElement("div");
+          bar.className = "madrid-footer";
+          bar.innerHTML = '<span class="left"></span><span class="middle"></span><span class="right"></span>';
+          bar.querySelector(".left").textContent = authors;
+          bar.querySelector(".middle").textContent = title;
+          document.querySelector(".reveal").append(bar);
+        });
         </script>
   beamer:
     aspectratio: 169
     theme: Madrid
     colortheme: dolphin
     pdf-engine: lualatex
+    section-titles: false
     include-in-header: beamer-header.tex
