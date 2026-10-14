@@ -79,9 +79,15 @@ Workbook rules:
   classDef done fill:#5DC863,stroke:#5DC863,color:#23373b
   ```
 
-- Mermaid settings that must stay: `%%| fig-width: 5` and
-  `%%{init: {"htmlLabels": false}}%%` at the top of each diagram; `flowchart LR`
-  fits 16:9 slides best. Do not use `accDescr`/`accTitle` (it breaks the HTML slides).
+- Mermaid settings that must stay at the top of each diagram: `%%| fig-width: 5` and
+  `%%{init: {"htmlLabels": false, "flowchart": {"htmlLabels": false}, "themeVariables": {"fontFamily": "Fira Sans"}, "themeCSS": "background-color: #fafafa;"}}%%`
+  (SVG text instead of HTML labels, which get cut off; same font as the slides; slide
+  background color, otherwise the PDF shows a white rectangle behind the diagram).
+  `flowchart LR` fits 16:9 slides best. Nodes are rectangles (`id["Text"]`).
+  Do not use `accDescr`/`accTitle` (it breaks the HTML slides).
+- Diagrams are drawn in headless Chrome, which only sees system fonts: Fira Sans must be
+  installed on the machine that renders (free; copy `FiraSans-*.otf` from TeX Live's
+  `fonts/opentype/public/fira/` to `~/Library/Fonts`). Otherwise diagrams use another font.
 
 ## Working rules
 

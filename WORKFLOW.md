@@ -119,4 +119,5 @@ source("data-raw/personality-items.R")  # rebuild the dataset
 | Publish fails with a "rename" error | A preview is running. Stop it, publish again. |
 | Preview does not show a settings change | Restart the preview (see above). |
 | Website unchanged after publishing | Wait 1 to 2 minutes, then reload the page. |
+| Diagram text not in Fira Sans | Fira Sans is not installed. Copy `FiraSans-*.otf` from `/usr/local/texlive/2026/texmf-dist/fonts/opentype/public/fira/` to `~/Library/Fonts`, then render again. |
 | Stray Quarto processes | `ps aux \| grep quarto` lists them; stop them with `kill <number>`. |

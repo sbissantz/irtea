@@ -86,8 +86,7 @@ Es gibt zahlreiche Übungsaufgaben
 ## Lernressourcen
 
 - Vorlesungsfolien und -inhalte
-- Übungsinhalte und -aufgaben
-**TODO**: Verlinken der Homepage
+- Übungsinhalte und -aufgaben auf der [Homepage]({{< var site-url >}})
 - Weiterführende Literatur [z.B. @moosbrugger2020], [in der RPTU-Bibliothek](https://hbz-rptu.primo.exlibrisgroup.com/permalink/49HBZ_RTU/no4nsq/alma990009797090107476)
 - Künstliche Intelligenz
 
@@ -99,11 +98,11 @@ Entscheiden Sie mithilfe des Flowcharts
 
 ```{mermaid}
 %%| fig-width: 5
-%%{init: {"htmlLabels": false}}%%
+%%{init: {"htmlLabels": false, "flowchart": {"htmlLabels": false}, "themeVariables": {"fontFamily": "Fira Sans"}, "themeCSS": "background-color: #fafafa;"}}%%
 flowchart LR
   q1["Antwort in den Lernressourcen?"]
   q3["Frage im OLAT-Forum stellen"]
-  ok(["Gelöst"])
+  ok["Gelöst"]
   peer["Gelöst – falsche Antworten kommentieren wir"]
   talk["In Übung mit Übungsleitung klären"]
   q1 -- Ja --> ok
