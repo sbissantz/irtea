@@ -1,5 +1,0 @@
-# default build for the published site; never render the solutions
-project:
-  render:
-    - "*.qmd"
-    - "!solutions/"

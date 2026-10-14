@@ -7,12 +7,15 @@ Commands for preview, render, publish, and git: see `WORKFLOW.md`.
 ## Structure
 
 - `website/slides/NN-topic.qmd`: slide decks, each rendered to HTML (revealjs) and PDF (beamer).
-- `website/workbook/NN-topic.qmd`: workbook chapters.
-- `website/solutions/NN-topic.qmd`: solutions. Private repo, ignored by this repo.
-  Never copy solution content into public files.
+- `website/workbook/NN-topic.qmd`: workbook chapters, including the solutions
+  (results only, see workbook rules). There are no separate or private solution files.
 - `R/`, `data/`, `data-raw/`, `man/`, `tests/`: the R package.
 - Content (slides, workbook, site text) is German. Code, comments, and file names are
   American English. File names: lowercase, words joined with `-`.
+- Numbers use a decimal point, also in German text and math (`0.5`, not `0,5` or
+  `0{,}5`): decimal commas are awkward in LaTeX. Separate vector entries with commas,
+  e.g. `(1.5, 0.5)^\top`. Round data and results to two decimal places.
+- German quotation marks: „…“ (closing mark U+201C, not a straight `"`).
 
 ## Look (do not change per deck or page)
 
@@ -51,6 +54,12 @@ Slide rules:
 Workbook rules:
 
 - Exercises: `::: {#exr-short-name}` with a `## Title` inside; no boxes around exercises.
+- Parts as `a.`, `b.`, ... (not `a)`: editors flag the lone parenthesis as unmatched).
+  Refer to a part in text as "Teil b".
+- Inside each exercise, at its end, both collapsed (students unfold them):
+  - hints: `::: {.callout-note title="Hinweise" collapse="true"}` (orange);
+  - solution: `::: {.callout-tip title="Lösung" collapse="true"}` (dark), results only,
+    one line per part, no solution steps.
 - Anchors (`#exr-...`) are link targets from the slides; do not rename them.
 
 ## Bibliography (APA 7)
@@ -95,6 +104,5 @@ Workbook rules:
 ## Working rules
 
 - Run only one Quarto preview or render at a time; two processes break each other.
-- Never publish `website/_site-solutions/` (instructor build with solutions).
 - Ask before committing, pushing, or publishing.
 - Package: `devtools::document()`, `devtools::test()`, `devtools::check()` must stay clean.

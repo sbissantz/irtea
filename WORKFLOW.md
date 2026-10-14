@@ -7,12 +7,10 @@ Run every command from the `irtea` folder unless noted otherwise.
 | Folder | What it holds |
 |---|---|
 | `website/slides/` | Slide decks (`NN-topic.qmd`), shared slide settings (`_metadata.yml`), PDF settings (`beamer-header.tex`), images |
-| `website/workbook/` | Workbook chapters (`NN-topic.qmd`) |
-| `website/solutions/` | Solutions, one file per chapter. Own **private** git repo (`irtea-solutions`), ignored by `irtea` |
+| `website/workbook/` | Workbook chapters (`NN-topic.qmd`), with hints and results in fold-out boxes |
 | `website/theme.scss` | Look of the website and workbook (font, colors) |
 | `website/_quarto.yml` | Website settings and menus |
-| `website/_site/` | Built public website (generated, not in git) |
-| `website/_site-solutions/` | Built instructor version with solutions (generated, **never publish**) |
+| `website/_site/` | Built website (generated, not in git) |
 | `R/`, `data/`, `data-raw/`, `man/`, `tests/` | The R package |
 
 ## Look at the website while you edit
@@ -25,13 +23,7 @@ quarto preview website
 - Stop it with `Ctrl+C`.
 - Run **only one preview at a time**. Positron's Preview button also starts one.
 - After changing `slides/_metadata.yml`, `beamer-header.tex`, `theme.scss`, or any
-  `_quarto*.yml`, stop the preview and start it again. It does not pick up these files.
-
-Your version with solutions:
-
-```bash
-quarto preview website --profile solutions
-```
+  `_quarto.yml`, stop the preview and start it again. It does not pick up these files.
 
 ## Build everything once
 
@@ -41,7 +33,6 @@ quarto render website
 
 - Takes about 30 seconds. Builds all pages, both slide formats (HTML and PDF), and the workbook.
 - Open the PDF slides: `open website/_site/slides/01-intro.pdf`
-- Instructor version: `quarto render website --profile solutions` (goes to `website/_site-solutions/`).
 
 Only one slide deck:
 
@@ -60,14 +51,11 @@ quarto render website/slides/01-intro.qmd --to beamer     # PDF only
    quarto publish gh-pages website
    ```
 
-3. Confirm with Enter. Quarto builds the public version (without solutions) and pushes
-   it to the `gh-pages` branch.
+3. Confirm with Enter. Quarto builds the site and pushes it to the `gh-pages` branch.
 4. After 1 to 2 minutes the site is live at <https://sbissantz.github.io/irtea/>.
    Reload the page if you still see the old version.
 
 ## Save your work with git
-
-There are two repositories: `irtea` (public) and `website/solutions` (private).
 
 ```bash
 git status                       # what changed
@@ -75,17 +63,6 @@ git add -A                       # stage everything
 git commit -m "Describe change"  # commit
 git push                         # upload to GitHub
 ```
-
-For the solutions, run the same commands inside `website/solutions/`:
-
-```bash
-cd website/solutions
-git add -A && git commit -m "Describe change" && git push
-cd ../..
-```
-
-The very first push of the solutions repo needs `git push -u origin master` instead of
-`git push` (it links the local branch to GitHub once).
 
 ## The R package
 
@@ -103,11 +80,20 @@ source("data-raw/personality-items.R")  # rebuild the dataset
 - **Slide deck:** `website/slides/NN-topic.qmd` with `title`, `subtitle`, `author`,
   `institute` in the header. The look comes from `slides/_metadata.yml` automatically.
 - **Workbook chapter:** `website/workbook/NN-topic.qmd`. Exercises as
-  `::: {#exr-short-name}` with a `## Title` inside.
-- **Solutions:** `website/solutions/NN-topic.qmd`, link back with
-  `[Zur Aufgabe](../workbook/NN-topic.qmd#exr-short-name)`.
-- Add each new page to the menus in `website/_quarto.yml`
-  (solutions in `website/_quarto-solutions.yml`).
+  `::: {#exr-short-name}` with a `## Title` inside, parts as `a.`, `b.`, ... At the end
+  of each exercise, two collapsed boxes:
+
+  ```markdown
+  ::: {.callout-note title="Hinweise" collapse="true"}
+  Hints for the students.
+  :::
+
+  ::: {.callout-tip title="Lösung" collapse="true"}
+  a.  Result only, no steps
+  :::
+  ```
+
+- Add each new page to the menus in `website/_quarto.yml`.
 - Slides: put content on `##` slides. Keep `#` headings (section slides) without text.
 - File names: lowercase, words joined with `-`.
 

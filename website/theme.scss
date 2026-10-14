@@ -11,8 +11,10 @@ $link-color: #b5620d;
 $navbar-bg: #23373b;
 $navbar-fg: #ffffff;
 $navbar-hl: #eb811b;
-// note boxes in the accent color instead of blue
+// note boxes (hints) in the accent color instead of blue
 $callout-color-note: #eb811b;
+// tip boxes (solutions) in the dark text color instead of green
+$callout-color-tip: #23373b;
 
 /*-- scss:rules --*/
 // orange rule under the page title, like on the title slide

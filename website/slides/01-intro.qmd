@@ -1,7 +1,7 @@
 ---
 title: "B.F.3 Übung zu Diagnostik/Testtheorie"
 subtitle: "Einführung & Rechenkompetenzen"
-author: "Bißantz, S., Kuch, N. & Gürtler, R-M."
+author: "Bißantz, S., Kuch, N. & Gürtler, R.-M."
 institute: "Rheinland-Pfälzische Technische Universität Kaiserslautern-Landau"
 ---
 
@@ -24,7 +24,7 @@ Weitere Informationen finden Sie im [Modulhandbuch](https://modhb.rptu.de/mhb/FB
 ## Voraussetzungen für die Vergabe von Leistungspunkten 
   
 - Insgesamt **vier** unangekündigte Übungsaufgaben 
-- Bearbeitung der Übungsaufgaben in Pränsenzsitzungen
+- Bearbeitung der Übungsaufgaben in Präsenzsitzungen
 - Aktive Teilnahme an mindestens **zwei** Übungsaufgaben 
 - Unterschrift auf der Anwesenheitsliste gilt als Nachweis
 :::
@@ -34,37 +34,37 @@ Weitere Informationen finden Sie im [Modulhandbuch](https://modhb.rptu.de/mhb/FB
 - Formulierung einer diagnostischen Fragestellung
 - Verständnis der Gütekriterien für Erfassungsmethoden
 - Verständnis der Stärken und Schwächen gängiger Testtheorien
-- Bestimmung von Itemkennwerte und Gütekriterien 
-- Informationen zu einem diagnostischen Urteil verdichten
+- Bestimmung von Itemkennwerten und Gütekriterien
+- Verdichtung von Informationen zu einem diagnostischen Urteil
 
 ## Semesterübersicht {.smaller}
 
 | Nr. | Datum     | Thema                                                        |
 |-----|-----------|--------------------------------------------------------------|
-| 1   | ab 20.10. | Rechengrundlagen                                       |
+| 1   | ab 20.10. | Rechenkompetenzen                                      |
 | 2   | ab 27.10. | Gütekriterien I                                |
 | 3   | ab 03.11. | Schritte der Testkonstruktion                                |
 | 4   | ab 10.11. | Erstellung eines Testentwurfs                             |
 |     |           | **Lektürewoche**                   |
 | 5   | ab 24.11. | *Diagnostische Rechenkompetenzen I*   |
 | 6   | ab 01.12. | Klassische Testtheorie                                       |
-| 7   | ab 08.12. | *Item Response Theorie*                      |
+| 7   | ab 08.12. | *Item-Response-Theorie*                      |
 | 8   | ab 15.12. | Exploratorische Faktorenanalyse I                            |
 |     |           | **Weihnachtsferien**           | 
-| 9   | ab 05.01. | *Exploratorische Faktorenanalyse* II                            |
+| 9   | ab 05.01. | *Exploratorische Faktorenanalyse II*                            |
 | 10  | ab 12.01. | Itemanalyse I                                                |
 | 11  | ab 19.01. | Itemanalyse II, Itemselektion und Testrevision               |
-| 12  | ab 26.01. | *Diagnostische Rechenkompetenzen* II                            |
+| 12  | ab 26.01. | *Diagnostische Rechenkompetenzen II*                            |
 | 13  | ab 02.02. | Gütekriterien II  |
 
 # Einführung in die Übung
 
 ## Übungsmöglichkeiten & Kommunikation
 
-- Synchron: Zu den offiziellen Gruppen-Zeiten 
-- Asynchron: z.B.
-  - Selbstorganisierte Lerngruppen 
-  - Olat-Forum 
+- Synchron: zu den offiziellen Gruppenzeiten
+- Asynchron: z. B.
+  - Selbstorganisierte Lerngruppen
+  - OLAT-Forum
 
 ## Synchrone Übungsmöglichkeiten 
 
@@ -78,21 +78,21 @@ Die Übung bietet die Möglichkeit
 
 Es gibt zahlreiche Übungsaufgaben 
 
-- Nicht alle sind Fokus der Präsenzsitzungen 
-- (Lösungen werden nur teilweise bereitgestellt)
+- Nicht alle stehen im Fokus der Präsenzsitzungen
+- Ergebnisse zu allen Aufgaben stehen im Übungsheft (ohne Lösungswege)
 - Selbststudium ist ein elementarer Bestandteil 
-- Selbstorganiserte Lerngruppen ein bewährtes Mittel
+- Selbstorganisierte Lerngruppen sind ein bewährtes Mittel
 
 ## Lernressourcen
 
 - Vorlesungsfolien und -inhalte
 - Übungsinhalte und -aufgaben auf der [Homepage]({{< var site-url >}})
-- Weiterführende Literatur [z.B. @moosbrugger2020]
+- Weiterführende Literatur [z. B. @moosbrugger2020]
 - Künstliche Intelligenz
 
-Maßgeblich sind die Inhalte der Vorlesung, danach die der Übung. Die weiterführende Literatur ethalten Sie in der [RPTU-Bibliothek](https://hbz-rptu.primo.exlibrisgroup.com/permalink/49HBZ_RTU/no4nsq/alma990009797090107476)
+Maßgeblich sind die Inhalte der Vorlesung, danach die der Übung. Die weiterführende Literatur erhalten Sie in der [RPTU-Bibliothek](https://hbz-rptu.primo.exlibrisgroup.com/permalink/49HBZ_RTU/no4nsq/alma990009797090107476).
 
-## Eine Frage im Olat-Forum stellen
+## Eine Frage im OLAT-Forum stellen
 
 Entscheiden Sie mithilfe des Flowcharts
 
