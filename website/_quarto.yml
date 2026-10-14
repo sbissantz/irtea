@@ -6,6 +6,8 @@ project:
   output-dir: _site
 
 lang: de
+bibliography: references.bib
+csl: apa.csl
 
 website:
   title: "B.F.3 Diagnostik & Testtheorie"
@@ -33,7 +35,7 @@ website:
 
 format:
   html:
-    theme: cosmo
+    theme: [cosmo, theme.scss]
     toc: true
 
 crossref:

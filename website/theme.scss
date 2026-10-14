@@ -1,0 +1,33 @@
+/*-- scss:defaults --*/
+// moloch look: same font and colors as the slides
+$web-font-path: "https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap";
+$font-family-sans-serif: "Fira Sans", sans-serif;
+$font-weight-base: 300;
+$font-weight-bold: 500;
+$headings-font-weight: 400;
+$body-color: #23373b;
+$primary: #23373b;
+$link-color: #b5620d;
+$navbar-bg: #23373b;
+$navbar-fg: #ffffff;
+$navbar-hl: #eb811b;
+
+/*-- scss:rules --*/
+// orange rule under the page title, like on the title slide
+.quarto-title h1.title {
+  font-weight: 400;
+  padding-bottom: 0.3em;
+  border-bottom: 2px solid #eb811b;
+}
+
+// exercises without boxes; boxes are for hints and notes
+.theorem.exercise {
+  margin: 2em 0 1.5em;
+}
+
+// boxes in the same font size and weight as the text
+div.callout div.callout-body,
+div.callout div.callout-body-container {
+  font-size: 1rem !important;
+  font-weight: 300 !important;
+}

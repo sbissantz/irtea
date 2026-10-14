@@ -1,15 +1,19 @@
 \usepackage{tikz}
 \usetikzlibrary{shapes, positioning, arrows.meta}
-\definecolor{madridblue}{RGB}{72, 68, 188}
-\definecolor{madridlightblue}{RGB}{131, 131, 210}
-\setbeamersize{text margin left=1.5cm, text margin right=1.5cm}
-\titlegraphic{\includegraphics[width=4.5cm]{images/rptu-logo.png}}
+% fonts like the html slides: fira sans light for text, regular for titles
+\usepackage{fontspec}
+\setsansfont{Fira Sans Light}[BoldFont = Fira Sans, ItalicFont = Fira Sans Light Italic]
+\setbeamerfont{frametitle}{series = \bfseries}
+\setbeamerfont{title}{series = \bfseries}
+\setbeamerfont{section title}{series = \bfseries}
+% page number as "n / N" (set after the theme is loaded)
+\AtBeginDocument{\setbeamertemplate{page number in head/foot}[totalframenumber]}
+% keep the title page vertically centered despite the top-aligned frames
+\addtobeamertemplate{title page}{\vspace*{\fill}}{\vspace*{\fill}}
+% logo at the bottom of the centered title page
+\titlegraphic{\includegraphics[width=3cm]{images/rptu-logo.png}}
 \usepackage{etoolbox}
 \AtBeginEnvironment{longtable}{\footnotesize}
-% footer: authors only, without the institute
-\makeatletter
-\AtBeginDocument{\def\beamer@shortinstitute{}}
-\makeatother
 % same space between all list items, also before a sublist
 \newlength{\listgap}
 \AtBeginDocument{%

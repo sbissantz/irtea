@@ -1,5 +1,5 @@
 ---
-title: "B.F.3 Übung zur Diagnostik/Testtheorie"
+title: "B.F.3 Übung zu Diagnostik/Testtheorie"
 subtitle: "Einführung & Rechenkompetenzen"
 author: "Bißantz, S., Kuch, N., & Gürtler, R-M."
 institute: "Rheinland-Pfälzische Technische Universität Kaiserslautern-Landau"
@@ -7,9 +7,9 @@ institute: "Rheinland-Pfälzische Technische Universität Kaiserslautern-Landau"
 
 # Einführung
 
-B.F.3 Übung zur Diagnostik/Testtheorie
-
 ## Einordnung
+
+B.F.3 Übung zu Diagnostik/Testtheorie
 
 Basis dieser Übung bilden die zwei Vorlesungen
 
@@ -110,13 +110,15 @@ flowchart LR
   q1 -- Nein --> q3
   q3 -- "> 2 Antworten" --> peer
   q3 -- "≤ 2 Antworten" --> talk
-  classDef step fill:#4844BC,stroke:#2a2870,color:#fff
-  classDef done fill:#e8e8f7,stroke:#4844BC,color:#1a1a40
+  classDef step fill:#3B528B,stroke:#3B528B,color:#fff
+  classDef done fill:#5DC863,stroke:#5DC863,color:#23373b
   class q1,q3 step
   class ok,peer,talk done
 ```
 
 # Rechenkompetenzen
+
+## Übungen
 
 Übungen zu diesem Thema: [Übungsheft, Kapitel 1]({{< var site-url >}}/workbook/01-basics.html)
 
@@ -124,5 +126,7 @@ flowchart LR
 # Danke & bis nächste Woche! {.unlisted}
 
 # Literaturverzeichnis
+
+## Literatur
 
 **TODO** APA7 eintrag mosbrugger un kelava

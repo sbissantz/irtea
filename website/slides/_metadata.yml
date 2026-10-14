@@ -1,4 +1,4 @@
-# shared settings for all slide decks
+# shared settings for all slide decks (moloch look)
 slide-level: 2
 format:
   revealjs:
@@ -7,90 +7,152 @@ format:
     progress: false
     width: 1280
     height: 720
+    margin: 0
     embed-resources: true
     mermaid-format: svg
     title-slide-attributes:
       data-background-image: images/rptu-logo.png
-      data-background-size: 220px
-      data-background-position: 50% 88%
+      data-background-size: 240px
+      data-background-position: 50% 84%
     include-in-header:
       text: |
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@300;400;500&display=swap">
         <style>
-        /* smaller text than the simple theme's 40px */
         :root {
+          --mtr-dark: #23373b;
+          --mtr-orange: #eb811b;
+          --mtr-track: #d6dadb;
+          --r-main-font: "Fira Sans", sans-serif;
+          --r-heading-font: "Fira Sans", sans-serif;
+          --r-main-color: #23373b;
+          --r-heading-color: #23373b;
+          --r-background-color: #fafafa;
+          --r-link-color: #b5620d;
+          --r-link-color-hover: #eb811b;
           --r-main-font-size: 30px;
-          --r-heading2-size: 1.5em;
+          --r-heading2-size: 1.25em;
+          --progress: 0%;
         }
-        /* look of the pdf (beamer madrid/dolphin colors) */
-        :root {
-          --madrid-title: #3333b2;
-          --madrid-dark: #4747ba;
-          --madrid-mid: #8585d1;
-          --madrid-light: #adade0;
-          --madrid-bar: 3.2vh;
+        .reveal {
+          font-weight: 300;
+        }
+        .reveal strong {
+          font-weight: 500;
         }
         .reveal h1,
         .reveal h2,
         .reveal h3 {
-          color: var(--madrid-title);
-          font-family: var(--r-main-font);
-          font-weight: normal;
+          font-weight: 400;
+          text-transform: none;
+        }
+        /* frame title: dark bar with an orange progress line below */
+        .reveal .slides section.level2 > h2 {
+          position: relative;
+          margin: 0 -80px 0.9em -80px;
+          padding: 18px 32px 20px;
+          background: var(--mtr-dark);
+          color: #fff;
+          font-size: 34px !important;
+        }
+        .reveal .slides section.level2 > h2::before,
+        .reveal .slides section.level2 > h2::after {
+          content: "";
+          position: absolute;
+          left: 0;
+          bottom: -4px;
+          height: 4px;
+        }
+        .reveal .slides section.level2 > h2::before {
+          width: 100%;
+          background: var(--mtr-track);
+        }
+        .reveal .slides section.level2 > h2::after {
+          width: var(--progress);
+          background: var(--mtr-orange);
+        }
+        .reveal .slides section.level2 {
+          padding: 0 80px !important;
+          box-sizing: border-box;
+        }
+        /* section slides like moloch: title over a line with the progress in orange */
+        .reveal .slides section.level1 > h1 {
+          position: relative;
+          width: 68%;
+          margin: 0 auto;
+          padding-bottom: 0.35em;
+          text-align: left;
+          font-size: 1.5em;
+          border-bottom: 2px solid var(--mtr-track);
+        }
+        .reveal .slides section.level1 > p {
+          width: 68%;
+          margin: 0.8em auto 0;
+          text-align: left;
+        }
+        .reveal .slides section.level1 > h1::after {
+          content: "";
+          position: absolute;
+          left: 0;
+          bottom: -2px;
+          height: 2px;
+          width: var(--progress);
+          background: var(--mtr-orange);
+        }
+        /* title slide: centered, logo at the bottom (moloch "plain") */
+        .reveal #title-slide {
+          padding-bottom: 120px;
+        }
+        .reveal #title-slide .title {
+          display: inline-block;
+          font-size: 1.8em;
+          font-weight: 400;
+          margin-bottom: 0.3em;
+          padding-bottom: 0.15em;
+          border-bottom: 3px solid var(--mtr-orange);
         }
         .reveal #title-slide .subtitle {
-          color: var(--madrid-title);
+          font-size: 1.1em;
+          font-weight: 300;
+          margin-bottom: 1em;
         }
         .reveal ul > li::marker,
         .reveal ol > li::marker {
-          color: var(--madrid-title);
-        }
-        .reveal .madrid-footer {
-          position: absolute;
-          left: 0;
-          right: 0;
-          bottom: 0;
-          z-index: 30;
-          display: flex;
-          height: var(--madrid-bar);
-          font-size: calc(var(--madrid-bar) * 0.5);
-          line-height: var(--madrid-bar);
-          font-family: var(--r-main-font);
-        }
-        .reveal .madrid-footer span {
-          flex: 1;
-          overflow: hidden;
-          padding: 0 1em;
-          white-space: nowrap;
-          text-overflow: ellipsis;
-          text-align: center;
-          color: #fff;
-        }
-        .reveal .madrid-footer .left {
-          background: var(--madrid-dark);
-        }
-        .reveal .madrid-footer .middle {
-          background: var(--madrid-mid);
-        }
-        .reveal .madrid-footer .right {
-          background: var(--madrid-light);
+          color: var(--mtr-dark);
         }
         .reveal .slide-number {
-          right: 0 !important;
-          bottom: 0 !important;
-          z-index: 31;
-          padding: 0 1.5em;
+          right: 16px !important;
+          bottom: 10px !important;
           background: transparent !important;
-          color: #000 !important;
+          color: var(--mtr-dark) !important;
           font-family: var(--r-main-font);
-          font-size: calc(var(--madrid-bar) * 0.5);
-          line-height: var(--madrid-bar);
+          font-size: 16px;
         }
-        .reveal .slide-menu-button {
-          bottom: calc(var(--madrid-bar) + 6px) !important;
+        /* half a line between all list items, as in the pdf */
+        .reveal .slides .slide ul li,
+        .reveal .slides .slide ol li {
+          margin-top: calc(var(--r-main-font-size) * 0.65);
+          margin-bottom: 0;
+        }
+        /* boxes in the same font size and weight as the slide text, as in the pdf */
+        .reveal .slides section div.callout {
+          font-size: 1em !important;
+        }
+        .reveal div.callout.callout-style-default div.callout-body {
+          font-weight: 300 !important;
+        }
+        /* sub-items a bit smaller and lists indented, as in the pdf */
+        .reveal .slides .slide li ul,
+        .reveal .slides .slide li ol {
+          font-size: 0.9em;
+        }
+        .reveal .slides section.level2 > ul,
+        .reveal .slides section.level2 > ol {
+          margin-left: 2.2em;
         }
         .reveal .cell-output-display svg {
           width: 100% !important;
           height: auto !important;
-          max-height: 520px;
+          max-height: 480px;
         }
         .reveal .cell-output-display svg foreignObject * {
           white-space: normal !important;
@@ -102,6 +164,10 @@ format:
         .reveal table th,
         .reveal table td {
           padding: 0.2em 0.6em;
+        }
+        /* menu button (three lines) in the color of the title bar */
+        .reveal .slide-menu-button .fa-bars::before {
+          background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%2323373b' viewBox='0 0 16 16'%3E%3Cpath fill-rule='evenodd' d='M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z'/%3E%3C/svg%3E") !important;
         }
         /* house icon (bootstrap icons), drawn like quarto's other menu icons */
         .slide-menu-wrapper .slide-menu-toolbar .fa-home::before {
@@ -136,24 +202,23 @@ format:
           }, 100);
         });
 
-        // footer bar like the pdf: names | title | slide number
+        // orange progress line under the frame title
         window.addEventListener("load", () => {
-          const authors = [...document.querySelectorAll("#title-slide .quarto-title-author-name")]
-            .map((author) => author.textContent.trim())
-            .join(", ");
-          const title = document.querySelector("#title-slide .title")?.textContent.trim() ?? "";
-          const bar = document.createElement("div");
-          bar.className = "madrid-footer";
-          bar.innerHTML = '<span class="left"></span><span class="middle"></span><span class="right"></span>';
-          bar.querySelector(".left").textContent = authors;
-          bar.querySelector(".middle").textContent = title;
-          document.querySelector(".reveal").append(bar);
+          const update = () => document.documentElement.style.setProperty(
+            "--progress", `${Math.round(Reveal.getProgress() * 100)}%`
+          );
+          update();
+          Reveal.on("slidechanged", update);
         });
         </script>
   beamer:
     aspectratio: 169
-    theme: Madrid
-    colortheme: dolphin
+    theme: moloch
+    themeoptions:
+      - progressbar=frametitle
+      - titlepage=plain
+    classoption: [t]
+    fontsize: 12pt
     pdf-engine: lualatex
     section-titles: false
     include-in-header: beamer-header.tex

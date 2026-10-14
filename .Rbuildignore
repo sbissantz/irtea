@@ -5,3 +5,5 @@
 ^.*\.Rproj$
 ^\.Rproj\.user$
 ^LICENSE\.md$
+^WORKFLOW\.md$
+^CLAUDE\.md$

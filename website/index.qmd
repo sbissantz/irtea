@@ -1,5 +1,5 @@
 ---
-title: "B.F.3 Übung zur Diagnostik/Testtheorie"
+title: "B.F.3 Übung zu Diagnostik/Testtheorie"
 ---
 
 Diese Seite bündelt die Materialien zur Übung B.F.3 an der RPTU
