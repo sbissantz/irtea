@@ -199,7 +199,7 @@ window.Quarto = {
 
 
 <div id="exr-normal-likelihood" class="theorem exercise">
-<p><span class="theorem-title"><strong>Aufgabe 1 (Likelihood der Normalverteilung)</strong></span> Gegeben sei das Normalverteilungsmodell <span class="math inline">\(Y \sim \mathcal{N}(\mu, \sigma^2)\)</span>. Beobachtet wurde ein einziger Datenpunkt, <span class="math inline">\(y = 2\)</span>. Die Likelihood und die Log-Likelihood lauten</p>
+<p><span class="theorem-title"><strong>Aufgabe 1 (Likelihood der Normalverteilung)</strong></span> Gegeben sei das Zufallsvariable <span class="math inline">\(Y\)</span> mit <span class="math inline">\(Y \sim \mathcal{N}(\mu, \sigma^2)\)</span>. Beobachtet wurde ein einziger Datenpunkt, <span class="math inline">\(y = 2\)</span>. Die Likelihood und die Log-Likelihood lauten</p>
 <p><span class="math display">\[
 \begin{aligned}
 L(\mu, \sigma^2 \mid y) &amp; = \frac{1}{\sqrt{2\pi\sigma^2}} \exp\left( -\frac{(y - \mu)^2}{2\sigma^2} \right) \\[2ex]
@@ -459,17 +459,17 @@ r_{i_3,i_1} &amp; r_{i_3,i_2} &amp; 1
 </div>
 <div id="callout-9" class="callout-9-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Individuelle Lösung. Eine plausible Erwartungsmatrix (die Matrix ist symmetrisch, daher genügt der Teil oberhalb der Hauptdiagonalen):</p>
+<p>Eine mögliche Erwartungsmatrix:</p>
 <p><span class="math display">\[
 \begin{array}{c|ccc}
 &amp; i_1 &amp; i_2 &amp; i_3 \\
 \hline
-i_1 &amp; &amp; {-}{-} &amp; {-} \\
+i_1 &amp; &amp; {-}{-} &amp; - \\
 i_2 &amp; &amp; &amp; {+} \\
 i_3 &amp; &amp; &amp;
 \end{array}
 \]</span></p>
-<p>Introversion (<span class="math inline">\(i_1\)</span>) und Extraversion (<span class="math inline">\(i_2\)</span>) sind Gegenpole, daher stark negativ („−−“). Höflichkeit und Respekt (<span class="math inline">\(i_3\)</span>) hängen kaum mit Introversion zusammen, höchstens schwach negativ („−“), und eher schwach positiv mit Extraversion („+“).</p>
+<p>Introversion (<span class="math inline">\(i_1\)</span>), Extraversion (<span class="math inline">\(i_2\)</span>) und Höflichkeit &amp; Respekt (<span class="math inline">\(i_3\)</span>).</p>
 </div>
 </div>
 </div>
@@ -496,7 +496,8 @@ V \approx
 &amp;  &amp; 1.91
 \end{pmatrix}
 \]</span></p>
-<p>Wer mit gerundeten Zwischenergebnissen rechnet, erhält leicht abweichende Werte. Item 1 erhält nahezu geschlossene Zustimmung (sehr kleine Varianz bei einem Antwortbereich von <span class="math inline">\(-12\)</span> bis <span class="math inline">\(12\)</span>). Die Vorzeichen der Kovarianzen passen zu den Erwartungen aus Teil a; über die Stärke der Zusammenhänge sagen sie noch nichts.</p>
+<p>Wer mit gerundeten Zwischenergebnissen rechnet, erhält leicht abweichende Werte.</p>
+<p>Item 1 erhält nahezu geschlossene Zustimmung (sehr kleine Varianz bei einem Antwortbereich von <span class="math inline">\(-12\)</span> bis <span class="math inline">\(12\)</span>). Die Vorzeichen der Kovarianzen passen zu den Erwartungen aus Teil a; über die Stärke der Zusammenhänge sagen sie noch nichts.</p>
 </div>
 </div>
 </div>
@@ -549,11 +550,6 @@ R \approx
 </div>
 </div>
 </div>
-<p>Diskussionsbedarf und Überlegungen:</p>
-<ul>
-<li>Item 3 spiegelt eine soziale Kompetenz wider. Wie plausibel ist die Korrelation mit dem Introversionsitem bzw. dem Extraversionsitem auf theoretischer Ebene?</li>
-<li>Was könnte (neben einer inhaltlichen Erklärung) noch Ursache sein, dass die Items derart hoch miteinander korrelieren?</li>
-</ul>
 <!--
 not converted yet: exercises commented out in irtworkbook/ch01-basics.tex
 (Produkte; Plug-and-Play; Varianz, Kovarianz und Korrelation),
