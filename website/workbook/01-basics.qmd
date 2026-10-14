@@ -5,7 +5,7 @@ title: "1 Rechenkompetenzen"
 ::: {#exr-normal-likelihood}
 ## Likelihood der Normalverteilung
 
-Gegeben sei das Zufallsvariable $Y$ mit $Y \sim \mathcal{N}(\mu, \sigma^2)$. Beobachtet wurde ein einziger Datenpunkt, $y = 2$. Die Likelihood und die Log-Likelihood lauten
+Gegeben sei die Zufallsvariable $Y$ mit $Y \sim \mathcal{N}(\mu, \sigma^2)$. Beobachtet wurde ein einziger Datenpunkt, $y = 2$. Die Likelihood und die Log-Likelihood lauten
 
 $$
 \begin{aligned}
