@@ -30,78 +30,85 @@
   {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "B.F.3 Übung zur Diagnostik/Testtheorie",
+    "title": "B.F.3 Übung zu Diagnostik/Testtheorie",
     "section": "",
     "text": "Diese Seite bündelt die Materialien zur Übung B.F.3 an der RPTU Kaiserslautern-Landau.\n\nFolien: die Folien jeder Sitzung, als Präsentation (HTML) und als PDF.\nÜbungsheft: Aufgaben zu jedem Thema.\nR-Paket: Datensätze für die Aufgaben, installierbar in R."
   },
   {
     "objectID": "slides/01-intro.html#einordnung",
     "href": "slides/01-intro.html#einordnung",
-    "title": "B.F.3 Übung zur Diagnostik/Testtheorie",
+    "title": "B.F.3 Übung zu Diagnostik/Testtheorie",
     "section": "Einordnung",
-    "text": "Einordnung\nBasis dieser Übung bilden die zwei Vorlesungen\n\nB.F.1 Grundlagen der Diagnostik\nB.F.2 Grundlagen der Testtheorie\n\nWeitere Informationen finden Sie im Modulhandbuch."
+    "text": "Einordnung\nB.F.3 Übung zu Diagnostik/Testtheorie\nBasis dieser Übung bilden die zwei Vorlesungen\n\nB.F.1 Grundlagen der Diagnostik\nB.F.2 Grundlagen der Testtheorie\n\nWeitere Informationen finden Sie im Modulhandbuch."
   },
   {
     "objectID": "slides/01-intro.html#rahmenbedingungen",
     "href": "slides/01-intro.html#rahmenbedingungen",
-    "title": "B.F.3 Übung zur Diagnostik/Testtheorie",
+    "title": "B.F.3 Übung zu Diagnostik/Testtheorie",
     "section": "Rahmenbedingungen",
     "text": "Rahmenbedingungen\n\n\n\n\n\n\nVoraussetzungen für die Vergabe von Leistungspunkten\n\n\n\nInsgesamt vier unangekündigte Übungsaufgaben\nBearbeitung der Übungsaufgaben in Pränsenzsitzungen\nAktive Teilnahme an mindestens zwei Übungsaufgaben\nUnterschrift auf der Anwesenheitsliste gilt als Nachweis"
   },
   {
     "objectID": "slides/01-intro.html#auswahl-an-lernzielen",
     "href": "slides/01-intro.html#auswahl-an-lernzielen",
-    "title": "B.F.3 Übung zur Diagnostik/Testtheorie",
+    "title": "B.F.3 Übung zu Diagnostik/Testtheorie",
     "section": "Auswahl an Lernzielen",
     "text": "Auswahl an Lernzielen\n\nFormulierung einer diagnostischen Fragestellung\nVerständnis der Gütekriterien für Erfassungsmethoden\nVerständnis der Stärken und Schwächen gängiger Testtheorien\nBestimmung von Itemkennwerte und Gütekriterien\nInformationen zu einem diagnostischen Urteil verdichten"
   },
   {
     "objectID": "slides/01-intro.html#semesterübersicht",
     "href": "slides/01-intro.html#semesterübersicht",
-    "title": "B.F.3 Übung zur Diagnostik/Testtheorie",
+    "title": "B.F.3 Übung zu Diagnostik/Testtheorie",
     "section": "Semesterübersicht",
     "text": "Semesterübersicht\n\n\n\n\n\n\n\n\nNr.\nDatum\nThema\n\n\n\n\n1\nab 20.10.\nRechengrundlagen\n\n\n2\nab 27.10.\nGütekriterien I\n\n\n3\nab 03.11.\nSchritte der Testkonstruktion\n\n\n4\nab 10.11.\nErstellung eines Testentwurfs\n\n\n\n\nLektürewoche\n\n\n5\nab 24.11.\nDiagnostische Rechenkompetenzen I\n\n\n6\nab 01.12.\nKlassische Testtheorie\n\n\n7\nab 08.12.\nItem Response Theorie\n\n\n8\nab 15.12.\nExploratorische Faktorenanalyse I\n\n\n\n\nWeihnachtsferien\n\n\n9\nab 05.01.\nExploratorische Faktorenanalyse II\n\n\n10\nab 12.01.\nItemanalyse I\n\n\n11\nab 19.01.\nItemanalyse II, Itemselektion und Testrevision\n\n\n12\nab 26.01.\nDiagnostische Rechenkompetenzen II\n\n\n13\nab 02.02.\nGütekriterien II"
   },
   {
     "objectID": "slides/01-intro.html#übungsmöglichkeiten-kommunikation",
     "href": "slides/01-intro.html#übungsmöglichkeiten-kommunikation",
-    "title": "B.F.3 Übung zur Diagnostik/Testtheorie",
+    "title": "B.F.3 Übung zu Diagnostik/Testtheorie",
     "section": "Übungsmöglichkeiten & Kommunikation",
     "text": "Übungsmöglichkeiten & Kommunikation\n\nSynchron: Zu den offiziellen Gruppen-Zeiten\nAsynchron: z.B.\n\nSelbstorganisierte Lerngruppen\nOlat-Forum"
   },
   {
     "objectID": "slides/01-intro.html#synchrone-übungsmöglichkeiten",
     "href": "slides/01-intro.html#synchrone-übungsmöglichkeiten",
-    "title": "B.F.3 Übung zur Diagnostik/Testtheorie",
+    "title": "B.F.3 Übung zu Diagnostik/Testtheorie",
     "section": "Synchrone Übungsmöglichkeiten",
     "text": "Synchrone Übungsmöglichkeiten\nDie Übung bietet die Möglichkeit\n\nFragen zu stellen\nAufgaben zu bearbeiten\nErgebnisse zu diskutieren"
   },
   {
     "objectID": "slides/01-intro.html#übungsaufgaben",
     "href": "slides/01-intro.html#übungsaufgaben",
-    "title": "B.F.3 Übung zur Diagnostik/Testtheorie",
+    "title": "B.F.3 Übung zu Diagnostik/Testtheorie",
     "section": "Übungsaufgaben",
     "text": "Übungsaufgaben\nEs gibt zahlreiche Übungsaufgaben\n\nNicht alle sind Fokus der Präsenzsitzungen\n(Lösungen werden nur teilweise bereitgestellt)\nSelbststudium ist ein elementarer Bestandteil\nSelbstorganiserte Lerngruppen ein bewährtes Mittel"
   },
   {
     "objectID": "slides/01-intro.html#lernressourcen",
     "href": "slides/01-intro.html#lernressourcen",
-    "title": "B.F.3 Übung zur Diagnostik/Testtheorie",
+    "title": "B.F.3 Übung zu Diagnostik/Testtheorie",
     "section": "Lernressourcen",
     "text": "Lernressourcen\n\nVorlesungsfolien und -inhalte\nÜbungsinhalte und -aufgaben TODO: Verlinken der Homepage\nWeiterführende Literatur (z.B. Moosbrugger & Kelava, 2020)\nKünstliche Intelligenz\n\nMaßgeblich sind die Inhalte der Vorlesung; danach die der Übung."
   },
   {
     "objectID": "slides/01-intro.html#eine-frage-im-olat-forum-stellen",
     "href": "slides/01-intro.html#eine-frage-im-olat-forum-stellen",
-    "title": "B.F.3 Übung zur Diagnostik/Testtheorie",
+    "title": "B.F.3 Übung zu Diagnostik/Testtheorie",
     "section": "Eine Frage im Olat-Forum stellen",
     "text": "Eine Frage im Olat-Forum stellen\nEntscheiden Sie mithilfe des Flowcharts\n\n\n\n\n\n\n\n\n\n\n\nJa\n\n\n\n\n\n\n\nNein\n\n\n\n\n\n&gt; 2 Antworten\n\n\n\n\n\n≤ 2 Antworten\n\n\n\nAntwort in denLernressourcen?Frage im OLAT-ForumstellenGelöstGelöst – falsche Antwortenkommentieren wirIn Übung mit Übungsleitungklären"
   },
   {
-    "objectID": "slides/01-intro.html#was-ist-ein-psychologischer-test",
-    "href": "slides/01-intro.html#was-ist-ein-psychologischer-test",
-    "title": "B.F.3 Übung zur Diagnostik/Testtheorie",
-    "section": "Was ist ein psychologischer Test?",
-    "text": "Was ist ein psychologischer Test?\nEin Test ist ein wissenschaftliches Routineverfahren zur Erfassung eines oder mehrerer empirisch abgrenzbarer psychologischer Merkmale mit dem Ziel, möglichst genaue Aussagen über den (relativen) quantitativen Grad oder die qualitative Kategorie der individuellen Merkmalsausprägungen zu gewinnen. (Moosbrugger & Kelava, 2020, S. 16)"
+    "objectID": "slides/01-intro.html#übungen",
+    "href": "slides/01-intro.html#übungen",
+    "title": "B.F.3 Übung zu Diagnostik/Testtheorie",
+    "section": "Übungen",
+    "text": "Übungen\nÜbungen zu diesem Thema: Übungsheft, Kapitel 1"
+  },
+  {
+    "objectID": "slides/01-intro.html#literatur",
+    "href": "slides/01-intro.html#literatur",
+    "title": "B.F.3 Übung zu Diagnostik/Testtheorie",
+    "section": "Literatur",
+    "text": "Literatur\nTODO APA7 eintrag mosbrugger un kelava"
   }
 ]
