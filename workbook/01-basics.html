@@ -46,7 +46,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-bf27225e3a48a9273f3daa8f8e829971.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-271b916aeffe00cab0ed485b5d3fa8c2.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-cbe15cd55579b32cf8c48135cfb2cd9e.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -198,44 +198,84 @@ window.Quarto = {
 </header>
 
 
-<div id="exr-potpourri" class="theorem exercise">
-<p><span class="theorem-title"><strong>Aufgabe 1 (Potpourri)</strong></span> Berechnen Sie die folgenden Ausdrücke.</p>
+<div id="exr-normal-likelihood" class="theorem exercise">
+<p><span class="theorem-title"><strong>Aufgabe 1 (Likelihood der Normalverteilung)</strong></span> Gegeben sei das Normalverteilungsmodell <span class="math inline">\(Y \sim \mathcal{N}(\mu, \sigma^2)\)</span>. Beobachtet wurde ein einziger Datenpunkt, <span class="math inline">\(y = 2\)</span>. Die Likelihood und die Log-Likelihood lauten</p>
+<p><span class="math display">\[
+\begin{aligned}
+L(\mu, \sigma^2 \mid y) &amp; = \frac{1}{\sqrt{2\pi\sigma^2}} \exp\left( -\frac{(y - \mu)^2}{2\sigma^2} \right) \\[2ex]
+\ln L(\mu, \sigma^2 \mid y) &amp;= -\frac{1}{2} \ln(2\pi\sigma^2) - \frac{(y - \mu)^2}{2\sigma^2}
+\end{aligned}
+\]</span></p>
 <ol type="a">
-<li><span class="math display">\[\frac{1}{8}+\frac{3}{4}\]</span></li>
-<li><span class="math display">\[\frac{1}{8}\times \frac{3}{4}\]</span></li>
-<li><span class="math display">\[3+2\times\frac{1}{7}\]</span></li>
-<li><span class="math display">\[e^{7-3*2}\]</span></li>
-<li><span class="math display">\[1+ \frac{e^{5-3}-2}{e^0}\]</span></li>
+<li>Berechnen Sie die Likelihood <span class="math inline">\(L(2, 1 \mid y)\)</span>, also für <span class="math inline">\(\mu = 2\)</span> und <span class="math inline">\(\sigma^2 = 1\)</span>.</li>
+<li>Berechnen Sie die Log-Likelihood <span class="math inline">\(\ln L(2, 1 \mid y)\)</span> für dieselben Werte.</li>
+<li>Logarithmieren Sie Ihr Ergebnis aus Teil a und vergleichen Sie es mit Teil b. Was fällt Ihnen auf?</li>
+</ol>
+<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tipp</span>Lösung
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ol type="a">
+<li><span class="math inline">\(L(2, 1 \mid y) = \frac{1}{\sqrt{2\pi}} \approx 0.40\)</span></li>
+<li><span class="math inline">\(\ln L(2, 1 \mid y) = -\frac{1}{2} \ln(2\pi) \approx -0.92\)</span></li>
+<li><span class="math inline">\(\ln(0.40) \approx -0.92\)</span>, also derselbe Wert wie in Teil b: Die Log-Likelihood ist der Logarithmus der Likelihood.</li>
 </ol>
 </div>
-<div id="exr-logarithms" class="theorem exercise">
-<p><span class="theorem-title"><strong>Aufgabe 2 (Logarithmusfunktionen)</strong></span> Vereinfachen Sie die folgenden Ausdrücke so weit wie möglich.</p>
+</div>
+</div>
+</div>
+<div id="exr-bernoulli-likelihood" class="theorem exercise">
+<p><span class="theorem-title"><strong>Aufgabe 2 (Likelihood der Bernoulli-Verteilung)</strong></span> Gegeben seien drei unabhängige Zufallsvariablen <span class="math inline">\(Y_1, Y_2, Y_3\)</span> mit <span class="math inline">\(Y_i \sim \text{Bern}(\theta)\)</span>. Beobachtet wurde <span class="math inline">\(\mathbf{y} = (1, 0, 1)^\top\)</span>. Die Likelihood und die Log-Likelihood des Parameters <span class="math inline">\(\theta\)</span> lauten</p>
+<p><span class="math display">\[
+\begin{aligned}
+L(\theta \mid \mathbf{y}) &amp;= \prod_{i=1}^{3} \theta^{y_i} (1 - \theta)^{1 - y_i} \\[2ex]
+\ln L(\theta \mid \mathbf{y}) &amp;= \sum_{i=1}^{3} \left[ y_i \ln(\theta) + (1 - y_i) \ln(1 - \theta) \right]
+\end{aligned}
+\]</span></p>
 <ol type="a">
-<li><span class="math display">\[\ln(a \cdot b)\]</span></li>
-<li><span class="math display">\[\ln(a^n)\]</span></li>
-<li><span class="math display">\[\ln\left(\frac{a}{b}\right)\]</span></li>
-<li><span class="math display">\[\ln\left(\sum_{i=1}^{n} a_i\right)\]</span></li>
-<li><span class="math display">\[\ln\left( \prod_{i=1}^n a_i \right)\]</span></li>
-<li><span class="math display">\[\ln\left( \prod_{i=1}^n a_i^{b_i} \right)\]</span></li>
-<li><span class="math display">\[\ln\left(\prod_{i=1}^n e^{x_i}\right)\]</span></li>
+<li>Berechnen Sie die Likelihood <span class="math inline">\(L(0.5 \mid \mathbf{y})\)</span>.</li>
+<li>Berechnen Sie die Log-Likelihood <span class="math inline">\(\ln L(0.6 \mid \mathbf{y})\)</span>.</li>
+<li>Unter welchem der beiden Parameterwerte ist die Likelihood größer? Begründen Sie Ihr Vorgehen.</li>
+<li>Welches sehr häufig verwendete Schätzverfahren haben Sie gerade im Kleinen nachgeahmt?</li>
 </ol>
-<p>Die vorherigen Aufgaben dienten als Vorbereitung für die folgenden zwei Vereinfachungen.</p>
-<ol start="8" type="a">
-<li><span class="math display">\[\ln \left( \prod_{i=1}^n \theta^{y_i}(1 - \theta)^{1 - y_i} \right)\]</span></li>
-<li><span class="math display">\[\ln \left( \prod_{i=1}^n \frac{1}{\sqrt{2\pi\sigma^2}} \exp\left(
--\frac{(y_i - \mu)^2}{2\sigma^2} \right) \right)\]</span></li>
-<li><span class="math display">\[\ln \left( \prod_{i=1}^n \theta^{y_i}(1 - \theta)^{1 - y_i} \right)\]</span></li>
-<li>Recherchieren Sie die Ausdrücke aus den letzten beiden Aufgabenteilen. Bestimmen Sie, um welche Funktion es sich jeweils handelt, welche Wahrscheinlichkeitsverteilungen ihnen zugrundeliegen und welche Parameter die Verteilungen besitzen. Geben Sie zum Schluss ein Beispiel aus ihrem Studium, in dem Ihnen diese Funktionen bereits begegnet sind.</li>
+<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tipp</span>Lösung
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ol type="a">
+<li><span class="math inline">\(L(0.5 \mid \mathbf{y}) = 0.5 \cdot 0.5 \cdot 0.5 \approx 0.13\)</span></li>
+<li><span class="math inline">\(\ln L(0.6 \mid \mathbf{y}) = 2 \ln(0.6) + \ln(0.4) \approx -1.94\)</span></li>
+<li>Unter <span class="math inline">\(\theta = 0.6\)</span>, denn <span class="math inline">\(\ln L(0.5 \mid \mathbf{y}) \approx -2.08 &lt; -1.94 \approx \ln L(0.6 \mid \mathbf{y})\)</span>.</li>
+<li>Maximum-Likelihood-Schätzung (ML-Schätzung)</li>
 </ol>
+</div>
+</div>
+</div>
 </div>
 <div id="exr-covariance-matrix" class="theorem exercise">
-<p><span class="theorem-title"><strong>Aufgabe 3 (Kovarianz- und Korrelationsmatrix)</strong></span> Stellen Sie sich vor, Sie hätten mit SoSci Survey im Rahmen einer Studienarbeit eine Erhebung mittels Persönlichkeitsinventar durchgeführt, das unter anderem die Konstrukte „Introversion”, „Extraversion” und „Soziale Kompetenz” beinhaltet. Dabei haben Sie den Befragten auch die folgenden drei Items vorgelegt:</p>
+<p><span class="theorem-title"><strong>Aufgabe 3 (Kovarianz- und Korrelationsmatrix)</strong></span> Stellen Sie sich vor, Sie hätten mit SoSci Survey im Rahmen einer Studienarbeit eine Erhebung mittels Persönlichkeitsinventar durchgeführt, das unter anderem die Konstrukte „Introversion“, „Extraversion“ und „Soziale Kompetenz“ beinhaltet. Dabei haben Sie den Befragten auch die folgenden drei Items vorgelegt:</p>
 <ul>
-<li>Item 1 (<span class="math inline">\(i_1\)</span>): „Ich ziehe es vor, meine Zeit alleine zu verbringen, als mit anderen Menschen zu interagieren.”</li>
-<li>Item 2 (<span class="math inline">\(i_2\)</span>): „Ich genieße es, im Mittelpunkt der Aufmerksamkeit zu stehen.”</li>
-<li>Item 3 (<span class="math inline">\(i_3\)</span>): „Ich finde es wichtig, in sozialen Situationen höflich und respektvoll zu sein.”</li>
+<li>Item 1 (<span class="math inline">\(i_1\)</span>): „Ich ziehe es vor, meine Zeit alleine zu verbringen, als mit anderen Menschen zu interagieren.“</li>
+<li>Item 2 (<span class="math inline">\(i_2\)</span>): „Ich genieße es, im Mittelpunkt der Aufmerksamkeit zu stehen.“</li>
+<li>Item 3 (<span class="math inline">\(i_3\)</span>): „Ich finde es wichtig, in sozialen Situationen höflich und respektvoll zu sein.“</li>
 </ul>
-<p>Ihre Stichprobe besteht aus <span class="math inline">\(P=7\)</span> Teilnehmenden, die alle auf einer Schiebereglerskala mit den Endpunkten -12 und 12 geantwortet haben (<span class="math inline">\(y_1, \dots, y_7\)</span>). Positive Werte bedeuten Zustimmung, negative Werte Ablehnung. Die Antworten sind in der folgenden Tabelle dargestellt:</p>
+<p>Ihre Stichprobe besteht aus <span class="math inline">\(P=7\)</span> Teilnehmenden, die alle auf einer Schiebereglerskala mit den Endpunkten <span class="math inline">\(-12\)</span> und <span class="math inline">\(12\)</span> geantwortet haben (<span class="math inline">\(y_1, \dots, y_7\)</span>). Positive Werte bedeuten Zustimmung, negative Werte Ablehnung. Die Antworten sind in der folgenden Tabelle dargestellt:</p>
 <div id="tbl-data" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-data-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -282,7 +322,7 @@ Tabelle&nbsp;1: Transponierte Datenmatrix aus SoSci Survey
 <td style="text-align: right;">-2.69</td>
 <td style="text-align: right;">-2.00</td>
 <td style="text-align: right;">-0.32</td>
-<td style="text-align: right;">-3.3</td>
+<td style="text-align: right;">-3.30</td>
 <td style="text-align: right;">-2.95</td>
 <td style="text-align: right;">-4.74</td>
 </tr>
@@ -292,21 +332,23 @@ Tabelle&nbsp;1: Transponierte Datenmatrix aus SoSci Survey
 </figure>
 </div>
 <ol type="a">
-<li>Sie interessiert, ob zwischen den Items ein linearer Zusammenhang besteht und, falls ja, wie stark dieser jeweils ist. Skizzieren Sie zunächst Ihre theoretischen Erwartungen zu den Zusammenhängen in einer Tabelle oder einer Erwartungsmatrix. Für stark positive Zusammenhänge können Sie beispielsweise „++” und für schwache negative Zusammenhänge „-” verwenden.</li>
-<li>Um Ihre Erwartungen bezüglich der Richtung des Zusammenhangs anhand von Daten zu überprüfen, berechnen Sie zunächst die Inter-Item-Kovarianzmatrix <span class="math inline">\(V\)</span>. Interpretieren Sie anschließend die Itemvarianzen und -kovarianzen und setzen Sie sie zueinander in Bezug. Welche Hinweise liefern Ihnen die Itemvarianzen über die vorhandene Stichprobe bzw. den Inhalt des jeweiligen Items? Nutzen Sie zur Beurteilung auch den Itemmittelwert und den gegebenen Antwortbereich. Evaluieren Sie abschließend Ihre theoretischen Erwartungen mithilfe der Itemkovarianzen. Welche Rückschlüsse lassen die Ergebnisse bereits zu und welche müssen noch offen bleiben?</li>
-<li>Um abschließend auch die Stärke der linearen Zusammenhänge beurteilen zu können, berechnen Sie die Inter-Item-Korrelationsmatrix <span class="math inline">\(R\)</span>. Formalisieren Sie dazu zunächst die Beziehung zwischen Item-Varianz, Inter-Item-Kovarianz und Inter-Item-Korrelation. Wie hilft Ihnen diese Formalisierung bei der Berechnung der Inter-Item-Korrelationsmatrix?</li>
+<li>Sie interessiert, ob zwischen den Items ein linearer Zusammenhang besteht und, falls ja, wie stark dieser jeweils ist. Skizzieren Sie zunächst Ihre theoretischen Erwartungen zu den Zusammenhängen in einer Tabelle oder einer Erwartungsmatrix. Für stark positive Zusammenhänge können Sie beispielsweise „++“ und für schwache negative Zusammenhänge „−“ verwenden.</li>
+<li>Um Ihre Erwartungen bezüglich der Richtung des Zusammenhangs anhand von Daten zu überprüfen, berechnen Sie zunächst die Inter-Item-Kovarianzmatrix <span class="math inline">\(V\)</span>. Interpretieren Sie anschließend die Itemvarianzen und Inter-Item-Kovarianzen und setzen Sie sie zueinander in Bezug. Welche Hinweise liefern Ihnen die Itemvarianzen über die vorhandene Stichprobe bzw. den Inhalt des jeweiligen Items? Nutzen Sie zur Beurteilung auch den Itemmittelwert und den gegebenen Antwortbereich. Evaluieren Sie abschließend Ihre theoretischen Erwartungen mithilfe der Inter-Item-Kovarianzen. Welche Rückschlüsse lassen die Ergebnisse bereits zu und welche müssen noch offen bleiben?</li>
+<li>Um abschließend auch die Stärke der linearen Zusammenhänge beurteilen zu können, berechnen Sie die Inter-Item-Korrelationsmatrix <span class="math inline">\(R\)</span>. Formalisieren Sie dazu zunächst die Beziehung zwischen Itemvarianz, Inter-Item-Kovarianz und Inter-Item-Korrelation. Wie hilft Ihnen diese Formalisierung bei der Berechnung der Inter-Item-Korrelationsmatrix?</li>
 </ol>
 <div class="callout callout-style-default callout-note callout-titled" title="Hinweise">
-<div class="callout-header d-flex align-content-center">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
 <span class="screen-reader-only">Hinweis</span>Hinweise
 </div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Die <em>Item-Kovarianzmatrix</em> ist eine <span class="math inline">\(I\times I\)</span>-Matrix, also ein quadratisches Zahlenraster, das aus Item-Varianzen und Inter-Item-Kovarianzen besteht. Auf der Hauptdiagonalen der Matrix befinden sich die Itemvarianzen und auf der Nebendiagonalen die nicht standardisierten linearen Zusammenhänge, die Itemkovarianzen (siehe <a href="#eq-covmat" class="quarto-xref">Gleichung&nbsp;1</a>). Die <em>Item-Korrelationsmatrix</em> ist ebenfalls eine <span class="math inline">\(I \times I\)</span>-Matrix, die jedoch aus Inter-Item-Korrelationen (und Einsen) besteht. Im Gegensatz zur Item-Kovarianzmatrix werden auf den Nebendiagonalen die standardisierten linearen Beziehungen zwischen den Items, also deren Korrelationen, abgetragen. Auf der Hauptdiagonalen stehen Einsen (siehe <a href="#eq-cormat" class="quarto-xref">Gleichung&nbsp;2</a>). Eine wichtige Eigenschaft solcher Matrizen ist ihre Symmetrie. Kovarianz- und Korrelationsmatrizen sind symmetrisch, d.h. die Einträge oberhalb und unterhalb der Hauptdiagonalen sind identisch. Beide Matrizen sind eng miteinander verbunden, und die Kovarianzmatrix kann durch geeignete Standardisierung in eine Korrelationsmatrix umgewandelt werden.</p>
+<p>Die <em>Inter-Item-Kovarianzmatrix</em> ist bei <span class="math inline">\(I\)</span> Items eine <span class="math inline">\(I \times I\)</span>-Matrix (hier <span class="math inline">\(3 \times 3\)</span>), also ein quadratisches Zahlenraster, das aus Itemvarianzen und Inter-Item-Kovarianzen besteht. Auf der Hauptdiagonalen der Matrix befinden sich die Itemvarianzen und außerhalb der Hauptdiagonalen die nicht standardisierten linearen Zusammenhänge, die Inter-Item-Kovarianzen (siehe <a href="#eq-covmat" class="quarto-xref">Gleichung&nbsp;1</a>). Die <em>Inter-Item-Korrelationsmatrix</em> ist ebenfalls eine <span class="math inline">\(I \times I\)</span>-Matrix, die jedoch aus Inter-Item-Korrelationen (und Einsen) besteht. Im Gegensatz zur Inter-Item-Kovarianzmatrix werden außerhalb der Hauptdiagonalen die standardisierten linearen Beziehungen zwischen den Items, also deren Korrelationen, abgetragen. Auf der Hauptdiagonalen stehen Einsen (siehe <a href="#eq-cormat" class="quarto-xref">Gleichung&nbsp;2</a>). Eine wichtige Eigenschaft solcher Matrizen ist ihre Symmetrie. Kovarianz- und Korrelationsmatrizen sind symmetrisch, d.&nbsp;h. die Einträge oberhalb und unterhalb der Hauptdiagonalen sind identisch. Beide Matrizen sind eng miteinander verbunden, und die Kovarianzmatrix kann durch geeignete Standardisierung in eine Korrelationsmatrix umgewandelt werden.</p>
 <p><span id="eq-covmat"><span class="math display">\[
 V =
 \begin{pmatrix}
@@ -325,10 +367,46 @@ r_{i_3,i_1} &amp; r_{i_3,i_2} &amp; 1
 \tag{2}\]</span></span></p>
 </div>
 </div>
+</div>
 <ol start="4" type="a">
 <li>Interpretieren Sie abschließend die Ergebnisse der berechneten Inter-Item-Korrelationsmatrix und setzen Sie diese in Bezug zu Ihren theoretischen Erwartungen. Überrascht Sie das Ergebnis? Begründen Sie Ihre Antwort kurz. Stellen Sie im selben Zug auch eine Vermutung über einen möglichen datengenerierenden Prozess auf.</li>
-<li>Nach erfolgreicher händischer Berechnung laden Sie den Datensatz <code>personality_items</code> aus dem R-Paket <code>irtea</code> in R: <code>data(personality_items, package = "irtea")</code>. Berechnen Sie erneut die Kovarianzmatrix <span class="math inline">\(V\)</span> und die Korrelationsmatrix <span class="math inline">\(R\)</span>; runden Sie die Ergebnisse auf zwei Nachkommastellen und überprüfen Sie Ihre Ergebnisse.</li>
 </ol>
+<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tipp</span>Lösung
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-4" class="callout-4-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ol type="a">
+<li>Individuelle Lösung. Plausibel ist z. B.: <span class="math inline">\(i_1\)</span> und <span class="math inline">\(i_2\)</span> stark negativ („−−“), <span class="math inline">\(i_1\)</span> und <span class="math inline">\(i_3\)</span> schwach negativ („−“), <span class="math inline">\(i_2\)</span> und <span class="math inline">\(i_3\)</span> positiv („+“).</li>
+<li>Itemmittelwerte <span class="math inline">\(\bar{y} \approx (7.39, 5.63, -2.80)^\top\)</span> und <span class="math display">\[
+V \approx
+\begin{pmatrix}
+0.09 &amp; -0.82 &amp; -0.40 \\
+-0.82 &amp; 12.55 &amp; 3.42 \\
+-0.40 &amp; 3.42 &amp; 1.91
+\end{pmatrix}
+\]</span> Item 1 erhält nahezu geschlossene Zustimmung (sehr kleine Varianz bei einem Antwortbereich von <span class="math inline">\(-12\)</span> bis <span class="math inline">\(12\)</span>). Die Vorzeichen der Kovarianzen passen zu den Erwartungen aus Teil a; über die Stärke der Zusammenhänge sagen sie noch nichts.</li>
+<li><span class="math inline">\(r_{i,j} = \dfrac{s_{i,j}}{\sqrt{s_i^2 \cdot s_j^2}}\)</span> und <span class="math display">\[
+R \approx
+\begin{pmatrix}
+1 &amp; -0.75 &amp; -0.96 \\
+-0.75 &amp; 1 &amp; 0.70 \\
+-0.96 &amp; 0.70 &amp; 1
+\end{pmatrix}
+\]</span> Wer mit gerundeten Zwischenergebnissen rechnet (v. a. <span class="math inline">\(s^2_{i_1} \approx
+0.09\)</span>), erhält leicht abweichende Werte, z. B. <span class="math inline">\(r_{i_1,i_2} \approx -0.77\)</span>.</li>
+<li>Alle Zusammenhänge sind sehr stark. Die negative Korrelation von Item 1 (Introversion) und Item 2 (Extraversion) ist plausibel, die sehr hohen Korrelationen von Item 3 (soziale Kompetenz) mit beiden anderen Items kaum. Vermutung: Die Daten sind simuliert, z. B. aus einer multivariaten Normalverteilung mit zufällig gezogener Korrelationsmatrix.</li>
+</ol>
+</div>
+</div>
+</div>
 </div>
 <p>Diskussionsbedarf und Überlegungen:</p>
 <ul>
