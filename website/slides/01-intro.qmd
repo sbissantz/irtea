@@ -121,7 +121,6 @@ flowchart LR
 
 Übungen zu diesem Thema: [Übungsheft, Kapitel 1]({{< var site-url >}}/workbook/01-basics.html)
 
-
 # Danke & bis nächste Woche! {.unlisted}
 
 # Literaturverzeichnis
