@@ -33,7 +33,7 @@ Colors (the same four everywhere):
 | Role | Hex |
 |---|---|
 | Dark (title bar, text, navbar) | `#23373b` |
-| Accent (progress line, underlines) | `#eb811b` |
+| Accent (progress line, underlines, note boxes, formula highlight on click) | `#eb811b` |
 | Links | `#b5620d` |
 | Track / light lines | `#d6dadb` |
 
@@ -53,6 +53,11 @@ Workbook rules:
 ## Bibliography (APA 7)
 
 - All references live in `website/references.bib` (export from Zotero as BibTeX).
+- Entries with a DOI can come from Crossref:
+  `curl -sLH "Accept: application/vnd.citationstyles.csl+json" https://doi.org/<DOI>`.
+  Build the BibTeX entry from that output (key like `moosbrugger2020`, `langid = {german}`
+  for German titles). Crossref's own BibTeX lacks editors and edition; take the edition
+  from the publisher's page.
 - Style: `website/apa.csl` (APA 7th edition), set once in `website/_quarto.yml`
   together with `bibliography:`. Applies to website, HTML slides, and PDF.
 - Cite with `[@key]` or `@key` (e.g. `[@moosbrugger2020, S. 16]`); never write

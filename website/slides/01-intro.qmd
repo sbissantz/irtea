@@ -88,7 +88,7 @@ Es gibt zahlreiche Übungsaufgaben
 - Vorlesungsfolien und -inhalte
 - Übungsinhalte und -aufgaben
 **TODO**: Verlinken der Homepage
-- Weiterführende Literatur (z.B. [Moosbrugger & Kelava, 2020](https://hbz-rptu.primo.exlibrisgroup.com/permalink/49HBZ_RTU/no4nsq/alma990009797090107476))
+- Weiterführende Literatur [z.B. @moosbrugger2020], [in der RPTU-Bibliothek](https://hbz-rptu.primo.exlibrisgroup.com/permalink/49HBZ_RTU/no4nsq/alma990009797090107476)
 - Künstliche Intelligenz
 
 Maßgeblich sind die Inhalte der Vorlesung; danach die der Übung. 
@@ -129,4 +129,5 @@ flowchart LR
 
 ## Literatur
 
-**TODO** APA7 eintrag mosbrugger un kelava
+::: {#refs}
+:::

@@ -11,6 +11,8 @@ $link-color: #b5620d;
 $navbar-bg: #23373b;
 $navbar-fg: #ffffff;
 $navbar-hl: #eb811b;
+// note boxes in the accent color instead of blue
+$callout-color-note: #eb811b;
 
 /*-- scss:rules --*/
 // orange rule under the page title, like on the title slide
@@ -23,6 +25,11 @@ $navbar-hl: #eb811b;
 // exercises without boxes; boxes are for hints and notes
 .theorem.exercise {
   margin: 2em 0 1.5em;
+}
+
+// formula highlight on click (mathjax explorer) in orange instead of blue
+html:root {
+  --mjx-bg-blue: 235, 129, 27;
 }
 
 // boxes in the same font size and weight as the text
