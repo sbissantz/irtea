@@ -14,13 +14,13 @@ L(\mu, \sigma^2 \mid y) & = \frac{1}{\sqrt{2\pi\sigma^2}} \exp\left( -\frac{(y -
 \end{aligned}
 $$
 
-a. Berechnen Sie die Likelihood $L(2, 1 \mid y)$, also für $\mu = 2$ und $\sigma^2 = 1$.
+a. Berechnen Sie die Likelihood $L(2, 1 \mid y)$. 
 
 ::: {.callout-tip title="Lösung" collapse="true"}
 $L(2, 1 \mid y) \approx 0.40$
 :::
 
-b. Berechnen Sie die Log-Likelihood $\ln L(2, 1 \mid y)$ für dieselben Werte.
+b. Berechnen Sie die Log-Likelihood $\ln L(2, 1 \mid y)$.
 
 ::: {.callout-tip title="Lösung" collapse="true"}
 $\ln L(2, 1 \mid y) \approx -0.92$
