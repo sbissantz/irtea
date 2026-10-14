@@ -5,8 +5,7 @@ title: "1 Rechenkompetenzen"
 ::: {#exr-normal-likelihood}
 ## Likelihood der Normalverteilung
 
-Gegeben sei das Normalverteilungsmodell $Y \sim \mathcal{N}(\mu, \sigma^2)$. Beobachtet
-wurde ein einziger Datenpunkt, $y = 2$. Die Likelihood und die Log-Likelihood lauten
+Gegeben sei das Normalverteilungsmodell $Y \sim \mathcal{N}(\mu, \sigma^2)$. Beobachtet wurde ein einziger Datenpunkt, $y = 2$. Die Likelihood und die Log-Likelihood lauten
 
 $$
 \begin{aligned}
@@ -16,13 +15,21 @@ L(\mu, \sigma^2 \mid y) & = \frac{1}{\sqrt{2\pi\sigma^2}} \exp\left( -\frac{(y -
 $$
 
 a. Berechnen Sie die Likelihood $L(2, 1 \mid y)$, also für $\mu = 2$ und $\sigma^2 = 1$.
+
+::: {.callout-tip title="Lösung" collapse="true"}
+$L(2, 1 \mid y) \approx 0.40$
+:::
+
 b. Berechnen Sie die Log-Likelihood $\ln L(2, 1 \mid y)$ für dieselben Werte.
+
+::: {.callout-tip title="Lösung" collapse="true"}
+$\ln L(2, 1 \mid y) \approx -0.92$
+:::
+
 c. Logarithmieren Sie Ihr Ergebnis aus Teil a und vergleichen Sie es mit Teil b. Was fällt Ihnen auf?
 
 ::: {.callout-tip title="Lösung" collapse="true"}
-a.  $L(2, 1 \mid y) = \frac{1}{\sqrt{2\pi}} \approx 0.40$
-b.  $\ln L(2, 1 \mid y) = -\frac{1}{2} \ln(2\pi) \approx -0.92$
-c.  $\ln(0.40) \approx -0.92$, also derselbe Wert wie in Teil b: Die Log-Likelihood ist der Logarithmus der Likelihood.
+$\ln(0.40) \approx -0.92$, siehe Teil b.
 :::
 :::
 
@@ -39,26 +46,34 @@ L(\theta \mid \mathbf{y}) &= \prod_{i=1}^{3} \theta^{y_i} (1 - \theta)^{1 - y_i}
 $$
 
 a.  Berechnen Sie die Likelihood $L(0.5 \mid \mathbf{y})$.
+
+::: {.callout-tip title="Lösung" collapse="true"}
+$L(0.5 \mid \mathbf{y}) \approx 0.13$
+:::
+
 b.  Berechnen Sie die Log-Likelihood $\ln L(0.6 \mid \mathbf{y})$.
+
+::: {.callout-tip title="Lösung" collapse="true"}
+$\ln L(0.6 \mid \mathbf{y}) \approx -1.94$
+:::
+
 c.  Unter welchem der beiden Parameterwerte ist die Likelihood größer? Begründen Sie Ihr Vorgehen.
+
+::: {.callout-tip title="Lösung" collapse="true"}
+Unter $\theta = 0.6$, da $\ln L(0.6 \mid \mathbf{y}) > \ln L(0.5 \mid \mathbf{y})$, denn $-1.94 > -2.08$.
+:::
+
 d. Welches sehr häufig verwendete Schätzverfahren haben Sie gerade im Kleinen nachgeahmt?
 
 ::: {.callout-tip title="Lösung" collapse="true"}
-a.  $L(0.5 \mid \mathbf{y}) = 0.5 \cdot 0.5 \cdot 0.5 \approx 0.13$
-b.  $\ln L(0.6 \mid \mathbf{y}) = 2 \ln(0.6) + \ln(0.4) \approx -1.94$
-c.  Unter $\theta = 0.6$, denn $\ln L(0.5 \mid \mathbf{y}) \approx -2.08 < -1.94 \approx \ln L(0.6 \mid \mathbf{y})$.
-d.  Maximum-Likelihood-Schätzung (ML-Schätzung)
+Maximum-Likelihood-Schätzung (ML-Schätzung)
 :::
 :::
 
 ::: {#exr-covariance-matrix}
 ## Kovarianz- und Korrelationsmatrix
 
-Stellen Sie sich vor, Sie hätten mit SoSci Survey im Rahmen einer
-Studienarbeit eine Erhebung mittels Persönlichkeitsinventar durchgeführt, das
-unter anderem die Konstrukte „Introversion“, „Extraversion“ und „Soziale
-Kompetenz“ beinhaltet. Dabei haben Sie den Befragten auch die folgenden drei
-Items vorgelegt:
+Stellen Sie sich vor, Sie hätten mit SoSci Survey im Rahmen einer Studienarbeit eine Erhebung mittels Persönlichkeitsinventar durchgeführt, das unter anderem die Konstrukte „Introversion“, „Extraversion“ und „Soziale Kompetenz“ beinhaltet. Dabei haben Sie den Befragten auch die folgenden drei Items vorgelegt:
 
 - Item 1 ($i_1$): „Ich ziehe es vor, meine Zeit alleine zu verbringen, als mit
   anderen Menschen zu interagieren.“
@@ -67,10 +82,7 @@ Items vorgelegt:
 - Item 3 ($i_3$): „Ich finde es wichtig, in sozialen Situationen höflich und
   respektvoll zu sein.“
 
-Ihre Stichprobe besteht aus $P=7$ Teilnehmenden, die alle auf einer
-Schiebereglerskala mit den Endpunkten $-12$ und $12$ geantwortet haben
-($y_1, \dots, y_7$). Positive Werte bedeuten Zustimmung, negative Werte
-Ablehnung. Die Antworten sind in der folgenden Tabelle dargestellt:
+Ihre Stichprobe besteht aus $P=7$ Teilnehmenden, die alle auf einer Schiebereglerskala mit den Endpunkten $-12$ und $12$ geantwortet haben ($y_1, \dots, y_7$). Positive Werte bedeuten Zustimmung, negative Werte Ablehnung. Die Antworten sind in der folgenden Tabelle dargestellt:
 
 |         | $y_1$ | $y_2$ | $y_3$ | $y_4$ | $y_5$ | $y_6$ | $y_7$ |
 |---------|------:|------:|------:|------:|------:|------:|------:|
@@ -80,43 +92,8 @@ Ablehnung. Die Antworten sind in der folgenden Tabelle dargestellt:
 
 : Transponierte Datenmatrix aus SoSci Survey {#tbl-data}
 
-a.  Sie interessiert, ob zwischen den Items ein linearer Zusammenhang besteht
-    und, falls ja, wie stark dieser jeweils ist. Skizzieren Sie zunächst Ihre
-    theoretischen Erwartungen zu den Zusammenhängen in einer Tabelle oder einer
-    Erwartungsmatrix. Für stark positive Zusammenhänge können Sie
-    beispielsweise „++“ und für schwache negative Zusammenhänge „−“ verwenden.
-b.  Um Ihre Erwartungen bezüglich der Richtung des Zusammenhangs anhand von
-    Daten zu überprüfen, berechnen Sie zunächst die Inter-Item-Kovarianzmatrix
-    $V$. Interpretieren Sie anschließend die Itemvarianzen und Inter-Item-Kovarianzen und
-    setzen Sie sie zueinander in Bezug. Welche Hinweise liefern Ihnen die
-    Itemvarianzen über die vorhandene Stichprobe bzw. den Inhalt des jeweiligen
-    Items? Nutzen Sie zur Beurteilung auch den Itemmittelwert und den gegebenen
-    Antwortbereich. Evaluieren Sie abschließend Ihre theoretischen Erwartungen
-    mithilfe der Inter-Item-Kovarianzen. Welche Rückschlüsse lassen die Ergebnisse
-    bereits zu und welche müssen noch offen bleiben?
-c.  Um abschließend auch die Stärke der linearen Zusammenhänge beurteilen zu
-    können, berechnen Sie die Inter-Item-Korrelationsmatrix $R$. Formalisieren
-    Sie dazu zunächst die Beziehung zwischen Itemvarianz, Inter-Item-Kovarianz
-    und Inter-Item-Korrelation. Wie hilft Ihnen diese Formalisierung bei der
-    Berechnung der Inter-Item-Korrelationsmatrix?
-
 ::: {.callout-note title="Hinweise" collapse="true"}
-Die *Inter-Item-Kovarianzmatrix* ist bei $I$ Items eine $I \times I$-Matrix (hier
-$3 \times 3$), also ein quadratisches Zahlenraster, das aus Itemvarianzen und
-Inter-Item-Kovarianzen besteht. Auf der Hauptdiagonalen der Matrix befinden
-sich die Itemvarianzen und außerhalb der Hauptdiagonalen die nicht
-standardisierten linearen Zusammenhänge, die Inter-Item-Kovarianzen (siehe
-@eq-covmat). Die *Inter-Item-Korrelationsmatrix* ist ebenfalls eine
-$I \times I$-Matrix, die jedoch aus Inter-Item-Korrelationen (und Einsen)
-besteht. Im Gegensatz zur Inter-Item-Kovarianzmatrix werden außerhalb der
-Hauptdiagonalen die standardisierten linearen Beziehungen zwischen den
-Items, also deren Korrelationen, abgetragen. Auf der Hauptdiagonalen stehen
-Einsen (siehe @eq-cormat). Eine wichtige Eigenschaft solcher Matrizen ist
-ihre Symmetrie. Kovarianz- und Korrelationsmatrizen sind symmetrisch, d. h.
-die Einträge oberhalb und unterhalb der Hauptdiagonalen sind identisch.
-Beide Matrizen sind eng miteinander verbunden, und die Kovarianzmatrix kann
-durch geeignete Standardisierung in eine Korrelationsmatrix umgewandelt
-werden.
+Die *Inter-Item-Kovarianzmatrix* ist bei $I$ Items eine $I \times I$-Matrix (hier $3 \times 3$), also ein quadratisches Zahlenraster, das aus Itemvarianzen und Inter-Item-Kovarianzen besteht. Auf der Hauptdiagonalen der Matrix befinden sich die Itemvarianzen und außerhalb der Hauptdiagonalen die nicht standardisierten linearen Zusammenhänge, die Inter-Item-Kovarianzen (siehe @eq-covmat). Die *Inter-Item-Korrelationsmatrix* ist ebenfalls eine $I \times I$-Matrix, die jedoch aus Inter-Item-Korrelationen (und Einsen) besteht. Im Gegensatz zur Inter-Item-Kovarianzmatrix werden außerhalb der Hauptdiagonalen die standardisierten linearen Beziehungen zwischen den Items, also deren Korrelationen, abgetragen. Auf der Hauptdiagonalen stehen Einsen (siehe @eq-cormat). Eine wichtige Eigenschaft solcher Matrizen ist ihre Symmetrie. Kovarianz- und Korrelationsmatrizen sind symmetrisch, d. h. die Einträge oberhalb und unterhalb der Hauptdiagonalen sind identisch. Beide Matrizen sind eng miteinander verbunden, und die Kovarianzmatrix kann durch geeignete Standardisierung in eine Korrelationsmatrix umgewandelt werden.
 
 $$
 V =
@@ -137,6 +114,57 @@ r_{i_3,i_1} & r_{i_3,i_2} & 1
 $$ {#eq-cormat}
 :::
 
+a.  Sie interessiert, ob zwischen den Items ein linearer Zusammenhang besteht und, falls ja, wie stark dieser jeweils ist. Skizzieren Sie zunächst Ihre theoretischen Erwartungen zu den Zusammenhängen in einer Tabelle oder einer Erwartungsmatrix. Für stark positive Zusammenhänge können Sie beispielsweise „++“ und für schwache negative Zusammenhänge „−“ verwenden.
+
+::: {.callout-tip title="Lösung" collapse="true"}
+Individuelle Lösung. Eine plausible Erwartungsmatrix (die Matrix ist symmetrisch, daher genügt der Teil oberhalb der Hauptdiagonalen):
+
+$$
+\begin{array}{c|ccc}
+ & i_1 & i_2 & i_3 \\
+\hline
+i_1 & & {-}{-} & {-} \\
+i_2 & & & {+} \\
+i_3 & & &
+\end{array}
+$$
+
+Introversion ($i_1$) und Extraversion ($i_2$) sind Gegenpole, daher stark negativ („−−“). Höflichkeit und Respekt ($i_3$) hängen kaum mit Introversion zusammen, höchstens schwach negativ („−“), und eher schwach positiv mit Extraversion („+“).
+:::
+
+b.  Um Ihre Erwartungen bezüglich der Richtung des Zusammenhangs anhand von Daten zu überprüfen, berechnen Sie zunächst die Inter-Item-Kovarianzmatrix $V$. Interpretieren Sie anschließend die Itemvarianzen und Inter-Item-Kovarianzen und setzen Sie sie zueinander in Bezug. Welche Hinweise liefern Ihnen die Itemvarianzen über die vorhandene Stichprobe bzw. den Inhalt des jeweiligen Items? Nutzen Sie zur Beurteilung auch den Itemmittelwert und den gegebenen Antwortbereich. Evaluieren Sie abschließend Ihre theoretischen Erwartungen mithilfe der Inter-Item-Kovarianzen. Welche Rückschlüsse lassen die Ergebnisse bereits zu und welche müssen noch offen bleiben?
+
+::: {.callout-tip title="Lösung" collapse="true"}
+Itemmittelwerte $\bar{y} \approx (7.39, 5.63, -2.80)^\top$ und
+$$
+V \approx
+\begin{pmatrix}
+0.09 & -0.82 & -0.40 \\
+ & 12.55 & 3.42 \\
+ &  & 1.91
+\end{pmatrix}
+$$
+
+Wer mit gerundeten Zwischenergebnissen rechnet, erhält leicht abweichende Werte. Item 1 erhält nahezu geschlossene Zustimmung (sehr kleine Varianz bei einem Antwortbereich von $-12$ bis $12$). Die Vorzeichen der Kovarianzen passen zu den Erwartungen aus Teil a; über die Stärke der Zusammenhänge sagen sie noch nichts.
+:::
+
+c.  Um abschließend auch die Stärke der linearen Zusammenhänge beurteilen zu können, berechnen Sie die Inter-Item-Korrelationsmatrix $R$. Formalisieren Sie dazu zunächst die Beziehung zwischen Itemvarianz, Inter-Item-Kovarianz und Inter-Item-Korrelation. Wie hilft Ihnen diese Formalisierung bei der Berechnung der Inter-Item-Korrelationsmatrix?
+
+::: {.callout-tip title="Lösung" collapse="true"}
+$r_{i,j} = \dfrac{s_{i,j}}{\sqrt{s_i^2 \cdot s_j^2}}$ und
+
+$$
+R \approx
+\begin{pmatrix}
+1 & -0.75 & -0.96 \\
+ & 1 & 0.70 \\
+ &  & 1
+\end{pmatrix}
+$$
+
+Wer mit gerundeten Zwischenergebnissen rechnet, erhält leicht abweichende Werte.
+:::
+
 d.  Interpretieren Sie abschließend die Ergebnisse der berechneten
     Inter-Item-Korrelationsmatrix und setzen Sie diese in Bezug zu Ihren
     theoretischen Erwartungen. Überrascht Sie das Ergebnis? Begründen Sie Ihre
@@ -144,38 +172,10 @@ d.  Interpretieren Sie abschließend die Ergebnisse der berechneten
     möglichen datengenerierenden Prozess auf.
 
 ::: {.callout-tip title="Lösung" collapse="true"}
-a.  Individuelle Lösung. Plausibel ist z. B.: $i_1$ und $i_2$ stark negativ
-    („−−“), $i_1$ und $i_3$ schwach negativ („−“), $i_2$ und $i_3$ positiv
-    („+“).
-b.  Itemmittelwerte $\bar{y} \approx (7.39, 5.63, -2.80)^\top$ und
-    $$
-    V \approx
-    \begin{pmatrix}
-    0.09 & -0.82 & -0.40 \\
-    -0.82 & 12.55 & 3.42 \\
-    -0.40 & 3.42 & 1.91
-    \end{pmatrix}
-    $$
-    Item 1 erhält nahezu geschlossene Zustimmung (sehr kleine Varianz bei einem
-    Antwortbereich von $-12$ bis $12$). Die Vorzeichen der Kovarianzen passen zu
-    den Erwartungen aus Teil a; über die Stärke der Zusammenhänge sagen sie noch
-    nichts.
-c.  $r_{i,j} = \dfrac{s_{i,j}}{\sqrt{s_i^2 \cdot s_j^2}}$ und
-    $$
-    R \approx
-    \begin{pmatrix}
-    1 & -0.75 & -0.96 \\
-    -0.75 & 1 & 0.70 \\
-    -0.96 & 0.70 & 1
-    \end{pmatrix}
-    $$
-    Wer mit gerundeten Zwischenergebnissen rechnet (v. a. $s^2_{i_1} \approx
-    0.09$), erhält leicht abweichende Werte, z. B. $r_{i_1,i_2} \approx -0.77$.
-d.  Alle Zusammenhänge sind sehr stark. Die negative Korrelation von Item 1
-    (Introversion) und Item 2 (Extraversion) ist plausibel, die sehr hohen
-    Korrelationen von Item 3 (soziale Kompetenz) mit beiden anderen Items kaum.
-    Vermutung: Die Daten sind simuliert, z. B. aus einer multivariaten
-    Normalverteilung mit zufällig gezogener Korrelationsmatrix.
+Alle Zusammenhänge sind sehr stark. Die negative Korrelation von Item 1 (Introversion) und Item 2 (Extraversion) ist plausibel, die sehr hohen
+Korrelationen von Item 3 (soziale Kompetenz) mit beiden anderen Items kaum.
+
+Vermutung: Die Daten sind simuliert, z. B. aus einer multivariaten Normalverteilung mit zufällig gezogener Korrelationsmatrix.
 :::
 :::
 
