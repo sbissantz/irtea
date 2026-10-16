@@ -88,20 +88,17 @@ b. Erwarten Sie, dass die Dimensionen miteinander zusammenhängen? Begründen Si
 Ja, positiv.
 :::
 
-c. Ordnen Sie jedes Item der Komponente zu, die es Ihrer Meinung nach misst.
+c. Suchen Sie aus Tabellen die Items heraus, die Ihrer Meinung nach die Komponente *Besorgtheit* messen.
 
 ::: {.callout-tip title="Lösung" collapse="true"}
-- Besorgtheit: i01, i05, i09, i13, i17
-- Aufgeregtheit: i02, i06, i10, i14, i18
-- Interferenz: i03, i07, i11, i15, i19
-- Mangel an Zuversicht: i04, i08, i12, i16, i20
+Z.B.: i01, i05, i09, i13, i17
 :::
 :::
 
 ::: {#exr-efa-corrplot}
 ## Visualisierung der Korrelationsmatrix
 
-Die Abbildung zeigt die Korrelationen der 20 Items in der Reihenfolge des Fragebogens. Je heller ein Feld, desto höher die Korrelation. Die Diagonale (Korrelation eines Items mit sich selbst, $r = 1$) hat die hellste Farbe.
+Die Abbildung zeigt die Korrelationen der 20 Items in der Reihenfolge, in der sie im Fragebogen vorkommen. Die Diagonale (Korrelation eines Items mit sich selbst, $r = 1$) hat die hellste Farbe.
 
 ```{r}
 #| label: correlations-unsorted
@@ -112,10 +109,10 @@ Die Abbildung zeigt die Korrelationen der 20 Items in der Reihenfolge des Frageb
 plot_correlations(cor(items))
 ```
 
-a. Erkennen Sie eine Struktur? Was erschwert es, eine Struktur zu erkennen?
+a. Warum ist es hier schwierig, eine Struktur zu erkennen?
 
 ::: {.callout-tip title="Lösung" collapse="true"}
-Kaum. Höchstens ein regelmäßiges Streifenmuster: Jedes vierte Item scheint zusammenzugehören. Bei 20 Items gibt es 190 Korrelationen; ohne passende Sortierung lassen sich Gruppen kaum erkennen.
+Bei 20 Items gibt es 190 Korrelationen; ohne passende Sortierung lassen sich Gruppen kaum erkennen. Man könnte ein regelmäßiges Streifenmuster vermuten: Jedes vierte Item scheint zusammenzugehören. 
 :::
 
 Nun sind die Items mittels hierarchischer Clusteranalyse so sortiert, dass hoch korrelierende Items nebeneinanderstehen:
@@ -129,7 +126,7 @@ Nun sind die Items mittels hierarchischer Clusteranalyse so sortiert, dass hoch 
 plot_correlations(cor(items), order = "hclust")
 ```
 
-b. Wie viele Itemgruppen erkennen Sie, und welche Items gehören jeweils zusammen?
+b. Wie viele Itemgruppen (Blöcke) erkennen Sie, und welche Items gehören Ihrer Meinung nach zusammen?
 
 ::: {.callout-tip title="Lösung" collapse="true"}
 Vier Blöcke:
@@ -142,16 +139,22 @@ Vier Blöcke:
 i20 korreliert nur schwach mit den Items seines Blocks.
 :::
 
-c. Vergleichen Sie die Blöcke mit Ihrer Erwartung aus @exr-efa-construct, Teil a und c. Stimmen Anzahl und Zusammensetzung überein?
+c. Vergleichen Sie die Blöcke mit Ihrer Erwartung aus @exr-efa-construct, Teil a  Stimmen Anzahl und Zusammensetzung überein?
 
 ::: {.callout-tip title="Lösung" collapse="true"}
-Ja. Die vier Blöcke entsprechen den vier Komponenten; i20 passt nur schwach zu seinem Block.
+Man kann vier Blöcke vermuten.
 :::
+
+d. Finden Sie Ihre Erwartung über die Komponente *Besorgnis* aus @exr-efa-construct, Teil c, in den Blöcken wieder?
+
+::: {.callout-tip title="Lösung" collapse="true"}
+Ja. Gelesen von links oben nach rechts unten: Block 3. Item i20 sollte man im Auge behalten.
+::
 
 d. Hängen die Blöcke untereinander zusammen? Woran sehen Sie das?
 
 ::: {.callout-tip title="Lösung" collapse="true"}
-Ja. Die Felder zwischen den Blöcken sind nicht dunkel (Korrelation nahe null), sondern mittel, besonders zwischen dem zweiten und dem dritten Block. Das passt zu @exr-efa-construct, Teil b.
+Ja. Die Felder zwischen den Blöcken sind nicht dunkel (nahe null); v.a. zwischen Block 2 und 3. Das passt zu @exr-efa-construct, Teil b.
 :::
 
 e. Wie viele Faktoren würden Sie allein aufgrund der Abbildung extrahieren?
@@ -174,15 +177,8 @@ psych::KMO(items)
 a. Interpretieren Sie den KMO-Koeffizienten.
 
 ::: {.callout-tip title="Lösung" collapse="true"}
-KMO = 0.89 > .80: gut (Kriterien der Vorlesung: > .80 gut, > .90 sehr gut). Es liegen substanzielle Korrelationen vor.
+KMO = 0.89 > .80: gut (siehe Kriterien der Vorlesung).
 :::
-
-Der Bartlett-Test ergibt:
-
-```{r}
-#| label: bartlett
-psych::cortest.bartlett(cor(items), n = nrow(items))
-```
 
 b. Welche Hypothese prüft der Bartlett-Test?
 
@@ -190,13 +186,20 @@ b. Welche Hypothese prüft der Bartlett-Test?
 Die Nullhypothese, dass die Korrelationsmatrix in der Population eine Einheitsmatrix ist, also alle Korrelationen zwischen den Items null sind.
 :::
 
+Ein Bartlett-Test der Korrelationsmatrix gibt folgendes Ergebnis aus:
+
+```{r}
+#| label: bartlett
+psych::cortest.bartlett(cor(items), n = nrow(items))
+```
+
 c. Interpretieren Sie das Ergebnis des Bartlett-Tests.
 
 ::: {.callout-tip title="Lösung" collapse="true"}
-$\chi^2(190) = 5341.34$, $p < .001$: Die Nullhypothese wird verworfen; nicht alle Korrelationen sind null.
+$\chi^2(190) = 5341.34$, $p < .001$: Nullhypothese wird verworfen; nicht alle Korrelationen sind null.
 :::
 
-Die Abbildung zeigt für jede Person den Summenwert der Items i01 bis i10 und den Summenwert der Items i11 bis i20. Die Punkte sind leicht verwackelt, damit gleiche Werte nicht aufeinanderliegen.
+Die Abbildung zeigt für jede Person den Summenwert der Items i01 bis i10 und den Summenwert der Items i11 bis i20. Die Punkte sind leicht versetzt, damit gleiche Werte nicht aufeinanderliegen.
 
 ```{r}
 #| label: split-half-scatter
@@ -220,22 +223,20 @@ d. Gibt es Ausreißerwerte?
 Nein.
 :::
 
-e. Reichen Stichprobengröße und Itemzahl aus?
+e. Reichen Stichprobengröße und Itemzahl Ihrer Meinung nach aus?
 
 ::: {.callout-tip title="Lösung" collapse="true"}
-Ja. N = 1000 > 500, also weit über dem Minimum von 250. Laut Theorie messen je fünf Items eine Komponente.
+Ja. N = 1000 > 500 > 250, also über dem Minimum von 250 und der Empfehlung von 500. Laut Theorie messen je fünf Items eine Komponente.
 :::
 :::
 
 ::: {#exr-efa-decisions}
 ## Matrix und Extraktionsmethode
 
-Die ersten beiden Entscheidungen nach @thompson2004: Welche Matrix wird analysiert, und mit welcher Methode werden die Faktoren extrahiert?
-
-a. Welche Matrix analysieren Sie?
+a. Welche Matrix würden Sie für die Analyse der Faktoren heranziehen?
 
 ::: {.callout-tip title="Lösung" collapse="true"}
-Die Korrelationsmatrix der Items.
+Korrelationsmatrix der Items.
 :::
 
 b. Im Folgenden wird eine Maximum-Likelihood-Faktorenanalyse durchgeführt. Was ist die Grundidee der Schätzmethode und was wird dabei maximiert?
@@ -247,7 +248,7 @@ Die Likelihood: Ladungen und Fehlervarianzen werden so geschätzt, dass die beob
 c. Warum führen Sie keine Hauptkomponentenanalyse durch?
 
 ::: {.callout-tip title="Lösung" collapse="true"}
-Die PCA nimmt an, dass sich die Gesamtvarianz der Items vollständig durch die Komponenten aufklären lässt (Einsen auf der Diagonalen der Korrelationsmatrix, kein Messfehler). Die Faktorenanalyse erklärt nur die gemeinsame Varianz; ein Teil jeder Itemvarianz bleibt spezifisch (Spezifität und Messfehler). Die PCA dient v. a. der Datenreduktion.
+Die PCA nimmt an, dass sich die Gesamtvarianz der Items vollständig durch die Komponenten aufklären lässt (Einsen auf der Diagonalen der Korrelationsmatrix, kein Messfehler). Die Faktorenanalyse setzt den Fokus auf die gemeinsame Varianz; ein Teil jeder Itemvarianz bleibt spezifisch (Spezifität und Messfehler). Die PCA dient v. a. der Datenreduktion.
 :::
 :::
 
@@ -340,7 +341,7 @@ print(fit_none$loadings, digits = 2, cutoff = 0)
 a. Wie hoch ist die Ladung von Item i01 auf Faktor ML1? Interpretieren Sie das Ergebnis.
 
 ::: {.callout-tip title="Lösung" collapse="true"}
-$\lambda_{11} = 0.68$. Bei unkorrelierten Faktoren gibt die Ladung die Korrelation zwischen Item und Faktor wieder: i01 lädt hoch auf ML1.
+$\lambda_{11} = 0.68$. Bei unkorrelierten Faktoren gibt die Ladung die Korrelation zwischen Item und Faktor wieder: i01 lädt hoch auf ML1. Gegeben der Daten, scheint das Item die Komponente *Besorgtheit* zu messen.
 :::
 
 b. Berechnen Sie die Kommunalität von Item i11. Interpretieren Sie das Ergebnis.
@@ -361,13 +362,19 @@ d. Welchen Eigenwert hat Faktor ML1? Welchen Anteil der Varianz aller Items erkl
 Eigenwert 4.84; ML1: 24 % der Varianz aller 20 Items.
 :::
 
-e. Welchen Anteil der Varianz aller Items erklären die vier Faktoren zusammen?
+e. Welchen Anteil der Varianz aller Items erklärt der Faktor ML1?
+
+::: {.callout-tip title="Lösung" collapse="true"}
+24 % der Varianz aller 20 Items.
+:::
+
+f. Welchen Anteil der Varianz aller Items erklären die vier Faktoren zusammen?
 
 ::: {.callout-tip title="Lösung" collapse="true"}
 40 %.
 :::
 
-f. Liegt eine Einfachstruktur vor? Begründen Sie Ihre Antwort.
+g. Liegt eine Einfachstruktur vor? Begründen Sie Ihre Antwort.
 
 ::: {.callout-tip title="Lösung" collapse="true"}
 Nein. Diffuses Ladungsmuster.
@@ -507,12 +514,16 @@ plotly::layout(plot_3d,
 ```
 :::
 
-
-
-a. Was verändert die Rotation an der Lage der Items? Welche Rotation kommt einer Einfachstruktur näher?
+a. Was verändert die Rotation an der Lage der Items? 
 
 ::: {.callout-tip title="Lösung" collapse="true"}
-Die Items wandern zu den Achsen: Nach der Rotation lädt ein Item hoch auf einem der beiden Faktoren und niedrig auf dem anderen, oder es liegt nahe am Ursprung (es gehört zu Faktor 3 oder 4). Bei Oblimin liegen die Items enger an den Achsen als bei Varimax; Oblimin kommt einer Einfachstruktur näher.
+Die Items wandern zu den Achsen oder dem Ursprung. 
+:::
+
+Welche Rotation kommt einer Einfachstruktur näher?
+
+::: {.callout-tip title="Lösung" collapse="true"}
+Nach Oblimin-Rotation liegen die Items enger an den Koordinatenachsen als bei Varimax; Oblimin kommt einer Einfachstruktur näher.
 :::
 
 Die zugehörigen R-Ausgaben, bei der Varimax-Lösung: 
@@ -526,10 +537,10 @@ print(fit_varimax$loadings, digits = 2, cutoff = 0)
 b. Berechnen Sie die Kommunalität von i11 aus den Varimax-Ladungen. Vergleichen Sie sie mit @exr-efa-parameters, Teil b.
 
 ::: {.callout-tip title="Lösung" collapse="true"}
-$h^2 \approx 0.47$, wie ohne Rotation. Eine orthogonale Rotation verteilt die erklärte Varianz nur anders auf die Faktoren.
+$h^2 \approx 0.47$, wie ohne Rotation. Eine orthogonale Rotation teilt die erklärte Varianz nur "anders" auf die Faktoren auf.
 :::
 
-Die zugehörigen R-Ausgaben, bei der Oblimin-Lösung mit den Faktorkorrelationen darunter:
+Gegeben sei die R-Ausgabe der Oblimin-Lösung inklusive Zwischen faktorkorrelationen darunter:
 
 ```{r}
 #| label: seed-oblimin
@@ -562,7 +573,7 @@ e. Warum zeigt die Varimax-Lösung größere Nebenladungen als die Oblimin-Lösu
 Varimax legt die Faktorkorrelationen auf null fest. Die tatsächlich vorhandenen Zusammenhänge der Faktoren spiegeln sich in den Nebenladungen wieder (bei Varimax bis 0.27, bei Oblimin fast alle zwischen −0.10 und 0.10; Ausnahme in beiden Lösungen: i11).
 :::
 
-f. Welche Rotation wählen Sie? Begründen Sie Ihre Wahl.
+f. Für welche Rotationsmethode würden Sie sich entscheiden? Begründen Sie Ihre Wahl.
 
 ::: {.callout-tip title="Lösung" collapse="true"}
 Die oblique Rotation (Oblimin): Theorie und Daten sprechen für korrelierte Faktoren (bis 0.59). Zudem ist die Lösung einfacher zu interpretieren.
@@ -645,13 +656,7 @@ Sie stimmen überein. Die vier Faktoren entsprechen den vier Komponenten und den
 
 Das Team legt denselben Fragebogen 1000 Psychologiestudierenden im ersten Semester an mehreren Universitäten vor. Die Studierenden sind sich ähnlicher als die Personen der Online-Stichprobe: gleiches Fach, ähnliches Alter, dieselben Prüfungen.
 
-a. Erwarten Sie in dieser Stichprobe dieselbe Faktorenstruktur? Begründen Sie Ihre Vermutung, bevor Sie die Ausgaben ansehen.
-
-::: {.callout-tip title="Lösung" collapse="true"}
-Eher nicht so deutlich: Wenn sich die Personen ähnlicher sind, unterscheiden sich ihre Werte weniger, und die Korrelationen werden kleiner.
-:::
-
-Die Summenwerte (alle 20 Items) in beiden Stichproben; die orange Linie markiert den Mittelwert:
+a. Die Summenwerte (alle 20 Items) in beiden Stichproben; die orange Linie markiert den Mittelwert:
 
 ```{r}
 #| label: total-scores
@@ -674,10 +679,16 @@ plot_total_scores(items, "Online", colors[2])
 plot_total_scores(students, "Studierende", colors[4])
 ```
 
-b. Vergleichen Sie die Summenwerte der beiden Stichproben.
+a. Vergleichen Sie die Summenwerte der beiden Stichproben.
 
 ::: {.callout-tip title="Lösung" collapse="true"}
 Bei fast gleichem Mittelwert (79.52 und 78.94) streuen die Summenwerte der Studierenden deutlich weniger (SD 11.25 statt 17.84).
+:::
+
+b. Erwarten Sie in dieser Stichprobe dieselbe Faktorenstruktur? Begründen Sie Ihre Vermutung, bevor Sie die Ausgaben ansehen.
+
+::: {.callout-tip title="Lösung" collapse="true"}
+Nein. Sind sich die Personen ähnlicher, unterscheiden sich ihre Werte weniger deutlich, und die Korrelationen werden kleiner.
 :::
 
 Eigenwerte (die ersten zehn) und Screeplot mit Parallelanalyse in der Studierendenstichprobe:
@@ -721,7 +732,7 @@ print(fit_students$loadings, digits = 2, cutoff = 0)
 round(fit_students$Phi, 2)
 ```
 
-d. Vergleichen Sie die Ladungen und die Faktorkorrelationen mit der Oblimin-Lösung der Online-Stichprobe (@exr-efa-rotation).
+d. Vergleichen Sie die Ladungen und die Faktorkorrelationen der Studierendenstichprobe mit der Oblimin-Lösung der Online-Stichprobe (@exr-efa-rotation). Was beobachten Sie?
 
 ::: {.callout-tip title="Lösung" collapse="true"}
 Die Ladungen sind deutlich niedriger. Die Besorgtheits- und die Aufgeregtheitsitems laden gemeinsam auf ML1; ML2 besteht fast nur aus i13 (Ladung 1.00, nicht plausibel) und i07. Die Faktorkorrelationen sind kleiner (0.07 bis 0.30). Die Struktur aus der Online-Stichprobe ist nicht wiederzuerkennen.
