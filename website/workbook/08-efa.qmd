@@ -1,0 +1,746 @@
+---
+title: "8 Exploratorische Faktorenanalyse"
+knitr:
+  opts_chunk:
+    comment: ""
+---
+
+```{r}
+#| label: setup
+#| include: false
+# psych and corrplot match some arguments partially inside their own code;
+# turn off the warnings so they do not appear on the page
+options(
+  warnPartialMatchArgs = FALSE,
+  warnPartialMatchAttr = FALSE,
+  warnPartialMatchDollar = FALSE
+)
+# psych needs GPArotation for oblimin; loading it here keeps its startup
+# message off the page
+invisible(loadNamespace("GPArotation"))
+
+load("../../data/test_anxiety.rda")
+items <- test_anxiety[test_anxiety$sample == "online", -1]
+students <- test_anxiety[test_anxiety$sample == "students", -1]
+colors <- viridisLite::viridis(5)
+
+# correlation plot on a viridis scale fitted to the off-diagonal correlations
+# (-0.02 to 0.50); the diagonal (r = 1) gets the brightest color
+plot_correlations <- function(r, ...) {
+  diag(r) <- NA
+  corrplot::corrplot(r,
+    method = "color", col = viridisLite::viridis(100), is.corr = FALSE,
+    col.lim = c(-0.1, 0.6), na.label = "square", na.label.col = colors[5],
+    addgrid.col = "white", tl.col = "#23373b", tl.cex = 0.8, cl.cex = 0.8,
+    ...
+  )
+}
+```
+
+Ein Forschungsteam hat einen neuen Fragebogen zur Prüfungsangst entwickelt und online an 1000 Personen erprobt: Studierende verschiedener Fächer und Hochschulen, Schüler:innen der Oberstufe sowie Personen in Aus- und Weiterbildung. Fragebogen und Daten sind fiktiv; die Daten sind simuliert.
+
+Das Team stützt sich auf das Vier-Komponenten-Modell der Prüfungsangst, auf dem auch der Prüfungsangstfragebogen beruht [PAF, @hodapp2011]:
+
+- **Besorgtheit**: Gedanken an Misserfolg und seine Folgen
+- **Aufgeregtheit**: körperliche Anspannung und Nervosität
+- **Interferenz**: aufgabenfremde Gedanken, die die Konzentration stören
+- **Mangel an Zuversicht**: geringes Vertrauen in die eigene Leistungsfähigkeit
+
+Der Fragebogen hat 20 Items, die Antwortskala reicht von 1 („trifft überhaupt nicht zu“) bis 7 („trifft voll und ganz zu“). Die Items stehen in der Reihenfolge des Fragebogens:
+
+| Item | Wortlaut |
+|------|----------|
+| i01 | Ich mache mir Sorgen, dass ich durchfallen könnte. |
+| i02 | Vor Prüfungen habe ich Herzklopfen. |
+| i03 | In Prüfungen schweifen meine Gedanken ab. |
+| i04 | Ich zweifle an meinen Fähigkeiten, wenn eine Prüfung ansteht. |
+| i05 | Ich grüble darüber nach, welche Folgen eine schlechte Note für mich hätte. |
+| i06 | In Prüfungen bin ich angespannt. |
+| i07 | In Prüfungen fällt mir Gelerntes nicht ein, obwohl ich es eigentlich weiß. |
+| i08 | Ich habe wenig Vertrauen in meine Leistung in Prüfungen. |
+| i09 | Ich befürchte, schlechter abzuschneiden als die anderen. |
+| i10 | Vor Prüfungen habe ich ein flaues Gefühl im Magen. |
+| i11 | In Prüfungen lenken mich Gedanken an ein mögliches Scheitern von den Aufgaben ab. |
+| i12 | Ich traue mir in Prüfungen wenig zu. |
+| i13 | Ich befürchte, dass mir in der Prüfung das Gelernte nicht einfällt. |
+| i14 | In Prüfungen fühle ich mich nervös. |
+| i15 | In Prüfungen denke ich an Dinge, die mit den Aufgaben nichts zu tun haben. |
+| i16 | Ich fühle mich Prüfungen nicht gewachsen. |
+| i17 | Ich mache mir Gedanken darüber, was andere von mir denken, wenn ich versage. |
+| i18 | In Prüfungen werden meine Hände feucht. |
+| i19 | In Prüfungen fällt es mir schwer, mich zu konzentrieren. |
+| i20 | Ich weiß vorher meist nicht, wie eine Prüfung für mich ausgehen wird. |
+
+: Items des Fragebogens zur Prüfungsangst {#tbl-items}
+
+::: {#exr-efa-construct}
+## Theorie und Erwartung
+
+a. Wie viele Dimensionen würden Sie theoretisch erwarten?
+
+::: {.callout-tip title="Lösung" collapse="true"}
+Vier.
+:::
+
+b. Erwarten Sie, dass die Dimensionen miteinander zusammenhängen? Begründen Sie Ihre Antwort.
+
+::: {.callout-tip title="Lösung" collapse="true"}
+Ja, positiv.
+:::
+
+c. Ordnen Sie jedes Item der Komponente zu, die es Ihrer Meinung nach misst.
+
+::: {.callout-tip title="Lösung" collapse="true"}
+- Besorgtheit: i01, i05, i09, i13, i17
+- Aufgeregtheit: i02, i06, i10, i14, i18
+- Interferenz: i03, i07, i11, i15, i19
+- Mangel an Zuversicht: i04, i08, i12, i16, i20
+:::
+:::
+
+::: {#exr-efa-corrplot}
+## Visualisierung der Korrelationsmatrix
+
+Die Abbildung zeigt die Korrelationen der 20 Items in der Reihenfolge des Fragebogens. Je heller ein Feld, desto höher die Korrelation. Die Diagonale (Korrelation eines Items mit sich selbst, $r = 1$) hat die hellste Farbe.
+
+```{r}
+#| label: correlations-unsorted
+#| echo: false
+#| fig-width: 6
+#| fig-height: 6
+#| fig-alt: "Korrelationsmatrix der 20 Items in der Reihenfolge des Fragebogens"
+plot_correlations(cor(items))
+```
+
+a. Erkennen Sie eine Struktur? Was erschwert es, eine Struktur zu erkennen?
+
+::: {.callout-tip title="Lösung" collapse="true"}
+Kaum. Höchstens ein regelmäßiges Streifenmuster: Jedes vierte Item scheint zusammenzugehören. Bei 20 Items gibt es 190 Korrelationen; ohne passende Sortierung lassen sich Gruppen kaum erkennen.
+:::
+
+Nun sind die Items mittels hierarchischer Clusteranalyse so sortiert, dass hoch korrelierende Items nebeneinanderstehen:
+
+```{r}
+#| label: correlations-sorted
+#| echo: false
+#| fig-width: 6
+#| fig-height: 6
+#| fig-alt: "Korrelationsmatrix der 20 Items, nach hierarchischer Clusteranalyse sortiert"
+plot_correlations(cor(items), order = "hclust")
+```
+
+b. Wie viele Itemgruppen erkennen Sie, und welche Items gehören jeweils zusammen?
+
+::: {.callout-tip title="Lösung" collapse="true"}
+Vier Blöcke:
+
+- i07, i19, i11, i03, i15
+- i06, i10, i14, i02, i18
+- i17, i01, i09, i05, i13
+- i20, i16, i08, i04, i12
+
+i20 korreliert nur schwach mit den Items seines Blocks.
+:::
+
+c. Vergleichen Sie die Blöcke mit Ihrer Erwartung aus @exr-efa-construct, Teil a und c. Stimmen Anzahl und Zusammensetzung überein?
+
+::: {.callout-tip title="Lösung" collapse="true"}
+Ja. Die vier Blöcke entsprechen den vier Komponenten; i20 passt nur schwach zu seinem Block.
+:::
+
+d. Hängen die Blöcke untereinander zusammen? Woran sehen Sie das?
+
+::: {.callout-tip title="Lösung" collapse="true"}
+Ja. Die Felder zwischen den Blöcken sind nicht dunkel (Korrelation nahe null), sondern mittel, besonders zwischen dem zweiten und dem dritten Block. Das passt zu @exr-efa-construct, Teil b.
+:::
+
+e. Wie viele Faktoren würden Sie allein aufgrund der Abbildung extrahieren?
+
+::: {.callout-tip title="Lösung" collapse="true"}
+Vier.
+:::
+:::
+
+::: {#exr-efa-requirements}
+## Voraussetzungen
+
+Die Stichprobe umfasst N = 1000 Personen, der Fragebogen 20 Items. Das Kaiser-Meyer-Olkin-Kriterium (KMO) ergibt:
+
+```{r}
+#| label: kmo
+psych::KMO(items)
+```
+
+a. Interpretieren Sie den KMO-Koeffizienten.
+
+::: {.callout-tip title="Lösung" collapse="true"}
+KMO = 0.89 > .80: gut (Kriterien der Vorlesung: > .80 gut, > .90 sehr gut). Es liegen substanzielle Korrelationen vor.
+:::
+
+Der Bartlett-Test ergibt:
+
+```{r}
+#| label: bartlett
+psych::cortest.bartlett(cor(items), n = nrow(items))
+```
+
+b. Welche Hypothese prüft der Bartlett-Test?
+
+::: {.callout-tip title="Lösung" collapse="true"}
+Die Nullhypothese, dass die Korrelationsmatrix in der Population eine Einheitsmatrix ist, also alle Korrelationen zwischen den Items null sind.
+:::
+
+c. Interpretieren Sie das Ergebnis des Bartlett-Tests.
+
+::: {.callout-tip title="Lösung" collapse="true"}
+$\chi^2(190) = 5341.34$, $p < .001$: Die Nullhypothese wird verworfen; nicht alle Korrelationen sind null.
+:::
+
+Die Abbildung zeigt für jede Person den Summenwert der Items i01 bis i10 und den Summenwert der Items i11 bis i20. Die Punkte sind leicht verwackelt, damit gleiche Werte nicht aufeinanderliegen.
+
+```{r}
+#| label: split-half-scatter
+#| echo: false
+#| fig-width: 5
+#| fig-height: 5
+#| fig-alt: "Streudiagramm der Summenwerte der Items i01 bis i10 und i11 bis i20"
+set.seed(1)
+plot(
+  jitter(rowSums(items[, 1:10]), amount = 0.4),
+  jitter(rowSums(items[, 11:20]), amount = 0.4),
+  pch = 19, col = adjustcolor(colors[2], alpha.f = 0.35),
+  xlim = c(10, 70), ylim = c(10, 70), las = 1,
+  xlab = "Summenwert i01 bis i10", ylab = "Summenwert i11 bis i20"
+)
+```
+
+d. Gibt es Ausreißerwerte?
+
+::: {.callout-tip title="Lösung" collapse="true"}
+Nein.
+:::
+
+e. Reichen Stichprobengröße und Itemzahl aus?
+
+::: {.callout-tip title="Lösung" collapse="true"}
+Ja. N = 1000 > 500, also weit über dem Minimum von 250. Laut Theorie messen je fünf Items eine Komponente.
+:::
+:::
+
+::: {#exr-efa-decisions}
+## Matrix und Extraktionsmethode
+
+Die ersten beiden Entscheidungen nach @thompson2004: Welche Matrix wird analysiert, und mit welcher Methode werden die Faktoren extrahiert?
+
+a. Welche Matrix analysieren Sie?
+
+::: {.callout-tip title="Lösung" collapse="true"}
+Die Korrelationsmatrix der Items.
+:::
+
+b. Im Folgenden wird eine Maximum-Likelihood-Faktorenanalyse durchgeführt. Was ist die Grundidee der Schätzmethode und was wird dabei maximiert?
+
+::: {.callout-tip title="Lösung" collapse="true"}
+Die Likelihood: Ladungen und Fehlervarianzen werden so geschätzt, dass die beobachteten Daten unter dem Modell am plausibelsten sind. Die modellimplizierte Korrelationsmatrix $\Sigma(\theta)$ liegt dann möglichst nah an der empirischen Korrelationsmatrix $S$.
+:::
+
+c. Warum führen Sie keine Hauptkomponentenanalyse durch?
+
+::: {.callout-tip title="Lösung" collapse="true"}
+Die PCA nimmt an, dass sich die Gesamtvarianz der Items vollständig durch die Komponenten aufklären lässt (Einsen auf der Diagonalen der Korrelationsmatrix, kein Messfehler). Die Faktorenanalyse erklärt nur die gemeinsame Varianz; ein Teil jeder Itemvarianz bleibt spezifisch (Spezifität und Messfehler). Die PCA dient v. a. der Datenreduktion.
+:::
+:::
+
+::: {#exr-efa-number}
+## Anzahl der Faktoren
+
+Die Tabelle zeigt die Eigenwerte der Korrelationsmatrix (Spalte `Empirisch`) und für die Parallelanalyse das 95. Perzentil der Eigenwerte aus 1000 Zufallsdatensätzen mit derselben Personen- und Itemzahl (Spalte `Zufall_95`), hier für die ersten zehn Faktoren:
+
+```{r}
+#| label: eigenvalues-online
+#| echo: false
+# parallel analysis: eigenvalues of the data and the 95th percentile of the
+# eigenvalues of 1000 random normal data sets of the same size
+compare_eigenvalues <- function(data) {
+  random_eigenvalues <- replicate(1000, {
+    noise <- matrix(rnorm(nrow(data) * ncol(data)), ncol = ncol(data))
+    eigen(cor(noise))$values
+  })
+  data.frame(
+    Faktor = seq_len(ncol(data)),
+    Empirisch = round(eigen(cor(data))$values, 2),
+    Zufall_95 = round(apply(random_eigenvalues, 1, quantile, 0.95), 2)
+  )
+}
+set.seed(1)
+eigenvalues <- compare_eigenvalues(items)
+print(head(eigenvalues, 10), row.names = FALSE)
+```
+
+```{r}
+#| label: scree-online
+#| echo: false
+#| fig-width: 7
+#| fig-height: 4.5
+#| fig-alt: "Screeplot der empirischen Eigenwerte mit den Eigenwerten der Zufallsdaten"
+plot_scree <- function(eigenvalues) {
+  plot(
+    eigenvalues$Faktor, eigenvalues$Empirisch,
+    type = "o", pch = 19, col = colors[2], lwd = 2,
+    ylim = c(0, max(eigenvalues$Empirisch)),
+    xlab = "Faktor", ylab = "Eigenwert", las = 1
+  )
+  lines(eigenvalues$Faktor, eigenvalues$Zufall_95,
+    type = "o", pch = 17, col = colors[4], lwd = 2, lty = 2
+  )
+  abline(h = 1, col = "grey60")
+  legend("topright",
+    legend = c("Empirische Daten", "Zufallsdaten (95. Perzentil)"),
+    col = colors[c(2, 4)], pch = c(19, 17), lty = c(1, 2), lwd = 2,
+    bty = "n"
+  )
+}
+plot_scree(eigenvalues)
+```
+
+a. Wie viele Faktoren extrahieren Sie nach dem Kaiser-Guttman-Kriterium?
+
+::: {.callout-tip title="Lösung" collapse="true"}
+Vier.
+:::
+
+b. Wie viele Faktoren extrahieren Sie mithilfe des Screeplots?
+
+::: {.callout-tip title="Lösung" collapse="true"}
+Plausibel sind u. a. vier Faktoren.
+:::
+
+c. Wie viele Faktoren extrahieren Sie mithilfe der Parallelanalyse?
+
+::: {.callout-tip title="Lösung" collapse="true"}
+Vier. Die ersten vier empirischen Eigenwerte liegen über denen der Zufallsdaten.
+:::
+:::
+
+::: {#exr-efa-parameters}
+## Kennwerte der unrotierten Lösung
+
+Gegeben sei der R-Output einer Maximum-Likelihood-Faktorenanalyse mit vier Faktoren:
+
+```{r}
+#| label: fa-unrotated
+fit_none <- psych::fa(items, nfactors = 4, fm = "ml", rotate = "none")
+print(fit_none$loadings, digits = 2, cutoff = 0)
+```
+
+::: {.callout-note title="Hinweise" collapse="true"}
+`SS loadings` ist die Summe der quadrierten Ladungen eines Faktors, also sein Eigenwert. Er ist kleiner als der Eigenwert in @exr-efa-number: Dort stammen die Eigenwerte aus der Korrelationsmatrix (wie bei der PCA), hier aus der Faktorenanalyse, die nur die gemeinsame Varianz erklärt.
+:::
+
+a. Wie hoch ist die Ladung von Item i01 auf Faktor ML1? Interpretieren Sie das Ergebnis.
+
+::: {.callout-tip title="Lösung" collapse="true"}
+$\lambda_{11} = 0.68$. Bei unkorrelierten Faktoren gibt die Ladung die Korrelation zwischen Item und Faktor wieder: i01 lädt hoch auf ML1.
+:::
+
+b. Berechnen Sie die Kommunalität von Item i11. Interpretieren Sie das Ergebnis.
+
+::: {.callout-tip title="Lösung" collapse="true"}
+$h^2 \approx 0.47$: 47 % der Varianz von i11 werden durch die vier Faktoren erklärt.
+:::
+
+c. Berechnen Sie die Spezifität von Item i11. Interpretieren Sie das Ergebnis.
+
+::: {.callout-tip title="Lösung" collapse="true"}
+$u^2 \approx 0.53$: 53 % der Varianz von i11 teilt das Item mit keinem anderen Item (spezifische Varianz und Messfehler).
+:::
+
+d. Welchen Eigenwert hat Faktor ML1? Welchen Anteil der Varianz aller Items erklärt er?
+
+::: {.callout-tip title="Lösung" collapse="true"}
+Eigenwert 4.84; ML1: 24 % der Varianz aller 20 Items.
+:::
+
+e. Welchen Anteil der Varianz aller Items erklären die vier Faktoren zusammen?
+
+::: {.callout-tip title="Lösung" collapse="true"}
+40 %.
+:::
+
+f. Liegt eine Einfachstruktur vor? Begründen Sie Ihre Antwort.
+
+::: {.callout-tip title="Lösung" collapse="true"}
+Nein. Diffuses Ladungsmuster.
+:::
+:::
+
+::: {#exr-efa-rotation}
+## Rotation
+
+Dieselbe Analyse wird nun orthogonal (Varimax) und oblique (Oblimin) rotiert. Die Abbildung zeigt die Ladungen der Items auf den ersten beiden Faktoren vor der Rotation (Kreise, aus @exr-efa-parameters) und nach der Rotation (Punkte); die Linien verbinden die Lage eines Items vor und nach der Rotation. Die Farben zeigen die Komponente, für die das Item geschrieben wurde (@exr-efa-construct, Teil c). Jede Achse hat die Farbe der Komponente, die der Faktor nach der Rotation abbildet.
+
+```{r}
+#| label: rotation-2d
+#| echo: false
+#| fig-width: 10
+#| fig-height: 5.2
+#| fig-alt: "Ladungen der Items auf den Faktoren 1 und 2 vor und nach Varimax- und Oblimin-Rotation"
+fit_varimax <- psych::fa(items, nfactors = 4, fm = "ml", rotate = "varimax")
+# oblimin names its factors depending on the random state; this seed gives the
+# names ML1 to ML4 in column order
+set.seed(20)
+fit_oblimin <- psych::fa(items, nfactors = 4, fm = "ml", rotate = "oblimin")
+
+# components the items were written for: i01 Besorgtheit, i02 Aufgeregtheit, ...
+component <- rep(1:4, times = 5)
+component_names <- c("Besorgtheit", "Aufgeregtheit", "Interferenz", "Mangel an Zuversicht")
+
+# for each factor, the component whose items load highest on it
+match_components <- function(loadings) {
+  apply(abs(loadings), 2, \(x) which.max(tapply(x, component, mean)))
+}
+
+# loadings on factors 1 and 2 before (circles) and after rotation (points),
+# colored by component; each axis in the color of its rotated factor
+plot_rotation <- function(rotated, title) {
+  before <- unclass(fit_none$loadings)[, 1:2]
+  after <- unclass(rotated$loadings)[, 1:2]
+  axis_colors <- colors[match_components(after)]
+  plot(before,
+    type = "n", xlim = c(-1, 1), ylim = c(-1, 1), las = 1, main = title,
+    xlab = "Ladungen: Faktor 1", ylab = "Ladungen: Faktor 2"
+  )
+  abline(h = 0, col = axis_colors[1], lwd = 3)
+  abline(v = 0, col = axis_colors[2], lwd = 3)
+  segments(before[, 1], before[, 2], after[, 1], after[, 2], col = colors[component])
+  points(before, pch = 1, cex = 1.3, col = colors[component])
+  points(after, pch = 19, cex = 1.3, col = colors[component])
+}
+par(mfrow = c(1, 2))
+plot_rotation(fit_varimax, "Varimax")
+legend("bottomleft",
+  legend = component_names, col = colors[1:4], pch = 19, bty = "n", cex = 0.9
+)
+plot_rotation(fit_oblimin, "Oblimin")
+legend("bottomleft",
+  legend = c("vor der Rotation", "nach der Rotation"), col = "#23373b",
+  pch = c(1, 19), pt.cex = 1.3, bty = "n", cex = 0.9
+)
+```
+
+::: {.callout-note title="Hinweise" collapse="true"}
+Dieselbe Oblimin-Rotation in drei Dimensionen (Faktoren 1 bis 3). Ziehen Sie mit der Maus, um die Abbildung zu drehen; mit dem Mausrad zoomen Sie. Die graue Fläche ist die Ebene der Faktoren 1 und 2, also die rechte Abbildung oben; die hellere Fläche ist die Ebene der Faktoren 2 und 3. Offene Kreise zeigen die Lage vor, gefüllte Punkte nach der Rotation. Die Items von Faktor 4 (Mangel an Zuversicht) liegen nahe am Ursprung. Wie oben sind die korrelierten Faktoren als rechtwinklige Achsen dargestellt.
+
+```{r}
+#| label: rotation-3d
+#| echo: false
+#| fig-height: 7
+# the oblimin solution on factors 1 to 3: loadings before (open) and after
+# rotation (filled), joined by lines, colored by component
+before <- unclass(fit_none$loadings)[, 1:3]
+after <- unclass(fit_oblimin$loadings)[, 1:3]
+axis_colors <- colors[match_components(after)]
+make_axis <- function(title) list(title = title, range = c(-1, 1))
+
+# the planes of factors 1 and 2 (the 2D plot above) and of factors 2 and 3,
+# each as two triangles
+plot_3d <- plotly::plot_ly() |>
+  plotly::add_trace(
+    type = "mesh3d", x = c(-1, 1, 1, -1), y = c(-1, -1, 1, 1), z = c(0, 0, 0, 0),
+    i = c(0, 0), j = c(1, 2), k = c(2, 3), facecolor = rep("#23373b", 2),
+    opacity = 0.12, hoverinfo = "none",
+    name = "Ebene der Faktoren 1 und 2 (2D-Abbildung)", showlegend = TRUE
+  ) |>
+  plotly::add_trace(
+    type = "mesh3d", x = c(0, 0, 0, 0), y = c(-1, 1, 1, -1), z = c(-1, -1, 1, 1),
+    i = c(0, 0), j = c(1, 2), k = c(2, 3), facecolor = rep("#23373b", 2),
+    opacity = 0.06, hoverinfo = "none",
+    name = "Ebene der Faktoren 2 und 3", showlegend = TRUE
+  )
+# the three factor axes through the origin, each in the color of its factor
+for (f in 1:3) {
+  ends <- matrix(0, nrow = 2, ncol = 3)
+  ends[, f] <- c(-1, 1)
+  plot_3d <- plot_3d |>
+    plotly::add_trace(
+      x = ends[, 1], y = ends[, 2], z = ends[, 3],
+      type = "scatter3d", mode = "lines",
+      line = list(color = axis_colors[f], width = 6),
+      showlegend = FALSE, hoverinfo = "none"
+    )
+}
+# one line per item from its position before to after rotation, one trace per
+# component; NA rows separate the lines
+for (k in 1:4) {
+  rows <- which(component == k)
+  path <- do.call(rbind, lapply(rows, \(j) rbind(before[j, ], after[j, ], NA)))
+  plot_3d <- plot_3d |>
+    plotly::add_trace(
+      x = path[, 1], y = path[, 2], z = path[, 3],
+      type = "scatter3d", mode = "lines", line = list(color = colors[k], width = 4),
+      name = component_names[k], hoverinfo = "none"
+    )
+}
+# all items before (open) and after rotation (filled), colored by component
+for (stage in c("vor der Rotation", "nach der Rotation")) {
+  loadings <- if (stage == "vor der Rotation") before else after
+  plot_3d <- plot_3d |>
+    plotly::add_trace(
+      x = loadings[, 1], y = loadings[, 2], z = loadings[, 3],
+      type = "scatter3d", mode = "markers",
+      marker = list(
+        color = colors[component], size = 5,
+        symbol = if (stage == "vor der Rotation") "circle-open" else "circle"
+      ),
+      text = paste(rownames(loadings), stage), hoverinfo = "text",
+      name = stage, showlegend = FALSE
+    )
+}
+plotly::layout(plot_3d,
+  scene = list(
+    xaxis = make_axis("Faktor 1"), yaxis = make_axis("Faktor 2"),
+    zaxis = make_axis("Faktor 3"),
+    aspectmode = "cube"
+  ),
+  legend = list(orientation = "h", x = 0, y = 0, yanchor = "top")
+)
+```
+:::
+
+
+
+a. Was verändert die Rotation an der Lage der Items? Welche Rotation kommt einer Einfachstruktur näher?
+
+::: {.callout-tip title="Lösung" collapse="true"}
+Die Items wandern zu den Achsen: Nach der Rotation lädt ein Item hoch auf einem der beiden Faktoren und niedrig auf dem anderen, oder es liegt nahe am Ursprung (es gehört zu Faktor 3 oder 4). Bei Oblimin liegen die Items enger an den Achsen als bei Varimax; Oblimin kommt einer Einfachstruktur näher.
+:::
+
+Die zugehörigen R-Ausgaben, bei der Varimax-Lösung: 
+
+```{r}
+#| label: fa-varimax
+fit_varimax <- psych::fa(items, nfactors = 4, fm = "ml", rotate = "varimax")
+print(fit_varimax$loadings, digits = 2, cutoff = 0)
+```
+
+b. Berechnen Sie die Kommunalität von i11 aus den Varimax-Ladungen. Vergleichen Sie sie mit @exr-efa-parameters, Teil b.
+
+::: {.callout-tip title="Lösung" collapse="true"}
+$h^2 \approx 0.47$, wie ohne Rotation. Eine orthogonale Rotation verteilt die erklärte Varianz nur anders auf die Faktoren.
+:::
+
+Die zugehörigen R-Ausgaben, bei der Oblimin-Lösung mit den Faktorkorrelationen darunter:
+
+```{r}
+#| label: seed-oblimin
+#| include: false
+set.seed(20)
+```
+
+```{r}
+#| label: fa-oblimin
+fit_oblimin <- psych::fa(items, nfactors = 4, fm = "ml", rotate = "oblimin")
+print(fit_oblimin$loadings, digits = 2, cutoff = 0)
+round(fit_oblimin$Phi, 2)
+```
+
+c. Quadrieren und summieren Sie die Oblimin-Ladungen von i11. Erhalten Sie die Kommunalität? Warum (nicht)?
+
+::: {.callout-tip title="Lösung" collapse="true"}
+Nein: 0.30 statt 0.47. Bei korrelierten Faktoren sind die Ladungen keine Korrelationen, sondern semipartielle standardisierte Regressionsgewichte. Ein Teil der erklärten Varianz geht auf die Korrelation der Faktoren zurück.
+:::
+
+d. Interpretieren Sie die Faktorkorrelationen der Oblimin-Lösung. Welche Faktoren hängen am stärksten zusammen, welche am schwächsten? Passt das zu @exr-efa-construct, Teil b?
+
+::: {.callout-tip title="Lösung" collapse="true"}
+Alle Faktorkorrelationen sind positiv (0.18 bis 0.59). Am stärksten hängen ML1 und ML2 zusammen (0.59), am schwächsten ML3 und ML4 (0.18). Das passt zur Erwartung korrelierter Komponenten.
+:::
+
+e. Warum zeigt die Varimax-Lösung größere Nebenladungen als die Oblimin-Lösung?
+
+::: {.callout-tip title="Lösung" collapse="true"}
+Varimax legt die Faktorkorrelationen auf null fest. Die tatsächlich vorhandenen Zusammenhänge der Faktoren spiegeln sich in den Nebenladungen wieder (bei Varimax bis 0.27, bei Oblimin fast alle zwischen −0.10 und 0.10; Ausnahme in beiden Lösungen: i11).
+:::
+
+f. Welche Rotation wählen Sie? Begründen Sie Ihre Wahl.
+
+::: {.callout-tip title="Lösung" collapse="true"}
+Die oblique Rotation (Oblimin): Theorie und Daten sprechen für korrelierte Faktoren (bis 0.59). Zudem ist die Lösung einfacher zu interpretieren.
+:::
+:::
+
+::: {#exr-efa-residuals}
+## Modellevaluation
+
+Wie gut erklärt die Oblimin-Lösung die Korrelationen der Items? Die Ausgaben zeigen für die Spalten i05 bis i08 die empirischen Korrelationen $S$ und die modellimplizierten Korrelationen $\Sigma(\theta)$:
+
+```{r}
+#| label: correlations-observed-implied
+round(fit_oblimin$r[, 5:8], 2)
+round(fit_oblimin$model[, 5:8], 2)
+```
+
+a. Berechnen Sie das Residuum $D = S - \Sigma(\theta)$ für die Items i13 und i07.
+
+::: {.callout-tip title="Lösung" collapse="true"}
+$D \approx 0.19$
+:::
+
+Die Residualmatrix $D$ für dieselben Spalten:
+
+```{r}
+#| label: residuals
+round(fit_oblimin$residual[, 5:8], 2)
+```
+
+b. Residuen über 0.1 oder unter −0.1 deuten auf Abweichungen zwischen Modell und Daten hin. Welche Residuen außerhalb der Diagonalen erfüllen dieses Kriterium?
+
+::: {.callout-tip title="Lösung" collapse="true"}
+Nur das Residuum von i13 und i07 (0.19). Auch in der vollständigen Residualmatrix ist es das einzige; alle anderen liegen zwischen −0.05 und 0.05.
+:::
+
+c. Schauen Sie sich die Formulierungen von i07 und i13 (@tbl-items) an. Warum korrelieren die beiden Items höher, als das Modell vorhersagt?
+
+::: {.callout-tip title="Lösung" collapse="true"}
+Empirisch korrelieren i07 und i13 zu 0.45, das Modell sagt nur 0.26 vorher ($D = 0.19$). Beide Items fragen nach demselben spezifischen Inhalt: dass Gelerntes in der Prüfung nicht abrufbar ist, einmal als Befürchtung (i13), einmal als Erleben (i07). Diese gemeinsame spezifische Varianz erklären die vier Faktoren nicht.
+:::
+
+d. Was steht auf den Diagonalen von $\Sigma(\theta)$ und $D$?
+
+::: {.callout-tip title="Lösung" collapse="true"}
+Auf der Diagonalen von $\Sigma(\theta)$ die Kommunalitäten $h^2$, auf der Diagonalen von $D$ die Spezifitäten $u^2 = 1 - h^2$.
+:::
+
+e. Wie beurteilen Sie die Modellanpassung insgesamt?
+
+::: {.callout-tip title="Lösung" collapse="true"}
+Gut. Bis auf ein Itempaar liegen alle Residuen nahe null.
+:::
+:::
+
+::: {#exr-efa-interpretation}
+## Interpretation
+
+Die Oblimin-Lösung aus @exr-efa-rotation, die Items nach Faktoren sortiert:
+
+```{r}
+#| label: loadings-sorted
+print(fit_oblimin$loadings, digits = 2, cutoff = 0, sort = TRUE)
+```
+
+a. Vergleichen Sie die Lösung mit Ihrer Zuordnung aus @exr-efa-construct, Teil c, und mit den Blöcken aus @exr-efa-corrplot, Teil b.
+
+::: {.callout-tip title="Lösung" collapse="true"}
+Sie stimmen überein. Die vier Faktoren entsprechen den vier Komponenten und den vier Blöcken der sortierten Korrelationsmatrix:
+
+- ML1: Besorgtheit (i01, i05, i09, i13, i17)
+- ML2: Aufgeregtheit (i02, i06, i10, i14, i18)
+- ML3: Interferenz (i03, i07, i11, i15, i19)
+- ML4: Mangel an Zuversicht (i04, i08, i12, i16, i20)
+:::
+:::
+
+::: {#exr-efa-samples}
+## Stichprobenabhängigkeit
+
+Das Team legt denselben Fragebogen 1000 Psychologiestudierenden im ersten Semester an mehreren Universitäten vor. Die Studierenden sind sich ähnlicher als die Personen der Online-Stichprobe: gleiches Fach, ähnliches Alter, dieselben Prüfungen.
+
+a. Erwarten Sie in dieser Stichprobe dieselbe Faktorenstruktur? Begründen Sie Ihre Vermutung, bevor Sie die Ausgaben ansehen.
+
+::: {.callout-tip title="Lösung" collapse="true"}
+Eher nicht so deutlich: Wenn sich die Personen ähnlicher sind, unterscheiden sich ihre Werte weniger, und die Korrelationen werden kleiner.
+:::
+
+Die Summenwerte (alle 20 Items) in beiden Stichproben; die orange Linie markiert den Mittelwert:
+
+```{r}
+#| label: total-scores
+#| echo: false
+#| fig-width: 9
+#| fig-height: 3.8
+#| fig-alt: "Histogramme der Summenwerte in der Online- und der Studierendenstichprobe mit Mittelwert und Standardabweichung"
+plot_total_scores <- function(data, title, color) {
+  total <- rowSums(data)
+  hist(total,
+    breaks = seq(20, 140, by = 5), ylim = c(0, 200), las = 1,
+    col = color, border = "white",
+    main = sprintf("%s: M = %.2f, SD = %.2f", title, mean(total), sd(total)),
+    xlab = "Summenwert", ylab = "Anzahl Personen"
+  )
+  abline(v = mean(total), col = "#eb811b", lwd = 3)
+}
+par(mfrow = c(1, 2))
+plot_total_scores(items, "Online", colors[2])
+plot_total_scores(students, "Studierende", colors[4])
+```
+
+b. Vergleichen Sie die Summenwerte der beiden Stichproben.
+
+::: {.callout-tip title="Lösung" collapse="true"}
+Bei fast gleichem Mittelwert (79.52 und 78.94) streuen die Summenwerte der Studierenden deutlich weniger (SD 11.25 statt 17.84).
+:::
+
+Eigenwerte (die ersten zehn) und Screeplot mit Parallelanalyse in der Studierendenstichprobe:
+
+```{r}
+#| label: eigenvalues-students
+#| echo: false
+set.seed(1)
+eigenvalues_students <- compare_eigenvalues(students)
+print(head(eigenvalues_students, 10), row.names = FALSE)
+```
+
+```{r}
+#| label: scree-students
+#| echo: false
+#| fig-width: 7
+#| fig-height: 4.5
+#| fig-alt: "Screeplot der Studierendenstichprobe mit den Eigenwerten der Zufallsdaten"
+plot_scree(eigenvalues_students)
+```
+
+c. Wie viele Faktoren würden Sie hier nach dem Kaiser-Guttman-Kriterium extrahieren, wie viele nach der Parallelanalyse? Vergleichen Sie mit @exr-efa-number.
+
+::: {.callout-tip title="Lösung" collapse="true"}
+Kaiser-Guttman-Kriterium: sechs, Parallelanalyse: drei (der vierte Eigenwert 1.14 liegt unter 1.17). In der Online-Stichprobe ergaben beide vier. Das Kaiser-Guttman-Kriterium überschätzt hier die Zahl der Faktoren: Weil die Items schwächer korrelieren, liegen viele Eigenwerte knapp über 1.
+:::
+
+Gegeben sei die Oblimin-Lösung mit vier Faktoren in der Studierendenstichprobe:
+
+```{r}
+#| label: seed-students
+#| include: false
+# fixes the oblimin factor names to ML1 to ML4 in column order
+set.seed(1)
+```
+
+```{r}
+#| label: fa-students
+fit_students <- psych::fa(students, nfactors = 4, fm = "ml", rotate = "oblimin")
+print(fit_students$loadings, digits = 2, cutoff = 0)
+round(fit_students$Phi, 2)
+```
+
+d. Vergleichen Sie die Ladungen und die Faktorkorrelationen mit der Oblimin-Lösung der Online-Stichprobe (@exr-efa-rotation).
+
+::: {.callout-tip title="Lösung" collapse="true"}
+Die Ladungen sind deutlich niedriger. Die Besorgtheits- und die Aufgeregtheitsitems laden gemeinsam auf ML1; ML2 besteht fast nur aus i13 (Ladung 1.00, nicht plausibel) und i07. Die Faktorkorrelationen sind kleiner (0.07 bis 0.30). Die Struktur aus der Online-Stichprobe ist nicht wiederzuerkennen.
+:::
+
+e. Wie erklären Sie die Unterschiede?
+
+::: {.callout-tip title="Lösung" collapse="true"}
+Eingeschränkte Varianz: Die Psychologiestudierenden unterscheiden sich weniger in ihrer Prüfungsangst. Korrelationen hängen von der Varianz zwischen Personen ab (wie die Reliabilität in der KTT von der Varianz der wahren Werte), also sinken Korrelationen, Ladungen, Kommunalitäten.
+:::
+
+f. Beide Datensätze sind mit demselben Messmodell simuliert: dieselben vier Faktoren, dieselben Ladungen, dieselben Items. Nur die Personen unterscheiden sich. Was bedeutet das für die Aussage „Der Fragebogen misst vier Dimensionen“? Welche Stichprobe eignet sich für die Testkonstruktion?
+
+::: {.callout-tip title="Lösung" collapse="true"}
+Die Faktorenstruktur ist keine Eigenschaft des Fragebogens allein, sondern des Fragebogens in einer Population. Ladungen, Kommunalitäten und Reliabilität hängen von der Stichprobe ab. Für die Testkonstruktion eignet sich eine große, heterogene Stichprobe, die die Zielpopulation abbildet, hier die Online-Stichprobe.
+:::
+:::
+
+## Literatur
+
+::: {#refs}
+:::

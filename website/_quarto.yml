@@ -6,6 +6,9 @@ lang: de
 bibliography: references.bib
 csl: apa.csl
 
+execute:
+  freeze: auto
+
 website:
   title: "B.F.3 Diagnostik & Testtheorie"
   site-url: https://sbissantz.github.io/irtea/
@@ -25,6 +28,8 @@ website:
         menu:
           - href: workbook/01-basics.qmd
             text: "1. Rechenkompetenzen"
+          - href: workbook/08-efa.qmd
+            text: "8. Exploratorische Faktorenanalyse"
       - href: package.qmd
         text: R-Paket
   page-footer:
