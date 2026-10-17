@@ -29,6 +29,8 @@ Change the look only in these files:
   (titles), logo `slides/images/bf3-logo.png` at 2.5 cm, page numbers "n / N".
 - HTML slides: CSS in `slides/_metadata.yml` (`format: revealjs`). The title slide's
   sizes are measured from the PDF; measure again if the PDF title page changes.
+- PDF link: the HTML title slide links the PDF via `pdf-link:` in the deck header
+  (partial `slides/title-slide.html`); the Folien menu lists only the HTML decks.
 - Website and workbook: `theme.scss` (layer on `cosmo`).
 
 Colors: dark `#23373b` (title bar, text, navbar, solution boxes), accent `#eb811b`
