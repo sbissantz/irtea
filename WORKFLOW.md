@@ -78,7 +78,9 @@ source("data-raw/personality-items.R")  # rebuild the dataset
 ## Add new content
 
 - **Slide deck:** `website/slides/topic-inp.qmd` with `title`, `subtitle`, `author`,
-  `institute` in the header. The look comes from `slides/_metadata.yml` automatically.
+  `institute` and `pdf-link: topic-inp.pdf` in the header (the HTML title slide links
+  the PDF). The look comes from `slides/_metadata.yml` automatically. Add the HTML
+  deck to the Folien menu in `_quarto.yml`.
 - **Workbook chapter:** `website/workbook/topic-ex.qmd`. Exercises as
   `::: {#exr-short-name}` with a `## Title` inside, parts as `a.`, `b.`, ... After each
   part a collapsed solution box (result only, no steps); hints in a collapsed box where
