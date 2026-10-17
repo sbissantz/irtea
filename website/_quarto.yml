@@ -20,15 +20,19 @@ website:
         text: Start
       - text: Folien
         menu:
-          - href: slides/01-intro.qmd
+          - href: slides/basics-inp.qmd
             text: "01 Grundlagen (HTML)"
-          - href: slides/01-intro.pdf
+          - href: slides/basics-inp.pdf
             text: "01 Grundlagen (PDF)"
+          - href: slides/efa-inp.qmd
+            text: "08 Exploratorische Faktorenanalyse (HTML)"
+          - href: slides/efa-inp.pdf
+            text: "08 Exploratorische Faktorenanalyse (PDF)"
       - text: Übungsheft
         menu:
-          - href: workbook/01-basics.qmd
+          - href: workbook/basics-ex.qmd
             text: "1. Rechenkompetenzen"
-          - href: workbook/08-efa.qmd
+          - href: workbook/efa-ex.qmd
             text: "8. Exploratorische Faktorenanalyse"
       - href: package.qmd
         text: R-Paket
