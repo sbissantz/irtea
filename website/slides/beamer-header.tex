@@ -24,3 +24,6 @@
   \setlength{\listgap}{0.5\baselineskip}%
   \renewcommand{\tightlist}{\setlength{\itemsep}{\listgap}\setlength{\parskip}{0pt}}}
 \addtobeamertemplate{itemize/enumerate subbody begin}{\vspace{\listgap}}{}
+% space above block quotes, as above lists; otherwise a quote at the top of a
+% frame touches the title bar
+\AtBeginEnvironment{quote}{\vspace{\baselineskip}}
