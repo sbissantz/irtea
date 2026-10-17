@@ -10,6 +10,9 @@ format:
     margin: 0
     embed-resources: true
     mermaid-format: svg
+    # title slide with a link to the PDF version (pdf-link in the deck header)
+    template-partials:
+      - title-slide.html
     include-in-header:
       text: |
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@300;400;500&display=swap">
@@ -139,6 +142,11 @@ format:
           line-height: 1.2;
           margin-top: 35px;
           color: #4e5e61;
+        }
+        .reveal #title-slide .pdf-link {
+          font-size: 19px;
+          line-height: 1.2;
+          margin-top: 20px;
         }
         .reveal ul > li::marker,
         .reveal ol > li::marker {
