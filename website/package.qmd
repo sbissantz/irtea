@@ -17,8 +17,8 @@ pak::pak("sbissantz/irtea")
 
 | Datensatz | Inhalt | Übungsheft |
 |-----------|--------|------------|
-| `personality_items` | Antworten von 7 Personen auf 3 Items | [Kapitel 1](workbook/01-basics.qmd) |
-| `test_anxiety` | Antworten von 2000 Personen auf 20 Items zur Prüfungsangst (simuliert) | [Kapitel 8](workbook/08-efa.qmd) |
+| `personality_items` | Antworten von 7 Personen auf 3 Items | [Kapitel 1](workbook/basics-ex.qmd) |
+| `test_anxiety` | Antworten von 2000 Personen auf 20 Items zur Prüfungsangst (simuliert) | [Kapitel 8](workbook/efa-ex.qmd) |
 
 Einen Datensatz laden Sie mit:
 
