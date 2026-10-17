@@ -3,6 +3,7 @@ title: "B.F.3 Übung zu Diagnostik/Testtheorie"
 subtitle: "Exploratorische Faktorenanalyse"
 author: "Bißantz, S., Kuch, N. & Gürtler, R.-M."
 institute: "Rheinland-Pfälzische Technische Universität Kaiserslautern-Landau"
+pdf-link: efa-inp.pdf
 ---
 
 ```{r}
