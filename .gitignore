@@ -6,3 +6,4 @@ website/.quarto/
 website/**/*_files/
 inst/context/
 .claude/settings.local.json
+website/_freeze/

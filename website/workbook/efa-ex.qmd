@@ -91,7 +91,7 @@ Ja, positiv.
 c. Suchen Sie aus Tabellen die Items heraus, die Ihrer Meinung nach die Komponente *Besorgtheit* messen.
 
 ::: {.callout-tip title="Lösung" collapse="true"}
-Z.B.: i01, i05, i09, i13, i17
+Z. B.: i01, i05, i09, i13, i17
 :::
 :::
 
@@ -154,7 +154,7 @@ Ja. Gelesen von links oben nach rechts unten: Block 3. Item i20 sollte man im Au
 e. Hängen die Blöcke untereinander zusammen? Woran sehen Sie das?
 
 ::: {.callout-tip title="Lösung" collapse="true"}
-Ja. Die Felder zwischen den Blöcken sind nicht dunkel (nahe null); v. a. zwischen Block 2 und 3. Das passt zu @exr-efa-construct, Teil b.
+Ja. Die Felder zwischen den Blöcken sind nicht dunkel (nahe null); v. a. zwischen Block 2 und 3. Das passt zu @exr-efa-construct, Teil b.
 :::
 
 f. Wie viele Faktoren würden Sie allein aufgrund der Abbildung extrahieren?
@@ -248,7 +248,7 @@ Die Likelihood: Ladungen und Fehlervarianzen werden so geschätzt, dass die beob
 c. Warum führen Sie keine Hauptkomponentenanalyse durch?
 
 ::: {.callout-tip title="Lösung" collapse="true"}
-Die PCA nimmt an, dass sich die Gesamtvarianz der Items vollständig durch die Komponenten aufklären lässt (Einsen auf der Diagonalen der Korrelationsmatrix, kein Messfehler). Die Faktorenanalyse setzt den Fokus auf die gemeinsame Varianz; ein Teil jeder Itemvarianz bleibt spezifisch (Spezifität und Messfehler). Die PCA dient v. a. der Datenreduktion.
+Die PCA nimmt an, dass sich die Gesamtvarianz der Items vollständig durch die Komponenten aufklären lässt (Einsen auf der Diagonalen der Korrelationsmatrix, kein Messfehler). Die Faktorenanalyse setzt den Fokus auf die gemeinsame Varianz; ein Teil jeder Itemvarianz bleibt spezifisch (Spezifität und Messfehler). Die PCA dient v. a. der Datenreduktion.
 :::
 :::
 
@@ -313,7 +313,7 @@ Vier.
 b. Wie viele Faktoren extrahieren Sie mithilfe des Screeplots?
 
 ::: {.callout-tip title="Lösung" collapse="true"}
-Plausibel sind u. a. vier Faktoren.
+Plausibel sind u. a. vier Faktoren.
 :::
 
 c. Wie viele Faktoren extrahieren Sie mithilfe der Parallelanalyse?

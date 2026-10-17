@@ -62,7 +62,7 @@ Weitere Informationen finden Sie im [Modulhandbuch](https://modhb.rptu.de/mhb/FB
 ## Übungsmöglichkeiten & Kommunikation
 
 - Synchron: zu den offiziellen Gruppenzeiten
-- Asynchron: z. B. in selbstorganisierten Lerngruppen
+- Asynchron: z. B. in selbstorganisierten Lerngruppen
 
 ## Synchrone Übungsmöglichkeiten 
 
@@ -85,7 +85,7 @@ Es gibt zahlreiche Übungsaufgaben
 
 - Vorlesungsfolien und -inhalte
 - Übungsinhalte und -aufgaben auf der [Homepage]({{< var site-url >}})
-- Weiterführende Literatur [z. B. @moosbrugger2020]
+- Weiterführende Literatur [z. B. @moosbrugger2020]
 - [Künstliche Intelligenz](https://rptu.de/ki-lehre/ki-tools) als Hilfsmittel, nicht als Ersatz
 
 Maßgeblich sind die Inhalte der Vorlesung, danach die der Übung. Die weiterführende Literatur erhalten Sie in der [RPTU-Bibliothek](https://hbz-rptu.primo.exlibrisgroup.com/permalink/49HBZ_RTU/no4nsq/alma990009797090107476).

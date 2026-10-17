@@ -1,0 +1,340 @@
+---
+title: "B.F.3 Übung zu Diagnostik/Testtheorie"
+subtitle: "Exploratorische Faktorenanalyse"
+author: "Bißantz, S., Kuch, N. & Gürtler, R.-M."
+institute: "Rheinland-Pfälzische Technische Universität Kaiserslautern-Landau"
+---
+
+```{r}
+#| label: setup
+#| include: false
+# psych matches some arguments partially inside its own code; turn off the
+# warnings so they do not appear on the slides
+options(
+  warnPartialMatchArgs = FALSE,
+  warnPartialMatchAttr = FALSE,
+  warnPartialMatchDollar = FALSE
+)
+# psych needs GPArotation for oblimin; loading it here keeps its startup
+# message off the slides
+invisible(loadNamespace("GPArotation"))
+colors <- viridisLite::viridis(5)
+
+# small example: 8 items, items 1 to 4 and 5 to 8 measure two factors that
+# correlate at .4
+set.seed(8)
+lambda <- cbind(
+  c(0.75, 0.70, 0.65, 0.60, 0, 0, 0, 0),
+  c(0, 0, 0, 0, 0.75, 0.70, 0.65, 0.60)
+)
+phi <- matrix(c(1, 0.4, 0.4, 1), nrow = 2)
+sigma <- lambda %*% phi %*% t(lambda)
+diag(sigma) <- 1
+example <- as.data.frame(MASS::mvrnorm(500, rep(0, 8), sigma))
+names(example) <- sprintf("i%d", 1:8)
+group <- rep(1:2, each = 4)
+group_colors <- colors[c(2, 4)]
+```
+
+## Semesterübersicht {.smaller}
+
+| Nr. | Datum     | Thema                                                        |
+|-----|-----------|--------------------------------------------------------------|
+| 1   | ab 20.10. | Rechenkompetenzen                                      |
+| 2   | ab 27.10. | Gütekriterien I                                |
+| 3   | ab 03.11. | Schritte der Testkonstruktion                                |
+| 4   | ab 10.11. | Erstellung eines Testentwurfs                             |
+|     |           | **Lektürewoche**                   |
+| 5   | ab 24.11. | *Diagnostische Rechenkompetenzen I*   |
+| 6   | ab 01.12. | Klassische Testtheorie                                       |
+| 7   | ab 08.12. | *Item-Response-Theorie*                      |
+| 8   | ab 15.12. | Exploratorische Faktorenanalyse I                            |
+|     |           | **Weihnachtsferien**           |
+| 9   | ab 05.01. | *Exploratorische Faktorenanalyse II*                            |
+| 10  | ab 12.01. | Itemanalyse I                                                |
+| 11  | ab 19.01. | Itemanalyse II, Itemselektion und Testrevision               |
+| 12  | ab 26.01. | *Diagnostische Rechenkompetenzen II*                            |
+| 13  | ab 02.02. | Gütekriterien II  |
+
+# Überblick
+
+## Datenreduktion vs. Struktursuche
+
+- Datenreduktion
+  - z. B. **Hauptkomponentenanalyse**
+  - z. B. Clusteranalyse
+- Struktursuche
+  - z. B. explorative Likert-Skalierung
+  - z. B. **Hauptachsenanalyse**
+  - z. B. **Maximum-Likelihood-Faktorenanalyse**
+
+## Faktorenanalyse: Disclaimer
+
+> Unfortunately, factor analysis is frequently misunderstood and often misused. Some researchers appear to use factor analysis as a kind of divining rod, hoping to find gold hidden underneath tons of dirt. But there is nothing magical about the technique. . . . Factor analysis will yield meaningful results only when the research was meaningful to begin with. [@gregory2015, S. 165]
+
+## Faktorenanalyse: ein Hürdenlauf
+
+1. Extraktionsproblem
+2. Rotationsproblem
+3. Anzahl zu extrahierender Faktoren
+
+# Voraussetzungen
+
+## (Minimal-)Voraussetzungen der Faktorenanalyse
+
+::: {.callout-note title="Minimalvoraussetzung"}
+Ist die Daten- bzw. Korrelationsmatrix zur faktorenanalytischen Auswertung „geeignet“?
+:::
+
+1. Bartlett-Test
+2. Kaiser-Meyer-Olkin-Kriterium
+
+<!--
+## Bartlett-Test
+
+::: {.callout-note title="Bartlett-Test"}
+Sind die zu faktorisierende Korrelationsmatrix $R_n$ und die Identitätsmatrix $I_n$ identisch?
+:::
+
+$$
+I_n =
+\begin{pmatrix}
+1 & 0 & \cdots & 0 \\
+0 & 1 & \ddots & \vdots \\
+\vdots & \ddots & \ddots & 0 \\
+0 & \cdots & 0 & 1
+\end{pmatrix}
+\qquad
+R_n =
+\begin{pmatrix}
+1 & 0.1 & \cdots & 0.4 \\
+0.1 & 1 & \ddots & \vdots \\
+\vdots & \ddots & \ddots & 0.2 \\
+0.4 & \cdots & 0.2 & 1
+\end{pmatrix} 
+$$
+-->
+
+<!--
+## Kaiser-Meyer-Olkin-Test
+
+::: {.callout-note title="Kaiser-Meyer-Olkin-Test"}
+Welcher Anteil an der Gesamtvarianz der Items ist auf eine gemeinsame Varianz zurückführbar?[^common]
+:::
+
+$$
+KMO = \frac{\underset{j \neq k}{\sum \sum} r_{jk}^2}{\underset{j \neq k}{\sum \sum} r_{jk}^2 + \underset{j \neq k}{\sum \sum} p_{jk}^2} \in [0, 1]
+$$
+
+- $r_{jk}$: Korrelation des Items $j$ mit dem Item $k$
+- $p_{jk}$: Partialkorrelation des Items $j$ mit dem Item $k$
+
+[^common]: Der gemeinsame Varianzanteil ist es letztlich, was die Faktoren aufgreifen können.
+-->
+
+# Extraktion
+
+## Extraktionsproblem
+
+::: {.callout-note title="Extraktionsproblem"}
+Wie extrahieren wir die zur Reproduktion nötigen Faktoren/Komponenten?
+:::
+
+1. Bestimmung der Hauptkomponenten (PCA)
+2. Iterative Bestimmung der Hauptachsen (PAF)
+3. Suche nach den plausibelsten Werten (MLFA)
+
+# Rotation
+
+## Rotationsproblem
+
+::: {.callout-note title="Rotationsproblem"}
+Wie rotiert man die erhaltene Ladungsmatrix derart, dass eine möglichst einfach interpretierbare Lösung daraus hervorgeht?
+:::
+
+1. Visuelle Rotation
+2. **Orthogonale Rotation** (z. B. Varimax)
+3. **Oblique Rotation** (z. B. Oblimin)
+
+**Wichtig:** Die Entscheidung basiert auf Überlegungen zu Zwischenfaktorkorrelationen!
+
+```{r}
+#| label: rotation-setup
+#| include: false
+fit_none <- psych::fa(example, nfactors = 2, fm = "ml", rotate = "none")
+fit_varimax <- psych::fa(example, nfactors = 2, fm = "ml", rotate = "varimax")
+# oblimin names its factors depending on the random state; this seed gives the
+# names ML1 and ML2 in column order
+set.seed(2)
+fit_oblimin <- psych::fa(example, nfactors = 2, fm = "ml", rotate = "oblimin")
+
+# loadings before (circles) and after rotation (points), colored by item
+# group; each axis in the color of the group its rotated factor measures
+plot_rotation <- function(rotated) {
+  before <- unclass(fit_none$loadings)
+  after <- unclass(rotated$loadings)
+  axis_group <- apply(abs(after), 2, \(x) which.max(tapply(x, group, mean)))
+  plot(before,
+    type = "n", xlim = c(-1, 1), ylim = c(-1, 1), las = 1,
+    xlab = "Ladungen: Faktor 1", ylab = "Ladungen: Faktor 2"
+  )
+  abline(h = 0, col = group_colors[axis_group[1]], lwd = 3)
+  abline(v = 0, col = group_colors[axis_group[2]], lwd = 3)
+  segments(before[, 1], before[, 2], after[, 1], after[, 2], col = group_colors[group])
+  points(before, pch = 1, cex = 1.4, col = group_colors[group])
+  points(after, pch = 19, cex = 1.4, col = group_colors[group])
+  legend("bottomleft",
+    legend = c("Items 1 bis 4", "Items 5 bis 8", "vor der Rotation", "nach der Rotation"),
+    col = c(group_colors, "#23373b", "#23373b"), pch = c(19, 19, 1, 19),
+    pt.cex = 1.4, bty = "n", cex = 1
+  )
+}
+```
+
+<!--
+## Orthogonale Rotation (Varimax)
+
+```{r}
+#| label: rotation-varimax
+#| eval: false
+#| echo: false
+#| fig-width: 6
+#| fig-height: 5.6
+#| out-width: "52%"
+#| fig-cap: "Varimax-Rotation der Ladungsmatrix"
+#| fig-alt: "Ladungen von acht Items auf zwei Faktoren vor und nach der Varimax-Rotation"
+plot_rotation(fit_varimax)
+```
+
+## Oblique Rotation (Oblimin)
+
+```{r}
+#| label: rotation-oblimin
+#| eval: false
+#| echo: false
+#| fig-width: 6
+#| fig-height: 5.6
+#| out-width: "52%"
+#| fig-cap: "Oblimin-Rotation der Ladungsmatrix"
+#| fig-alt: "Ladungen von acht Items auf zwei Faktoren vor und nach der Oblimin-Rotation"
+plot_rotation(fit_oblimin)
+```
+-->
+
+# Anzahl der Faktoren
+
+## Problem der Anzahl zu extrahierender Faktoren
+
+::: {.callout-note title="Problem der Anzahl zu extrahierender Faktoren"}
+Wie ermittle ich die Anzahl der zu extrahierenden Faktoren, ohne sie zu kennen?
+:::
+
+1. **Kaiser-Guttman-Kriterium**
+2. **Scree-Test**
+3. **Horns Parallelanalyse**
+4. Hull-Methode[^hull]
+5. Bayesianische exploratorische Faktorenanalyse
+
+[^hull]: Eine von zahlreichen Weiterentwicklungen der „klassischen Verfahren“ [@lorenzoseva2011; @timmerman2018].
+
+<!--
+## Eigenwertbasierte Methoden
+
+Grundidee: Die Korrelations- bzw. Datenmatrix wird zerlegt (mittels Eigenwert- bzw. Singulärwertzerlegung), und das Ergebnis wird gegen einen Index geplottet.[^independence]
+
+::: {.callout-note title="Kaiser-Guttman-Kriterium"}
+Ist das Varianzaufklärungspotenzial eines Faktors kleiner als das eines Items, wird die Suche beendet ($EW > 1$).
+:::
+
+[^independence]: Ursprünglich basieren die Lösungsvorschläge beider Methoden auf der Annahme unabhängiger Faktoren bzw. Komponenten (Eigenwert- bzw. Singulärwertzerlegung). 
+-->
+
+<!--
+## Eigenwertplots zur Bestimmung der Faktorenzahl
+
+```{r}
+#| label: eigenvalue-plots
+#| eval: false
+#| echo: false
+#| fig-width: 10
+#| fig-height: 4.5
+#| out-width: "90%"
+#| fig-cap: "Scree-Test und Kaiser-Guttman-Kriterium im Eigenwertplot"
+#| fig-alt: "Zwei Eigenwerteplots: links mit deutlichem Knick nach zwei Komponenten, rechts ohne deutlichen Knick"
+# right: a weakly structured example without a clear elbow
+set.seed(9)
+weak <- MASS::mvrnorm(500, rep(0, 8), toeplitz(0.3^(0:7)))
+
+plot_eigenvalues <- function(eigenvalues) {
+  plot(eigenvalues,
+    type = "o", pch = 19, col = colors[2], lwd = 2, las = 1,
+    ylim = c(0, max(eigenvalues)), xlab = "Komponentenzahl", ylab = "Eigenwerte"
+  )
+  abline(h = 1, lty = 2, col = "grey60")
+  text(7.5, 1, "K1", pos = 3)
+}
+par(mfrow = c(1, 2))
+plot_eigenvalues(eigen(cor(example))$values)
+text(2.6, 2.4, "Rock")
+text(6, 0.3, "Scree")
+plot_eigenvalues(eigen(cor(weak))$values)
+```
+-->
+
+<!--
+## Parallelanalyse
+
+> In parallel analysis, the criterion to be used in order to determine the number of factors is the following. A factor is considered as “significant” if its eigenvalue is larger than the 95% quantile . . . of those obtained from random or resampled data. [@mair2018, S. 31]
+
+- Im Original entwickelt für die Hauptkomponentenanalyse
+- Inzwischen Erweiterungen auch für Faktoren
+- Komponentenlösung auch für die Arbeit mit Faktoren geeignet [@timmerman2018]
+-->
+
+<!--
+## Parallelanalyse zur Bestimmung der Faktorenzahl
+```{r}
+#| label: parallel-analysis
+#| eval: false
+#| echo: false
+#| fig-width: 8
+#| fig-height: 4
+#| out-width: "80%"
+#| fig-cap: "Grafischer Output einer Parallelanalyse"
+#| fig-alt: "Eigenwerte des Beispiels und 95. Perzentil der Eigenwerte aus Zufallsdaten"
+# 95th percentile of the eigenvalues of 1000 random normal data sets with as
+# many persons and items as the example
+set.seed(1)
+random_eigenvalues <- replicate(1000, {
+  noise <- matrix(rnorm(nrow(example) * ncol(example)), ncol = ncol(example))
+  eigen(cor(noise))$values
+})
+random_95 <- apply(random_eigenvalues, 1, quantile, 0.95)
+empirical <- eigen(cor(example))$values
+
+plot(empirical,
+  type = "o", pch = 19, col = colors[2], lwd = 2, las = 1,
+  ylim = c(0, max(empirical)), xlab = "Komponentenzahl", ylab = "Eigenwerte"
+)
+lines(random_95, type = "o", pch = 17, col = colors[4], lwd = 2, lty = 2)
+legend("topright",
+  legend = c("Empirische Daten", "Zufallsdaten (95. Perzentil)"),
+  col = colors[c(2, 4)], pch = c(19, 17), lty = c(1, 2), lwd = 2, bty = "n"
+)
+```
+-->
+
+# Übungsheft
+
+## Übungen
+
+Übungen zu diesem Thema: [Übungsheft, Kapitel 8]({{< var site-url >}}/workbook/efa-ex.html)
+
+# Danke & bis nächste Woche! {.unlisted}
+
+# Literaturverzeichnis
+
+## Literatur
+
+::: {#refs}
+:::

@@ -93,7 +93,7 @@ Ihre Stichprobe besteht aus $P=7$ Teilnehmenden, die alle auf einer Schieberegle
 : Transponierte Datenmatrix aus SoSci Survey {#tbl-data}
 
 ::: {.callout-note title="Hinweise" collapse="true"}
-Die *Inter-Item-Kovarianzmatrix* ist bei $I$ Items eine $I \times I$-Matrix (hier $3 \times 3$), also ein quadratisches Zahlenraster, das aus Itemvarianzen und Inter-Item-Kovarianzen besteht. Auf der Hauptdiagonalen der Matrix befinden sich die Itemvarianzen und außerhalb der Hauptdiagonalen die nicht standardisierten linearen Zusammenhänge, die Inter-Item-Kovarianzen (siehe @eq-covmat). Die *Inter-Item-Korrelationsmatrix* ist ebenfalls eine $I \times I$-Matrix, die jedoch aus Inter-Item-Korrelationen (und Einsen) besteht. Im Gegensatz zur Inter-Item-Kovarianzmatrix werden außerhalb der Hauptdiagonalen die standardisierten linearen Beziehungen zwischen den Items, also deren Korrelationen, abgetragen. Auf der Hauptdiagonalen stehen Einsen (siehe @eq-cormat). Eine wichtige Eigenschaft solcher Matrizen ist ihre Symmetrie. Kovarianz- und Korrelationsmatrizen sind symmetrisch, d. h. die Einträge oberhalb und unterhalb der Hauptdiagonalen sind identisch. Beide Matrizen sind eng miteinander verbunden, und die Kovarianzmatrix kann durch geeignete Standardisierung in eine Korrelationsmatrix umgewandelt werden.
+Die *Inter-Item-Kovarianzmatrix* ist bei $I$ Items eine $I \times I$-Matrix (hier $3 \times 3$), also ein quadratisches Zahlenraster, das aus Itemvarianzen und Inter-Item-Kovarianzen besteht. Auf der Hauptdiagonalen der Matrix befinden sich die Itemvarianzen und außerhalb der Hauptdiagonalen die nicht standardisierten linearen Zusammenhänge, die Inter-Item-Kovarianzen (siehe @eq-covmat). Die *Inter-Item-Korrelationsmatrix* ist ebenfalls eine $I \times I$-Matrix, die jedoch aus Inter-Item-Korrelationen (und Einsen) besteht. Im Gegensatz zur Inter-Item-Kovarianzmatrix werden außerhalb der Hauptdiagonalen die standardisierten linearen Beziehungen zwischen den Items, also deren Korrelationen, abgetragen. Auf der Hauptdiagonalen stehen Einsen (siehe @eq-cormat). Eine wichtige Eigenschaft solcher Matrizen ist ihre Symmetrie. Kovarianz- und Korrelationsmatrizen sind symmetrisch, d. h. die Einträge oberhalb und unterhalb der Hauptdiagonalen sind identisch. Beide Matrizen sind eng miteinander verbunden, und die Kovarianzmatrix kann durch geeignete Standardisierung in eine Korrelationsmatrix umgewandelt werden.
 
 $$
 V =
@@ -173,7 +173,7 @@ d. Interpretieren Sie abschließend die Ergebnisse der berechneten Inter-Item-Ko
 Alle Zusammenhänge sind sehr stark. Die negative Korrelation von Item 1 (Introversion) und Item 2 (Extraversion) ist plausibel, die sehr hohen
 Korrelationen von Item 3 (soziale Kompetenz) mit beiden anderen Items kaum.
 
-Vermutung: Die Daten sind simuliert, z. B. aus einer multivariaten Normalverteilung mit zufällig gezogener Korrelationsmatrix.
+Vermutung: Die Daten sind simuliert, z. B. aus einer multivariaten Normalverteilung mit zufällig gezogener Korrelationsmatrix.
 :::
 :::
 
