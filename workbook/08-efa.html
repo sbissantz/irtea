@@ -1,0 +1,2155 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="de" xml:lang="de"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.10.19">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>8 Exploratorische Faktorenanalyse – B.F.3 Diagnostik &amp; Testtheorie</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../images/logo.png" rel="icon" type="image/png">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-bf27225e3a48a9273f3daa8f8e829971.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-cbe15cd55579b32cf8c48135cfb2cd9e.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "Keine Treffer",
+    "search-matching-documents-text": "Treffer",
+    "search-copy-link-title": "Link in die Suche kopieren",
+    "search-hide-matches-text": "Zusätzliche Treffer verbergen",
+    "search-more-match-text": "weitere Treffer in diesem Dokument",
+    "search-more-matches-text": "weitere Treffer in diesem Dokument",
+    "search-clear-button-title": "Zurücksetzen",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Abbrechen",
+    "search-submit-button-title": "Abschicken",
+    "search-label": "Suchen"
+  }
+}</script>
+<link href="../site_libs/htmltools-fill-0.5.9/fill.css" rel="stylesheet">
+<script src="../site_libs/htmlwidgets-1.6.4/htmlwidgets.js"></script>
+<script src="../site_libs/plotly-binding-4.12.0/plotly.js"></script>
+<script src="../site_libs/typedarray-0.1/typedarray.min.js"></script>
+<script src="../site_libs/jquery-3.5.1/jquery.min.js"></script>
+<link href="../site_libs/crosstalk-1.2.2/css/crosstalk.min.css" rel="stylesheet">
+<script src="../site_libs/crosstalk-1.2.2/js/crosstalk.min.js"></script>
+<link href="../site_libs/plotly-htmlwidgets-css-2.25.2/plotly-htmlwidgets.css" rel="stylesheet">
+<script src="../site_libs/plotly-main-2.25.2/plotly-latest.min.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+</head>
+
+<body class="nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a href="../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../images/logo.png" alt="" class="navbar-logo light-content">
+    <img src="../images/logo.png" alt="" class="navbar-logo dark-content">
+    </a>
+    <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">B.F.3 Diagnostik &amp; Testtheorie</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Suchen"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Navigation umschalten" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../index.html"> 
+<span class="menu-text">Start</span></a>
+  </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-folien" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Folien</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-folien">    
+        <li>
+    <a class="dropdown-item" href="../slides/01-intro.html">
+ <span class="dropdown-text">01 Grundlagen (HTML)</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../slides/01-intro.pdf">
+ <span class="dropdown-text">01 Grundlagen (PDF)</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-bungsheft" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Übungsheft</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-bungsheft">    
+        <li>
+    <a class="dropdown-item" href="../workbook/01-basics.html">
+ <span class="dropdown-text">1. Rechenkompetenzen</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../workbook/08-efa.html">
+ <span class="dropdown-text">8. Exploratorische Faktorenanalyse</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="../package.html"> 
+<span class="menu-text">R-Paket</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+        
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">8 Exploratorische Faktorenanalyse</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>Ein Forschungsteam hat einen neuen Fragebogen zur Prüfungsangst entwickelt und online an 1000 Personen erprobt: Studierende verschiedener Fächer und Hochschulen, Schüler:innen der Oberstufe sowie Personen in Aus- und Weiterbildung. Fragebogen und Daten sind fiktiv; die Daten sind simuliert.</p>
+<p>Das Team stützt sich auf das Vier-Komponenten-Modell der Prüfungsangst, auf dem auch der Prüfungsangstfragebogen beruht <span class="citation" data-cites="hodapp2011">(PAF, <a href="#ref-hodapp2011" role="doc-biblioref">Hodapp et al., 2011</a>)</span>:</p>
+<ul>
+<li><strong>Besorgtheit</strong>: Gedanken an Misserfolg und seine Folgen</li>
+<li><strong>Aufgeregtheit</strong>: körperliche Anspannung und Nervosität</li>
+<li><strong>Interferenz</strong>: aufgabenfremde Gedanken, die die Konzentration stören</li>
+<li><strong>Mangel an Zuversicht</strong>: geringes Vertrauen in die eigene Leistungsfähigkeit</li>
+</ul>
+<p>Der Fragebogen hat 20 Items, die Antwortskala reicht von 1 („trifft überhaupt nicht zu“) bis 7 („trifft voll und ganz zu“). Die Items stehen in der Reihenfolge des Fragebogens:</p>
+<div id="tbl-items" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-items-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Tabelle&nbsp;1: Items des Fragebogens zur Prüfungsangst
+</figcaption>
+<div aria-describedby="tbl-items-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="caption-top table">
+<colgroup>
+<col style="width: 37%">
+<col style="width: 62%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Item</th>
+<th>Wortlaut</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>i01</td>
+<td>Ich mache mir Sorgen, dass ich durchfallen könnte.</td>
+</tr>
+<tr class="even">
+<td>i02</td>
+<td>Vor Prüfungen habe ich Herzklopfen.</td>
+</tr>
+<tr class="odd">
+<td>i03</td>
+<td>In Prüfungen schweifen meine Gedanken ab.</td>
+</tr>
+<tr class="even">
+<td>i04</td>
+<td>Ich zweifle an meinen Fähigkeiten, wenn eine Prüfung ansteht.</td>
+</tr>
+<tr class="odd">
+<td>i05</td>
+<td>Ich grüble darüber nach, welche Folgen eine schlechte Note für mich hätte.</td>
+</tr>
+<tr class="even">
+<td>i06</td>
+<td>In Prüfungen bin ich angespannt.</td>
+</tr>
+<tr class="odd">
+<td>i07</td>
+<td>In Prüfungen fällt mir Gelerntes nicht ein, obwohl ich es eigentlich weiß.</td>
+</tr>
+<tr class="even">
+<td>i08</td>
+<td>Ich habe wenig Vertrauen in meine Leistung in Prüfungen.</td>
+</tr>
+<tr class="odd">
+<td>i09</td>
+<td>Ich befürchte, schlechter abzuschneiden als die anderen.</td>
+</tr>
+<tr class="even">
+<td>i10</td>
+<td>Vor Prüfungen habe ich ein flaues Gefühl im Magen.</td>
+</tr>
+<tr class="odd">
+<td>i11</td>
+<td>In Prüfungen lenken mich Gedanken an ein mögliches Scheitern von den Aufgaben ab.</td>
+</tr>
+<tr class="even">
+<td>i12</td>
+<td>Ich traue mir in Prüfungen wenig zu.</td>
+</tr>
+<tr class="odd">
+<td>i13</td>
+<td>Ich befürchte, dass mir in der Prüfung das Gelernte nicht einfällt.</td>
+</tr>
+<tr class="even">
+<td>i14</td>
+<td>In Prüfungen fühle ich mich nervös.</td>
+</tr>
+<tr class="odd">
+<td>i15</td>
+<td>In Prüfungen denke ich an Dinge, die mit den Aufgaben nichts zu tun haben.</td>
+</tr>
+<tr class="even">
+<td>i16</td>
+<td>Ich fühle mich Prüfungen nicht gewachsen.</td>
+</tr>
+<tr class="odd">
+<td>i17</td>
+<td>Ich mache mir Gedanken darüber, was andere von mir denken, wenn ich versage.</td>
+</tr>
+<tr class="even">
+<td>i18</td>
+<td>In Prüfungen werden meine Hände feucht.</td>
+</tr>
+<tr class="odd">
+<td>i19</td>
+<td>In Prüfungen fällt es mir schwer, mich zu konzentrieren.</td>
+</tr>
+<tr class="even">
+<td>i20</td>
+<td>Ich weiß vorher meist nicht, wie eine Prüfung für mich ausgehen wird.</td>
+</tr>
+</tbody>
+</table>
+</div>
+</figure>
+</div>
+<div id="exr-efa-construct" class="theorem exercise">
+<p><span class="theorem-title"><strong>Aufgabe 1 (Theorie und Erwartung)</strong></span> &nbsp;</p>
+<ol type="a">
+<li>Wie viele Dimensionen würden Sie theoretisch erwarten?</li>
+</ol>
+<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tipp</span>Lösung
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Vier.</p>
+</div>
+</div>
+</div>
+<ol start="2" type="a">
+<li>Erwarten Sie, dass die Dimensionen miteinander zusammenhängen? Begründen Sie Ihre Antwort.</li>
+</ol>
+<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tipp</span>Lösung
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Ja, positiv.</p>
+</div>
+</div>
+</div>
+<ol start="3" type="a">
+<li>Suchen Sie aus Tabellen die Items heraus, die Ihrer Meinung nach die Komponente <em>Besorgtheit</em> messen.</li>
+</ol>
+<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tipp</span>Lösung
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Z.B.: i01, i05, i09, i13, i17</p>
+</div>
+</div>
+</div>
+</div>
+<div id="exr-efa-corrplot" class="theorem exercise">
+<p><span class="theorem-title"><strong>Aufgabe 10 (Visualisierung der Korrelationsmatrix)</strong></span> Die Abbildung zeigt die Korrelationen der 20 Items in der Reihenfolge, in der sie im Fragebogen vorkommen. Die Diagonale (Korrelation eines Items mit sich selbst, <span class="math inline">\(r = 1\)</span>) hat die hellste Farbe.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="08-efa_files/figure-html/correlations-unsorted-1.png" class="img-fluid figure-img" alt="Korrelationsmatrix der 20 Items in der Reihenfolge des Fragebogens" width="576"></p>
+</figure>
+</div>
+</div>
+</div>
+<ol type="a">
+<li>Warum ist es hier schwierig, eine Struktur zu erkennen?</li>
+</ol>
+<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tipp</span>Lösung
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-4" class="callout-4-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Bei 20 Items gibt es 190 Korrelationen; ohne passende Sortierung lassen sich Gruppen kaum erkennen. Man könnte ein regelmäßiges Streifenmuster vermuten: Jedes vierte Item scheint zusammenzugehören.</p>
+</div>
+</div>
+</div>
+<p>Nun sind die Items mittels hierarchischer Clusteranalyse so sortiert, dass hoch korrelierende Items nebeneinanderstehen:</p>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="08-efa_files/figure-html/correlations-sorted-1.png" class="img-fluid figure-img" alt="Korrelationsmatrix der 20 Items, nach hierarchischer Clusteranalyse sortiert" width="576"></p>
+</figure>
+</div>
+</div>
+</div>
+<ol start="2" type="a">
+<li>Wie viele Itemgruppen (Blöcke) erkennen Sie, und welche Items gehören Ihrer Meinung nach zusammen?</li>
+</ol>
+<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tipp</span>Lösung
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-5" class="callout-5-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Vier Blöcke:</p>
+<ul>
+<li>i07, i19, i11, i03, i15</li>
+<li>i06, i10, i14, i02, i18</li>
+<li>i17, i01, i09, i05, i13</li>
+<li>i20, i16, i08, i04, i12</li>
+</ul>
+<p>i20 korreliert nur schwach mit den Items seines Blocks.</p>
+</div>
+</div>
+</div>
+<ol start="3" type="a">
+<li>Vergleichen Sie die Blöcke mit Ihrer Erwartung aus <a href="#exr-efa-construct" class="quarto-xref">Aufgabe&nbsp;1</a>, Teil a Stimmen Anzahl und Zusammensetzung überein?</li>
+</ol>
+<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tipp</span>Lösung
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-6" class="callout-6-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Man kann vier Blöcke vermuten.</p>
+</div>
+</div>
+</div>
+<ol start="4" type="a">
+<li>Finden Sie Ihre Erwartung über die Komponente <em>Besorgnis</em> aus <a href="#exr-efa-construct" class="quarto-xref">Aufgabe&nbsp;1</a>, Teil c, in den Blöcken wieder?</li>
+</ol>
+<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-9-contents" aria-controls="callout-9" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tipp</span>Lösung
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-9" class="callout-9-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Ja. Gelesen von links oben nach rechts unten: Block 3. Item i20 sollte man im Auge behalten. ::</p>
+<ol start="4" type="a">
+<li>Hängen die Blöcke untereinander zusammen? Woran sehen Sie das?</li>
+</ol>
+<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tipp</span>Lösung
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-7" class="callout-7-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Ja. Die Felder zwischen den Blöcken sind nicht dunkel (nahe null); v.a. zwischen Block 2 und 3. Das passt zu <a href="#exr-efa-construct" class="quarto-xref">Aufgabe&nbsp;1</a>, Teil b.</p>
+</div>
+</div>
+</div>
+<ol start="5" type="a">
+<li>Wie viele Faktoren würden Sie allein aufgrund der Abbildung extrahieren?</li>
+</ol>
+<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tipp</span>Lösung
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-8" class="callout-8-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Vier.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="exr-efa-requirements" class="theorem exercise">
+<p><span class="theorem-title"><strong>Aufgabe 2 (Voraussetzungen)</strong></span> Die Stichprobe umfasst N = 1000 Personen, der Fragebogen 20 Items. Das Kaiser-Meyer-Olkin-Kriterium (KMO) ergibt:</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>psych<span class="sc">::</span><span class="fu">KMO</span>(items)</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Kaiser-Meyer-Olkin factor adequacy
+Call: psych::KMO(r = items)
+Overall MSA =  0.89
+MSA for each item = 
+ i01  i02  i03  i04  i05  i06  i07  i08  i09  i10  i11  i12  i13  i14  i15  i16 
+0.92 0.89 0.87 0.83 0.92 0.92 0.76 0.82 0.93 0.91 0.92 0.83 0.85 0.91 0.85 0.85 
+ i17  i18  i19  i20 
+0.94 0.91 0.89 0.72 </code></pre>
+</div>
+</div>
+<ol type="a">
+<li>Interpretieren Sie den KMO-Koeffizienten.</li>
+</ol>
+<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-10-contents" aria-controls="callout-10" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tipp</span>Lösung
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-10" class="callout-10-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>KMO = 0.89 &gt; .80: gut (siehe Kriterien der Vorlesung).</p>
+</div>
+</div>
+</div>
+<ol start="2" type="a">
+<li>Welche Hypothese prüft der Bartlett-Test?</li>
+</ol>
+<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-11-contents" aria-controls="callout-11" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tipp</span>Lösung
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-11" class="callout-11-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Die Nullhypothese, dass die Korrelationsmatrix in der Population eine Einheitsmatrix ist, also alle Korrelationen zwischen den Items null sind.</p>
+</div>
+</div>
+</div>
+<p>Ein Bartlett-Test der Korrelationsmatrix gibt folgendes Ergebnis aus:</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>psych<span class="sc">::</span><span class="fu">cortest.bartlett</span>(<span class="fu">cor</span>(items), <span class="at">n =</span> <span class="fu">nrow</span>(items))</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>$chisq
+[1] 5341.337
+
+$p.value
+[1] 0
+
+$df
+[1] 190</code></pre>
+</div>
+</div>
+<ol start="3" type="a">
+<li>Interpretieren Sie das Ergebnis des Bartlett-Tests.</li>
+</ol>
+<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-12-contents" aria-controls="callout-12" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tipp</span>Lösung
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-12" class="callout-12-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><span class="math inline">\(\chi^2(190) = 5341.34\)</span>, <span class="math inline">\(p &lt; .001\)</span>: Nullhypothese wird verworfen; nicht alle Korrelationen sind null.</p>
+</div>
+</div>
+</div>
+<p>Die Abbildung zeigt für jede Person den Summenwert der Items i01 bis i10 und den Summenwert der Items i11 bis i20. Die Punkte sind leicht versetzt, damit gleiche Werte nicht aufeinanderliegen.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="08-efa_files/figure-html/split-half-scatter-1.png" class="img-fluid figure-img" alt="Streudiagramm der Summenwerte der Items i01 bis i10 und i11 bis i20" width="480"></p>
+</figure>
+</div>
+</div>
+</div>
+<ol start="4" type="a">
+<li>Gibt es Ausreißerwerte?</li>
+</ol>
+<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-13-contents" aria-controls="callout-13" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tipp</span>Lösung
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-13" class="callout-13-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Nein.</p>
+</div>
+</div>
+</div>
+<ol start="5" type="a">
+<li>Reichen Stichprobengröße und Itemzahl Ihrer Meinung nach aus?</li>
+</ol>
+<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-14-contents" aria-controls="callout-14" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tipp</span>Lösung
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-14" class="callout-14-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Ja. N = 1000 &gt; 500 &gt; 250, also über dem Minimum von 250 und der Empfehlung von 500. Laut Theorie messen je fünf Items eine Komponente.</p>
+</div>
+</div>
+</div>
+</div>
+<div id="exr-efa-decisions" class="theorem exercise">
+<p><span class="theorem-title"><strong>Aufgabe 3 (Matrix und Extraktionsmethode)</strong></span> &nbsp;</p>
+<ol type="a">
+<li>Welche Matrix würden Sie für die Analyse der Faktoren heranziehen?</li>
+</ol>
+<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-15-contents" aria-controls="callout-15" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tipp</span>Lösung
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-15" class="callout-15-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Korrelationsmatrix der Items.</p>
+</div>
+</div>
+</div>
+<ol start="2" type="a">
+<li>Im Folgenden wird eine Maximum-Likelihood-Faktorenanalyse durchgeführt. Was ist die Grundidee der Schätzmethode und was wird dabei maximiert?</li>
+</ol>
+<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-16-contents" aria-controls="callout-16" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tipp</span>Lösung
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-16" class="callout-16-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Die Likelihood: Ladungen und Fehlervarianzen werden so geschätzt, dass die beobachteten Daten unter dem Modell am plausibelsten sind. Die modellimplizierte Korrelationsmatrix <span class="math inline">\(\Sigma(\theta)\)</span> liegt dann möglichst nah an der empirischen Korrelationsmatrix <span class="math inline">\(S\)</span>.</p>
+</div>
+</div>
+</div>
+<ol start="3" type="a">
+<li>Warum führen Sie keine Hauptkomponentenanalyse durch?</li>
+</ol>
+<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-17-contents" aria-controls="callout-17" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tipp</span>Lösung
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-17" class="callout-17-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Die PCA nimmt an, dass sich die Gesamtvarianz der Items vollständig durch die Komponenten aufklären lässt (Einsen auf der Diagonalen der Korrelationsmatrix, kein Messfehler). Die Faktorenanalyse setzt den Fokus auf die gemeinsame Varianz; ein Teil jeder Itemvarianz bleibt spezifisch (Spezifität und Messfehler). Die PCA dient v. a. der Datenreduktion.</p>
+</div>
+</div>
+</div>
+</div>
+<div id="exr-efa-number" class="theorem exercise">
+<p><span class="theorem-title"><strong>Aufgabe 4 (Anzahl der Faktoren)</strong></span> Die Tabelle zeigt die Eigenwerte der Korrelationsmatrix (Spalte <code>Empirisch</code>) und für die Parallelanalyse das 95. Perzentil der Eigenwerte aus 1000 Zufallsdatensätzen mit derselben Personen- und Itemzahl (Spalte <code>Zufall_95</code>), hier für die ersten zehn Faktoren:</p>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code> Faktor Empirisch Zufall_95
+      1      5.41      1.30
+      2      1.92      1.24
+      3      1.74      1.20
+      4      1.22      1.17
+      5      0.96      1.14
+      6      0.87      1.12
+      7      0.74      1.09
+      8      0.70      1.07
+      9      0.67      1.05
+     10      0.65      1.02</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="08-efa_files/figure-html/scree-online-1.png" class="img-fluid figure-img" alt="Screeplot der empirischen Eigenwerte mit den Eigenwerten der Zufallsdaten" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<ol type="a">
+<li>Wie viele Faktoren extrahieren Sie nach dem Kaiser-Guttman-Kriterium?</li>
+</ol>
+<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-18-contents" aria-controls="callout-18" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tipp</span>Lösung
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-18" class="callout-18-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Vier.</p>
+</div>
+</div>
+</div>
+<ol start="2" type="a">
+<li>Wie viele Faktoren extrahieren Sie mithilfe des Screeplots?</li>
+</ol>
+<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-19-contents" aria-controls="callout-19" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tipp</span>Lösung
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-19" class="callout-19-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Plausibel sind u. a. vier Faktoren.</p>
+</div>
+</div>
+</div>
+<ol start="3" type="a">
+<li>Wie viele Faktoren extrahieren Sie mithilfe der Parallelanalyse?</li>
+</ol>
+<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-20-contents" aria-controls="callout-20" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tipp</span>Lösung
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-20" class="callout-20-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Vier. Die ersten vier empirischen Eigenwerte liegen über denen der Zufallsdaten.</p>
+</div>
+</div>
+</div>
+</div>
+<div id="exr-efa-parameters" class="theorem exercise">
+<p><span class="theorem-title"><strong>Aufgabe 5 (Kennwerte der unrotierten Lösung)</strong></span> Gegeben sei der R-Output einer Maximum-Likelihood-Faktorenanalyse mit vier Faktoren:</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>fit_none <span class="ot">&lt;-</span> psych<span class="sc">::</span><span class="fu">fa</span>(items, <span class="at">nfactors =</span> <span class="dv">4</span>, <span class="at">fm =</span> <span class="st">"ml"</span>, <span class="at">rotate =</span> <span class="st">"none"</span>)</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(fit_none<span class="sc">$</span>loadings, <span class="at">digits =</span> <span class="dv">2</span>, <span class="at">cutoff =</span> <span class="dv">0</span>)</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Loadings:
+    ML1   ML2   ML3   ML4  
+i01  0.68  0.07  0.02 -0.30
+i02  0.58 -0.02 -0.38  0.16
+i03  0.48 -0.36  0.27  0.23
+i04  0.35  0.47  0.23  0.10
+i05  0.61  0.05  0.03 -0.29
+i06  0.51 -0.05 -0.28  0.13
+i07  0.40 -0.27  0.31  0.09
+i08  0.29  0.44  0.24  0.20
+i09  0.61  0.03 -0.01 -0.24
+i10  0.51  0.02 -0.33  0.08
+i11  0.62 -0.22  0.19 -0.01
+i12  0.35  0.48  0.19  0.23
+i13  0.62  0.00  0.11 -0.24
+i14  0.54 -0.01 -0.38  0.14
+i15  0.44 -0.35  0.28  0.17
+i16  0.26  0.36  0.19  0.11
+i17  0.52  0.09  0.06 -0.21
+i18  0.54  0.01 -0.36  0.16
+i19  0.39 -0.29  0.23  0.15
+i20  0.12  0.20  0.05  0.07
+
+                ML1  ML2  ML3  ML4
+SS loadings    4.84 1.29 1.15 0.66
+Proportion Var 0.24 0.06 0.06 0.03
+Cumulative Var 0.24 0.31 0.36 0.40</code></pre>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled" title="Hinweise">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-21-contents" aria-controls="callout-21" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Hinweis</span>Hinweise
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-21" class="callout-21-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><code>SS loadings</code> ist die Summe der quadrierten Ladungen eines Faktors, also sein Eigenwert. Er ist kleiner als der Eigenwert in <a href="#exr-efa-number" class="quarto-xref">Aufgabe&nbsp;4</a>: Dort stammen die Eigenwerte aus der Korrelationsmatrix (wie bei der PCA), hier aus der Faktorenanalyse, die nur die gemeinsame Varianz erklärt.</p>
+</div>
+</div>
+</div>
+<ol type="a">
+<li>Wie hoch ist die Ladung von Item i01 auf Faktor ML1? Interpretieren Sie das Ergebnis.</li>
+</ol>
+<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-22-contents" aria-controls="callout-22" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tipp</span>Lösung
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-22" class="callout-22-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><span class="math inline">\(\lambda_{11} = 0.68\)</span>. Bei unkorrelierten Faktoren gibt die Ladung die Korrelation zwischen Item und Faktor wieder: i01 lädt hoch auf ML1. Gegeben der Daten, scheint das Item die Komponente <em>Besorgtheit</em> zu messen.</p>
+</div>
+</div>
+</div>
+<ol start="2" type="a">
+<li>Berechnen Sie die Kommunalität von Item i11. Interpretieren Sie das Ergebnis.</li>
+</ol>
+<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-23-contents" aria-controls="callout-23" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tipp</span>Lösung
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-23" class="callout-23-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><span class="math inline">\(h^2 \approx 0.47\)</span>: 47 % der Varianz von i11 werden durch die vier Faktoren erklärt.</p>
+</div>
+</div>
+</div>
+<ol start="3" type="a">
+<li>Berechnen Sie die Spezifität von Item i11. Interpretieren Sie das Ergebnis.</li>
+</ol>
+<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-24-contents" aria-controls="callout-24" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tipp</span>Lösung
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-24" class="callout-24-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><span class="math inline">\(u^2 \approx 0.53\)</span>: 53 % der Varianz von i11 teilt das Item mit keinem anderen Item (spezifische Varianz und Messfehler).</p>
+</div>
+</div>
+</div>
+<ol start="4" type="a">
+<li>Welchen Eigenwert hat Faktor ML1? Welchen Anteil der Varianz aller Items erklärt er?</li>
+</ol>
+<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-25-contents" aria-controls="callout-25" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tipp</span>Lösung
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-25" class="callout-25-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Eigenwert 4.84; ML1: 24 % der Varianz aller 20 Items.</p>
+</div>
+</div>
+</div>
+<ol start="5" type="a">
+<li>Welchen Anteil der Varianz aller Items erklärt der Faktor ML1?</li>
+</ol>
+<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-26-contents" aria-controls="callout-26" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tipp</span>Lösung
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-26" class="callout-26-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>24 % der Varianz aller 20 Items.</p>
+</div>
+</div>
+</div>
+<ol start="6" type="a">
+<li>Welchen Anteil der Varianz aller Items erklären die vier Faktoren zusammen?</li>
+</ol>
+<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-27-contents" aria-controls="callout-27" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tipp</span>Lösung
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-27" class="callout-27-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>40 %.</p>
+</div>
+</div>
+</div>
+<ol start="7" type="a">
+<li>Liegt eine Einfachstruktur vor? Begründen Sie Ihre Antwort.</li>
+</ol>
+<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-28-contents" aria-controls="callout-28" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tipp</span>Lösung
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-28" class="callout-28-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Nein. Diffuses Ladungsmuster.</p>
+</div>
+</div>
+</div>
+</div>
+<div id="exr-efa-rotation" class="theorem exercise">
+<p><span class="theorem-title"><strong>Aufgabe 6 (Rotation)</strong></span> Dieselbe Analyse wird nun orthogonal (Varimax) und oblique (Oblimin) rotiert. Die Abbildung zeigt die Ladungen der Items auf den ersten beiden Faktoren vor der Rotation (Kreise, aus <a href="#exr-efa-parameters" class="quarto-xref">Aufgabe&nbsp;5</a>) und nach der Rotation (Punkte); die Linien verbinden die Lage eines Items vor und nach der Rotation. Die Farben zeigen die Komponente, für die das Item geschrieben wurde (<a href="#exr-efa-construct" class="quarto-xref">Aufgabe&nbsp;1</a>, Teil c). Jede Achse hat die Farbe der Komponente, die der Faktor nach der Rotation abbildet.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="08-efa_files/figure-html/rotation-2d-1.png" class="img-fluid figure-img" alt="Ladungen der Items auf den Faktoren 1 und 2 vor und nach Varimax- und Oblimin-Rotation" width="960"></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled" title="Hinweise">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-29-contents" aria-controls="callout-29" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Hinweis</span>Hinweise
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-29" class="callout-29-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Dieselbe Oblimin-Rotation in drei Dimensionen (Faktoren 1 bis 3). Ziehen Sie mit der Maus, um die Abbildung zu drehen; mit dem Mausrad zoomen Sie. Die graue Fläche ist die Ebene der Faktoren 1 und 2, also die rechte Abbildung oben; die hellere Fläche ist die Ebene der Faktoren 2 und 3. Offene Kreise zeigen die Lage vor, gefüllte Punkte nach der Rotation. Die Items von Faktor 4 (Mangel an Zuversicht) liegen nahe am Ursprung. Wie oben sind die korrelierten Faktoren als rechtwinklige Achsen dargestellt.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div class="plotly html-widget html-fill-item" id="htmlwidget-d63374605caf899d5122" style="width:100%;height:650px;"></div>
+<script type="application/json" data-for="htmlwidget-d63374605caf899d5122">{"x":{"visdat":{"1068d568c1bee":["function () ","plotlyVisDat"]},"cur_data":"1068d568c1bee","attrs":{"1068d568c1bee":{"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"mesh3d","x":[-1,1,1,-1],"y":[-1,-1,1,1],"z":[0,0,0,0],"i":[0,0],"j":[1,2],"k":[2,3],"facecolor":["#23373b","#23373b"],"opacity":0.12,"hoverinfo":"none","name":"Ebene der Faktoren 1 und 2 (2D-Abbildung)","showlegend":true,"inherit":true},"1068d568c1bee.1":{"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"mesh3d","x":[0,0,0,0],"y":[-1,1,1,-1],"z":[-1,-1,1,1],"i":[0,0],"j":[1,2],"k":[2,3],"facecolor":["#23373b","#23373b"],"opacity":0.059999999999999998,"hoverinfo":"none","name":"Ebene der Faktoren 2 und 3","showlegend":true,"inherit":true},"1068d568c1bee.2":{"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"x":[-1,1],"y":[0,0],"z":[0,0],"type":"scatter3d","mode":"lines","line":{"color":"#440154FF","width":6},"showlegend":false,"hoverinfo":"none","inherit":true},"1068d568c1bee.3":{"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"x":[0,0],"y":[-1,1],"z":[0,0],"type":"scatter3d","mode":"lines","line":{"color":"#3B528BFF","width":6},"showlegend":false,"hoverinfo":"none","inherit":true},"1068d568c1bee.4":{"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"x":[0,0],"y":[0,0],"z":[-1,1],"type":"scatter3d","mode":"lines","line":{"color":"#21908CFF","width":6},"showlegend":false,"hoverinfo":"none","inherit":true},"1068d568c1bee.5":{"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"x":[0.68466345078755264,0.72432315525829849,null,0.60589535326090449,0.67678571994089332,null,0.60578139731326153,0.60045094456895032,null,0.61948133008091011,0.63005475426575885,null,0.51815771701175928,0.54496416949961235,null],"y":[0.074377891829292844,0.043863332720208453,null,0.051334243779838001,0.013660383783824365,null,0.032225594702063286,0.089618789236313334,null,0.00024196051011334346,-0.03357548472528675,null,0.091651188036879438,-0.0017086738086694031,null],"z":[0.0246147100557302,-0.020494535549967691,null,0.029867010749890895,-0.018380155799802511,null,-0.012706144484436263,-0.0025854960573020724,null,0.11358984871887629,0.10373505821457182,null,0.058916891160320631,-0.0087671587835368159,null],"type":"scatter3d","mode":"lines","line":{"color":"#440154FF","width":4},"name":"Besorgtheit","hoverinfo":"none","inherit":true},"1068d568c1bee.6":{"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"x":[0.57901728711711176,-0.0066713560742239497,null,0.51253553160111509,0.025516293266825862,null,0.50867488739400757,0.08764489107504761,null,0.54382673956612793,0.011662876168198943,null,0.54055593531649182,-0.01730713201963327,null],"y":[-0.016477523990543488,0.70899413951107171,null,-0.051090719416734022,0.55952383740079559,null,0.02132032206119688,0.5730217355639724,null,-0.0051924176790737664,0.67550069531075119,null,0.0067346949195790356,0.67259849479491318,null],"z":[-0.38270232335753462,0.018343649683782048,null,-0.28233406302877739,0.067667574767536459,null,-0.3307186992168783,-0.045346577025869146,null,-0.37907795416182538,-0.01180409973665289,null,-0.36256157534088851,0.0033320927985978771,null],"type":"scatter3d","mode":"lines","line":{"color":"#3B528BFF","width":4},"name":"Aufgeregtheit","hoverinfo":"none","inherit":true},"1068d568c1bee.7":{"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"x":[0.47650509879689357,-0.06177152390549201,null,0.40180163848187023,0.093003835622642542,null,0.62435838396508214,0.32325911505568911,null,0.43957604120914917,-0.0078701875863139426,null,0.39104996634614542,-0.00019557173069628675,null],"y":[-0.36333889360415872,0.062628756852832729,null,-0.26921490604054271,-0.09539300565611275,null,-0.21579726558873699,0.044215489594033555,null,-0.34559820433703142,0.010667085226020695,null,-0.28641381798526361,0.016813764973081013,null],"z":[0.27178420180527418,0.69919843402791026,null,0.31411909282243794,0.56179732752367839,null,0.18961106956448701,0.44202017863019377,null,0.27566353019238155,0.64832055473336214,null,0.23415680352667667,0.55159086071316288,null],"type":"scatter3d","mode":"lines","line":{"color":"#21908CFF","width":4},"name":"Interferenz","hoverinfo":"none","inherit":true},"1068d568c1bee.8":{"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"x":[0.34660012625795245,0.11449226628722392,null,0.29113905444073723,-0.033869279570070132,null,0.35352903506646405,-0.055461759940003297,null,0.26361364403703524,0.049687651179364578,null,0.1241458184735089,-0.0071380795108762496,null],"y":[0.4740781828307617,-0.043763816279797377,null,0.44361039245003953,-0.018221503815488233,null,0.48100641696142649,0.073957530132279084,null,0.35619448041017343,-0.032779657127538026,null,0.20382679561836747,0.034315079629890395,null],"z":[0.22633255227217794,-0.037876976947807034,null,0.23956525123224151,0.030889006442622172,null,0.19306830564871047,0.01194748879483544,null,0.19121552772920447,0.0044522029074659797,null,0.052998961129876933,-0.035439564365187512,null],"type":"scatter3d","mode":"lines","line":{"color":"#5DC863FF","width":4},"name":"Mangel an Zuversicht","hoverinfo":"none","inherit":true},"1068d568c1bee.9":{"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"x":[0.68466345078755264,0.57901728711711176,0.47650509879689357,0.34660012625795245,0.60589535326090449,0.51253553160111509,0.40180163848187023,0.29113905444073723,0.60578139731326153,0.50867488739400757,0.62435838396508214,0.35352903506646405,0.61948133008091011,0.54382673956612793,0.43957604120914917,0.26361364403703524,0.51815771701175928,0.54055593531649182,0.39104996634614542,0.1241458184735089],"y":[0.074377891829292844,-0.016477523990543488,-0.36333889360415872,0.4740781828307617,0.051334243779838001,-0.051090719416734022,-0.26921490604054271,0.44361039245003953,0.032225594702063286,0.02132032206119688,-0.21579726558873699,0.48100641696142649,0.00024196051011334346,-0.0051924176790737664,-0.34559820433703142,0.35619448041017343,0.091651188036879438,0.0067346949195790356,-0.28641381798526361,0.20382679561836747],"z":[0.0246147100557302,-0.38270232335753462,0.27178420180527418,0.22633255227217794,0.029867010749890895,-0.28233406302877739,0.31411909282243794,0.23956525123224151,-0.012706144484436263,-0.3307186992168783,0.18961106956448701,0.19306830564871047,0.11358984871887629,-0.37907795416182538,0.27566353019238155,0.19121552772920447,0.058916891160320631,-0.36256157534088851,0.23415680352667667,0.052998961129876933],"type":"scatter3d","mode":"markers","marker":{"color":["#440154FF","#3B528BFF","#21908CFF","#5DC863FF","#440154FF","#3B528BFF","#21908CFF","#5DC863FF","#440154FF","#3B528BFF","#21908CFF","#5DC863FF","#440154FF","#3B528BFF","#21908CFF","#5DC863FF","#440154FF","#3B528BFF","#21908CFF","#5DC863FF"],"size":5,"symbol":"circle-open"},"text":["i01 vor der Rotation","i02 vor der Rotation","i03 vor der Rotation","i04 vor der Rotation","i05 vor der Rotation","i06 vor der Rotation","i07 vor der Rotation","i08 vor der Rotation","i09 vor der Rotation","i10 vor der Rotation","i11 vor der Rotation","i12 vor der Rotation","i13 vor der Rotation","i14 vor der Rotation","i15 vor der Rotation","i16 vor der Rotation","i17 vor der Rotation","i18 vor der Rotation","i19 vor der Rotation","i20 vor der Rotation"],"hoverinfo":"text","name":"vor der Rotation","showlegend":false,"inherit":true},"1068d568c1bee.10":{"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"x":[0.72432315525829849,-0.0066713560742239497,-0.06177152390549201,0.11449226628722392,0.67678571994089332,0.025516293266825862,0.093003835622642542,-0.033869279570070132,0.60045094456895032,0.08764489107504761,0.32325911505568911,-0.055461759940003297,0.63005475426575885,0.011662876168198943,-0.0078701875863139426,0.049687651179364578,0.54496416949961235,-0.01730713201963327,-0.00019557173069628675,-0.0071380795108762496],"y":[0.043863332720208453,0.70899413951107171,0.062628756852832729,-0.043763816279797377,0.013660383783824365,0.55952383740079559,-0.09539300565611275,-0.018221503815488233,0.089618789236313334,0.5730217355639724,0.044215489594033555,0.073957530132279084,-0.03357548472528675,0.67550069531075119,0.010667085226020695,-0.032779657127538026,-0.0017086738086694031,0.67259849479491318,0.016813764973081013,0.034315079629890395],"z":[-0.020494535549967691,0.018343649683782048,0.69919843402791026,-0.037876976947807034,-0.018380155799802511,0.067667574767536459,0.56179732752367839,0.030889006442622172,-0.0025854960573020724,-0.045346577025869146,0.44202017863019377,0.01194748879483544,0.10373505821457182,-0.01180409973665289,0.64832055473336214,0.0044522029074659797,-0.0087671587835368159,0.0033320927985978771,0.55159086071316288,-0.035439564365187512],"type":"scatter3d","mode":"markers","marker":{"color":["#440154FF","#3B528BFF","#21908CFF","#5DC863FF","#440154FF","#3B528BFF","#21908CFF","#5DC863FF","#440154FF","#3B528BFF","#21908CFF","#5DC863FF","#440154FF","#3B528BFF","#21908CFF","#5DC863FF","#440154FF","#3B528BFF","#21908CFF","#5DC863FF"],"size":5,"symbol":"circle"},"text":["i01 nach der Rotation","i02 nach der Rotation","i03 nach der Rotation","i04 nach der Rotation","i05 nach der Rotation","i06 nach der Rotation","i07 nach der Rotation","i08 nach der Rotation","i09 nach der Rotation","i10 nach der Rotation","i11 nach der Rotation","i12 nach der Rotation","i13 nach der Rotation","i14 nach der Rotation","i15 nach der Rotation","i16 nach der Rotation","i17 nach der Rotation","i18 nach der Rotation","i19 nach der Rotation","i20 nach der Rotation"],"hoverinfo":"text","name":"nach der Rotation","showlegend":false,"inherit":true}},"layout":{"margin":{"b":40,"l":60,"t":25,"r":10},"scene":{"xaxis":{"title":"Faktor 1","range":[-1,1]},"yaxis":{"title":"Faktor 2","range":[-1,1]},"zaxis":{"title":"Faktor 3","range":[-1,1]},"aspectmode":"cube"},"legend":{"orientation":"h","x":0,"y":0,"yanchor":"top"},"hovermode":"closest","showlegend":true},"source":"A","config":{"modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false},"data":[{"colorbar":{"title":"","ticklen":2,"len":0.33333333333333331,"lenmode":"fraction","y":1,"yanchor":"top"},"colorscale":[["0","rgba(68,1,84,1)"],["0.0416666666666667","rgba(70,19,97,1)"],["0.0833333333333333","rgba(72,32,111,1)"],["0.125","rgba(71,45,122,1)"],["0.166666666666667","rgba(68,58,128,1)"],["0.208333333333333","rgba(64,70,135,1)"],["0.25","rgba(60,82,138,1)"],["0.291666666666667","rgba(56,93,140,1)"],["0.333333333333333","rgba(49,104,142,1)"],["0.375","rgba(46,114,142,1)"],["0.416666666666667","rgba(42,123,142,1)"],["0.458333333333333","rgba(38,133,141,1)"],["0.5","rgba(37,144,140,1)"],["0.541666666666667","rgba(33,154,138,1)"],["0.583333333333333","rgba(39,164,133,1)"],["0.625","rgba(47,174,127,1)"],["0.666666666666667","rgba(53,183,121,1)"],["0.708333333333333","rgba(79,191,110,1)"],["0.75","rgba(98,199,98,1)"],["0.791666666666667","rgba(119,207,85,1)"],["0.833333333333333","rgba(147,214,70,1)"],["0.875","rgba(172,220,52,1)"],["0.916666666666667","rgba(199,225,42,1)"],["0.958333333333333","rgba(226,228,40,1)"],["1","rgba(253,231,37,1)"]],"showscale":true,"type":"mesh3d","x":[-1,1,1,-1],"y":[-1,-1,1,1],"z":[0,0,0,0],"i":[0,0],"j":[1,2],"k":[2,3],"facecolor":["#23373b","#23373b"],"opacity":0.12,"hoverinfo":"none","name":"Ebene der Faktoren 1 und 2 (2D-Abbildung)","showlegend":true,"frame":null},{"colorbar":{"title":"","ticklen":2,"len":0.33333333333333331,"lenmode":"fraction","y":0.66666666666666674,"yanchor":"top"},"colorscale":[["0","rgba(68,1,84,1)"],["0.0416666666666667","rgba(70,19,97,1)"],["0.0833333333333333","rgba(72,32,111,1)"],["0.125","rgba(71,45,122,1)"],["0.166666666666667","rgba(68,58,128,1)"],["0.208333333333333","rgba(64,70,135,1)"],["0.25","rgba(60,82,138,1)"],["0.291666666666667","rgba(56,93,140,1)"],["0.333333333333333","rgba(49,104,142,1)"],["0.375","rgba(46,114,142,1)"],["0.416666666666667","rgba(42,123,142,1)"],["0.458333333333333","rgba(38,133,141,1)"],["0.5","rgba(37,144,140,1)"],["0.541666666666667","rgba(33,154,138,1)"],["0.583333333333333","rgba(39,164,133,1)"],["0.625","rgba(47,174,127,1)"],["0.666666666666667","rgba(53,183,121,1)"],["0.708333333333333","rgba(79,191,110,1)"],["0.75","rgba(98,199,98,1)"],["0.791666666666667","rgba(119,207,85,1)"],["0.833333333333333","rgba(147,214,70,1)"],["0.875","rgba(172,220,52,1)"],["0.916666666666667","rgba(199,225,42,1)"],["0.958333333333333","rgba(226,228,40,1)"],["1","rgba(253,231,37,1)"]],"showscale":true,"type":"mesh3d","x":[0,0,0,0],"y":[-1,1,1,-1],"z":[-1,-1,1,1],"i":[0,0],"j":[1,2],"k":[2,3],"facecolor":["#23373b","#23373b"],"opacity":0.059999999999999998,"hoverinfo":"none","name":"Ebene der Faktoren 2 und 3","showlegend":true,"frame":null},{"x":[-1,1],"y":[0,0],"z":[0,0],"type":"scatter3d","mode":"lines","line":{"color":"#440154FF","width":6},"showlegend":false,"hoverinfo":["none","none"],"marker":{"color":"rgba(44,160,44,1)","line":{"color":"rgba(44,160,44,1)"}},"error_y":{"color":"rgba(44,160,44,1)"},"error_x":{"color":"rgba(44,160,44,1)"},"frame":null},{"x":[0,0],"y":[-1,1],"z":[0,0],"type":"scatter3d","mode":"lines","line":{"color":"#3B528BFF","width":6},"showlegend":false,"hoverinfo":["none","none"],"marker":{"color":"rgba(214,39,40,1)","line":{"color":"rgba(214,39,40,1)"}},"error_y":{"color":"rgba(214,39,40,1)"},"error_x":{"color":"rgba(214,39,40,1)"},"frame":null},{"x":[0,0],"y":[0,0],"z":[-1,1],"type":"scatter3d","mode":"lines","line":{"color":"#21908CFF","width":6},"showlegend":false,"hoverinfo":["none","none"],"marker":{"color":"rgba(148,103,189,1)","line":{"color":"rgba(148,103,189,1)"}},"error_y":{"color":"rgba(148,103,189,1)"},"error_x":{"color":"rgba(148,103,189,1)"},"frame":null},{"x":[0.68466345078755264,0.72432315525829849,null,0.60589535326090449,0.67678571994089332,null,0.60578139731326153,0.60045094456895032,null,0.61948133008091011,0.63005475426575885,null,0.51815771701175928,0.54496416949961235],"y":[0.074377891829292844,0.043863332720208453,null,0.051334243779838001,0.013660383783824365,null,0.032225594702063286,0.089618789236313334,null,0.00024196051011334346,-0.03357548472528675,null,0.091651188036879438,-0.0017086738086694031],"z":[0.0246147100557302,-0.020494535549967691,null,0.029867010749890895,-0.018380155799802511,null,-0.012706144484436263,-0.0025854960573020724,null,0.11358984871887629,0.10373505821457182,null,0.058916891160320631,-0.0087671587835368159],"type":"scatter3d","mode":"lines","line":{"color":"#440154FF","width":4},"name":"Besorgtheit","hoverinfo":["none","none",null,"none","none",null,"none","none",null,"none","none",null,"none","none"],"marker":{"color":"rgba(140,86,75,1)","line":{"color":"rgba(140,86,75,1)"}},"error_y":{"color":"rgba(140,86,75,1)"},"error_x":{"color":"rgba(140,86,75,1)"},"frame":null},{"x":[0.57901728711711176,-0.0066713560742239497,null,0.51253553160111509,0.025516293266825862,null,0.50867488739400757,0.08764489107504761,null,0.54382673956612793,0.011662876168198943,null,0.54055593531649182,-0.01730713201963327],"y":[-0.016477523990543488,0.70899413951107171,null,-0.051090719416734022,0.55952383740079559,null,0.02132032206119688,0.5730217355639724,null,-0.0051924176790737664,0.67550069531075119,null,0.0067346949195790356,0.67259849479491318],"z":[-0.38270232335753462,0.018343649683782048,null,-0.28233406302877739,0.067667574767536459,null,-0.3307186992168783,-0.045346577025869146,null,-0.37907795416182538,-0.01180409973665289,null,-0.36256157534088851,0.0033320927985978771],"type":"scatter3d","mode":"lines","line":{"color":"#3B528BFF","width":4},"name":"Aufgeregtheit","hoverinfo":["none","none",null,"none","none",null,"none","none",null,"none","none",null,"none","none"],"marker":{"color":"rgba(227,119,194,1)","line":{"color":"rgba(227,119,194,1)"}},"error_y":{"color":"rgba(227,119,194,1)"},"error_x":{"color":"rgba(227,119,194,1)"},"frame":null},{"x":[0.47650509879689357,-0.06177152390549201,null,0.40180163848187023,0.093003835622642542,null,0.62435838396508214,0.32325911505568911,null,0.43957604120914917,-0.0078701875863139426,null,0.39104996634614542,-0.00019557173069628675],"y":[-0.36333889360415872,0.062628756852832729,null,-0.26921490604054271,-0.09539300565611275,null,-0.21579726558873699,0.044215489594033555,null,-0.34559820433703142,0.010667085226020695,null,-0.28641381798526361,0.016813764973081013],"z":[0.27178420180527418,0.69919843402791026,null,0.31411909282243794,0.56179732752367839,null,0.18961106956448701,0.44202017863019377,null,0.27566353019238155,0.64832055473336214,null,0.23415680352667667,0.55159086071316288],"type":"scatter3d","mode":"lines","line":{"color":"#21908CFF","width":4},"name":"Interferenz","hoverinfo":["none","none",null,"none","none",null,"none","none",null,"none","none",null,"none","none"],"marker":{"color":"rgba(127,127,127,1)","line":{"color":"rgba(127,127,127,1)"}},"error_y":{"color":"rgba(127,127,127,1)"},"error_x":{"color":"rgba(127,127,127,1)"},"frame":null},{"x":[0.34660012625795245,0.11449226628722392,null,0.29113905444073723,-0.033869279570070132,null,0.35352903506646405,-0.055461759940003297,null,0.26361364403703524,0.049687651179364578,null,0.1241458184735089,-0.0071380795108762496],"y":[0.4740781828307617,-0.043763816279797377,null,0.44361039245003953,-0.018221503815488233,null,0.48100641696142649,0.073957530132279084,null,0.35619448041017343,-0.032779657127538026,null,0.20382679561836747,0.034315079629890395],"z":[0.22633255227217794,-0.037876976947807034,null,0.23956525123224151,0.030889006442622172,null,0.19306830564871047,0.01194748879483544,null,0.19121552772920447,0.0044522029074659797,null,0.052998961129876933,-0.035439564365187512],"type":"scatter3d","mode":"lines","line":{"color":"#5DC863FF","width":4},"name":"Mangel an Zuversicht","hoverinfo":["none","none",null,"none","none",null,"none","none",null,"none","none",null,"none","none"],"marker":{"color":"rgba(188,189,34,1)","line":{"color":"rgba(188,189,34,1)"}},"error_y":{"color":"rgba(188,189,34,1)"},"error_x":{"color":"rgba(188,189,34,1)"},"frame":null},{"x":[0.68466345078755264,0.57901728711711176,0.47650509879689357,0.34660012625795245,0.60589535326090449,0.51253553160111509,0.40180163848187023,0.29113905444073723,0.60578139731326153,0.50867488739400757,0.62435838396508214,0.35352903506646405,0.61948133008091011,0.54382673956612793,0.43957604120914917,0.26361364403703524,0.51815771701175928,0.54055593531649182,0.39104996634614542,0.1241458184735089],"y":[0.074377891829292844,-0.016477523990543488,-0.36333889360415872,0.4740781828307617,0.051334243779838001,-0.051090719416734022,-0.26921490604054271,0.44361039245003953,0.032225594702063286,0.02132032206119688,-0.21579726558873699,0.48100641696142649,0.00024196051011334346,-0.0051924176790737664,-0.34559820433703142,0.35619448041017343,0.091651188036879438,0.0067346949195790356,-0.28641381798526361,0.20382679561836747],"z":[0.0246147100557302,-0.38270232335753462,0.27178420180527418,0.22633255227217794,0.029867010749890895,-0.28233406302877739,0.31411909282243794,0.23956525123224151,-0.012706144484436263,-0.3307186992168783,0.18961106956448701,0.19306830564871047,0.11358984871887629,-0.37907795416182538,0.27566353019238155,0.19121552772920447,0.058916891160320631,-0.36256157534088851,0.23415680352667667,0.052998961129876933],"type":"scatter3d","mode":"markers","marker":{"color":["#440154FF","#3B528BFF","#21908CFF","#5DC863FF","#440154FF","#3B528BFF","#21908CFF","#5DC863FF","#440154FF","#3B528BFF","#21908CFF","#5DC863FF","#440154FF","#3B528BFF","#21908CFF","#5DC863FF","#440154FF","#3B528BFF","#21908CFF","#5DC863FF"],"size":5,"symbol":"circle-open","line":{"color":"rgba(23,190,207,1)"}},"text":["i01 vor der Rotation","i02 vor der Rotation","i03 vor der Rotation","i04 vor der Rotation","i05 vor der Rotation","i06 vor der Rotation","i07 vor der Rotation","i08 vor der Rotation","i09 vor der Rotation","i10 vor der Rotation","i11 vor der Rotation","i12 vor der Rotation","i13 vor der Rotation","i14 vor der Rotation","i15 vor der Rotation","i16 vor der Rotation","i17 vor der Rotation","i18 vor der Rotation","i19 vor der Rotation","i20 vor der Rotation"],"hoverinfo":["text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text"],"name":"vor der Rotation","showlegend":false,"error_y":{"color":"rgba(23,190,207,1)"},"error_x":{"color":"rgba(23,190,207,1)"},"line":{"color":"rgba(23,190,207,1)"},"frame":null},{"x":[0.72432315525829849,-0.0066713560742239497,-0.06177152390549201,0.11449226628722392,0.67678571994089332,0.025516293266825862,0.093003835622642542,-0.033869279570070132,0.60045094456895032,0.08764489107504761,0.32325911505568911,-0.055461759940003297,0.63005475426575885,0.011662876168198943,-0.0078701875863139426,0.049687651179364578,0.54496416949961235,-0.01730713201963327,-0.00019557173069628675,-0.0071380795108762496],"y":[0.043863332720208453,0.70899413951107171,0.062628756852832729,-0.043763816279797377,0.013660383783824365,0.55952383740079559,-0.09539300565611275,-0.018221503815488233,0.089618789236313334,0.5730217355639724,0.044215489594033555,0.073957530132279084,-0.03357548472528675,0.67550069531075119,0.010667085226020695,-0.032779657127538026,-0.0017086738086694031,0.67259849479491318,0.016813764973081013,0.034315079629890395],"z":[-0.020494535549967691,0.018343649683782048,0.69919843402791026,-0.037876976947807034,-0.018380155799802511,0.067667574767536459,0.56179732752367839,0.030889006442622172,-0.0025854960573020724,-0.045346577025869146,0.44202017863019377,0.01194748879483544,0.10373505821457182,-0.01180409973665289,0.64832055473336214,0.0044522029074659797,-0.0087671587835368159,0.0033320927985978771,0.55159086071316288,-0.035439564365187512],"type":"scatter3d","mode":"markers","marker":{"color":["#440154FF","#3B528BFF","#21908CFF","#5DC863FF","#440154FF","#3B528BFF","#21908CFF","#5DC863FF","#440154FF","#3B528BFF","#21908CFF","#5DC863FF","#440154FF","#3B528BFF","#21908CFF","#5DC863FF","#440154FF","#3B528BFF","#21908CFF","#5DC863FF"],"size":5,"symbol":"circle","line":{"color":"rgba(31,119,180,1)"}},"text":["i01 nach der Rotation","i02 nach der Rotation","i03 nach der Rotation","i04 nach der Rotation","i05 nach der Rotation","i06 nach der Rotation","i07 nach der Rotation","i08 nach der Rotation","i09 nach der Rotation","i10 nach der Rotation","i11 nach der Rotation","i12 nach der Rotation","i13 nach der Rotation","i14 nach der Rotation","i15 nach der Rotation","i16 nach der Rotation","i17 nach der Rotation","i18 nach der Rotation","i19 nach der Rotation","i20 nach der Rotation"],"hoverinfo":["text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text"],"name":"nach der Rotation","showlegend":false,"error_y":{"color":"rgba(31,119,180,1)"},"error_x":{"color":"rgba(31,119,180,1)"},"line":{"color":"rgba(31,119,180,1)"},"frame":null}],"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.20000000000000001,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+</div>
+</div>
+</div>
+</div>
+</div>
+<ol type="a">
+<li>Was verändert die Rotation an der Lage der Items?</li>
+</ol>
+<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-30-contents" aria-controls="callout-30" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tipp</span>Lösung
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-30" class="callout-30-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Die Items wandern zu den Achsen oder dem Ursprung.</p>
+</div>
+</div>
+</div>
+<p>Welche Rotation kommt einer Einfachstruktur näher?</p>
+<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-31-contents" aria-controls="callout-31" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tipp</span>Lösung
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-31" class="callout-31-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Nach Oblimin-Rotation liegen die Items enger an den Koordinatenachsen als bei Varimax; Oblimin kommt einer Einfachstruktur näher.</p>
+</div>
+</div>
+</div>
+<p>Die zugehörigen R-Ausgaben, bei der Varimax-Lösung:</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>fit_varimax <span class="ot">&lt;-</span> psych<span class="sc">::</span><span class="fu">fa</span>(items, <span class="at">nfactors =</span> <span class="dv">4</span>, <span class="at">fm =</span> <span class="st">"ml"</span>, <span class="at">rotate =</span> <span class="st">"varimax"</span>)</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(fit_varimax<span class="sc">$</span>loadings, <span class="at">digits =</span> <span class="dv">2</span>, <span class="at">cutoff =</span> <span class="dv">0</span>)</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Loadings:
+    ML3   ML1   ML4   ML2  
+i01  0.27  0.65  0.18  0.18
+i02  0.67  0.18  0.13  0.09
+i03  0.16  0.10  0.67  0.04
+i04  0.05  0.18  0.04  0.61
+i05  0.22  0.60  0.17  0.14
+i06  0.55  0.18  0.16  0.06
+i07  0.03  0.17  0.55  0.06
+i08  0.04  0.07  0.07  0.60
+i09  0.27  0.55  0.17  0.13
+i10  0.56  0.21  0.07  0.08
+i11  0.22  0.38  0.52  0.09
+i12  0.12  0.08  0.07  0.65
+i13  0.19  0.57  0.26  0.15
+i14  0.64  0.18  0.10  0.08
+i15  0.11  0.12  0.62  0.03
+i16  0.03  0.11  0.05  0.48
+i17  0.18  0.49  0.14  0.18
+i18  0.63  0.16  0.11  0.10
+i19  0.11  0.11  0.54  0.04
+i20  0.05  0.04 -0.01  0.25
+
+                ML3  ML1  ML4  ML2
+SS loadings    2.26 2.09 1.97 1.62
+Proportion Var 0.11 0.10 0.10 0.08
+Cumulative Var 0.11 0.22 0.32 0.40</code></pre>
+</div>
+</div>
+<ol start="2" type="a">
+<li>Berechnen Sie die Kommunalität von i11 aus den Varimax-Ladungen. Vergleichen Sie sie mit <a href="#exr-efa-parameters" class="quarto-xref">Aufgabe&nbsp;5</a>, Teil b.</li>
+</ol>
+<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-32-contents" aria-controls="callout-32" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tipp</span>Lösung
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-32" class="callout-32-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><span class="math inline">\(h^2 \approx 0.47\)</span>, wie ohne Rotation. Eine orthogonale Rotation teilt die erklärte Varianz nur “anders” auf die Faktoren auf.</p>
+</div>
+</div>
+</div>
+<p>Gegeben sei die R-Ausgabe der Oblimin-Lösung inklusive Zwischen faktorkorrelationen darunter:</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>fit_oblimin <span class="ot">&lt;-</span> psych<span class="sc">::</span><span class="fu">fa</span>(items, <span class="at">nfactors =</span> <span class="dv">4</span>, <span class="at">fm =</span> <span class="st">"ml"</span>, <span class="at">rotate =</span> <span class="st">"oblimin"</span>)</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(fit_oblimin<span class="sc">$</span>loadings, <span class="at">digits =</span> <span class="dv">2</span>, <span class="at">cutoff =</span> <span class="dv">0</span>)</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Loadings:
+    ML1   ML2   ML3   ML4  
+i01  0.72  0.04 -0.02  0.02
+i02 -0.01  0.71  0.02  0.00
+i03 -0.06  0.06  0.70  0.01
+i04  0.11 -0.04 -0.04  0.60
+i05  0.68  0.01 -0.02 -0.01
+i06  0.03  0.56  0.07 -0.01
+i07  0.09 -0.10  0.56  0.02
+i08 -0.03 -0.02  0.03  0.63
+i09  0.60  0.09  0.00 -0.01
+i10  0.09  0.57 -0.05  0.00
+i11  0.32  0.04  0.44 -0.01
+i12 -0.06  0.07  0.01  0.67
+i13  0.63 -0.03  0.10  0.02
+i14  0.01  0.68 -0.01  0.00
+i15 -0.01  0.01  0.65 -0.01
+i16  0.05 -0.03  0.00  0.48
+i17  0.54  0.00 -0.01  0.07
+i18 -0.02  0.67  0.00  0.03
+i19  0.00  0.02  0.55  0.00
+i20 -0.01  0.03 -0.04  0.25
+
+                ML1  ML2  ML3  ML4
+SS loadings    2.18 2.09 1.75 1.50
+Proportion Var 0.11 0.10 0.09 0.08
+Cumulative Var 0.11 0.21 0.30 0.38</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(fit_oblimin<span class="sc">$</span>Phi, <span class="dv">2</span>)</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>     ML1  ML2  ML3  ML4
+ML1 1.00 0.59 0.50 0.41
+ML2 0.59 1.00 0.37 0.26
+ML3 0.50 0.37 1.00 0.18
+ML4 0.41 0.26 0.18 1.00</code></pre>
+</div>
+</div>
+<ol start="3" type="a">
+<li>Quadrieren und summieren Sie die Oblimin-Ladungen von i11. Erhalten Sie die Kommunalität? Warum (nicht)?</li>
+</ol>
+<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-33-contents" aria-controls="callout-33" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tipp</span>Lösung
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-33" class="callout-33-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Nein: 0.30 statt 0.47. Bei korrelierten Faktoren sind die Ladungen keine Korrelationen, sondern semipartielle standardisierte Regressionsgewichte. Ein Teil der erklärten Varianz geht auf die Korrelation der Faktoren zurück.</p>
+</div>
+</div>
+</div>
+<ol start="4" type="a">
+<li>Interpretieren Sie die Faktorkorrelationen der Oblimin-Lösung. Welche Faktoren hängen am stärksten zusammen, welche am schwächsten? Passt das zu <a href="#exr-efa-construct" class="quarto-xref">Aufgabe&nbsp;1</a>, Teil b?</li>
+</ol>
+<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-34-contents" aria-controls="callout-34" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tipp</span>Lösung
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-34" class="callout-34-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Alle Faktorkorrelationen sind positiv (0.18 bis 0.59). Am stärksten hängen ML1 und ML2 zusammen (0.59), am schwächsten ML3 und ML4 (0.18). Das passt zur Erwartung korrelierter Komponenten.</p>
+</div>
+</div>
+</div>
+<ol start="5" type="a">
+<li>Warum zeigt die Varimax-Lösung größere Nebenladungen als die Oblimin-Lösung?</li>
+</ol>
+<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-35-contents" aria-controls="callout-35" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tipp</span>Lösung
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-35" class="callout-35-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Varimax legt die Faktorkorrelationen auf null fest. Die tatsächlich vorhandenen Zusammenhänge der Faktoren spiegeln sich in den Nebenladungen wieder (bei Varimax bis 0.27, bei Oblimin fast alle zwischen −0.10 und 0.10; Ausnahme in beiden Lösungen: i11).</p>
+</div>
+</div>
+</div>
+<ol start="6" type="a">
+<li>Für welche Rotationsmethode würden Sie sich entscheiden? Begründen Sie Ihre Wahl.</li>
+</ol>
+<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-36-contents" aria-controls="callout-36" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tipp</span>Lösung
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-36" class="callout-36-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Die oblique Rotation (Oblimin): Theorie und Daten sprechen für korrelierte Faktoren (bis 0.59). Zudem ist die Lösung einfacher zu interpretieren.</p>
+</div>
+</div>
+</div>
+</div>
+<div id="exr-efa-residuals" class="theorem exercise">
+<p><span class="theorem-title"><strong>Aufgabe 7 (Modellevaluation)</strong></span> Wie gut erklärt die Oblimin-Lösung die Korrelationen der Items? Die Ausgaben zeigen für die Spalten i05 bis i08 die empirischen Korrelationen <span class="math inline">\(S\)</span> und die modellimplizierten Korrelationen <span class="math inline">\(\Sigma(\theta)\)</span>:</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(fit_oblimin<span class="sc">$</span>r[, <span class="dv">5</span><span class="sc">:</span><span class="dv">8</span>], <span class="dv">2</span>)</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>     i05  i06  i07  i08
+i01 0.50 0.30 0.19 0.18
+i02 0.27 0.43 0.14 0.11
+i03 0.21 0.24 0.40 0.11
+i04 0.22 0.07 0.09 0.38
+i05 1.00 0.28 0.16 0.14
+i06 0.28 1.00 0.16 0.07
+i07 0.16 0.16 1.00 0.07
+i08 0.14 0.07 0.07 1.00
+i09 0.44 0.25 0.16 0.15
+i10 0.28 0.38 0.09 0.07
+i11 0.39 0.28 0.32 0.14
+i12 0.18 0.16 0.10 0.40
+i13 0.45 0.28 0.45 0.17
+i14 0.27 0.41 0.12 0.09
+i15 0.22 0.17 0.38 0.06
+i16 0.14 0.09 0.10 0.32
+i17 0.38 0.21 0.18 0.16
+i18 0.28 0.38 0.11 0.11
+i19 0.21 0.13 0.30 0.05
+i20 0.09 0.06 0.03 0.17</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(fit_oblimin<span class="sc">$</span>model[, <span class="dv">5</span><span class="sc">:</span><span class="dv">8</span>], <span class="dv">2</span>)</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>     i05  i06  i07  i08
+i01 0.50 0.30 0.23 0.18
+i02 0.29 0.43 0.13 0.10
+i03 0.21 0.21 0.40 0.09
+i04 0.21 0.10 0.09 0.39
+i05 0.45 0.26 0.21 0.15
+i06 0.26 0.36 0.14 0.08
+i07 0.21 0.14 0.34 0.09
+i08 0.15 0.08 0.09 0.38
+i09 0.44 0.28 0.21 0.14
+i10 0.28 0.36 0.10 0.09
+i11 0.38 0.28 0.37 0.13
+i12 0.18 0.13 0.10 0.41
+i13 0.45 0.26 0.26 0.16
+i14 0.28 0.40 0.11 0.09
+i15 0.21 0.19 0.37 0.07
+i16 0.15 0.08 0.08 0.30
+i17 0.38 0.22 0.18 0.16
+i18 0.27 0.40 0.12 0.11
+i19 0.19 0.17 0.32 0.07
+i20 0.07 0.05 0.02 0.15</code></pre>
+</div>
+</div>
+<ol type="a">
+<li>Berechnen Sie das Residuum <span class="math inline">\(D = S - \Sigma(\theta)\)</span> für die Items i13 und i07.</li>
+</ol>
+<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-37-contents" aria-controls="callout-37" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tipp</span>Lösung
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-37" class="callout-37-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><span class="math inline">\(D \approx 0.19\)</span></p>
+</div>
+</div>
+</div>
+<p>Die Residualmatrix <span class="math inline">\(D\)</span> für dieselben Spalten:</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(fit_oblimin<span class="sc">$</span>residual[, <span class="dv">5</span><span class="sc">:</span><span class="dv">8</span>], <span class="dv">2</span>)</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>      i05   i06   i07   i08
+i01 -0.01  0.00 -0.04  0.00
+i02 -0.02  0.00  0.01  0.01
+i03  0.00  0.02  0.00  0.03
+i04  0.00 -0.03 -0.01 -0.01
+i05  0.55  0.01 -0.05  0.00
+i06  0.01  0.64  0.02 -0.02
+i07 -0.05  0.02  0.66 -0.02
+i08  0.00 -0.02 -0.02  0.62
+i09  0.00 -0.03 -0.05  0.01
+i10  0.00  0.02 -0.01 -0.02
+i11  0.01  0.00 -0.04  0.01
+i12  0.00  0.03  0.01 -0.01
+i13  0.01  0.02  0.19  0.01
+i14  0.00  0.00  0.01  0.00
+i15  0.01 -0.02  0.01 -0.01
+i16 -0.01  0.02  0.02  0.02
+i17  0.00 -0.01  0.00 -0.01
+i18  0.01 -0.02  0.00  0.01
+i19  0.03 -0.04 -0.02 -0.02
+i20  0.02  0.01  0.01  0.02</code></pre>
+</div>
+</div>
+<ol start="2" type="a">
+<li>Residuen über 0.1 oder unter −0.1 deuten auf Abweichungen zwischen Modell und Daten hin. Welche Residuen außerhalb der Diagonalen erfüllen dieses Kriterium?</li>
+</ol>
+<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-38-contents" aria-controls="callout-38" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tipp</span>Lösung
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-38" class="callout-38-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Nur das Residuum von i13 und i07 (0.19). Auch in der vollständigen Residualmatrix ist es das einzige; alle anderen liegen zwischen −0.05 und 0.05.</p>
+</div>
+</div>
+</div>
+<ol start="3" type="a">
+<li>Schauen Sie sich die Formulierungen von i07 und i13 (<a href="#tbl-items" class="quarto-xref">Tabelle&nbsp;1</a>) an. Warum korrelieren die beiden Items höher, als das Modell vorhersagt?</li>
+</ol>
+<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-39-contents" aria-controls="callout-39" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tipp</span>Lösung
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-39" class="callout-39-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Empirisch korrelieren i07 und i13 zu 0.45, das Modell sagt nur 0.26 vorher (<span class="math inline">\(D = 0.19\)</span>). Beide Items fragen nach demselben spezifischen Inhalt: dass Gelerntes in der Prüfung nicht abrufbar ist, einmal als Befürchtung (i13), einmal als Erleben (i07). Diese gemeinsame spezifische Varianz erklären die vier Faktoren nicht.</p>
+</div>
+</div>
+</div>
+<ol start="4" type="a">
+<li>Was steht auf den Diagonalen von <span class="math inline">\(\Sigma(\theta)\)</span> und <span class="math inline">\(D\)</span>?</li>
+</ol>
+<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-40-contents" aria-controls="callout-40" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tipp</span>Lösung
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-40" class="callout-40-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Auf der Diagonalen von <span class="math inline">\(\Sigma(\theta)\)</span> die Kommunalitäten <span class="math inline">\(h^2\)</span>, auf der Diagonalen von <span class="math inline">\(D\)</span> die Spezifitäten <span class="math inline">\(u^2 = 1 - h^2\)</span>.</p>
+</div>
+</div>
+</div>
+<ol start="5" type="a">
+<li>Wie beurteilen Sie die Modellanpassung insgesamt?</li>
+</ol>
+<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-41-contents" aria-controls="callout-41" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tipp</span>Lösung
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-41" class="callout-41-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Gut. Bis auf ein Itempaar liegen alle Residuen nahe null.</p>
+</div>
+</div>
+</div>
+</div>
+<div id="exr-efa-interpretation" class="theorem exercise">
+<p><span class="theorem-title"><strong>Aufgabe 8 (Interpretation)</strong></span> Die Oblimin-Lösung aus <a href="#exr-efa-rotation" class="quarto-xref">Aufgabe&nbsp;6</a>, die Items nach Faktoren sortiert:</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(fit_oblimin<span class="sc">$</span>loadings, <span class="at">digits =</span> <span class="dv">2</span>, <span class="at">cutoff =</span> <span class="dv">0</span>, <span class="at">sort =</span> <span class="cn">TRUE</span>)</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Loadings:
+    ML1   ML2   ML3   ML4  
+i01  0.72  0.04 -0.02  0.02
+i05  0.68  0.01 -0.02 -0.01
+i09  0.60  0.09  0.00 -0.01
+i13  0.63 -0.03  0.10  0.02
+i17  0.54  0.00 -0.01  0.07
+i02 -0.01  0.71  0.02  0.00
+i06  0.03  0.56  0.07 -0.01
+i10  0.09  0.57 -0.05  0.00
+i14  0.01  0.68 -0.01  0.00
+i18 -0.02  0.67  0.00  0.03
+i03 -0.06  0.06  0.70  0.01
+i07  0.09 -0.10  0.56  0.02
+i15 -0.01  0.01  0.65 -0.01
+i19  0.00  0.02  0.55  0.00
+i04  0.11 -0.04 -0.04  0.60
+i08 -0.03 -0.02  0.03  0.63
+i12 -0.06  0.07  0.01  0.67
+i11  0.32  0.04  0.44 -0.01
+i16  0.05 -0.03  0.00  0.48
+i20 -0.01  0.03 -0.04  0.25
+
+                ML1  ML2  ML3  ML4
+SS loadings    2.18 2.09 1.75 1.50
+Proportion Var 0.11 0.10 0.09 0.08
+Cumulative Var 0.11 0.21 0.30 0.38</code></pre>
+</div>
+</div>
+<ol type="a">
+<li>Vergleichen Sie die Lösung mit Ihrer Zuordnung aus <a href="#exr-efa-construct" class="quarto-xref">Aufgabe&nbsp;1</a>, Teil c, und mit den Blöcken aus <a href="#exr-efa-corrplot" class="quarto-xref">Aufgabe&nbsp;10</a>, Teil b.</li>
+</ol>
+<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-42-contents" aria-controls="callout-42" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tipp</span>Lösung
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-42" class="callout-42-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Sie stimmen überein. Die vier Faktoren entsprechen den vier Komponenten und den vier Blöcken der sortierten Korrelationsmatrix:</p>
+<ul>
+<li>ML1: Besorgtheit (i01, i05, i09, i13, i17)</li>
+<li>ML2: Aufgeregtheit (i02, i06, i10, i14, i18)</li>
+<li>ML3: Interferenz (i03, i07, i11, i15, i19)</li>
+<li>ML4: Mangel an Zuversicht (i04, i08, i12, i16, i20)</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div id="exr-efa-samples" class="theorem exercise">
+<p><span class="theorem-title"><strong>Aufgabe 9 (Stichprobenabhängigkeit)</strong></span> Das Team legt denselben Fragebogen 1000 Psychologiestudierenden im ersten Semester an mehreren Universitäten vor. Die Studierenden sind sich ähnlicher als die Personen der Online-Stichprobe: gleiches Fach, ähnliches Alter, dieselben Prüfungen.</p>
+<ol type="a">
+<li>Die Summenwerte (alle 20 Items) in beiden Stichproben; die orange Linie markiert den Mittelwert:</li>
+</ol>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="08-efa_files/figure-html/total-scores-1.png" class="img-fluid figure-img" alt="Histogramme der Summenwerte in der Online- und der Studierendenstichprobe mit Mittelwert und Standardabweichung" width="864"></p>
+</figure>
+</div>
+</div>
+</div>
+<ol type="a">
+<li>Vergleichen Sie die Summenwerte der beiden Stichproben.</li>
+</ol>
+<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-43-contents" aria-controls="callout-43" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tipp</span>Lösung
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-43" class="callout-43-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Bei fast gleichem Mittelwert (79.52 und 78.94) streuen die Summenwerte der Studierenden deutlich weniger (SD 11.25 statt 17.84).</p>
+</div>
+</div>
+</div>
+<ol start="2" type="a">
+<li>Erwarten Sie in dieser Stichprobe dieselbe Faktorenstruktur? Begründen Sie Ihre Vermutung, bevor Sie die Ausgaben ansehen.</li>
+</ol>
+<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-44-contents" aria-controls="callout-44" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tipp</span>Lösung
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-44" class="callout-44-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Nein. Sind sich die Personen ähnlicher, unterscheiden sich ihre Werte weniger deutlich, und die Korrelationen werden kleiner.</p>
+</div>
+</div>
+</div>
+<p>Eigenwerte (die ersten zehn) und Screeplot mit Parallelanalyse in der Studierendenstichprobe:</p>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code> Faktor Empirisch Zufall_95
+      1      2.67      1.30
+      2      1.48      1.24
+      3      1.37      1.20
+      4      1.14      1.17
+      5      1.14      1.14
+      6      1.05      1.12
+      7      0.96      1.09
+      8      0.94      1.07
+      9      0.91      1.05
+     10      0.89      1.02</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="08-efa_files/figure-html/scree-students-1.png" class="img-fluid figure-img" alt="Screeplot der Studierendenstichprobe mit den Eigenwerten der Zufallsdaten" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<ol start="3" type="a">
+<li>Wie viele Faktoren würden Sie hier nach dem Kaiser-Guttman-Kriterium extrahieren, wie viele nach der Parallelanalyse? Vergleichen Sie mit <a href="#exr-efa-number" class="quarto-xref">Aufgabe&nbsp;4</a>.</li>
+</ol>
+<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-45-contents" aria-controls="callout-45" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tipp</span>Lösung
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-45" class="callout-45-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Kaiser-Guttman-Kriterium: sechs, Parallelanalyse: drei (der vierte Eigenwert 1.14 liegt unter 1.17). In der Online-Stichprobe ergaben beide vier. Das Kaiser-Guttman-Kriterium überschätzt hier die Zahl der Faktoren: Weil die Items schwächer korrelieren, liegen viele Eigenwerte knapp über 1.</p>
+</div>
+</div>
+</div>
+<p>Gegeben sei die Oblimin-Lösung mit vier Faktoren in der Studierendenstichprobe:</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>fit_students <span class="ot">&lt;-</span> psych<span class="sc">::</span><span class="fu">fa</span>(students, <span class="at">nfactors =</span> <span class="dv">4</span>, <span class="at">fm =</span> <span class="st">"ml"</span>, <span class="at">rotate =</span> <span class="st">"oblimin"</span>)</span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(fit_students<span class="sc">$</span>loadings, <span class="at">digits =</span> <span class="dv">2</span>, <span class="at">cutoff =</span> <span class="dv">0</span>)</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Loadings:
+    ML1   ML2   ML3   ML4  
+i01  0.41  0.10  0.00  0.07
+i02  0.39  0.03 -0.04  0.00
+i03  0.06 -0.02  0.31  0.06
+i04  0.01 -0.01 -0.05  0.59
+i05  0.33  0.04  0.11  0.02
+i06  0.38  0.00 -0.04 -0.04
+i07 -0.11  0.35  0.38  0.04
+i08  0.02 -0.02  0.07  0.39
+i09  0.26  0.03  0.07  0.05
+i10  0.30 -0.02  0.05 -0.01
+i11  0.19  0.02  0.33  0.04
+i12 -0.03 -0.01  0.05  0.45
+i13  0.02  1.00 -0.01  0.00
+i14  0.34  0.04  0.05 -0.06
+i15  0.11 -0.07  0.45  0.00
+i16  0.09 -0.01  0.08  0.19
+i17  0.31  0.01  0.06  0.08
+i18  0.29 -0.05  0.08 -0.04
+i19  0.02 -0.06  0.41 -0.06
+i20  0.02  0.06 -0.05  0.13
+
+                ML1  ML2  ML3  ML4
+SS loadings    1.11 1.15 0.78 0.80
+Proportion Var 0.06 0.06 0.04 0.04
+Cumulative Var 0.06 0.11 0.15 0.19</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(fit_students<span class="sc">$</span>Phi, <span class="dv">2</span>)</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>     ML1  ML2  ML3  ML4
+ML1 1.00 0.21 0.30 0.19
+ML2 0.21 1.00 0.30 0.07
+ML3 0.30 0.30 1.00 0.11
+ML4 0.19 0.07 0.11 1.00</code></pre>
+</div>
+</div>
+<ol start="4" type="a">
+<li>Vergleichen Sie die Ladungen und die Faktorkorrelationen der Studierendenstichprobe mit der Oblimin-Lösung der Online-Stichprobe (<a href="#exr-efa-rotation" class="quarto-xref">Aufgabe&nbsp;6</a>). Was beobachten Sie?</li>
+</ol>
+<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-46-contents" aria-controls="callout-46" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tipp</span>Lösung
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-46" class="callout-46-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Die Ladungen sind deutlich niedriger. Die Besorgtheits- und die Aufgeregtheitsitems laden gemeinsam auf ML1; ML2 besteht fast nur aus i13 (Ladung 1.00, nicht plausibel) und i07. Die Faktorkorrelationen sind kleiner (0.07 bis 0.30). Die Struktur aus der Online-Stichprobe ist nicht wiederzuerkennen.</p>
+</div>
+</div>
+</div>
+<ol start="5" type="a">
+<li>Wie erklären Sie die Unterschiede?</li>
+</ol>
+<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-47-contents" aria-controls="callout-47" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tipp</span>Lösung
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-47" class="callout-47-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Eingeschränkte Varianz: Die Psychologiestudierenden unterscheiden sich weniger in ihrer Prüfungsangst. Korrelationen hängen von der Varianz zwischen Personen ab (wie die Reliabilität in der KTT von der Varianz der wahren Werte), also sinken Korrelationen, Ladungen, Kommunalitäten.</p>
+</div>
+</div>
+</div>
+<ol start="6" type="a">
+<li>Beide Datensätze sind mit demselben Messmodell simuliert: dieselben vier Faktoren, dieselben Ladungen, dieselben Items. Nur die Personen unterscheiden sich. Was bedeutet das für die Aussage „Der Fragebogen misst vier Dimensionen“? Welche Stichprobe eignet sich für die Testkonstruktion?</li>
+</ol>
+<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-48-contents" aria-controls="callout-48" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tipp</span>Lösung
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-48" class="callout-48-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Die Faktorenstruktur ist keine Eigenschaft des Fragebogens allein, sondern des Fragebogens in einer Population. Ladungen, Kommunalitäten und Reliabilität hängen von der Stichprobe ab. Für die Testkonstruktion eignet sich eine große, heterogene Stichprobe, die die Zielpopulation abbildet, hier die Online-Stichprobe.</p>
+</div>
+</div>
+</div>
+</div>
+<section id="literatur" class="level2">
+<h2 class="anchored" data-anchor-id="literatur">Literatur</h2>
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" data-line-spacing="2" role="list">
+<div id="ref-hodapp2011" class="csl-entry" role="listitem">
+Hodapp, V., Rohrmann, S., &amp; Ringeisen, T. (2011). <em>Prüfungsangstfragebogen</em>. Hogrefe.
+</div>
+</div>
+
+
+</section>
+</div>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Kopiert");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Kopiert");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/sbissantz\.github\.io\/irtea\/");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+      &nbsp;
+    </div>   
+    <div class="nav-footer-center">
+<p>Lizenz: GPL-3</p>
+</div>
+    <div class="nav-footer-right">
+      &nbsp;
+    </div>
+  </div>
+</footer>
+
+
+
+
+</body></html>
