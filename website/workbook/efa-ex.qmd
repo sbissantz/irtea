@@ -88,7 +88,7 @@ b. Erwarten Sie, dass die Dimensionen miteinander zusammenhängen? Begründen Si
 Ja, positiv.
 :::
 
-c. Suchen Sie aus Tabellen die Items heraus, die Ihrer Meinung nach die Komponente *Besorgtheit* messen.
+c. Suchen Sie aus @tbl-items die Items heraus, die Ihrer Meinung nach die Komponente *Besorgtheit* messen.
 
 ::: {.callout-tip title="Lösung" collapse="true"}
 Z. B.: i01, i05, i09, i13, i17
