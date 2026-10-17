@@ -139,25 +139,25 @@ Vier Blöcke:
 i20 korreliert nur schwach mit den Items seines Blocks.
 :::
 
-c. Vergleichen Sie die Blöcke mit Ihrer Erwartung aus @exr-efa-construct, Teil a  Stimmen Anzahl und Zusammensetzung überein?
+c. Vergleichen Sie die Blöcke mit Ihrer Erwartung aus @exr-efa-construct, Teil a. Stimmen Anzahl und Zusammensetzung überein?
 
 ::: {.callout-tip title="Lösung" collapse="true"}
 Man kann vier Blöcke vermuten.
 :::
 
-d. Finden Sie Ihre Erwartung über die Komponente *Besorgnis* aus @exr-efa-construct, Teil c, in den Blöcken wieder?
+d. Finden Sie Ihre Erwartung über die Komponente *Besorgtheit* aus @exr-efa-construct, Teil c, in den Blöcken wieder?
 
 ::: {.callout-tip title="Lösung" collapse="true"}
 Ja. Gelesen von links oben nach rechts unten: Block 3. Item i20 sollte man im Auge behalten.
-::
-
-d. Hängen die Blöcke untereinander zusammen? Woran sehen Sie das?
-
-::: {.callout-tip title="Lösung" collapse="true"}
-Ja. Die Felder zwischen den Blöcken sind nicht dunkel (nahe null); v.a. zwischen Block 2 und 3. Das passt zu @exr-efa-construct, Teil b.
 :::
 
-e. Wie viele Faktoren würden Sie allein aufgrund der Abbildung extrahieren?
+e. Hängen die Blöcke untereinander zusammen? Woran sehen Sie das?
+
+::: {.callout-tip title="Lösung" collapse="true"}
+Ja. Die Felder zwischen den Blöcken sind nicht dunkel (nahe null); v. a. zwischen Block 2 und 3. Das passt zu @exr-efa-construct, Teil b.
+:::
+
+f. Wie viele Faktoren würden Sie allein aufgrund der Abbildung extrahieren?
 
 ::: {.callout-tip title="Lösung" collapse="true"}
 Vier.
