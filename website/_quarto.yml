@@ -21,13 +21,9 @@ website:
       - text: Folien
         menu:
           - href: slides/basics-inp.qmd
-            text: "01 Grundlagen (HTML)"
-          - href: slides/basics-inp.pdf
-            text: "01 Grundlagen (PDF)"
+            text: "01 Grundlagen"
           - href: slides/efa-inp.qmd
-            text: "08 Exploratorische Faktorenanalyse (HTML)"
-          - href: slides/efa-inp.pdf
-            text: "08 Exploratorische Faktorenanalyse (PDF)"
+            text: "08 Exploratorische Faktorenanalyse"
       - text: Übungsheft
         menu:
           - href: workbook/basics-ex.qmd
