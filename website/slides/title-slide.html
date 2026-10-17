@@ -1,0 +1,33 @@
+$-- revealjs title slide: Quarto's title-fancy/title-slide.html (Quarto 1.10)
+$-- without the unused ORCID and email parts, plus a link to the PDF version
+$-- when the deck header sets `pdf-link`
+<section id="$idprefix$title-slide"$for(title-slide-attributes/pairs)$ $it.key$="$it.value$"$endfor$ class="quarto-title-block">
+  <h1 class="title">$title$</h1>
+$if(subtitle)$
+  <p class="subtitle">$subtitle$</p>
+$endif$
+
+<div class="quarto-title-authors">
+$for(by-author)$
+<div class="quarto-title-author">
+<div class="quarto-title-author-name">
+$if(by-author.url)$<a href="$by-author.url$">$endif$$if(by-author.name.literal)$$by-author.name.literal$$endif$$if(by-author.url)$</a>$endif$
+</div>
+$if(by-author.affiliations)$
+    $for(by-author.affiliations)$
+    <p class="quarto-title-affiliation">
+      $if(it.url)$<a href="$it.url$">$endif$$it.name$$if(it.url)$</a>$endif$
+    </p>
+    $endfor$
+$endif$
+</div>
+$endfor$
+</div>
+
+$if(date)$
+  <p class="date">$date$</p>
+$endif$
+$if(pdf-link)$
+  <p class="pdf-link"><a href="$pdf-link$">Folien als PDF</a></p>
+$endif$
+</section>
