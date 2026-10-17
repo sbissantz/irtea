@@ -15,6 +15,8 @@ Quarto website with slides and a workbook. Commands: `WORKFLOW.md`. Paths below 
 - Numbers: decimal point, also in German text (`0.5`; decimal commas break LaTeX math).
   Vector entries separated by commas: `(1.5, 0.5)^\top`. Round to two decimal places.
 - German quotation marks: „…“.
+- German abbreviations take a narrow no-break space (U+202F) between their parts:
+  `z. B.`, `d. h.`, `u. a.` (pandoc turns it into `\,` in the PDF).
 
 ## Look
 
