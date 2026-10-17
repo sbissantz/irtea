@@ -6,8 +6,8 @@ Run every command from the `irtea` folder unless noted otherwise.
 
 | Folder | What it holds |
 |---|---|
-| `website/slides/` | Slide decks (`NN-topic.qmd`), shared slide settings (`_metadata.yml`), PDF settings (`beamer-header.tex`), images |
-| `website/workbook/` | Workbook chapters (`NN-topic.qmd`), with hints and results in fold-out boxes |
+| `website/slides/` | Slide decks (`topic-inp.qmd`), shared slide settings (`_metadata.yml`), PDF settings (`beamer-header.tex`), images |
+| `website/workbook/` | Workbook chapters (`topic-ex.qmd`), with hints and results in fold-out boxes |
 | `website/theme.scss` | Look of the website and workbook (font, colors) |
 | `website/_quarto.yml` | Website settings and menus |
 | `website/_site/` | Built website (generated, not in git) |
@@ -32,14 +32,14 @@ quarto render website
 ```
 
 - Takes about 30 seconds. Builds all pages, both slide formats (HTML and PDF), and the workbook.
-- Open the PDF slides: `open website/_site/slides/01-intro.pdf`
+- Open the PDF slides: `open website/_site/slides/basics-inp.pdf`
 
 Only one slide deck:
 
 ```bash
-quarto render website/slides/01-intro.qmd                 # HTML and PDF
-quarto render website/slides/01-intro.qmd --to revealjs   # HTML only
-quarto render website/slides/01-intro.qmd --to beamer     # PDF only
+quarto render website/slides/basics-inp.qmd                 # HTML and PDF
+quarto render website/slides/basics-inp.qmd --to revealjs   # HTML only
+quarto render website/slides/basics-inp.qmd --to beamer     # PDF only
 ```
 
 ## Publish the website
@@ -77,9 +77,9 @@ source("data-raw/personality-items.R")  # rebuild the dataset
 
 ## Add new content
 
-- **Slide deck:** `website/slides/NN-topic.qmd` with `title`, `subtitle`, `author`,
+- **Slide deck:** `website/slides/topic-inp.qmd` with `title`, `subtitle`, `author`,
   `institute` in the header. The look comes from `slides/_metadata.yml` automatically.
-- **Workbook chapter:** `website/workbook/NN-topic.qmd`. Exercises as
+- **Workbook chapter:** `website/workbook/topic-ex.qmd`. Exercises as
   `::: {#exr-short-name}` with a `## Title` inside, parts as `a.`, `b.`, ... After each
   part a collapsed solution box (result only, no steps); hints in a collapsed box where
   needed:

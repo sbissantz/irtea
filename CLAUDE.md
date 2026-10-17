@@ -6,8 +6,9 @@ Quarto website with slides and a workbook. Commands: `WORKFLOW.md`. Paths below 
 
 ## Structure and language
 
-- `slides/NN-topic.qmd`: decks, rendered to HTML (revealjs) and PDF (beamer).
-- `workbook/NN-topic.qmd`: workbook chapters, solutions included (results only).
+- `slides/topic-inp.qmd`: input decks, rendered to HTML (revealjs) and PDF (beamer).
+- `workbook/topic-ex.qmd`: workbook chapters (exercises), solutions included (results
+  only).
 - `R/`, `data/`, `data-raw/`, `man/`, `tests/`: the R package.
 - Content in German; code, comments and file names in American English. File names
   lowercase, words joined with `-`.
