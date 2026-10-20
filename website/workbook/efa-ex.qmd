@@ -334,7 +334,7 @@ fit_none <- psych::fa(items, nfactors = 4, fm = "ml", rotate = "none")
 print(fit_none$loadings, digits = 2, cutoff = 0)
 ```
 
-::: {.callout-note title="Hinweise" collapse="true"}
+::: {.callout-note title="Hinweis" collapse="true"}
 `SS loadings` ist die Summe der quadrierten Ladungen eines Faktors, also sein Eigenwert. Er ist kleiner als der Eigenwert in @exr-efa-number: Dort stammen die Eigenwerte aus der Korrelationsmatrix (wie bei der PCA), hier aus der Faktorenanalyse, die nur die gemeinsame Varianz erklärt.
 :::
 
@@ -435,7 +435,7 @@ legend("bottomleft",
 )
 ```
 
-::: {.callout-note title="Hinweise" collapse="true"}
+::: {.callout-note title="Hinweis" collapse="true"}
 Dieselbe Oblimin-Rotation in drei Dimensionen (Faktoren 1 bis 3). Ziehen Sie mit der Maus, um die Abbildung zu drehen; mit dem Mausrad zoomen Sie. Die graue Fläche ist die Ebene der Faktoren 1 und 2, also die rechte Abbildung oben; die hellere Fläche ist die Ebene der Faktoren 2 und 3. Offene Kreise zeigen die Lage vor, gefüllte Punkte nach der Rotation. Die Items von Faktor 4 (Mangel an Zuversicht) liegen nahe am Ursprung. Wie oben sind die korrelierten Faktoren als rechtwinklige Achsen dargestellt.
 
 ```{r}
