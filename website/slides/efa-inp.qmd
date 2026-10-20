@@ -83,9 +83,7 @@ group_colors <- colors[c(2, 4)]
 
 ## (Minimal-)Voraussetzungen der Faktorenanalyse
 
-::: {.callout-note title="Minimalvoraussetzung"}
-Ist die Daten- bzw. Korrelationsmatrix zur faktorenanalytischen Auswertung „geeignet“?
-:::
+Ist die Daten- bzw. Korrelationsmatrix zur faktorenanalytischen Auswertung „geeignet“? Ansätze sind u.a.
 
 1. Bartlett-Test
 2. Kaiser-Meyer-Olkin-Kriterium
@@ -137,9 +135,7 @@ $$
 
 ## Extraktionsproblem
 
-::: {.callout-note title="Extraktionsproblem"}
-Wie extrahieren wir die zur Reproduktion nötigen Faktoren/Komponenten?
-:::
+Wie ermittelt man die zur Reproduktion nötigen Faktoren/Komponenten? Ansätze sind u.a.
 
 1. Bestimmung der Hauptkomponenten (PCA)
 2. Iterative Bestimmung der Hauptachsen (PAF)
@@ -149,15 +145,13 @@ Wie extrahieren wir die zur Reproduktion nötigen Faktoren/Komponenten?
 
 ## Rotationsproblem
 
-::: {.callout-note title="Rotationsproblem"}
-Wie rotiert man die erhaltene Ladungsmatrix derart, dass eine möglichst einfach interpretierbare Lösung daraus hervorgeht?
-:::
+Wie rotiert man die erhaltene Ladungsmatrix derart, dass eine möglichst einfach interpretierbare Lösung daraus hervorgeht? Ansätze sind u.a.
 
 1. Visuelle Rotation
 2. **Orthogonale Rotation** (z. B. Varimax)
 3. **Oblique Rotation** (z. B. Oblimin)
 
-**Wichtig:** Die Entscheidung basiert auf Überlegungen zu Zwischenfaktorkorrelationen!
+Die Entscheidung für eine Rotationsmethode sollte (weitgehend) auf Überlegungen zu Zwischenfaktorkorrelationen basieren!
 
 ```{r}
 #| label: rotation-setup
@@ -226,9 +220,7 @@ plot_rotation(fit_oblimin)
 
 ## Problem der Anzahl zu extrahierender Faktoren
 
-::: {.callout-note title="Problem der Anzahl zu extrahierender Faktoren"}
-Wie ermittle ich die Anzahl der zu extrahierenden Faktoren, ohne sie zu kennen?
-:::
+Wie ermittle ich die Anzahl der zu extrahierenden Faktoren, ohne sie zu kennen? Ansätze sind u.a.
 
 1. **Kaiser-Guttman-Kriterium**
 2. **Scree-Test**
@@ -236,7 +228,7 @@ Wie ermittle ich die Anzahl der zu extrahierenden Faktoren, ohne sie zu kennen?
 4. Hull-Methode[^hull]
 5. Bayesianische exploratorische Faktorenanalyse
 
-[^hull]: Eine von zahlreichen Weiterentwicklungen der „klassischen Verfahren“ [@lorenzoseva2011; @timmerman2018].
+[^hull]: Eine von zahlreichen Weiterentwicklungen der drei „klassischen Verfahren“ [@lorenzoseva2011; @timmerman2018].
 
 <!--
 ## Eigenwertbasierte Methoden
