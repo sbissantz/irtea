@@ -12,6 +12,8 @@ execute:
 website:
   title: "B.F.3 Diagnostik & Testtheorie"
   site-url: https://sbissantz.github.io/irtea/
+  # pages with draft: true are published empty (see WORKFLOW.md)
+  draft-mode: gone
   favicon: images/logo.png
   navbar:
     logo: images/logo.png

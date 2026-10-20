@@ -55,6 +55,30 @@ quarto render website/slides/basics-inp.qmd --to beamer     # PDF only
 4. After 1 to 2 minutes the site is live at <https://sbissantz.github.io/irtea/>.
    Reload the page if you still see the old version.
 
+GitHub Pages always gets the whole site; single pages cannot be published. After
+changing only one page, render that page and publish without rebuilding the rest:
+
+```bash
+quarto render website/slides/basics-inp.qmd
+quarto publish gh-pages website --no-render
+```
+
+`--no-render` uploads `website/_site` as it is, so everything rendered locally goes
+online.
+
+### Keep unreleased sessions offline
+
+- **Workbook chapter:** add `draft: true` to the header. With `draft-mode: gone` in
+  `_quarto.yml`, the published page stays empty; menu entries and links remain. The
+  local preview still shows the full chapter. To release: delete the line, render,
+  publish.
+- **Slide deck:** drafts do not work for slides (HTML and PDF are rendered anyway).
+  Start the file name with an underscore (`slides/_irt-inp.qmd`) and add no menu entry
+  yet; Quarto ignores such files completely. To release: rename the file (also its
+  `pdf-link:`), add the menu entry in `_quarto.yml`, render, publish.
+- Do not link to an underscore deck from a published page: a link to a page that is
+  not rendered makes Quarto copy its source file into the site.
+
 ## Save your work with git
 
 ```bash
