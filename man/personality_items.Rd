@@ -15,7 +15,7 @@ respektvoll zu sein."}
 }
 }
 \source{
-Simuliert; siehe Lösungsvorschlag zu Kapitel 1, Aufgabe 3.
+Simuliert; siehe Lösungsvorschlag zu Kapitel 1, Aufgabe 4.
 }
 \usage{
 personality_items
@@ -23,7 +23,7 @@ personality_items
 \description{
 Simulierte Antworten von 7 Personen auf drei Items eines
 Persönlichkeitsinventars, erhoben auf einer Schiebereglerskala von -12
-(Ablehnung) bis 12 (Zustimmung). Grundlage für Aufgabe 3 in Kapitel 1
+(Ablehnung) bis 12 (Zustimmung). Grundlage für Aufgabe 4 in Kapitel 1
 des Übungshefts.
 }
 \keyword{datasets}

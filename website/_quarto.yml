@@ -24,8 +24,6 @@ website:
         menu:
           - href: slides/basics-inp.qmd
             text: "01 Grundlagen"
-          - href: slides/irt-inp.qmd
-            text: "07 Item-Response-Theorie"
           - href: slides/efa-inp.qmd
             text: "08 Exploratorische Faktorenanalyse"
       - text: Übungsheft
