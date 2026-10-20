@@ -116,7 +116,7 @@ source("data-raw/personality-items.R")  # rebuild the dataset
 
   Intro text.
 
-  ::: {.callout-note title="Hinweise" collapse="true"}
+  ::: {.callout-note title="Hinweis" collapse="true"}
   Hints for the students.
   :::
 

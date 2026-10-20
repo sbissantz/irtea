@@ -53,7 +53,7 @@ lines `#d6dadb`.
   text "Teil b".
 - After each part: `::: {.callout-tip title="Lösung" collapse="true"}` with the result
   only, no steps.
-- Hints: `::: {.callout-note title="Hinweise" collapse="true"}`.
+- Hints: `::: {.callout-note title="Hinweis" collapse="true"}`.
 
 ## Bibliography (APA 7)
 
