@@ -81,13 +81,13 @@ Maximum-Likelihood-Schätzung (ML-Schätzung)
 ::: {#exr-solving-probability}
 ## Lösungswahrscheinlichkeit
 
-Lena (Person 1) ist eine fantastische Matheschülerin ($\theta_1 = 2$) und sitzt vor einem kniffligen Mathematikitem (Item $j$, $\beta_j = 1$). Sie soll zeigen, dass
+Lena (Person 1) ist eine fantastische Matheschülerin ($\theta_1 = 2$) und sitzt vor einem kniffligen Mathematikitem (Item 1, $\beta_1 = 1$). Sie soll zeigen, dass
 
 $$
 \lim_{x \to 0} \frac{\sin x}{x} = 1.
 $$
 
-Ob Lena das Item löst, beschreibt die Zufallsvariable $U_{1j}$ ($U_{1j} = 1$: gelöst, $U_{1j} = 0$: nicht gelöst). Die Grundidee: Übersteigt die Fähigkeit $\theta_i$ einer Person $i$ die Schwierigkeit $\beta_j$ eines Items $j$, löst sie das Item mit einer Wahrscheinlichkeit von mehr als 0.5. Diese Idee hält folgende Modellgleichung fest:
+Ob Lena das Item löst, beschreibt die Zufallsvariable $U_{1,1}$ ($U_{1,1} = 1$: gelöst, $U_{1,1} = 0$: nicht gelöst). Die Grundidee: Übersteigt die Fähigkeit $\theta_i$ einer Person $i$ die Schwierigkeit $\beta_j$ eines Items $j$, löst sie das Item mit einer Wahrscheinlichkeit von mehr als 0.5. Diese Idee hält folgende Modellgleichung fest:
 
 $$
 P(U_{ij} = 1 \mid \theta_i, \beta_j) = \frac{e^{\theta_i - \beta_j}}{1 + e^{\theta_i - \beta_j}}
@@ -100,13 +100,13 @@ Zur Lösung dieser Aufgabe ist kein tiefgreifendes Wissen über das Modell hinte
 a. Berechnen Sie Lenas Lösungswahrscheinlichkeit für dieses Item.
 
 ::: {.callout-tip title="Lösung" collapse="true"}
-$P(U_{1j} = 1 \mid \theta_1 = 2, \beta_j = 1) \approx 0.73$
+$P(U_{1,1} = 1 \mid \theta_1 = 2, \beta_1 = 1) \approx 0.73$
 :::
 
-b. Sagen Sie vorher, ob Lena das Item löst ($u_{1j} = 1$) oder nicht ($u_{1j} = 0$). Nehmen Sie dazu als Regel an: Ist die Lösungswahrscheinlichkeit größer als 0.5, sagen Sie „gelöst“ vorher.
+b. Sagen Sie vorher, ob Lena das Item löst ($u_{1,1} = 1$) oder nicht ($u_{1,1} = 0$). Nehmen Sie dazu als Regel an: Ist die Lösungswahrscheinlichkeit größer als 0.5, sagen Sie „gelöst“ vorher.
 
 ::: {.callout-tip title="Lösung" collapse="true"}
-$u_{1j} = 1$, da $0.73 > 0.5$.
+$u_{1,1} = 1$, da $0.73 > 0.5$.
 :::
 
 c. Ist damit sichergestellt, dass Lena dieses Item löst? Begründen Sie Ihre Antwort.
@@ -115,7 +115,7 @@ c. Ist damit sichergestellt, dass Lena dieses Item löst? Begründen Sie Ihre An
 Nein. Mit einer Wahrscheinlichkeit von etwa 0.27 löst Lena das Item nicht.
 :::
 
-d. Der folgende Graph zeigt die Lösungswahrscheinlichkeit für das Item in Abhängigkeit von der Fähigkeit $\theta_i$. Carlo (Person 2, $\theta_2 = 0$) bearbeitet dasselbe Item. Zeichnen Sie die Lösungswahrscheinlichkeiten von Lena und von Carlo ein und vergleichen Sie sie.
+d. Der folgende Graph zeigt die Lösungswahrscheinlichkeit für Item 1 in Abhängigkeit von der Fähigkeit $\theta_i$. Carlo (Person 2, $\theta_2 = 0$) bearbeitet dasselbe Item. Zeichnen Sie die Lösungswahrscheinlichkeiten von Lena und von Carlo ein und vergleichen Sie sie.
 
 ```{r}
 #| label: solving-probability-task
@@ -131,7 +131,7 @@ plot_solving_probability <- function() {
   theta <- seq(-3, 5, by = 0.05)
   plot(theta, plogis(theta - 1),
     type = "n", las = 1, ylim = c(0, 1), xaxt = "n",
-    xlab = expression(theta[i]), ylab = expression(P(U[ij] == 1))
+    xlab = expression(theta[i]), ylab = expression(P(U[list(i, 1)] == 1))
   )
   axis(1, at = -3:5)
   abline(h = seq(0, 1, by = 0.1), v = -3:5, col = "grey90")
@@ -162,7 +162,7 @@ Lena: $(2, 0.73)$, Carlo: $(0, 0.27)$. Für dasselbe Item hat der schwächere Ca
 e. Welche Vorhersage ergibt die Regel aus Teil b für Carlo? Begründen Sie Ihre Antwort.
 
 ::: {.callout-tip title="Lösung" collapse="true"}
-„Nicht gelöst“ ($u_{2j} = 0$), da $0.27 < 0.5$.
+„Nicht gelöst“ ($u_{2,1} = 0$), da $0.27 < 0.5$.
 :::
 :::
 
@@ -171,41 +171,41 @@ e. Welche Vorhersage ergibt die Regel aus Teil b für Carlo? Begründen Sie Ihre
 
 Stellen Sie sich vor, Sie hätten mit SoSci Survey im Rahmen einer Studienarbeit eine Erhebung mittels eines Persönlichkeitsinventars durchgeführt, das unter anderem die Konstrukte „Introversion“, „Extraversion“ und „soziale Kompetenz“ beinhaltet. Dabei haben Sie den Befragten auch die folgenden drei Items vorgelegt:
 
-- Item 1 ($i_1$): „Ich ziehe es vor, meine Zeit alleine zu verbringen, als mit
+- Item 1: „Ich ziehe es vor, meine Zeit alleine zu verbringen, als mit
   anderen Menschen zu interagieren.“
-- Item 2 ($i_2$): „Ich genieße es, im Mittelpunkt der Aufmerksamkeit zu
+- Item 2: „Ich genieße es, im Mittelpunkt der Aufmerksamkeit zu
   stehen.“
-- Item 3 ($i_3$): „Ich finde es wichtig, in sozialen Situationen höflich und
+- Item 3: „Ich finde es wichtig, in sozialen Situationen höflich und
   respektvoll zu sein.“
 
-Ihre Stichprobe besteht aus $P = 7$ Teilnehmenden, die alle auf einer Schiebereglerskala mit den Endpunkten $-12$ und $12$ geantwortet haben ($y_1, \dots, y_7$). Positive Werte bedeuten Zustimmung, negative Werte Ablehnung. Die Antworten sind in der folgenden Tabelle dargestellt:
+Ihre Stichprobe besteht aus $N = 7$ Teilnehmenden (Personen $i = 1, \dots, 7$), die alle auf einer Schiebereglerskala mit den Endpunkten $-12$ und $12$ geantwortet haben. Die Antwort von Person $i$ auf Item $j$ ist $y_{ij}$. Positive Werte bedeuten Zustimmung, negative Werte Ablehnung. Die Antworten sind in der folgenden Tabelle dargestellt:
 
-|         | $y_1$ | $y_2$ | $y_3$ | $y_4$ | $y_5$ | $y_6$ | $y_7$ |
-|---------|------:|------:|------:|------:|------:|------:|------:|
-| $i_1$   |  7.68 |  7.40 |  7.28 |  6.80 |  7.38 |  7.48 |  7.72 |
-| $i_2$   |  1.16 |  4.42 |  7.39 | 11.89 |  2.31 |  5.87 |  6.34 |
-| $i_3$   | -3.58 | -2.69 | -2.00 | -0.32 | -3.30 | -2.95 | -4.74 |
+|         | $i = 1$ | $i = 2$ | $i = 3$ | $i = 4$ | $i = 5$ | $i = 6$ | $i = 7$ |
+|---------|--------:|--------:|--------:|--------:|--------:|--------:|--------:|
+| $j = 1$ |    7.68 |    7.40 |    7.28 |    6.80 |    7.38 |    7.48 |    7.72 |
+| $j = 2$ |    1.16 |    4.42 |    7.39 |   11.89 |    2.31 |    5.87 |    6.34 |
+| $j = 3$ |   -3.58 |   -2.69 |   -2.00 |   -0.32 |   -3.30 |   -2.95 |   -4.74 |
 
-: Transponierte Datenmatrix aus SoSci Survey {#tbl-data}
+: Transponierte Datenmatrix aus SoSci Survey (Zeilen: Items $j$, Spalten: Personen $i$) {#tbl-data}
 
 ::: {.callout-note title="Hinweis" collapse="true"}
-Die *Inter-Item-Kovarianzmatrix* ist bei $I$ Items eine $I \times I$-Matrix (hier $3 \times 3$), also ein quadratisches Zahlenraster, das aus Itemvarianzen und Inter-Item-Kovarianzen besteht. Auf der Hauptdiagonalen der Matrix befinden sich die Itemvarianzen und außerhalb der Hauptdiagonalen die nicht standardisierten linearen Zusammenhänge, die Inter-Item-Kovarianzen (siehe @eq-covmat). Die *Inter-Item-Korrelationsmatrix* ist ebenfalls eine $I \times I$-Matrix, die jedoch aus Inter-Item-Korrelationen (und Einsen) besteht. Im Gegensatz zur Inter-Item-Kovarianzmatrix werden außerhalb der Hauptdiagonalen die standardisierten linearen Beziehungen zwischen den Items, also deren Korrelationen, abgetragen. Auf der Hauptdiagonalen stehen Einsen (siehe @eq-cormat). Eine wichtige Eigenschaft solcher Matrizen ist ihre Symmetrie. Kovarianz- und Korrelationsmatrizen sind symmetrisch, d. h. die Einträge oberhalb und unterhalb der Hauptdiagonalen sind spiegelbildlich gleich (z. B. $s_{i_1,i_2} = s_{i_2,i_1}$). Beide Matrizen sind eng miteinander verbunden, und die Kovarianzmatrix kann durch geeignete Standardisierung in eine Korrelationsmatrix umgewandelt werden.
+Die *Inter-Item-Kovarianzmatrix* ist bei $J$ Items eine $J \times J$-Matrix (hier $3 \times 3$), also ein quadratisches Zahlenraster, das aus Itemvarianzen und Inter-Item-Kovarianzen besteht. Auf der Hauptdiagonalen der Matrix befinden sich die Itemvarianzen und außerhalb der Hauptdiagonalen die nicht standardisierten linearen Zusammenhänge, die Inter-Item-Kovarianzen (siehe @eq-covmat). Die *Inter-Item-Korrelationsmatrix* ist ebenfalls eine $J \times J$-Matrix, die jedoch aus Inter-Item-Korrelationen (und Einsen) besteht. Im Gegensatz zur Inter-Item-Kovarianzmatrix werden außerhalb der Hauptdiagonalen die standardisierten linearen Beziehungen zwischen den Items, also deren Korrelationen, abgetragen. Auf der Hauptdiagonalen stehen Einsen (siehe @eq-cormat). Eine wichtige Eigenschaft solcher Matrizen ist ihre Symmetrie. Kovarianz- und Korrelationsmatrizen sind symmetrisch, d. h. die Einträge oberhalb und unterhalb der Hauptdiagonalen sind spiegelbildlich gleich (z. B. $s_{1,2} = s_{2,1}$). Beide Matrizen sind eng miteinander verbunden, und die Kovarianzmatrix kann durch geeignete Standardisierung in eine Korrelationsmatrix umgewandelt werden.
 
 $$
 V =
 \begin{pmatrix}
-s^2_{i_1} & s_{i_1,i_2} & s_{i_1,i_3} \\
-s_{i_2,i_1} & s^2_{i_2} & s_{i_2,i_3} \\
-s_{i_3,i_1} & s_{i_3,i_2} & s^2_{i_3}
+s^2_1 & s_{1,2} & s_{1,3} \\
+s_{2,1} & s^2_2 & s_{2,3} \\
+s_{3,1} & s_{3,2} & s^2_3
 \end{pmatrix}
 $$ {#eq-covmat}
 
 $$
 R =
 \begin{pmatrix}
-1 & r_{i_1,i_2} & r_{i_1,i_3} \\
-r_{i_2,i_1} & 1 & r_{i_2,i_3} \\
-r_{i_3,i_1} & r_{i_3,i_2} & 1
+1 & r_{1,2} & r_{1,3} \\
+r_{2,1} & 1 & r_{2,3} \\
+r_{3,1} & r_{3,2} & 1
 \end{pmatrix}
 $$ {#eq-cormat}
 :::
@@ -217,21 +217,21 @@ Eine mögliche Erwartungsmatrix:
 
 $$
 \begin{array}{c|ccc}
- & i_1 & i_2 & i_3 \\
+ & 1 & 2 & 3 \\
 \hline
-i_1 & & {-}{-} & - \\
-i_2 & & & {+} \\
-i_3 & & &
+1 & & {-}{-} & - \\
+2 & & & {+} \\
+3 & & &
 \end{array}
 $$
 
-Introversion ($i_1$), Extraversion ($i_2$) und soziale Kompetenz ($i_3$).
+Item 1 (Introversion), Item 2 (Extraversion), Item 3 (soziale Kompetenz).
 :::
 
 b. Um Ihre Erwartungen bezüglich der Richtung des Zusammenhangs anhand von Daten zu überprüfen, berechnen Sie zunächst die Inter-Item-Kovarianzmatrix $V$. Interpretieren Sie anschließend die Itemvarianzen und Inter-Item-Kovarianzen und setzen Sie sie zueinander in Bezug. Welche Hinweise liefern Ihnen die Itemvarianzen über die vorhandene Stichprobe bzw. den Inhalt des jeweiligen Items? Nutzen Sie zur Beurteilung auch die Itemmittelwerte und den gegebenen Antwortbereich. Evaluieren Sie abschließend Ihre theoretischen Erwartungen mithilfe der Inter-Item-Kovarianzen. Welche Rückschlüsse lassen die Ergebnisse bereits zu und welche müssen noch offen bleiben?
 
 ::: {.callout-tip title="Lösung" collapse="true"}
-Itemmittelwerte $\bar{y} \approx (7.39, 5.63, -2.80)^\top$ und
+Itemmittelwerte $(\bar{y}_1, \bar{y}_2, \bar{y}_3)^\top \approx (7.39, 5.63, -2.80)^\top$ und
 $$
 V \approx
 \begin{pmatrix}
@@ -249,7 +249,7 @@ Item 1 erhält nahezu geschlossene Zustimmung (sehr kleine Varianz bei einem Ant
 c. Um abschließend auch die Stärke der linearen Zusammenhänge beurteilen zu können, berechnen Sie die Inter-Item-Korrelationsmatrix $R$. Formalisieren Sie dazu zunächst die Beziehung zwischen Itemvarianz, Inter-Item-Kovarianz und Inter-Item-Korrelation. Wie hilft Ihnen diese Formalisierung bei der Berechnung der Inter-Item-Korrelationsmatrix?
 
 ::: {.callout-tip title="Lösung" collapse="true"}
-$r_{i,j} = \dfrac{s_{i,j}}{\sqrt{s_i^2 \cdot s_j^2}}$ und
+$r_{jk} = \dfrac{s_{jk}}{\sqrt{s_j^2 \cdot s_k^2}}$ und
 
 $$
 R \approx
