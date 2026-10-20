@@ -142,10 +142,6 @@ window.Quarto = {
  <span class="dropdown-text">01 Grundlagen</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../slides/irt-inp.qmd">
- <span class="dropdown-text">07 Item-Response-Theorie</span></a>
-  </li>  
-        <li>
     <a class="dropdown-item" href="../slides/efa-inp.html">
  <span class="dropdown-text">08 Exploratorische Faktorenanalyse</span></a>
   </li>  
@@ -390,11 +386,11 @@ L(\theta \mid \mathbf{y}) &amp;= \prod_{i=1}^{3} \theta^{y_i} (1 - \theta)^{1 - 
 </div>
 </div>
 <div id="exr-solving-probability" class="theorem exercise">
-<p><span class="theorem-title"><strong>Aufgabe 3 (Lösungswahrscheinlichkeit)</strong></span> Lena (Person 1) ist eine fantastische Matheschülerin (<span class="math inline">\(\theta_1 = 2\)</span>) und sitzt vor einem kniffligen Mathematikitem (Item <span class="math inline">\(j\)</span>, <span class="math inline">\(\beta_j = 1\)</span>). Sie soll zeigen, dass</p>
+<p><span class="theorem-title"><strong>Aufgabe 3 (Lösungswahrscheinlichkeit)</strong></span> Lena (Person 1) ist eine fantastische Matheschülerin (<span class="math inline">\(\theta_1 = 2\)</span>) und sitzt vor einem kniffligen Mathematikitem (Item 1, <span class="math inline">\(\beta_1 = 1\)</span>). Sie soll zeigen, dass</p>
 <p><span class="math display">\[
 \lim_{x \to 0} \frac{\sin x}{x} = 1.
 \]</span></p>
-<p>Ob Lena das Item löst, beschreibt die Zufallsvariable <span class="math inline">\(U_{1j}\)</span> (<span class="math inline">\(U_{1j} = 1\)</span>: gelöst, <span class="math inline">\(U_{1j} = 0\)</span>: nicht gelöst). Die Grundidee: Übersteigt die Fähigkeit <span class="math inline">\(\theta_i\)</span> einer Person <span class="math inline">\(i\)</span> die Schwierigkeit <span class="math inline">\(\beta_j\)</span> eines Items <span class="math inline">\(j\)</span>, löst sie das Item mit einer Wahrscheinlichkeit von mehr als 0.5. Diese Idee hält folgende Modellgleichung fest:</p>
+<p>Ob Lena das Item löst, beschreibt die Zufallsvariable <span class="math inline">\(U_{1,1}\)</span> (<span class="math inline">\(U_{1,1} = 1\)</span>: gelöst, <span class="math inline">\(U_{1,1} = 0\)</span>: nicht gelöst). Die Grundidee: Übersteigt die Fähigkeit <span class="math inline">\(\theta_i\)</span> einer Person <span class="math inline">\(i\)</span> die Schwierigkeit <span class="math inline">\(\beta_j\)</span> eines Items <span class="math inline">\(j\)</span>, löst sie das Item mit einer Wahrscheinlichkeit von mehr als 0.5. Diese Idee hält folgende Modellgleichung fest:</p>
 <p><span class="math display">\[
 P(U_{ij} = 1 \mid \theta_i, \beta_j) = \frac{e^{\theta_i - \beta_j}}{1 + e^{\theta_i - \beta_j}}
 \]</span></p>
@@ -429,12 +425,12 @@ P(U_{ij} = 1 \mid \theta_i, \beta_j) = \frac{e^{\theta_i - \beta_j}}{1 + e^{\the
 </div>
 <div id="callout-11" class="callout-11-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p><span class="math inline">\(P(U_{1j} = 1 \mid \theta_1 = 2, \beta_j = 1) \approx 0.73\)</span></p>
+<p><span class="math inline">\(P(U_{1,1} = 1 \mid \theta_1 = 2, \beta_1 = 1) \approx 0.73\)</span></p>
 </div>
 </div>
 </div>
 <ol start="2" type="a">
-<li>Sagen Sie vorher, ob Lena das Item löst (<span class="math inline">\(u_{1j} = 1\)</span>) oder nicht (<span class="math inline">\(u_{1j} = 0\)</span>). Nehmen Sie dazu als Regel an: Ist die Lösungswahrscheinlichkeit größer als 0.5, sagen Sie „gelöst“ vorher.</li>
+<li>Sagen Sie vorher, ob Lena das Item löst (<span class="math inline">\(u_{1,1} = 1\)</span>) oder nicht (<span class="math inline">\(u_{1,1} = 0\)</span>). Nehmen Sie dazu als Regel an: Ist die Lösungswahrscheinlichkeit größer als 0.5, sagen Sie „gelöst“ vorher.</li>
 </ol>
 <div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-12-contents" aria-controls="callout-12" aria-expanded="false" aria-label="Toggle callout">
@@ -448,7 +444,7 @@ P(U_{ij} = 1 \mid \theta_i, \beta_j) = \frac{e^{\theta_i - \beta_j}}{1 + e^{\the
 </div>
 <div id="callout-12" class="callout-12-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p><span class="math inline">\(u_{1j} = 1\)</span>, da <span class="math inline">\(0.73 &gt; 0.5\)</span>.</p>
+<p><span class="math inline">\(u_{1,1} = 1\)</span>, da <span class="math inline">\(0.73 &gt; 0.5\)</span>.</p>
 </div>
 </div>
 </div>
@@ -472,7 +468,7 @@ P(U_{ij} = 1 \mid \theta_i, \beta_j) = \frac{e^{\theta_i - \beta_j}}{1 + e^{\the
 </div>
 </div>
 <ol start="4" type="a">
-<li>Der folgende Graph zeigt die Lösungswahrscheinlichkeit für das Item in Abhängigkeit von der Fähigkeit <span class="math inline">\(\theta_i\)</span>. Carlo (Person 2, <span class="math inline">\(\theta_2 = 0\)</span>) bearbeitet dasselbe Item. Zeichnen Sie die Lösungswahrscheinlichkeiten von Lena und von Carlo ein und vergleichen Sie sie.</li>
+<li>Der folgende Graph zeigt die Lösungswahrscheinlichkeit für Item 1 in Abhängigkeit von der Fähigkeit <span class="math inline">\(\theta_i\)</span>. Carlo (Person 2, <span class="math inline">\(\theta_2 = 0\)</span>) bearbeitet dasselbe Item. Zeichnen Sie die Lösungswahrscheinlichkeiten von Lena und von Carlo ein und vergleichen Sie sie.</li>
 </ol>
 <div class="cell">
 <div class="cell-output-display">
@@ -523,7 +519,7 @@ P(U_{ij} = 1 \mid \theta_i, \beta_j) = \frac{e^{\theta_i - \beta_j}}{1 + e^{\the
 </div>
 <div id="callout-15" class="callout-15-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>„Nicht gelöst“ (<span class="math inline">\(u_{2j} = 0\)</span>), da <span class="math inline">\(0.27 &lt; 0.5\)</span>.</p>
+<p>„Nicht gelöst“ (<span class="math inline">\(u_{2,1} = 0\)</span>), da <span class="math inline">\(0.27 &lt; 0.5\)</span>.</p>
 </div>
 </div>
 </div>
@@ -531,33 +527,43 @@ P(U_{ij} = 1 \mid \theta_i, \beta_j) = \frac{e^{\theta_i - \beta_j}}{1 + e^{\the
 <div id="exr-covariance-matrix" class="theorem exercise">
 <p><span class="theorem-title"><strong>Aufgabe 4 (Kovarianz- und Korrelationsmatrix)</strong></span> Stellen Sie sich vor, Sie hätten mit SoSci Survey im Rahmen einer Studienarbeit eine Erhebung mittels eines Persönlichkeitsinventars durchgeführt, das unter anderem die Konstrukte „Introversion“, „Extraversion“ und „soziale Kompetenz“ beinhaltet. Dabei haben Sie den Befragten auch die folgenden drei Items vorgelegt:</p>
 <ul>
-<li>Item 1 (<span class="math inline">\(i_1\)</span>): „Ich ziehe es vor, meine Zeit alleine zu verbringen, als mit anderen Menschen zu interagieren.“</li>
-<li>Item 2 (<span class="math inline">\(i_2\)</span>): „Ich genieße es, im Mittelpunkt der Aufmerksamkeit zu stehen.“</li>
-<li>Item 3 (<span class="math inline">\(i_3\)</span>): „Ich finde es wichtig, in sozialen Situationen höflich und respektvoll zu sein.“</li>
+<li>Item 1: „Ich ziehe es vor, meine Zeit alleine zu verbringen, als mit anderen Menschen zu interagieren.“</li>
+<li>Item 2: „Ich genieße es, im Mittelpunkt der Aufmerksamkeit zu stehen.“</li>
+<li>Item 3: „Ich finde es wichtig, in sozialen Situationen höflich und respektvoll zu sein.“</li>
 </ul>
-<p>Ihre Stichprobe besteht aus <span class="math inline">\(P = 7\)</span> Teilnehmenden, die alle auf einer Schiebereglerskala mit den Endpunkten <span class="math inline">\(-12\)</span> und <span class="math inline">\(12\)</span> geantwortet haben (<span class="math inline">\(y_1, \dots, y_7\)</span>). Positive Werte bedeuten Zustimmung, negative Werte Ablehnung. Die Antworten sind in der folgenden Tabelle dargestellt:</p>
+<p>Ihre Stichprobe besteht aus <span class="math inline">\(N = 7\)</span> Teilnehmenden (Personen <span class="math inline">\(i = 1, \dots, 7\)</span>), die alle auf einer Schiebereglerskala mit den Endpunkten <span class="math inline">\(-12\)</span> und <span class="math inline">\(12\)</span> geantwortet haben. Die Antwort von Person <span class="math inline">\(i\)</span> auf Item <span class="math inline">\(j\)</span> ist <span class="math inline">\(y_{ij}\)</span>. Positive Werte bedeuten Zustimmung, negative Werte Ablehnung. Die Antworten sind in der folgenden Tabelle dargestellt:</p>
 <div id="tbl-data" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-data-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Tabelle&nbsp;1: Transponierte Datenmatrix aus SoSci Survey
+Tabelle&nbsp;1: Transponierte Datenmatrix aus SoSci Survey (Zeilen: Items <span class="math inline">\(j\)</span>, Spalten: Personen <span class="math inline">\(i\)</span>)
 </figcaption>
 <div aria-describedby="tbl-data-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <table class="caption-top table">
+<colgroup>
+<col style="width: 12%">
+<col style="width: 12%">
+<col style="width: 12%">
+<col style="width: 12%">
+<col style="width: 12%">
+<col style="width: 12%">
+<col style="width: 12%">
+<col style="width: 12%">
+</colgroup>
 <thead>
 <tr class="header">
 <th></th>
-<th style="text-align: right;"><span class="math inline">\(y_1\)</span></th>
-<th style="text-align: right;"><span class="math inline">\(y_2\)</span></th>
-<th style="text-align: right;"><span class="math inline">\(y_3\)</span></th>
-<th style="text-align: right;"><span class="math inline">\(y_4\)</span></th>
-<th style="text-align: right;"><span class="math inline">\(y_5\)</span></th>
-<th style="text-align: right;"><span class="math inline">\(y_6\)</span></th>
-<th style="text-align: right;"><span class="math inline">\(y_7\)</span></th>
+<th style="text-align: right;"><span class="math inline">\(i = 1\)</span></th>
+<th style="text-align: right;"><span class="math inline">\(i = 2\)</span></th>
+<th style="text-align: right;"><span class="math inline">\(i = 3\)</span></th>
+<th style="text-align: right;"><span class="math inline">\(i = 4\)</span></th>
+<th style="text-align: right;"><span class="math inline">\(i = 5\)</span></th>
+<th style="text-align: right;"><span class="math inline">\(i = 6\)</span></th>
+<th style="text-align: right;"><span class="math inline">\(i = 7\)</span></th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><span class="math inline">\(i_1\)</span></td>
+<td><span class="math inline">\(j = 1\)</span></td>
 <td style="text-align: right;">7.68</td>
 <td style="text-align: right;">7.40</td>
 <td style="text-align: right;">7.28</td>
@@ -567,7 +573,7 @@ Tabelle&nbsp;1: Transponierte Datenmatrix aus SoSci Survey
 <td style="text-align: right;">7.72</td>
 </tr>
 <tr class="even">
-<td><span class="math inline">\(i_2\)</span></td>
+<td><span class="math inline">\(j = 2\)</span></td>
 <td style="text-align: right;">1.16</td>
 <td style="text-align: right;">4.42</td>
 <td style="text-align: right;">7.39</td>
@@ -577,7 +583,7 @@ Tabelle&nbsp;1: Transponierte Datenmatrix aus SoSci Survey
 <td style="text-align: right;">6.34</td>
 </tr>
 <tr class="odd">
-<td><span class="math inline">\(i_3\)</span></td>
+<td><span class="math inline">\(j = 3\)</span></td>
 <td style="text-align: right;">-3.58</td>
 <td style="text-align: right;">-2.69</td>
 <td style="text-align: right;">-2.00</td>
@@ -603,21 +609,21 @@ Tabelle&nbsp;1: Transponierte Datenmatrix aus SoSci Survey
 </div>
 <div id="callout-16" class="callout-16-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Die <em>Inter-Item-Kovarianzmatrix</em> ist bei <span class="math inline">\(I\)</span> Items eine <span class="math inline">\(I \times I\)</span>-Matrix (hier <span class="math inline">\(3 \times 3\)</span>), also ein quadratisches Zahlenraster, das aus Itemvarianzen und Inter-Item-Kovarianzen besteht. Auf der Hauptdiagonalen der Matrix befinden sich die Itemvarianzen und außerhalb der Hauptdiagonalen die nicht standardisierten linearen Zusammenhänge, die Inter-Item-Kovarianzen (siehe <a href="#eq-covmat" class="quarto-xref">Gleichung&nbsp;1</a>). Die <em>Inter-Item-Korrelationsmatrix</em> ist ebenfalls eine <span class="math inline">\(I \times I\)</span>-Matrix, die jedoch aus Inter-Item-Korrelationen (und Einsen) besteht. Im Gegensatz zur Inter-Item-Kovarianzmatrix werden außerhalb der Hauptdiagonalen die standardisierten linearen Beziehungen zwischen den Items, also deren Korrelationen, abgetragen. Auf der Hauptdiagonalen stehen Einsen (siehe <a href="#eq-cormat" class="quarto-xref">Gleichung&nbsp;2</a>). Eine wichtige Eigenschaft solcher Matrizen ist ihre Symmetrie. Kovarianz- und Korrelationsmatrizen sind symmetrisch, d. h. die Einträge oberhalb und unterhalb der Hauptdiagonalen sind spiegelbildlich gleich (z. B. <span class="math inline">\(s_{i_1,i_2} = s_{i_2,i_1}\)</span>). Beide Matrizen sind eng miteinander verbunden, und die Kovarianzmatrix kann durch geeignete Standardisierung in eine Korrelationsmatrix umgewandelt werden.</p>
+<p>Die <em>Inter-Item-Kovarianzmatrix</em> ist bei <span class="math inline">\(J\)</span> Items eine <span class="math inline">\(J \times J\)</span>-Matrix (hier <span class="math inline">\(3 \times 3\)</span>), also ein quadratisches Zahlenraster, das aus Itemvarianzen und Inter-Item-Kovarianzen besteht. Auf der Hauptdiagonalen der Matrix befinden sich die Itemvarianzen und außerhalb der Hauptdiagonalen die nicht standardisierten linearen Zusammenhänge, die Inter-Item-Kovarianzen (siehe <a href="#eq-covmat" class="quarto-xref">Gleichung&nbsp;1</a>). Die <em>Inter-Item-Korrelationsmatrix</em> ist ebenfalls eine <span class="math inline">\(J \times J\)</span>-Matrix, die jedoch aus Inter-Item-Korrelationen (und Einsen) besteht. Im Gegensatz zur Inter-Item-Kovarianzmatrix werden außerhalb der Hauptdiagonalen die standardisierten linearen Beziehungen zwischen den Items, also deren Korrelationen, abgetragen. Auf der Hauptdiagonalen stehen Einsen (siehe <a href="#eq-cormat" class="quarto-xref">Gleichung&nbsp;2</a>). Eine wichtige Eigenschaft solcher Matrizen ist ihre Symmetrie. Kovarianz- und Korrelationsmatrizen sind symmetrisch, d. h. die Einträge oberhalb und unterhalb der Hauptdiagonalen sind spiegelbildlich gleich (z. B. <span class="math inline">\(s_{1,2} = s_{2,1}\)</span>). Beide Matrizen sind eng miteinander verbunden, und die Kovarianzmatrix kann durch geeignete Standardisierung in eine Korrelationsmatrix umgewandelt werden.</p>
 <p><span id="eq-covmat"><span class="math display">\[
 V =
 \begin{pmatrix}
-s^2_{i_1} &amp; s_{i_1,i_2} &amp; s_{i_1,i_3} \\
-s_{i_2,i_1} &amp; s^2_{i_2} &amp; s_{i_2,i_3} \\
-s_{i_3,i_1} &amp; s_{i_3,i_2} &amp; s^2_{i_3}
+s^2_1 &amp; s_{1,2} &amp; s_{1,3} \\
+s_{2,1} &amp; s^2_2 &amp; s_{2,3} \\
+s_{3,1} &amp; s_{3,2} &amp; s^2_3
 \end{pmatrix}
 \tag{1}\]</span></span></p>
 <p><span id="eq-cormat"><span class="math display">\[
 R =
 \begin{pmatrix}
-1 &amp; r_{i_1,i_2} &amp; r_{i_1,i_3} \\
-r_{i_2,i_1} &amp; 1 &amp; r_{i_2,i_3} \\
-r_{i_3,i_1} &amp; r_{i_3,i_2} &amp; 1
+1 &amp; r_{1,2} &amp; r_{1,3} \\
+r_{2,1} &amp; 1 &amp; r_{2,3} \\
+r_{3,1} &amp; r_{3,2} &amp; 1
 \end{pmatrix}
 \tag{2}\]</span></span></p>
 </div>
@@ -641,14 +647,14 @@ r_{i_3,i_1} &amp; r_{i_3,i_2} &amp; 1
 <p>Eine mögliche Erwartungsmatrix:</p>
 <p><span class="math display">\[
 \begin{array}{c|ccc}
-&amp; i_1 &amp; i_2 &amp; i_3 \\
+&amp; 1 &amp; 2 &amp; 3 \\
 \hline
-i_1 &amp; &amp; {-}{-} &amp; - \\
-i_2 &amp; &amp; &amp; {+} \\
-i_3 &amp; &amp; &amp;
+1 &amp; &amp; {-}{-} &amp; - \\
+2 &amp; &amp; &amp; {+} \\
+3 &amp; &amp; &amp;
 \end{array}
 \]</span></p>
-<p>Introversion (<span class="math inline">\(i_1\)</span>), Extraversion (<span class="math inline">\(i_2\)</span>) und soziale Kompetenz (<span class="math inline">\(i_3\)</span>).</p>
+<p>Item 1 (Introversion), Item 2 (Extraversion), Item 3 (soziale Kompetenz).</p>
 </div>
 </div>
 </div>
@@ -667,7 +673,7 @@ i_3 &amp; &amp; &amp;
 </div>
 <div id="callout-18" class="callout-18-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Itemmittelwerte <span class="math inline">\(\bar{y} \approx (7.39, 5.63, -2.80)^\top\)</span> und <span class="math display">\[
+<p>Itemmittelwerte <span class="math inline">\((\bar{y}_1, \bar{y}_2, \bar{y}_3)^\top \approx (7.39, 5.63, -2.80)^\top\)</span> und <span class="math display">\[
 V \approx
 \begin{pmatrix}
 0.09 &amp; -0.82 &amp; -0.40 \\
@@ -695,7 +701,7 @@ V \approx
 </div>
 <div id="callout-19" class="callout-19-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p><span class="math inline">\(r_{i,j} = \dfrac{s_{i,j}}{\sqrt{s_i^2 \cdot s_j^2}}\)</span> und</p>
+<p><span class="math inline">\(r_{jk} = \dfrac{s_{jk}}{\sqrt{s_j^2 \cdot s_k^2}}\)</span> und</p>
 <p><span class="math display">\[
 R \approx
 \begin{pmatrix}
