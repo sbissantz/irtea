@@ -1,23 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://sbissantz.github.io/irtea/workbook/08-efa.html</loc>
-    <lastmod>2026-10-16T13:08:51.754Z</lastmod>
+    <loc>https://sbissantz.github.io/irtea/workbook/efa-ex.html</loc>
+    <lastmod>2026-10-17T06:22:29.517Z</lastmod>
   </url>
   <url>
-    <loc>https://sbissantz.github.io/irtea/slides/01-intro.html</loc>
-    <lastmod>2026-10-17T04:20:40.218Z</lastmod>
-  </url>
-  <url>
-    <loc>https://sbissantz.github.io/irtea/package.html</loc>
-    <lastmod>2026-10-16T09:23:51.303Z</lastmod>
+    <loc>https://sbissantz.github.io/irtea/slides/basics-inp.html</loc>
+    <lastmod>2026-10-20T04:39:14.255Z</lastmod>
   </url>
   <url>
     <loc>https://sbissantz.github.io/irtea/index.html</loc>
-    <lastmod>2026-10-14T07:05:48.397Z</lastmod>
+    <lastmod>2026-10-17T06:55:14.778Z</lastmod>
   </url>
   <url>
-    <loc>https://sbissantz.github.io/irtea/workbook/01-basics.html</loc>
-    <lastmod>2026-10-14T15:23:40.799Z</lastmod>
+    <loc>https://sbissantz.github.io/irtea/package.html</loc>
+    <lastmod>2026-10-17T05:04:52.673Z</lastmod>
+  </url>
+  <url>
+    <loc>https://sbissantz.github.io/irtea/slides/efa-inp.html</loc>
+    <lastmod>2026-10-17T06:36:31.884Z</lastmod>
+  </url>
+  <url>
+    <loc>https://sbissantz.github.io/irtea/workbook/basics-ex.html</loc>
+    <lastmod>2026-10-17T06:14:51.368Z</lastmod>
   </url>
 </urlset>

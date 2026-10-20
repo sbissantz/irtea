@@ -1,87 +1,94 @@
 [
   {
-    "objectID": "workbook/08-efa.html",
-    "href": "workbook/08-efa.html",
+    "objectID": "workbook/efa-ex.html",
+    "href": "workbook/efa-ex.html",
     "title": "8 Exploratorische Faktorenanalyse",
     "section": "",
     "text": "Ein Forschungsteam hat einen neuen Fragebogen zur Prüfungsangst entwickelt und online an 1000 Personen erprobt: Studierende verschiedener Fächer und Hochschulen, Schüler:innen der Oberstufe sowie Personen in Aus- und Weiterbildung. Fragebogen und Daten sind fiktiv; die Daten sind simuliert.\nDas Team stützt sich auf das Vier-Komponenten-Modell der Prüfungsangst, auf dem auch der Prüfungsangstfragebogen beruht (PAF, Hodapp et al., 2011):\nDer Fragebogen hat 20 Items, die Antwortskala reicht von 1 („trifft überhaupt nicht zu“) bis 7 („trifft voll und ganz zu“). Die Items stehen in der Reihenfolge des Fragebogens:"
   },
   {
-    "objectID": "workbook/08-efa.html#literatur",
-    "href": "workbook/08-efa.html#literatur",
+    "objectID": "workbook/efa-ex.html#literatur",
+    "href": "workbook/efa-ex.html#literatur",
     "title": "8 Exploratorische Faktorenanalyse",
     "section": "Literatur",
     "text": "Literatur\n\n\nHodapp, V., Rohrmann, S., & Ringeisen, T. (2011). Prüfungsangstfragebogen. Hogrefe."
   },
   {
-    "objectID": "slides/01-intro.html#einordnung",
-    "href": "slides/01-intro.html#einordnung",
+    "objectID": "slides/basics-inp.html#einordnung",
+    "href": "slides/basics-inp.html#einordnung",
     "title": "B.F.3 Übung zu Diagnostik/Testtheorie",
     "section": "Einordnung",
     "text": "Einordnung\nB.F.3 Übung zu Diagnostik/Testtheorie\nBasis dieser Übung bilden die zwei Vorlesungen\n\nB.F.1 Grundlagen der Diagnostik\nB.F.2 Grundlagen der Testtheorie\n\nWeitere Informationen finden Sie im Modulhandbuch."
   },
   {
-    "objectID": "slides/01-intro.html#rahmenbedingungen",
-    "href": "slides/01-intro.html#rahmenbedingungen",
+    "objectID": "slides/basics-inp.html#rahmenbedingungen",
+    "href": "slides/basics-inp.html#rahmenbedingungen",
     "title": "B.F.3 Übung zu Diagnostik/Testtheorie",
     "section": "Rahmenbedingungen",
     "text": "Rahmenbedingungen\n\n\n\n\n\n\nVoraussetzungen für die Vergabe von Leistungspunkten\n\n\n\nInsgesamt vier unangekündigte Übungsaufgaben\nBearbeitung der Übungsaufgaben in Präsenzsitzungen\nAktive Teilnahme an mindestens zwei Übungsaufgaben\nUnterschrift auf der Anwesenheitsliste gilt als Nachweis"
   },
   {
-    "objectID": "slides/01-intro.html#auswahl-an-lernzielen",
-    "href": "slides/01-intro.html#auswahl-an-lernzielen",
+    "objectID": "slides/basics-inp.html#auswahl-an-lernzielen",
+    "href": "slides/basics-inp.html#auswahl-an-lernzielen",
     "title": "B.F.3 Übung zu Diagnostik/Testtheorie",
     "section": "Auswahl an Lernzielen",
     "text": "Auswahl an Lernzielen\n\nFormulierung einer diagnostischen Fragestellung\nVerständnis der Gütekriterien für Erfassungsmethoden\nVerständnis der Stärken und Schwächen gängiger Testtheorien\nBestimmung von Itemkennwerten und Gütekriterien\nVerdichtung von Informationen zu einem diagnostischen Urteil"
   },
   {
-    "objectID": "slides/01-intro.html#semesterübersicht",
-    "href": "slides/01-intro.html#semesterübersicht",
+    "objectID": "slides/basics-inp.html#semesterübersicht",
+    "href": "slides/basics-inp.html#semesterübersicht",
     "title": "B.F.3 Übung zu Diagnostik/Testtheorie",
     "section": "Semesterübersicht",
     "text": "Semesterübersicht\n\n\n\n\n\n\n\n\nNr.\nDatum\nThema\n\n\n\n\n1\nab 20.10.\nRechenkompetenzen\n\n\n2\nab 27.10.\nGütekriterien I\n\n\n3\nab 03.11.\nSchritte der Testkonstruktion\n\n\n4\nab 10.11.\nErstellung eines Testentwurfs\n\n\n\n\nLektürewoche\n\n\n5\nab 24.11.\nDiagnostische Rechenkompetenzen I\n\n\n6\nab 01.12.\nKlassische Testtheorie\n\n\n7\nab 08.12.\nItem-Response-Theorie\n\n\n8\nab 15.12.\nExploratorische Faktorenanalyse I\n\n\n\n\nWeihnachtsferien\n\n\n9\nab 05.01.\nExploratorische Faktorenanalyse II\n\n\n10\nab 12.01.\nItemanalyse I\n\n\n11\nab 19.01.\nItemanalyse II, Itemselektion und Testrevision\n\n\n12\nab 26.01.\nDiagnostische Rechenkompetenzen II\n\n\n13\nab 02.02.\nGütekriterien II"
   },
   {
-    "objectID": "slides/01-intro.html#übungsmöglichkeiten-kommunikation",
-    "href": "slides/01-intro.html#übungsmöglichkeiten-kommunikation",
+    "objectID": "slides/basics-inp.html#übungsmöglichkeiten-kommunikation",
+    "href": "slides/basics-inp.html#übungsmöglichkeiten-kommunikation",
     "title": "B.F.3 Übung zu Diagnostik/Testtheorie",
     "section": "Übungsmöglichkeiten & Kommunikation",
-    "text": "Übungsmöglichkeiten & Kommunikation\n\nSynchron: zu den offiziellen Gruppenzeiten\nAsynchron: z. B. in selbstorganisierten Lerngruppen"
+    "text": "Übungsmöglichkeiten & Kommunikation\n\nSynchron: zu den offiziellen Gruppenzeiten\nAsynchron: z. B. in selbstorganisierten Lerngruppen"
   },
   {
-    "objectID": "slides/01-intro.html#synchrone-übungsmöglichkeiten",
-    "href": "slides/01-intro.html#synchrone-übungsmöglichkeiten",
+    "objectID": "slides/basics-inp.html#synchrone-übungsmöglichkeiten",
+    "href": "slides/basics-inp.html#synchrone-übungsmöglichkeiten",
     "title": "B.F.3 Übung zu Diagnostik/Testtheorie",
     "section": "Synchrone Übungsmöglichkeiten",
     "text": "Synchrone Übungsmöglichkeiten\nDie Übung bietet die Möglichkeit\n\nFragen zu stellen\nAufgaben zu bearbeiten\nErgebnisse zu diskutieren"
   },
   {
-    "objectID": "slides/01-intro.html#übungsaufgaben",
-    "href": "slides/01-intro.html#übungsaufgaben",
+    "objectID": "slides/basics-inp.html#übungsaufgaben",
+    "href": "slides/basics-inp.html#übungsaufgaben",
     "title": "B.F.3 Übung zu Diagnostik/Testtheorie",
     "section": "Übungsaufgaben",
     "text": "Übungsaufgaben\nEs gibt zahlreiche Übungsaufgaben\n\nNicht alle stehen im Fokus der Präsenzsitzungen\nErgebnisse zu allen Aufgaben stehen im Übungsheft (ohne Lösungswege)\nSelbststudium ist ein elementarer Bestandteil\nSelbstorganisierte Lerngruppen sind ein bewährtes Mittel"
   },
   {
-    "objectID": "slides/01-intro.html#lernressourcen",
-    "href": "slides/01-intro.html#lernressourcen",
+    "objectID": "slides/basics-inp.html#lernressourcen",
+    "href": "slides/basics-inp.html#lernressourcen",
     "title": "B.F.3 Übung zu Diagnostik/Testtheorie",
     "section": "Lernressourcen",
-    "text": "Lernressourcen\n\nVorlesungsfolien und -inhalte\nÜbungsinhalte und -aufgaben auf der Homepage\nWeiterführende Literatur (z. B. Moosbrugger & Kelava, 2020)\nKünstliche Intelligenz als Hilfsmittel, nicht als Ersatz\n\nMaßgeblich sind die Inhalte der Vorlesung, danach die der Übung. Die weiterführende Literatur erhalten Sie in der RPTU-Bibliothek."
+    "text": "Lernressourcen\n\nVorlesungsfolien und -inhalte\nÜbungsinhalte und -aufgaben auf der Homepage\nWeiterführende Literatur (z. B. Moosbrugger & Kelava, 2020)\nGoogle & Künstliche Intelligenz als Hilfsmittel, nicht als Ersatz!\n\nMaßgeblich sind die Inhalte der Vorlesung, danach die der Übung. Die weiterführende Literatur erhalten Sie in der RPTU-Bibliothek."
   },
   {
-    "objectID": "slides/01-intro.html#übungen",
-    "href": "slides/01-intro.html#übungen",
+    "objectID": "slides/basics-inp.html#übungen",
+    "href": "slides/basics-inp.html#übungen",
     "title": "B.F.3 Übung zu Diagnostik/Testtheorie",
     "section": "Übungen",
     "text": "Übungen\nÜbungen zu diesem Thema: Übungsheft, Kapitel 1"
   },
   {
-    "objectID": "slides/01-intro.html#literatur",
-    "href": "slides/01-intro.html#literatur",
+    "objectID": "slides/basics-inp.html#literatur",
+    "href": "slides/basics-inp.html#literatur",
     "title": "B.F.3 Übung zu Diagnostik/Testtheorie",
     "section": "Literatur",
     "text": "Literatur\n\n\nMoosbrugger, H., & Kelava, A. (Hrsg.). (2020). Testtheorie und Fragebogenkonstruktion (3. Aufl.). Springer Berlin Heidelberg. https://doi.org/10.1007/978-3-662-61532-4"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "B.F.3 Übung zu Diagnostik/Testtheorie",
+    "section": "",
+    "text": "Diese Seite bündelt die Materialien zur Übung B.F.3 an der RPTU Kaiserslautern-Landau.\n\nFolien: die Folien jeder Sitzung als Präsentation (HTML).\nÜbungsheft: Aufgaben zu jedem Thema.\nR-Paket: Datensätze für die Aufgaben, installierbar in R.\n\nHinweis: Ein Link zur PDF-Version ist auf der Titelfolie verlinkt."
   },
   {
     "objectID": "package.html",
@@ -105,17 +112,80 @@
     "text": "Datensätze\n\n\n\nDatensatz\nInhalt\nÜbungsheft\n\n\n\n\npersonality_items\nAntworten von 7 Personen auf 3 Items\nKapitel 1\n\n\ntest_anxiety\nAntworten von 2000 Personen auf 20 Items zur Prüfungsangst (simuliert)\nKapitel 8\n\n\n\nEinen Datensatz laden Sie mit:\ndata(personality_items, package = \"irtea\")"
   },
   {
-    "objectID": "index.html",
-    "href": "index.html",
+    "objectID": "slides/efa-inp.html#semesterübersicht",
+    "href": "slides/efa-inp.html#semesterübersicht",
     "title": "B.F.3 Übung zu Diagnostik/Testtheorie",
-    "section": "",
-    "text": "Diese Seite bündelt die Materialien zur Übung B.F.3 an der RPTU Kaiserslautern-Landau.\n\nFolien: die Folien jeder Sitzung, als Präsentation (HTML) und als PDF.\nÜbungsheft: Aufgaben zu jedem Thema.\nR-Paket: Datensätze für die Aufgaben, installierbar in R."
+    "section": "Semesterübersicht",
+    "text": "Semesterübersicht\n\n\n\n\n\n\n\n\nNr.\nDatum\nThema\n\n\n\n\n1\nab 20.10.\nRechenkompetenzen\n\n\n2\nab 27.10.\nGütekriterien I\n\n\n3\nab 03.11.\nSchritte der Testkonstruktion\n\n\n4\nab 10.11.\nErstellung eines Testentwurfs\n\n\n\n\nLektürewoche\n\n\n5\nab 24.11.\nDiagnostische Rechenkompetenzen I\n\n\n6\nab 01.12.\nKlassische Testtheorie\n\n\n7\nab 08.12.\nItem-Response-Theorie\n\n\n8\nab 15.12.\nExploratorische Faktorenanalyse I\n\n\n\n\nWeihnachtsferien\n\n\n9\nab 05.01.\nExploratorische Faktorenanalyse II\n\n\n10\nab 12.01.\nItemanalyse I\n\n\n11\nab 19.01.\nItemanalyse II, Itemselektion und Testrevision\n\n\n12\nab 26.01.\nDiagnostische Rechenkompetenzen II\n\n\n13\nab 02.02.\nGütekriterien II"
   },
   {
-    "objectID": "workbook/01-basics.html",
-    "href": "workbook/01-basics.html",
+    "objectID": "slides/efa-inp.html#datenreduktion-vs.-struktursuche",
+    "href": "slides/efa-inp.html#datenreduktion-vs.-struktursuche",
+    "title": "B.F.3 Übung zu Diagnostik/Testtheorie",
+    "section": "Datenreduktion vs. Struktursuche",
+    "text": "Datenreduktion vs. Struktursuche\n\nDatenreduktion\n\nz. B. Hauptkomponentenanalyse\nz. B. Clusteranalyse\n\nStruktursuche\n\nz. B. explorative Likert-Skalierung\nz. B. Hauptachsenanalyse\nz. B. Maximum-Likelihood-Faktorenanalyse"
+  },
+  {
+    "objectID": "slides/efa-inp.html#faktorenanalyse-disclaimer",
+    "href": "slides/efa-inp.html#faktorenanalyse-disclaimer",
+    "title": "B.F.3 Übung zu Diagnostik/Testtheorie",
+    "section": "Faktorenanalyse: Disclaimer",
+    "text": "Faktorenanalyse: Disclaimer\n\nUnfortunately, factor analysis is frequently misunderstood and often misused. Some researchers appear to use factor analysis as a kind of divining rod, hoping to find gold hidden underneath tons of dirt. But there is nothing magical about the technique. . . . Factor analysis will yield meaningful results only when the research was meaningful to begin with. (Gregory, 2015, S. 165)"
+  },
+  {
+    "objectID": "slides/efa-inp.html#faktorenanalyse-ein-hürdenlauf",
+    "href": "slides/efa-inp.html#faktorenanalyse-ein-hürdenlauf",
+    "title": "B.F.3 Übung zu Diagnostik/Testtheorie",
+    "section": "Faktorenanalyse: ein Hürdenlauf",
+    "text": "Faktorenanalyse: ein Hürdenlauf\n\nExtraktionsproblem\nRotationsproblem\nAnzahl zu extrahierender Faktoren"
+  },
+  {
+    "objectID": "slides/efa-inp.html#minimal-voraussetzungen-der-faktorenanalyse",
+    "href": "slides/efa-inp.html#minimal-voraussetzungen-der-faktorenanalyse",
+    "title": "B.F.3 Übung zu Diagnostik/Testtheorie",
+    "section": "(Minimal-)Voraussetzungen der Faktorenanalyse",
+    "text": "(Minimal-)Voraussetzungen der Faktorenanalyse\n\n\n\n\n\n\n\nMinimalvoraussetzung\n\n\nIst die Daten- bzw. Korrelationsmatrix zur faktorenanalytischen Auswertung „geeignet“?\n\n\n\n\n\nBartlett-Test\nKaiser-Meyer-Olkin-Kriterium"
+  },
+  {
+    "objectID": "slides/efa-inp.html#extraktionsproblem",
+    "href": "slides/efa-inp.html#extraktionsproblem",
+    "title": "B.F.3 Übung zu Diagnostik/Testtheorie",
+    "section": "Extraktionsproblem",
+    "text": "Extraktionsproblem\n\n\n\n\n\n\n\nExtraktionsproblem\n\n\nWie extrahieren wir die zur Reproduktion nötigen Faktoren/Komponenten?\n\n\n\n\n\nBestimmung der Hauptkomponenten (PCA)\nIterative Bestimmung der Hauptachsen (PAF)\nSuche nach den plausibelsten Werten (MLFA)"
+  },
+  {
+    "objectID": "slides/efa-inp.html#rotationsproblem",
+    "href": "slides/efa-inp.html#rotationsproblem",
+    "title": "B.F.3 Übung zu Diagnostik/Testtheorie",
+    "section": "Rotationsproblem",
+    "text": "Rotationsproblem\n\n\n\n\n\n\n\nRotationsproblem\n\n\nWie rotiert man die erhaltene Ladungsmatrix derart, dass eine möglichst einfach interpretierbare Lösung daraus hervorgeht?\n\n\n\n\n\nVisuelle Rotation\nOrthogonale Rotation (z. B. Varimax)\nOblique Rotation (z. B. Oblimin)\n\nWichtig: Die Entscheidung basiert auf Überlegungen zu Zwischenfaktorkorrelationen!"
+  },
+  {
+    "objectID": "slides/efa-inp.html#problem-der-anzahl-zu-extrahierender-faktoren",
+    "href": "slides/efa-inp.html#problem-der-anzahl-zu-extrahierender-faktoren",
+    "title": "B.F.3 Übung zu Diagnostik/Testtheorie",
+    "section": "Problem der Anzahl zu extrahierender Faktoren",
+    "text": "Problem der Anzahl zu extrahierender Faktoren\n\n\n\n\n\n\n\nProblem der Anzahl zu extrahierender Faktoren\n\n\nWie ermittle ich die Anzahl der zu extrahierenden Faktoren, ohne sie zu kennen?\n\n\n\n\n\nKaiser-Guttman-Kriterium\nScree-Test\nHorns Parallelanalyse\nHull-Methode1\nBayesianische exploratorische Faktorenanalyse\n\n\n\n\n\nEine von zahlreichen Weiterentwicklungen der „klassischen Verfahren“ (Lorenzo-Seva et al., 2011; Timmerman et al., 2018)."
+  },
+  {
+    "objectID": "slides/efa-inp.html#übungen",
+    "href": "slides/efa-inp.html#übungen",
+    "title": "B.F.3 Übung zu Diagnostik/Testtheorie",
+    "section": "Übungen",
+    "text": "Übungen\nÜbungen zu diesem Thema: Übungsheft, Kapitel 8"
+  },
+  {
+    "objectID": "slides/efa-inp.html#literatur",
+    "href": "slides/efa-inp.html#literatur",
+    "title": "B.F.3 Übung zu Diagnostik/Testtheorie",
+    "section": "Literatur",
+    "text": "Literatur\n\n\nGregory, R. J. (2015). Psychological Testing: History, Principles, and Applications (7. Aufl.). Pearson.\n\n\nLorenzo-Seva, U., Timmerman, M. E., & Kiers, H. A. L. (2011). The Hull Method for Selecting the Number of Common Factors. Multivariate Behavioral Research, 46(2), 340–364. https://doi.org/10.1080/00273171.2011.564527\n\n\nTimmerman, M. E., Lorenzo-Seva, U., & Ceulemans, E. (2018). The Number of Factors Problem. In P. Irwing, T. Booth, & D. J. Hughes (Hrsg.), The Wiley Handbook of Psychometric Testing (S. 305–324). Wiley. https://doi.org/10.1002/9781118489772.ch11"
+  },
+  {
+    "objectID": "workbook/basics-ex.html",
+    "href": "workbook/basics-ex.html",
     "title": "1 Rechenkompetenzen",
     "section": "",
-    "text": "Aufgabe 1 (Likelihood der Normalverteilung) Gegeben sei die Zufallsvariable \\(Y\\) mit \\(Y \\sim \\mathcal{N}(\\mu, \\sigma^2)\\). Beobachtet wurde ein einziger Datenpunkt, \\(y = 2\\). Die Likelihood und die Log-Likelihood lauten\n\\[\n\\begin{aligned}\nL(\\mu, \\sigma^2 \\mid y) & = \\frac{1}{\\sqrt{2\\pi\\sigma^2}} \\exp\\left( -\\frac{(y - \\mu)^2}{2\\sigma^2} \\right) \\\\[2ex]\n\\ln L(\\mu, \\sigma^2 \\mid y) &= -\\frac{1}{2} \\ln(2\\pi\\sigma^2) - \\frac{(y - \\mu)^2}{2\\sigma^2}\n\\end{aligned}\n\\]\n\nBerechnen Sie die Likelihood \\(L(2, 1 \\mid y)\\).\n\n\n\n\n\n\n\nTippLösung\n\n\n\n\n\n\\(L(2, 1 \\mid y) \\approx 0.40\\)\n\n\n\n\nBerechnen Sie die Log-Likelihood \\(\\ln L(2, 1 \\mid y)\\).\n\n\n\n\n\n\n\nTippLösung\n\n\n\n\n\n\\(\\ln L(2, 1 \\mid y) \\approx -0.92\\)\n\n\n\n\nLogarithmieren Sie Ihr Ergebnis aus Teil a und vergleichen Sie es mit Teil b. Was fällt Ihnen auf?\n\n\n\n\n\n\n\nTippLösung\n\n\n\n\n\n\\(\\ln(0.40) \\approx -0.92\\), siehe Teil b.\n\n\n\n\n\nAufgabe 2 (Likelihood der Bernoulli-Verteilung) Gegeben seien drei unabhängige Zufallsvariablen \\(Y_1, Y_2, Y_3\\) mit \\(Y_i \\sim \\text{Bern}(\\theta)\\). Beobachtet wurde \\(\\mathbf{y} = (1, 0, 1)^\\top\\). Die Likelihood und die Log-Likelihood des Parameters \\(\\theta\\) lauten\n\\[\n\\begin{aligned}\nL(\\theta \\mid \\mathbf{y}) &= \\prod_{i=1}^{3} \\theta^{y_i} (1 - \\theta)^{1 - y_i} \\\\[2ex]\n\\ln L(\\theta \\mid \\mathbf{y}) &= \\sum_{i=1}^{3} \\left[ y_i \\ln(\\theta) + (1 - y_i) \\ln(1 - \\theta) \\right]\n\\end{aligned}\n\\]\n\nBerechnen Sie die Likelihood \\(L(0.5 \\mid \\mathbf{y})\\).\n\n\n\n\n\n\n\nTippLösung\n\n\n\n\n\n\\(L(0.5 \\mid \\mathbf{y}) \\approx 0.13\\)\n\n\n\n\nBerechnen Sie die Log-Likelihood \\(\\ln L(0.6 \\mid \\mathbf{y})\\).\n\n\n\n\n\n\n\nTippLösung\n\n\n\n\n\n\\(\\ln L(0.6 \\mid \\mathbf{y}) \\approx -1.94\\)\n\n\n\n\nUnter welchem der beiden Parameterwerte ist die Likelihood größer? Begründen Sie Ihr Vorgehen.\n\n\n\n\n\n\n\nTippLösung\n\n\n\n\n\nUnter \\(\\theta = 0.6\\), da \\(\\ln L(0.6 \\mid \\mathbf{y}) &gt; \\ln L(0.5 \\mid \\mathbf{y})\\), denn \\(-1.94 &gt; -2.08\\).\n\n\n\n\nWelches sehr häufig verwendete Schätzverfahren haben Sie gerade im Kleinen nachgeahmt?\n\n\n\n\n\n\n\nTippLösung\n\n\n\n\n\nMaximum-Likelihood-Schätzung (ML-Schätzung)\n\n\n\n\n\nAufgabe 3 (Kovarianz- und Korrelationsmatrix) Stellen Sie sich vor, Sie hätten mit SoSci Survey im Rahmen einer Studienarbeit eine Erhebung mittels Persönlichkeitsinventar durchgeführt, das unter anderem die Konstrukte „Introversion“, „Extraversion“ und „Soziale Kompetenz“ beinhaltet. Dabei haben Sie den Befragten auch die folgenden drei Items vorgelegt:\n\nItem 1 (\\(i_1\\)): „Ich ziehe es vor, meine Zeit alleine zu verbringen, als mit anderen Menschen zu interagieren.“\nItem 2 (\\(i_2\\)): „Ich genieße es, im Mittelpunkt der Aufmerksamkeit zu stehen.“\nItem 3 (\\(i_3\\)): „Ich finde es wichtig, in sozialen Situationen höflich und respektvoll zu sein.“\n\nIhre Stichprobe besteht aus \\(P=7\\) Teilnehmenden, die alle auf einer Schiebereglerskala mit den Endpunkten \\(-12\\) und \\(12\\) geantwortet haben (\\(y_1, \\dots, y_7\\)). Positive Werte bedeuten Zustimmung, negative Werte Ablehnung. Die Antworten sind in der folgenden Tabelle dargestellt:\n\n\n\nTabelle 1: Transponierte Datenmatrix aus SoSci Survey\n\n\n\n\n\n\n\\(y_1\\)\n\\(y_2\\)\n\\(y_3\\)\n\\(y_4\\)\n\\(y_5\\)\n\\(y_6\\)\n\\(y_7\\)\n\n\n\n\n\\(i_1\\)\n7.68\n7.40\n7.28\n6.80\n7.38\n7.48\n7.72\n\n\n\\(i_2\\)\n1.16\n4.42\n7.39\n11.89\n2.31\n5.87\n6.34\n\n\n\\(i_3\\)\n-3.58\n-2.69\n-2.00\n-0.32\n-3.30\n-2.95\n-4.74\n\n\n\n\n\n\n\n\n\n\n\n\nHinweisHinweise\n\n\n\n\n\nDie Inter-Item-Kovarianzmatrix ist bei \\(I\\) Items eine \\(I \\times I\\)-Matrix (hier \\(3 \\times 3\\)), also ein quadratisches Zahlenraster, das aus Itemvarianzen und Inter-Item-Kovarianzen besteht. Auf der Hauptdiagonalen der Matrix befinden sich die Itemvarianzen und außerhalb der Hauptdiagonalen die nicht standardisierten linearen Zusammenhänge, die Inter-Item-Kovarianzen (siehe Gleichung 1). Die Inter-Item-Korrelationsmatrix ist ebenfalls eine \\(I \\times I\\)-Matrix, die jedoch aus Inter-Item-Korrelationen (und Einsen) besteht. Im Gegensatz zur Inter-Item-Kovarianzmatrix werden außerhalb der Hauptdiagonalen die standardisierten linearen Beziehungen zwischen den Items, also deren Korrelationen, abgetragen. Auf der Hauptdiagonalen stehen Einsen (siehe Gleichung 2). Eine wichtige Eigenschaft solcher Matrizen ist ihre Symmetrie. Kovarianz- und Korrelationsmatrizen sind symmetrisch, d. h. die Einträge oberhalb und unterhalb der Hauptdiagonalen sind identisch. Beide Matrizen sind eng miteinander verbunden, und die Kovarianzmatrix kann durch geeignete Standardisierung in eine Korrelationsmatrix umgewandelt werden.\n\\[\nV =\n\\begin{pmatrix}\ns^2_{i_1} & s_{i_1,i_2} & s_{i_1,i_3} \\\\\ns_{i_2,i_1} & s^2_{i_2} & s_{i_2,i_3} \\\\\ns_{i_3,i_1} & s_{i_3,i_2} & s^2_{i_3}\n\\end{pmatrix}\n\\tag{1}\\]\n\\[\nR =\n\\begin{pmatrix}\n1 & r_{i_1,i_2} & r_{i_1,i_3} \\\\\nr_{i_2,i_1} & 1 & r_{i_2,i_3} \\\\\nr_{i_3,i_1} & r_{i_3,i_2} & 1\n\\end{pmatrix}\n\\tag{2}\\]\n\n\n\n\nSie interessiert, ob zwischen den Items ein linearer Zusammenhang besteht und, falls ja, wie stark dieser jeweils ist. Skizzieren Sie zunächst Ihre theoretischen Erwartungen zu den Zusammenhängen in einer Tabelle oder einer Erwartungsmatrix. Für stark positive Zusammenhänge können Sie beispielsweise „++“ und für schwache negative Zusammenhänge „−“ verwenden.\n\n\n\n\n\n\n\nTippLösung\n\n\n\n\n\nEine mögliche Erwartungsmatrix:\n\\[\n\\begin{array}{c|ccc}\n& i_1 & i_2 & i_3 \\\\\n\\hline\ni_1 & & {-}{-} & - \\\\\ni_2 & & & {+} \\\\\ni_3 & & &\n\\end{array}\n\\]\nIntroversion (\\(i_1\\)), Extraversion (\\(i_2\\)) und soziale Kompetenz (\\(i_3\\)).\n\n\n\n\nUm Ihre Erwartungen bezüglich der Richtung des Zusammenhangs anhand von Daten zu überprüfen, berechnen Sie zunächst die Inter-Item-Kovarianzmatrix \\(V\\). Interpretieren Sie anschließend die Itemvarianzen und Inter-Item-Kovarianzen und setzen Sie sie zueinander in Bezug. Welche Hinweise liefern Ihnen die Itemvarianzen über die vorhandene Stichprobe bzw. den Inhalt des jeweiligen Items? Nutzen Sie zur Beurteilung auch den Itemmittelwert und den gegebenen Antwortbereich. Evaluieren Sie abschließend Ihre theoretischen Erwartungen mithilfe der Inter-Item-Kovarianzen. Welche Rückschlüsse lassen die Ergebnisse bereits zu und welche müssen noch offen bleiben?\n\n\n\n\n\n\n\nTippLösung\n\n\n\n\n\nItemmittelwerte \\(\\bar{y} \\approx (7.39, 5.63, -2.80)^\\top\\) und \\[\nV \\approx\n\\begin{pmatrix}\n0.09 & -0.82 & -0.40 \\\\\n& 12.55 & 3.42 \\\\\n&  & 1.91\n\\end{pmatrix}\n\\]\nWer mit gerundeten Zwischenergebnissen rechnet, erhält leicht abweichende Werte.\nItem 1 erhält nahezu geschlossene Zustimmung (sehr kleine Varianz bei einem Antwortbereich von \\(-12\\) bis \\(12\\)). Die Vorzeichen der Kovarianzen passen zu den Erwartungen aus Teil a; über die Stärke der Zusammenhänge sagen sie noch nichts.\n\n\n\n\nUm abschließend auch die Stärke der linearen Zusammenhänge beurteilen zu können, berechnen Sie die Inter-Item-Korrelationsmatrix \\(R\\). Formalisieren Sie dazu zunächst die Beziehung zwischen Itemvarianz, Inter-Item-Kovarianz und Inter-Item-Korrelation. Wie hilft Ihnen diese Formalisierung bei der Berechnung der Inter-Item-Korrelationsmatrix?\n\n\n\n\n\n\n\nTippLösung\n\n\n\n\n\n\\(r_{i,j} = \\dfrac{s_{i,j}}{\\sqrt{s_i^2 \\cdot s_j^2}}\\) und\n\\[\nR \\approx\n\\begin{pmatrix}\n1 & -0.75 & -0.96 \\\\\n& 1 & 0.70 \\\\\n&  & 1\n\\end{pmatrix}\n\\]\nWer mit gerundeten Zwischenergebnissen rechnet, erhält leicht abweichende Werte.\n\n\n\n\nInterpretieren Sie abschließend die Ergebnisse der berechneten Inter-Item-Korrelationsmatrix und setzen Sie diese in Bezug zu Ihren theoretischen Erwartungen. Überrascht Sie das Ergebnis? Begründen Sie Ihre Antwort kurz. Stellen Sie im selben Zug auch eine Vermutung über einen möglichen datengenerierenden Prozess auf.\n\n\n\n\n\n\n\nTippLösung\n\n\n\n\n\nAlle Zusammenhänge sind sehr stark. Die negative Korrelation von Item 1 (Introversion) und Item 2 (Extraversion) ist plausibel, die sehr hohen Korrelationen von Item 3 (soziale Kompetenz) mit beiden anderen Items kaum.\nVermutung: Die Daten sind simuliert, z. B. aus einer multivariaten Normalverteilung mit zufällig gezogener Korrelationsmatrix."
+    "text": "Aufgabe 1 (Likelihood der Normalverteilung) Gegeben sei die Zufallsvariable \\(Y\\) mit \\(Y \\sim \\mathcal{N}(\\mu, \\sigma^2)\\). Beobachtet wurde ein einziger Datenpunkt, \\(y = 2\\). Die Likelihood und die Log-Likelihood lauten\n\\[\n\\begin{aligned}\nL(\\mu, \\sigma^2 \\mid y) & = \\frac{1}{\\sqrt{2\\pi\\sigma^2}} \\exp\\left( -\\frac{(y - \\mu)^2}{2\\sigma^2} \\right) \\\\[2ex]\n\\ln L(\\mu, \\sigma^2 \\mid y) &= -\\frac{1}{2} \\ln(2\\pi\\sigma^2) - \\frac{(y - \\mu)^2}{2\\sigma^2}\n\\end{aligned}\n\\]\n\nBerechnen Sie die Likelihood \\(L(2, 1 \\mid y)\\).\n\n\n\n\n\n\n\nTippLösung\n\n\n\n\n\n\\(L(2, 1 \\mid y) \\approx 0.40\\)\n\n\n\n\nBerechnen Sie die Log-Likelihood \\(\\ln L(2, 1 \\mid y)\\).\n\n\n\n\n\n\n\nTippLösung\n\n\n\n\n\n\\(\\ln L(2, 1 \\mid y) \\approx -0.92\\)\n\n\n\n\nLogarithmieren Sie Ihr Ergebnis aus Teil a und vergleichen Sie es mit Teil b. Was fällt Ihnen auf?\n\n\n\n\n\n\n\nTippLösung\n\n\n\n\n\n\\(\\ln(0.40) \\approx -0.92\\), siehe Teil b.\n\n\n\n\n\nAufgabe 2 (Likelihood der Bernoulli-Verteilung) Gegeben seien drei unabhängige Zufallsvariablen \\(Y_1, Y_2, Y_3\\) mit \\(Y_i \\sim \\text{Bern}(\\theta)\\). Beobachtet wurde \\(\\mathbf{y} = (1, 0, 1)^\\top\\). Die Likelihood und die Log-Likelihood des Parameters \\(\\theta\\) lauten\n\\[\n\\begin{aligned}\nL(\\theta \\mid \\mathbf{y}) &= \\prod_{i=1}^{3} \\theta^{y_i} (1 - \\theta)^{1 - y_i} \\\\[2ex]\n\\ln L(\\theta \\mid \\mathbf{y}) &= \\sum_{i=1}^{3} \\left[ y_i \\ln(\\theta) + (1 - y_i) \\ln(1 - \\theta) \\right]\n\\end{aligned}\n\\]\n\nBerechnen Sie die Likelihood \\(L(0.5 \\mid \\mathbf{y})\\).\n\n\n\n\n\n\n\nTippLösung\n\n\n\n\n\n\\(L(0.5 \\mid \\mathbf{y}) \\approx 0.13\\)\n\n\n\n\nBerechnen Sie die Log-Likelihood \\(\\ln L(0.6 \\mid \\mathbf{y})\\).\n\n\n\n\n\n\n\nTippLösung\n\n\n\n\n\n\\(\\ln L(0.6 \\mid \\mathbf{y}) \\approx -1.94\\)\n\n\n\n\nUnter welchem der beiden Parameterwerte ist die Likelihood größer? Begründen Sie Ihr Vorgehen.\n\n\n\n\n\n\n\nTippLösung\n\n\n\n\n\nUnter \\(\\theta = 0.6\\), da \\(\\ln L(0.6 \\mid \\mathbf{y}) &gt; \\ln L(0.5 \\mid \\mathbf{y})\\), denn \\(-1.94 &gt; -2.08\\).\n\n\n\n\nWelches sehr häufig verwendete Schätzverfahren haben Sie gerade im Kleinen nachgeahmt?\n\n\n\n\n\n\n\nTippLösung\n\n\n\n\n\nMaximum-Likelihood-Schätzung (ML-Schätzung)\n\n\n\n\n\nAufgabe 3 (Kovarianz- und Korrelationsmatrix) Stellen Sie sich vor, Sie hätten mit SoSci Survey im Rahmen einer Studienarbeit eine Erhebung mittels Persönlichkeitsinventar durchgeführt, das unter anderem die Konstrukte „Introversion“, „Extraversion“ und „Soziale Kompetenz“ beinhaltet. Dabei haben Sie den Befragten auch die folgenden drei Items vorgelegt:\n\nItem 1 (\\(i_1\\)): „Ich ziehe es vor, meine Zeit alleine zu verbringen, als mit anderen Menschen zu interagieren.“\nItem 2 (\\(i_2\\)): „Ich genieße es, im Mittelpunkt der Aufmerksamkeit zu stehen.“\nItem 3 (\\(i_3\\)): „Ich finde es wichtig, in sozialen Situationen höflich und respektvoll zu sein.“\n\nIhre Stichprobe besteht aus \\(P=7\\) Teilnehmenden, die alle auf einer Schiebereglerskala mit den Endpunkten \\(-12\\) und \\(12\\) geantwortet haben (\\(y_1, \\dots, y_7\\)). Positive Werte bedeuten Zustimmung, negative Werte Ablehnung. Die Antworten sind in der folgenden Tabelle dargestellt:\n\n\n\nTabelle 1: Transponierte Datenmatrix aus SoSci Survey\n\n\n\n\n\n\n\\(y_1\\)\n\\(y_2\\)\n\\(y_3\\)\n\\(y_4\\)\n\\(y_5\\)\n\\(y_6\\)\n\\(y_7\\)\n\n\n\n\n\\(i_1\\)\n7.68\n7.40\n7.28\n6.80\n7.38\n7.48\n7.72\n\n\n\\(i_2\\)\n1.16\n4.42\n7.39\n11.89\n2.31\n5.87\n6.34\n\n\n\\(i_3\\)\n-3.58\n-2.69\n-2.00\n-0.32\n-3.30\n-2.95\n-4.74\n\n\n\n\n\n\n\n\n\n\n\n\nHinweisHinweise\n\n\n\n\n\nDie Inter-Item-Kovarianzmatrix ist bei \\(I\\) Items eine \\(I \\times I\\)-Matrix (hier \\(3 \\times 3\\)), also ein quadratisches Zahlenraster, das aus Itemvarianzen und Inter-Item-Kovarianzen besteht. Auf der Hauptdiagonalen der Matrix befinden sich die Itemvarianzen und außerhalb der Hauptdiagonalen die nicht standardisierten linearen Zusammenhänge, die Inter-Item-Kovarianzen (siehe Gleichung 1). Die Inter-Item-Korrelationsmatrix ist ebenfalls eine \\(I \\times I\\)-Matrix, die jedoch aus Inter-Item-Korrelationen (und Einsen) besteht. Im Gegensatz zur Inter-Item-Kovarianzmatrix werden außerhalb der Hauptdiagonalen die standardisierten linearen Beziehungen zwischen den Items, also deren Korrelationen, abgetragen. Auf der Hauptdiagonalen stehen Einsen (siehe Gleichung 2). Eine wichtige Eigenschaft solcher Matrizen ist ihre Symmetrie. Kovarianz- und Korrelationsmatrizen sind symmetrisch, d. h. die Einträge oberhalb und unterhalb der Hauptdiagonalen sind identisch. Beide Matrizen sind eng miteinander verbunden, und die Kovarianzmatrix kann durch geeignete Standardisierung in eine Korrelationsmatrix umgewandelt werden.\n\\[\nV =\n\\begin{pmatrix}\ns^2_{i_1} & s_{i_1,i_2} & s_{i_1,i_3} \\\\\ns_{i_2,i_1} & s^2_{i_2} & s_{i_2,i_3} \\\\\ns_{i_3,i_1} & s_{i_3,i_2} & s^2_{i_3}\n\\end{pmatrix}\n\\tag{1}\\]\n\\[\nR =\n\\begin{pmatrix}\n1 & r_{i_1,i_2} & r_{i_1,i_3} \\\\\nr_{i_2,i_1} & 1 & r_{i_2,i_3} \\\\\nr_{i_3,i_1} & r_{i_3,i_2} & 1\n\\end{pmatrix}\n\\tag{2}\\]\n\n\n\n\nSie interessiert, ob zwischen den Items ein linearer Zusammenhang besteht und, falls ja, wie stark dieser jeweils ist. Skizzieren Sie zunächst Ihre theoretischen Erwartungen zu den Zusammenhängen in einer Tabelle oder einer Erwartungsmatrix. Für stark positive Zusammenhänge können Sie beispielsweise „++“ und für schwache negative Zusammenhänge „−“ verwenden.\n\n\n\n\n\n\n\nTippLösung\n\n\n\n\n\nEine mögliche Erwartungsmatrix:\n\\[\n\\begin{array}{c|ccc}\n& i_1 & i_2 & i_3 \\\\\n\\hline\ni_1 & & {-}{-} & - \\\\\ni_2 & & & {+} \\\\\ni_3 & & &\n\\end{array}\n\\]\nIntroversion (\\(i_1\\)), Extraversion (\\(i_2\\)) und soziale Kompetenz (\\(i_3\\)).\n\n\n\n\nUm Ihre Erwartungen bezüglich der Richtung des Zusammenhangs anhand von Daten zu überprüfen, berechnen Sie zunächst die Inter-Item-Kovarianzmatrix \\(V\\). Interpretieren Sie anschließend die Itemvarianzen und Inter-Item-Kovarianzen und setzen Sie sie zueinander in Bezug. Welche Hinweise liefern Ihnen die Itemvarianzen über die vorhandene Stichprobe bzw. den Inhalt des jeweiligen Items? Nutzen Sie zur Beurteilung auch den Itemmittelwert und den gegebenen Antwortbereich. Evaluieren Sie abschließend Ihre theoretischen Erwartungen mithilfe der Inter-Item-Kovarianzen. Welche Rückschlüsse lassen die Ergebnisse bereits zu und welche müssen noch offen bleiben?\n\n\n\n\n\n\n\nTippLösung\n\n\n\n\n\nItemmittelwerte \\(\\bar{y} \\approx (7.39, 5.63, -2.80)^\\top\\) und \\[\nV \\approx\n\\begin{pmatrix}\n0.09 & -0.82 & -0.40 \\\\\n& 12.55 & 3.42 \\\\\n&  & 1.91\n\\end{pmatrix}\n\\]\nWer mit gerundeten Zwischenergebnissen rechnet, erhält leicht abweichende Werte.\nItem 1 erhält nahezu geschlossene Zustimmung (sehr kleine Varianz bei einem Antwortbereich von \\(-12\\) bis \\(12\\)). Die Vorzeichen der Kovarianzen passen zu den Erwartungen aus Teil a; über die Stärke der Zusammenhänge sagen sie noch nichts.\n\n\n\n\nUm abschließend auch die Stärke der linearen Zusammenhänge beurteilen zu können, berechnen Sie die Inter-Item-Korrelationsmatrix \\(R\\). Formalisieren Sie dazu zunächst die Beziehung zwischen Itemvarianz, Inter-Item-Kovarianz und Inter-Item-Korrelation. Wie hilft Ihnen diese Formalisierung bei der Berechnung der Inter-Item-Korrelationsmatrix?\n\n\n\n\n\n\n\nTippLösung\n\n\n\n\n\n\\(r_{i,j} = \\dfrac{s_{i,j}}{\\sqrt{s_i^2 \\cdot s_j^2}}\\) und\n\\[\nR \\approx\n\\begin{pmatrix}\n1 & -0.75 & -0.96 \\\\\n& 1 & 0.70 \\\\\n&  & 1\n\\end{pmatrix}\n\\]\nWer mit gerundeten Zwischenergebnissen rechnet, erhält leicht abweichende Werte.\n\n\n\n\nInterpretieren Sie abschließend die Ergebnisse der berechneten Inter-Item-Korrelationsmatrix und setzen Sie diese in Bezug zu Ihren theoretischen Erwartungen. Überrascht Sie das Ergebnis? Begründen Sie Ihre Antwort kurz. Stellen Sie im selben Zug auch eine Vermutung über einen möglichen datengenerierenden Prozess auf.\n\n\n\n\n\n\n\nTippLösung\n\n\n\n\n\nAlle Zusammenhänge sind sehr stark. Die negative Korrelation von Item 1 (Introversion) und Item 2 (Extraversion) ist plausibel, die sehr hohen Korrelationen von Item 3 (soziale Kompetenz) mit beiden anderen Items kaum.\nVermutung: Die Daten sind simuliert, z. B. aus einer multivariaten Normalverteilung mit zufällig gezogener Korrelationsmatrix."
   }
 ]

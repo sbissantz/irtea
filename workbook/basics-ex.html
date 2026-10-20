@@ -138,12 +138,12 @@ window.Quarto = {
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-folien">    
         <li>
-    <a class="dropdown-item" href="../slides/01-intro.html">
- <span class="dropdown-text">01 Grundlagen (HTML)</span></a>
+    <a class="dropdown-item" href="../slides/basics-inp.html">
+ <span class="dropdown-text">01 Grundlagen</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../slides/01-intro.pdf">
- <span class="dropdown-text">01 Grundlagen (PDF)</span></a>
+    <a class="dropdown-item" href="../slides/efa-inp.html">
+ <span class="dropdown-text">08 Exploratorische Faktorenanalyse</span></a>
   </li>  
     </ul>
   </li>
@@ -153,11 +153,11 @@ window.Quarto = {
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-bungsheft">    
         <li>
-    <a class="dropdown-item" href="../workbook/01-basics.html">
+    <a class="dropdown-item" href="../workbook/basics-ex.html">
  <span class="dropdown-text">1. Rechenkompetenzen</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../workbook/08-efa.html">
+    <a class="dropdown-item" href="../workbook/efa-ex.html">
  <span class="dropdown-text">8. Exploratorische Faktorenanalyse</span></a>
   </li>  
     </ul>
@@ -428,7 +428,7 @@ Tabelle&nbsp;1: Transponierte Datenmatrix aus SoSci Survey
 </div>
 <div id="callout-8" class="callout-8-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Die <em>Inter-Item-Kovarianzmatrix</em> ist bei <span class="math inline">\(I\)</span> Items eine <span class="math inline">\(I \times I\)</span>-Matrix (hier <span class="math inline">\(3 \times 3\)</span>), also ein quadratisches Zahlenraster, das aus Itemvarianzen und Inter-Item-Kovarianzen besteht. Auf der Hauptdiagonalen der Matrix befinden sich die Itemvarianzen und außerhalb der Hauptdiagonalen die nicht standardisierten linearen Zusammenhänge, die Inter-Item-Kovarianzen (siehe <a href="#eq-covmat" class="quarto-xref">Gleichung&nbsp;1</a>). Die <em>Inter-Item-Korrelationsmatrix</em> ist ebenfalls eine <span class="math inline">\(I \times I\)</span>-Matrix, die jedoch aus Inter-Item-Korrelationen (und Einsen) besteht. Im Gegensatz zur Inter-Item-Kovarianzmatrix werden außerhalb der Hauptdiagonalen die standardisierten linearen Beziehungen zwischen den Items, also deren Korrelationen, abgetragen. Auf der Hauptdiagonalen stehen Einsen (siehe <a href="#eq-cormat" class="quarto-xref">Gleichung&nbsp;2</a>). Eine wichtige Eigenschaft solcher Matrizen ist ihre Symmetrie. Kovarianz- und Korrelationsmatrizen sind symmetrisch, d.&nbsp;h. die Einträge oberhalb und unterhalb der Hauptdiagonalen sind identisch. Beide Matrizen sind eng miteinander verbunden, und die Kovarianzmatrix kann durch geeignete Standardisierung in eine Korrelationsmatrix umgewandelt werden.</p>
+<p>Die <em>Inter-Item-Kovarianzmatrix</em> ist bei <span class="math inline">\(I\)</span> Items eine <span class="math inline">\(I \times I\)</span>-Matrix (hier <span class="math inline">\(3 \times 3\)</span>), also ein quadratisches Zahlenraster, das aus Itemvarianzen und Inter-Item-Kovarianzen besteht. Auf der Hauptdiagonalen der Matrix befinden sich die Itemvarianzen und außerhalb der Hauptdiagonalen die nicht standardisierten linearen Zusammenhänge, die Inter-Item-Kovarianzen (siehe <a href="#eq-covmat" class="quarto-xref">Gleichung&nbsp;1</a>). Die <em>Inter-Item-Korrelationsmatrix</em> ist ebenfalls eine <span class="math inline">\(I \times I\)</span>-Matrix, die jedoch aus Inter-Item-Korrelationen (und Einsen) besteht. Im Gegensatz zur Inter-Item-Kovarianzmatrix werden außerhalb der Hauptdiagonalen die standardisierten linearen Beziehungen zwischen den Items, also deren Korrelationen, abgetragen. Auf der Hauptdiagonalen stehen Einsen (siehe <a href="#eq-cormat" class="quarto-xref">Gleichung&nbsp;2</a>). Eine wichtige Eigenschaft solcher Matrizen ist ihre Symmetrie. Kovarianz- und Korrelationsmatrizen sind symmetrisch, d. h. die Einträge oberhalb und unterhalb der Hauptdiagonalen sind identisch. Beide Matrizen sind eng miteinander verbunden, und die Kovarianzmatrix kann durch geeignete Standardisierung in eine Korrelationsmatrix umgewandelt werden.</p>
 <p><span id="eq-covmat"><span class="math display">\[
 V =
 \begin{pmatrix}
@@ -549,7 +549,7 @@ R \approx
 <div id="callout-12" class="callout-12-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>Alle Zusammenhänge sind sehr stark. Die negative Korrelation von Item 1 (Introversion) und Item 2 (Extraversion) ist plausibel, die sehr hohen Korrelationen von Item 3 (soziale Kompetenz) mit beiden anderen Items kaum.</p>
-<p>Vermutung: Die Daten sind simuliert, z. B. aus einer multivariaten Normalverteilung mit zufällig gezogener Korrelationsmatrix.</p>
+<p>Vermutung: Die Daten sind simuliert, z. B. aus einer multivariaten Normalverteilung mit zufällig gezogener Korrelationsmatrix.</p>
 </div>
 </div>
 </div>
