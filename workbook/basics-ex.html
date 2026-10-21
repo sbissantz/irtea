@@ -630,6 +630,83 @@ g(y \mid \mu, \sigma^2) &amp;= -\frac{1}{2} \ln(2\pi\sigma^2) - \frac{(y - \mu)^
 </div>
 </div>
 </div>
+<ol start="4" type="a">
+<li>Setzt man in <span class="math inline">\(f(y \mid \mu, \sigma^2)\)</span> die Werte <span class="math inline">\(\mu = 0\)</span> und <span class="math inline">\(\sigma^2 = 1\)</span> sowie die Werte von <span class="math inline">\(y\)</span> aus der folgenden Tabelle ein, erhält man:</li>
+</ol>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 21%">
+<col style="width: 7%">
+<col style="width: 7%">
+<col style="width: 7%">
+<col style="width: 7%">
+<col style="width: 7%">
+<col style="width: 7%">
+<col style="width: 7%">
+<col style="width: 7%">
+<col style="width: 7%">
+<col style="width: 7%">
+<col style="width: 7%">
+</colgroup>
+<thead>
+<tr class="header">
+<th><span class="math inline">\(y\)</span></th>
+<th style="text-align: right;">-2.5</th>
+<th style="text-align: right;">-2</th>
+<th style="text-align: right;">-1.5</th>
+<th style="text-align: right;">-1</th>
+<th style="text-align: right;">-0.5</th>
+<th style="text-align: right;">0</th>
+<th style="text-align: right;">0.5</th>
+<th style="text-align: right;">1</th>
+<th style="text-align: right;">1.5</th>
+<th style="text-align: right;">2</th>
+<th style="text-align: right;">2.5</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><span class="math inline">\(f(y \mid 0, 1)\)</span></td>
+<td style="text-align: right;">0.02</td>
+<td style="text-align: right;">0.05</td>
+<td style="text-align: right;">0.13</td>
+<td style="text-align: right;">0.24</td>
+<td style="text-align: right;">0.35</td>
+<td style="text-align: right;">0.40</td>
+<td style="text-align: right;">0.35</td>
+<td style="text-align: right;">0.24</td>
+<td style="text-align: right;">0.13</td>
+<td style="text-align: right;">0.05</td>
+<td style="text-align: right;">0.02</td>
+</tr>
+</tbody>
+</table>
+<p>Zeichnen Sie die Punkte in ein Koordinatensystem ein und verbinden Sie sie. Woran erinnert Sie der Graph?</p>
+<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-23-contents" aria-controls="callout-23" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tipp</span>Lösung
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-23" class="callout-23-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="basics-ex_files/figure-html/bell-curve-solution-1.png" class="img-fluid figure-img" alt="Die elf Punkte aus der Tabelle, verbunden durch eine glatte, symmetrische Glockenkurve mit dem höchsten Wert 0.40 bei y = 0" width="576"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Dichtefunktion der Normalverteilung.</p>
+</div>
+</div>
+</div>
 </div>
 <div id="exr-function-comparison" class="theorem exercise">
 <p><span class="theorem-title"><strong>Aufgabe 6 (Funktionswerte vergleichen)</strong></span> Gegeben sind für <span class="math inline">\(0 &lt; \theta &lt; 1\)</span> die beiden Funktionen</p>
@@ -641,7 +718,7 @@ g(y_1, y_2, y_3 \mid \theta) &amp;= \sum_{i=1}^{3} \left[ y_i \ln(\theta) + (1 -
 \]</span></p>
 <p>und die Werte <span class="math inline">\(y_1 = 1\)</span>, <span class="math inline">\(y_2 = 0\)</span> und <span class="math inline">\(y_3 = 1\)</span>.</p>
 <div class="callout callout-style-default callout-note callout-titled" title="Hinweis">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-23-contents" aria-controls="callout-23" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-24-contents" aria-controls="callout-24" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -650,7 +727,7 @@ g(y_1, y_2, y_3 \mid \theta) &amp;= \sum_{i=1}^{3} \left[ y_i \ln(\theta) + (1 -
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-23" class="callout-23-contents callout-collapse collapse">
+<div id="callout-24" class="callout-24-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>Lesen Sie <span class="math inline">\(f(y_1, y_2, y_3 \mid \theta)\)</span> als „<span class="math inline">\(f\)</span> von <span class="math inline">\(y_1\)</span>, <span class="math inline">\(y_2\)</span> und <span class="math inline">\(y_3\)</span> gegeben <span class="math inline">\(\theta\)</span>“. Zum Summen- und Produktzeichen siehe die Hinweise zu <a href="#exr-sum" class="quarto-xref">Aufgabe&nbsp;3</a> und <a href="#exr-product" class="quarto-xref">Aufgabe&nbsp;4</a>.</p>
 </div>
@@ -658,25 +735,6 @@ g(y_1, y_2, y_3 \mid \theta) &amp;= \sum_{i=1}^{3} \left[ y_i \ln(\theta) + (1 -
 </div>
 <ol type="a">
 <li>Berechnen Sie <span class="math inline">\(f(y_1, y_2, y_3 \mid \theta)\)</span> für <span class="math inline">\(\theta = 0.5\)</span>.</li>
-</ol>
-<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-24-contents" aria-controls="callout-24" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Tipp</span>Lösung
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-24" class="callout-24-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<p><span class="math inline">\(f(1, 0, 1 \mid 0.5) \approx 0.13\)</span></p>
-</div>
-</div>
-</div>
-<ol start="2" type="a">
-<li>Berechnen Sie <span class="math inline">\(g(y_1, y_2, y_3 \mid \theta)\)</span> für <span class="math inline">\(\theta = 0.6\)</span>.</li>
 </ol>
 <div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-25-contents" aria-controls="callout-25" aria-expanded="false" aria-label="Toggle callout">
@@ -690,12 +748,12 @@ g(y_1, y_2, y_3 \mid \theta) &amp;= \sum_{i=1}^{3} \left[ y_i \ln(\theta) + (1 -
 </div>
 <div id="callout-25" class="callout-25-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p><span class="math inline">\(g(1, 0, 1 \mid 0.6) \approx -1.94\)</span></p>
+<p><span class="math inline">\(f(1, 0, 1 \mid 0.5) \approx 0.13\)</span></p>
 </div>
 </div>
 </div>
-<ol start="3" type="a">
-<li>Für welchen der beiden Werte, <span class="math inline">\(\theta = 0.5\)</span> oder <span class="math inline">\(\theta = 0.6\)</span>, ist <span class="math inline">\(f\)</span> größer? Begründen Sie Ihr Vorgehen.</li>
+<ol start="2" type="a">
+<li>Berechnen Sie <span class="math inline">\(g(y_1, y_2, y_3 \mid \theta)\)</span> für <span class="math inline">\(\theta = 0.6\)</span>.</li>
 </ol>
 <div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-26-contents" aria-controls="callout-26" aria-expanded="false" aria-label="Toggle callout">
@@ -709,12 +767,12 @@ g(y_1, y_2, y_3 \mid \theta) &amp;= \sum_{i=1}^{3} \left[ y_i \ln(\theta) + (1 -
 </div>
 <div id="callout-26" class="callout-26-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Für <span class="math inline">\(\theta = 0.6\)</span>, denn <span class="math inline">\(f(1, 0, 1 \mid 0.6) \approx 0.14 &gt; 0.13\)</span> (oder über <span class="math inline">\(g\)</span>: <span class="math inline">\(-1.94 &gt; -2.08\)</span>).</p>
+<p><span class="math inline">\(g(1, 0, 1 \mid 0.6) \approx -1.94\)</span></p>
 </div>
 </div>
 </div>
-<ol start="4" type="a">
-<li>Für welchen Wert von <span class="math inline">\(\theta\)</span> wird <span class="math inline">\(f\)</span> am größten? Probieren Sie einige Werte aus.</li>
+<ol start="3" type="a">
+<li>Für welchen der beiden Werte, <span class="math inline">\(\theta = 0.5\)</span> oder <span class="math inline">\(\theta = 0.6\)</span>, ist <span class="math inline">\(f\)</span> größer? Begründen Sie Ihr Vorgehen.</li>
 </ol>
 <div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-27-contents" aria-controls="callout-27" aria-expanded="false" aria-label="Toggle callout">
@@ -727,6 +785,25 @@ g(y_1, y_2, y_3 \mid \theta) &amp;= \sum_{i=1}^{3} \left[ y_i \ln(\theta) + (1 -
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
 <div id="callout-27" class="callout-27-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Für <span class="math inline">\(\theta = 0.6\)</span>, denn <span class="math inline">\(f(1, 0, 1 \mid 0.6) \approx 0.14 &gt; 0.13\)</span> (oder über <span class="math inline">\(g\)</span>: <span class="math inline">\(-1.94 &gt; -2.08\)</span>).</p>
+</div>
+</div>
+</div>
+<ol start="4" type="a">
+<li>Für welchen Wert von <span class="math inline">\(\theta\)</span> wird <span class="math inline">\(f\)</span> am größten? Probieren Sie einige Werte aus.</li>
+</ol>
+<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-28-contents" aria-controls="callout-28" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tipp</span>Lösung
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-28" class="callout-28-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p><span class="math inline">\(\theta \approx 0.67\)</span> (genau <span class="math inline">\(\frac{2}{3}\)</span>, der Anteil der Einsen unter <span class="math inline">\(y_1, y_2, y_3\)</span>) mit <span class="math inline">\(f(1, 0, 1 \mid 0.67) \approx 0.15\)</span></p>
 </div>
@@ -836,25 +913,6 @@ e. Welche Vorhersage ergibt die Regel aus Teil b für Carlo? Begründen Sie Ihre
 <li>Berechnen Sie <span class="math inline">\(\bar{x}\)</span> und <span class="math inline">\(\bar{y}\)</span>.</li>
 </ol>
 <div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-28-contents" aria-controls="callout-28" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Tipp</span>Lösung
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-28" class="callout-28-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<p><span class="math inline">\(\bar{x} = 3\)</span>, <span class="math inline">\(\bar{y} = 4\)</span></p>
-</div>
-</div>
-</div>
-<ol start="2" type="a">
-<li>Berechnen Sie <span class="math inline">\(s_x^2\)</span> und <span class="math inline">\(s_y^2\)</span>.</li>
-</ol>
-<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-29-contents" aria-controls="callout-29" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
@@ -866,12 +924,12 @@ e. Welche Vorhersage ergibt die Regel aus Teil b für Carlo? Begründen Sie Ihre
 </div>
 <div id="callout-29" class="callout-29-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p><span class="math inline">\(s_x^2 = 2.5\)</span>, <span class="math inline">\(s_y^2 = 1\)</span></p>
+<p><span class="math inline">\(\bar{x} = 3\)</span>, <span class="math inline">\(\bar{y} = 4\)</span></p>
 </div>
 </div>
 </div>
-<ol start="3" type="a">
-<li>Berechnen Sie <span class="math inline">\(s_{xy}\)</span>.</li>
+<ol start="2" type="a">
+<li>Berechnen Sie <span class="math inline">\(s_x^2\)</span> und <span class="math inline">\(s_y^2\)</span>.</li>
 </ol>
 <div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-30-contents" aria-controls="callout-30" aria-expanded="false" aria-label="Toggle callout">
@@ -885,12 +943,12 @@ e. Welche Vorhersage ergibt die Regel aus Teil b für Carlo? Begründen Sie Ihre
 </div>
 <div id="callout-30" class="callout-30-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p><span class="math inline">\(s_{xy} = 1.25\)</span></p>
+<p><span class="math inline">\(s_x^2 = 2.5\)</span>, <span class="math inline">\(s_y^2 = 1\)</span></p>
 </div>
 </div>
 </div>
-<ol start="4" type="a">
-<li>Berechnen Sie <span class="math inline">\(r_{xy}\)</span>.</li>
+<ol start="3" type="a">
+<li>Berechnen Sie <span class="math inline">\(s_{xy}\)</span>.</li>
 </ol>
 <div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-31-contents" aria-controls="callout-31" aria-expanded="false" aria-label="Toggle callout">
@@ -904,12 +962,12 @@ e. Welche Vorhersage ergibt die Regel aus Teil b für Carlo? Begründen Sie Ihre
 </div>
 <div id="callout-31" class="callout-31-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p><span class="math inline">\(r_{xy} \approx 0.79\)</span></p>
+<p><span class="math inline">\(s_{xy} = 1.25\)</span></p>
 </div>
 </div>
 </div>
-<ol start="5" type="a">
-<li>Berechnen Sie die z-Werte von <span class="math inline">\(x_4\)</span> und <span class="math inline">\(y_4\)</span>.</li>
+<ol start="4" type="a">
+<li>Berechnen Sie <span class="math inline">\(r_{xy}\)</span>.</li>
 </ol>
 <div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-32-contents" aria-controls="callout-32" aria-expanded="false" aria-label="Toggle callout">
@@ -922,6 +980,25 @@ e. Welche Vorhersage ergibt die Regel aus Teil b für Carlo? Begründen Sie Ihre
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
 <div id="callout-32" class="callout-32-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><span class="math inline">\(r_{xy} \approx 0.79\)</span></p>
+</div>
+</div>
+</div>
+<ol start="5" type="a">
+<li>Berechnen Sie die z-Werte von <span class="math inline">\(x_4\)</span> und <span class="math inline">\(y_4\)</span>.</li>
+</ol>
+<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-33-contents" aria-controls="callout-33" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tipp</span>Lösung
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-33" class="callout-33-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p><span class="math inline">\(z_4 \approx 1.26\)</span> (für <span class="math inline">\(x_4\)</span>) und <span class="math inline">\(z_4 = 1\)</span> (für <span class="math inline">\(y_4\)</span>)</p>
 </div>
@@ -1002,7 +1079,7 @@ Tabelle&nbsp;1: Transponierte Datenmatrix aus SoSci Survey (Zeilen: Items <span 
 </figure>
 </div>
 <div class="callout callout-style-default callout-note callout-titled" title="Hinweis">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-33-contents" aria-controls="callout-33" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-34-contents" aria-controls="callout-34" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -1011,7 +1088,7 @@ Tabelle&nbsp;1: Transponierte Datenmatrix aus SoSci Survey (Zeilen: Items <span 
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-33" class="callout-33-contents callout-collapse collapse">
+<div id="callout-34" class="callout-34-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>Die <em>Inter-Item-Kovarianzmatrix</em> ist bei <span class="math inline">\(J\)</span> Items eine <span class="math inline">\(J \times J\)</span>-Matrix (hier <span class="math inline">\(3 \times 3\)</span>), also ein quadratisches Zahlenraster, das aus Itemvarianzen und Inter-Item-Kovarianzen besteht. Auf der Hauptdiagonalen der Matrix befinden sich die Itemvarianzen und außerhalb der Hauptdiagonalen die nicht standardisierten linearen Zusammenhänge, die Inter-Item-Kovarianzen (siehe <a href="#eq-covmat" class="quarto-xref">Gleichung&nbsp;1</a>). Die <em>Inter-Item-Korrelationsmatrix</em> ist ebenfalls eine <span class="math inline">\(J \times J\)</span>-Matrix, die jedoch aus Inter-Item-Korrelationen (und Einsen) besteht. Im Gegensatz zur Inter-Item-Kovarianzmatrix werden außerhalb der Hauptdiagonalen die standardisierten linearen Beziehungen zwischen den Items, also deren Korrelationen, abgetragen. Auf der Hauptdiagonalen stehen Einsen (siehe <a href="#eq-cormat" class="quarto-xref">Gleichung&nbsp;2</a>). Eine wichtige Eigenschaft solcher Matrizen ist ihre Symmetrie. Kovarianz- und Korrelationsmatrizen sind symmetrisch, d. h. die Einträge oberhalb und unterhalb der Hauptdiagonalen sind spiegelbildlich gleich (z. B. <span class="math inline">\(s_{1,2} = s_{2,1}\)</span>). Beide Matrizen sind eng miteinander verbunden, und die Kovarianzmatrix kann durch geeignete Standardisierung in eine Korrelationsmatrix umgewandelt werden.</p>
 <p><span id="eq-covmat"><span class="math display">\[
@@ -1037,7 +1114,7 @@ r_{3,1} &amp; r_{3,2} &amp; 1
 <li>Sie interessiert, ob zwischen den Items ein linearer Zusammenhang besteht und, falls ja, wie stark dieser jeweils ist. Skizzieren Sie zunächst Ihre theoretischen Erwartungen zu den Zusammenhängen in einer Tabelle oder einer Erwartungsmatrix. Für stark positive Zusammenhänge können Sie beispielsweise „++“ und für schwache negative Zusammenhänge „−“ verwenden.</li>
 </ol>
 <div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-34-contents" aria-controls="callout-34" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-35-contents" aria-controls="callout-35" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -1046,7 +1123,7 @@ r_{3,1} &amp; r_{3,2} &amp; 1
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-34" class="callout-34-contents callout-collapse collapse">
+<div id="callout-35" class="callout-35-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>Eine mögliche Erwartungsmatrix:</p>
 <p><span class="math display">\[
@@ -1066,7 +1143,7 @@ r_{3,1} &amp; r_{3,2} &amp; 1
 <li>Um Ihre Erwartungen bezüglich der Richtung der Zusammenhänge anhand von Daten zu überprüfen, berechnen Sie zunächst die Inter-Item-Kovarianzmatrix <span class="math inline">\(V\)</span>. Interpretieren Sie anschließend die Itemvarianzen und Inter-Item-Kovarianzen und setzen Sie sie zueinander in Bezug. Welche Hinweise liefern Ihnen die Itemvarianzen über die vorhandene Stichprobe bzw. den Inhalt des jeweiligen Items? Nutzen Sie zur Beurteilung auch die Itemmittelwerte und den gegebenen Antwortbereich. Evaluieren Sie abschließend Ihre theoretischen Erwartungen mithilfe der Inter-Item-Kovarianzen. Welche Rückschlüsse lassen die Ergebnisse bereits zu und welche müssen noch offenbleiben?</li>
 </ol>
 <div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-35-contents" aria-controls="callout-35" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-36-contents" aria-controls="callout-36" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -1075,7 +1152,7 @@ r_{3,1} &amp; r_{3,2} &amp; 1
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-35" class="callout-35-contents callout-collapse collapse">
+<div id="callout-36" class="callout-36-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>Itemmittelwerte <span class="math inline">\((\bar{y}_1, \bar{y}_2, \bar{y}_3)^\top \approx (7.39, 5.63, -2.80)^\top\)</span> und <span class="math display">\[
 V \approx
@@ -1094,7 +1171,7 @@ V \approx
 <li>Um auch die Stärke der linearen Zusammenhänge beurteilen zu können, berechnen Sie die Inter-Item-Korrelationsmatrix <span class="math inline">\(R\)</span>. Formalisieren Sie dazu zunächst die Beziehung zwischen Itemvarianz, Inter-Item-Kovarianz und Inter-Item-Korrelation. Wie hilft Ihnen diese Formalisierung bei der Berechnung der Inter-Item-Korrelationsmatrix?</li>
 </ol>
 <div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-36-contents" aria-controls="callout-36" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-37-contents" aria-controls="callout-37" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -1103,7 +1180,7 @@ V \approx
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-36" class="callout-36-contents callout-collapse collapse">
+<div id="callout-37" class="callout-37-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p><span class="math inline">\(r_{jk} = \dfrac{s_{jk}}{\sqrt{s_j^2 \cdot s_k^2}}\)</span> und</p>
 <p><span class="math display">\[
@@ -1122,7 +1199,7 @@ R \approx
 <li>Interpretieren Sie abschließend die Ergebnisse der berechneten Inter-Item-Korrelationsmatrix und setzen Sie diese in Bezug zu Ihren theoretischen Erwartungen. Überrascht Sie das Ergebnis? Begründen Sie Ihre Antwort kurz. Stellen Sie im selben Zug auch eine Vermutung über einen möglichen datengenerierenden Prozess auf.</li>
 </ol>
 <div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-37-contents" aria-controls="callout-37" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-38-contents" aria-controls="callout-38" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -1131,7 +1208,7 @@ R \approx
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-37" class="callout-37-contents callout-collapse collapse">
+<div id="callout-38" class="callout-38-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>Alle Zusammenhänge sind sehr stark. Die negative Korrelation von Item 1 (Introversion) und Item 2 (Extraversion) ist plausibel, die sehr hohen Korrelationen von Item 3 (soziale Kompetenz) mit beiden anderen Items kaum.</p>
 <p>Vermutung: Die Daten sind simuliert, z. B. aus einer multivariaten Normalverteilung mit zufällig gezogener Korrelationsmatrix.</p>
