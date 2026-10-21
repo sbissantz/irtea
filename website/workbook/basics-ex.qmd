@@ -2,7 +2,10 @@
 title: "1 Rechenkompetenzen"
 ---
 
+<!--
+
 ::: {#exr-normal-likelihood}
+
 ## Likelihood der Normalverteilung
 
 Gegeben sei die Zufallsvariable $Y$ mit $Y \sim \mathcal{N}(\mu, \sigma^2)$. Beobachtet wurde ein einziger Datenpunkt, $y = 2$. Die Likelihood und die Log-Likelihood lauten
@@ -165,6 +168,8 @@ e. Welche Vorhersage ergibt die Regel aus Teil b für Carlo? Begründen Sie Ihre
 „Nicht gelöst“ ($u_{2,1} = 0$), da $0.27 < 0.5$.
 :::
 :::
+
+-->
 
 ::: {#exr-covariance-matrix}
 ## Kovarianz- und Korrelationsmatrix
