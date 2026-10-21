@@ -173,6 +173,40 @@ c. Logarithmieren Sie Ihr Ergebnis aus Teil a und vergleichen Sie es mit Teil b.
 ::: {.callout-tip title="Lösung" collapse="true"}
 $\ln(0.40) \approx -0.92 = g(2 \mid 2, 1)$: $g$ ist der Logarithmus von $f$.
 :::
+
+d. Setzt man in $f(y \mid \mu, \sigma^2)$ die Werte $\mu = 0$ und $\sigma^2 = 1$ sowie die Werte von $y$ aus der folgenden Tabelle ein, erhält man:
+
+| $y$              | -2.5 |   -2 | -1.5 |   -1 | -0.5 |    0 |  0.5 |    1 |  1.5 |    2 |  2.5 |
+|------------------|-----:|-----:|-----:|-----:|-----:|-----:|-----:|-----:|-----:|-----:|-----:|
+| $f(y \mid 0, 1)$ | 0.02 | 0.05 | 0.13 | 0.24 | 0.35 | 0.40 | 0.35 | 0.24 | 0.13 | 0.05 | 0.02 |
+
+Zeichnen Sie die Punkte in ein Koordinatensystem ein und verbinden Sie sie. Woran erinnert Sie der Graph?
+
+::: {.callout-tip title="Lösung" collapse="true"}
+```{r}
+#| label: bell-curve-solution
+#| echo: false
+#| fig-width: 6
+#| fig-height: 4
+#| fig-alt: "Die elf Punkte aus der Tabelle, verbunden durch eine glatte, symmetrische Glockenkurve mit dem höchsten Wert 0.40 bei y = 0"
+colors <- viridisLite::viridis(5)
+y <- seq(-2.5, 2.5, by = 0.5)
+f_y <- round(dnorm(y), 2)
+
+# smooth curve through the rounded table values, as drawn by hand
+smooth_curve <- splinefun(y, f_y)
+
+plot(y, f_y,
+  type = "n", las = 1, ylim = c(0, 0.45),
+  xlab = expression(y), ylab = expression(f(y ~ "|" ~ list(0, 1)))
+)
+abline(h = seq(0, 0.45, by = 0.05), v = y, col = "grey90")
+curve(smooth_curve, from = -2.5, to = 2.5, add = TRUE, lwd = 3, col = colors[2])
+points(y, f_y, pch = 19, cex = 1.2, col = colors[4])
+```
+
+Dichtefunktion der Normalverteilung.
+:::
 :::
 
 ::: {#exr-function-comparison}
