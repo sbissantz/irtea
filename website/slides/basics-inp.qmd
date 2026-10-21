@@ -42,10 +42,10 @@ Weitere Informationen finden Sie im [Modulhandbuch](https://modhb.rptu.de/mhb/FB
 
 | Nr. | Datum     | Thema                                                        |
 |-----|-----------|--------------------------------------------------------------|
-| 1   | ab 20.10. | Rechenkompetenzen                                      |
-| 2   | ab 27.10. | Gütekriterien I                                |
-| 3   | ab 03.11. | Schritte der Testkonstruktion                                |
-| 4   | ab 10.11. | Erstellung eines Testentwurfs                             |
+| 1   | ab 20.10. | Einführung & Rechenkompetenzen                                      |
+| 2   | ab 27.10. | Rechenkompetenzen                                |
+| 3   | ab 03.11. | Gütekriterien                                |
+| 4   | ab 10.11. | Schritte der Testkonstruktion & Erstellung eines Testentwurfs                             |
 |     |           | **Lektürewoche**                   |
 | 6   | ab 24.11. | Klassische Testtheorie                                       |
 | 5   | ab 01.12. | *Diagnostische Rechenkompetenzen I*   |
