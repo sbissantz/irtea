@@ -464,8 +464,8 @@ Die ROC-Kurve ändert sich nicht, weil Sensitivität und Spezifität nicht davon
 
 Ole ist 45 und unterrichtet seit 20 Jahren an einer Grundschule. Nach einem Burnout wird er in eine psychosomatische Klinik aufgenommen. Die Klinik erfasst das psychische Wohlbefinden aller Patient:innen zu Beginn und am Ende der achtwöchigen Behandlung. Gemessen wird mit den Psychological Well-Being Scales [PWB, @ryff1989]; höhere Werte zeigen ein höheres Wohlbefinden an. Die Abbildung zeigt die Werte von 70 Patient:innen, darunter Ole. Die Klinik möchte wissen, ob sich Oles Wohlbefinden während der Behandlung bedeutsam verbessert hat, also reliabel und klinisch relevant. Prüfen Sie die folgenden Hypothesen:
 
-- H1: Hat sich Oles Wohlbefinden reliabel verändert ($|RC| > 1.96$)?
-- H2: Liegt Oles Wohlbefinden nach der Behandlung mindestens beim Cut-off für das Wohlbefinden Gesunder nach Kriterium 2 (Mittelwert Gesunder minus zwei Standardabweichungen)?
+- H1: Hat sich Oles Zustand reliabel verändert ($|RC| > 1.96$)?
+- H2: Liegt Oles Zustand nach der Behandlung mindestens beim Cut-off für das Wohlbefinden Gesunder nach Kriterium 2 (Mittelwert Gesunder minus zwei Standardabweichungen)?
 
 Nehmen Sie als Reliabilitätsschätzer eine Retest-Reliabilität von 0.88 an. In der Population Gesunder liegt der Mittelwert bei 24, die Standardabweichung bei 4. Ole hatte vor der Behandlung einen Wert von 8, danach einen Wert von 14.
 
