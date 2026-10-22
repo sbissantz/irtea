@@ -346,7 +346,7 @@ Bei seltenen Merkmalen ist die diagnostische Genauigkeit allein irreführend.
 ::: {#exr-reliable-change}
 ## Reliable Change Index
 
-Ole ist 45 und unterrichtet seit zwanzig Jahren an einer Grundschule. Nach einem Burnout wird er in eine psychosomatische Klinik aufgenommen. Die Klinik erfasst das psychische Wohlbefinden aller Patient:innen zu Beginn und am Ende der achtwöchigen Behandlung. Gemessen wurde mit der Psychological Well-Being Scales [PWB, @ryff1989]; höhere Werte zeigen ein höheres Wohlbefinden an. Die Abbildung zeigt die Werte von 70 Patient:innen, darunter Ole.
+Ole ist 45 und unterrichtet seit zwanzig Jahren an einer Grundschule. Nach einem Burnout wird er in eine psychosomatische Klinik aufgenommen. Die Klinik erfasst das psychische Wohlbefinden aller Patient:innen zu Beginn und am Ende der achtwöchigen Behandlung. Gemessen wurde mit der Psychological Well-Being Scale [PWB, @ryff1989]; höhere Werte zeigen ein höheres Wohlbefinden an. Die Abbildung zeigt die Werte von 70 Patient:innen, darunter Ole.
 
 **Globale Fragestellung:** Hat sich Oles psychisches Wohlbefinden während der Behandlung bedeutsam verbessert?
 
@@ -412,27 +412,3 @@ d. Wird H2 positiv oder negativ beantwortet?
 ::: {.callout-tip title="Lösung" collapse="true"}
 Negativ: Oles Wert nach der Behandlung (14) liegt unter dem Cutoff 16.
 :::
-
-e. Was folgt daraus für die globale Fragestellung?
-
-::: {.callout-tip title="Lösung" collapse="true"}
-Oles Wohlbefinden hat sich reliabel verbessert, liegt aber noch nicht im Bereich Gesunder: eine reliable, aber keine klinisch relevante Verbesserung. Ob die Verbesserung auf die Behandlung zurückgeht, lässt sich mit einem Vorher-nachher-Vergleich allein nicht sagen.
-:::
-
-f. Wo liegen in der Abbildung Personen mit klinisch relevanter Verbesserung, Verbesserung ohne klinische Relevanz, Verschlechterung ohne klinische Relevanz und klinisch relevanter Verschlechterung? Wo liegt Ole?
-
-::: {.callout-note title="Hinweis" collapse="true"}
-Eine Veränderung ist klinisch relevant, wenn sie reliabel ist und den Cutoff überschreitet.
-:::
-
-::: {.callout-tip title="Lösung" collapse="true"}
-- Klinisch relevante Verbesserung: oberhalb der oberen gestrichelten Linie, vorher unter 16 und nachher mindestens 16 (oben links).
-- Verbesserung ohne klinische Relevanz: oberhalb der Diagonalen, aber nicht beide Bedingungen erfüllt (innerhalb der gestrichelten Linien oder nachher unter 16).
-- Verschlechterung ohne klinische Relevanz: unterhalb der Diagonalen, aber nicht beide Bedingungen erfüllt.
-- Klinisch relevante Verschlechterung: unterhalb der unteren gestrichelten Linie, vorher mindestens 16 und nachher unter 16 (unten rechts).
-
-Ole liegt im Bereich „Verbesserung ohne klinische Relevanz“: oberhalb der oberen gestrichelten Linie, aber unter dem Cutoff.
-:::
-:::
-
--->
