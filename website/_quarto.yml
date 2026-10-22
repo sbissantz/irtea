@@ -32,6 +32,10 @@ website:
             text: "1. Rechenkompetenzen"
           - href: workbook/efa-ex.qmd
             text: "8. Exploratorische Faktorenanalyse"
+          - href: workbook/item-ktt-ex.qmd
+            text: "10. Itemanalyse I"
+          - href: workbook/diagnostic-ii-ex.qmd
+            text: "12. Diagnostische Rechenkompetenzen II"
       - href: package.qmd
         text: R-Paket
   page-footer:

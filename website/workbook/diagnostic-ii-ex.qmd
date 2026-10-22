@@ -1,0 +1,438 @@
+---
+title: "12 Diagnostische Rechenkompetenzen II"
+---
+
+```{r}
+#| label: setup
+#| include: false
+# plot labels contain umlauts, which need a UTF-8 locale; the shell that runs
+# the render may start R in the C locale
+invisible(Sys.setlocale("LC_CTYPE", "en_US.UTF-8"))
+colors <- viridisLite::viridis(5)
+```
+
+In diesem Kapitel üben Sie die Berechnung von Konfidenzintervallen um Normwerte, das Prüfen diagnostischer Hypothesen, die Güte von Klassifikationen und die Bewertung von Veränderungen. Alle Fälle und Daten sind fiktiv. 
+
+::: {#exr-critical-z}
+## Kritische z-Werte
+
+Die folgende Tabelle zeigt einen Auszug aus der Tabelle der Standardnormalverteilung: Links von $z$ liegt der Flächenanteil $p$.
+
+| $p$ | 0.900 | 0.950 | 0.975 | 0.990 | 0.995 |
+|-----|------:|------:|------:|------:|------:|
+| $z$ |  1.28 | 1.645 |  1.96 |  2.33 |  2.58 |
+
+Welcher kritische z-Wert passt zu den folgenden Situationen?
+
+a. Eine Schulpsychologin prüft mit einem Konfidenzkoeffizienten von 99 %, ob die Rechenleistung eines Kindes unterdurchschnittlich ist.
+
+::: {.callout-tip title="Lösung" collapse="true"}
+$z = 2.33$ (einseitig)
+:::
+
+b. Eine Klinik prüft mit einem Konfidenzkoeffizienten von 95 %, ob ein Wert im Normalbereich liegt, also weder zu niedrig noch zu hoch ist.
+
+::: {.callout-tip title="Lösung" collapse="true"}
+$z = 1.96$ (zweiseitig)
+:::
+
+c. Ein Unternehmen prüft mit einem Konfidenzkoeffizienten von 95 %, ob eine Bewerberin überdurchschnittlich belastbar ist.
+
+::: {.callout-tip title="Lösung" collapse="true"}
+$z = 1.645$ (einseitig)
+:::
+:::
+
+::: {#exr-standard-values}
+## Standardwerte
+
+Eine Forschergruppe der RPTU untersucht, wie sich eine schlaflose Nacht auf die Konzentration auswirkt. Damit die Ergebnisse nicht von besonders schwachen oder besonders starken Ausgangswerten abhängen, nimmt sie nur Personen mit durchschnittlicher Konzentrationsleistung auf. Jonas ist 19, studiert im ersten Semester und sammelt Versuchspersonenstunden. Um abzuklären, ob Jonas' Konzentrationsleistung durchschnittlich ist und er an der Studie teilnehmen kann, führt man mit ihm im Vorfeld den den Aufmerksamkeits- und Konzentrationstest d2-R [@brickenkamp2010] durch. Für seine Konzentrationsleistung erhält Jonas einen Standardwert von $\text{SW} = 108$. Nehmen Sie als Reliabilitätsschätzer Cronbachs Alpha von 0.90 an und prüfen damit Hypothese ob Jonas’ Konzentrationsleistung im d2-R im Vergleich zu Gleichaltrigen im durchschnittlichen Bereich ($90 \le \text{SW} \le 110$)? liegt.
+
+::: {.callout-note title="Hinweis" collapse="true"}
+Standardmessfehler und zweiseitiges Konfidenzintervall:
+
+$$
+s_e = SD_x \cdot \sqrt{1 - Rel_x}, \qquad KI = X \pm z_{\alpha/2} \cdot s_e
+$$
+
+Einseitiges Konfidenzintervall, je nach Richtung der Hypothese:
+
+$$
+KI_u = X - z_{\alpha} \cdot s_e \quad \text{bzw.} \quad KI_o = X + z_{\alpha} \cdot s_e
+$$
+
+Standardwerte haben einen Mittelwert von 100 und eine Standardabweichung von 10.
+:::
+
+a. Berechnen Sie den Standardmessfehler.
+
+::: {.callout-tip title="Lösung" collapse="true"}
+$s_e \approx 3.16$
+:::
+
+b. Berechnen Sie das passende Konfidenzintervall mit einem Konfidenzkoeffizienten von 95 % um Jonas’ Standardwert.
+
+::: {.callout-tip title="Lösung" collapse="true"}
+$[101.80, 114.20]$
+:::
+
+c. Wie lässt sich das Intervall interpretieren?
+
+::: {.callout-tip title="Lösung" collapse="true"}
+Würden wir den Test mit Jonas unter den gleichen Bedingungen unendlich oft wiederholen, läge Jonas’ Konzentrationsleistung erwartungsgemäß in 95 % der Fälle innerhalb der Grenzen des berechneten Konfidenzintervalls.
+:::
+
+d. Wird die Hypothese positiv oder negativ beantwortet?
+
+::: {.callout-tip title="Lösung" collapse="true"}
+Negativ.
+:::
+
+e. Was folgt daraus für die globale Fragestellung?
+
+::: {.callout-tip title="Lösung" collapse="true"}
+Jonas’ Konzentrationsleistung lässt sich als durchschnittlich bis überdurchschnittlich beschreiben. Nach dem Aufnahmekriterium der Studie spricht das dagegen, dass Jonas an der Studie teilnimmt.
+:::
+:::
+
+::: {#exr-giftedness}
+## Hochbegabung
+
+Ida ist 13 und besucht die 7. Klasse eines Gymnasiums. In Mathematik löst sie die Aufgaben schneller als ihre Mitschüler:innen, und in ihrer Freizeit programmiert sie gerne kleine Computerspiele. Im Unterricht langweilt sie sich und zieht sich immer mehr zurück. Ihre Eltern schlagen deshalb vor, Ida auf eine Schule mit besonderer Förderung für hochbegabte Kinder zu schicken. Diese Schule verlangt im Berliner Intelligenzstrukturtest für Jugendliche [BIS-HB, @jaeger2006] einen IQ im Bereich der Hochbegabung, also über 130, und bittet die Eltern, sich an den schulpsychologischen Dienst zu wenden. Ida erhält im BIS-HB einen IQ von 134. Nehmen Sie einen Reliabilitätsschätzer Cronbachs Alpha von 0.95 an und prüfen Sie damit die Hypothese, ob Idas IQ im BIS-HB im Vergleich zu Gleichaltrigen im Bereich der Hochbegabung liegt ($\text{IQ} > 130$).
+
+::: {.callout-note title="Hinweis" collapse="true"}
+IQ-Werte haben eine Standardabweichung von 15. Die Formeln für das Konfidenzintervall stehen im Hinweis zu @exr-standard-values.
+:::
+
+a. Würden Sie ein ein- oder ein zweiseitiges Konfidenzintervall berechnen? Begründen Sie Ihre Antwort.
+
+::: {.callout-tip title="Lösung" collapse="true"}
+Einseitig (untere Grenze): Die Hypothese ist gerichtet.
+:::
+
+b. Nehmen Sie einen Konfidenzkoeffizienten von 95 % an und berechnen das entsprechende Konfidenzintervall.
+
+::: {.callout-tip title="Lösung" collapse="true"}
+$[128.48, +\infty)$
+:::
+
+c. Wird die Hypothese positiv oder negativ beantwortet?
+
+::: {.callout-tip title="Lösung" collapse="true"}
+Negativ.
+:::
+
+d. Was folgt daraus für die globale Fragestellung?
+
+::: {.callout-tip title="Lösung" collapse="true"}
+Nach der Aufnahmebedingung der Schule spricht das dagegen, dass Ida dorthin wechselt. Weitere Diagnostik könnte die Frage klären; unabhängig davon kann ihre jetzige Schule sie im Unterricht stärker fordern.
+:::
+:::
+
+::: {#exr-conscientiousness}
+## Gewissenhaftigkeit
+
+Der 58-jährige Dragan P. fährt seit 25 Jahren Lkw für eine Spedition. Vor drei Monaten hatte er einen leichten Schlaganfall. Seitdem fällt es ihm schwer, sich lange zu konzentrieren, und seiner Frau ist aufgefallen, dass er Termine vergisst und Rechnungen liegen lässt. Sein Hausarzt hat ihm das Fahren vorerst untersagt, bis eine neuropsychologische Untersuchung die Fahrtauglichkeit klärt. Genauer soll geklärt werden, ob Dragans Konzentrationsfähigkeit und seine Gewissenhaftigkeit im Vergleich zu Gleichaltrigen mindestens durchschnittlich ausgeprägt sind. Nur wenn beides zutrifft, darf er wieder LKW fahren. Prüfen Sie die folgenden Hypothesen:
+
+- H1: Liegt Dragans Konzentrationsleistung im Aufmerksamkeits- und Konzentrationstest d2-R [@brickenkamp2010] im Vergleich zu Gleichaltrigen mindestens im durchschnittlichen Bereich ($\text{SW} \ge 90$)?
+- H2: Liegt Dragans Wert auf der Skala Gewissenhaftigkeit des Big Five Inventars 2 [BFI-2, @soto2017; deutsche Fassung: @danner2019] im Vergleich zu Gleichaltrigen mindestens im durchschnittlichen Bereich ($T \ge 40$)?
+
+H1 wurde bereits geprüft und positiv beantwortet. Im BFI-2 erreicht Dragan einen T-Wert von 47. Nehmen Sie als Reliabilitätsschätzer Cronbachs Alpha von 0.85 an. Die Entscheidung soll mit einem Konfidenzkoeffizienten von 95 % abgesichert sein.
+
+::: {.callout-note title="Hinweis" collapse="true"}
+T-Werte haben eine Standardabweichung von 10.
+:::
+
+b. Berechnen Sie das passende Konfidenzintervall für H2.
+
+::: {.callout-tip title="Lösung" collapse="true"}
+$[40.63, +\infty)$
+:::
+
+c. Wird H2 positiv oder negativ beantwortet?
+
+::: {.callout-tip title="Lösung" collapse="true"}
+Positiv.
+:::
+
+d. Welche Entscheidungsregel wurde in der Aufgabenstellung implizit formuliert?
+
+::: {.callout-tip title="Lösung" collapse="true"}
+(Streng) Konjunktive Entscheidungsregel.
+:::
+
+d. Was folgt daraus final für die globale Fragestellung?
+
+::: {.callout-tip title="Lösung" collapse="true"}
+Beide Hypothesen wurden positiv beantwortet. Nach dem Entscheidungskriterium sprich aus neuropsychologischer Sicht nichts dagegen, dass Dragan wieder Lkw fährt.
+:::
+:::
+
+::: {#exr-raw-score}
+## Vom Rohwert zum Konfidenzintervall
+
+Nora ist 31 und Softwareentwicklerin. Im Vorstellungsgespräch hat sie mit ihrem selbstbewussten Auftreten überzeugt. Seit dem Ende der Probezeit beschweren sich ihre Kolleg:innen aber immer häufiger, dass sie andere abwertet, um selbst besser dazustehen. Weil die Konflikte sie belasten, wendet sich Nora an die Betriebspsychologin. Diese bietet ein Coaching zum Umgang mit Konkurrenz im Team an und empfiehlt es, wenn die narzisstische Rivalität überdurchschnittlich ausgeprägt ist. Sie legt Nora die Kurzform des Narcissistic Admiration and Rivalry Questionnaire [NARQ-S, @leckelt2018; @back2013] vor, die mit je drei Items die narzisstische Bewunderung und die narzisstische Rivalität erfasst. Damit prüft die Psychologin die Hypothese, ob Noras Summenwert auf der Skala Rivalität im Vergleich zu Erwachsenen im überdurchschnittlichen Bereich liegt ($z > 1$).
+
+Nora beantwortet die Items auf einer Ratingskala von 1 („trifft gar nicht zu“) bis 6 („trifft voll und ganz zu“):
+
+| Nr. | Item                                                                     | Skala       | Antwort |
+|----:|--------------------------------------------------------------------------|-------------|:-------:|
+|   1 | Ich ziehe viel Kraft daraus, eine ganz besondere Person zu sein          | Bewunderung |    5    |
+|   2 | Mit meinen besonderen Beiträgen schaffe ich es, im Mittelpunkt zu stehen | Bewunderung |    5    |
+|   3 | Ich reagiere genervt, wenn eine andere Person mir die Schau stiehlt      | Rivalität   |    5    |
+|   4 | Ich habe es verdient, als große Persönlichkeit angesehen zu werden       | Bewunderung |    3    |
+|   5 | Ich will, dass meine Konkurrenten scheitern                              | Rivalität   |    4    |
+|   6 | Die meisten Menschen sind ziemliche Versager                             | Rivalität   |    5    |
+
+Nehmen Sie an, dass der Summenwert der Skala Rivalität in einer Normstichprobe von Erwachsenen einen Mittelwert von 7.5 und eine Standardabweichung von 2.5 hat und dass der Reliabilitätsschätzer Cronbachs Alpha 0.75 beträgt. Die Entscheidung soll mit einem Konfidenzkoeffizienten von 95 % abgesichert sein.
+
+a. Berechnen Sie den Summenwert, den die Hypothese betrifft.
+
+::: {.callout-tip title="Lösung" collapse="true"}
+14 (Items 3, 5 und 6)
+:::
+
+b. Welches Messmodell in Teil a angenommen? 
+
+::: {.callout-tip title="Lösung" collapse="true"}
+Das Modell essenziell tau-äquivalenter Messungen.
+:::
+
+c. Rechnen Sie Noras Summenwert in einen z-Wert um.
+
+::: {.callout-tip title="Lösung" collapse="true"}
+$z = 2.6$
+:::
+
+d. Berechnen Sie das passende Konfidenzintervall um Noras z-Wert.
+
+::: {.callout-note title="Hinweis" collapse="true"}
+z-Werte haben eine Standardabweichung von 1.
+:::
+
+::: {.callout-tip title="Lösung" collapse="true"}
+$[1.78, +\infty)$
+:::
+
+e. Wird die Hypothese positiv oder negativ beantwortet?
+
+::: {.callout-tip title="Lösung" collapse="true"}
+Positiv.
+:::
+
+::: {#exr-classification}
+## Korrekte und inkorrekte Entscheidungen
+
+Die Grundschulen eines Landkreises möchten Kinder mit Lese-Rechtschreib-Störung (LRS) schon in der zweiten Klasse erkennen, damit die Förderung früh beginnen kann. Dafür erproben sie ein zehnminütiges Screening. Alle 400 Kinder des Jahrgangs durchlaufen zusätzlich eine umfassende Diagnostik, deren Ergebnis wir als wahren Zustand annehmen. Die Konfusionsmatrix in @tbl-confusion zeigt, wie die Ergebnisse von Screening und Diagnostik zusammenfallen.
+
+|                   | LRS laut Diagnostik | keine LRS laut Diagnostik |
+|-------------------|--------------------:|--------------------------:|
+| Screening positiv |                  32 |                        36 |
+| Screening negativ |                   8 |                       324 |
+
+: Konfusionsmatrix des LRS-Screenings bei 400 Kindern {#tbl-confusion}
+
+a. Ordnen Sie den vier Zellen der Konfusionsmatrix die Begriffe richtig positiv (RP), falsch positiv (FP), falsch negativ (FN) und richtig negativ (RN) zu.
+
+::: {.callout-tip title="Lösung" collapse="true"}
+RP = 32, FP = 36, FN = 8, RN = 324
+:::
+
+b. Berechnen Sie Sensitivität und Spezifität des Screenings.
+
+::: {.callout-tip title="Lösung" collapse="true"}
+Sensitivität = 0.80, Spezifität = 0.90
+:::
+
+c. Berechnen Sie den Youden-Index.
+
+::: {.callout-tip title="Lösung" collapse="true"}
+$0.80 + 0.90 - 1 = 0.70$
+:::
+
+d. Interpretieren Sie die Sensitivität und Spezifität inhaltlich. 
+
+::: {.callout-tip title="Lösung" collapse="true"}
+Von den 40 Kindern mit LRS erkennt das Screening 32. Von den 360 Kindern ohne LRS stuft es 36 fälschlich als auffällig ein.
+:::
+
+e. Das Screening stuft ein Kind ab einem bestimmten Rohwert als auffällig ein. Wie verändern sich Sensitivität und Spezifität, wenn die Schulen diese Grenze senken?
+
+::: {.callout-note title="Hinweis" collapse="true"}
+Die Abbildung zeigt, wie sich die Rohwerte der Kinder mit und ohne LRS verteilen. Kinder rechts der Grenze gelten als auffällig.
+
+```{r}
+#| label: screening-threshold
+#| echo: false
+#| fig-width: 6
+#| fig-height: 3.5
+#| fig-alt: "Zwei Verteilungen der Rohwerte im Screening, links für Kinder ohne LRS, rechts für Kinder mit LRS, mit der aktuellen Grenze als durchgezogene und einer gesenkten Grenze als gestrichelte Linie"
+raw_score <- seq(0, 28, length.out = 561)
+without_lrs <- dnorm(raw_score, mean = 10, sd = 3)
+with_lrs <- dnorm(raw_score, mean = 16.4, sd = 3)
+
+plot(raw_score, without_lrs,
+  type = "l", lwd = 2, col = colors[2], las = 1, ylim = c(0, 0.16),
+  xlab = "Rohwert im Screening", ylab = "Dichte"
+)
+lines(raw_score, with_lrs, lwd = 2, col = colors[4])
+abline(v = 13.8, lwd = 2, col = "#23373b")
+abline(v = 11.5, lwd = 2, lty = 2, col = "#23373b")
+text(5.5, 0.11, "ohne LRS", col = colors[2], adj = 1)
+text(21, 0.11, "mit LRS", col = colors[4], adj = 0)
+text(13.8, 0.155, "Grenze", pos = 4, cex = 0.8)
+text(11.5, 0.155, "gesenkt", pos = 2, cex = 0.8)
+```
+:::
+
+::: {.callout-tip title="Lösung" collapse="true"}
+Die Sensitivität steigt, die Spezifität sinkt: Mehr Kinder mit LRS werden erkannt, aber auch mehr Kinder ohne LRS fälschlich als auffällig eingestuft.
+:::
+:::
+
+::: {#exr-accuracy}
+## Diagnostische Genauigkeit
+
+Die Schulen aus @exr-classification möchten die Güte des Screenings in einer einzigen Zahl ausdrücken. Sie schlagen dafür die diagnostische Genauigkeit (engl. accuracy) vor, die sich aus der Konfusionsmatrix in @tbl-confusion ergibt.
+
+::: {.callout-note title="Hinweis"}
+$$
+\text{Diagnostische Genauigkeit} = \frac{RP + RN}{RP + FP + FN + RN}
+$$
+:::
+
+a. Was gibt die diagnostische Genauigkeit an?
+
+::: {.callout-tip title="Lösung" collapse="true"}
+Den Anteil aller korrekt klassifizierten Fälle (richtig positive und richtig negative) an allen Fällen.
+:::
+
+b. Berechnen Sie die diagnostische Genauigkeit des Screenings.
+
+::: {.callout-tip title="Lösung" collapse="true"}
+$\frac{32 + 324}{400} = 0.89$
+:::
+
+c. Berechnen Sie die Prävalenz, also den Anteil der Kinder mit LRS.
+
+::: {.callout-note title="Hinweis" collapse="true"}
+$$
+\text{Prävalenz} = \frac{RP + FN}{RP + FP + FN + RN}
+$$
+:::
+
+::: {.callout-tip title="Lösung" collapse="true"}
+$\frac{40}{400} = 0.10$
+:::
+
+d. Eine Lehrerin schlägt vor, auf das Screening zu verzichten und einfach jedes Kind als unauffällig einzustufen. Wie hoch wäre die diagnostische Genauigkeit dieser Regel?
+
+::: {.callout-tip title="Lösung" collapse="true"}
+$\frac{360}{400} = 0.90$
+:::
+
+e. Welche Sensitivität und welchen Youden-Index hätte die Regel aus Teil d? 
+
+::: {.callout-tip title="Lösung" collapse="true"}
+Sensitivität 0, Youden-Index 0: Die Regel erkennt kein einziges Kind mit LRS. Weil die Basisrate niedrig ist, erreicht sie trotzdem eine höhere diagnostische Genauigkeit als das Screening. 
+:::
+
+Was folgt daraus für die diagnostische Genauigkeit als Gütemaß
+
+::: {.callout-tip title="Lösung" collapse="true"}
+Bei seltenen Merkmalen ist die diagnostische Genauigkeit allein irreführend.
+:::
+
+::: {#exr-reliable-change}
+## Reliable Change Index
+
+Ole ist 45 und unterrichtet seit zwanzig Jahren an einer Grundschule. Nach einem Burnout wird er in eine psychosomatische Klinik aufgenommen. Die Klinik erfasst das psychische Wohlbefinden aller Patient:innen zu Beginn und am Ende der achtwöchigen Behandlung. Gemessen wurde mit der Psychological Well-Being Scales [PWB, @ryff1989]; höhere Werte zeigen ein höheres Wohlbefinden an. Die Abbildung zeigt die Werte von 70 Patient:innen, darunter Ole.
+
+**Globale Fragestellung:** Hat sich Oles psychisches Wohlbefinden während der Behandlung bedeutsam verbessert?
+
+**Spezifische Fragestellung:** Hat sich Oles psychisches Wohlbefinden reliabel und klinisch relevant verbessert?
+
+**Hypothesen:**
+
+- H1: Hat sich Oles Wohlbefinden reliabel verändert ($|RC| > 1.96$)?
+- H2: Liegt Oles Wohlbefinden nach der Behandlung mindestens beim Cutoff für das Wohlbefinden Gesunder nach Kriterium 2 (Mittelwert Gesunder minus zwei Standardabweichungen)?
+
+Nehmen Sie als Reliabilitätsschätzer eine Retest-Reliabilität von 0.88 an. In der Population Gesunder liegt der Mittelwert bei 24, die Standardabweichung bei 4. Ole hatte vor der Behandlung einen Wert von 8, danach einen Wert von 14.
+
+```{r}
+#| label: reliable-change
+#| echo: false
+#| fig-width: 6
+#| fig-height: 6
+#| fig-alt: "Streudiagramm des Wohlbefindens von 70 Patient:innen vor (x-Achse) und nach (y-Achse) der Behandlung mit Diagonale, Grenzen reliabler Veränderung, Cutoff 16 auf beiden Achsen und Oles Wert bei 8 und 14 als gelbes Dreieck"
+set.seed(21)
+before <- pmin(pmax(rnorm(70, mean = 10, sd = 3), 2), 18)
+after <- pmin(pmax(before + rnorm(70, mean = 4, sd = 4), 2), 30)
+change_limit <- 1.96 * sqrt(2 * (4 * sqrt(1 - 0.88))^2)
+
+plot(before, after,
+  type = "n", las = 1, asp = 1, xlim = c(0, 30), ylim = c(0, 30),
+  xlab = "Wohlbefinden vorher", ylab = "Wohlbefinden nachher"
+)
+abline(v = seq(0, 30, by = 5), h = seq(0, 30, by = 5), col = "grey90")
+abline(0, 1, lwd = 2, col = "#23373b")
+abline(change_limit, 1, lty = 2, lwd = 2, col = colors[2])
+abline(-change_limit, 1, lty = 2, lwd = 2, col = colors[2])
+abline(v = 16, h = 16, lwd = 2, col = colors[3])
+points(before, after, pch = 19, col = adjustcolor("grey50", 0.6))
+points(8, 14, pch = 24, cex = 1.3, col = "#23373b", bg = colors[5])
+legend("bottomright",
+  legend = c("keine Veränderung", "Grenzen reliabler Veränderung", "Cutoff 16", "Ole"),
+  lty = c(1, 2, 1, NA), lwd = 2, pch = c(NA, NA, NA, 24),
+  col = c("#23373b", colors[2], colors[3], "#23373b"), pt.bg = colors[5],
+  bg = "white", cex = 0.8
+)
+```
+
+a. Berechnen Sie den Cutoff nach Kriterium 2.
+
+::: {.callout-tip title="Lösung" collapse="true"}
+16
+:::
+
+b. Berechnen Sie den Reliable Change Index (RC) für Ole.
+
+::: {.callout-tip title="Lösung" collapse="true"}
+$RC \approx 3.06$
+:::
+
+c. Wird H1 positiv oder negativ beantwortet?
+
+::: {.callout-tip title="Lösung" collapse="true"}
+Positiv: $3.06 > 1.96$, die Veränderung ist reliabel.
+:::
+
+d. Wird H2 positiv oder negativ beantwortet?
+
+::: {.callout-tip title="Lösung" collapse="true"}
+Negativ: Oles Wert nach der Behandlung (14) liegt unter dem Cutoff 16.
+:::
+
+e. Was folgt daraus für die globale Fragestellung?
+
+::: {.callout-tip title="Lösung" collapse="true"}
+Oles Wohlbefinden hat sich reliabel verbessert, liegt aber noch nicht im Bereich Gesunder: eine reliable, aber keine klinisch relevante Verbesserung. Ob die Verbesserung auf die Behandlung zurückgeht, lässt sich mit einem Vorher-nachher-Vergleich allein nicht sagen.
+:::
+
+f. Wo liegen in der Abbildung Personen mit klinisch relevanter Verbesserung, Verbesserung ohne klinische Relevanz, Verschlechterung ohne klinische Relevanz und klinisch relevanter Verschlechterung? Wo liegt Ole?
+
+::: {.callout-note title="Hinweis" collapse="true"}
+Eine Veränderung ist klinisch relevant, wenn sie reliabel ist und den Cutoff überschreitet.
+:::
+
+::: {.callout-tip title="Lösung" collapse="true"}
+- Klinisch relevante Verbesserung: oberhalb der oberen gestrichelten Linie, vorher unter 16 und nachher mindestens 16 (oben links).
+- Verbesserung ohne klinische Relevanz: oberhalb der Diagonalen, aber nicht beide Bedingungen erfüllt (innerhalb der gestrichelten Linien oder nachher unter 16).
+- Verschlechterung ohne klinische Relevanz: unterhalb der Diagonalen, aber nicht beide Bedingungen erfüllt.
+- Klinisch relevante Verschlechterung: unterhalb der unteren gestrichelten Linie, vorher mindestens 16 und nachher unter 16 (unten rechts).
+
+Ole liegt im Bereich „Verbesserung ohne klinische Relevanz“: oberhalb der oberen gestrichelten Linie, aber unter dem Cutoff.
+:::
+:::
+
+-->

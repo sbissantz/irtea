@@ -1,0 +1,256 @@
+---
+title: "10 Itemanalyse KTT"
+---
+
+```{r}
+#| label: setup
+#| include: false
+# psych matches some arguments partially inside its own code; turn off the
+# warnings so they do not appear on the page
+options(
+  warnPartialMatchArgs = FALSE,
+  warnPartialMatchAttr = FALSE,
+  warnPartialMatchDollar = FALSE
+)
+colors <- viridisLite::viridis(5)
+```
+
+Eine Gruppe englischer Forscher:innen möchte ein Instrument zum Screening der Persönlichkeitsdomäne Extraversion entwickeln. In einer Pilotstudie erheben sie eine Reihe potenzieller Items aus dem International Personality Item Pool (IPIP). Dazu verwenden sie eine vollständig beschriftete Ratingskala mit $k = 6$ ordinalen Antwortkategorien (*Very Inaccurate*, *Moderately Inaccurate*, *Slightly Inaccurate*, *Slightly Accurate*, *Moderately Accurate*, *Very Accurate*), kodiert von 0 bis 5. Mit den Pilotdaten möchten die Forscher:innen eine Itemanalyse durchführen.
+
+In einer Pilotstudie werden oft viele Items in einer großen Stichprobe erhoben. Zum Üben betrachten wir zunächst nur die Antworten von $n = 8$ Personen auf $m = 3$ Items. Die Berechnungen orientieren sich an Kapitel 7 in @moosbrugger2020. Die Beispieldaten stammen aus dem Datensatz `bfi` des R-Pakets psych [@revelle2026]; das Szenario ist fiktiv.
+
+::: {.callout-note title="Hinweis"}
+Runden Sie Endergebnisse kaufmännisch auf zwei Nachkommastellen.
+:::
+
+::: {#exr-item-direction}
+## Messrichtung und Rekodierung
+
+Die drei Items lauten:
+
+| Item $j$ | Itemstamm                                 |
+|----------|-------------------------------------------|
+| 1        | *I don't talk a lot.*                     |
+| 2        | *I find it difficult to approach others.* |
+| 3        | *I know how to captivate people.*         |
+
+a. Schließen Sie vom Itemstamm auf die Messrichtung der Items: Notieren Sie für jedes Item ein $+$ oder ein $-$.
+
+::: {.callout-tip title="Lösung" collapse="true"}
+Item 1: $-$, Item 2: $-$, Item 3: $+$
+:::
+
+@tbl-item-data zeigt die Antworten $y_{ij}$ der $n = 8$ Personen.
+
+| Person $i$ | Item 1 | Item 2 | Item 3 |
+|-----------:|-------:|-------:|-------:|
+|          1 |      2 |      2 |      2 |
+|          2 |      0 |      0 |      5 |
+|          3 |      1 |      3 |      3 |
+|          4 |      4 |      2 |      3 |
+|          5 |      1 |      1 |      4 |
+|          6 |      1 |      0 |      5 |
+|          7 |      3 |      2 |      3 |
+|          8 |      2 |      5 |      3 |
+
+: Antworten $y_{ij}$ von $n = 8$ Personen auf $m = 3$ Items {#tbl-item-data}
+
+b. Welche Items müssen Sie aufgrund ihrer Messrichtung rekodieren? Rekodieren Sie die Antworten $y_{ij}$ dieser Items. Beachten Sie, dass $y_{ij} \in \{0, \ldots, k - 1\}$.
+
+::: {.callout-note title="Hinweis" collapse="true"}
+Bei Antworten von 0 bis $k - 1$ wird eine Antwort $y_{ij}$ zu $(k - 1) - y_{ij}$ rekodiert.
+:::
+
+::: {.callout-tip title="Lösung" collapse="true"}
+Items 1 und 2:
+
+| Person $i$ | Item 1 rekodiert | Item 2 rekodiert |
+|-----------:|-----------------:|-----------------:|
+|          1 |                3 |                3 |
+|          2 |                5 |                5 |
+|          3 |                4 |                2 |
+|          4 |                1 |                3 |
+|          5 |                4 |                4 |
+|          6 |                4 |                5 |
+|          7 |                2 |                3 |
+|          8 |                3 |                0 |
+:::
+:::
+
+::: {#exr-item-difficulty}
+## Itemschwierigkeit
+
+Bei Items mit $k > 2$ Antwortkategorien lässt sich die Itemschwierigkeit so berechnen:
+
+$$
+P_j = \frac{\sum_{i=1}^{n} y_{ij}}{n \cdot (k - 1)} \cdot 100
+$$
+
+Verwenden Sie die rekodierten Antworten aus @exr-item-direction.
+
+a. Berechnen Sie für jedes Item die Summe im Zähler. Geben Sie dazu auch die Summenschreibweise an.
+
+::: {.callout-tip title="Lösung" collapse="true"}
+$\sum_{i=1}^{8} y_{i1} = 26$, $\sum_{i=1}^{8} y_{i2} = 25$, $\sum_{i=1}^{8} y_{i3} = 28$
+:::
+
+b. Berechnen Sie $P_j$ für alle drei Items.
+
+::: {.callout-tip title="Lösung" collapse="true"}
+$P_1 = 65$, $P_2 = 62.5$, $P_3 = 70$
+:::
+
+c. Welches Item ist am leichtesten? Was bedeutet „leicht“ bei diesen Items?
+
+::: {.callout-tip title="Lösung" collapse="true"}
+Item 3; höhere Werte bedeuten leichtere Items. Bei einem leichten Item fällt es den Befragten leicht, zuzustimmen; bei rekodierten Items fällt es ihnen leicht, den Itemstamm abzulehnen.
+:::
+:::
+
+::: {#exr-item-discrimination}
+## Trennschärfe
+
+Die *part-whole*-korrigierte Trennschärfe $r_{it(j)}$ eines Items $j$ ist die Korrelation der Antworten auf Item $j$ mit der Summe der Antworten auf die übrigen Items.
+
+a. Berechnen Sie für jede Person die Summe ihrer (ggf. rekodierten) Antworten auf die Items 1 und 3 (@exr-item-direction).
+
+::: {.callout-tip title="Lösung" collapse="true"}
+Personen 1 bis 8: 5, 10, 7, 4, 8, 9, 5, 6
+:::
+
+b. Es bezeichne $x_i$ die rekodierte Antwort von Person $i$ auf Item 2 und $y_i$ ihre Summe aus Teil a. Dann gilt:
+
+$$
+\sum_{i=1}^{8} (x_i - \bar{x})^2 = 18.88, \quad \sum_{i=1}^{8} (y_i - \bar{y})^2 = 31.5, \quad \sum_{i=1}^{8} (x_i - \bar{x})(y_i - \bar{y}) = 14.25
+$$
+
+Berechnen Sie die *part-whole*-korrigierte Trennschärfe $r_{it(2)} = r_{xy}$ von Item 2.
+
+::: {.callout-note title="Hinweis" collapse="true"}
+Die Formeln für $s_x^2$, $s_y^2$, $s_{xy}$ und $r_{xy}$ stehen in der Formelsammlung „Grundlegende Formeln“.
+:::
+
+::: {.callout-tip title="Lösung" collapse="true"}
+$r_{it(2)} \approx 0.58$
+:::
+
+c. Interpretieren Sie den Wert und begründen Sie kurz, warum die *part-whole*-Korrektur hier (nicht) sinnvoll ist.
+
+::: {.callout-tip title="Lösung" collapse="true"}
+Item 2 hängt deutlich mit der Summe der Items 1 und 3 zusammen; es misst vermutlich dasselbe Merkmal wie diese beiden Items. Die Korrektur ist sinnvoll: Bei nur drei Items würde Item 2 den Summenwert stark mitbestimmen und so die Trennschärfe künstlich erhöhen.
+:::
+:::
+
+::: {#exr-item-distribution}
+## Verteilung der Itemantworten
+
+Nun betrachten wir $m = 5$ Items und die Antworten einer größeren Stichprobe von $n = 2800$ Personen. Die Items 1 bis 3 kennen Sie bereits; die Items 4 und 5 messen ebenfalls Extraversion:
+
+| Item $j$ | Itemstamm                 | Messrichtung |
+|----------|---------------------------|:------------:|
+| 4        | *I make friends easily.*  | $+$          |
+| 5        | *I take charge.*          | $+$          |
+
+Die folgende Abbildung zeigt Boxplots der (rekodierten) Antworten auf die fünf Items.
+
+```{r}
+#| label: item-boxplots
+#| echo: false
+#| fig-width: 6
+#| fig-height: 4
+#| fig-alt: "Boxplots der Antworten von 0 bis 5 auf die fünf Items; Item 5 hat Ausreißer bei 0 und 1"
+# extraversion items E1 to E5 of psych::bfi, coded 0 to 5; items 1 and 2
+# recoded
+extraversion <- psych::bfi[, paste0("E", 1:5)] - 1
+extraversion[, 1:2] <- 5 - extraversion[, 1:2]
+
+# grid first, so the boxes are drawn on top of it
+plot(NA,
+  xlim = c(0.5, 5.5), ylim = c(0, 5), axes = FALSE, xlab = "", ylab = "Antwort"
+)
+abline(h = 0:5, col = "grey90")
+boxplot(extraversion,
+  names = paste("Item", 1:5), las = 1, yaxt = "n", add = TRUE,
+  col = colors[3], border = "#23373b", pch = 19
+)
+axis(2, at = 0:5, las = 1)
+```
+
+a. Berechnen Sie den Interquartilabstand (IQA) der Antworten auf Item 1 und interpretieren Sie ihn.
+
+::: {.callout-tip title="Lösung" collapse="true"}
+$\text{IQA} = 2$: Die mittlere Hälfte der Antworten liegt zwischen den Kategorien 2 und 4.
+:::
+
+b. Einige Antworten auf Item 5 erscheinen im Boxplot als Ausreißer. Berechnen Sie den unteren Grenzwert für Ausreißer auf Item 5.
+
+::: {.callout-note title="Hinweis" collapse="true"}
+Als Ausreißer gelten Werte unterhalb von $Q_1 - 1.5 \cdot \text{IQA}$ oder oberhalb von $Q_3 + 1.5 \cdot \text{IQA}$.
+:::
+
+::: {.callout-tip title="Lösung" collapse="true"}
+$Q_1 - 1.5 \cdot \text{IQA} = 1.5$: Die Antworten 0 und 1 sind Ausreißer.
+:::
+:::
+
+::: {#exr-item-efa}
+## Exploratorische Faktorenanalyse
+
+@tbl-item-efa zeigt Ergebnisse einer Hauptachsenanalyse der fünf (rekodierten) Extraversionsitems mit einem Faktor und Varimax-Rotation, so wie die Funktion `psych::fa()` sie ausgibt. Einige Werte fehlen.
+
+| Item $j$ |  PA1 |   h2 |   u2 | com |
+|---------:|-----:|-----:|-----:|----:|
+|        1 | 0.60 |      |      |     |
+|        2 |      |      | 0.48 |     |
+|        3 | 0.59 |      |      |     |
+|        4 |      |      | 0.53 |     |
+|        5 |      | 0.28 |      |     |
+
+: Hauptachsenanalyse der fünf Items (ein Faktor, Varimax) {#tbl-item-efa}
+
+::: {.callout-note title="Hinweis" collapse="true"}
+PA1: Ladung $\lambda_j$ auf dem Faktor; h2: Kommunalität $h_j^2$; u2: Spezifität $u_j^2 = 1 - h_j^2$; com: Komplexität, d. h. die Zahl der Faktoren, auf die sich die Ladungen eines Items effektiv verteilen.
+:::
+
+a. Berechnen Sie die fehlenden Werte der Tabelle.
+
+::: {.callout-tip title="Lösung" collapse="true"}
+| Item $j$ |  PA1 |   h2 |   u2 | com |
+|---------:|-----:|-----:|-----:|----:|
+|        1 | 0.60 | 0.36 | 0.64 |   1 |
+|        2 | 0.72 | 0.52 | 0.48 |   1 |
+|        3 | 0.59 | 0.35 | 0.65 |   1 |
+|        4 | 0.69 | 0.47 | 0.53 |   1 |
+|        5 | 0.53 | 0.28 | 0.72 |   1 |
+
+Berechnet mit den gerundeten Werten der Tabelle; R gibt für Item 3 h2 = 0.34 und u2 = 0.66 aus, für Item 5 PA1 = 0.52.
+:::
+
+b. Berechnen Sie die Summe der quadrierten Ladungen (SS loadings).
+
+::: {.callout-tip title="Lösung" collapse="true"}
+$\sum_{j=1}^{5} \lambda_j^2 \approx 1.98$
+:::
+
+c. Berechnen Sie den Anteil der Varianz, den der Faktor erklärt (Proportion Var).
+
+::: {.callout-note title="Hinweis" collapse="true"}
+Die Varianz jedes Items beträgt 1.
+:::
+
+::: {.callout-tip title="Lösung" collapse="true"}
+$\frac{1.98}{5} \approx 0.40$
+:::
+
+d. Welchen Wert hätte die Ladung von Item 4, wenn mit Oblimin statt mit Varimax rotiert würde?
+
+::: {.callout-tip title="Lösung" collapse="true"}
+0.69: Bei nur einem Faktor ändert eine Rotation nichts.
+:::
+
+e. Interpretieren Sie die Ladungen.
+
+::: {.callout-tip title="Lösung" collapse="true"}
+Alle Ladungen liegen zwischen 0.53 und 0.72 und damit über dem Orientierungswert 0.4. Ein substanzieller Teil der Varianz jedes Items geht auf einen gemeinsamen Faktor zurück, vermutlich Extraversion.
+:::
+:::
