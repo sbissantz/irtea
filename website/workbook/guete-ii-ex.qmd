@@ -361,7 +361,7 @@ Wenn Sie das Erkennen von Messmodellen weiter üben möchten, starten Sie in R d
 ::: {#exr-construct-validity}
 ## Konstruktvalidität
 
-Forscher:innen der RPTU haben einen sprachfreien Intelligenztest entwickelt, den RPTU-IQ, und wollen ihn validieren. In einer Pilotstudie mit Studierenden in Landau erheben sie zusätzlich den Intelligenz-Struktur-Test 2000 R [I-S-T 2000 R, @liepmann2007], der auch sprachliche Aufgaben enthält, und den sprachfreien Hagen Matrices Test [HMT, vgl. @heydasch2013]. Außerdem erfragen sie die Abiturnote, die Deutschnote im Abitur und ob eine Lese-Rechtschreib-Störung (LRS) diagnostiziert wurde (0 = nein, 1 = ja).
+Forscher:innen der RPTU haben einen sprachfreien Intelligenztest entwickelt, den RPTU-IQ, und wollen ihn validieren. In einer Pilotstudie mit Studierenden in Landau erheben sie zusätzlich den Intelligenz-Struktur-Test 2000 R [I-S-T 2000 R, @liepmann2007], der auch sprachliche Aufgaben enthält, und den sprachfreien Hagen Matrices Test [HMT, @heydasch2014]. Außerdem erfragen sie die Abiturnote, die Deutschnote im Abitur und ob eine Lese-Rechtschreib-Störung (LRS) diagnostiziert wurde (0 = nein, 1 = ja).
 
 ::: {.callout-note title="Hinweis" collapse="true"}
 Bei Schulnoten stehen kleine Zahlen für gute Leistungen.
