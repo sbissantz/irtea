@@ -4,7 +4,7 @@ title: "R-Paket irtea"
 
 ![](images/logo.png){width="120" .float-end fig-alt="irtea-Logo"}
 
-Das Paket `irtea` enthält die Datensätze für die Aufgaben im Übungsheft.
+Das Paket `irtea` enthält die Datensätze für die Aufgaben im Übungsheft und Funktionen zum Üben.
 
 ## Installation
 
@@ -25,3 +25,18 @@ Einen Datensatz laden Sie mit:
 ```r
 data(personality_items, package = "irtea")
 ```
+
+## Funktionen
+
+| Funktion | Zweck | Übungsheft |
+|----------|-------|------------|
+| `simulate_model()` | Erzeugt Mittelwerte und Kovarianzmatrix von Items, die einem der fünf Messmodelle der Klassischen Testtheorie folgen | [Kapitel 13](workbook/guete-ii-ex.qmd) |
+| `play_roulette()` | Quiz in der Konsole: Erkennen Sie das Messmodell? | [Kapitel 13](workbook/guete-ii-ex.qmd) |
+
+Das Quiz starten Sie mit:
+
+```r
+irtea::play_roulette()
+```
+
+Mit `play_roulette(n_items = 4)` spielen Sie nur mit vier Items, mit `play_roulette(n = 300)` mit simulierten Stichproben, in denen die Muster nur noch ungefähr gelten.
