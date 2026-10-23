@@ -1,0 +1,407 @@
+---
+title: "13 Gütekriterien II"
+---
+
+```{r}
+#| label: setup
+#| include: false
+# plot labels contain umlauts, which need a UTF-8 locale; the shell that runs
+# the render may start R in the C locale
+invisible(Sys.setlocale("LC_CTYPE", "en_US.UTF-8"))
+colors <- viridisLite::viridis(5)
+
+# the five versions in the measurement model exercise
+set.seed(2026)
+versions <- list(
+  A = irtea::simulate_model("tau_equivalent"),
+  B = irtea::simulate_model("tau_congeneric"),
+  C = irtea::simulate_model("parallel"),
+  D = irtea::simulate_model("essentially_tau_equivalent"),
+  E = irtea::simulate_model("essentially_parallel")
+)
+
+show_version <- function(name) {
+  table <- as.data.frame(versions[[name]])
+  item_labels <- paste0("$x_", seq_along(table), "$")
+  dimnames(table) <- list(c("Mittelwert", item_labels), item_labels)
+  knitr::kable(table, align = "r", caption = paste("Version", name))
+}
+
+variance_d <- sum(versions$D$cov)
+alpha_d <- 3 / 2 * (1 - sum(diag(versions$D$cov)) / variance_d)
+```
+
+In diesem Kapitel berechnen und beurteilen Sie Kennwerte der drei Hauptgütekriterien: Objektivität (Cohens Kappa, Intraklassenkorrelation), Reliabilität (Testhalbierung, Testverlängerung, Cronbachs Alpha) und Validität (Konstruktvalidität). Die Formeln in den Hinweisen entsprechen der Formelsammlung zur Vorlesung. Alle Daten sind fiktiv.
+
+::: {#exr-kappa}
+## Cohens Kappa
+
+Für ein Stipendium bewerben sich 25 Studierende. Zwei Professor:innen, X und Y, führen mit allen Bewerber:innen ein Interview und sprechen sich unabhängig voneinander für oder gegen eine Vergabe aus. @tbl-kappa zeigt, wie oft ihre Urteile zusammenfallen.
+
+|                       | Vergabe (Y) | Nicht-Vergabe (Y) |
+|-----------------------|------------:|------------------:|
+| **Vergabe (X)**       |          11 |                 3 |
+| **Nicht-Vergabe (X)** |           2 |                 9 |
+
+: Urteile von Professor:in X (Zeilen) und Professor:in Y (Spalten) {#tbl-kappa}
+
+::: {.callout-note title="Hinweis" collapse="true"}
+$$
+\kappa = \frac{p_0 - p_e}{1 - p_e}, \qquad \kappa_{max} = \frac{p_{0,r} - p_e}{1 - p_e}
+$$
+
+$p_{0,r}$ ist die Summe der jeweils kleineren Randanteile. Beurteilung von Kappa nach der Vorlesung: bis 0.40 ungenügend, 0.41 bis 0.60 befriedigend, 0.61 bis 0.80 gut, über 0.80 sehr gut.
+:::
+
+a. Welche Art der Objektivität prüfen Sie mit Cohens Kappa [@cohen1960]?
+
+::: {.callout-tip title="Lösung" collapse="true"}
+Die Auswertungsobjektivität (Interrater-Reliabilität) bei nominalskalierten Urteilen.
+:::
+
+b. Berechnen Sie Cohens Kappa und beurteilen Sie die Übereinstimmung der Professor:innen.
+
+::: {.callout-tip title="Lösung" collapse="true"}
+$p_0 = 0.80$, $p_e \approx 0.50$, $\kappa = 0.60$: befriedigend.
+:::
+
+c. Wie hoch könnte Kappa bei diesen Randverteilungen höchstens sein?
+
+::: {.callout-tip title="Lösung" collapse="true"}
+$p_{0,r} = 0.96$, $\kappa_{max} = 0.92$
+:::
+:::
+
+::: {#exr-icc}
+## Intraklassenkorrelation
+
+In einem anderen Stipendienprogramm bewerten Professor:innen die Eignung der Bewerber:innen auf einer Skala von 1 (gar nicht geeignet) bis 10 (sehr gut geeignet). Jede der sechs Bewerber:innen wird von vier Professor:innen bewertet, die zufällig aus acht Professor:innen gezogen werden. Über das Stipendium entscheidet der Mittelwert der vier Bewertungen.
+
+| Person |  A |  B |  C |  D |  E |  F |  G |  H |
+|-------:|---:|---:|---:|---:|---:|---:|---:|---:|
+|      1 |  8 |  6 |  8 |  7 |    |    |    |    |
+|      2 |    |    |  4 |  2 |    |    |  7 |  2 |
+|      3 | 10 |    |    |  4 |  7 |    |  7 |    |
+|      4 |    |  7 |    |    |    |  6 |  4 |  5 |
+|      5 |  3 |  1 |    |    |  1 |  3 |    |    |
+|      6 |    |    |    |    |  4 |  4 |  4 |  6 |
+
+: Eignungsurteile der Professor:innen A bis H; leere Zellen: keine Bewertung {#tbl-icc}
+
+::: {.callout-note title="Hinweis" collapse="true"}
+$$
+QS_{zw} = \sum_{j=1}^{J} n_j \cdot (\bar{x}_j - \bar{x})^2, \qquad QS_{inn} = \sum_{j=1}^{J} \sum_{m=1}^{n_j} (x_{mj} - \bar{x}_j)^2
+$$
+
+$$
+\hat{\sigma}^2_{zw} = \frac{QS_{zw}}{J - 1}, \qquad \hat{\sigma}^2_{inn} = \frac{QS_{inn}}{n - J}, \qquad n = n_j \cdot J
+$$
+
+$$
+ICC(1,1) = \frac{\hat{\sigma}^2_{zw} - \hat{\sigma}^2_{inn}}{\hat{\sigma}^2_{zw} + (k - 1) \cdot \hat{\sigma}^2_{inn}}, \qquad ICC(1,k) = \frac{\hat{\sigma}^2_{zw} - \hat{\sigma}^2_{inn}}{\hat{\sigma}^2_{zw}}
+$$
+
+Beurteilung des ICC nach der Vorlesung: unter 0.50 ungenügend, 0.50 bis 0.75 befriedigend, 0.76 bis 0.90 gut, über 0.90 sehr gut.
+:::
+
+a. Welcher Fall nach @shrout1979 liegt vor, und welchen ICC-Koeffizienten verwenden Sie? Begründen Sie Ihre Antwort.
+
+::: {.callout-tip title="Lösung" collapse="true"}
+Fall 1, weil jede Person von einem anderen, zufällig gezogenen Set von Professor:innen bewertet wird. ICC(1,k), weil über das Stipendium der Mittelwert der vier Bewertungen entscheidet.
+:::
+
+b. Berechnen Sie die Quadratsumme $QS_{inn}$ für die erste Person und bestimmen Sie $n$.
+
+::: {.callout-tip title="Lösung" collapse="true"}
+$QS_{inn} = 2.75$ (Mittelwert 7.25), $n = 24$
+:::
+
+c. Für alle sechs Personen gilt $QS_{inn} = 49.5$ und $QS_{zw} = 80.5$. Berechnen Sie den ICC aus Teil a und beurteilen Sie ihn.
+
+::: {.callout-tip title="Lösung" collapse="true"}
+$\hat{\sigma}^2_{zw} = 16.10$, $\hat{\sigma}^2_{inn} = 2.75$, $ICC(1,k) = 0.83$: gut.
+:::
+
+d. Wie reliabel ist das Urteil einer einzelnen Person aus dem Kreis der Professor:innen? Berechnen Sie ICC(1,1) und vergleichen Sie mit Teil c.
+
+::: {.callout-tip title="Lösung" collapse="true"}
+$ICC(1,1) = 0.55$: befriedigend. Ein einzelnes Urteil ist deutlich weniger reliabel als der Mittelwert aus vier Urteilen.
+:::
+:::
+
+::: {#exr-reliability-validity}
+## Reliabilität und Validität
+
+Die Abbildung zeigt vier Zielscheiben. Jedes Kreuz steht für eine Messung; die Mitte steht für das Merkmal, das gemessen werden soll.
+
+```{r}
+#| label: targets
+#| echo: false
+#| fig-width: 8
+#| fig-height: 2.4
+#| fig-alt: "Vier Zielscheiben mit je 15 Kreuzen: bei 1 eng um die Mitte, bei 2 eng beieinander am oberen linken Rand, bei 3 weit um die Mitte gestreut, bei 4 weit gestreut und nach rechts oben verschoben"
+set.seed(13)
+centers <- list(c(0, 0), c(-2.3, 2.1), c(0, 0), c(1.4, 1.6))
+spreads <- c(0.3, 0.3, 1.3, 1.3)
+
+par(mfrow = c(1, 4), mar = c(0.5, 0.5, 2, 0.5))
+for (i in 1:4) {
+  plot(NA,
+    xlim = c(-4.2, 4.2), ylim = c(-4.2, 4.2), asp = 1,
+    axes = FALSE, xlab = "", ylab = "", main = i
+  )
+  symbols(rep(0, 4), rep(0, 4), circles = 1:4, inches = FALSE, add = TRUE, fg = "grey60")
+  hits <- cbind(
+    rnorm(15, centers[[i]][1], spreads[i]),
+    rnorm(15, centers[[i]][2], spreads[i])
+  )
+  points(hits, pch = 3, lwd = 2, col = colors[1])
+}
+```
+
+a. Welche Zielscheibe zeigt eine reliable und valide Messung, welche eine reliable, aber nicht valide, und welche eine Messung, die weder reliabel noch valide ist?
+
+::: {.callout-tip title="Lösung" collapse="true"}
+- 1: reliabel und valide.
+- 2: reliabel, aber nicht valide: Die Messungen liegen eng beieinander, verfehlen aber das Merkmal systematisch.
+- 3: nicht reliabel: Die Messungen streuen stark, liegen aber im Mittel auf dem Ziel.
+- 4: weder reliabel noch valide.
+:::
+
+b. Kann eine Messung wie in Zielscheibe 3 valide sein?
+
+::: {.callout-tip title="Lösung" collapse="true"}
+Nur eingeschränkt: Die Reliabilität begrenzt die Validität. Zielscheibe 3 trifft nur im Mittel; einzelne Messungen liegen oft weit vom Ziel entfernt.
+:::
+:::
+
+::: {#exr-spearman-brown}
+## Testhalbierung
+
+Die Forscher:innen aus [Kapitel 10](item-ktt-ex.qmd) kürzen ihr Screening für Extraversion nach der Itemanalyse auf vier Items. In einer neuen Stichprobe teilen sie die Items in zwei Testhälften auf (Items 1 und 3, Items 2 und 4). Die Summenwerte der beiden Hälften korrelieren zu 0.81.
+
+::: {.callout-note title="Hinweis" collapse="true"}
+$$
+Rel(x_{\text{vollständig}}) = \frac{2 \cdot Corr(x_p, x_q)}{1 + Corr(x_p, x_q)} = \frac{2 \cdot Rel(x_{\text{halb}})}{1 + Rel(x_{\text{halb}})}
+$$
+:::
+
+a. Warum reicht die Korrelation der beiden Testhälften nicht als Schätzung der Reliabilität des Screenings?
+
+::: {.callout-tip title="Lösung" collapse="true"}
+Sie schätzt die Reliabilität eines Tests mit nur halb so vielen Items. Weil die Reliabilität mit der Testlänge steigt, muss sie auf die volle Länge aufgewertet werden.
+:::
+
+b. Schätzen Sie die Reliabilität des vollständigen Screenings mit der Spearman-Brown-Formel.
+
+::: {.callout-tip title="Lösung" collapse="true"}
+$Rel(x_{\text{vollständig}}) = 0.90$
+:::
+:::
+
+::: {#exr-test-length}
+## Testverlängerung
+
+Für Einzelfallentscheidungen möchten die Forscher:innen aus @exr-spearman-brown eine Reliabilität von 0.95 erreichen. Gehen Sie von der Reliabilität 0.90 des Screenings mit vier Items aus.
+
+::: {.callout-note title="Hinweis" collapse="true"}
+$$
+Rel^*_k = \frac{k \cdot Rel}{1 + (k - 1) \cdot Rel}, \qquad k = \frac{Rel^* \cdot (1 - Rel)}{Rel \cdot (1 - Rel^*)}
+$$
+:::
+
+a. Um welchen Faktor müssen die Forscher:innen das Screening verlängern?
+
+::: {.callout-tip title="Lösung" collapse="true"}
+$k = 2.11$
+:::
+
+b. Wie viele Items braucht das Screening dann insgesamt, und wie viele kommen hinzu?
+
+::: {.callout-tip title="Lösung" collapse="true"}
+$4 \cdot 2.11 = 8.44$, aufgerundet 9 Items: 5 Items kommen hinzu. Mit 8 Items bliebe die Reliabilität knapp unter 0.95.
+:::
+
+c. Welche Annahme trifft die Spearman-Brown-Formel über die neuen Items?
+
+::: {.callout-tip title="Lösung" collapse="true"}
+Die neuen Items sind zu den vorhandenen parallel, messen also dasselbe Merkmal gleich gut.
+:::
+:::
+
+::: {#exr-cronbach}
+## Cronbachs Alpha
+
+In derselben Stichprobe wie in @exr-spearman-brown haben die vier Items die Varianzen $Var(x_1) = 1.64$, $Var(x_2) = 2.70$, $Var(x_3) = 1.14$ und $Var(x_4) = 1.07$. Die Varianz des Summenwerts beträgt $Var(x) = 18.41$.
+
+::: {.callout-note title="Hinweis" collapse="true"}
+$$
+Rel(x) = \alpha = \frac{m}{m - 1} \cdot \left(1 - \frac{\sum_{j=1}^{m} Var(x_j)}{Var(x)}\right)
+$$
+
+Faustregeln nach der Vorlesung: Bei Leistungstests in der Einzelfalldiagnostik sollte die Reliabilität über 0.90 liegen, bei Persönlichkeitsfragebögen gelten Werte über 0.80 als gut, bei Screenings reichen oft schon Werte über 0.70.
+:::
+
+a. Berechnen Sie Cronbachs Alpha [@cronbach1951] für die vier Items.
+
+::: {.callout-tip title="Lösung" collapse="true"}
+$\alpha = 0.86$
+:::
+
+b. Beurteilen Sie den Wert.
+
+::: {.callout-tip title="Lösung" collapse="true"}
+Gut: Für einen Persönlichkeitsfragebogen liegt der Wert über 0.80, für ein Screening deutlich über 0.70.
+:::
+
+c. Unter welchen Voraussetzungen schätzt Cronbachs Alpha die Reliabilität korrekt?
+
+::: {.callout-tip title="Lösung" collapse="true"}
+Die Items müssen essenziell tau-äquivalent sein und dasselbe Merkmal messen (Eindimensionalität).
+:::
+
+d. Warum weicht Cronbachs Alpha von der Schätzung aus @exr-spearman-brown ab?
+
+::: {.callout-tip title="Lösung" collapse="true"}
+Die Testhalbierungsreliabilität hängt davon ab, wie die Items auf die beiden Hälften verteilt werden. Cronbachs Alpha behandelt dagegen jedes Item als eigenen Testteil.
+:::
+:::
+
+::: {#exr-measurement-models}
+## Messmodelle
+
+Ein Test mit drei Items liegt in fünf Versionen vor. Die Tabellen zeigen für jede Version die Mittelwerte der Items und darunter ihre Kovarianzmatrix: Varianzen auf der Diagonalen, Kovarianzen darunter. Jede Version entspricht genau einem der fünf Messmodelle aus der Vorlesung.
+
+::: {.callout-note title="Hinweis" collapse="true"}
+Prüfen Sie für jede Version nacheinander: Sind die Kovarianzen gleich? Sind die Varianzen gleich? Sind die Mittelwerte gleich?
+:::
+
+a. Welches Messmodell liegt in Version A vor? Begründen Sie Ihre Antwort.
+
+```{r}
+#| echo: false
+show_version("A")
+```
+
+::: {.callout-tip title="Lösung" collapse="true"}
+Tau-äquivalent: gleiche Mittelwerte und Kovarianzen, unterschiedliche Varianzen.
+:::
+
+b. Welches Messmodell liegt in Version B vor? Begründen Sie Ihre Antwort.
+
+```{r}
+#| echo: false
+show_version("B")
+```
+
+::: {.callout-tip title="Lösung" collapse="true"}
+Tau-kongenerisch: unterschiedliche Kovarianzen.
+:::
+
+c. Welches Messmodell liegt in Version C vor? Begründen Sie Ihre Antwort.
+
+```{r}
+#| echo: false
+show_version("C")
+```
+
+::: {.callout-tip title="Lösung" collapse="true"}
+Parallel: gleiche Mittelwerte, Varianzen und Kovarianzen.
+:::
+
+d. Welches Messmodell liegt in Version D vor? Begründen Sie Ihre Antwort.
+
+```{r}
+#| echo: false
+show_version("D")
+```
+
+::: {.callout-tip title="Lösung" collapse="true"}
+Essenziell tau-äquivalent: gleiche Kovarianzen, unterschiedliche Mittelwerte und Varianzen.
+:::
+
+e. Welches Messmodell liegt in Version E vor? Begründen Sie Ihre Antwort.
+
+```{r}
+#| echo: false
+show_version("E")
+```
+
+::: {.callout-tip title="Lösung" collapse="true"}
+Essenziell parallel: gleiche Varianzen und Kovarianzen, unterschiedliche Mittelwerte.
+:::
+
+f. Berechnen Sie Cronbachs Alpha für die Version, in der das essenziell tau-äquivalente Messmodell gilt.
+
+::: {.callout-note title="Hinweis" collapse="true"}
+Die Varianz des Summenwerts ist die Summe aller Einträge der vollständigen Kovarianzmatrix, also aller Varianzen und jeder Kovarianz zweimal:
+
+$$
+Var(x) = \sum_{j=1}^{m} Var(x_j) + 2 \cdot \sum_{j < k} Cov(x_j, x_k)
+$$
+
+Die Formel für Cronbachs Alpha steht im Hinweis zu @exr-cronbach.
+:::
+
+::: {.callout-tip title="Lösung" collapse="true"}
+Version D: $Var(x) = `r sprintf("%.2f", variance_d)`$, $\alpha = `r sprintf("%.2f", alpha_d)`$
+:::
+
+g. Für welche Versionen schätzt Cronbachs Alpha die Reliabilität korrekt? Was gilt für die übrigen?
+
+::: {.callout-tip title="Lösung" collapse="true"}
+Für A, C, D und E, weil sie mindestens essenziell tau-äquivalent sind. In Version B (tau-kongenerisch) unterschätzt Cronbachs Alpha die Reliabilität; dort eignen sich andere Koeffizienten, z. B. McDonalds Omega.
+:::
+:::
+
+::: {.callout-note title="Hinweis"}
+Wenn Sie das Erkennen von Messmodellen weiter üben möchten, starten Sie in R das Quiz `irtea::play_roulette()`. Es zeigt in jeder Runde neue Mittelwerte und Kovarianzmatrizen und gibt Ihnen nach jeder Antwort eine Rückmeldung. Installation und weitere Optionen finden Sie auf der Seite [R-Paket](../package.qmd).
+:::
+
+::: {#exr-construct-validity}
+## Konstruktvalidität
+
+Forscher:innen der RPTU haben einen sprachfreien Intelligenztest entwickelt, den RPTU-IQ, und wollen ihn validieren. In einer Pilotstudie mit Studierenden in Landau erheben sie zusätzlich den Intelligenz-Struktur-Test 2000 R [I-S-T 2000 R, @liepmann2007], der auch sprachliche Aufgaben enthält, und den sprachfreien Hagen Matrices Test [HMT, vgl. @heydasch2013]. Außerdem erfragen sie die Abiturnote, die Deutschnote im Abitur und ob eine Lese-Rechtschreib-Störung (LRS) diagnostiziert wurde (0 = nein, 1 = ja).
+
+::: {.callout-note title="Hinweis" collapse="true"}
+Bei Schulnoten stehen kleine Zahlen für gute Leistungen.
+:::
+
+a. Mit welchen Variablen erwarten Sie einen positiven, mit welchen einen negativen und mit welchen keinen Zusammenhang mit dem RPTU-IQ? Begründen Sie Ihre Antwort.
+
+::: {.callout-tip title="Lösung" collapse="true"}
+- Positiv: I-S-T 2000 R und HMT, weil beide Intelligenz messen.
+- Negativ: Abiturnote, weil Intelligenz mit guten, also kleinen Noten einhergeht.
+- Kein Zusammenhang: LRS, weil sie eine umschriebene Störung ist, die nicht durch geringe Intelligenz erklärt wird.
+- Deutschnote: höchstens ein schwach negativer Zusammenhang, weil ein sprachfreier Test sprachliche Fähigkeiten kaum erfassen sollte.
+:::
+
+b. Welche Variablen prüfen die konvergente, welche die diskriminante Validität? Welche Variable ist ein Kriterium?
+
+::: {.callout-tip title="Lösung" collapse="true"}
+Konvergent: I-S-T 2000 R und HMT. Diskriminant: LRS und Deutschnote. Kriterium: Abiturnote; weil das Abitur vor dem Test lag, geht es um retrospektive Validität.
+:::
+
+c. @tbl-validity zeigt die Korrelationen in der Pilotstudie. Entsprechen sie Ihren Erwartungen? Wie interpretieren Sie Abweichungen?
+
+|              | RPTU-IQ | I-S-T 2000 R | Abiturnote |   HMT |  LRS | Deutschnote |
+|--------------|--------:|-------------:|-----------:|------:|-----:|------------:|
+| RPTU-IQ      |       1 |              |            |       |      |             |
+| I-S-T 2000 R |    0.67 |            1 |            |       |      |             |
+| Abiturnote   |   −0.45 |        −0.56 |          1 |       |      |             |
+| HMT          |    0.74 |         0.71 |      −0.68 |     1 |      |             |
+| LRS          |   −0.09 |        −0.12 |       0.14 |  0.05 |    1 |             |
+| Deutschnote  |   −0.41 |        −0.44 |       0.43 | −0.18 | 0.31 |           1 |
+
+: Korrelationen in der Pilotstudie {#tbl-validity}
+
+::: {.callout-tip title="Lösung" collapse="true"}
+Weitgehend: HMT (0.74) und I-S-T 2000 R (0.67) korrelieren hoch mit dem RPTU-IQ, die Abiturnote negativ (−0.45) und die LRS kaum (−0.09). Die Deutschnote weicht ab: Sie korreliert mit dem RPTU-IQ (−0.41) etwa so stark wie mit dem I-S-T 2000 R (−0.44), der sprachliche Aufgaben enthält, aber deutlich stärker als mit dem sprachfreien HMT (−0.18). Der RPTU-IQ ist womöglich weniger sprachfrei als beabsichtigt, etwa durch schriftliche Instruktionen; das schwächt seine diskriminante Validität.
+:::
+
+d. Die Pilotstichprobe bestand aus Studierenden. Was bedeutet das für die Korrelationen?
+
+::: {.callout-tip title="Lösung" collapse="true"}
+Studierende haben alle ein Abitur und streuen in der Intelligenz weniger als die Allgemeinbevölkerung. Die eingeschränkte Streuung schwächt die Korrelationen, und die Ergebnisse lassen sich nicht ohne Weiteres auf andere Gruppen übertragen.
+:::
+:::
