@@ -36,6 +36,8 @@ website:
             text: "10. Itemanalyse I"
           - href: workbook/diagnostic-ii-ex.qmd
             text: "12. Diagnostische Rechenkompetenzen II"
+          - href: workbook/guete-ii-ex.qmd
+            text: "13. Gütekriterien II"
       - href: package.qmd
         text: R-Paket
   page-footer:
