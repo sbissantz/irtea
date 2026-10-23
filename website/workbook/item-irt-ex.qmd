@@ -1,0 +1,424 @@
+---
+title: "11 Itemanalyse II"
+knitr:
+  opts_chunk:
+    comment: ""
+---
+
+```{r}
+#| label: setup
+#| include: false
+# eRm matches some arguments partially inside its own code; turn off the
+# warnings so they do not appear on the page
+options(
+  warnPartialMatchArgs = FALSE,
+  warnPartialMatchAttr = FALSE,
+  warnPartialMatchDollar = FALSE
+)
+# plot labels contain umlauts, which need a UTF-8 locale; the shell that runs
+# the render may start R in the C locale
+invisible(Sys.setlocale("LC_CTYPE", "en_US.UTF-8"))
+load("../../data/hmt_short.rda")
+colors <- viridisLite::viridis(5)
+# end below 1 keeps the brightest yellow, which is hard to see on white, out
+item_colors <- viridisLite::viridis(6, end = 0.85)
+theta_grid <- seq(-4, 4, length.out = 401)
+```
+
+Der Hagen Matrices Test [HMT, @heydasch2014] misst fluide Intelligenz, genauer das schlussfolgernde Denken. Seine Aufgaben sind figurale Matrizen: Die Person muss die Regel erkennen, nach der die Figuren angeordnet sind, und mit ihr das fehlende Element ergänzen. Der HMT wird online bearbeitet. Die Langform hat 20 Aufgaben und dauert 20 Minuten, die Kurzform HMT-S sechs Aufgaben und dauert 5 Minuten [@heydasch2013]. Für nichtkommerzielle Zwecke ist er frei verfügbar.
+
+Die Studienberatung der RPTU plant ein Online-Self-Assessment für Studieninteressierte. Es soll ihnen unter anderem zurückmelden, wie gut sie im schlussfolgernden Denken abschneiden, und dafür den HMT-S nutzen. Viele Interessierte bearbeiten solche Angebote am Smartphone. Deshalb erprobt die Studienberatung den HMT-S mit 800 Personen: 400 bearbeiten ihn am Computer, 400 am Smartphone. Mit dem Rasch-Modell prüft sie, ob die sechs Aufgaben für das Self-Assessment taugen.
+
+Die Daten sind simuliert und sagen nichts über den echten HMT-S aus. Sie stehen im Paket `irtea` als Datensatz `hmt_short` bereit: Die Spalte `device` enthält das Endgerät, die Spalten `hmt1` bis `hmt6` die Antworten (1 = gelöst, 0 = nicht gelöst).
+
+::: {#exr-irt-solution-rates}
+## Lösungshäufigkeiten
+
+Die Studienberatung berechnet zuerst, welcher Anteil der Personen jede Aufgabe gelöst hat.
+
+```{r}
+#| label: solution-rates
+round(colMeans(hmt_short[, -1]), 2)
+```
+
+a. Welche Aufgabe ist am leichtesten, welche am schwersten?
+
+::: {.callout-tip title="Lösung" collapse="true"}
+Am leichtesten ist `hmt1` (86 % gelöst), am schwersten `hmt6` (20 % gelöst).
+:::
+
+b. Welchem Kennwert der Klassischen Testtheorie entsprechen diese Anteile?
+
+::: {.callout-tip title="Lösung" collapse="true"}
+Dem Schwierigkeitsindex $P_j$ (mal 100): Er reicht hier von 86 (`hmt1`) bis 20 (`hmt6`).
+:::
+:::
+
+::: {#exr-irt-rasch}
+## Das Rasch-Modell
+
+Die Studienberatung schätzt das Rasch-Modell mit dem Paket eRm [@mair2007].
+
+```{r}
+#| label: rasch-model
+#| message: false
+library(eRm)
+items <- hmt_short[, -1]
+model <- RM(items)
+# eRm schätzt Leichtigkeitsparameter; die Itemschwierigkeit ist ihr Negativ
+difficulty <- -model$betapar
+names(difficulty) <- names(items)
+round(data.frame(difficulty, se = model$se.beta), 2)
+```
+
+::: {.callout-note title="Hinweis" collapse="true"}
+$$
+P(u_{ij} = 1 \mid \theta_i, \beta_j) = \frac{e^{\theta_i - \beta_j}}{1 + e^{\theta_i - \beta_j}}
+$$
+
+`difficulty` enthält die Itemschwierigkeiten $\beta_j$, `se` ihre Standardfehler.
+:::
+
+a. Ordnen Sie die Aufgaben nach ihrer Schwierigkeit. Stimmt die Reihenfolge mit @exr-irt-solution-rates überein?
+
+::: {.callout-tip title="Lösung" collapse="true"}
+`hmt1` (−2.06) < `hmt2` < `hmt3` < `hmt4` < `hmt5` < `hmt6` (1.67). Die Reihenfolge stimmt mit den Lösungshäufigkeiten überein: Je seltener eine Aufgabe gelöst wird, desto höher ist ihre Schwierigkeit.
+:::
+
+b. Was bedeutet $\beta_3 = -0.20$?
+
+::: {.callout-tip title="Lösung" collapse="true"}
+Eine Person mit der Fähigkeit $\theta = -0.20$ löst Aufgabe 3 mit einer Wahrscheinlichkeit von 0.50.
+:::
+
+c. Addieren Sie die sechs Schwierigkeiten. Warum ergibt sich 0?
+
+::: {.callout-tip title="Lösung" collapse="true"}
+Die Skala von $\theta$ und $\beta$ hat keinen natürlichen Nullpunkt. eRm legt ihn so fest, dass die Summe der Itemschwierigkeiten 0 ist (Summennormierung).
+:::
+:::
+
+::: {#exr-irt-icc}
+## Itemcharakteristische Kurven
+
+a. Berechnen Sie die Lösungswahrscheinlichkeit von Aufgabe 3 ($\beta_3 = -0.20$) für $\theta = -2, -1, 0, 1, 2$.
+
+::: {.callout-note title="Hinweis" collapse="true"}
+Die Formel steht im Hinweis zu @exr-irt-rasch. Für $\theta = -2$: $e^{-2 - (-0.20)} = e^{-1.80}$.
+:::
+
+::: {.callout-tip title="Lösung" collapse="true"}
+| $\theta$ | −2 | −1 | 0 | 1 | 2 |
+|---|---:|---:|---:|---:|---:|
+| $P(u_{i3} = 1)$ | 0.14 | 0.31 | 0.55 | 0.77 | 0.90 |
+:::
+
+b. Die Abbildung zeigt die itemcharakteristischen Kurven (ICC) aller sechs Aufgaben. Welche Kurve gehört zu Aufgabe 3? Prüfen Sie damit Ihre Werte aus Teil a.
+
+```{r}
+#| label: icc
+#| echo: false
+#| fig-width: 6
+#| fig-height: 4
+#| fig-alt: "Itemcharakteristische Kurven der sechs Aufgaben: sechs parallele S-Kurven, die von links nach rechts hmt1 bis hmt6 zeigen"
+plot(NA,
+  xlim = c(-4, 4), ylim = c(0, 1), las = 1,
+  xlab = expression("Fähigkeit " * theta), ylab = "Lösungswahrscheinlichkeit"
+)
+abline(h = 0.5, v = -2:2, col = "grey90")
+for (j in seq_along(difficulty)) {
+  lines(theta_grid, plogis(theta_grid - difficulty[j]), lwd = 2, col = item_colors[j])
+}
+legend("bottomright",
+  legend = names(difficulty), col = item_colors, lwd = 2,
+  bg = "white", cex = 0.8
+)
+```
+
+::: {.callout-tip title="Lösung" collapse="true"}
+Die dritte Kurve von links: Sie schneidet die Linie 0.5 bei $\theta = -0.20$ und verläuft durch die Werte aus Teil a.
+:::
+
+c. Warum verlaufen die Kurven parallel?
+
+::: {.callout-tip title="Lösung" collapse="true"}
+Im Rasch-Modell unterscheiden sich die Aufgaben nur in ihrer Schwierigkeit; alle haben dieselbe Steigung (Itemdiskrimination). Die Kurven sind deshalb nur nach rechts oder links verschoben.
+:::
+:::
+
+::: {#exr-irt-item-information}
+## Iteminformation
+
+a. Berechnen Sie die Iteminformation von Aufgabe 3 für die fünf $\theta$-Werte aus @exr-irt-icc.
+
+::: {.callout-note title="Hinweis" collapse="true"}
+$$
+I_j = p(u_{ij} = 1) \cdot \left(1 - p(u_{ij} = 1)\right)
+$$
+:::
+
+::: {.callout-tip title="Lösung" collapse="true"}
+| $\theta$ | −2 | −1 | 0 | 1 | 2 |
+|---|---:|---:|---:|---:|---:|
+| $I_3$ | 0.12 | 0.21 | 0.25 | 0.18 | 0.09 |
+:::
+
+b. Die Abbildung zeigt die Iteminformation aller sechs Aufgaben. Bei welchem $\theta$ ist eine Aufgabe am informativsten, und wie hoch ist ihre Information dort?
+
+```{r}
+#| label: item-information
+#| echo: false
+#| fig-width: 6
+#| fig-height: 4
+#| fig-alt: "Iteminformationskurven der sechs Aufgaben: gleich hohe Glockenkurven mit dem Maximum 0.25 bei der jeweiligen Itemschwierigkeit"
+plot(NA,
+  xlim = c(-4, 4), ylim = c(0, 0.27), las = 1,
+  xlab = expression("Fähigkeit " * theta), ylab = "Iteminformation"
+)
+abline(v = -2:2, col = "grey90")
+for (j in seq_along(difficulty)) {
+  p <- plogis(theta_grid - difficulty[j])
+  lines(theta_grid, p * (1 - p), lwd = 2, col = item_colors[j])
+}
+legend("topright",
+  legend = names(difficulty), col = item_colors, lwd = 2,
+  bg = "white", cex = 0.8
+)
+```
+
+::: {.callout-tip title="Lösung" collapse="true"}
+Bei $\theta = \beta_j$: Dort ist die Lösungswahrscheinlichkeit 0.50 und die Iteminformation mit $0.50 \cdot 0.50 = 0.25$ am größten.
+:::
+
+c. Welche Aufgabe trägt am meisten zur Schätzung der Fähigkeit einer Person mit $\theta = 1$ bei?
+
+::: {.callout-tip title="Lösung" collapse="true"}
+`hmt5` ($\beta_5 = 1.20$, Information 0.25), weil ihre Schwierigkeit am nächsten bei $\theta = 1$ liegt.
+:::
+:::
+
+::: {#exr-irt-test-information}
+## Testinformation und Standardmessfehler
+
+Die Tabelle zeigt die Iteminformation der sechs Aufgaben für fünf Fähigkeitswerte. Die Spalte von Aufgabe 3 haben Sie in @exr-irt-item-information berechnet.
+
+| $\theta$ | `hmt1` | `hmt2` | `hmt3` | `hmt4` | `hmt5` | `hmt6` |
+|---------:|-------:|-------:|-------:|-------:|-------:|-------:|
+|       −2 |   0.25 |   0.19 |      ? |   0.08 |   0.04 |   0.02 |
+|       −1 |   0.19 |   0.25 |      ? |   0.17 |   0.09 |   0.06 |
+|        0 |   0.10 |   0.20 |      ? |   0.24 |   0.18 |   0.13 |
+|        1 |   0.04 |   0.11 |      ? |   0.22 |   0.25 |   0.22 |
+|        2 |   0.02 |   0.05 |      ? |   0.13 |   0.21 |   0.24 |
+
+: Iteminformation $I_j(\theta)$ der sechs Aufgaben {#tbl-item-information}
+
+::: {.callout-note title="Hinweis" collapse="true"}
+$$
+I(\theta_i) = \sum_{j=1}^{m} I_j(\theta_i), \qquad s_e(\theta) = \frac{1}{\sqrt{I(\theta)}}
+$$
+:::
+
+a. Berechnen Sie die Testinformation $I(\theta)$ für die fünf Fähigkeitswerte.
+
+::: {.callout-tip title="Lösung" collapse="true"}
+| $\theta$ | −2 | −1 | 0 | 1 | 2 |
+|---|---:|---:|---:|---:|---:|
+| $I(\theta)$ | 0.70 | 0.97 | 1.10 | 1.02 | 0.74 |
+:::
+
+b. Berechnen Sie den Standardmessfehler $s_e(\theta)$.
+
+::: {.callout-tip title="Lösung" collapse="true"}
+| $\theta$ | −2 | −1 | 0 | 1 | 2 |
+|---|---:|---:|---:|---:|---:|
+| $s_e(\theta)$ | 1.20 | 1.02 | 0.95 | 0.99 | 1.16 |
+:::
+
+c. Die Abbildung zeigt Testinformation und Standardmessfehler über den ganzen Fähigkeitsbereich. Wo misst der HMT-S am genauesten, wo am ungenauesten?
+
+```{r}
+#| label: test-information
+#| echo: false
+#| fig-width: 7
+#| fig-height: 3.5
+#| fig-alt: "Links die Testinformation mit dem Maximum von etwa 1.1 knapp über 0, rechts der Standardmessfehler mit dem Minimum von etwa 0.95 an derselben Stelle"
+test_information <- rowSums(sapply(difficulty, function(beta) {
+  p <- plogis(theta_grid - beta)
+  p * (1 - p)
+}))
+par(mfrow = c(1, 2))
+plot(theta_grid, test_information,
+  type = "l", lwd = 2, col = colors[1], las = 1, ylim = c(0, 1.2),
+  xlab = expression("Fähigkeit " * theta), ylab = "Testinformation"
+)
+abline(v = -2:2, col = "grey90")
+plot(theta_grid, 1 / sqrt(test_information),
+  type = "l", lwd = 2, col = colors[3], las = 1, ylim = c(0, 3),
+  xlab = expression("Fähigkeit " * theta), ylab = "Standardmessfehler"
+)
+abline(v = -2:2, col = "grey90")
+```
+
+::: {.callout-tip title="Lösung" collapse="true"}
+Am genauesten knapp über $\theta = 0$, wo die meisten Aufgaben ihre Information haben; zu den Rändern hin wird der Standardmessfehler rasch größer. Insgesamt misst der Test ungenau: Selbst im besten Fall ist $s_e(\theta)$ fast 1, also eine ganze Standardabweichung der Fähigkeit.
+:::
+:::
+
+::: {#exr-irt-application}
+## Rückmeldung im Self-Assessment
+
+Lea ist 18 und interessiert sich für ein Psychologiestudium. Im Self-Assessment löst sie vier der sechs Aufgaben. Im Rasch-Modell erhalten alle Personen mit demselben Summenwert denselben Personenparameter:
+
+```{r}
+#| label: person-parameters
+person.parameter(model)
+```
+
+::: {.callout-note title="Hinweis" collapse="true"}
+Wer keine oder alle Aufgaben löst, hat keinen endlichen Personenparameter. eRm schätzt ihn für die Summenwerte 0 und 6 durch Extrapolation; deshalb fehlt dort der Standardfehler (`NA`).
+:::
+
+a. Welchen Personenparameter erhält Lea, und wie groß ist sein Standardmessfehler? Vergleichen Sie diesen mit @exr-irt-test-information.
+
+::: {.callout-tip title="Lösung" collapse="true"}
+$\hat{\theta} = 0.95$, Standardmessfehler 0.98. Das passt zu $s_e(1) = 0.99$ aus @exr-irt-test-information, denn Leas Personenparameter liegt nahe bei 1.
+:::
+
+b. Berechnen Sie ein Konfidenzintervall mit einem Konfidenzkoeffizienten von 95 % um Leas Personenparameter.
+
+::: {.callout-tip title="Lösung" collapse="true"}
+$[-0.98, 2.88]$
+:::
+
+c. Was kann die Studienberatung Lea auf dieser Grundlage zurückmelden?
+
+::: {.callout-tip title="Lösung" collapse="true"}
+Nur sehr wenig: Das Intervall reicht vom unterdurchschnittlichen bis in den weit überdurchschnittlichen Bereich. Mit sechs Aufgaben misst der HMT-S für eine Rückmeldung an einzelne Personen zu ungenau; er eignet sich eher für Aussagen über Gruppen. Für eine individuelle Rückmeldung bräuchte das Self-Assessment mehr Aufgaben, etwa die Langform.
+:::
+:::
+
+::: {#exr-irt-wald}
+## Wald-Test
+
+Die Studienberatung prüft, ob die Aufgaben am Smartphone genauso schwer sind wie am Computer. Dazu schätzt sie das Rasch-Modell getrennt in beiden Gruppen.
+
+```{r}
+#| label: wald-groups
+device <- factor(hmt_short$device)
+wald <- Waldtest(model, splitcr = device)
+# Schwierigkeiten (beta) und ihre Varianzen (var) je Gruppe:
+# 1 = Computer, 2 = Smartphone
+round(data.frame(
+  beta_1 = -wald$betapar1, var_1 = wald$se.beta1^2,
+  beta_2 = -wald$betapar2, var_2 = wald$se.beta2^2,
+  row.names = names(items)
+), 3)
+```
+
+::: {.callout-note title="Hinweis" collapse="true"}
+$$
+W_j = \frac{(\beta_{j,1} - \beta_{j,2})^2}{\sigma^2_{j,1} + \sigma^2_{j,2}}, \qquad T = \operatorname{sign}(\beta_{j,1} - \beta_{j,2}) \cdot \sqrt{W_j}
+$$
+
+$T$ folgt einer Standardnormalverteilung.
+:::
+
+a. Berechnen Sie $W_j$ und $T$ für die Aufgaben 2 und 5.
+
+::: {.callout-tip title="Lösung" collapse="true"}
+Aufgabe 2: $W_2 = 0.81$, $T = 0.90$. Aufgabe 5: $W_5 = 23.43$, $T = -4.84$.
+:::
+
+b. eRm gibt den Wald-Test für alle Aufgaben aus. Welche Aufgaben zeigen Misfit ($\alpha = 0.05$, zweiseitig)?
+
+```{r}
+#| label: wald-test
+wald
+```
+
+::: {.callout-note title="Hinweis" collapse="true"}
+eRm rechnet mit Leichtigkeitsparametern. Die `z-statistic` hat deshalb den gleichen Betrag wie $T$, aber das umgekehrte Vorzeichen.
+:::
+
+::: {.callout-tip title="Lösung" collapse="true"}
+Nur `hmt5`: $|T| = 4.84 > 1.96$ ($p < 0.001$). Die Aufgabe ist am Smartphone schwerer ($\beta_{5,2} = 1.64$) als am Computer ($\beta_{5,1} = 0.83$). Bei allen anderen Aufgaben ist $|T| < 1.96$.
+:::
+
+c. Woran könnte der Misfit von Aufgabe 5 liegen?
+
+::: {.callout-tip title="Lösung" collapse="true"}
+Die Aufgabe könnte feine Details enthalten, die auf dem kleinen Bildschirm eines Smartphones schwer zu erkennen sind. An der Fähigkeit liegt es nicht: Die übrigen Aufgaben sind in beiden Gruppen etwa gleich schwer.
+:::
+:::
+
+::: {#exr-irt-gof}
+## Grafischer Modelltest
+
+Die Abbildung stellt die Itemschwierigkeiten am Computer und am Smartphone aus @exr-irt-wald gegenüber. Die Ellipsen zeigen für jede Aufgabe ein Konfidenzintervall in beide Richtungen (Konfidenzkoeffizient 95 %).
+
+```{r}
+#| label: graphical-model-check
+#| echo: false
+#| fig-width: 5
+#| fig-height: 5
+#| fig-alt: "Itemschwierigkeiten am Computer (x-Achse) und am Smartphone (y-Achse) mit Konfidenzellipsen und Diagonale; die Ellipse von hmt5 liegt deutlich oberhalb der Diagonalen, alle anderen berühren sie"
+beta_computer <- -wald$betapar1
+beta_smartphone <- -wald$betapar2
+angle <- seq(0, 2 * pi, length.out = 200)
+plot(beta_computer, beta_smartphone,
+  type = "n", asp = 1, las = 1, xlim = c(-2.6, 2.2), ylim = c(-2.6, 2.2),
+  xlab = "Schwierigkeit am Computer", ylab = "Schwierigkeit am Smartphone"
+)
+abline(v = -2:2, h = -2:2, col = "grey90")
+abline(0, 1, lty = 2, col = "grey50")
+for (j in seq_along(beta_computer)) {
+  lines(
+    beta_computer[j] + 1.96 * wald$se.beta1[j] * cos(angle),
+    beta_smartphone[j] + 1.96 * wald$se.beta2[j] * sin(angle),
+    col = colors[3], lwd = 1.5
+  )
+}
+points(beta_computer, beta_smartphone, pch = 19, col = colors[1])
+text(beta_computer, beta_smartphone, names(items), pos = 4, offset = 0.8, cex = 0.8)
+```
+
+a. Welche Aufgabe weicht von der Diagonalen ab, und was bedeutet ihre Lage?
+
+::: {.callout-tip title="Lösung" collapse="true"}
+`hmt5`: Ihre Ellipse liegt deutlich oberhalb der Diagonalen, die Aufgabe ist also am Smartphone schwerer. Die Ellipsen aller anderen Aufgaben berühren die Diagonale. Das stimmt mit dem Wald-Test überein.
+:::
+
+b. Die übrigen Aufgaben liegen leicht unterhalb der Diagonalen. Woran liegt das?
+
+::: {.callout-note title="Hinweis" collapse="true"}
+Denken Sie an Teil c von @exr-irt-rasch.
+:::
+
+::: {.callout-tip title="Lösung" collapse="true"}
+An der Summennormierung: In jeder Gruppe summieren sich die Schwierigkeiten zu 0. Weil `hmt5` am Smartphone schwerer ist, müssen die übrigen Aufgaben dort etwas leichter erscheinen.
+:::
+:::
+
+::: {#exr-irt-selection}
+## Itemselektion
+
+Die Studienberatung fasst die Ergebnisse aus diesem Kapitel zusammen. Das Self-Assessment richtet sich an Studieninteressierte, die im schlussfolgernden Denken meist durchschnittlich bis überdurchschnittlich abschneiden.
+
+a. Welche Aufgaben sollte die Studienberatung behalten, überarbeiten oder streichen? Begründen Sie Ihre Antwort mit Schwierigkeit, Information und Itemfit.
+
+::: {.callout-note title="Hinweis" collapse="true"}
+Die Vorlesung nennt für die Itemselektion unter anderem: Die Iteminformation soll zur Zielgruppe passen, und die Itemparameter sollen zwischen Gruppen invariant sein (Itemfit). Inhaltliche Überlegungen spielen ebenfalls eine Rolle.
+:::
+
+::: {.callout-tip title="Lösung" collapse="true"}
+- `hmt5` überarbeiten, etwa mit größeren, klareren Figuren, oder nur am Computer vorgeben. Ohne Überarbeitung streichen: Sie misst am Smartphone nicht dasselbe wie am Computer, obwohl sie für die Zielgruppe viel Information liefert.
+- `hmt1` ist sehr leicht und liefert für die Zielgruppe kaum Information (0.04 bei $\theta = 1$). Sie ließe sich durch eine schwerere Aufgabe ersetzen; als leichte Einstiegsaufgabe kann sie aber sinnvoll sein.
+- `hmt2`, `hmt3`, `hmt4` und `hmt6` passen zum Modell und decken den mittleren bis oberen Bereich ab: behalten.
+:::
+
+b. Warum ist es keine gute Lösung, die beiden auffälligen Aufgaben einfach zu streichen?
+
+::: {.callout-tip title="Lösung" collapse="true"}
+Mit nur vier Aufgaben sänke die ohnehin geringe Testinformation weiter, und der Standardmessfehler würde noch größer. Besser ist es, die Aufgaben zu überarbeiten oder zu ersetzen und den überarbeiteten Test erneut an einer neuen Stichprobe zu erproben.
+:::
+:::
