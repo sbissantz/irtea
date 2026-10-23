@@ -36,14 +36,14 @@ In diesem Kapitel berechnen und beurteilen Sie Kennwerte der drei Hauptgütekrit
 ::: {#exr-kappa}
 ## Cohens Kappa
 
-Für ein Stipendium bewerben sich 25 Studierende. Zwei Professor:innen, X und Y, führen mit allen Bewerber:innen ein Interview und sprechen sich unabhängig voneinander für oder gegen eine Vergabe aus. @tbl-kappa zeigt, wie oft ihre Urteile zusammenfallen.
+Die Polizei eines Bundeslandes wählt ihre Kommissaranwärter:innen in einem Assessment Center aus. In einem Rollenspiel muss jede Bewerber:in einen aufgebrachten Bürger beruhigen, dem gerade sein Fahrrad gestohlen wurde und der die Polizei für unfähig hält. Zwei Beobachter:innen, X und Y, verfolgen das Rollenspiel und entscheiden unabhängig voneinander, ob die Bewerber:in die Situation deeskaliert hat (bestanden) oder nicht (nicht bestanden). @tbl-kappa zeigt ihre Urteile für 25 Bewerber:innen.
 
-|                       | Vergabe (Y) | Nicht-Vergabe (Y) |
-|-----------------------|------------:|------------------:|
-| **Vergabe (X)**       |          11 |                 3 |
-| **Nicht-Vergabe (X)** |           2 |                 9 |
+|                         | bestanden (Y) | nicht bestanden (Y) |
+|-------------------------|--------------:|--------------------:|
+| **bestanden (X)**       |            11 |                   3 |
+| **nicht bestanden (X)** |             2 |                   9 |
 
-: Urteile von Professor:in X (Zeilen) und Professor:in Y (Spalten) {#tbl-kappa}
+: Urteile von Beobachter:in X (Zeilen) und Beobachter:in Y (Spalten) {#tbl-kappa}
 
 ::: {.callout-note title="Hinweis" collapse="true"}
 $$
@@ -59,7 +59,7 @@ a. Welche Art der Objektivität prüfen Sie mit Cohens Kappa [@cohen1960]?
 Die Auswertungsobjektivität (Interrater-Reliabilität) bei nominalskalierten Urteilen.
 :::
 
-b. Berechnen Sie Cohens Kappa und beurteilen Sie die Übereinstimmung der Professor:innen.
+b. Berechnen Sie Cohens Kappa und beurteilen Sie die Übereinstimmung der Beobachter:innen.
 
 ::: {.callout-tip title="Lösung" collapse="true"}
 $p_0 = 0.80$, $p_e \approx 0.50$, $\kappa = 0.60$: befriedigend.
@@ -75,18 +75,18 @@ $p_{0,r} = 0.96$, $\kappa_{max} = 0.92$
 ::: {#exr-icc}
 ## Intraklassenkorrelation
 
-In einem anderen Stipendienprogramm bewerten Professor:innen die Eignung der Bewerber:innen auf einer Skala von 1 (gar nicht geeignet) bis 10 (sehr gut geeignet). Jede der sechs Bewerber:innen wird von vier Professor:innen bewertet, die zufällig aus acht Professor:innen gezogen werden. Über das Stipendium entscheidet der Mittelwert der vier Bewertungen.
+Am zweiten Tag des Assessment Centers aus @exr-kappa bearbeiten sechs Bewerber:innen eine simulierte Einsatzlage: Ein Notruf meldet einen Verkehrsunfall mit Verletzten, und die Bewerber:in muss am Funk Kräfte anfordern, Prioritäten setzen und den Überblick behalten. Acht Beobachter:innen rotieren zwischen den Stationen; jede Bewerber:in wird deshalb von vier zufällig zugeteilten Beobachter:innen auf einer Skala von 1 (gar nicht) bis 10 (vollständig) danach bewertet, wie gut sie die Lage strukturiert. Ob sie weiterkommt, entscheidet der Mittelwert der vier Bewertungen.
 
-| Person |  A |  B |  C |  D |  E |  F |  G |  H |
-|-------:|---:|---:|---:|---:|---:|---:|---:|---:|
-|      1 |  8 |  6 |  8 |  7 |    |    |    |    |
-|      2 |    |    |  4 |  2 |    |    |  7 |  2 |
-|      3 | 10 |    |    |  4 |  7 |    |  7 |    |
-|      4 |    |  7 |    |    |    |  6 |  4 |  5 |
-|      5 |  3 |  1 |    |    |  1 |  3 |    |    |
-|      6 |    |    |    |    |  4 |  4 |  4 |  6 |
+| Bewerber:in |  A |  B |  C |  D |  E |  F |  G |  H |
+|------------:|---:|---:|---:|---:|---:|---:|---:|---:|
+|           1 |  8 |  6 |  8 |  7 |    |    |    |    |
+|           2 |    |    |  4 |  2 |    |    |  7 |  2 |
+|           3 | 10 |    |    |  4 |  7 |    |  7 |    |
+|           4 |    |  7 |    |    |    |  6 |  4 |  5 |
+|           5 |  3 |  1 |    |    |  1 |  3 |    |    |
+|           6 |    |    |    |    |  4 |  4 |  4 |  6 |
 
-: Eignungsurteile der Professor:innen A bis H; leere Zellen: keine Bewertung {#tbl-icc}
+: Bewertungen der Beobachter:innen A bis H; leere Zellen: keine Bewertung {#tbl-icc}
 
 ::: {.callout-note title="Hinweis" collapse="true"}
 $$
@@ -107,22 +107,22 @@ Beurteilung des ICC nach der Vorlesung: unter 0.50 ungenügend, 0.50 bis 0.75 be
 a. Welcher Fall nach @shrout1979 liegt vor, und welchen ICC-Koeffizienten verwenden Sie? Begründen Sie Ihre Antwort.
 
 ::: {.callout-tip title="Lösung" collapse="true"}
-Fall 1, weil jede Person von einem anderen, zufällig gezogenen Set von Professor:innen bewertet wird. ICC(1,k), weil über das Stipendium der Mittelwert der vier Bewertungen entscheidet.
+Fall 1, weil jede Bewerber:in von einem anderen, zufällig zugeteilten Set von Beobachter:innen bewertet wird. ICC(1,k), weil über das Weiterkommen der Mittelwert der vier Bewertungen entscheidet.
 :::
 
-b. Berechnen Sie die Quadratsumme $QS_{inn}$ für die erste Person und bestimmen Sie $n$.
+b. Berechnen Sie die Quadratsumme $QS_{inn}$ für die erste Bewerber:in und bestimmen Sie $n$.
 
 ::: {.callout-tip title="Lösung" collapse="true"}
 $QS_{inn} = 2.75$ (Mittelwert 7.25), $n = 24$
 :::
 
-c. Für alle sechs Personen gilt $QS_{inn} = 49.5$ und $QS_{zw} = 80.5$. Berechnen Sie den ICC aus Teil a und beurteilen Sie ihn.
+c. Für alle sechs Bewerber:innen gilt $QS_{inn} = 49.5$ und $QS_{zw} = 80.5$. Berechnen Sie den ICC aus Teil a und beurteilen Sie ihn.
 
 ::: {.callout-tip title="Lösung" collapse="true"}
 $\hat{\sigma}^2_{zw} = 16.10$, $\hat{\sigma}^2_{inn} = 2.75$, $ICC(1,k) = 0.83$: gut.
 :::
 
-d. Wie reliabel ist das Urteil einer einzelnen Person aus dem Kreis der Professor:innen? Berechnen Sie ICC(1,1) und vergleichen Sie mit Teil c.
+d. Wie reliabel ist das Urteil einer einzelnen Beobachter:in? Berechnen Sie ICC(1,1) und vergleichen Sie mit Teil c.
 
 ::: {.callout-tip title="Lösung" collapse="true"}
 $ICC(1,1) = 0.55$: befriedigend. Ein einzelnes Urteil ist deutlich weniger reliabel als der Mittelwert aus vier Urteilen.
