@@ -30,6 +30,8 @@ website:
         menu:
           - href: workbook/basics-ex.qmd
             text: "1. Rechenkompetenzen"
+          - href: workbook/ctt-ex.qmd
+            text: "6. Klassische Testtheorie"
           - href: workbook/efa-ex.qmd
             text: "8. Exploratorische Faktorenanalyse"
       - href: package.qmd
