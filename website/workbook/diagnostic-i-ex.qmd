@@ -1,6 +1,5 @@
 ---
-title: "5 Diagnostische Rechenkompetenzen I"
-draft: true
+title: "6 Diagnostische Rechenkompetenzen I"
 knitr:
   opts_chunk:
     comment: ""
@@ -131,6 +130,8 @@ plot_mixed2 <- function() {
   add_lisa()
 }
 ```
+
+{{< include _revision-note.qmd >}}
 
 Runden Sie Ergebnisse bei Berechnungen kaufmännisch auf zwei Nachkommastellen. Alle Fälle und Daten sind fiktiv.
 

@@ -33,7 +33,9 @@ website:
           - href: workbook/guete-i-ex.qmd
             text: "3. Gütekriterien I"
           - href: workbook/ctt-ex.qmd
-            text: "6. Klassische Testtheorie"
+            text: "5. Klassische Testtheorie"
+          - href: workbook/diagnostic-i-ex.qmd
+            text: "6. Diagnostische Rechenkompetenzen I"
           - href: workbook/efa-ex.qmd
             text: "8. & 9. Exploratorische Faktorenanalyse"
           - href: workbook/item-i-ex.qmd

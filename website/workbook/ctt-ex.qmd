@@ -1,10 +1,11 @@
 ---
-title: "6 Klassische Testtheorie"
-draft: true
+title: "5 Klassische Testtheorie"
 knitr:
   opts_chunk:
     comment: ""
 ---
+
+{{< include _revision-note.qmd >}}
 
 ::: {#exr-ctt-error-types}
 ## Messfehler
