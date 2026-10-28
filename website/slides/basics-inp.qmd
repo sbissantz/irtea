@@ -47,8 +47,8 @@ Weitere Informationen finden Sie im [Modulhandbuch](https://modhb.rptu.de/mhb/FB
 | 3   | ab 03.11. | Gütekriterien                                |
 | 4   | ab 10.11. | Schritte der Testkonstruktion & Erstellung eines Testentwurfs                             |
 |     |           | **Lektürewoche**                   |
-| 6   | ab 24.11. | Klassische Testtheorie                                       |
-| 5   | ab 01.12. | *Diagnostische Rechenkompetenzen I*   |
+| 5   | ab 24.11. | Klassische Testtheorie                                       |
+| 6   | ab 01.12. | *Diagnostische Rechenkompetenzen I*   |
 | 7   | ab 08.12. | *Item-Response-Theorie*                      |
 | 8   | ab 15.12. | Exploratorische Faktorenanalyse I                            |
 |     |           | **Weihnachtsferien**           | 
