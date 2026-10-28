@@ -1,0 +1,1870 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="de" xml:lang="de"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.10.19">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>13 Gütekriterien II – B.F.3 Diagnostik &amp; Testtheorie</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../images/logo.png" rel="icon" type="image/png">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-bf27225e3a48a9273f3daa8f8e829971.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-cbe15cd55579b32cf8c48135cfb2cd9e.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "Keine Treffer",
+    "search-matching-documents-text": "Treffer",
+    "search-copy-link-title": "Link in die Suche kopieren",
+    "search-hide-matches-text": "Zusätzliche Treffer verbergen",
+    "search-more-match-text": "weitere Treffer in diesem Dokument",
+    "search-more-matches-text": "weitere Treffer in diesem Dokument",
+    "search-clear-button-title": "Zurücksetzen",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Abbrechen",
+    "search-submit-button-title": "Abschicken",
+    "search-label": "Suchen"
+  }
+}</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+</head>
+
+<body class="nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a href="../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../images/logo.png" alt="" class="navbar-logo light-content">
+    <img src="../images/logo.png" alt="" class="navbar-logo dark-content">
+    </a>
+    <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">B.F.3 Diagnostik &amp; Testtheorie</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Suchen"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Navigation umschalten" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../index.html"> 
+<span class="menu-text">Start</span></a>
+  </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-folien" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Folien</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-folien">    
+        <li>
+    <a class="dropdown-item" href="../slides/basics-inp.html">
+ <span class="dropdown-text">01 Grundlagen</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../slides/efa-inp.html">
+ <span class="dropdown-text">08 Exploratorische Faktorenanalyse</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-bungsheft" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Übungsheft</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-bungsheft">    
+        <li>
+    <a class="dropdown-item" href="../workbook/basics-ex.html">
+ <span class="dropdown-text">1. &amp; 2. Rechenkompetenzen</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../workbook/guete-i-ex.html">
+ <span class="dropdown-text">3. Gütekriterien I</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../workbook/efa-ex.html">
+ <span class="dropdown-text">8. &amp; 9. Exploratorische Faktorenanalyse</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../workbook/item-ktt-ex.html">
+ <span class="dropdown-text">10. Itemanalyse I</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../workbook/item-irt-ex.html">
+ <span class="dropdown-text">11. Itemanalyse II</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../workbook/diagnostic-ii-ex.html">
+ <span class="dropdown-text">12. Diagnostische Rechenkompetenzen II</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../workbook/guete-ii-ex.html">
+ <span class="dropdown-text">13. Gütekriterien II</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="../package.html"> 
+<span class="menu-text">R-Paket</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+        
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">13 Gütekriterien II</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<div class="callout callout-style-default callout-important callout-titled" title="Work in Progress">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Wichtig</span>Work in Progress
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Dieses Kapitel wird derzeit intern überarbeitet. Aufgaben, Daten und Lösungen können sich noch ändern. Bitte bearbeiten Sie die Aufgaben erst, wenn die Überarbeitung abgeschlossen ist und dieser Hinweis entfernt wurde.</p>
+</div>
+</div>
+<p>In diesem Kapitel berechnen und beurteilen Sie Kennwerte der drei Hauptgütekriterien: Objektivität (Cohens Kappa, Intraklassenkorrelation), Reliabilität (Testhalbierung, Testverlängerung, Cronbachs Alpha) und Validität (Konstruktvalidität). Die Formeln in den Hinweisen entsprechen der Formelsammlung zur Vorlesung. Alle Daten sind fiktiv.</p>
+<div id="exr-kappa" class="theorem exercise">
+<p><span class="theorem-title"><strong>Aufgabe 1 (Cohens Kappa)</strong></span> Die Polizei eines Bundeslandes wählt ihre Kommissaranwärter:innen in einem Assessment Center aus. In einem Rollenspiel muss jede Bewerber:in einen aufgebrachten Bürger beruhigen, dem gerade sein Fahrrad gestohlen wurde und der die Polizei für unfähig hält. Zwei Beobachter:innen, X und Y, verfolgen das Rollenspiel und entscheiden unabhängig voneinander, ob die Bewerber:in die Situation deeskaliert hat (bestanden) oder nicht (nicht bestanden). <a href="#tbl-kappa" class="quarto-xref">Tabelle&nbsp;1</a> zeigt ihre Urteile für 25 Bewerber:innen.</p>
+<div id="tbl-kappa" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-kappa-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Tabelle&nbsp;1: Urteile von Beobachter:in X (Zeilen) und Beobachter:in Y (Spalten)
+</figcaption>
+<div aria-describedby="tbl-kappa-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th></th>
+<th style="text-align: right;">bestanden (Y)</th>
+<th style="text-align: right;">nicht bestanden (Y)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>bestanden (X)</strong></td>
+<td style="text-align: right;">11</td>
+<td style="text-align: right;">3</td>
+</tr>
+<tr class="even">
+<td><strong>nicht bestanden (X)</strong></td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">9</td>
+</tr>
+</tbody>
+</table>
+</div>
+</figure>
+</div>
+<div class="callout callout-style-default callout-note callout-titled" title="Hinweis">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Hinweis</span>Hinweis
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><span class="math display">\[
+\kappa = \frac{p_0 - p_e}{1 - p_e}, \qquad \kappa_{max} = \frac{p_{0,r} - p_e}{1 - p_e}
+\]</span></p>
+<p><span class="math inline">\(p_{0,r}\)</span> ist die Summe der jeweils kleineren Randanteile. Beurteilung von Kappa nach der Vorlesung: bis 0.40 ungenügend, 0.41 bis 0.60 befriedigend, 0.61 bis 0.80 gut, über 0.80 sehr gut.</p>
+</div>
+</div>
+</div>
+<ol type="a">
+<li>Welche Art der Objektivität prüfen Sie mit Cohens Kappa <span class="citation" data-cites="cohen1960">(<a href="#ref-cohen1960" role="doc-biblioref">Cohen, 1960</a>)</span>?</li>
+</ol>
+<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tipp</span>Lösung
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Die Auswertungsobjektivität (Interrater-Reliabilität) bei nominalskalierten Urteilen.</p>
+</div>
+</div>
+</div>
+<ol start="2" type="a">
+<li>Berechnen Sie Cohens Kappa und beurteilen Sie die Übereinstimmung der Beobachter:innen.</li>
+</ol>
+<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tipp</span>Lösung
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-4" class="callout-4-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><span class="math inline">\(p_0 = 0.80\)</span>, <span class="math inline">\(p_e \approx 0.50\)</span>, <span class="math inline">\(\kappa = 0.60\)</span>: befriedigend.</p>
+</div>
+</div>
+</div>
+<ol start="3" type="a">
+<li>Wie hoch könnte Kappa bei diesen Randverteilungen höchstens sein?</li>
+</ol>
+<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tipp</span>Lösung
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-5" class="callout-5-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><span class="math inline">\(p_{0,r} = 0.96\)</span>, <span class="math inline">\(\kappa_{max} = 0.92\)</span></p>
+</div>
+</div>
+</div>
+</div>
+<div id="exr-icc" class="theorem exercise">
+<p><span class="theorem-title"><strong>Aufgabe 2 (Intraklassenkorrelation)</strong></span> Am zweiten Tag des Assessment Centers aus <a href="#exr-kappa" class="quarto-xref">Aufgabe&nbsp;1</a> bearbeiten sechs Bewerber:innen eine simulierte Einsatzlage: Ein Notruf meldet einen Verkehrsunfall mit Verletzten, und die Bewerber:in muss am Funk Kräfte anfordern, Prioritäten setzen und den Überblick behalten. Acht Beobachter:innen rotieren zwischen den Stationen; jede Bewerber:in wird deshalb von vier zufällig zugeteilten Beobachter:innen auf einer Skala von 1 (gar nicht) bis 10 (vollständig) danach bewertet, wie gut sie die Lage strukturiert. Ob sie weiterkommt, entscheidet der Mittelwert der vier Bewertungen.</p>
+<div id="tbl-icc" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-icc-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Tabelle&nbsp;2: Bewertungen der Beobachter:innen A bis H; leere Zellen: keine Bewertung
+</figcaption>
+<div aria-describedby="tbl-icc-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: right;">Bewerber:in</th>
+<th style="text-align: right;">A</th>
+<th style="text-align: right;">B</th>
+<th style="text-align: right;">C</th>
+<th style="text-align: right;">D</th>
+<th style="text-align: right;">E</th>
+<th style="text-align: right;">F</th>
+<th style="text-align: right;">G</th>
+<th style="text-align: right;">H</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">8</td>
+<td style="text-align: right;">6</td>
+<td style="text-align: right;">8</td>
+<td style="text-align: right;">7</td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">2</td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;">7</td>
+<td style="text-align: right;">2</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">10</td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">7</td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;">7</td>
+<td style="text-align: right;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">4</td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;">7</td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;">6</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">5</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">5</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">6</td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">6</td>
+</tr>
+</tbody>
+</table>
+</div>
+</figure>
+</div>
+<div class="callout callout-style-default callout-note callout-titled" title="Hinweis">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Hinweis</span>Hinweis
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-6" class="callout-6-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><span class="math display">\[
+QS_{zw} = \sum_{j=1}^{J} n_j \cdot (\bar{x}_j - \bar{x})^2, \qquad QS_{inn} = \sum_{j=1}^{J} \sum_{m=1}^{n_j} (x_{mj} - \bar{x}_j)^2
+\]</span></p>
+<p><span class="math display">\[
+\hat{\sigma}^2_{zw} = \frac{QS_{zw}}{J - 1}, \qquad \hat{\sigma}^2_{inn} = \frac{QS_{inn}}{n - J}, \qquad n = n_j \cdot J
+\]</span></p>
+<p><span class="math display">\[
+ICC(1,1) = \frac{\hat{\sigma}^2_{zw} - \hat{\sigma}^2_{inn}}{\hat{\sigma}^2_{zw} + (k - 1) \cdot \hat{\sigma}^2_{inn}}, \qquad ICC(1,k) = \frac{\hat{\sigma}^2_{zw} - \hat{\sigma}^2_{inn}}{\hat{\sigma}^2_{zw}}
+\]</span></p>
+<p>Beurteilung des ICC nach der Vorlesung: unter 0.50 ungenügend, 0.50 bis 0.75 befriedigend, 0.76 bis 0.90 gut, über 0.90 sehr gut.</p>
+</div>
+</div>
+</div>
+<ol type="a">
+<li>Welcher Fall nach <span class="citation" data-cites="shrout1979">Shrout &amp; Fleiss (<a href="#ref-shrout1979" role="doc-biblioref">1979</a>)</span> liegt vor, und welchen ICC-Koeffizienten verwenden Sie? Begründen Sie Ihre Antwort.</li>
+</ol>
+<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tipp</span>Lösung
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-7" class="callout-7-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Fall 1, weil jede Bewerber:in von einem anderen, zufällig zugeteilten Set von Beobachter:innen bewertet wird. ICC(1,k), weil über das Weiterkommen der Mittelwert der vier Bewertungen entscheidet.</p>
+</div>
+</div>
+</div>
+<ol start="2" type="a">
+<li>Berechnen Sie die Quadratsumme <span class="math inline">\(QS_{inn}\)</span> für die erste Bewerber:in und bestimmen Sie <span class="math inline">\(n\)</span>.</li>
+</ol>
+<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tipp</span>Lösung
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-8" class="callout-8-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><span class="math inline">\(QS_{inn} = 2.75\)</span> (Mittelwert 7.25), <span class="math inline">\(n = 24\)</span></p>
+</div>
+</div>
+</div>
+<ol start="3" type="a">
+<li>Für alle sechs Bewerber:innen gilt <span class="math inline">\(QS_{inn} = 49.5\)</span> und <span class="math inline">\(QS_{zw} = 80.5\)</span>. Berechnen Sie den ICC aus Teil a und beurteilen Sie ihn.</li>
+</ol>
+<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-9-contents" aria-controls="callout-9" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tipp</span>Lösung
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-9" class="callout-9-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><span class="math inline">\(\hat{\sigma}^2_{zw} = 16.10\)</span>, <span class="math inline">\(\hat{\sigma}^2_{inn} = 2.75\)</span>, <span class="math inline">\(ICC(1,k) = 0.83\)</span>: gut.</p>
+</div>
+</div>
+</div>
+<ol start="4" type="a">
+<li>Wie reliabel ist das Urteil einer einzelnen Beobachter:in? Berechnen Sie ICC(1,1) und vergleichen Sie mit Teil c.</li>
+</ol>
+<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-10-contents" aria-controls="callout-10" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tipp</span>Lösung
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-10" class="callout-10-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><span class="math inline">\(ICC(1,1) = 0.55\)</span>: befriedigend. Ein einzelnes Urteil ist deutlich weniger reliabel als der Mittelwert aus vier Urteilen.</p>
+</div>
+</div>
+</div>
+</div>
+<div id="exr-reliability-validity" class="theorem exercise">
+<p><span class="theorem-title"><strong>Aufgabe 3 (Reliabilität und Validität)</strong></span> Die Abbildung zeigt vier Zielscheiben. Jedes Kreuz steht für eine Messung; die Mitte steht für das Merkmal, das gemessen werden soll.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="guete-ii-ex_files/figure-html/targets-1.png" class="img-fluid figure-img" alt="Vier Zielscheiben mit je 15 Kreuzen: bei 1 eng um die Mitte, bei 2 eng beieinander am oberen linken Rand, bei 3 weit um die Mitte gestreut, bei 4 weit gestreut und nach rechts oben verschoben" width="768"></p>
+</figure>
+</div>
+</div>
+</div>
+<ol type="a">
+<li>Welche Zielscheibe zeigt eine reliable und valide Messung, welche eine reliable, aber nicht valide, und welche eine Messung, die weder reliabel noch valide ist?</li>
+</ol>
+<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-11-contents" aria-controls="callout-11" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tipp</span>Lösung
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-11" class="callout-11-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ul>
+<li>1: reliabel und valide.</li>
+<li>2: reliabel, aber nicht valide: Die Messungen liegen eng beieinander, verfehlen aber das Merkmal systematisch.</li>
+<li>3: nicht reliabel: Die Messungen streuen stark, liegen aber im Mittel auf dem Ziel.</li>
+<li>4: weder reliabel noch valide.</li>
+</ul>
+</div>
+</div>
+</div>
+<ol start="2" type="a">
+<li>Kann eine Messung wie in Zielscheibe 3 valide sein?</li>
+</ol>
+<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-12-contents" aria-controls="callout-12" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tipp</span>Lösung
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-12" class="callout-12-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Nur eingeschränkt: Die Reliabilität begrenzt die Validität. Zielscheibe 3 trifft nur im Mittel; einzelne Messungen liegen oft weit vom Ziel entfernt.</p>
+</div>
+</div>
+</div>
+</div>
+<div id="exr-spearman-brown" class="theorem exercise">
+<p><span class="theorem-title"><strong>Aufgabe 4 (Testhalbierung)</strong></span> Die Forscher:innen aus <a href="../workbook/item-ktt-ex.html">Kapitel 10</a> kürzen ihr Screening für Extraversion nach der Itemanalyse auf vier Items. In einer neuen Stichprobe teilen sie die Items in zwei Testhälften auf (Items 1 und 3, Items 2 und 4). Die Summenwerte der beiden Hälften korrelieren zu 0.81.</p>
+<div class="callout callout-style-default callout-note callout-titled" title="Hinweis">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-13-contents" aria-controls="callout-13" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Hinweis</span>Hinweis
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-13" class="callout-13-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><span class="math display">\[
+Rel(x_{\text{vollständig}}) = \frac{2 \cdot Corr(x_p, x_q)}{1 + Corr(x_p, x_q)} = \frac{2 \cdot Rel(x_{\text{halb}})}{1 + Rel(x_{\text{halb}})}
+\]</span></p>
+</div>
+</div>
+</div>
+<ol type="a">
+<li>Warum reicht die Korrelation der beiden Testhälften nicht als Schätzung der Reliabilität des Screenings?</li>
+</ol>
+<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-14-contents" aria-controls="callout-14" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tipp</span>Lösung
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-14" class="callout-14-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Sie schätzt die Reliabilität eines Tests mit nur halb so vielen Items. Weil die Reliabilität mit der Testlänge steigt, muss sie auf die volle Länge aufgewertet werden.</p>
+</div>
+</div>
+</div>
+<ol start="2" type="a">
+<li>Schätzen Sie die Reliabilität des vollständigen Screenings mit der Spearman-Brown-Formel.</li>
+</ol>
+<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-15-contents" aria-controls="callout-15" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tipp</span>Lösung
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-15" class="callout-15-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><span class="math inline">\(Rel(x_{\text{vollständig}}) = 0.90\)</span></p>
+</div>
+</div>
+</div>
+</div>
+<div id="exr-test-length" class="theorem exercise">
+<p><span class="theorem-title"><strong>Aufgabe 5 (Testverlängerung)</strong></span> Für Einzelfallentscheidungen möchten die Forscher:innen aus <a href="#exr-spearman-brown" class="quarto-xref">Aufgabe&nbsp;4</a> eine Reliabilität von 0.95 erreichen. Gehen Sie von der Reliabilität 0.90 des Screenings mit vier Items aus.</p>
+<div class="callout callout-style-default callout-note callout-titled" title="Hinweis">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-16-contents" aria-controls="callout-16" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Hinweis</span>Hinweis
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-16" class="callout-16-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><span class="math display">\[
+Rel^*_k = \frac{k \cdot Rel}{1 + (k - 1) \cdot Rel}, \qquad k = \frac{Rel^* \cdot (1 - Rel)}{Rel \cdot (1 - Rel^*)}
+\]</span></p>
+</div>
+</div>
+</div>
+<ol type="a">
+<li>Um welchen Faktor müssen die Forscher:innen das Screening verlängern?</li>
+</ol>
+<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-17-contents" aria-controls="callout-17" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tipp</span>Lösung
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-17" class="callout-17-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><span class="math inline">\(k = 2.11\)</span></p>
+</div>
+</div>
+</div>
+<ol start="2" type="a">
+<li>Wie viele Items braucht das Screening dann insgesamt, und wie viele kommen hinzu?</li>
+</ol>
+<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-18-contents" aria-controls="callout-18" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tipp</span>Lösung
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-18" class="callout-18-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><span class="math inline">\(4 \cdot 2.11 = 8.44\)</span>, aufgerundet 9 Items: 5 Items kommen hinzu. Mit 8 Items bliebe die Reliabilität knapp unter 0.95.</p>
+</div>
+</div>
+</div>
+<ol start="3" type="a">
+<li>Welche Annahme trifft die Spearman-Brown-Formel über die neuen Items?</li>
+</ol>
+<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-19-contents" aria-controls="callout-19" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tipp</span>Lösung
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-19" class="callout-19-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Die neuen Items sind zu den vorhandenen parallel, messen also dasselbe Merkmal gleich gut.</p>
+</div>
+</div>
+</div>
+</div>
+<div id="exr-cronbach" class="theorem exercise">
+<p><span class="theorem-title"><strong>Aufgabe 6 (Cronbachs Alpha)</strong></span> In derselben Stichprobe wie in <a href="#exr-spearman-brown" class="quarto-xref">Aufgabe&nbsp;4</a> haben die vier Items die Varianzen <span class="math inline">\(Var(x_1) = 1.64\)</span>, <span class="math inline">\(Var(x_2) = 2.70\)</span>, <span class="math inline">\(Var(x_3) = 1.14\)</span> und <span class="math inline">\(Var(x_4) = 1.07\)</span>. Die Varianz des Summenwerts beträgt <span class="math inline">\(Var(x) = 18.41\)</span>.</p>
+<div class="callout callout-style-default callout-note callout-titled" title="Hinweis">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-20-contents" aria-controls="callout-20" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Hinweis</span>Hinweis
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-20" class="callout-20-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><span class="math display">\[
+Rel(x) = \alpha = \frac{m}{m - 1} \cdot \left(1 - \frac{\sum_{j=1}^{m} Var(x_j)}{Var(x)}\right)
+\]</span></p>
+<p>Faustregeln nach der Vorlesung: Bei Leistungstests in der Einzelfalldiagnostik sollte die Reliabilität über 0.90 liegen, bei Persönlichkeitsfragebögen gelten Werte über 0.80 als gut, bei Screenings reichen oft schon Werte über 0.70.</p>
+</div>
+</div>
+</div>
+<ol type="a">
+<li>Berechnen Sie Cronbachs Alpha <span class="citation" data-cites="cronbach1951">(<a href="#ref-cronbach1951" role="doc-biblioref">Cronbach, 1951</a>)</span> für die vier Items.</li>
+</ol>
+<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-21-contents" aria-controls="callout-21" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tipp</span>Lösung
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-21" class="callout-21-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><span class="math inline">\(\alpha = 0.86\)</span></p>
+</div>
+</div>
+</div>
+<ol start="2" type="a">
+<li>Beurteilen Sie den Wert.</li>
+</ol>
+<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-22-contents" aria-controls="callout-22" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tipp</span>Lösung
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-22" class="callout-22-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Gut: Für einen Persönlichkeitsfragebogen liegt der Wert über 0.80, für ein Screening deutlich über 0.70.</p>
+</div>
+</div>
+</div>
+<ol start="3" type="a">
+<li>Unter welchen Voraussetzungen schätzt Cronbachs Alpha die Reliabilität korrekt?</li>
+</ol>
+<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-23-contents" aria-controls="callout-23" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tipp</span>Lösung
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-23" class="callout-23-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Die Items müssen essenziell tau-äquivalent sein und dasselbe Merkmal messen (Eindimensionalität).</p>
+</div>
+</div>
+</div>
+<ol start="4" type="a">
+<li>Warum weicht Cronbachs Alpha von der Schätzung aus <a href="#exr-spearman-brown" class="quarto-xref">Aufgabe&nbsp;4</a> ab?</li>
+</ol>
+<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-24-contents" aria-controls="callout-24" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tipp</span>Lösung
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-24" class="callout-24-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Die Testhalbierungsreliabilität hängt davon ab, wie die Items auf die beiden Hälften verteilt werden. Cronbachs Alpha behandelt dagegen jedes Item als eigenen Testteil.</p>
+</div>
+</div>
+</div>
+</div>
+<div id="exr-measurement-models" class="theorem exercise">
+<p><span class="theorem-title"><strong>Aufgabe 7 (Messmodelle)</strong></span> Ein Test mit drei Items liegt in fünf Versionen vor. Die Tabellen zeigen für jede Version die Mittelwerte der Items und darunter ihre Kovarianzmatrix: Varianzen auf der Diagonalen, Kovarianzen darunter. Jede Version entspricht genau einem der fünf Messmodelle aus der Vorlesung.</p>
+<div class="callout callout-style-default callout-note callout-titled" title="Hinweis">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-25-contents" aria-controls="callout-25" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Hinweis</span>Hinweis
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-25" class="callout-25-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Prüfen Sie für jede Version nacheinander: Sind die Kovarianzen gleich? Sind die Varianzen gleich? Sind die Mittelwerte gleich?</p>
+</div>
+</div>
+</div>
+<ol type="a">
+<li>Welches Messmodell liegt in Version A vor? Begründen Sie Ihre Antwort.</li>
+</ol>
+<div class="cell">
+<div class="cell-output-display">
+<table class="caption-top table table-sm table-striped small">
+<caption>Version A</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;"></th>
+<th style="text-align: right;"><span class="math inline">\(x_1\)</span></th>
+<th style="text-align: right;"><span class="math inline">\(x_2\)</span></th>
+<th style="text-align: right;"><span class="math inline">\(x_3\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Mittelwert</td>
+<td style="text-align: right;">4.30</td>
+<td style="text-align: right;">4.30</td>
+<td style="text-align: right;">4.30</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="math inline">\(x_1\)</span></td>
+<td style="text-align: right;">0.95</td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\(x_2\)</span></td>
+<td style="text-align: right;">0.45</td>
+<td style="text-align: right;">0.55</td>
+<td style="text-align: right;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="math inline">\(x_3\)</span></td>
+<td style="text-align: right;">0.45</td>
+<td style="text-align: right;">0.45</td>
+<td style="text-align: right;">0.80</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-26-contents" aria-controls="callout-26" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tipp</span>Lösung
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-26" class="callout-26-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Tau-äquivalent: gleiche Mittelwerte und Kovarianzen, unterschiedliche Varianzen.</p>
+</div>
+</div>
+</div>
+<ol start="2" type="a">
+<li>Welches Messmodell liegt in Version B vor? Begründen Sie Ihre Antwort.</li>
+</ol>
+<div class="cell">
+<div class="cell-output-display">
+<table class="caption-top table table-sm table-striped small">
+<caption>Version B</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;"></th>
+<th style="text-align: right;"><span class="math inline">\(x_1\)</span></th>
+<th style="text-align: right;"><span class="math inline">\(x_2\)</span></th>
+<th style="text-align: right;"><span class="math inline">\(x_3\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Mittelwert</td>
+<td style="text-align: right;">3.00</td>
+<td style="text-align: right;">1.90</td>
+<td style="text-align: right;">2.60</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="math inline">\(x_1\)</span></td>
+<td style="text-align: right;">0.91</td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\(x_2\)</span></td>
+<td style="text-align: right;">0.48</td>
+<td style="text-align: right;">0.79</td>
+<td style="text-align: right;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="math inline">\(x_3\)</span></td>
+<td style="text-align: right;">0.24</td>
+<td style="text-align: right;">0.32</td>
+<td style="text-align: right;">0.61</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-27-contents" aria-controls="callout-27" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tipp</span>Lösung
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-27" class="callout-27-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Tau-kongenerisch: unterschiedliche Kovarianzen.</p>
+</div>
+</div>
+</div>
+<ol start="3" type="a">
+<li>Welches Messmodell liegt in Version C vor? Begründen Sie Ihre Antwort.</li>
+</ol>
+<div class="cell">
+<div class="cell-output-display">
+<table class="caption-top table table-sm table-striped small">
+<caption>Version C</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;"></th>
+<th style="text-align: right;"><span class="math inline">\(x_1\)</span></th>
+<th style="text-align: right;"><span class="math inline">\(x_2\)</span></th>
+<th style="text-align: right;"><span class="math inline">\(x_3\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Mittelwert</td>
+<td style="text-align: right;">2.60</td>
+<td style="text-align: right;">2.60</td>
+<td style="text-align: right;">2.60</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="math inline">\(x_1\)</span></td>
+<td style="text-align: right;">0.80</td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\(x_2\)</span></td>
+<td style="text-align: right;">0.55</td>
+<td style="text-align: right;">0.80</td>
+<td style="text-align: right;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="math inline">\(x_3\)</span></td>
+<td style="text-align: right;">0.55</td>
+<td style="text-align: right;">0.55</td>
+<td style="text-align: right;">0.80</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-28-contents" aria-controls="callout-28" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tipp</span>Lösung
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-28" class="callout-28-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Parallel: gleiche Mittelwerte, Varianzen und Kovarianzen.</p>
+</div>
+</div>
+</div>
+<ol start="4" type="a">
+<li>Welches Messmodell liegt in Version D vor? Begründen Sie Ihre Antwort.</li>
+</ol>
+<div class="cell">
+<div class="cell-output-display">
+<table class="caption-top table table-sm table-striped small">
+<caption>Version D</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;"></th>
+<th style="text-align: right;"><span class="math inline">\(x_1\)</span></th>
+<th style="text-align: right;"><span class="math inline">\(x_2\)</span></th>
+<th style="text-align: right;"><span class="math inline">\(x_3\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Mittelwert</td>
+<td style="text-align: right;">3.20</td>
+<td style="text-align: right;">4.40</td>
+<td style="text-align: right;">1.60</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="math inline">\(x_1\)</span></td>
+<td style="text-align: right;">0.70</td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\(x_2\)</span></td>
+<td style="text-align: right;">0.40</td>
+<td style="text-align: right;">0.85</td>
+<td style="text-align: right;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="math inline">\(x_3\)</span></td>
+<td style="text-align: right;">0.40</td>
+<td style="text-align: right;">0.40</td>
+<td style="text-align: right;">1.00</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-29-contents" aria-controls="callout-29" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tipp</span>Lösung
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-29" class="callout-29-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Essenziell tau-äquivalent: gleiche Kovarianzen, unterschiedliche Mittelwerte und Varianzen.</p>
+</div>
+</div>
+</div>
+<ol start="5" type="a">
+<li>Welches Messmodell liegt in Version E vor? Begründen Sie Ihre Antwort.</li>
+</ol>
+<div class="cell">
+<div class="cell-output-display">
+<table class="caption-top table table-sm table-striped small">
+<caption>Version E</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;"></th>
+<th style="text-align: right;"><span class="math inline">\(x_1\)</span></th>
+<th style="text-align: right;"><span class="math inline">\(x_2\)</span></th>
+<th style="text-align: right;"><span class="math inline">\(x_3\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Mittelwert</td>
+<td style="text-align: right;">2.60</td>
+<td style="text-align: right;">1.70</td>
+<td style="text-align: right;">4.40</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="math inline">\(x_1\)</span></td>
+<td style="text-align: right;">0.70</td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\(x_2\)</span></td>
+<td style="text-align: right;">0.45</td>
+<td style="text-align: right;">0.70</td>
+<td style="text-align: right;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="math inline">\(x_3\)</span></td>
+<td style="text-align: right;">0.45</td>
+<td style="text-align: right;">0.45</td>
+<td style="text-align: right;">0.70</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-30-contents" aria-controls="callout-30" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tipp</span>Lösung
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-30" class="callout-30-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Essenziell parallel: gleiche Varianzen und Kovarianzen, unterschiedliche Mittelwerte.</p>
+</div>
+</div>
+</div>
+<ol start="6" type="a">
+<li>Berechnen Sie Cronbachs Alpha für die Version, in der das essenziell tau-äquivalente Messmodell gilt.</li>
+</ol>
+<div class="callout callout-style-default callout-note callout-titled" title="Hinweis">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-31-contents" aria-controls="callout-31" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Hinweis</span>Hinweis
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-31" class="callout-31-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Die Varianz des Summenwerts ist die Summe aller Einträge der vollständigen Kovarianzmatrix, also aller Varianzen und jeder Kovarianz zweimal:</p>
+<p><span class="math display">\[
+Var(x) = \sum_{j=1}^{m} Var(x_j) + 2 \cdot \sum_{j &lt; k} Cov(x_j, x_k)
+\]</span></p>
+<p>Die Formel für Cronbachs Alpha steht im Hinweis zu <a href="#exr-cronbach" class="quarto-xref">Aufgabe&nbsp;6</a>.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-32-contents" aria-controls="callout-32" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tipp</span>Lösung
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-32" class="callout-32-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Version D: <span class="math inline">\(Var(x) = 4.95\)</span>, <span class="math inline">\(\alpha = 0.73\)</span></p>
+</div>
+</div>
+</div>
+<ol start="7" type="a">
+<li>Für welche Versionen schätzt Cronbachs Alpha die Reliabilität korrekt? Was gilt für die übrigen?</li>
+</ol>
+<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-33-contents" aria-controls="callout-33" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tipp</span>Lösung
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-33" class="callout-33-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Für A, C, D und E, weil sie mindestens essenziell tau-äquivalent sind. In Version B (tau-kongenerisch) unterschätzt Cronbachs Alpha die Reliabilität; dort eignen sich andere Koeffizienten, z. B. McDonalds Omega.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled" title="Hinweis">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Hinweis</span>Hinweis
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Wenn Sie das Erkennen von Messmodellen weiter üben möchten, starten Sie in R das Quiz <code>irtea::play_roulette()</code>. Es zeigt in jeder Runde neue Mittelwerte und Kovarianzmatrizen und gibt Ihnen nach jeder Antwort eine Rückmeldung. Installation und weitere Optionen finden Sie auf der Seite <a href="../package.html">R-Paket</a>.</p>
+</div>
+</div>
+<div id="exr-construct-validity" class="theorem exercise">
+<p><span class="theorem-title"><strong>Aufgabe 8 (Konstruktvalidität)</strong></span> Forscher:innen der RPTU haben einen sprachfreien Intelligenztest entwickelt, den RPTU-IQ, und wollen ihn validieren. In einer Pilotstudie mit Studierenden in Landau erheben sie zusätzlich den Intelligenz-Struktur-Test 2000 R <span class="citation" data-cites="liepmann2007">(I-S-T 2000 R, <a href="#ref-liepmann2007" role="doc-biblioref">Liepmann et al., 2007</a>)</span>, der auch sprachliche Aufgaben enthält, und den sprachfreien Hagen Matrices Test <span class="citation" data-cites="heydasch2014">(HMT, <a href="#ref-heydasch2014" role="doc-biblioref">Heydasch, 2014</a>)</span>. Außerdem erfragen sie die Abiturnote, die Deutschnote im Abitur und ob eine Lese-Rechtschreib-Störung (LRS) diagnostiziert wurde (0 = nein, 1 = ja).</p>
+<div class="callout callout-style-default callout-note callout-titled" title="Hinweis">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-35-contents" aria-controls="callout-35" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Hinweis</span>Hinweis
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-35" class="callout-35-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Bei Schulnoten stehen kleine Zahlen für gute Leistungen.</p>
+</div>
+</div>
+</div>
+<ol type="a">
+<li>Mit welchen Variablen erwarten Sie einen positiven, mit welchen einen negativen und mit welchen keinen Zusammenhang mit dem RPTU-IQ? Begründen Sie Ihre Antwort.</li>
+</ol>
+<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-36-contents" aria-controls="callout-36" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tipp</span>Lösung
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-36" class="callout-36-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ul>
+<li>Positiv: I-S-T 2000 R und HMT, weil beide Intelligenz messen.</li>
+<li>Negativ: Abiturnote, weil Intelligenz mit guten, also kleinen Noten einhergeht.</li>
+<li>Kein Zusammenhang: LRS, weil sie eine umschriebene Störung ist, die nicht durch geringe Intelligenz erklärt wird.</li>
+<li>Deutschnote: höchstens ein schwach negativer Zusammenhang, weil ein sprachfreier Test sprachliche Fähigkeiten kaum erfassen sollte.</li>
+</ul>
+</div>
+</div>
+</div>
+<ol start="2" type="a">
+<li>Welche Variablen prüfen die konvergente, welche die diskriminante Validität? Welche Variable ist ein Kriterium?</li>
+</ol>
+<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-37-contents" aria-controls="callout-37" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tipp</span>Lösung
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-37" class="callout-37-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Konvergent: I-S-T 2000 R und HMT. Diskriminant: LRS und Deutschnote. Kriterium: Abiturnote; weil das Abitur vor dem Test lag, geht es um retrospektive Validität.</p>
+</div>
+</div>
+</div>
+<ol start="3" type="a">
+<li><a href="#tbl-validity" class="quarto-xref">Tabelle&nbsp;3</a> zeigt die Korrelationen in der Pilotstudie. Entsprechen sie Ihren Erwartungen? Wie interpretieren Sie Abweichungen?</li>
+</ol>
+<div id="tbl-validity" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-validity-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Tabelle&nbsp;3: Korrelationen in der Pilotstudie
+</figcaption>
+<div aria-describedby="tbl-validity-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="caption-top table">
+<colgroup>
+<col style="width: 18%">
+<col style="width: 12%">
+<col style="width: 18%">
+<col style="width: 16%">
+<col style="width: 9%">
+<col style="width: 8%">
+<col style="width: 17%">
+</colgroup>
+<thead>
+<tr class="header">
+<th></th>
+<th style="text-align: right;">RPTU-IQ</th>
+<th style="text-align: right;">I-S-T 2000 R</th>
+<th style="text-align: right;">Abiturnote</th>
+<th style="text-align: right;">HMT</th>
+<th style="text-align: right;">LRS</th>
+<th style="text-align: right;">Deutschnote</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>RPTU-IQ</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+</tr>
+<tr class="even">
+<td>I-S-T 2000 R</td>
+<td style="text-align: right;">0.67</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+</tr>
+<tr class="odd">
+<td>Abiturnote</td>
+<td style="text-align: right;">−0.45</td>
+<td style="text-align: right;">−0.56</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+</tr>
+<tr class="even">
+<td>HMT</td>
+<td style="text-align: right;">0.74</td>
+<td style="text-align: right;">0.71</td>
+<td style="text-align: right;">−0.68</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+</tr>
+<tr class="odd">
+<td>LRS</td>
+<td style="text-align: right;">−0.09</td>
+<td style="text-align: right;">−0.12</td>
+<td style="text-align: right;">0.14</td>
+<td style="text-align: right;">0.05</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;"></td>
+</tr>
+<tr class="even">
+<td>Deutschnote</td>
+<td style="text-align: right;">−0.41</td>
+<td style="text-align: right;">−0.44</td>
+<td style="text-align: right;">0.43</td>
+<td style="text-align: right;">−0.18</td>
+<td style="text-align: right;">0.31</td>
+<td style="text-align: right;">1</td>
+</tr>
+</tbody>
+</table>
+</div>
+</figure>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-38-contents" aria-controls="callout-38" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tipp</span>Lösung
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-38" class="callout-38-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Weitgehend: HMT (0.74) und I-S-T 2000 R (0.67) korrelieren hoch mit dem RPTU-IQ, die Abiturnote negativ (−0.45) und die LRS kaum (−0.09). Die Deutschnote weicht ab: Sie korreliert mit dem RPTU-IQ (−0.41) etwa so stark wie mit dem I-S-T 2000 R (−0.44), der sprachliche Aufgaben enthält, aber deutlich stärker als mit dem sprachfreien HMT (−0.18). Der RPTU-IQ ist womöglich weniger sprachfrei als beabsichtigt, etwa durch schriftliche Instruktionen; das schwächt seine diskriminante Validität.</p>
+</div>
+</div>
+</div>
+<ol start="4" type="a">
+<li>Die Pilotstichprobe bestand aus Studierenden. Was bedeutet das für die Korrelationen?</li>
+</ol>
+<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-39-contents" aria-controls="callout-39" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tipp</span>Lösung
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-39" class="callout-39-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Studierende haben alle ein Abitur und streuen in der Intelligenz weniger als die Allgemeinbevölkerung. Die eingeschränkte Streuung schwächt die Korrelationen, und die Ergebnisse lassen sich nicht ohne Weiteres auf andere Gruppen übertragen.</p>
+</div>
+</div>
+</div>
+</div>
+
+
+
+
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">Literatur</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" data-line-spacing="2" role="list">
+<div id="ref-cohen1960" class="csl-entry" role="listitem">
+Cohen, J. (1960). A coefficient of agreement for nominal scales. <em>Educational and Psychological Measurement</em>, <em>20</em>(1), 37–46. <a href="https://doi.org/10.1177/001316446002000104">https://doi.org/10.1177/001316446002000104</a>
+</div>
+<div id="ref-cronbach1951" class="csl-entry" role="listitem">
+Cronbach, L. J. (1951). Coefficient alpha and the internal structure of tests. <em>Psychometrika</em>, <em>16</em>(3), 297–334. <a href="https://doi.org/10.1007/BF02310555">https://doi.org/10.1007/BF02310555</a>
+</div>
+<div id="ref-heydasch2014" class="csl-entry" role="listitem">
+Heydasch, T. (2014). <em>The <span>Hagen</span> <span>Matrices</span> <span>Test</span> (<span>HMT</span>)</em>. FernUniversität in Hagen. <a href="https://doi.org/10.13140/RG.2.2.31433.75361">https://doi.org/10.13140/RG.2.2.31433.75361</a>
+</div>
+<div id="ref-liepmann2007" class="csl-entry" role="listitem">
+Liepmann, D., Beauducel, A., Brocke, B., &amp; Amthauer, R. (2007). <em>Intelligenz-Struktur-Test 2000 R (<span>I-S-T</span> 2000 R)</em> (2. Aufl.). Hogrefe.
+</div>
+<div id="ref-shrout1979" class="csl-entry" role="listitem">
+Shrout, P. E., &amp; Fleiss, J. L. (1979). Intraclass correlations: Uses in assessing rater reliability. <em>Psychological Bulletin</em>, <em>86</em>(2), 420–428. <a href="https://doi.org/10.1037/0033-2909.86.2.420">https://doi.org/10.1037/0033-2909.86.2.420</a>
+</div>
+</div></section></div></main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Kopiert");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Kopiert");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/sbissantz\.github\.io\/irtea\/");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+      &nbsp;
+    </div>   
+    <div class="nav-footer-center">
+<p>Lizenz: GPL-3</p>
+</div>
+    <div class="nav-footer-right">
+      &nbsp;
+    </div>
+  </div>
+</footer>
+
+
+
+
+</body></html>

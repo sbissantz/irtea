@@ -1,0 +1,1635 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="de" xml:lang="de"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.10.19">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>11 Itemanalyse II – B.F.3 Diagnostik &amp; Testtheorie</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../images/logo.png" rel="icon" type="image/png">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-bf27225e3a48a9273f3daa8f8e829971.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-cbe15cd55579b32cf8c48135cfb2cd9e.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "Keine Treffer",
+    "search-matching-documents-text": "Treffer",
+    "search-copy-link-title": "Link in die Suche kopieren",
+    "search-hide-matches-text": "Zusätzliche Treffer verbergen",
+    "search-more-match-text": "weitere Treffer in diesem Dokument",
+    "search-more-matches-text": "weitere Treffer in diesem Dokument",
+    "search-clear-button-title": "Zurücksetzen",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Abbrechen",
+    "search-submit-button-title": "Abschicken",
+    "search-label": "Suchen"
+  }
+}</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+</head>
+
+<body class="nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a href="../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../images/logo.png" alt="" class="navbar-logo light-content">
+    <img src="../images/logo.png" alt="" class="navbar-logo dark-content">
+    </a>
+    <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">B.F.3 Diagnostik &amp; Testtheorie</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Suchen"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Navigation umschalten" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../index.html"> 
+<span class="menu-text">Start</span></a>
+  </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-folien" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Folien</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-folien">    
+        <li>
+    <a class="dropdown-item" href="../slides/basics-inp.html">
+ <span class="dropdown-text">01 Grundlagen</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../slides/efa-inp.html">
+ <span class="dropdown-text">08 Exploratorische Faktorenanalyse</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-bungsheft" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Übungsheft</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-bungsheft">    
+        <li>
+    <a class="dropdown-item" href="../workbook/basics-ex.html">
+ <span class="dropdown-text">1. &amp; 2. Rechenkompetenzen</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../workbook/guete-i-ex.html">
+ <span class="dropdown-text">3. Gütekriterien I</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../workbook/efa-ex.html">
+ <span class="dropdown-text">8. &amp; 9. Exploratorische Faktorenanalyse</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../workbook/item-ktt-ex.html">
+ <span class="dropdown-text">10. Itemanalyse I</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../workbook/item-irt-ex.html">
+ <span class="dropdown-text">11. Itemanalyse II</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../workbook/diagnostic-ii-ex.html">
+ <span class="dropdown-text">12. Diagnostische Rechenkompetenzen II</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../workbook/guete-ii-ex.html">
+ <span class="dropdown-text">13. Gütekriterien II</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="../package.html"> 
+<span class="menu-text">R-Paket</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+        
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">11 Itemanalyse II</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<div class="callout callout-style-default callout-important callout-titled" title="Work in Progress">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Wichtig</span>Work in Progress
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Dieses Kapitel wird derzeit intern überarbeitet. Aufgaben, Daten und Lösungen können sich noch ändern. Bitte bearbeiten Sie die Aufgaben erst, wenn die Überarbeitung abgeschlossen ist und dieser Hinweis entfernt wurde.</p>
+</div>
+</div>
+<p>Der Hagen Matrices Test <span class="citation" data-cites="heydasch2014">(HMT, <a href="#ref-heydasch2014" role="doc-biblioref">Heydasch, 2014</a>)</span> misst fluide Intelligenz, genauer das schlussfolgernde Denken. Seine Aufgaben sind figurale Matrizen: Die Person muss die Regel erkennen, nach der die Figuren angeordnet sind, und mit ihr das fehlende Element ergänzen. Der HMT wird online bearbeitet. Die Langform hat 20 Aufgaben und dauert 20 Minuten, die Kurzform HMT-S sechs Aufgaben und dauert 5 Minuten <span class="citation" data-cites="heydasch2013">(<a href="#ref-heydasch2013" role="doc-biblioref">Heydasch et al., 2013</a>)</span>. Für nichtkommerzielle Zwecke ist er frei verfügbar.</p>
+<p>Die Studienberatung der RPTU plant ein Online-Self-Assessment für Studieninteressierte. Es soll ihnen unter anderem zurückmelden, wie gut sie im schlussfolgernden Denken abschneiden, und dafür den HMT-S nutzen. Viele Interessierte bearbeiten solche Angebote am Smartphone. Deshalb erprobt die Studienberatung den HMT-S mit 800 Personen: 400 bearbeiten ihn am Computer, 400 am Smartphone. Mit dem Rasch-Modell prüft sie, ob die sechs Aufgaben für das Self-Assessment taugen.</p>
+<p>Die Daten sind simuliert und sagen nichts über den echten HMT-S aus. Sie stehen im Paket <code>irtea</code> als Datensatz <code>hmt_short</code> bereit: Die Spalte <code>device</code> enthält das Endgerät, die Spalten <code>hmt1</code> bis <code>hmt6</code> die Antworten (1 = gelöst, 0 = nicht gelöst).</p>
+<div id="exr-irt-solution-rates" class="theorem exercise">
+<p><span class="theorem-title"><strong>Aufgabe 1 (Lösungshäufigkeiten)</strong></span> Die Studienberatung berechnet zuerst, welcher Anteil der Personen jede Aufgabe gelöst hat.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(<span class="fu">colMeans</span>(hmt_short[, <span class="sc">-</span><span class="dv">1</span>]), <span class="dv">2</span>)</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>hmt1 hmt2 hmt3 hmt4 hmt5 hmt6 
+0.86 0.69 0.55 0.44 0.27 0.20 </code></pre>
+</div>
+</div>
+<ol type="a">
+<li>Welche Aufgabe ist am leichtesten, welche am schwersten?</li>
+</ol>
+<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tipp</span>Lösung
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Am leichtesten ist <code>hmt1</code> (86 % gelöst), am schwersten <code>hmt6</code> (20 % gelöst).</p>
+</div>
+</div>
+</div>
+<ol start="2" type="a">
+<li>Welchem Kennwert der Klassischen Testtheorie entsprechen diese Anteile?</li>
+</ol>
+<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tipp</span>Lösung
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Dem Schwierigkeitsindex <span class="math inline">\(P_j\)</span> (mal 100): Er reicht hier von 86 (<code>hmt1</code>) bis 20 (<code>hmt6</code>).</p>
+</div>
+</div>
+</div>
+</div>
+<div id="exr-irt-rasch" class="theorem exercise">
+<p><span class="theorem-title"><strong>Aufgabe 2 (Das Rasch-Modell)</strong></span> Die Studienberatung schätzt das Rasch-Modell mit dem Paket eRm <span class="citation" data-cites="mair2007">(<a href="#ref-mair2007" role="doc-biblioref">Mair &amp; Hatzinger, 2007</a>)</span>.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(eRm)</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>items <span class="ot">&lt;-</span> hmt_short[, <span class="sc">-</span><span class="dv">1</span>]</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>model <span class="ot">&lt;-</span> <span class="fu">RM</span>(items)</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="co"># eRm schätzt Leichtigkeitsparameter; die Itemschwierigkeit ist ihr Negativ</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>difficulty <span class="ot">&lt;-</span> <span class="sc">-</span>model<span class="sc">$</span>betapar</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(difficulty) <span class="ot">&lt;-</span> <span class="fu">names</span>(items)</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(<span class="fu">data.frame</span>(difficulty, <span class="at">se =</span> model<span class="sc">$</span>se.beta), <span class="dv">2</span>)</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>     difficulty   se
+hmt1      -2.06 0.10
+hmt2      -0.91 0.08
+hmt3      -0.20 0.07
+hmt4       0.30 0.07
+hmt5       1.20 0.08
+hmt6       1.67 0.09</code></pre>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled" title="Hinweis">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Hinweis</span>Hinweis
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-4" class="callout-4-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><span class="math display">\[
+P(u_{ij} = 1 \mid \theta_i, \beta_j) = \frac{e^{\theta_i - \beta_j}}{1 + e^{\theta_i - \beta_j}}
+\]</span></p>
+<p><code>difficulty</code> enthält die Itemschwierigkeiten <span class="math inline">\(\beta_j\)</span>, <code>se</code> ihre Standardfehler.</p>
+</div>
+</div>
+</div>
+<ol type="a">
+<li>Ordnen Sie die Aufgaben nach ihrer Schwierigkeit. Stimmt die Reihenfolge mit <a href="#exr-irt-solution-rates" class="quarto-xref">Aufgabe&nbsp;1</a> überein?</li>
+</ol>
+<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tipp</span>Lösung
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-5" class="callout-5-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><code>hmt1</code> (−2.06) &lt; <code>hmt2</code> &lt; <code>hmt3</code> &lt; <code>hmt4</code> &lt; <code>hmt5</code> &lt; <code>hmt6</code> (1.67). Die Reihenfolge stimmt mit den Lösungshäufigkeiten überein: Je seltener eine Aufgabe gelöst wird, desto höher ist ihre Schwierigkeit.</p>
+</div>
+</div>
+</div>
+<ol start="2" type="a">
+<li>Was bedeutet <span class="math inline">\(\beta_3 = -0.20\)</span>?</li>
+</ol>
+<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tipp</span>Lösung
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-6" class="callout-6-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Eine Person mit der Fähigkeit <span class="math inline">\(\theta = -0.20\)</span> löst Aufgabe 3 mit einer Wahrscheinlichkeit von 0.50.</p>
+</div>
+</div>
+</div>
+<ol start="3" type="a">
+<li>Addieren Sie die sechs Schwierigkeiten. Warum ergibt sich 0?</li>
+</ol>
+<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tipp</span>Lösung
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-7" class="callout-7-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Die Skala von <span class="math inline">\(\theta\)</span> und <span class="math inline">\(\beta\)</span> hat keinen natürlichen Nullpunkt. eRm legt ihn so fest, dass die Summe der Itemschwierigkeiten 0 ist (Summennormierung).</p>
+</div>
+</div>
+</div>
+</div>
+<div id="exr-irt-icc" class="theorem exercise">
+<p><span class="theorem-title"><strong>Aufgabe 3 (Itemcharakteristische Kurven)</strong></span> &nbsp;</p>
+<ol type="a">
+<li>Berechnen Sie die Lösungswahrscheinlichkeit von Aufgabe 3 (<span class="math inline">\(\beta_3 = -0.20\)</span>) für <span class="math inline">\(\theta = -2, -1, 0, 1, 2\)</span>.</li>
+</ol>
+<div class="callout callout-style-default callout-note callout-titled" title="Hinweis">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Hinweis</span>Hinweis
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-8" class="callout-8-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Die Formel steht im Hinweis zu <a href="#exr-irt-rasch" class="quarto-xref">Aufgabe&nbsp;2</a>. Für <span class="math inline">\(\theta = -2\)</span>: <span class="math inline">\(e^{-2 - (-0.20)} = e^{-1.80}\)</span>.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-9-contents" aria-controls="callout-9" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tipp</span>Lösung
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-9" class="callout-9-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th><span class="math inline">\(\theta\)</span></th>
+<th style="text-align: right;">−2</th>
+<th style="text-align: right;">−1</th>
+<th style="text-align: right;">0</th>
+<th style="text-align: right;">1</th>
+<th style="text-align: right;">2</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><span class="math inline">\(P(u_{i3} = 1)\)</span></td>
+<td style="text-align: right;">0.14</td>
+<td style="text-align: right;">0.31</td>
+<td style="text-align: right;">0.55</td>
+<td style="text-align: right;">0.77</td>
+<td style="text-align: right;">0.90</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<ol start="2" type="a">
+<li>Die Abbildung zeigt die itemcharakteristischen Kurven (ICC) aller sechs Aufgaben. Welche Kurve gehört zu Aufgabe 3? Prüfen Sie damit Ihre Werte aus Teil a.</li>
+</ol>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="item-irt-ex_files/figure-html/icc-1.png" class="img-fluid figure-img" alt="Itemcharakteristische Kurven der sechs Aufgaben: sechs parallele S-Kurven, die von links nach rechts hmt1 bis hmt6 zeigen" width="576"></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-10-contents" aria-controls="callout-10" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tipp</span>Lösung
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-10" class="callout-10-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Die dritte Kurve von links: Sie schneidet die Linie 0.5 bei <span class="math inline">\(\theta = -0.20\)</span> und verläuft durch die Werte aus Teil a.</p>
+</div>
+</div>
+</div>
+<ol start="3" type="a">
+<li>Warum verlaufen die Kurven parallel?</li>
+</ol>
+<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-11-contents" aria-controls="callout-11" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tipp</span>Lösung
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-11" class="callout-11-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Im Rasch-Modell unterscheiden sich die Aufgaben nur in ihrer Schwierigkeit; alle haben dieselbe Steigung (Itemdiskrimination). Die Kurven sind deshalb nur nach rechts oder links verschoben.</p>
+</div>
+</div>
+</div>
+</div>
+<div id="exr-irt-item-information" class="theorem exercise">
+<p><span class="theorem-title"><strong>Aufgabe 4 (Iteminformation)</strong></span> &nbsp;</p>
+<ol type="a">
+<li>Berechnen Sie die Iteminformation von Aufgabe 3 für die fünf <span class="math inline">\(\theta\)</span>-Werte aus <a href="#exr-irt-icc" class="quarto-xref">Aufgabe&nbsp;3</a>.</li>
+</ol>
+<div class="callout callout-style-default callout-note callout-titled" title="Hinweis">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-12-contents" aria-controls="callout-12" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Hinweis</span>Hinweis
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-12" class="callout-12-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><span class="math display">\[
+I_j = p(u_{ij} = 1) \cdot \left(1 - p(u_{ij} = 1)\right)
+\]</span></p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-13-contents" aria-controls="callout-13" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tipp</span>Lösung
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-13" class="callout-13-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th><span class="math inline">\(\theta\)</span></th>
+<th style="text-align: right;">−2</th>
+<th style="text-align: right;">−1</th>
+<th style="text-align: right;">0</th>
+<th style="text-align: right;">1</th>
+<th style="text-align: right;">2</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><span class="math inline">\(I_3\)</span></td>
+<td style="text-align: right;">0.12</td>
+<td style="text-align: right;">0.21</td>
+<td style="text-align: right;">0.25</td>
+<td style="text-align: right;">0.18</td>
+<td style="text-align: right;">0.09</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<ol start="2" type="a">
+<li>Die Abbildung zeigt die Iteminformation aller sechs Aufgaben. Bei welchem <span class="math inline">\(\theta\)</span> ist eine Aufgabe am informativsten, und wie hoch ist ihre Information dort?</li>
+</ol>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="item-irt-ex_files/figure-html/item-information-1.png" class="img-fluid figure-img" alt="Iteminformationskurven der sechs Aufgaben: gleich hohe Glockenkurven mit dem Maximum 0.25 bei der jeweiligen Itemschwierigkeit" width="576"></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-14-contents" aria-controls="callout-14" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tipp</span>Lösung
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-14" class="callout-14-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Bei <span class="math inline">\(\theta = \beta_j\)</span>: Dort ist die Lösungswahrscheinlichkeit 0.50 und die Iteminformation mit <span class="math inline">\(0.50 \cdot 0.50 = 0.25\)</span> am größten.</p>
+</div>
+</div>
+</div>
+<ol start="3" type="a">
+<li>Welche Aufgabe trägt am meisten zur Schätzung der Fähigkeit einer Person mit <span class="math inline">\(\theta = 1\)</span> bei?</li>
+</ol>
+<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-15-contents" aria-controls="callout-15" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tipp</span>Lösung
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-15" class="callout-15-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><code>hmt5</code> (<span class="math inline">\(\beta_5 = 1.20\)</span>, Information 0.25), weil ihre Schwierigkeit am nächsten bei <span class="math inline">\(\theta = 1\)</span> liegt.</p>
+</div>
+</div>
+</div>
+</div>
+<div id="exr-irt-test-information" class="theorem exercise">
+<p><span class="theorem-title"><strong>Aufgabe 5 (Testinformation und Standardmessfehler)</strong></span> Die Tabelle zeigt die Iteminformation der sechs Aufgaben für fünf Fähigkeitswerte. Die Spalte von Aufgabe 3 haben Sie in <a href="#exr-irt-item-information" class="quarto-xref">Aufgabe&nbsp;4</a> berechnet.</p>
+<div id="tbl-item-information" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-item-information-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Tabelle&nbsp;1: Iteminformation <span class="math inline">\(I_j(\theta)\)</span> der sechs Aufgaben
+</figcaption>
+<div aria-describedby="tbl-item-information-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: right;"><span class="math inline">\(\theta\)</span></th>
+<th style="text-align: right;"><code>hmt1</code></th>
+<th style="text-align: right;"><code>hmt2</code></th>
+<th style="text-align: right;"><code>hmt3</code></th>
+<th style="text-align: right;"><code>hmt4</code></th>
+<th style="text-align: right;"><code>hmt5</code></th>
+<th style="text-align: right;"><code>hmt6</code></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;">−2</td>
+<td style="text-align: right;">0.25</td>
+<td style="text-align: right;">0.19</td>
+<td style="text-align: right;">?</td>
+<td style="text-align: right;">0.08</td>
+<td style="text-align: right;">0.04</td>
+<td style="text-align: right;">0.02</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">−1</td>
+<td style="text-align: right;">0.19</td>
+<td style="text-align: right;">0.25</td>
+<td style="text-align: right;">?</td>
+<td style="text-align: right;">0.17</td>
+<td style="text-align: right;">0.09</td>
+<td style="text-align: right;">0.06</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.10</td>
+<td style="text-align: right;">0.20</td>
+<td style="text-align: right;">?</td>
+<td style="text-align: right;">0.24</td>
+<td style="text-align: right;">0.18</td>
+<td style="text-align: right;">0.13</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0.04</td>
+<td style="text-align: right;">0.11</td>
+<td style="text-align: right;">?</td>
+<td style="text-align: right;">0.22</td>
+<td style="text-align: right;">0.25</td>
+<td style="text-align: right;">0.22</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">0.02</td>
+<td style="text-align: right;">0.05</td>
+<td style="text-align: right;">?</td>
+<td style="text-align: right;">0.13</td>
+<td style="text-align: right;">0.21</td>
+<td style="text-align: right;">0.24</td>
+</tr>
+</tbody>
+</table>
+</div>
+</figure>
+</div>
+<div class="callout callout-style-default callout-note callout-titled" title="Hinweis">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-16-contents" aria-controls="callout-16" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Hinweis</span>Hinweis
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-16" class="callout-16-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><span class="math display">\[
+I(\theta_i) = \sum_{j=1}^{m} I_j(\theta_i), \qquad s_e(\theta) = \frac{1}{\sqrt{I(\theta)}}
+\]</span></p>
+</div>
+</div>
+</div>
+<ol type="a">
+<li>Berechnen Sie die Testinformation <span class="math inline">\(I(\theta)\)</span> für die fünf Fähigkeitswerte.</li>
+</ol>
+<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-17-contents" aria-controls="callout-17" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tipp</span>Lösung
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-17" class="callout-17-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th><span class="math inline">\(\theta\)</span></th>
+<th style="text-align: right;">−2</th>
+<th style="text-align: right;">−1</th>
+<th style="text-align: right;">0</th>
+<th style="text-align: right;">1</th>
+<th style="text-align: right;">2</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><span class="math inline">\(I(\theta)\)</span></td>
+<td style="text-align: right;">0.70</td>
+<td style="text-align: right;">0.97</td>
+<td style="text-align: right;">1.10</td>
+<td style="text-align: right;">1.02</td>
+<td style="text-align: right;">0.74</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<ol start="2" type="a">
+<li>Berechnen Sie den Standardmessfehler <span class="math inline">\(s_e(\theta)\)</span>.</li>
+</ol>
+<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-18-contents" aria-controls="callout-18" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tipp</span>Lösung
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-18" class="callout-18-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th><span class="math inline">\(\theta\)</span></th>
+<th style="text-align: right;">−2</th>
+<th style="text-align: right;">−1</th>
+<th style="text-align: right;">0</th>
+<th style="text-align: right;">1</th>
+<th style="text-align: right;">2</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><span class="math inline">\(s_e(\theta)\)</span></td>
+<td style="text-align: right;">1.20</td>
+<td style="text-align: right;">1.02</td>
+<td style="text-align: right;">0.95</td>
+<td style="text-align: right;">0.99</td>
+<td style="text-align: right;">1.16</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<ol start="3" type="a">
+<li>Die Abbildung zeigt Testinformation und Standardmessfehler über den ganzen Fähigkeitsbereich. Wo misst der HMT-S am genauesten, wo am ungenauesten?</li>
+</ol>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="item-irt-ex_files/figure-html/test-information-1.png" class="img-fluid figure-img" alt="Links die Testinformation mit dem Maximum von etwa 1.1 knapp über 0, rechts der Standardmessfehler mit dem Minimum von etwa 0.95 an derselben Stelle" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-19-contents" aria-controls="callout-19" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tipp</span>Lösung
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-19" class="callout-19-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Am genauesten knapp über <span class="math inline">\(\theta = 0\)</span>, wo die meisten Aufgaben ihre Information haben; zu den Rändern hin wird der Standardmessfehler rasch größer. Insgesamt misst der Test ungenau: Selbst im besten Fall ist <span class="math inline">\(s_e(\theta)\)</span> fast 1, also eine ganze Standardabweichung der Fähigkeit.</p>
+</div>
+</div>
+</div>
+</div>
+<div id="exr-irt-application" class="theorem exercise">
+<p><span class="theorem-title"><strong>Aufgabe 6 (Rückmeldung im Self-Assessment)</strong></span> Lea ist 18 und interessiert sich für ein Psychologiestudium. Im Self-Assessment löst sie vier der sechs Aufgaben. Im Rasch-Modell erhalten alle Personen mit demselben Summenwert denselben Personenparameter:</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">person.parameter</span>(model)</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Person Parameters:
+
+ Raw Score    Estimate Std.Error
+         0 -3.33540154        NA
+         1 -2.09124281 1.2147816
+         2 -0.90777987 1.0030640
+         3  0.03045129 0.9495153
+         4  0.94923746 0.9828573
+         5  2.06975607 1.1795177
+         6  3.24131996        NA</code></pre>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled" title="Hinweis">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-20-contents" aria-controls="callout-20" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Hinweis</span>Hinweis
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-20" class="callout-20-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Wer keine oder alle Aufgaben löst, hat keinen endlichen Personenparameter. eRm schätzt ihn für die Summenwerte 0 und 6 durch Extrapolation; deshalb fehlt dort der Standardfehler (<code>NA</code>).</p>
+</div>
+</div>
+</div>
+<ol type="a">
+<li>Welchen Personenparameter erhält Lea, und wie groß ist sein Standardmessfehler? Vergleichen Sie diesen mit <a href="#exr-irt-test-information" class="quarto-xref">Aufgabe&nbsp;5</a>.</li>
+</ol>
+<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-21-contents" aria-controls="callout-21" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tipp</span>Lösung
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-21" class="callout-21-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><span class="math inline">\(\hat{\theta} = 0.95\)</span>, Standardmessfehler 0.98. Das passt zu <span class="math inline">\(s_e(1) = 0.99\)</span> aus <a href="#exr-irt-test-information" class="quarto-xref">Aufgabe&nbsp;5</a>, denn Leas Personenparameter liegt nahe bei 1.</p>
+</div>
+</div>
+</div>
+<ol start="2" type="a">
+<li>Berechnen Sie ein Konfidenzintervall mit einem Konfidenzkoeffizienten von 95 % um Leas Personenparameter.</li>
+</ol>
+<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-22-contents" aria-controls="callout-22" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tipp</span>Lösung
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-22" class="callout-22-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><span class="math inline">\([-0.98, 2.88]\)</span></p>
+</div>
+</div>
+</div>
+<ol start="3" type="a">
+<li>Was kann die Studienberatung Lea auf dieser Grundlage zurückmelden?</li>
+</ol>
+<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-23-contents" aria-controls="callout-23" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tipp</span>Lösung
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-23" class="callout-23-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Nur sehr wenig: Das Intervall reicht vom unterdurchschnittlichen bis in den weit überdurchschnittlichen Bereich. Mit sechs Aufgaben misst der HMT-S für eine Rückmeldung an einzelne Personen zu ungenau; er eignet sich eher für Aussagen über Gruppen. Für eine individuelle Rückmeldung bräuchte das Self-Assessment mehr Aufgaben, etwa die Langform.</p>
+</div>
+</div>
+</div>
+</div>
+<div id="exr-irt-wald" class="theorem exercise">
+<p><span class="theorem-title"><strong>Aufgabe 7 (Wald-Test)</strong></span> Die Studienberatung prüft, ob die Aufgaben am Smartphone genauso schwer sind wie am Computer. Dazu schätzt sie das Rasch-Modell getrennt in beiden Gruppen.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>device <span class="ot">&lt;-</span> <span class="fu">factor</span>(hmt_short<span class="sc">$</span>device)</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>wald <span class="ot">&lt;-</span> <span class="fu">Waldtest</span>(model, <span class="at">splitcr =</span> device)</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Schwierigkeiten (beta) und ihre Varianzen (var) je Gruppe:</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="co"># 1 = Computer, 2 = Smartphone</span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(<span class="fu">data.frame</span>(</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">beta_1 =</span> <span class="sc">-</span>wald<span class="sc">$</span>betapar1, <span class="at">var_1 =</span> wald<span class="sc">$</span>se.beta1<span class="sc">^</span><span class="dv">2</span>,</span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">beta_2 =</span> <span class="sc">-</span>wald<span class="sc">$</span>betapar2, <span class="at">var_2 =</span> wald<span class="sc">$</span>se.beta2<span class="sc">^</span><span class="dv">2</span>,</span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>  <span class="at">row.names =</span> <span class="fu">names</span>(items)</span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>), <span class="dv">3</span>)</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>     beta_1 var_1 beta_2 var_2
+hmt1 -1.960 0.020 -2.172 0.021
+hmt2 -0.849 0.012 -0.991 0.013
+hmt3 -0.146 0.011 -0.279 0.011
+hmt4  0.383 0.011  0.200 0.011
+hmt5  0.829 0.012  1.639 0.016
+hmt6  1.743 0.017  1.603 0.016</code></pre>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled" title="Hinweis">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-24-contents" aria-controls="callout-24" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Hinweis</span>Hinweis
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-24" class="callout-24-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><span class="math display">\[
+W_j = \frac{(\beta_{j,1} - \beta_{j,2})^2}{\sigma^2_{j,1} + \sigma^2_{j,2}}, \qquad T = \operatorname{sign}(\beta_{j,1} - \beta_{j,2}) \cdot \sqrt{W_j}
+\]</span></p>
+<p><span class="math inline">\(T\)</span> folgt einer Standardnormalverteilung.</p>
+</div>
+</div>
+</div>
+<ol type="a">
+<li>Berechnen Sie <span class="math inline">\(W_j\)</span> und <span class="math inline">\(T\)</span> für die Aufgaben 2 und 5.</li>
+</ol>
+<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-25-contents" aria-controls="callout-25" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tipp</span>Lösung
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-25" class="callout-25-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Aufgabe 2: <span class="math inline">\(W_2 = 0.81\)</span>, <span class="math inline">\(T = 0.90\)</span>. Aufgabe 5: <span class="math inline">\(W_5 = 23.43\)</span>, <span class="math inline">\(T = -4.84\)</span>.</p>
+</div>
+</div>
+</div>
+<ol start="2" type="a">
+<li>eRm gibt den Wald-Test für alle Aufgaben aus. Welche Aufgaben zeigen Misfit (<span class="math inline">\(\alpha = 0.05\)</span>, zweiseitig)?</li>
+</ol>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>wald</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Wald test on item level (z-values):
+
+          z-statistic p-value
+beta hmt1      -1.042   0.297
+beta hmt2      -0.903   0.367
+beta hmt3      -0.903   0.366
+beta hmt4      -1.237   0.216
+beta hmt5       4.850   0.000
+beta hmt6      -0.777   0.437</code></pre>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled" title="Hinweis">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-26-contents" aria-controls="callout-26" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Hinweis</span>Hinweis
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-26" class="callout-26-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>eRm rechnet mit Leichtigkeitsparametern. Die <code>z-statistic</code> hat deshalb den gleichen Betrag wie <span class="math inline">\(T\)</span>, aber das umgekehrte Vorzeichen.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-27-contents" aria-controls="callout-27" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tipp</span>Lösung
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-27" class="callout-27-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Nur <code>hmt5</code>: <span class="math inline">\(|T| = 4.84 &gt; 1.96\)</span> (<span class="math inline">\(p &lt; 0.001\)</span>). Die Aufgabe ist am Smartphone schwerer (<span class="math inline">\(\beta_{5,2} = 1.64\)</span>) als am Computer (<span class="math inline">\(\beta_{5,1} = 0.83\)</span>). Bei allen anderen Aufgaben ist <span class="math inline">\(|T| &lt; 1.96\)</span>.</p>
+</div>
+</div>
+</div>
+<ol start="3" type="a">
+<li>Woran könnte der Misfit von Aufgabe 5 liegen?</li>
+</ol>
+<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-28-contents" aria-controls="callout-28" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tipp</span>Lösung
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-28" class="callout-28-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Die Aufgabe könnte feine Details enthalten, die auf dem kleinen Bildschirm eines Smartphones schwer zu erkennen sind. An der Fähigkeit liegt es nicht: Die übrigen Aufgaben sind in beiden Gruppen etwa gleich schwer.</p>
+</div>
+</div>
+</div>
+</div>
+<div id="exr-irt-gof" class="theorem exercise">
+<p><span class="theorem-title"><strong>Aufgabe 8 (Grafischer Modelltest)</strong></span> Die Abbildung stellt die Itemschwierigkeiten am Computer und am Smartphone aus <a href="#exr-irt-wald" class="quarto-xref">Aufgabe&nbsp;7</a> gegenüber. Die Ellipsen zeigen für jede Aufgabe ein Konfidenzintervall in beide Richtungen (Konfidenzkoeffizient 95 %).</p>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="item-irt-ex_files/figure-html/graphical-model-check-1.png" class="img-fluid figure-img" alt="Itemschwierigkeiten am Computer (x-Achse) und am Smartphone (y-Achse) mit Konfidenzellipsen und Diagonale; die Ellipse von hmt5 liegt deutlich oberhalb der Diagonalen, alle anderen berühren sie" width="480"></p>
+</figure>
+</div>
+</div>
+</div>
+<ol type="a">
+<li>Welche Aufgabe weicht von der Diagonalen ab, und was bedeutet ihre Lage?</li>
+</ol>
+<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-29-contents" aria-controls="callout-29" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tipp</span>Lösung
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-29" class="callout-29-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><code>hmt5</code>: Ihre Ellipse liegt deutlich oberhalb der Diagonalen, die Aufgabe ist also am Smartphone schwerer. Die Ellipsen aller anderen Aufgaben berühren die Diagonale. Das stimmt mit dem Wald-Test überein.</p>
+</div>
+</div>
+</div>
+<ol start="2" type="a">
+<li>Die übrigen Aufgaben liegen leicht unterhalb der Diagonalen. Woran liegt das?</li>
+</ol>
+<div class="callout callout-style-default callout-note callout-titled" title="Hinweis">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-30-contents" aria-controls="callout-30" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Hinweis</span>Hinweis
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-30" class="callout-30-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Denken Sie an Teil c von <a href="#exr-irt-rasch" class="quarto-xref">Aufgabe&nbsp;2</a>.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-31-contents" aria-controls="callout-31" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tipp</span>Lösung
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-31" class="callout-31-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>An der Summennormierung: In jeder Gruppe summieren sich die Schwierigkeiten zu 0. Weil <code>hmt5</code> am Smartphone schwerer ist, müssen die übrigen Aufgaben dort etwas leichter erscheinen.</p>
+</div>
+</div>
+</div>
+</div>
+<div id="exr-irt-selection" class="theorem exercise">
+<p><span class="theorem-title"><strong>Aufgabe 9 (Itemselektion)</strong></span> Die Studienberatung fasst die Ergebnisse aus diesem Kapitel zusammen. Das Self-Assessment richtet sich an Studieninteressierte, die im schlussfolgernden Denken meist durchschnittlich bis überdurchschnittlich abschneiden.</p>
+<ol type="a">
+<li>Welche Aufgaben sollte die Studienberatung behalten, überarbeiten oder streichen? Begründen Sie Ihre Antwort mit Schwierigkeit, Information und Itemfit.</li>
+</ol>
+<div class="callout callout-style-default callout-note callout-titled" title="Hinweis">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-32-contents" aria-controls="callout-32" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Hinweis</span>Hinweis
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-32" class="callout-32-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Die Vorlesung nennt für die Itemselektion unter anderem: Die Iteminformation soll zur Zielgruppe passen, und die Itemparameter sollen zwischen Gruppen invariant sein (Itemfit). Inhaltliche Überlegungen spielen ebenfalls eine Rolle.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-33-contents" aria-controls="callout-33" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tipp</span>Lösung
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-33" class="callout-33-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ul>
+<li><code>hmt5</code> überarbeiten, etwa mit größeren, klareren Figuren, oder nur am Computer vorgeben. Ohne Überarbeitung streichen: Sie misst am Smartphone nicht dasselbe wie am Computer, obwohl sie für die Zielgruppe viel Information liefert.</li>
+<li><code>hmt1</code> ist sehr leicht und liefert für die Zielgruppe kaum Information (0.04 bei <span class="math inline">\(\theta = 1\)</span>). Sie ließe sich durch eine schwerere Aufgabe ersetzen; als leichte Einstiegsaufgabe kann sie aber sinnvoll sein.</li>
+<li><code>hmt2</code>, <code>hmt3</code>, <code>hmt4</code> und <code>hmt6</code> passen zum Modell und decken den mittleren bis oberen Bereich ab: behalten.</li>
+</ul>
+</div>
+</div>
+</div>
+<ol start="2" type="a">
+<li>Warum ist es keine gute Lösung, die beiden auffälligen Aufgaben einfach zu streichen?</li>
+</ol>
+<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-34-contents" aria-controls="callout-34" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tipp</span>Lösung
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-34" class="callout-34-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Mit nur vier Aufgaben sänke die ohnehin geringe Testinformation weiter, und der Standardmessfehler würde noch größer. Besser ist es, die Aufgaben zu überarbeiten oder zu ersetzen und den überarbeiteten Test erneut an einer neuen Stichprobe zu erproben.</p>
+</div>
+</div>
+</div>
+</div>
+
+
+
+
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">Literatur</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" data-line-spacing="2" role="list">
+<div id="ref-heydasch2014" class="csl-entry" role="listitem">
+Heydasch, T. (2014). <em>The <span>Hagen</span> <span>Matrices</span> <span>Test</span> (<span>HMT</span>)</em>. FernUniversität in Hagen. <a href="https://doi.org/10.13140/RG.2.2.31433.75361">https://doi.org/10.13140/RG.2.2.31433.75361</a>
+</div>
+<div id="ref-heydasch2013" class="csl-entry" role="listitem">
+Heydasch, T., Haubrich, J., &amp; Renner, K.-H. (2013). The short version of the <span>Hagen</span> <span>Matrices</span> <span>Test</span> (<span>HMT-S</span>): 6-item induction intelligence test. <em>methods, data, analyses</em>, <em>7</em>(2), 183–208. <a href="https://doi.org/10.12758/mda.2013.011">https://doi.org/10.12758/mda.2013.011</a>
+</div>
+<div id="ref-mair2007" class="csl-entry" role="listitem">
+Mair, P., &amp; Hatzinger, R. (2007). Extended Rasch Modeling: The <span>eRm</span> Package for the Application of <span>IRT</span> Models in <span>R</span>. <em>Journal of Statistical Software</em>, <em>20</em>(9), 1–20. <a href="https://doi.org/10.18637/jss.v020.i09">https://doi.org/10.18637/jss.v020.i09</a>
+</div>
+</div></section></div></main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Kopiert");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Kopiert");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/sbissantz\.github\.io\/irtea\/");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+      &nbsp;
+    </div>   
+    <div class="nav-footer-center">
+<p>Lizenz: GPL-3</p>
+</div>
+    <div class="nav-footer-right">
+      &nbsp;
+    </div>
+  </div>
+</footer>
+
+
+
+
+</body></html>

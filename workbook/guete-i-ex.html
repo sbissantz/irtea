@@ -1,0 +1,1327 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="de" xml:lang="de"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.10.19">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>3 Gütekriterien I – B.F.3 Diagnostik &amp; Testtheorie</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../images/logo.png" rel="icon" type="image/png">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-bf27225e3a48a9273f3daa8f8e829971.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-cbe15cd55579b32cf8c48135cfb2cd9e.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "Keine Treffer",
+    "search-matching-documents-text": "Treffer",
+    "search-copy-link-title": "Link in die Suche kopieren",
+    "search-hide-matches-text": "Zusätzliche Treffer verbergen",
+    "search-more-match-text": "weitere Treffer in diesem Dokument",
+    "search-more-matches-text": "weitere Treffer in diesem Dokument",
+    "search-clear-button-title": "Zurücksetzen",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Abbrechen",
+    "search-submit-button-title": "Abschicken",
+    "search-label": "Suchen"
+  }
+}</script>
+<script src="../site_libs/quarto-diagram/mermaid.min.js"></script>
+<script src="../site_libs/quarto-diagram/mermaid-init.js"></script>
+<link href="../site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
+
+
+</head>
+
+<body class="nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a href="../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../images/logo.png" alt="" class="navbar-logo light-content">
+    <img src="../images/logo.png" alt="" class="navbar-logo dark-content">
+    </a>
+    <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">B.F.3 Diagnostik &amp; Testtheorie</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Suchen"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Navigation umschalten" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../index.html"> 
+<span class="menu-text">Start</span></a>
+  </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-folien" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Folien</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-folien">    
+        <li>
+    <a class="dropdown-item" href="../slides/basics-inp.html">
+ <span class="dropdown-text">01 Grundlagen</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../slides/efa-inp.html">
+ <span class="dropdown-text">08 Exploratorische Faktorenanalyse</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-bungsheft" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Übungsheft</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-bungsheft">    
+        <li>
+    <a class="dropdown-item" href="../workbook/basics-ex.html">
+ <span class="dropdown-text">1. &amp; 2. Rechenkompetenzen</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../workbook/guete-i-ex.html">
+ <span class="dropdown-text">3. Gütekriterien I</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../workbook/efa-ex.html">
+ <span class="dropdown-text">8. &amp; 9. Exploratorische Faktorenanalyse</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../workbook/item-ktt-ex.html">
+ <span class="dropdown-text">10. Itemanalyse I</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../workbook/item-irt-ex.html">
+ <span class="dropdown-text">11. Itemanalyse II</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../workbook/diagnostic-ii-ex.html">
+ <span class="dropdown-text">12. Diagnostische Rechenkompetenzen II</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../workbook/guete-ii-ex.html">
+ <span class="dropdown-text">13. Gütekriterien II</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="../package.html"> 
+<span class="menu-text">R-Paket</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+        
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">3 Gütekriterien I</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<div class="callout callout-style-default callout-important callout-titled" title="Work in Progress">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Wichtig</span>Work in Progress
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Dieses Kapitel wird derzeit intern überarbeitet. Aufgaben, Daten und Lösungen können sich noch ändern. Bitte bearbeiten Sie die Aufgaben erst, wenn die Überarbeitung abgeschlossen ist und dieser Hinweis entfernt wurde.</p>
+</div>
+</div>
+<p>Wer in einem Gutachten die Auswahl eines Tests begründet, fasst für Reliabilität und Validität konkrete Befunde zusammen; die bloße Feststellung, ein Gütekriterium sei gegeben, genügt dafür nicht. Wie solche Begründungen aussehen, zeigen Testrezensionen. Im deutschen Sprachraum entstehen sie nach dem Testbeurteilungssystem des Diagnostik- und Testkuratoriums (TBS-DTK).</p>
+<div id="exr-tbs-dtk" class="theorem exercise">
+<p><span class="theorem-title"><strong>Aufgabe 1 (Das Testbeurteilungssystem TBS-DTK)</strong></span> Lesen Sie die Abschnitte 1 bis 3 und die Tabellen 1 und 2 des <a href="https://www.bdp-verband.de/fileadmin/user_upload/BDP/website/dokumente/PDF/Profession/Testrezensionen/reportpsychologie_11_12-2023_TBS-DTK.pdf">Testbeurteilungssystems des Diagnostik- und Testkuratoriums</a> <span class="citation" data-cites="dtk2023">(TBS-DTK, <a href="#ref-dtk2023" role="doc-biblioref">Diagnostik- und Testkuratorium, 2023</a>)</span>.</p>
+<ol type="a">
+<li>Was ist das TBS-DTK?</li>
+</ol>
+<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tipp</span>Lösung
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Das Testbeurteilungssystem des Diagnostik- und Testkuratoriums der Föderation Deutscher Psychologenvereinigungen (DGPs und BDP). Es legt fest, nach welchen Richtlinien und in welchem Ablauf publizierte Tests im deutschen Sprachraum rezensiert werden.</p>
+</div>
+</div>
+</div>
+<ol start="2" type="a">
+<li>Was bewertet eine TBS-DTK-Rezension?</li>
+</ol>
+<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tipp</span>Lösung
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Die Qualität eines Tests anhand seiner Verfahrenshinweise, vor allem seine Gütekriterien. Objektivität, Zuverlässigkeit und Gültigkeit (einschließlich Fairness) sowie der Informationsgehalt der Verfahrenshinweise werden auf einer vierstufigen Skala bewertet: Die Anforderungen sind voll, weitgehend, teilweise oder nicht erfüllt. Normierung, Störanfälligkeit, Unverfälschbarkeit und Skalierung werden frei beurteilt.</p>
+</div>
+</div>
+</div>
+<p>Die Abbildung zeigt den Ablauf einer Rezension; drei Schritte fehlen.</p>
+<div class="cell" data-fig-width="4" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class="figure"><p></p>
+<div>
+<pre class="mermaid mermaid-js">%%{init: {"htmlLabels": false, "flowchart": {"htmlLabels": false}, "themeVariables": {"fontFamily": "Fira Sans"}, "themeCSS": "background-color: #fafafa;"}}%%
+flowchart TB
+  classDef step fill:#3B528B,stroke:#3B528B,color:#fff
+  classDef gap fill:#fafafa,stroke:#3B528B,stroke-dasharray: 4 4,color:#23373b
+  classDef done fill:#5DC863,stroke:#5DC863,color:#23373b
+  select["Auswahl des Tests durch das DTK"]:::step
+  commission["?"]:::gap
+  party1["Partei 1: Prüfung und Bewertung"]:::step
+  party2["Partei 2: Prüfung und Bewertung"]:::step
+  joint["?"]:::gap
+  check["Prüfung durch das DTK"]:::step
+  comment["?"]:::gap
+  publish["Publikation"]:::done
+  select --&gt; commission
+  commission --&gt; party1
+  commission --&gt; party2
+  party1 --&gt; joint
+  party2 --&gt; joint
+  joint --&gt; check
+  check --&gt; comment
+  comment --&gt; publish
+</pre>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
+<ol start="3" type="a">
+<li>Ergänzen Sie die drei fehlenden Schritte.</li>
+</ol>
+<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tipp</span>Lösung
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-4" class="callout-4-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Von oben nach unten:</p>
+<ol type="1">
+<li>Beauftragung von zwei Rezensions-Parteien</li>
+<li>Gemeinsame Rezension</li>
+<li>Stellungnahme der Testautor:innen</li>
+</ol>
+</div>
+</div>
+</div>
+<ol start="4" type="a">
+<li>Wie arbeiten die beiden Rezensions-Parteien, bevor sie die gemeinsame Rezension verfassen?</li>
+</ol>
+<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tipp</span>Lösung
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-5" class="callout-5-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Zwei Rezensions-Parteien beurteilen den Test zunächst unabhängig voneinander und anonym; erst danach verfassen sie eine gemeinsame Rezension, bei Uneinigkeit mit beiden Positionen. Die Testautor:innen dürfen nur auf sachliche Fehler hinweisen, nicht die Bewertungen ändern lassen. Bewertet wird kriterienorientiert, ohne Vergleich mit anderen Tests.</p>
+</div>
+</div>
+</div>
+<ol start="5" type="a">
+<li>Was geschieht, wenn sich die beiden Parteien nicht auf eine gemeinsame Fassung einigen können?</li>
+</ol>
+<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tipp</span>Lösung
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-6" class="callout-6-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Die Rezension stellt die unterschiedlichen Positionen dar; über die formalisierten Bewertungen entscheidet dann das DTK.</p>
+</div>
+</div>
+</div>
+<ol start="6" type="a">
+<li>Wozu dürfen die Testautor:innen Stellung nehmen?</li>
+</ol>
+<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tipp</span>Lösung
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-7" class="callout-7-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Nur zu sachlichen Fehlern im Entwurf der Rezension, nicht dazu, ob sie mit den Bewertungen einverstanden sind.</p>
+</div>
+</div>
+</div>
+<ol start="7" type="a">
+<li>Fassen Sie aus Ihren Antworten zu den Teilen a bis f zusammen, was das Besondere an diesem Ablauf ist.</li>
+</ol>
+<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tipp</span>Lösung
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-8" class="callout-8-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Zum Beispiel: Zwei unabhängige, anonyme Urteile werden erst danach zu einer gemeinsamen Rezension zusammengeführt, Uneinigkeit wird offen dargestellt, und die Testautor:innen können die Bewertungen nicht beeinflussen. So sollen die Rezensionen möglichst unabhängig und unvoreingenommen sein.</p>
+</div>
+</div>
+</div>
+</div>
+<div id="exr-test-review" class="theorem exercise">
+<p><span class="theorem-title"><strong>Aufgabe 2 (Gütekriterien in einer Testrezension)</strong></span> Lesen Sie die <a href="https://www.bdp-verband.de/fileadmin/user_upload/BDP/website/dokumente/PDF/Profession/Testrezensionen/G-K/TBS-DTK-Rezension_ISK_reportpsychologie_01-2023_neu.pdf">Rezension des Inventars Sozialer Kompetenzen</a> <span class="citation" data-cites="kanning2009">(ISK, <a href="#ref-kanning2009" role="doc-biblioref">Kanning, 2009</a>)</span> von <span class="citation" data-cites="bosau2023">Bosau &amp; Ringelband (<a href="#ref-bosau2023" role="doc-biblioref">2023</a>)</span>. Das ISK ist ein Fragebogen, mit dem Personen ab 16 Jahren ihre sozialen Kompetenzen selbst einschätzen. Die Rezensenten stützen ihre Urteile auf das Manual des ISK. In den Teilen a bis d arbeiten Sie heraus, wie sie die Gütekriterien beurteilen und womit sie ihre Urteile begründen; in Teil e bilden Sie daraus ein eigenes Urteil. Die Rezension folgt der Fassung des TBS-DTK von 2018 <span class="citation" data-cites="dtk2018">(<a href="#ref-dtk2018" role="doc-biblioref">Diagnostik- und Testkuratorium, 2018</a>)</span>, deren vierstufige Bewertungsskala der aktuellen entspricht, und spricht von Zuverlässigkeit statt Reliabilität und von Gültigkeit statt Validität.</p>
+<ol type="a">
+<li><p>Objektivität: Lesen Sie den Abschnitt „Objektivität“.</p>
+<ol type="i">
+<li><p>Wie beurteilen die Rezensenten die Durchführungsobjektivität? Geben Sie ihre Begründung an.</p>
+<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-9-contents" aria-controls="callout-9" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tipp</span>Lösung
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-9" class="callout-9-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Positiv: Sie sehen sie durch die vollständige Standardisierung von Instruktionen und Fragebogen gesichert; ein Beispiel-Item ist vorhanden.</p>
+</div>
+</div>
+</div></li>
+<li><p>Wie beurteilen die Rezensenten die Auswertungsobjektivität? Geben Sie ihre Begründung an.</p>
+<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-10-contents" aria-controls="callout-10" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tipp</span>Lösung
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-10" class="callout-10-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Positiv, mit einer Einschränkung: Auswertungsschablonen, deren Gebrauch ausführlich erklärt wird, sichern sie, und negativ gepolte Items sind gekennzeichnet. Weil die Items auf dem Antwortbogen teils in anderer Reihenfolge stehen als im Fragebogen, sind aber Eingabefehler möglich.</p>
+</div>
+</div>
+</div></li>
+<li><p>Wie beurteilen die Rezensenten die Interpretationsobjektivität? Geben Sie ihre Begründung an.</p>
+<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-11-contents" aria-controls="callout-11" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tipp</span>Lösung
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-11" class="callout-11-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Positiv, mit einer Empfehlung: Zwei Fallbeispiele, Interpretationshilfen und Normen (Standardwerte, Stanine, Prozentränge) sowie Konfidenzintervalle und kritische Differenzen sichern sie. Auf dem Auswertungsblatt sollte aber ein Intervall statt eines Einzelwerts eingetragen werden.</p>
+</div>
+</div>
+</div></li>
+</ol></li>
+<li><p>Reliabilität: Lesen Sie den Abschnitt „Zuverlässigkeit“.</p>
+<ol type="i">
+<li><p>Welche der vier Methoden der Reliabilitätsschätzung (Retest, Paralleltest, Testhalbierung, interne Konsistenz) wurden laut Rezension angewandt?</p>
+<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-12-contents" aria-controls="callout-12" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tipp</span>Lösung
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-12" class="callout-12-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Interne Konsistenz, Testhalbierung und Retest.</p>
+</div>
+</div>
+</div></li>
+<li><p>Wie beurteilen die Rezensenten die interne Konsistenz? Geben Sie ihre Begründung an.</p>
+<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-13-contents" aria-controls="callout-13" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tipp</span>Lösung
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-13" class="callout-13-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Als akzeptabel: Die Subskalen erreichen mindestens 0.68, oft 0.80 oder mehr, die Sekundärskalen 0.76 bis 0.90; die Kurzform liegt mit 0.66 bis 0.79 etwas niedriger.</p>
+</div>
+</div>
+</div></li>
+<li><p>Wie beurteilen die Rezensenten die Retest-Reliabilität? Geben Sie ihre Begründung an.</p>
+<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-14-contents" aria-controls="callout-14" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tipp</span>Lösung
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-14" class="callout-14-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Kritisch: Die Werte liegen zwar je nach Subskala über 0.80, beruhen aber nur auf 47 Studierenden und auf einem relativ kurzen Intervall von 13 bis 17 Wochen.</p>
+</div>
+</div>
+</div></li>
+<li><p>Warum fehlt die Paralleltestreliabilität?</p>
+<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-15-contents" aria-controls="callout-15" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tipp</span>Lösung
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-15" class="callout-15-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Weil es keine Parallelform des ISK gibt.</p>
+</div>
+</div>
+</div></li>
+</ol></li>
+<li><p>Validität: Lesen Sie den Abschnitt „Gültigkeit“ und die Darstellung der Testkonstruktion.</p>
+<ol type="i">
+<li><p>Wie beurteilen die Rezensenten die Inhaltsvalidität? Geben Sie ihre Begründung an.</p>
+<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-16-contents" aria-controls="callout-16" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tipp</span>Lösung
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-16" class="callout-16-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Kritisch: Die 17 Kompetenzbereiche wurden zwar aus häufig zitierten Kompetenzkatalogen abgeleitet, manche Items erfassen aber statt einer Kompetenz eher konkretes Verhalten, Interessen oder Ziele.</p>
+</div>
+</div>
+</div></li>
+<li><p>Wie beurteilen die Rezensenten die konvergente und die diskriminante Validität? Geben Sie ihre Begründung an.</p>
+<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-17-contents" aria-controls="callout-17" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tipp</span>Lösung
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-17" class="callout-17-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Positiv, mit einer Einschränkung: Das Manual berichtet umfangreiche Korrelationen mit 24 Persönlichkeitsverfahren, allerdings überwiegend aus Studierendenstichproben; eine Validierung an Berufstätigen wäre wünschenswert.</p>
+</div>
+</div>
+</div></li>
+<li><p>Wie beurteilen die Rezensenten die faktorielle Validität? Geben Sie ihre Begründung an.</p>
+<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-18-contents" aria-controls="callout-18" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tipp</span>Lösung
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-18" class="callout-18-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Positiv: Subskalen derselben Sekundärskala korrelieren mit etwa 0.40 bis 0.50, Subskalen verschiedener Sekundärskalen meist gering, die Sekundärskalen untereinander nur mit etwa 0.20. Die Faktorenstruktur ordnet die Subskalen eindeutig den Sekundärskalen zu, ohne nennenswerte Querladungen. Die Skalen lassen sich deshalb getrennt interpretieren.</p>
+</div>
+</div>
+</div></li>
+<li><p>Wie beurteilen die Rezensenten die Konstruktvalidität insgesamt? Geben Sie ihre Begründung an.</p>
+<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-19-contents" aria-controls="callout-19" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tipp</span>Lösung
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-19" class="callout-19-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Positiv: Die Analysen ergeben mit den übrigen Validitätsbelegen ein stimmiges Gesamtbild und zeigen die inhaltlichen Bezüge zu anderen Konstrukten. Als Einschränkung bleibt, dass die Belege überwiegend von Studierenden stammen.</p>
+</div>
+</div>
+</div></li>
+<li><p>Wie beurteilen die Rezensenten die Kriteriumsvalidität? Geben Sie ihre Begründung an.</p>
+<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-20-contents" aria-controls="callout-20" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tipp</span>Lösung
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-20" class="callout-20-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Als akzeptabel bis gut, je nach Kriterium unterschiedlich. Einschränkung: Manche Kriterien (etwa Arbeits- oder Lebenszufriedenheit) passen nur bedingt als Erfolgskriterien sozialer Kompetenz; passender wären etwa die Größe sozialer Netzwerke oder die Lösung sozialer Konflikte.</p>
+</div>
+</div>
+</div></li>
+</ol></li>
+<li><p>Nebengütekriterien: Zu den Nebengütekriterien zählen Normierung, Ökonomie, Nützlichkeit, Zumutbarkeit, Unverfälschbarkeit und Fairness. Lesen Sie die Abschnitte „Normierung“ und „Weitere Gütekriterien“.</p>
+<ol type="i">
+<li><p>Was spricht nach der Rezension für die Normierung?</p>
+<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-21-contents" aria-controls="callout-21" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tipp</span>Lösung
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-21" class="callout-21-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>4208 Personen aus 20 Einzelstudien, getrennte Normen für Allgemeinbevölkerung, Schüler:innen und Auszubildende, Studierende und Berufstätige, jeweils für Männer und Frauen.</p>
+</div>
+</div>
+</div></li>
+<li><p>Was spricht nach der Rezension gegen die Normierung?</p>
+<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-22-contents" aria-controls="callout-22" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tipp</span>Lösung
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-22" class="callout-22-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Die Erhebungszeiträume fehlen, und die Normdaten sind relativ alt. Obwohl das ISK auch für die Personalauswahl gedacht ist, sind nur etwa 40 % der Normstichprobe Berufstätige, und diese stammen aus wenigen Berufsgruppen.</p>
+</div>
+</div>
+</div></li>
+<li><p>Die DIN 33430 legt Qualitätsstandards für die berufsbezogene Eignungsdiagnostik fest <span class="citation" data-cites="din2016">(<a href="#ref-din2016" role="doc-biblioref">DIN Deutsches Institut für Normung, 2016</a>)</span>. Zur Normierung verlangt sie unter anderem, die Normen spätestens alle 8 Jahre zu überprüfen und gegebenenfalls zu erneuern. Wie beurteilen Sie die Normierung (Eichung) des ISK nach der DIN 33430?</p>
+<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-23-contents" aria-controls="callout-23" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tipp</span>Lösung
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-23" class="callout-23-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Die Anforderung der DIN 33430 ist nicht erfüllt: Die jüngsten Normdaten sind älter als 8 Jahre, die Normen müssten also überprüft und erneuert werden.</p>
+</div>
+</div>
+</div></li>
+<li><p>Wie beurteilen die Rezensenten die Ökonomie? Geben Sie ihre Begründung an.</p>
+<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-24-contents" aria-controls="callout-24" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tipp</span>Lösung
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-24" class="callout-24-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Als hoch. Eine eigene Begründung nennen sie dafür nicht; die Bearbeitungszeiten, die sie bei den Verfahrenshinweisen angeben (etwa 10 bzw. 20 Minuten, Auswertung etwa 10 Minuten), stützen das Urteil.</p>
+</div>
+</div>
+</div></li>
+<li><p>Wie beurteilen die Rezensenten die Nützlichkeit? Geben Sie ihre Begründung an.</p>
+<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-25-contents" aria-controls="callout-25" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tipp</span>Lösung
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-25" class="callout-25-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Als gegeben: Bisher fehlte ein umfassendes Selbsteinschätzungsverfahren für soziale Kompetenzen; das ISK ergänzt damit die bestehenden Verfahren.</p>
+</div>
+</div>
+</div></li>
+<li><p>Wie beurteilen die Rezensenten die Zumutbarkeit? Geben Sie ihre Begründung an.</p>
+<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-26-contents" aria-controls="callout-26" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tipp</span>Lösung
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-26" class="callout-26-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Als nicht zu beanstanden; eine Begründung nennen sie nicht.</p>
+</div>
+</div>
+</div></li>
+<li><p>Wie beurteilen die Rezensenten die Unverfälschbarkeit? Geben Sie ihre Begründung an.</p>
+<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-27-contents" aria-controls="callout-27" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tipp</span>Lösung
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-27" class="callout-27-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Als eingeschränkt: Wie viele Selbsteinschätzungsverfahren ist das ISK nicht davor geschützt, dass Personen sich beschönigend darstellen. Eine Untersuchung zur Anfälligkeit für sozial erwünschtes Antworten liegt vor.</p>
+</div>
+</div>
+</div></li>
+<li><p>Wie beurteilen die Rezensenten die Fairness? Geben Sie ihre Begründung an.</p>
+<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-28-contents" aria-controls="callout-28" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tipp</span>Lösung
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-28" class="callout-28-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Als gegeben: Die Normwerte sind über verschiedene Personengruppen hinweg ähnlich; eine Benachteiligung einzelner Gruppen zeigt sich nicht.</p>
+</div>
+</div>
+</div></li>
+</ol></li>
+<li><p>Gesamturteil: Die Rezensenten kennen das Manual mit allen Kennwerten; Ihnen liegt nur die Rezension vor. Kreuzen Sie an, inwieweit die TBS-DTK-Anforderungen nach Ihrem eigenen Urteil erfüllt sind.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 8%">
+<col style="width: 16%">
+<col style="width: 15%">
+<col style="width: 9%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Inventar Sozialer Kompetenzen (ISK)</th>
+<th style="text-align: center;">voll</th>
+<th style="text-align: center;">weitgehend</th>
+<th style="text-align: center;">teilweise</th>
+<th style="text-align: center;">nicht</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Objektivität</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="even">
+<td>Zuverlässigkeit</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="odd">
+<td>Validität</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+</tbody>
+</table>
+<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-29-contents" aria-controls="callout-29" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tipp</span>Lösung
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-29" class="callout-29-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Zum Beispiel, wie in der Rezension:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 8%">
+<col style="width: 16%">
+<col style="width: 15%">
+<col style="width: 9%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Inventar Sozialer Kompetenzen (ISK)</th>
+<th style="text-align: center;">voll</th>
+<th style="text-align: center;">weitgehend</th>
+<th style="text-align: center;">teilweise</th>
+<th style="text-align: center;">nicht</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Objektivität</td>
+<td style="text-align: center;">x</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="even">
+<td>Zuverlässigkeit</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">x</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="odd">
+<td>Validität</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">x</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div></li>
+</ol>
+</div>
+<!--
+Vorlage für eine Aufgabe: kopieren, Anker (#exr-…) und Titel anpassen.
+
+::: {#exr-name}
+## Titel
+
+Aufgabentext.
+
+::: {.callout-note title="Hinweis" collapse="true"}
+Hinweis oder Formel.
+:::
+
+a. Erster Teil.
+
+::: {.callout-tip title="Lösung" collapse="true"}
+Nur das Ergebnis.
+:::
+
+b. Zweiter Teil.
+
+::: {.callout-tip title="Lösung" collapse="true"}
+Nur das Ergebnis.
+:::
+:::
+-->
+
+
+
+
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">Literatur</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" data-line-spacing="2" role="list">
+<div id="ref-bosau2023" class="csl-entry" role="listitem">
+Bosau, C., &amp; Ringelband, O. (2023). <span>TBS-DTK</span>-Rezension: Inventar Sozialer Kompetenzen (<span>ISK</span>). <em>Report Psychologie</em>, <em>48</em>(1), 23–25. <a href="https://www.bdp-verband.de/fileadmin/user_upload/BDP/website/dokumente/PDF/Profession/Testrezensionen/G-K/TBS-DTK-Rezension_ISK_reportpsychologie_01-2023_neu.pdf">https://www.bdp-verband.de/fileadmin/user_upload/BDP/website/dokumente/PDF/Profession/Testrezensionen/G-K/TBS-DTK-Rezension_ISK_reportpsychologie_01-2023_neu.pdf</a>
+</div>
+<div id="ref-dtk2018" class="csl-entry" role="listitem">
+Diagnostik- und Testkuratorium. (2018). <span>TBS-DTK</span>: Testbeurteilungssystem des Diagnostik- und Testkuratoriums der Föderation Deutscher Psychologenvereinigungen. Revidierte Fassung vom 3. Januar 2018. <em>Psychologische Rundschau</em>, <em>69</em>(2), 109–116. <a href="https://doi.org/10.1026/0033-3042/a000401">https://doi.org/10.1026/0033-3042/a000401</a>
+</div>
+<div id="ref-dtk2023" class="csl-entry" role="listitem">
+Diagnostik- und Testkuratorium. (2023). <span>TBS-DTK</span>: Testbeurteilungssystem des Diagnostik- und Testkuratoriums der Föderation Deutscher Psychologenvereinigungen. Vierte, revidierte Fassung vom 31. Juli 2023. <em>Report Psychologie</em>, <em>48</em>(11+12), 18–27. <a href="https://www.bdp-verband.de/fileadmin/user_upload/BDP/website/dokumente/PDF/Profession/Testrezensionen/reportpsychologie_11_12-2023_TBS-DTK.pdf">https://www.bdp-verband.de/fileadmin/user_upload/BDP/website/dokumente/PDF/Profession/Testrezensionen/reportpsychologie_11_12-2023_TBS-DTK.pdf</a>
+</div>
+<div id="ref-din2016" class="csl-entry" role="listitem">
+DIN Deutsches Institut für Normung. (2016). <em>Anforderungen an berufsbezogene Eignungsdiagnostik</em> (Norm DIN 33430:2016-07). Beuth.
+</div>
+<div id="ref-kanning2009" class="csl-entry" role="listitem">
+Kanning, U. P. (2009). <em>Inventar Sozialer Kompetenzen (<span>ISK</span>)</em>. Hogrefe.
+</div>
+</div></section></div></main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Kopiert");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Kopiert");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/sbissantz\.github\.io\/irtea\/");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+      &nbsp;
+    </div>   
+    <div class="nav-footer-center">
+<p>Lizenz: GPL-3</p>
+</div>
+    <div class="nav-footer-right">
+      &nbsp;
+    </div>
+  </div>
+</footer>
+
+
+
+
+</body></html>

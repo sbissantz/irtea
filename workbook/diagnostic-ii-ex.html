@@ -1,0 +1,2002 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="de" xml:lang="de"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.10.19">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>12 Diagnostische Rechenkompetenzen II – B.F.3 Diagnostik &amp; Testtheorie</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../images/logo.png" rel="icon" type="image/png">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-bf27225e3a48a9273f3daa8f8e829971.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-cbe15cd55579b32cf8c48135cfb2cd9e.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "Keine Treffer",
+    "search-matching-documents-text": "Treffer",
+    "search-copy-link-title": "Link in die Suche kopieren",
+    "search-hide-matches-text": "Zusätzliche Treffer verbergen",
+    "search-more-match-text": "weitere Treffer in diesem Dokument",
+    "search-more-matches-text": "weitere Treffer in diesem Dokument",
+    "search-clear-button-title": "Zurücksetzen",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Abbrechen",
+    "search-submit-button-title": "Abschicken",
+    "search-label": "Suchen"
+  }
+}</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+</head>
+
+<body class="nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a href="../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../images/logo.png" alt="" class="navbar-logo light-content">
+    <img src="../images/logo.png" alt="" class="navbar-logo dark-content">
+    </a>
+    <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">B.F.3 Diagnostik &amp; Testtheorie</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Suchen"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Navigation umschalten" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../index.html"> 
+<span class="menu-text">Start</span></a>
+  </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-folien" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Folien</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-folien">    
+        <li>
+    <a class="dropdown-item" href="../slides/basics-inp.html">
+ <span class="dropdown-text">01 Grundlagen</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../slides/efa-inp.html">
+ <span class="dropdown-text">08 Exploratorische Faktorenanalyse</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-bungsheft" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Übungsheft</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-bungsheft">    
+        <li>
+    <a class="dropdown-item" href="../workbook/basics-ex.html">
+ <span class="dropdown-text">1. &amp; 2. Rechenkompetenzen</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../workbook/guete-i-ex.html">
+ <span class="dropdown-text">3. Gütekriterien I</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../workbook/efa-ex.html">
+ <span class="dropdown-text">8. &amp; 9. Exploratorische Faktorenanalyse</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../workbook/item-ktt-ex.html">
+ <span class="dropdown-text">10. Itemanalyse I</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../workbook/item-irt-ex.html">
+ <span class="dropdown-text">11. Itemanalyse II</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../workbook/diagnostic-ii-ex.html">
+ <span class="dropdown-text">12. Diagnostische Rechenkompetenzen II</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../workbook/guete-ii-ex.html">
+ <span class="dropdown-text">13. Gütekriterien II</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="../package.html"> 
+<span class="menu-text">R-Paket</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+        
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">12 Diagnostische Rechenkompetenzen II</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<div class="callout callout-style-default callout-important callout-titled" title="In Überarbeitung">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Wichtig</span>In Überarbeitung
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Dieses Kapitel wird derzeit intern überarbeitet. Aufgaben, Daten und Lösungen können sich noch ändern. Bitte bearbeiten Sie die Aufgaben erst, wenn die Überarbeitung abgeschlossen ist und dieser Hinweis entfernt wurde.</p>
+</div>
+</div>
+<p>In diesem Kapitel üben Sie die Berechnung von Konfidenzintervallen um Normwerte, das Prüfen diagnostischer Hypothesen, die Güte von Klassifikationen und die Bewertung von Veränderungen. Alle Fälle und Daten sind fiktiv.</p>
+<div id="exr-critical-z" class="theorem exercise">
+<p><span class="theorem-title"><strong>Aufgabe 1 (Kritische <em>z</em>-Werte)</strong></span> Die folgende Tabelle zeigt einen Auszug aus der Tabelle der Standardnormalverteilung: Links von <span class="math inline">\(z\)</span> liegt der Flächenanteil <span class="math inline">\(p\)</span>.</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th><span class="math inline">\(p\)</span></th>
+<th style="text-align: right;">0.900</th>
+<th style="text-align: right;">0.950</th>
+<th style="text-align: right;">0.975</th>
+<th style="text-align: right;">0.990</th>
+<th style="text-align: right;">0.995</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><span class="math inline">\(z\)</span></td>
+<td style="text-align: right;">1.28</td>
+<td style="text-align: right;">1.645</td>
+<td style="text-align: right;">1.96</td>
+<td style="text-align: right;">2.33</td>
+<td style="text-align: right;">2.58</td>
+</tr>
+</tbody>
+</table>
+<p>Welcher kritische <em>z</em>-Wert passt zu den folgenden Situationen?</p>
+<ol type="a">
+<li>Eine Schulpsychologin prüft mit einem Konfidenzkoeffizienten von 99 %, ob die Rechenleistung eines Kindes unterdurchschnittlich ist.</li>
+</ol>
+<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tipp</span>Lösung
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><span class="math inline">\(z = 2.33\)</span> (einseitig)</p>
+</div>
+</div>
+</div>
+<ol start="2" type="a">
+<li>Eine Klinik prüft mit einem Konfidenzkoeffizienten von 95 %, ob ein Wert im Normalbereich liegt, also weder zu niedrig noch zu hoch ist.</li>
+</ol>
+<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tipp</span>Lösung
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><span class="math inline">\(z = 1.96\)</span> (zweiseitig)</p>
+</div>
+</div>
+</div>
+<ol start="3" type="a">
+<li>Ein Unternehmen prüft mit einem Konfidenzkoeffizienten von 95 %, ob eine Bewerberin überdurchschnittlich belastbar ist.</li>
+</ol>
+<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tipp</span>Lösung
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-4" class="callout-4-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><span class="math inline">\(z = 1.645\)</span> (einseitig)</p>
+</div>
+</div>
+</div>
+</div>
+<div id="exr-standard-values" class="theorem exercise">
+<p><span class="theorem-title"><strong>Aufgabe 2 (Standardwerte)</strong></span> Eine Forschungsgruppe der RPTU untersucht, wie sich eine schlaflose Nacht auf die Konzentration auswirkt. Damit die Ergebnisse nicht von besonders schwachen oder besonders starken Ausgangswerten abhängen, nimmt sie nur Personen mit durchschnittlicher Konzentrationsleistung auf. Jonas ist 19, studiert im ersten Semester und sammelt Versuchspersonenstunden. Um abzuklären, ob Jonas’ Konzentrationsleistung durchschnittlich ist und er an der Studie teilnehmen kann, führt man mit ihm im Vorfeld den Aufmerksamkeits- und Konzentrationstest d2-R <span class="citation" data-cites="brickenkamp2010">(<a href="#ref-brickenkamp2010" role="doc-biblioref">Brickenkamp et al., 2010</a>)</span> durch. Für seine Konzentrationsleistung erhält Jonas einen Standardwert von 108. Nehmen Sie als Reliabilitätsschätzer Cronbachs Alpha von 0.90 an und prüfen Sie damit die Hypothese, ob Jonas’ Konzentrationsleistung im d2-R im Vergleich zu Gleichaltrigen im durchschnittlichen Bereich liegt (<span class="math inline">\(90 \le \text{SW} \le 110\)</span>).</p>
+<div class="callout callout-style-default callout-note callout-titled" title="Hinweis">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Hinweis</span>Hinweis
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-5" class="callout-5-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Standardmessfehler und zweiseitiges Konfidenzintervall:</p>
+<p><span class="math display">\[
+s_e = SD_x \cdot \sqrt{1 - Rel_x}, \qquad KI = X \pm z_{\alpha/2} \cdot s_e
+\]</span></p>
+<p>Einseitiges Konfidenzintervall, je nach Richtung der Hypothese:</p>
+<p><span class="math display">\[
+KI_u = X - z_{\alpha} \cdot s_e \quad \text{bzw.} \quad KI_o = X + z_{\alpha} \cdot s_e
+\]</span></p>
+<p>Standardwerte haben einen Mittelwert von 100 und eine Standardabweichung von 10.</p>
+</div>
+</div>
+</div>
+<ol type="a">
+<li>Berechnen Sie den Standardmessfehler.</li>
+</ol>
+<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tipp</span>Lösung
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-6" class="callout-6-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><span class="math inline">\(s_e \approx 3.16\)</span></p>
+</div>
+</div>
+</div>
+<ol start="2" type="a">
+<li>Berechnen Sie das passende Konfidenzintervall mit einem Konfidenzkoeffizienten von 95 % um Jonas’ Standardwert.</li>
+</ol>
+<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tipp</span>Lösung
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-7" class="callout-7-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><span class="math inline">\([101.80, 114.20]\)</span></p>
+</div>
+</div>
+</div>
+<ol start="3" type="a">
+<li>Wie lässt sich das Intervall interpretieren?</li>
+</ol>
+<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tipp</span>Lösung
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-8" class="callout-8-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Mit 95%iger Wahrscheinlichkeit gehört das berechnete Konfidenzintervall zu denjenigen Intervallen, die Jonas’ wahren Wert enthalten. Es ist daher sehr plausibel, dass sein wahrer Wert zwischen 101.80 und 114.20 liegt.</p>
+</div>
+</div>
+</div>
+<ol start="4" type="a">
+<li>Wird die Hypothese positiv oder negativ beantwortet?</li>
+</ol>
+<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-9-contents" aria-controls="callout-9" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tipp</span>Lösung
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-9" class="callout-9-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Negativ.</p>
+</div>
+</div>
+</div>
+<ol start="5" type="a">
+<li>Was folgt daraus für die globale Fragestellung?</li>
+</ol>
+<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-10-contents" aria-controls="callout-10" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tipp</span>Lösung
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-10" class="callout-10-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Jonas’ Konzentrationsleistung lässt sich als durchschnittlich bis überdurchschnittlich beschreiben. Nach dem Aufnahmekriterium der Studie spricht das dagegen, dass Jonas an der Studie teilnimmt.</p>
+</div>
+</div>
+</div>
+<ol start="6" type="a">
+<li>Zwischen welchen Standardwerten muss ein Messwert im d2-R liegen, damit die Hypothese bei dieser Reliabilität positiv beantwortet wird?</li>
+</ol>
+<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-11-contents" aria-controls="callout-11" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tipp</span>Lösung
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-11" class="callout-11-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Zwischen 96.20 und 103.80.</p>
+</div>
+</div>
+</div>
+</div>
+<div id="exr-giftedness" class="theorem exercise">
+<p><span class="theorem-title"><strong>Aufgabe 3 (Hochbegabung)</strong></span> Ida ist 13 und besucht die 7. Klasse eines Gymnasiums. In Mathematik löst sie die Aufgaben schneller als ihre Mitschüler:innen, und in ihrer Freizeit programmiert sie gerne kleine Computerspiele. Im Unterricht langweilt sie sich und zieht sich immer mehr zurück. Ihre Eltern schlagen deshalb vor, Ida auf eine Schule mit besonderer Förderung für hochbegabte Kinder zu schicken. Diese Schule verlangt im Berliner Intelligenzstrukturtest für Jugendliche <span class="citation" data-cites="jaeger2006">(BIS-HB, <a href="#ref-jaeger2006" role="doc-biblioref">Jäger et al., 2006</a>)</span> einen IQ im Bereich der Hochbegabung, also über 130, und bittet die Eltern, sich an den schulpsychologischen Dienst zu wenden. Ida erhält im BIS-HB einen IQ von 134. Nehmen Sie an, dass das Testmanual für Idas Altersgruppe als Reliabilitätsschätzer Cronbachs Alpha von 0.95 und eine Retest-Reliabilität von 0.85 angibt. Prüfen Sie die Hypothese, ob Idas IQ im BIS-HB im Vergleich zu Gleichaltrigen im Bereich der Hochbegabung liegt (<span class="math inline">\(\text{IQ} &gt; 130\)</span>).</p>
+<div class="callout callout-style-default callout-note callout-titled" title="Hinweis">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-12-contents" aria-controls="callout-12" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Hinweis</span>Hinweis
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-12" class="callout-12-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>IQ-Werte haben einen Mittelwert von 100 und eine Standardabweichung von 15. Die Formeln für das Konfidenzintervall stehen im Hinweis zu <a href="#exr-standard-values" class="quarto-xref">Aufgabe&nbsp;2</a>.</p>
+</div>
+</div>
+</div>
+<ol type="a">
+<li>Welchen Reliabilitätsschätzer verwenden Sie? Begründen Sie Ihre Antwort.</li>
+</ol>
+<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-13-contents" aria-controls="callout-13" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tipp</span>Lösung
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-13" class="callout-13-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Statusdiagnose: Cronbachs Alpha (0.95)</p>
+</div>
+</div>
+</div>
+<ol start="2" type="a">
+<li>Welchen Konfidenzkoeffizienten würden Sie wählen? Begründen Sie Ihre Antwort.</li>
+</ol>
+<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-14-contents" aria-controls="callout-14" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tipp</span>Lösung
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-14" class="callout-14-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Zum Beispiel 95 %: eine hohe, aber nicht extrem hohe Sicherheit. Die Wahl hängt von den Konsequenzen der Entscheidung ab; je höher der Konfidenzkoeffizient, desto breiter das Intervall.</p>
+</div>
+</div>
+</div>
+<ol start="3" type="a">
+<li>Würden Sie ein ein- oder ein zweiseitiges Konfidenzintervall berechnen? Begründen Sie Ihre Antwort.</li>
+</ol>
+<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-15-contents" aria-controls="callout-15" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tipp</span>Lösung
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-15" class="callout-15-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Einseitig (untere Grenze): Die Hypothese ist gerichtet.</p>
+</div>
+</div>
+</div>
+<ol start="4" type="a">
+<li>Nehmen Sie einen Konfidenzkoeffizienten von 95 % an und berechnen Sie das entsprechende Konfidenzintervall.</li>
+</ol>
+<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-16-contents" aria-controls="callout-16" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tipp</span>Lösung
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-16" class="callout-16-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><span class="math inline">\([128.48, +\infty)\)</span></p>
+</div>
+</div>
+</div>
+<ol start="5" type="a">
+<li>Wird die Hypothese positiv oder negativ beantwortet?</li>
+</ol>
+<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-17-contents" aria-controls="callout-17" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tipp</span>Lösung
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-17" class="callout-17-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Negativ.</p>
+</div>
+</div>
+</div>
+<ol start="6" type="a">
+<li>Was folgt daraus für die globale Fragestellung?</li>
+</ol>
+<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-18-contents" aria-controls="callout-18" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tipp</span>Lösung
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-18" class="callout-18-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Nach der Aufnahmebedingung der Schule spricht das dagegen, dass Ida dorthin wechselt.</p>
+</div>
+</div>
+</div>
+</div>
+<div id="exr-conscientiousness" class="theorem exercise">
+<p><span class="theorem-title"><strong>Aufgabe 4 (Fahreignung)</strong></span> Dragan ist 58 und fährt seit 25 Jahren Lkw für eine Spedition. Vor drei Monaten hatte er einen leichten Schlaganfall. Seitdem fällt es ihm schwer, sich lange zu konzentrieren. Sein Hausarzt rät ihm, vorerst nicht zu fahren, bis eine verkehrspsychologische Untersuchung klärt, ob er wieder fahren kann. Für Lkw-Fahrer:innen verlangen die Begutachtungsleitlinien zur Kraftfahreignung <span class="citation" data-cites="graecmann2022">(<a href="#ref-graecmann2022" role="doc-biblioref">Gräcmann &amp; Albrecht, 2022</a>)</span> in Leistungstests in der Regel mindestens einen Prozentrang von 33, bezogen auf altersunabhängige Normwerte; das entspricht einem Standardwert von 95.6. Weil Lkw-Fahrer:innen zuverlässig Lenkzeiten einhalten, die Ladung sichern und das Fahrzeug kontrollieren müssen, setzt die Spedition Dragan außerdem nur dann wieder als Fahrer ein, wenn er mindestens durchschnittlich gewissenhaft ist. Nur wenn beide Anforderungen erfüllt sind, kann Dragan wieder als Lkw-Fahrer arbeiten. In der Untersuchung bearbeitet er deshalb den Aufmerksamkeits- und Konzentrationstest d2-R <span class="citation" data-cites="brickenkamp2010">(<a href="#ref-brickenkamp2010" role="doc-biblioref">Brickenkamp et al., 2010</a>)</span> und das Big Five Inventar 2 <span class="citation" data-cites="soto2017 danner2019">(BFI-2, <a href="#ref-soto2017" role="doc-biblioref">Soto &amp; John, 2017</a>; deutsche Fassung: <a href="#ref-danner2019" role="doc-biblioref">Danner et al., 2019</a>)</span>, das unter anderem die Gewissenhaftigkeit erfasst. Prüfen Sie die folgenden Hypothesen:</p>
+<ul>
+<li>H1: Liegt Dragans Konzentrationsleistung im d2-R im Vergleich zu Erwachsenen aller Altersgruppen mindestens bei einem Prozentrang von 33 (<span class="math inline">\(\text{SW} \ge 95.6\)</span>)?</li>
+<li>H2: Liegt Dragans Wert auf der Skala Gewissenhaftigkeit des BFI-2 im Vergleich zu Gleichaltrigen mindestens im durchschnittlichen Bereich (<span class="math inline">\(T \ge 40\)</span>)?</li>
+</ul>
+<p>Dragan erreicht im d2-R einen Standardwert von 102 und im BFI-2 einen <em>T</em>-Wert von 52. Nehmen Sie als Reliabilitätsschätzer Cronbachs Alpha von 0.90 für den d2-R und von 0.85 für das BFI-2 an.</p>
+<div class="callout callout-style-default callout-note callout-titled" title="Hinweis">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-19-contents" aria-controls="callout-19" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Hinweis</span>Hinweis
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-19" class="callout-19-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Standardwerte haben einen Mittelwert von 100 und eine Standardabweichung von 10, <em>T</em>-Werte einen Mittelwert von 50 und eine Standardabweichung von 10. Als durchschnittlich gilt der Bereich <span class="math inline">\(M \pm 1\,SD\)</span>, bei <em>T</em>-Werten also 40 bis 60. Die kritischen <em>z</em>-Werte stehen in der Tabelle zu <a href="#exr-critical-z" class="quarto-xref">Aufgabe&nbsp;1</a>, die Formeln für das Konfidenzintervall im Hinweis zu <a href="#exr-standard-values" class="quarto-xref">Aufgabe&nbsp;2</a>.</p>
+</div>
+</div>
+</div>
+<ol type="a">
+<li>Welchen Konfidenzkoeffizienten würden Sie wählen? Begründen Sie Ihre Antwort.</li>
+</ol>
+<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-20-contents" aria-controls="callout-20" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tipp</span>Lösung
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-20" class="callout-20-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Einen hohen, z. B. 99 %: Wird Dragan fälschlich als fahrgeeignet eingestuft, gefährdet er sich und andere. Die Entscheidung soll deshalb besonders gut abgesichert sein.</p>
+</div>
+</div>
+</div>
+<ol start="2" type="a">
+<li>Berechnen Sie für beide Hypothesen das passende Konfidenzintervall mit einem Konfidenzkoeffizienten von 99 %.</li>
+</ol>
+<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-21-contents" aria-controls="callout-21" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tipp</span>Lösung
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-21" class="callout-21-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>H1: <span class="math inline">\([94.63, +\infty)\)</span>, H2: <span class="math inline">\([42.98, +\infty)\)</span></p>
+</div>
+</div>
+</div>
+<ol start="3" type="a">
+<li>Werden H1 und H2 positiv oder negativ beantwortet?</li>
+</ol>
+<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-22-contents" aria-controls="callout-22" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tipp</span>Lösung
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-22" class="callout-22-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>H1 negativ, H2 positiv.</p>
+</div>
+</div>
+</div>
+<ol start="4" type="a">
+<li>Welche Entscheidungsregel legt die Aufgabenstellung fest?</li>
+</ol>
+<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-23-contents" aria-controls="callout-23" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tipp</span>Lösung
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-23" class="callout-23-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Die konjunktive Entscheidungsregel.</p>
+</div>
+</div>
+</div>
+<ol start="5" type="a">
+<li>Was folgt daraus für die globale Fragestellung?</li>
+</ol>
+<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-24-contents" aria-controls="callout-24" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tipp</span>Lösung
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-24" class="callout-24-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Dass Dragans Konzentrationsleistung die Mindestanforderung erfüllt, lässt sich nicht mit ausreichender Sicherheit sagen. Damit spricht das Ergebnis derzeit dagegen, dass Dragan wieder als Lkw-Fahrer arbeitet. Nach den Begutachtungsleitlinien ist in einem solchen Zweifelsfall eine Fahrverhaltensprobe angezeigt.</p>
+</div>
+</div>
+</div>
+<ol start="6" type="a">
+<li>Wie fiele die Entscheidung mit einem Konfidenzkoeffizienten von 95 % aus?</li>
+</ol>
+<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-25-contents" aria-controls="callout-25" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tipp</span>Lösung
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-25" class="callout-25-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Beide Hypothesen würden positiv beantwortet (H1: <span class="math inline">\([96.80, +\infty)\)</span>, H2: <span class="math inline">\([45.63, +\infty)\)</span>). Nach der konjunktiven Regel spräche dann aus psychologischer Sicht nichts dagegen, dass Dragan wieder als Lkw-Fahrer arbeitet.</p>
+</div>
+</div>
+</div>
+</div>
+<div id="exr-raw-score" class="theorem exercise">
+<p><span class="theorem-title"><strong>Aufgabe 5 (Vom Rohwert zum Konfidenzintervall)</strong></span> Nora ist 31 und Softwareentwicklerin. Im Vorstellungsgespräch hat sie mit ihrem selbstbewussten Auftreten überzeugt. Seit dem Ende der Probezeit beschweren sich ihre Kolleg:innen aber immer häufiger, dass sie andere abwertet, um selbst besser dazustehen. Weil die Konflikte sie belasten, wendet sich Nora an die Betriebspsychologin. Diese bietet ein Coaching zum Umgang mit Konkurrenz im Team an und empfiehlt es, wenn die narzisstische Rivalität überdurchschnittlich ausgeprägt ist. Sie legt Nora die Kurzform des Narcissistic Admiration and Rivalry Questionnaire <span class="citation" data-cites="leckelt2018 back2013">(NARQ-S, <a href="#ref-leckelt2018" role="doc-biblioref">Leckelt et al., 2018</a>; <a href="#ref-back2013" role="doc-biblioref">Back et al., 2013</a>)</span> vor, die mit je drei Items die narzisstische Bewunderung und die narzisstische Rivalität erfasst. Damit prüft die Psychologin die Hypothese, ob Noras Ausprägung auf der Skala Rivalität im Vergleich zu Erwachsenen im überdurchschnittlichen Bereich liegt (<span class="math inline">\(z &gt; 1\)</span>).</p>
+<p>Nora beantwortet die Items auf einer Ratingskala von 1 („trifft gar nicht zu“) bis 6 („trifft voll und ganz zu“):</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 4%">
+<col style="width: 73%">
+<col style="width: 12%">
+<col style="width: 8%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: right;">Nr.</th>
+<th>Item</th>
+<th>Skala</th>
+<th style="text-align: center;">Antwort</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;">1</td>
+<td>Ich ziehe viel Kraft daraus, eine ganz besondere Person zu sein</td>
+<td>Bewunderung</td>
+<td style="text-align: center;">5</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">2</td>
+<td>Mit meinen besonderen Beiträgen schaffe ich es, im Mittelpunkt zu stehen</td>
+<td>Bewunderung</td>
+<td style="text-align: center;">5</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">3</td>
+<td>Ich reagiere genervt, wenn eine andere Person mir die Schau stiehlt</td>
+<td>Rivalität</td>
+<td style="text-align: center;">5</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">4</td>
+<td>Ich habe es verdient, als große Persönlichkeit angesehen zu werden</td>
+<td>Bewunderung</td>
+<td style="text-align: center;">3</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">5</td>
+<td>Ich will, dass meine Konkurrenten scheitern</td>
+<td>Rivalität</td>
+<td style="text-align: center;">4</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">6</td>
+<td>Die meisten Menschen sind ziemliche Versager</td>
+<td>Rivalität</td>
+<td style="text-align: center;">5</td>
+</tr>
+</tbody>
+</table>
+<p>Nehmen Sie an, dass der Summenwert der Skala Rivalität in einer Normstichprobe von Erwachsenen einen Mittelwert von 7.5 und eine Standardabweichung von 2.5 hat und dass der Reliabilitätsschätzer Cronbachs Alpha 0.75 beträgt. Die Entscheidung soll mit einem Konfidenzkoeffizienten von 95 % abgesichert sein.</p>
+<ol type="a">
+<li>Berechnen Sie den Summenwert, den die Hypothese betrifft.</li>
+</ol>
+<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-26-contents" aria-controls="callout-26" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tipp</span>Lösung
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-26" class="callout-26-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>14 (Items 3, 5 und 6)</p>
+</div>
+</div>
+</div>
+<ol start="2" type="a">
+<li>Welches Messmodell wird in Teil a angenommen?</li>
+</ol>
+<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-27-contents" aria-controls="callout-27" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tipp</span>Lösung
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-27" class="callout-27-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Das Modell essenziell tau-äquivalenter Messungen.</p>
+</div>
+</div>
+</div>
+<ol start="3" type="a">
+<li>Rechnen Sie Noras Summenwert in einen <em>z</em>-Wert um.</li>
+</ol>
+<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-28-contents" aria-controls="callout-28" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tipp</span>Lösung
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-28" class="callout-28-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><span class="math inline">\(z = 2.6\)</span></p>
+</div>
+</div>
+</div>
+<ol start="4" type="a">
+<li>Berechnen Sie das passende Konfidenzintervall um Noras <em>z</em>-Wert.</li>
+</ol>
+<div class="callout callout-style-default callout-note callout-titled" title="Hinweis">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-29-contents" aria-controls="callout-29" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Hinweis</span>Hinweis
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-29" class="callout-29-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><em>z</em>-Werte haben einen Mittelwert von 0 und eine Standardabweichung von 1. Als überdurchschnittlich gilt ein Wert über <span class="math inline">\(M + 1\,SD\)</span>, also <span class="math inline">\(z &gt; 1\)</span>.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-30-contents" aria-controls="callout-30" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tipp</span>Lösung
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-30" class="callout-30-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><span class="math inline">\([1.78, +\infty)\)</span></p>
+</div>
+</div>
+</div>
+<ol start="5" type="a">
+<li>Wird die Hypothese positiv oder negativ beantwortet?</li>
+</ol>
+<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-31-contents" aria-controls="callout-31" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tipp</span>Lösung
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-31" class="callout-31-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Positiv.</p>
+</div>
+</div>
+</div>
+<ol start="6" type="a">
+<li>Was folgt daraus für die Empfehlung der Psychologin?</li>
+</ol>
+<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-32-contents" aria-controls="callout-32" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tipp</span>Lösung
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-32" class="callout-32-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Es kann mit ausreichender Sicherheit davon ausgegangen werden, dass Noras narzisstische Rivalität im Vergleich zu Erwachsenen überdurchschnittlich ausgeprägt ist. Nach ihrer Entscheidungsregel empfiehlt die Psychologin Nora das Coaching zum Umgang mit Konkurrenz im Team.</p>
+</div>
+</div>
+</div>
+<ol start="7" type="a">
+<li>Ist die NARQ-S für diese Einzelfallentscheidung gut geeignet? Begründen Sie Ihre Antwort.</li>
+</ol>
+<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-33-contents" aria-controls="callout-33" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tipp</span>Lösung
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-33" class="callout-33-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Nur eingeschränkt: Die NARQ-S ist eine Kurzskala für Studien mit wenig Testzeit. Mit drei Items pro Skala ist die Reliabilität gering und das Konfidenzintervall breit. Für eine Einzelfallentscheidung eignet sich die Langform NARQ mit 18 Items <span class="citation" data-cites="back2013">(<a href="#ref-back2013" role="doc-biblioref">Back et al., 2013</a>)</span> besser.</p>
+</div>
+</div>
+</div>
+</div>
+<div id="exr-classification" class="theorem exercise">
+<p><span class="theorem-title"><strong>Aufgabe 6 (Korrekte und inkorrekte Entscheidungen)</strong></span> Die Grundschulen eines Landkreises möchten Kinder mit Lese-Rechtschreib-Störung (LRS) schon in der zweiten Klasse erkennen, damit die Förderung früh beginnen kann. Dafür erproben sie ein zehnminütiges Screening. Alle 400 Kinder des Jahrgangs durchlaufen zusätzlich eine umfassende Diagnostik, deren Ergebnis als wahrer Zustand gilt. Die Konfusionsmatrix in <a href="#tbl-confusion" class="quarto-xref">Tabelle&nbsp;1</a> zeigt, wie die Ergebnisse von Screening und Diagnostik zusammenfallen.</p>
+<div id="tbl-confusion" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-confusion-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Tabelle&nbsp;1: Konfusionsmatrix des LRS-Screenings bei 400 Kindern
+</figcaption>
+<div aria-describedby="tbl-confusion-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th></th>
+<th style="text-align: right;">LRS laut Diagnostik</th>
+<th style="text-align: right;">keine LRS laut Diagnostik</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Screening positiv</td>
+<td style="text-align: right;">32</td>
+<td style="text-align: right;">36</td>
+</tr>
+<tr class="even">
+<td>Screening negativ</td>
+<td style="text-align: right;">8</td>
+<td style="text-align: right;">324</td>
+</tr>
+</tbody>
+</table>
+</div>
+</figure>
+</div>
+<ol type="a">
+<li>Ordnen Sie den vier Zellen der Konfusionsmatrix die Begriffe richtig positiv (RP, Treffer), falsch positiv (FP, falscher Alarm), falsch negativ (FN, Verpasser) und richtig negativ (RN, korrekte Ablehnung) zu.</li>
+</ol>
+<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-34-contents" aria-controls="callout-34" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tipp</span>Lösung
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-34" class="callout-34-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>RP = 32, FP = 36, FN = 8, RN = 324</p>
+</div>
+</div>
+</div>
+<ol start="2" type="a">
+<li>Berechnen Sie Sensitivität und Spezifität des Screenings.</li>
+</ol>
+<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-35-contents" aria-controls="callout-35" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tipp</span>Lösung
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-35" class="callout-35-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Sensitivität = 0.80, Spezifität = 0.90</p>
+</div>
+</div>
+</div>
+<ol start="3" type="a">
+<li>Berechnen Sie den Youden-Index.</li>
+</ol>
+<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-36-contents" aria-controls="callout-36" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tipp</span>Lösung
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-36" class="callout-36-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><span class="math inline">\(0.80 + 0.90 - 1 = 0.70\)</span></p>
+</div>
+</div>
+</div>
+<ol start="4" type="a">
+<li>Interpretieren Sie die Sensitivität und Spezifität inhaltlich.</li>
+</ol>
+<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-37-contents" aria-controls="callout-37" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tipp</span>Lösung
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-37" class="callout-37-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>80 % der Kinder mit LRS werden korrekt als auffällig erkannt, 90 % der Kinder ohne LRS werden korrekt als unauffällig eingestuft.</p>
+</div>
+</div>
+</div>
+<ol start="5" type="a">
+<li>Das Screening stuft ein Kind ab einem bestimmten Rohwert als auffällig ein; die Konfusionsmatrix gilt für den Schwellenwert 13.8. Die Tabelle zeigt Sensitivität und Spezifität für drei mögliche Schwellenwerte. Berechnen Sie den Youden-Index für die beiden anderen Schwellenwerte. Welcher Schwellenwert trennt Kinder mit und ohne LRS am besten?</li>
+</ol>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: right;">Schwellenwert (Rohwert)</th>
+<th style="text-align: right;">Sensitivität</th>
+<th style="text-align: right;">Spezifität</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;">11.5</td>
+<td style="text-align: right;">0.95</td>
+<td style="text-align: right;">0.69</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">13.8</td>
+<td style="text-align: right;">0.80</td>
+<td style="text-align: right;">0.90</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">16.0</td>
+<td style="text-align: right;">0.55</td>
+<td style="text-align: right;">0.98</td>
+</tr>
+</tbody>
+</table>
+<div class="callout callout-style-default callout-note callout-titled" title="Hinweis">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-38-contents" aria-controls="callout-38" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Hinweis</span>Hinweis
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-38" class="callout-38-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Die Abbildung zeigt, wie sich die Rohwerte der Kinder mit und ohne LRS verteilen, und die drei Schwellenwerte. Kinder rechts eines Schwellenwerts gelten als auffällig.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="diagnostic-ii-ex_files/figure-html/screening-threshold-1.png" class="img-fluid figure-img" alt="Zwei Verteilungen der Rohwerte im Screening, links für Kinder ohne LRS, rechts für Kinder mit LRS, mit drei möglichen Schwellenwerten bei 11.5, 13.8 und 16" width="576"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-39-contents" aria-controls="callout-39" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tipp</span>Lösung
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-39" class="callout-39-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>11.5: 0.64, 16.0: 0.53. Der Schwellenwert 13.8 trennt am besten (Youden-Index 0.70).</p>
+</div>
+</div>
+</div>
+<ol start="6" type="a">
+<li>Die Schulen entscheiden sich trotzdem für den Schwellenwert 11.5. Wie verändern sich Sensitivität und Spezifität dadurch, und warum könnte diese Entscheidung sinnvoll sein?</li>
+</ol>
+<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-40-contents" aria-controls="callout-40" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tipp</span>Lösung
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-40" class="callout-40-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Die Sensitivität steigt, die Spezifität sinkt. Für ein Screening wiegt ein übersehenes Kind mit LRS schwerer als ein falscher Alarm: Das übersehene Kind verpasst die frühe Förderung, ein falscher Alarm führt nur zu einer zusätzlichen Diagnostik.</p>
+</div>
+</div>
+</div>
+</div>
+<div id="exr-accuracy" class="theorem exercise">
+<p><span class="theorem-title"><strong>Aufgabe 7 (Diagnostische Genauigkeit)</strong></span> Die Schulen aus <a href="#exr-classification" class="quarto-xref">Aufgabe&nbsp;6</a> möchten die Güte des Screenings in einer einzigen Zahl ausdrücken. Sie schlagen dafür die diagnostische Genauigkeit (engl. accuracy) vor, die sich aus der Konfusionsmatrix in <a href="#tbl-confusion" class="quarto-xref">Tabelle&nbsp;1</a> ergibt.</p>
+<div class="callout callout-style-default callout-note callout-titled" title="Hinweis">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Hinweis</span>Hinweis
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><span class="math display">\[
+\text{Diagnostische Genauigkeit} = \frac{RP + RN}{RP + FP + FN + RN}
+\]</span></p>
+</div>
+</div>
+<ol type="a">
+<li>Was gibt die diagnostische Genauigkeit an?</li>
+</ol>
+<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-42-contents" aria-controls="callout-42" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tipp</span>Lösung
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-42" class="callout-42-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Den Anteil aller korrekt klassifizierten Fälle (richtig positive und richtig negative) an allen Fällen.</p>
+</div>
+</div>
+</div>
+<ol start="2" type="a">
+<li>Berechnen Sie die diagnostische Genauigkeit des Screenings.</li>
+</ol>
+<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-43-contents" aria-controls="callout-43" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tipp</span>Lösung
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-43" class="callout-43-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><span class="math inline">\(\frac{32 + 324}{400} = 0.89\)</span></p>
+</div>
+</div>
+</div>
+<ol start="3" type="a">
+<li>Berechnen Sie die Prävalenz (auch Basisrate), also den Anteil der Kinder mit LRS.</li>
+</ol>
+<div class="callout callout-style-default callout-note callout-titled" title="Hinweis">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-44-contents" aria-controls="callout-44" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Hinweis</span>Hinweis
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-44" class="callout-44-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><span class="math display">\[
+\text{Prävalenz} = \frac{RP + FN}{RP + FP + FN + RN}
+\]</span></p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-45-contents" aria-controls="callout-45" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tipp</span>Lösung
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-45" class="callout-45-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><span class="math inline">\(\frac{40}{400} = 0.10\)</span></p>
+</div>
+</div>
+</div>
+<ol start="4" type="a">
+<li>Eine Lehrerin schlägt vor, auf das Screening zu verzichten und einfach jedes Kind als unauffällig einzustufen. Wie hoch wäre die diagnostische Genauigkeit dieser Regel?</li>
+</ol>
+<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-46-contents" aria-controls="callout-46" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tipp</span>Lösung
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-46" class="callout-46-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><span class="math inline">\(\frac{360}{400} = 0.90\)</span></p>
+</div>
+</div>
+</div>
+<ol start="5" type="a">
+<li>Welche Sensitivität und welchen Youden-Index hätte die Regel aus Teil d?</li>
+</ol>
+<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-47-contents" aria-controls="callout-47" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tipp</span>Lösung
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-47" class="callout-47-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Sensitivität 0, Youden-Index 0: Die Regel erkennt kein einziges Kind mit LRS. Weil die Prävalenz niedrig ist, erreicht sie trotzdem eine höhere diagnostische Genauigkeit als das Screening.</p>
+</div>
+</div>
+</div>
+<ol start="6" type="a">
+<li>Was folgt daraus für die diagnostische Genauigkeit als Gütemaß?</li>
+</ol>
+<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-48-contents" aria-controls="callout-48" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tipp</span>Lösung
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-48" class="callout-48-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Bei seltenen Merkmalen ist die diagnostische Genauigkeit allein irreführend.</p>
+</div>
+</div>
+</div>
+</div>
+<div id="exr-roc" class="theorem exercise">
+<p><span class="theorem-title"><strong>Aufgabe 8 (ROC-Kurven)</strong></span> Bevor der Landkreis aus <a href="#exr-classification" class="quarto-xref">Aufgabe&nbsp;6</a> ein Screening einführt, vergleicht er drei Verfahren: A, B und C. Für jedes Screening wurden Sensitivität und Spezifität für alle möglichen Schwellenwerte berechnet. Die Abbildung zeigt die ROC-Kurven der drei Screenings. Screening B ist das Screening aus <a href="#exr-classification" class="quarto-xref">Aufgabe&nbsp;6</a>; auf seiner Kurve sind drei Schwellenwerte markiert.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="diagnostic-ii-ex_files/figure-html/roc-curves-1.png" class="img-fluid figure-img" alt="ROC-Kurven der Screenings A, B und C mit der Diagonalen; die Kurve von B verläuft am weitesten von der Diagonalen entfernt, die von C nahe an ihr; auf der Kurve von B sind die Punkte 1, 2 und 3 markiert" width="528"></p>
+</figure>
+</div>
+</div>
+</div>
+<ol type="a">
+<li>Welches Screening trennt Kinder mit und ohne LRS am besten, welches kaum besser als der Zufall? Begründen Sie Ihre Antwort.</li>
+</ol>
+<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-49-contents" aria-controls="callout-49" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tipp</span>Lösung
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-49" class="callout-49-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Screening B trennt am besten: Seine Kurve verläuft am weitesten von der Diagonalen entfernt. Screening C verläuft nahe an der Diagonalen und trennt kaum besser als der Zufall.</p>
+</div>
+</div>
+</div>
+<ol start="2" type="a">
+<li>Ordnen Sie die Punkte 1 bis 3 den drei Schwellenwerten aus Teil e von <a href="#exr-classification" class="quarto-xref">Aufgabe&nbsp;6</a> zu.</li>
+</ol>
+<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-50-contents" aria-controls="callout-50" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tipp</span>Lösung
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-50" class="callout-50-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Punkt 1: 16.0, Punkt 2: 13.8, Punkt 3: 11.5. Je niedriger der Schwellenwert, desto höher die Sensitivität und desto niedriger die Spezifität.</p>
+</div>
+</div>
+</div>
+<ol start="3" type="a">
+<li>An welchem der drei Punkte verläuft eine Tangente an die Kurve am ehesten parallel zur Diagonalen? Was bedeutet das?</li>
+</ol>
+<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-51-contents" aria-controls="callout-51" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tipp</span>Lösung
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-51" class="callout-51-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>An Punkt 2: Dort ist der Abstand zur Diagonalen am größten. Von den drei Schwellenwerten hat 13.8 den größten Youden-Index.</p>
+</div>
+</div>
+</div>
+<ol start="4" type="a">
+<li>Im Nachbarlandkreis haben nur 5 % der Kinder LRS. Ändert sich dort die ROC-Kurve von Screening B? Ändert sich die diagnostische Genauigkeit aus <a href="#exr-accuracy" class="quarto-xref">Aufgabe&nbsp;7</a>?</li>
+</ol>
+<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-52-contents" aria-controls="callout-52" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tipp</span>Lösung
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-52" class="callout-52-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Die ROC-Kurve ändert sich nicht, weil Sensitivität und Spezifität nicht davon abhängen, wie groß die beiden Gruppen sind. Die diagnostische Genauigkeit ändert sich dagegen, weil sie von der Prävalenz abhängt.</p>
+</div>
+</div>
+</div>
+</div>
+<div id="exr-reliable-change" class="theorem exercise">
+<p><span class="theorem-title"><strong>Aufgabe 9 (Reliable Change Index)</strong></span> Ole ist 45 und unterrichtet seit 20 Jahren an einer Grundschule. Nach einem Burnout wird er in eine psychosomatische Klinik aufgenommen. Die Klinik erfasst das psychische Wohlbefinden aller Patient:innen zu Beginn und am Ende der achtwöchigen Behandlung. Gemessen wird mit den Psychological Well-Being Scales <span class="citation" data-cites="ryff1989">(PWB, <a href="#ref-ryff1989" role="doc-biblioref">Ryff, 1989</a>)</span>; höhere Werte zeigen ein höheres Wohlbefinden an. Die Abbildung zeigt die Werte von 70 Patient:innen, darunter Ole. Die Klinik möchte wissen, ob sich Oles Wohlbefinden während der Behandlung bedeutsam verbessert hat, also reliabel und klinisch relevant. Prüfen Sie die folgenden Hypothesen:</p>
+<ul>
+<li>H1: Hat sich Oles Zustand reliabel verändert (<span class="math inline">\(|RC| &gt; 1.96\)</span>)?</li>
+<li>H2: Liegt Oles Zustand nach der Behandlung mindestens beim Cut-off für das Wohlbefinden Gesunder nach Kriterium 2 (Mittelwert Gesunder minus zwei Standardabweichungen)?</li>
+</ul>
+<p>Nehmen Sie als Reliabilitätsschätzer eine Retest-Reliabilität von 0.88 an. In der Population Gesunder liegt der Mittelwert bei 24, die Standardabweichung bei 4. Ole hatte vor der Behandlung einen Wert von 8, danach einen Wert von 14.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="diagnostic-ii-ex_files/figure-html/reliable-change-1.png" class="img-fluid figure-img" alt="Streudiagramm des Wohlbefindens von 70 Patient:innen vor (x-Achse) und nach (y-Achse) der Behandlung mit Diagonale, Grenzen reliabler Veränderung, Cut-off 16 auf beiden Achsen und Oles Wert bei 8 und 14 als gelbes Dreieck" width="576"></p>
+</figure>
+</div>
+</div>
+</div>
+<ol type="a">
+<li>Berechnen Sie den Cut-off nach Kriterium 2.</li>
+</ol>
+<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-53-contents" aria-controls="callout-53" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tipp</span>Lösung
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-53" class="callout-53-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>16</p>
+</div>
+</div>
+</div>
+<ol start="2" type="a">
+<li>Berechnen Sie den Reliable Change Index (RC) für Ole.</li>
+</ol>
+<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-54-contents" aria-controls="callout-54" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tipp</span>Lösung
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-54" class="callout-54-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><span class="math inline">\(RC \approx 3.06\)</span></p>
+</div>
+</div>
+</div>
+<ol start="3" type="a">
+<li>Wird H1 positiv oder negativ beantwortet?</li>
+</ol>
+<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-55-contents" aria-controls="callout-55" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tipp</span>Lösung
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-55" class="callout-55-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Positiv: <span class="math inline">\(3.06 &gt; 1.96\)</span>, die Veränderung ist reliabel.</p>
+</div>
+</div>
+</div>
+<ol start="4" type="a">
+<li>Wird H2 positiv oder negativ beantwortet?</li>
+</ol>
+<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-56-contents" aria-controls="callout-56" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tipp</span>Lösung
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-56" class="callout-56-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Negativ: Oles Wert nach der Behandlung (14) liegt unter dem Cut-off 16.</p>
+</div>
+</div>
+</div>
+<ol start="5" type="a">
+<li>Was folgt daraus für die globale Fragestellung?</li>
+</ol>
+<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-57-contents" aria-controls="callout-57" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tipp</span>Lösung
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-57" class="callout-57-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Oles Wohlbefinden hat sich reliabel verbessert, liegt aber noch nicht im Bereich Gesunder. Die Verbesserung ist damit nicht klinisch bedeutsam. Ob sie auf die Behandlung zurückgeht, lässt sich mit einem Vorher-nachher-Vergleich allein nicht sagen.</p>
+</div>
+</div>
+</div>
+<ol start="6" type="a">
+<li>In welche Veränderungskategorie fällt Ole? Begründen Sie Ihre Antwort mithilfe der Abbildung.</li>
+</ol>
+<div class="callout callout-style-default callout-note callout-titled" title="Hinweis">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-58-contents" aria-controls="callout-58" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Hinweis</span>Hinweis
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-58" class="callout-58-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Die Vorlesung unterscheidet folgende Kategorien:</p>
+<ul>
+<li>0: keine reliable Veränderung</li>
+<li>I: klinisch relevante Verbesserung (in den Normbereich hinein)</li>
+<li>II: klinisch nicht relevante Verbesserung (immer noch außerhalb der Norm)</li>
+<li>III: klinisch nicht relevante Verschlechterung (außerhalb der Norm)</li>
+<li>IV: klinisch relevante Verschlechterung (in den Patientenbereich)</li>
+<li>V: irrelevante Verschlechterung (innerhalb der Norm)</li>
+<li>VI: irrelevante Verbesserung (innerhalb der Norm)</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-59-contents" aria-controls="callout-59" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tipp</span>Lösung
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-59" class="callout-59-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Kategorie II, klinisch nicht relevante Verbesserung: Oles Wert liegt oberhalb der oberen gestrichelten Linie, hat sich also reliabel verbessert, liegt nachher aber noch unter dem Cut-off 16.</p>
+</div>
+</div>
+</div>
+</div>
+
+
+
+
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">Literatur</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" data-line-spacing="2" role="list">
+<div id="ref-back2013" class="csl-entry" role="listitem">
+Back, M. D., Küfner, A. C. P., Dufner, M., Gerlach, T. M., Rauthmann, J. F., &amp; Denissen, J. J. A. (2013). Narcissistic admiration and rivalry: Disentangling the bright and dark sides of narcissism. <em>Journal of Personality and Social Psychology</em>, <em>105</em>(6), 1013–1037. <a href="https://doi.org/10.1037/a0034431">https://doi.org/10.1037/a0034431</a>
+</div>
+<div id="ref-brickenkamp2010" class="csl-entry" role="listitem">
+Brickenkamp, R., Schmidt-Atzert, L., &amp; Liepmann, D. (2010). <em>Test d2 – Revision: Aufmerksamkeits- und Konzentrationstest</em>. Hogrefe.
+</div>
+<div id="ref-danner2019" class="csl-entry" role="listitem">
+Danner, D., Rammstedt, B., Bluemke, M., Lechner, C., Berres, S., Knopf, T., Soto, C. J., &amp; John, O. P. (2019). Das Big Five Inventar 2: Validierung eines Persönlichkeitsinventars zur Erfassung von 5 Persönlichkeitsdomänen und 15 Facetten. <em>Diagnostica</em>, <em>65</em>(3), 121–132. <a href="https://doi.org/10.1026/0012-1924/a000218">https://doi.org/10.1026/0012-1924/a000218</a>
+</div>
+<div id="ref-graecmann2022" class="csl-entry" role="listitem">
+Gräcmann, N., &amp; Albrecht, M. (2022). <em>Begutachtungsleitlinien zur Kraftfahreignung (Stand: 01.06.2022)</em> (Berichte der Bundesanstalt für Straßenwesen, Mensch und Sicherheit M 115). Bundesanstalt für Straßenwesen.
+</div>
+<div id="ref-jaeger2006" class="csl-entry" role="listitem">
+Jäger, A. O., Holling, H., Preckel, F., Schulze, R., Vock, M., Süß, H.-M., &amp; Beauducel, A. (2006). <em>Berliner Intelligenzstrukturtest für Jugendliche: Begabungs- und Hochbegabungsdiagnostik (<span>BIS-HB</span>)</em>. Hogrefe.
+</div>
+<div id="ref-leckelt2018" class="csl-entry" role="listitem">
+Leckelt, M., Wetzel, E., Gerlach, T. M., Ackerman, R. A., Miller, J. D., Chopik, W. J., Penke, L., Geukes, K., Küfner, A. C. P., Hutteman, R., Richter, D., Renner, K.-H., Allroggen, M., Brecheen, C., Campbell, W. K., Grossmann, I., &amp; Back, M. D. (2018). Validation of the Narcissistic Admiration and Rivalry Questionnaire Short Scale (<span>NARQ-S</span>) in convenience and representative samples. <em>Psychological Assessment</em>, <em>30</em>(1), 86–96. <a href="https://doi.org/10.1037/pas0000433">https://doi.org/10.1037/pas0000433</a>
+</div>
+<div id="ref-ryff1989" class="csl-entry" role="listitem">
+Ryff, C. D. (1989). Happiness is everything, or is it? Explorations on the meaning of psychological well-being. <em>Journal of Personality and Social Psychology</em>, <em>57</em>(6), 1069–1081. <a href="https://doi.org/10.1037/0022-3514.57.6.1069">https://doi.org/10.1037/0022-3514.57.6.1069</a>
+</div>
+<div id="ref-soto2017" class="csl-entry" role="listitem">
+Soto, C. J., &amp; John, O. P. (2017). The next Big Five Inventory (<span>BFI-2</span>): Developing and assessing a hierarchical model with 15 facets to enhance bandwidth, fidelity, and predictive power. <em>Journal of Personality and Social Psychology</em>, <em>113</em>(1), 117–143. <a href="https://doi.org/10.1037/pspp0000096">https://doi.org/10.1037/pspp0000096</a>
+</div>
+</div></section></div></main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Kopiert");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Kopiert");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/sbissantz\.github\.io\/irtea\/");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+      &nbsp;
+    </div>   
+    <div class="nav-footer-center">
+<p>Lizenz: GPL-3</p>
+</div>
+    <div class="nav-footer-right">
+      &nbsp;
+    </div>
+  </div>
+</footer>
+
+
+
+
+</body></html>

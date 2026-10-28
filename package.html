@@ -160,11 +160,31 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <ul class="dropdown-menu" aria-labelledby="nav-menu-bungsheft">    
         <li>
     <a class="dropdown-item" href="./workbook/basics-ex.html">
- <span class="dropdown-text">1. Rechenkompetenzen</span></a>
+ <span class="dropdown-text">1. &amp; 2. Rechenkompetenzen</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./workbook/guete-i-ex.html">
+ <span class="dropdown-text">3. Gütekriterien I</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="./workbook/efa-ex.html">
- <span class="dropdown-text">8. Exploratorische Faktorenanalyse</span></a>
+ <span class="dropdown-text">8. &amp; 9. Exploratorische Faktorenanalyse</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./workbook/item-ktt-ex.html">
+ <span class="dropdown-text">10. Itemanalyse I</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./workbook/item-irt-ex.html">
+ <span class="dropdown-text">11. Itemanalyse II</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./workbook/diagnostic-ii-ex.html">
+ <span class="dropdown-text">12. Diagnostische Rechenkompetenzen II</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./workbook/guete-ii-ex.html">
+ <span class="dropdown-text">13. Gütekriterien II</span></a>
   </li>  
     </ul>
   </li>
@@ -190,6 +210,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <ul>
   <li><a href="#installation" id="toc-installation" class="nav-link active" data-scroll-target="#installation">Installation</a></li>
   <li><a href="#datensätze" id="toc-datensätze" class="nav-link" data-scroll-target="#datensätze">Datensätze</a></li>
+  <li><a href="#funktionen" id="toc-funktionen" class="nav-link" data-scroll-target="#funktionen">Funktionen</a></li>
   </ul>
 </nav>
     </div>
@@ -216,7 +237,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 <p><img src="images/logo.png" class="float-end img-fluid" alt="irtea-Logo" width="120"></p>
-<p>Das Paket <code>irtea</code> enthält die Datensätze für die Aufgaben im Übungsheft.</p>
+<p>Das Paket <code>irtea</code> enthält die Datensätze für die Aufgaben im Übungsheft und Funktionen zum Üben.</p>
 <section id="installation" class="level2">
 <h2 class="anchored" data-anchor-id="installation">Installation</h2>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"pak"</span>)</span>
@@ -236,17 +257,49 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <tr class="odd">
 <td><code>personality_items</code></td>
 <td>Antworten von 7 Personen auf 3 Items</td>
-<td><a href="./workbook/basics-ex.html">Kapitel 1</a></td>
+<td><a href="./workbook/basics-ex.html">Kapitel 1 &amp; 2</a></td>
 </tr>
 <tr class="even">
 <td><code>test_anxiety</code></td>
 <td>Antworten von 2000 Personen auf 20 Items zur Prüfungsangst (simuliert)</td>
-<td><a href="./workbook/efa-ex.html">Kapitel 8</a></td>
+<td><a href="./workbook/efa-ex.html">Kapitel 8 &amp; 9</a></td>
+</tr>
+<tr class="odd">
+<td><code>hmt_short</code></td>
+<td>Antworten von 800 Personen auf die sechs Aufgaben der Kurzform des Hagen Matrices Test, am Computer oder am Smartphone (simuliert)</td>
+<td><a href="./workbook/item-irt-ex.html">Kapitel 11</a></td>
 </tr>
 </tbody>
 </table>
 <p>Einen Datensatz laden Sie mit:</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(personality_items, <span class="at">package =</span> <span class="st">"irtea"</span>)</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="funktionen" class="level2">
+<h2 class="anchored" data-anchor-id="funktionen">Funktionen</h2>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Funktion</th>
+<th>Zweck</th>
+<th>Übungsheft</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>simulate_model()</code></td>
+<td>Erzeugt Mittelwerte und Kovarianzmatrix von Items, die einem der fünf Messmodelle der Klassischen Testtheorie folgen</td>
+<td><a href="./workbook/guete-ii-ex.html">Kapitel 13</a></td>
+</tr>
+<tr class="even">
+<td><code>play_roulette()</code></td>
+<td>Quiz in der Konsole: Erkennen Sie das Messmodell?</td>
+<td><a href="./workbook/guete-ii-ex.html">Kapitel 13</a></td>
+</tr>
+</tbody>
+</table>
+<p>Das Quiz starten Sie mit:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>irtea<span class="sc">::</span><span class="fu">play_roulette</span>()</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Mit <code>play_roulette(n_items = 4)</code> spielen Sie nur mit vier Items, mit <code>play_roulette(n = 300)</code> mit simulierten Stichproben, in denen die Muster nur noch ungefähr gelten.</p>
 
 
 </section>
