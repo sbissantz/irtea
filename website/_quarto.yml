@@ -29,11 +29,21 @@ website:
       - text: Übungsheft
         menu:
           - href: workbook/basics-ex.qmd
-            text: "1. Rechenkompetenzen"
+            text: "1. & 2. Rechenkompetenzen"
+          - href: workbook/guete-i-ex.qmd
+            text: "3. Gütekriterien I"
           - href: workbook/ctt-ex.qmd
             text: "6. Klassische Testtheorie"
           - href: workbook/efa-ex.qmd
-            text: "8. Exploratorische Faktorenanalyse"
+            text: "8. & 9. Exploratorische Faktorenanalyse"
+          - href: workbook/item-ktt-ex.qmd
+            text: "10. Itemanalyse I"
+          - href: workbook/item-irt-ex.qmd
+            text: "11. Itemanalyse II"
+          - href: workbook/diagnostic-ii-ex.qmd
+            text: "12. Diagnostische Rechenkompetenzen II"
+          - href: workbook/guete-ii-ex.qmd
+            text: "13. Gütekriterien II"
       - href: package.qmd
         text: R-Paket
   page-footer:

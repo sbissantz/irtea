@@ -2,7 +2,7 @@
 #'
 #' Simulierte Antworten von 7 Personen auf drei Items eines
 #' Persönlichkeitsinventars, erhoben auf einer Schiebereglerskala von -12
-#' (Ablehnung) bis 12 (Zustimmung). Grundlage für Aufgabe 4 in Kapitel 1
+#' (Ablehnung) bis 12 (Zustimmung). Grundlage für Aufgabe 8 in Kapitel 1
 #' des Übungshefts.
 #'
 #' @format Ein Data Frame mit 7 Zeilen (Personen) und 3 Spalten:
@@ -13,7 +13,7 @@
 #'   \item{i3}{„Ich finde es wichtig, in sozialen Situationen höflich und
 #'     respektvoll zu sein."}
 #' }
-#' @source Simuliert; siehe Lösungsvorschlag zu Kapitel 1, Aufgabe 4.
+#' @source Simuliert; siehe Lösungsvorschlag zu Kapitel 1, Aufgabe 8.
 "personality_items"
 
 #' Antworten auf einen Fragebogen zur Prüfungsangst
@@ -61,3 +61,23 @@
 #' @source Simuliert mit einem Faktormodell und itemspezifischen Schwellen
 #'   (Skript `data-raw/test-anxiety.R` im GitHub-Repository des Pakets).
 "test_anxiety"
+
+#' Antworten auf die Kurzform des Hagen Matrices Test (simuliert)
+#'
+#' Simulierte Antworten von 800 Personen auf die sechs Aufgaben der Kurzform
+#' des Hagen Matrices Test (HMT-S), die den Test online bearbeitet haben: 400
+#' am Computer und 400 am Smartphone. Die Antworten folgen dem Rasch-Modell;
+#' Aufgabe `hmt5` ist am Smartphone schwerer (Differential Item Functioning).
+#' Die Daten sind für die Lehre erfunden und sagen nichts über den echten
+#' HMT-S aus. Grundlage für Kapitel 11 des Übungshefts.
+#'
+#' @format Ein Data Frame mit 800 Zeilen (Personen) und 7 Spalten:
+#' \describe{
+#'   \item{device}{Endgerät: `"computer"` oder `"smartphone"`.}
+#'   \item{hmt1, hmt2, hmt3, hmt4, hmt5, hmt6}{Aufgaben 1 bis 6: 1 = gelöst,
+#'     0 = nicht gelöst.}
+#' }
+#' @source Simuliert mit dem Rasch-Modell (Skript `data-raw/hmt-short.R` im
+#'   GitHub-Repository des Pakets). Zum echten Test: Heydasch, Haubrich und
+#'   Renner (2013), \doi{10.12758/mda.2013.011}.
+"hmt_short"

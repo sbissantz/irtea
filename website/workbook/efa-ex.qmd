@@ -1,5 +1,5 @@
 ---
-title: "8 Exploratorische Faktorenanalyse"
+title: "8 & 9 Exploratorische Faktorenanalyse"
 knitr:
   opts_chunk:
     comment: ""
@@ -36,6 +36,8 @@ plot_correlations <- function(r, ...) {
   )
 }
 ```
+
+{{< include _revision-note.qmd >}}
 
 Ein Forschungsteam hat einen neuen Fragebogen zur Prüfungsangst entwickelt und online an 1000 Personen erprobt: Studierende verschiedener Fächer und Hochschulen, Schüler:innen der Oberstufe sowie Personen in Aus- und Weiterbildung. Fragebogen und Daten sind fiktiv; die Daten sind simuliert.
 
