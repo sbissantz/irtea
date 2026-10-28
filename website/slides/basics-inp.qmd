@@ -121,7 +121,7 @@ flowchart LR
 
 ## Übungen
 
-Übungen zu diesem Thema: [Übungsheft, Kapitel 1]({{< var site-url >}}/workbook/basics-ex.html)
+Übungen zu diesem Thema: [Übungsheft, Kapitel 1 & 2]({{< var site-url >}}/workbook/basics-ex.html)
 
 # Danke & bis nächste Woche! {.unlisted}
 

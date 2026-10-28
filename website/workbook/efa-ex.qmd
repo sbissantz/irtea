@@ -1,5 +1,5 @@
 ---
-title: "8 Exploratorische Faktorenanalyse"
+title: "8 & 9 Exploratorische Faktorenanalyse"
 knitr:
   opts_chunk:
     comment: ""

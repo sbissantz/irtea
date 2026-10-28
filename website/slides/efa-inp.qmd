@@ -321,7 +321,7 @@ legend("topright",
 
 ## Übungen
 
-Übungen zu diesem Thema: [Übungsheft, Kapitel 8]({{< var site-url >}}/workbook/efa-ex.html)
+Übungen zu diesem Thema: [Übungsheft, Kapitel 8 & 9]({{< var site-url >}}/workbook/efa-ex.html)
 
 # Danke & bis nächste Woche! {.unlisted}
 
