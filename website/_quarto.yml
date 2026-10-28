@@ -34,9 +34,9 @@ website:
             text: "3. Gütekriterien I"
           - href: workbook/efa-ex.qmd
             text: "8. & 9. Exploratorische Faktorenanalyse"
-          - href: workbook/item-ktt-ex.qmd
+          - href: workbook/item-i-ex.qmd
             text: "10. Itemanalyse I"
-          - href: workbook/item-irt-ex.qmd
+          - href: workbook/item-ii-ex.qmd
             text: "11. Itemanalyse II"
           - href: workbook/diagnostic-ii-ex.qmd
             text: "12. Diagnostische Rechenkompetenzen II"
