@@ -1,0 +1,417 @@
+---
+title: "5 Diagnostische Rechenkompetenzen I"
+draft: true
+knitr:
+  opts_chunk:
+    comment: ""
+---
+
+```{r}
+#| label: setup
+#| include: false
+# plot labels contain umlauts, which need a UTF-8 locale; the shell that runs
+# the render may start R in the C locale
+invisible(Sys.setlocale("LC_CTYPE", "en_US.UTF-8"))
+colors <- viridisLite::viridis(5)
+dark <- "#23373b"
+
+# success ratio after Taylor and Russell (1939) under bivariate normality
+taylor_russell <- function(br, sr, r) {
+  if (r == 0 || sr >= 1) return(br)
+  x <- qnorm(1 - sr)
+  y <- qnorm(1 - br)
+  integrate(function(u) dnorm(u) * pnorm((r * u - y) / sqrt(1 - r^2)),
+            lower = x, upper = Inf)$value / sr
+}
+
+# Taylor-Russell tables: rows r_tc, columns SR
+sr_cols <- c(.05, .10, .20, .30, .40, .50, .60, .70, .80, .90, .95)
+r_rows <- seq(0.05, 1, by = .05)
+tr_table <- function(br) {
+  tab <- sapply(sr_cols, function(s)
+    sapply(r_rows, function(r) sprintf("%.2f", round(taylor_russell(br, s, r), 2))))
+  tab <- cbind(sprintf("%.2f", r_rows), tab)
+  colnames(tab) <- c("$r_{tc}$", sprintf("%.2f", sr_cols))
+  tab
+}
+
+# decision rules: Lisa and plot helpers
+lisa_iq <- 108
+lisa_krea <- 44
+
+plot_blank <- function(title) {
+  par(mar = c(4.5, 4.5, 2, 1), col.main = dark, col.lab = dark, col.axis = dark,
+      fg = dark)
+  plot(NULL, xlim = c(60, 140), ylim = c(20, 80), xlab = "IQ",
+       ylab = expression("Kreativität (" * T[Krea] * ")"), main = title, las = 1,
+       xaxs = "i", yaxs = "i", cex.lab = 1.1, cex.axis = 0.9)
+  abline(h = seq(20, 80, by = 10), col = "#d6dadb", lty = 2)
+  abline(v = seq(60, 140, by = 10), col = "#d6dadb", lty = 2)
+}
+
+add_lisa <- function() {
+  points(lisa_iq, lisa_krea, pch = 4, cex = 1.5, lwd = 2, col = colors[1])
+  text(lisa_iq + 3, lisa_krea - 3, "Lisa", cex = 0.9, col = dark)
+}
+
+fill_pos <- adjustcolor(colors[4], 0.5)
+
+plot_and <- function() {
+  plot_blank("Konjunktive Regel")
+  rect(100, 50, 140, 80, col = fill_pos, border = NA)
+  abline(v = 100, col = colors[2], lwd = 2)
+  abline(h = 50, col = colors[2], lwd = 2)
+  text(120, 65, "positiv", cex = 1.1, font = 2, col = dark)
+  add_lisa()
+}
+
+plot_or <- function() {
+  plot_blank("Oder-Regel")
+  rect(100, 20, 140, 80, col = fill_pos, border = NA)
+  rect(60, 50, 100, 80, col = fill_pos, border = NA)
+  abline(v = 100, col = colors[2], lwd = 2)
+  abline(h = 50, col = colors[2], lwd = 2)
+  text(120, 35, "positiv", cex = 1.1, font = 2, col = dark)
+  text(80, 65, "positiv", cex = 1.1, font = 2, col = dark)
+  text(120, 65, "positiv", cex = 1.1, font = 2, col = dark)
+  add_lisa()
+}
+
+plot_comp <- function() {
+  plot_blank("Kompensatorische Regel")
+  # z_IQ + z_Krea = 0  =>  T = 50 - (2/3) * (IQ - 100)
+  iq <- seq(60, 140, length.out = 200)
+  t_bound <- 50 - (10 / 15) * (iq - 100)
+  polygon(c(iq, rev(iq)), c(pmax(20, pmin(80, t_bound)), rep(80, length(iq))),
+          col = fill_pos, border = NA)
+  lines(iq, t_bound, col = colors[2], lwd = 2)
+  text(120, 65, "positiv", cex = 1.1, font = 2, col = dark)
+  add_lisa()
+}
+
+# Mixed rule 1: IQ >= 115 or T >= 60 or z_IQ + z_Krea >= 0
+plot_mixed1 <- function() {
+  plot_blank("Mischform 1")
+  iq_c <- seq(115, 85, length.out = 50)
+  t_c <- 50 - (10 / 15) * (iq_c - 100)
+  polygon(c(60, 140, 140, 115, iq_c, 60, 60),
+          c(80, 80, 20, 20, t_c, 60, 80),
+          col = fill_pos, border = NA)
+  lines(iq_c, t_c, col = colors[2], lwd = 2)
+  segments(115, 20, 115, 40, col = colors[2], lwd = 2, lty = 2)
+  segments(60, 60, 85, 60, col = colors[2], lwd = 2, lty = 2)
+  text(120, 65, "positiv", cex = 1.0, font = 2, col = dark)
+  text(75, 35, "negativ", cex = 1.0, font = 2, col = dark)
+  legend("bottomleft",
+         legend = c(expression(z[IQ] + z[Krea] >= 0), expression(IQ >= 115 ~ "bzw." ~ T[Krea] >= 60)),
+         lty = c(1, 2), col = colors[2], lwd = 2, cex = 0.7, bg = "white",
+         text.col = dark)
+  add_lisa()
+}
+
+# Mixed rule 2: IQ >= 100 and T >= 50 and z_IQ + z_Krea >= 2
+plot_mixed2 <- function() {
+  plot_blank("Mischform 2")
+  iq_c <- seq(100, 130, length.out = 50)
+  t_c <- 70 - (10 / 15) * (iq_c - 100)
+  polygon(c(iq_c, 140, 140, 100), c(t_c, 50, 80, 80),
+          col = fill_pos, border = NA)
+  lines(iq_c, t_c, col = colors[2], lwd = 2)
+  left <- seq(60, 100, length.out = 30)
+  lines(left, 70 - (10 / 15) * (left - 100), col = colors[2], lwd = 1, lty = 3)
+  right <- seq(130, 140, length.out = 15)
+  lines(right, 70 - (10 / 15) * (right - 100), col = colors[2], lwd = 1, lty = 3)
+  abline(v = 100, col = colors[2], lwd = 1.5, lty = 2)
+  abline(h = 50, col = colors[2], lwd = 1.5, lty = 2)
+  text(125, 72, "positiv", cex = 1.0, font = 2, col = dark)
+  legend("bottomleft",
+         legend = c(expression(z[IQ] + z[Krea] >= 2), expression(IQ >= 100 * "," ~ T[Krea] >= 50)),
+         lty = c(1, 2), col = colors[2], lwd = c(2, 1.5), cex = 0.7,
+         bg = "white", text.col = dark)
+  add_lisa()
+}
+```
+
+Runden Sie Ergebnisse bei Berechnungen kaufmännisch auf zwei Nachkommastellen. Alle Fälle und Daten sind fiktiv.
+
+::: {#exr-taylor-russell}
+## Taylor-Russell-Tafeln
+
+Ein Logistikunternehmen besetzt jedes Jahr Ausbildungsplätze. Für die Vorauswahl setzt die Personalabteilung einen Eignungstest ein. In diesem Jahr gehen $n = 250$ Bewerbungen für $50$ Ausbildungsplätze ein. Aus den Vorjahren ist bekannt, dass etwa die Hälfte aller Bewerber:innen die Ausbildung erfolgreich abschließen würde. Laut Testmanual beträgt die Kriteriumsvalidität dieses Eignungstests für den Ausbildungserfolg $r_{tc} = 0.40$.
+
+a. Bestimmen Sie die Grundquote (*base rate*, BR) und die Selektionsquote (*selection ratio*, SR) für das Szenario. Erläutern Sie beide Begriffe in je einem Satz.
+
+::: {.callout-tip title="Lösung" collapse="true"}
+- Grundquote: Anteil der Bewerber:innen, die ohne Testauswahl (d. h. bei zufälliger Auswahl) im Kriterium erfolgreich wären: BR = 0.50.
+- Selektionsquote: Anteil der Bewerber:innen, die ausgewählt werden: SR = 50 / 250 = 0.20.
+:::
+
+@tbl-tr50 und @tbl-tr40 zeigen die Taylor-Russell-Tafeln für die Grundquoten BR = .50 und BR = .40. Die Zellen enthalten die *Erfolgsquote*, d. h. den erwarteten Anteil geeigneter Personen unter den Ausgewählten.
+
+```{r}
+#| label: tbl-tr50
+#| echo: false
+#| tbl-cap: "Taylor-Russell-Tafel für BR = .50 (Zeilen: Validität $r_{tc}$; Spalten: Selektionsquote SR)"
+knitr::kable(tr_table(0.50), format = "pipe", align = "c")
+```
+
+```{r}
+#| label: tbl-tr40
+#| echo: false
+#| tbl-cap: "Taylor-Russell-Tafel für BR = .40 (Zeilen: Validität $r_{tc}$; Spalten: Selektionsquote SR)"
+knitr::kable(tr_table(0.40), format = "pipe", align = "c")
+```
+
+b. Lesen Sie die Erfolgsquote für das Szenario aus der passenden Tafel ab. Wie viele der 50 ausgewählten Personen werden voraussichtlich die Ausbildung erfolgreich abschließen? Wie hoch ist der inkrementelle Wert dieses Eignungstests?
+
+::: {.callout-tip title="Lösung" collapse="true"}
+Erfolgsquote (@tbl-tr50, $r_{tc} = 0.40$, SR = 0.20): 0.72. Erwartet werden $0.72 \cdot 50 = 36$ erfolgreiche Auszubildende. Ohne Test (Zufallsauswahl) wären es $0.50 \cdot 50 = 25$. Der Test erhöht die Erfolgsquote um 22 Prozentpunkte (11 Personen mehr).
+:::
+
+c. Wie hoch wäre die Erfolgsquote, wenn Sie ein Verfahren mit $r_{tc} = 0.00$ heranziehen würden? Begründen Sie Ihre Antwort.
+
+::: {.callout-tip title="Lösung" collapse="true"}
+Die Erfolgsquote entspräche der Grundquote (0.50). Ein Test ohne Zusammenhang mit dem Kriterium liefert keine Information darüber, wer erfolgreich sein wird; die Auswahl ist dann so gut wie zufällig, unabhängig von der Selektionsquote.
+:::
+
+d. Betrachten Sie den folgenden Auszug einer Taylor-Russell-Tafel für eine feste Kriteriumsvalidität $r_{tc} > 0$. Die Zellen $a$, $b$, $c$ und $d$ sind Erfolgsquoten.
+
+    |                | Selektionsquote |          |
+    |:--------------:|:---------------:|:--------:|
+    | **Grundquote** | **0.10**        | **0.80** |
+    | 0.20           | $a$             | $b$      |
+    | 0.50           | $c$             | $d$      |
+
+    Ergänzen Sie $>$, $<$ oder $=$: (i) $a \, \_ \, c$, (ii) $b \, \_ \, d$, (iii) $a \, \_ \, b$, (iv) $c \, \_ \, d$.
+
+::: {.callout-tip title="Lösung" collapse="true"}
+(i) $a < c$, (ii) $b < d$, (iii) $a > b$, (iv) $c > d$.
+
+Bei gleicher Selektionsquote führt eine höhere Grundquote zu einer höheren Erfolgsquote (i, ii); bei gleicher Grundquote führt eine niedrigere Selektionsquote, also eine strengere Auswahl, zu einer höheren Erfolgsquote (iii, iv).
+:::
+:::
+
+::: {#exr-norm-scores}
+## Normwerte
+
+Herr K. ist 28 Jahre alt und hat im Rahmen einer psychologischen Untersuchung das NEO-Fünf-Faktoren-Inventar (NEO-FFI) bearbeitet. Auf der Dimension Gewissenhaftigkeit erzielte er einen Rohwert von $x = 38$. @tbl-neo-norms zeigt die Normwerte des NEO-FFI mit Mittelwerten ($M$) und Standardabweichungen ($s$) für verschiedene Normgruppen und alle fünf Dimensionen (zu Normwerten allgemein vgl. [@moosbrugger2020]).
+
+| Stichprobe | $N$ | $M$ NEU | $s$ NEU | $M$ EXT | $s$ EXT | $M$ OFF | $s$ OFF | $M$ VER | $s$ VER | $M$ GEW | $s$ GEW |
+|:-----------|----:|------:|------:|------:|------:|------:|------:|------:|------:|------:|------:|
+| Männer, 16–20 | 480 | 20.82 | 7.59 | 28.59 | 6.52 | 31.12 | 7.39 | 28.26 | 6.06 | 28.81 | 7.74 |
+| Männer, 21–24 | 1358 | 19.86 | 8.10 | 28.63 | 6.89 | 32.63 | 6.72 | 28.65 | 6.08 | 29.72 | 7.55 |
+| Männer, 25–29 | 943 | 19.91 | 7.89 | 27.88 | 6.77 | 32.11 | 6.49 | 29.31 | 5.57 | 30.11 | 7.25 |
+| Männer, 30–49 | 1035 | 18.80 | 7.82 | 26.82 | 6.66 | 30.68 | 6.56 | 29.02 | 5.81 | 31.41 | 6.86 |
+| Männer, ≥ 50 | 403 | 19.05 | 7.15 | 25.43 | 6.15 | 28.84 | 6.12 | 29.54 | 4.97 | 33.37 | 5.97 |
+| Frauen, 16–20 | 1686 | 25.28 | 8.19 | 29.67 | 6.61 | 33.18 | 6.06 | 30.51 | 5.85 | 29.52 | 7.33 |
+| Frauen, 21–24 | 1925 | 23.42 | 8.37 | 29.48 | 6.70 | 33.62 | 6.20 | 30.66 | 5.67 | 30.52 | 7.34 |
+| Frauen, 25–29 | 1189 | 22.98 | 8.40 | 28.78 | 6.83 | 32.76 | 6.46 | 31.28 | 5.35 | 30.82 | 6.90 |
+| Frauen, 30–49 | 1992 | 22.04 | 8.28 | 27.87 | 6.41 | 31.34 | 6.15 | 31.09 | 5.19 | 32.43 | 6.54 |
+| Frauen, ≥ 50 | 713 | 21.83 | 7.77 | 27.09 | 6.15 | 29.97 | 6.07 | 32.06 | 4.86 | 33.10 | 5.57 |
+| Männer, repräsentativ | 423 | 19.68 | 7.60 | 26.33 | 6.39 | 29.20 | 6.51 | 29.21 | 5.34 | 32.11 | 6.29 |
+| Frauen, repräsentativ | 448 | 22.22 | 7.97 | 27.41 | 6.52 | 29.71 | 6.54 | 31.68 | 5.15 | 33.08 | 5.90 |
+| Bevölkerungsrepräsentative Quotenstichprobe | 871 | 20.99 | 7.89 | 26.88 | 6.47 | 29.47 | 6.53 | 30.45 | 5.38 | 32.61 | 6.11 |
+
+: Normwerte des NEO-FFI nach dem NEO-FFI-Manual. NEU = Neurotizismus, EXT = Extraversion, OFF = Offenheit für Erfahrung, VER = Verträglichkeit, GEW = Gewissenhaftigkeit. {#tbl-neo-norms}
+
+a. Welche Normgruppe aus der Tabelle ist für Herrn K. am besten geeignet? Begründen Sie Ihre Wahl.
+
+::: {.callout-tip title="Lösung" collapse="true"}
+Da keine nähere Fragestellung angegeben ist, wird Herrn K.s Wert an der bevölkerungsrepräsentativen Quotenstichprobe normiert ($M = 32.61$, $s = 6.11$).
+:::
+
+b. Berechnen Sie den $z$-Wert und den $T$-Wert für Herrn K. auf der Dimension Gewissenhaftigkeit. Verwenden Sie dafür die bevölkerungsrepräsentative Quotenstichprobe als Normgruppe. Interpretieren Sie das Ergebnis.
+
+::: {.callout-note title="Hinweis" collapse="true"}
+$$
+z = \frac{x - M}{s}, \qquad T = 50 + 10 \cdot z
+$$
+:::
+
+::: {.callout-tip title="Lösung" collapse="true"}
+$z = 0.88$ und $T = 58.82$ (mit dem gerundeten $z$-Wert ergibt sich $T = 58.80$). Herr K. liegt leicht über dem Durchschnitt der Allgemeinbevölkerung.
+:::
+:::
+
+::: {#exr-percentile-ranks}
+## Prozentränge
+
+Für Herrn K. liegen die Ergebnisse eines weiteren Tests vor. Dieser wurde an einer Stichprobe von $N = 200$ Personen normiert ($M = 28$, $SD = 4$). @tbl-frequencies und @fig-frequencies zeigen die Häufigkeitsverteilung der Rohwerte in der Normstichprobe.
+
+```{r}
+#| label: tbl-frequencies
+#| echo: false
+#| tbl-cap: "Häufigkeiten $f$ der Rohwerte $x$ in der Normstichprobe ($N = 200$)"
+x_values <- 17:35
+f_values <- c(2, 2, 3, 4, 5, 6, 7, 10, 11, 13, 16, 18, 20, 22, 21, 18, 12, 7, 3)
+freq <- as.data.frame(t(f_values))
+names(freq) <- x_values
+freq <- cbind("$x$" = "$f$", freq)
+knitr::kable(freq, format = "pipe", align = "c")
+```
+
+```{r}
+#| label: fig-frequencies
+#| echo: false
+#| fig-width: 6.5
+#| fig-height: 3.8
+#| fig-align: center
+#| fig-cap: "Empirische Verteilung der Rohwerte in der Normstichprobe mit der Normalverteilung ($M = 28$, $SD = 4$) zum Vergleich"
+#| fig-alt: "Balkendiagramm der Häufigkeiten der Rohwerte 17 bis 35. Die Häufigkeiten steigen langsam bis zum Gipfel bei Rohwert 30 und fallen danach steil ab; die Verteilung ist linksschief. Eine eingezeichnete Normalverteilungskurve mit Mittelwert 28 liegt links davon."
+par(mar = c(4, 4, 1, 1))
+plot(NA, xlim = c(16.5, 35.5), ylim = c(0, 25), las = 1,
+     xlab = "Rohwert x", ylab = "Häufigkeit f")
+rect(x_values - 0.5, 0, x_values + 0.5, f_values,
+     col = adjustcolor(colors[2], 0.7), border = "white")
+x_grid <- seq(16.5, 35.5, length.out = 200)
+lines(x_grid, 200 * dnorm(x_grid, 28, 4), lwd = 2, lty = 2, col = colors[4])
+legend("topleft", legend = c("Normstichprobe", "Normalverteilung"),
+       fill = c(adjustcolor(colors[2], 0.7), NA), border = c("white", NA),
+       lty = c(NA, 2), lwd = c(NA, 2), col = c(NA, colors[4]), bty = "n")
+```
+
+Der empirische Prozentrang eines Rohwerts $x$ ist der Prozentsatz der Personen in der Normstichprobe mit einem Wert $\leq x$:
+
+$$
+PR_{\text{emp}}(x) = \frac{f_{\text{kum}}(x)}{N} \cdot 100
+$$
+
+Herr K. hat in diesem Test einen Rohwert von $x = 34$.
+
+a. Berechnen Sie den empirischen Prozentrang für Herrn K. anhand der Häufigkeitstabelle.
+
+::: {.callout-tip title="Lösung" collapse="true"}
+$f_{\text{kum}}(34) = 197$, also $PR_{\text{emp}} = 197 / 200 \cdot 100 = 98.50$.
+:::
+
+b. Berechnen Sie den Prozentrang von Herrn K. unter der Annahme normalverteilter Testwerte.
+
+::: {.callout-note title="Hinweis" collapse="true"}
+Berechnen Sie zunächst den $z$-Wert und nutzen Sie $PR_{\text{NV}} = 100 \cdot \Phi(z)$. In R berechnet `pnorm(z)` den Wert $\Phi(z)$.
+:::
+
+::: {.callout-tip title="Lösung" collapse="true"}
+$z = 1.50$ und $PR_{\text{NV}} = 100 \cdot \Phi(1.50) = 93.32$.
+:::
+
+c. Vergleichen Sie den empirischen mit dem normalverteilungsbasierten Prozentrang. Was fällt auf und wie lässt sich der Unterschied erklären?
+
+::: {.callout-tip title="Lösung" collapse="true"}
+Der empirische Prozentrang (98.50) liegt deutlich über dem normalverteilungsbasierten (93.32). Die Rohwerte in der Normstichprobe sind nicht normalverteilt, sondern linksschief (mehr Personen mit hohen als mit niedrigen Werten). Empirische Prozentränge sind genauer, wenn die tatsächliche Verteilung von der Normalverteilung abweicht.
+:::
+:::
+
+::: {#exr-decision-rules}
+## Entscheidungsregeln
+
+Eine Kunsthochschule möchte Studierende für den Studiengang „Kreatives Gestalten“ auswählen. Dazu werden zwei diagnostische Hypothesen aufgestellt:
+
+- H.1: Die Bewerberin bzw. der Bewerber verfügt über mindestens durchschnittliche intellektuelle Fähigkeiten (IQ $\geq$ 100).
+- H.2: Die Bewerberin bzw. der Bewerber verfügt über mindestens durchschnittliche Kreativität (Kreativitätstest, $T_{\text{Krea}} \geq 50$).
+
+a. Formulieren Sie drei verschiedene Entscheidungsregeln (kompensatorische Regel, Oder-Regel, konjunktive Regel), mit denen die Kunsthochschule die beiden Hypothesen verknüpfen könnte.
+
+::: {.callout-tip title="Lösung" collapse="true"}
+1. Kompensatorische Regel: Zulassung, wenn die Summe der $z$-Werte mindestens null beträgt: $z_{\text{IQ}} + z_{\text{Krea}} \geq 0$ (entspricht einem gemittelten $T$-Wert von mindestens 50).
+2. Oder-Regel: Zulassung, wenn mindestens eine Hypothese zutrifft: $\text{IQ} \geq 100$ oder $T_{\text{Krea}} \geq 50$.
+3. Konjunktive Regel: Zulassung, wenn beide Hypothesen zutreffen: $\text{IQ} \geq 100$ und $T_{\text{Krea}} \geq 50$.
+:::
+
+b. Skizzieren Sie in einem Koordinatensystem (IQ von 60 bis 140 auf der $x$-Achse, $T_{\text{Krea}}$ von 20 bis 80 auf der $y$-Achse) die Akzeptanzbereiche (positiver Entscheidungsbereich) der konjunktiven Regel und der Oder-Regel. Markieren Sie jeweils den positiven Bereich und die Grenzlinien.
+
+::: {.callout-tip title="Lösung" collapse="true"}
+```{r}
+#| echo: false
+#| fig-width: 5.5
+#| fig-height: 4.5
+#| fig-align: center
+#| fig-alt: "Koordinatensystem mit IQ auf der x-Achse und Kreativität auf der y-Achse. Der positive Bereich der konjunktiven Regel ist der Quadrant rechts oberhalb der Grenzlinien bei IQ 100 und T-Wert 50. Lisa liegt bei IQ 108 und T-Wert 44 außerhalb dieses Bereichs."
+plot_and()
+```
+
+```{r}
+#| echo: false
+#| fig-width: 5.5
+#| fig-height: 4.5
+#| fig-align: center
+#| fig-alt: "Koordinatensystem mit IQ auf der x-Achse und Kreativität auf der y-Achse. Der positive Bereich der Oder-Regel umfasst drei Quadranten, nur der Bereich links unten mit IQ unter 100 und T-Wert unter 50 ist negativ. Lisa liegt bei IQ 108 und T-Wert 44 im positiven Bereich."
+plot_or()
+```
+
+Bei der konjunktiven Regel ist der Quadrant rechts oben positiv. Bei der Oder-Regel sind drei Quadranten positiv; nur der Bereich links unten ($\text{IQ} < 100$ und $T_{\text{Krea}} < 50$) führt zu einer negativen Entscheidung.
+:::
+
+Lisa bewirbt sich an der Kunsthochschule. Ihre Testergebnisse: IQ = 108, $T_{\text{Krea}} = 44$.
+
+c. Wie fällt die Entscheidung unter der kompensatorischen Regel, der Oder-Regel und der konjunktiven Regel aus?
+
+::: {.callout-tip title="Lösung" collapse="true"}
+- Kompensatorische Regel: $z_{\text{IQ}} = 0.53$, $z_{\text{Krea}} = -0.60$, Summe $-0.07 < 0$, also nicht zugelassen.
+- Oder-Regel: zugelassen ($\text{IQ} \geq 100$).
+- Konjunktive Regel: nicht zugelassen ($\text{IQ} \geq 100$, aber $T_{\text{Krea}} < 50$).
+:::
+
+d. Skizzieren Sie die kompensatorische Regel im Koordinatensystem. Zeichnen Sie die Kompensationsgerade, markieren Sie den positiven Bereich und tragen Sie Lisas Ergebnis ein.
+
+::: {.callout-note title="Hinweis" collapse="true"}
+Kompensationsgerade: $z_{\text{IQ}} + z_{\text{Krea}} = 0$, d. h. $\frac{\text{IQ} - 100}{15} + \frac{T_{\text{Krea}} - 50}{10} = 0$.
+:::
+
+::: {.callout-tip title="Lösung" collapse="true"}
+```{r}
+#| echo: false
+#| fig-width: 5.5
+#| fig-height: 4.5
+#| fig-align: center
+#| fig-alt: "Koordinatensystem mit IQ auf der x-Achse und Kreativität auf der y-Achse. Die Kompensationsgerade verläuft von links oben nach rechts unten, der positive Bereich liegt oberhalb der Geraden. Lisa bei IQ 108 und T-Wert 44 liegt knapp unterhalb der Geraden im negativen Bereich."
+plot_comp()
+```
+
+Die Kompensationsgerade verläuft von links oben nach rechts unten. Der positive Bereich liegt oberhalb der Geraden. Lisa liegt knapp darunter und wird nicht zugelassen.
+:::
+:::
+
+::: {#exr-mixed-rules}
+## Mischformen
+
+In der Praxis werden die drei Entscheidungsregeln häufig zu Mischformen kombiniert. @fig-mixed-1 und @fig-mixed-2 zeigen zwei solche Mischformen, angewendet auf das Szenario der Kunsthochschule. Die Grenzen der Regeln sind in den Legenden angegeben.
+
+```{r}
+#| label: fig-mixed-1
+#| echo: false
+#| fig-width: 5.5
+#| fig-height: 4.5
+#| fig-align: center
+#| fig-cap: "Mischform 1"
+#| fig-alt: "Koordinatensystem mit IQ auf der x-Achse und Kreativität auf der y-Achse. Der positive Bereich liegt rechts von IQ 115, oberhalb von T-Wert 60 und oberhalb der Kompensationsgeraden. Lisa bei IQ 108 und T-Wert 44 liegt im negativen Bereich."
+plot_mixed1()
+```
+
+```{r}
+#| label: fig-mixed-2
+#| echo: false
+#| fig-width: 5.5
+#| fig-height: 4.5
+#| fig-align: center
+#| fig-cap: "Mischform 2"
+#| fig-alt: "Koordinatensystem mit IQ auf der x-Achse und Kreativität auf der y-Achse. Der positive Bereich liegt rechts oben, begrenzt durch IQ 100, T-Wert 50 und eine Gerade, auf der die Summe der z-Werte 2 beträgt. Lisa bei IQ 108 und T-Wert 44 liegt im negativen Bereich."
+plot_mixed2()
+```
+
+a. Beschreiben Sie die Entscheidungsregel in @fig-mixed-1. Wie heißt diese Mischform, und aus welchen Regeln (kompensatorische Regel, Oder-Regel, konjunktive Regel) setzt sie sich zusammen? Wird Lisa nach dieser Entscheidungsregel angenommen oder nicht?
+
+::: {.callout-tip title="Lösung" collapse="true"}
+Schwache Oder-Regel aus Oder-Regel und kompensatorischer Regel: Positiv ist, wer in mindestens einem Bereich einen Mindestwert erreicht ($\text{IQ} \geq 115$ oder $T_{\text{Krea}} \geq 60$) oder wessen $z$-Werte sich zu mindestens null summieren ($z_{\text{IQ}} + z_{\text{Krea}} \geq 0$, entspricht einem gemittelten $T$-Wert von mindestens 50). Lisa erreicht keine der beiden Schwellen und hat eine Summe von $-0.07$: Lisa wird nicht angenommen.
+:::
+
+b. Beschreiben Sie die Entscheidungsregel in @fig-mixed-2. Wie heißt diese Mischform, und aus welchen Regeln setzt sie sich zusammen? Wird Lisa nach dieser Entscheidungsregel angenommen oder nicht?
+
+::: {.callout-tip title="Lösung" collapse="true"}
+Schwach konjunktive Regel aus konjunktiver und kompensatorischer Regel: Beide Mindestwerte müssen erfüllt sein ($\text{IQ} \geq 100$ und $T_{\text{Krea}} \geq 50$), zusätzlich muss die Summe der $z$-Werte mindestens 2 betragen ($z_{\text{IQ}} + z_{\text{Krea}} \geq 2$, entspricht einem gemittelten $T$-Wert von mindestens 60). Lisa verfehlt mit $T_{\text{Krea}} = 44$ die Mindestanforderung: Lisa wird nicht angenommen.
+:::
+:::
+
+## Literatur {.unnumbered}
+
+::: {#refs}
+:::
