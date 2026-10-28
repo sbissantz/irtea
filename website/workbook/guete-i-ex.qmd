@@ -1,0 +1,274 @@
+---
+title: "3 Gütekriterien I"
+---
+
+```{r}
+#| label: setup
+#| include: false
+# plot labels contain umlauts, which need a UTF-8 locale; the shell that runs
+# the render may start R in the C locale
+invisible(Sys.setlocale("LC_CTYPE", "en_US.UTF-8"))
+colors <- viridisLite::viridis(5)
+```
+
+{{< include _revision-note.qmd >}}
+
+Wer in einem Gutachten die Auswahl eines Tests begründet, fasst für Reliabilität und Validität konkrete Befunde zusammen; die bloße Feststellung, ein Gütekriterium sei gegeben, genügt dafür nicht. Wie solche Begründungen aussehen, zeigen Testrezensionen. Im deutschen Sprachraum entstehen sie nach dem Testbeurteilungssystem des Diagnostik- und Testkuratoriums (TBS-DTK).
+
+::: {#exr-tbs-dtk}
+## Das Testbeurteilungssystem TBS-DTK
+
+Lesen Sie die Abschnitte 1 bis 3 und die Tabellen 1 und 2 des [Testbeurteilungssystems des Diagnostik- und Testkuratoriums](https://www.bdp-verband.de/fileadmin/user_upload/BDP/website/dokumente/PDF/Profession/Testrezensionen/reportpsychologie_11_12-2023_TBS-DTK.pdf) [TBS-DTK, @dtk2023].
+
+a. Was ist das TBS-DTK?
+
+::: {.callout-tip title="Lösung" collapse="true"}
+Das Testbeurteilungssystem des Diagnostik- und Testkuratoriums der Föderation Deutscher Psychologenvereinigungen (DGPs und BDP). Es legt fest, nach welchen Richtlinien und in welchem Ablauf publizierte Tests im deutschen Sprachraum rezensiert werden.
+:::
+
+b. Was bewertet eine TBS-DTK-Rezension?
+
+::: {.callout-tip title="Lösung" collapse="true"}
+Die Qualität eines Tests anhand seiner Verfahrenshinweise, vor allem seine Gütekriterien. Objektivität, Zuverlässigkeit und Gültigkeit (einschließlich Fairness) sowie der Informationsgehalt der Verfahrenshinweise werden auf einer vierstufigen Skala bewertet: Die Anforderungen sind voll, weitgehend, teilweise oder nicht erfüllt. Normierung, Störanfälligkeit, Unverfälschbarkeit und Skalierung werden frei beurteilt.
+:::
+
+Die Abbildung zeigt den Ablauf einer Rezension; drei Schritte fehlen.
+
+```{mermaid}
+%%| fig-width: 4
+%%{init: {"htmlLabels": false, "flowchart": {"htmlLabels": false}, "themeVariables": {"fontFamily": "Fira Sans"}, "themeCSS": "background-color: #fafafa;"}}%%
+flowchart TB
+  classDef step fill:#3B528B,stroke:#3B528B,color:#fff
+  classDef gap fill:#fafafa,stroke:#3B528B,stroke-dasharray: 4 4,color:#23373b
+  classDef done fill:#5DC863,stroke:#5DC863,color:#23373b
+  select["Auswahl des Tests durch das DTK"]:::step
+  commission["?"]:::gap
+  party1["Partei 1: Prüfung und Bewertung"]:::step
+  party2["Partei 2: Prüfung und Bewertung"]:::step
+  joint["?"]:::gap
+  check["Prüfung durch das DTK"]:::step
+  comment["?"]:::gap
+  publish["Publikation"]:::done
+  select --> commission
+  commission --> party1
+  commission --> party2
+  party1 --> joint
+  party2 --> joint
+  joint --> check
+  check --> comment
+  comment --> publish
+```
+
+c. Ergänzen Sie die drei fehlenden Schritte.
+
+::: {.callout-tip title="Lösung" collapse="true"}
+Von oben nach unten:
+
+1. Beauftragung von zwei Rezensions-Parteien
+2. Gemeinsame Rezension
+3. Stellungnahme der Testautor:innen
+:::
+
+d. Wie arbeiten die beiden Rezensions-Parteien, bevor sie die gemeinsame Rezension verfassen?
+
+::: {.callout-tip title="Lösung" collapse="true"}
+Zwei Rezensions-Parteien beurteilen den Test zunächst unabhängig voneinander und anonym; erst danach verfassen sie eine gemeinsame Rezension, bei Uneinigkeit mit beiden Positionen. Die Testautor:innen dürfen nur auf sachliche Fehler hinweisen, nicht die Bewertungen ändern lassen. Bewertet wird kriterienorientiert, ohne Vergleich mit anderen Tests.
+:::
+
+e. Was geschieht, wenn sich die beiden Parteien nicht auf eine gemeinsame Fassung einigen können?
+
+::: {.callout-tip title="Lösung" collapse="true"}
+Die Rezension stellt die unterschiedlichen Positionen dar; über die formalisierten Bewertungen entscheidet dann das DTK.
+:::
+
+f. Wozu dürfen die Testautor:innen Stellung nehmen?
+
+::: {.callout-tip title="Lösung" collapse="true"}
+Nur zu sachlichen Fehlern im Entwurf der Rezension, nicht dazu, ob sie mit den Bewertungen einverstanden sind.
+:::
+
+g. Fassen Sie aus Ihren Antworten zu den Teilen a bis f zusammen, was das Besondere an diesem Ablauf ist.
+
+::: {.callout-tip title="Lösung" collapse="true"}
+Zum Beispiel: Zwei unabhängige, anonyme Urteile werden erst danach zu einer gemeinsamen Rezension zusammengeführt, Uneinigkeit wird offen dargestellt, und die Testautor:innen können die Bewertungen nicht beeinflussen. So sollen die Rezensionen möglichst unabhängig und unvoreingenommen sein.
+:::
+:::
+
+::: {#exr-test-review}
+## Gütekriterien in einer Testrezension
+
+Lesen Sie die [Rezension des Inventars Sozialer Kompetenzen](https://www.bdp-verband.de/fileadmin/user_upload/BDP/website/dokumente/PDF/Profession/Testrezensionen/G-K/TBS-DTK-Rezension_ISK_reportpsychologie_01-2023_neu.pdf) [ISK, @kanning2009] von @bosau2023. Das ISK ist ein Fragebogen, mit dem Personen ab 16 Jahren ihre sozialen Kompetenzen selbst einschätzen. Die Rezensenten stützen ihre Urteile auf das Manual des ISK. In den Teilen a bis d arbeiten Sie heraus, wie sie die Gütekriterien beurteilen und womit sie ihre Urteile begründen; in Teil e bilden Sie daraus ein eigenes Urteil. Die Rezension folgt der Fassung des TBS-DTK von 2018 [@dtk2018], deren vierstufige Bewertungsskala der aktuellen entspricht, und spricht von Zuverlässigkeit statt Reliabilität und von Gültigkeit statt Validität.
+
+a. Objektivität: Lesen Sie den Abschnitt „Objektivität“.
+
+   i. Wie beurteilen die Rezensenten die Durchführungsobjektivität? Geben Sie ihre Begründung an.
+
+      ::: {.callout-tip title="Lösung" collapse="true"}
+      Positiv: Sie sehen sie durch die vollständige Standardisierung von Instruktionen und Fragebogen gesichert; ein Beispiel-Item ist vorhanden.
+      :::
+
+   ii. Wie beurteilen die Rezensenten die Auswertungsobjektivität? Geben Sie ihre Begründung an.
+
+       ::: {.callout-tip title="Lösung" collapse="true"}
+       Positiv, mit einer Einschränkung: Auswertungsschablonen, deren Gebrauch ausführlich erklärt wird, sichern sie, und negativ gepolte Items sind gekennzeichnet. Weil die Items auf dem Antwortbogen teils in anderer Reihenfolge stehen als im Fragebogen, sind aber Eingabefehler möglich.
+       :::
+
+   iii. Wie beurteilen die Rezensenten die Interpretationsobjektivität? Geben Sie ihre Begründung an.
+
+        ::: {.callout-tip title="Lösung" collapse="true"}
+        Positiv, mit einer Empfehlung: Zwei Fallbeispiele, Interpretationshilfen und Normen (Standardwerte, Stanine, Prozentränge) sowie Konfidenzintervalle und kritische Differenzen sichern sie. Auf dem Auswertungsblatt sollte aber ein Intervall statt eines Einzelwerts eingetragen werden.
+        :::
+
+b. Reliabilität: Lesen Sie den Abschnitt „Zuverlässigkeit“.
+
+   i. Welche der vier Methoden der Reliabilitätsschätzung (Retest, Paralleltest, Testhalbierung, interne Konsistenz) wurden laut Rezension angewandt?
+
+      ::: {.callout-tip title="Lösung" collapse="true"}
+      Interne Konsistenz, Testhalbierung und Retest.
+      :::
+
+   ii. Wie beurteilen die Rezensenten die interne Konsistenz? Geben Sie ihre Begründung an.
+
+       ::: {.callout-tip title="Lösung" collapse="true"}
+       Als akzeptabel: Die Subskalen erreichen mindestens 0.68, oft 0.80 oder mehr, die Sekundärskalen 0.76 bis 0.90; die Kurzform liegt mit 0.66 bis 0.79 etwas niedriger.
+       :::
+
+   iii. Wie beurteilen die Rezensenten die Retest-Reliabilität? Geben Sie ihre Begründung an.
+
+        ::: {.callout-tip title="Lösung" collapse="true"}
+        Kritisch: Die Werte liegen zwar je nach Subskala über 0.80, beruhen aber nur auf 47 Studierenden und auf einem relativ kurzen Intervall von 13 bis 17 Wochen.
+        :::
+
+   iv. Warum fehlt die Paralleltestreliabilität?
+
+       ::: {.callout-tip title="Lösung" collapse="true"}
+       Weil es keine Parallelform des ISK gibt.
+       :::
+
+c. Validität: Lesen Sie den Abschnitt „Gültigkeit“ und die Darstellung der Testkonstruktion.
+
+   i. Wie beurteilen die Rezensenten die Inhaltsvalidität? Geben Sie ihre Begründung an.
+
+      ::: {.callout-tip title="Lösung" collapse="true"}
+      Kritisch: Die 17 Kompetenzbereiche wurden zwar aus häufig zitierten Kompetenzkatalogen abgeleitet, manche Items erfassen aber statt einer Kompetenz eher konkretes Verhalten, Interessen oder Ziele.
+      :::
+
+   ii. Wie beurteilen die Rezensenten die konvergente und die diskriminante Validität? Geben Sie ihre Begründung an.
+
+       ::: {.callout-tip title="Lösung" collapse="true"}
+       Positiv, mit einer Einschränkung: Das Manual berichtet umfangreiche Korrelationen mit 24 Persönlichkeitsverfahren, allerdings überwiegend aus Studierendenstichproben; eine Validierung an Berufstätigen wäre wünschenswert.
+       :::
+
+   iii. Wie beurteilen die Rezensenten die faktorielle Validität? Geben Sie ihre Begründung an.
+
+        ::: {.callout-tip title="Lösung" collapse="true"}
+        Positiv: Subskalen derselben Sekundärskala korrelieren mit etwa 0.40 bis 0.50, Subskalen verschiedener Sekundärskalen meist gering, die Sekundärskalen untereinander nur mit etwa 0.20. Die Faktorenstruktur ordnet die Subskalen eindeutig den Sekundärskalen zu, ohne nennenswerte Querladungen. Die Skalen lassen sich deshalb getrennt interpretieren.
+        :::
+
+   iv. Wie beurteilen die Rezensenten die Konstruktvalidität insgesamt? Geben Sie ihre Begründung an.
+
+       ::: {.callout-tip title="Lösung" collapse="true"}
+       Positiv: Die Analysen ergeben mit den übrigen Validitätsbelegen ein stimmiges Gesamtbild und zeigen die inhaltlichen Bezüge zu anderen Konstrukten. Als Einschränkung bleibt, dass die Belege überwiegend von Studierenden stammen.
+       :::
+
+   v. Wie beurteilen die Rezensenten die Kriteriumsvalidität? Geben Sie ihre Begründung an.
+
+      ::: {.callout-tip title="Lösung" collapse="true"}
+      Als akzeptabel bis gut, je nach Kriterium unterschiedlich. Einschränkung: Manche Kriterien (etwa Arbeits- oder Lebenszufriedenheit) passen nur bedingt als Erfolgskriterien sozialer Kompetenz; passender wären etwa die Größe sozialer Netzwerke oder die Lösung sozialer Konflikte.
+      :::
+
+d. Nebengütekriterien: Zu den Nebengütekriterien zählen Normierung, Ökonomie, Nützlichkeit, Zumutbarkeit, Unverfälschbarkeit und Fairness. Lesen Sie die Abschnitte „Normierung“ und „Weitere Gütekriterien“.
+
+   i. Was spricht nach der Rezension für die Normierung?
+
+      ::: {.callout-tip title="Lösung" collapse="true"}
+      4208 Personen aus 20 Einzelstudien, getrennte Normen für Allgemeinbevölkerung, Schüler:innen und Auszubildende, Studierende und Berufstätige, jeweils für Männer und Frauen.
+      :::
+
+   ii. Was spricht nach der Rezension gegen die Normierung?
+
+       ::: {.callout-tip title="Lösung" collapse="true"}
+       Die Erhebungszeiträume fehlen, und die Normdaten sind relativ alt. Obwohl das ISK auch für die Personalauswahl gedacht ist, sind nur etwa 40 % der Normstichprobe Berufstätige, und diese stammen aus wenigen Berufsgruppen.
+       :::
+
+   iii. Die DIN 33430 legt Qualitätsstandards für die berufsbezogene Eignungsdiagnostik fest [@din2016]. Zur Normierung verlangt sie unter anderem, die Normen spätestens alle 8 Jahre zu überprüfen und gegebenenfalls zu erneuern. Wie beurteilen Sie die Normierung (Eichung) des ISK nach der DIN 33430?
+
+        ::: {.callout-tip title="Lösung" collapse="true"}
+        Die Anforderung der DIN 33430 ist nicht erfüllt: Die jüngsten Normdaten sind älter als 8 Jahre, die Normen müssten also überprüft und erneuert werden.
+        :::
+
+   iv. Wie beurteilen die Rezensenten die Ökonomie? Geben Sie ihre Begründung an.
+
+       ::: {.callout-tip title="Lösung" collapse="true"}
+       Als hoch. Eine eigene Begründung nennen sie dafür nicht; die Bearbeitungszeiten, die sie bei den Verfahrenshinweisen angeben (etwa 10 bzw. 20 Minuten, Auswertung etwa 10 Minuten), stützen das Urteil.
+       :::
+
+   v. Wie beurteilen die Rezensenten die Nützlichkeit? Geben Sie ihre Begründung an.
+
+      ::: {.callout-tip title="Lösung" collapse="true"}
+      Als gegeben: Bisher fehlte ein umfassendes Selbsteinschätzungsverfahren für soziale Kompetenzen; das ISK ergänzt damit die bestehenden Verfahren.
+      :::
+
+   vi. Wie beurteilen die Rezensenten die Zumutbarkeit? Geben Sie ihre Begründung an.
+
+       ::: {.callout-tip title="Lösung" collapse="true"}
+       Als nicht zu beanstanden; eine Begründung nennen sie nicht.
+       :::
+
+   vii. Wie beurteilen die Rezensenten die Unverfälschbarkeit? Geben Sie ihre Begründung an.
+
+        ::: {.callout-tip title="Lösung" collapse="true"}
+        Als eingeschränkt: Wie viele Selbsteinschätzungsverfahren ist das ISK nicht davor geschützt, dass Personen sich beschönigend darstellen. Eine Untersuchung zur Anfälligkeit für sozial erwünschtes Antworten liegt vor.
+        :::
+
+   viii. Wie beurteilen die Rezensenten die Fairness? Geben Sie ihre Begründung an.
+
+         ::: {.callout-tip title="Lösung" collapse="true"}
+         Als gegeben: Die Normwerte sind über verschiedene Personengruppen hinweg ähnlich; eine Benachteiligung einzelner Gruppen zeigt sich nicht.
+         :::
+
+e. Gesamturteil: Die Rezensenten kennen das Manual mit allen Kennwerten; Ihnen liegt nur die Rezension vor. Kreuzen Sie an, inwieweit die TBS-DTK-Anforderungen nach Ihrem eigenen Urteil erfüllt sind.
+
+   | Inventar Sozialer Kompetenzen (ISK) | voll | weitgehend | teilweise | nicht |
+   |-------------------------------------|:----:|:----------:|:---------:|:-----:|
+   | Objektivität                        |      |            |           |       |
+   | Zuverlässigkeit                     |      |            |           |       |
+   | Validität                           |      |            |           |       |
+
+
+   ::: {.callout-tip title="Lösung" collapse="true"}
+   Zum Beispiel, wie in der Rezension:
+
+   | Inventar Sozialer Kompetenzen (ISK) | voll | weitgehend | teilweise | nicht |
+   |-------------------------------------|:----:|:----------:|:---------:|:-----:|
+   | Objektivität                        |  x   |            |           |       |
+   | Zuverlässigkeit                     |      |     x      |           |       |
+   | Validität                           |      |     x      |           |       |
+   :::
+:::
+
+<!--
+Vorlage für eine Aufgabe: kopieren, Anker (#exr-…) und Titel anpassen.
+
+::: {#exr-name}
+## Titel
+
+Aufgabentext.
+
+::: {.callout-note title="Hinweis" collapse="true"}
+Hinweis oder Formel.
+:::
+
+a. Erster Teil.
+
+::: {.callout-tip title="Lösung" collapse="true"}
+Nur das Ergebnis.
+:::
+
+b. Zweiter Teil.
+
+::: {.callout-tip title="Lösung" collapse="true"}
+Nur das Ergebnis.
+:::
+:::
+-->
