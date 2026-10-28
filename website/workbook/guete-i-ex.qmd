@@ -11,6 +11,8 @@ invisible(Sys.setlocale("LC_CTYPE", "en_US.UTF-8"))
 colors <- viridisLite::viridis(5)
 ```
 
+{{< include _revision-note.qmd >}}
+
 Wer in einem Gutachten die Auswahl eines Tests begründet, fasst für Reliabilität und Validität konkrete Befunde zusammen; die bloße Feststellung, ein Gütekriterium sei gegeben, genügt dafür nicht. Wie solche Begründungen aussehen, zeigen Testrezensionen. Im deutschen Sprachraum entstehen sie nach dem Testbeurteilungssystem des Diagnostik- und Testkuratoriums (TBS-DTK).
 
 ::: {#exr-tbs-dtk}

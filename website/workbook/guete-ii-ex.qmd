@@ -31,6 +31,8 @@ variance_d <- sum(versions$D$cov)
 alpha_d <- 3 / 2 * (1 - sum(diag(versions$D$cov)) / variance_d)
 ```
 
+{{< include _revision-note.qmd >}}
+
 In diesem Kapitel berechnen und beurteilen Sie Kennwerte der drei Hauptgütekriterien: Objektivität (Cohens Kappa, Intraklassenkorrelation), Reliabilität (Testhalbierung, Testverlängerung, Cronbachs Alpha) und Validität (Konstruktvalidität). Die Formeln in den Hinweisen entsprechen der Formelsammlung zur Vorlesung. Alle Daten sind fiktiv.
 
 ::: {#exr-kappa}

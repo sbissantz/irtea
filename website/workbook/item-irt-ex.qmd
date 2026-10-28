@@ -25,6 +25,8 @@ item_colors <- viridisLite::viridis(6, end = 0.85)
 theta_grid <- seq(-4, 4, length.out = 401)
 ```
 
+{{< include _revision-note.qmd >}}
+
 Der Hagen Matrices Test [HMT, @heydasch2014] misst fluide Intelligenz, genauer das schlussfolgernde Denken. Seine Aufgaben sind figurale Matrizen: Die Person muss die Regel erkennen, nach der die Figuren angeordnet sind, und mit ihr das fehlende Element ergänzen. Der HMT wird online bearbeitet. Die Langform hat 20 Aufgaben und dauert 20 Minuten, die Kurzform HMT-S sechs Aufgaben und dauert 5 Minuten [@heydasch2013]. Für nichtkommerzielle Zwecke ist er frei verfügbar.
 
 Die Studienberatung der RPTU plant ein Online-Self-Assessment für Studieninteressierte. Es soll ihnen unter anderem zurückmelden, wie gut sie im schlussfolgernden Denken abschneiden, und dafür den HMT-S nutzen. Viele Interessierte bearbeiten solche Angebote am Smartphone. Deshalb erprobt die Studienberatung den HMT-S mit 800 Personen: 400 bearbeiten ihn am Computer, 400 am Smartphone. Mit dem Rasch-Modell prüft sie, ob die sechs Aufgaben für das Self-Assessment taugen.

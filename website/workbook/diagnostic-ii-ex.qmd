@@ -11,6 +11,8 @@ invisible(Sys.setlocale("LC_CTYPE", "en_US.UTF-8"))
 colors <- viridisLite::viridis(5)
 ```
 
+{{< include _revision-note.qmd >}}
+
 In diesem Kapitel üben Sie die Berechnung von Konfidenzintervallen um Normwerte, das Prüfen diagnostischer Hypothesen, die Güte von Klassifikationen und die Bewertung von Veränderungen. Alle Fälle und Daten sind fiktiv.
 
 ::: {#exr-critical-z}

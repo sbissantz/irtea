@@ -15,6 +15,8 @@ options(
 colors <- viridisLite::viridis(5)
 ```
 
+{{< include _revision-note.qmd >}}
+
 Eine Gruppe englischer Forscher:innen möchte ein Instrument zum Screening der Persönlichkeitsdomäne Extraversion entwickeln. In einer Pilotstudie erheben sie eine Reihe potenzieller Items aus dem International Personality Item Pool (IPIP). Dazu verwenden sie eine vollständig beschriftete Ratingskala mit $k = 6$ ordinalen Antwortkategorien (*Very Inaccurate*, *Moderately Inaccurate*, *Slightly Inaccurate*, *Slightly Accurate*, *Moderately Accurate*, *Very Accurate*), kodiert von 0 bis 5. Mit den Pilotdaten möchten die Forscher:innen eine Itemanalyse durchführen.
 
 In einer Pilotstudie werden oft viele Items in einer großen Stichprobe erhoben. Zum Üben betrachten wir zunächst nur die Antworten von $n = 8$ Personen auf $m = 3$ Items. Die Berechnungen orientieren sich an Kapitel 7 in @moosbrugger2020. Die Beispieldaten stammen aus dem Datensatz `bfi` des R-Pakets psych [@revelle2026]; das Szenario ist fiktiv.
