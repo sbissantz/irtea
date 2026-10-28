@@ -19,7 +19,7 @@ pak::pak("sbissantz/irtea")
 |-----------|--------|------------|
 | `personality_items` | Antworten von 7 Personen auf 3 Items | [Kapitel 1 & 2](workbook/basics-ex.qmd) |
 | `test_anxiety` | Antworten von 2000 Personen auf 20 Items zur Prüfungsangst (simuliert) | [Kapitel 8 & 9](workbook/efa-ex.qmd) |
-| `hmt_short` | Antworten von 800 Personen auf die sechs Aufgaben der Kurzform des Hagen Matrices Test, am Computer oder am Smartphone (simuliert) | [Kapitel 11](workbook/item-irt-ex.qmd) |
+| `hmt_short` | Antworten von 800 Personen auf die sechs Aufgaben der Kurzform des Hagen Matrices Test, am Computer oder am Smartphone (simuliert) | [Kapitel 11](workbook/item-ii-ex.qmd) |
 
 Einen Datensatz laden Sie mit:
 

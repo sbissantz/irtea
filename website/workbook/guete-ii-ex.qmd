@@ -180,7 +180,7 @@ Nur eingeschränkt: Die Reliabilität begrenzt die Validität. Zielscheibe 3 tri
 ::: {#exr-spearman-brown}
 ## Testhalbierung
 
-Die Forscher:innen aus [Kapitel 10](item-ktt-ex.qmd) kürzen ihr Screening für Extraversion nach der Itemanalyse auf vier Items. In einer neuen Stichprobe teilen sie die Items in zwei Testhälften auf (Items 1 und 3, Items 2 und 4). Die Summenwerte der beiden Hälften korrelieren zu 0.81.
+Die Forscher:innen aus [Kapitel 10](item-i-ex.qmd) kürzen ihr Screening für Extraversion nach der Itemanalyse auf vier Items. In einer neuen Stichprobe teilen sie die Items in zwei Testhälften auf (Items 1 und 3, Items 2 und 4). Die Summenwerte der beiden Hälften korrelieren zu 0.81.
 
 ::: {.callout-note title="Hinweis" collapse="true"}
 $$
