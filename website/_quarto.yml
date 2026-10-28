@@ -29,9 +29,11 @@ website:
       - text: Übungsheft
         menu:
           - href: workbook/basics-ex.qmd
-            text: "1. Rechenkompetenzen"
+            text: "1. & 2. Rechenkompetenzen"
+          - href: workbook/guete-i-ex.qmd
+            text: "3. Gütekriterien I"
           - href: workbook/efa-ex.qmd
-            text: "8. Exploratorische Faktorenanalyse"
+            text: "8. & 9. Exploratorische Faktorenanalyse"
           - href: workbook/item-ktt-ex.qmd
             text: "10. Itemanalyse I"
           - href: workbook/item-irt-ex.qmd
