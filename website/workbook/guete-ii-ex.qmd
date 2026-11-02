@@ -131,52 +131,6 @@ $ICC(1,1) = 0.55$: befriedigend. Ein einzelnes Urteil ist deutlich weniger relia
 :::
 :::
 
-::: {#exr-reliability-validity}
-## Reliabilität und Validität
-
-Die Abbildung zeigt vier Zielscheiben. Jedes Kreuz steht für eine Messung; die Mitte steht für das Merkmal, das gemessen werden soll.
-
-```{r}
-#| label: targets
-#| echo: false
-#| fig-width: 8
-#| fig-height: 2.4
-#| fig-alt: "Vier Zielscheiben mit je 15 Kreuzen: bei 1 eng um die Mitte, bei 2 eng beieinander am oberen linken Rand, bei 3 weit um die Mitte gestreut, bei 4 weit gestreut und nach rechts oben verschoben"
-set.seed(13)
-centers <- list(c(0, 0), c(-2.3, 2.1), c(0, 0), c(1.4, 1.6))
-spreads <- c(0.3, 0.3, 1.3, 1.3)
-
-par(mfrow = c(1, 4), mar = c(0.5, 0.5, 2, 0.5))
-for (i in 1:4) {
-  plot(NA,
-    xlim = c(-4.2, 4.2), ylim = c(-4.2, 4.2), asp = 1,
-    axes = FALSE, xlab = "", ylab = "", main = i
-  )
-  symbols(rep(0, 4), rep(0, 4), circles = 1:4, inches = FALSE, add = TRUE, fg = "grey60")
-  hits <- cbind(
-    rnorm(15, centers[[i]][1], spreads[i]),
-    rnorm(15, centers[[i]][2], spreads[i])
-  )
-  points(hits, pch = 3, lwd = 2, col = colors[1])
-}
-```
-
-a. Welche Zielscheibe zeigt eine reliable und valide Messung, welche eine reliable, aber nicht valide, und welche eine Messung, die weder reliabel noch valide ist?
-
-::: {.callout-tip title="Lösung" collapse="true"}
-- 1: reliabel und valide.
-- 2: reliabel, aber nicht valide: Die Messungen liegen eng beieinander, verfehlen aber das Merkmal systematisch.
-- 3: nicht reliabel: Die Messungen streuen stark, liegen aber im Mittel auf dem Ziel.
-- 4: weder reliabel noch valide.
-:::
-
-b. Kann eine Messung wie in Zielscheibe 3 valide sein?
-
-::: {.callout-tip title="Lösung" collapse="true"}
-Nur eingeschränkt: Die Reliabilität begrenzt die Validität. Zielscheibe 3 trifft nur im Mittel; einzelne Messungen liegen oft weit vom Ziel entfernt.
-:::
-:::
-
 ::: {#exr-spearman-brown}
 ## Testhalbierung
 
