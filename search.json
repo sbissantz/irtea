@@ -49,6 +49,244 @@
     "text": "Literatur\n\n\nMoosbrugger, H., & Kelava, A. (Hrsg.). (2020). Testtheorie und Fragebogenkonstruktion (3. Aufl.). Springer Berlin Heidelberg. https://doi.org/10.1007/978-3-662-61532-4"
   },
   {
+    "objectID": "slides/guete-inp.html#semesterübersicht",
+    "href": "slides/guete-inp.html#semesterübersicht",
+    "title": "B.F.3 Übung zu Diagnostik/Testtheorie",
+    "section": "Semesterübersicht",
+    "text": "Semesterübersicht\n\n\n\n\n\n\n\n\nNr.\nDatum\nThema\n\n\n\n\n1\nab 20.10.\nEinführung & Rechenkompetenzen\n\n\n2\nab 27.10.\nRechenkompetenzen\n\n\n3\nab 03.11.\nGütekriterien\n\n\n4\nab 10.11.\nSchritte der Testkonstruktion & Erstellung eines Testentwurfs\n\n\n\n\nLektürewoche\n\n\n5\nab 24.11.\nKlassische Testtheorie\n\n\n6\nab 01.12.\nDiagnostische Rechenkompetenzen I\n\n\n7\nab 08.12.\nItem-Response-Theorie\n\n\n8\nab 15.12.\nExploratorische Faktorenanalyse I\n\n\n\n\nWeihnachtsferien\n\n\n9\nab 05.01.\nExploratorische Faktorenanalyse II\n\n\n10\nab 12.01.\nItemanalyse I\n\n\n11\nab 19.01.\nItemanalyse II, Itemselektion und Testrevision\n\n\n12\nab 26.01.\nDiagnostische Rechenkompetenzen II\n\n\n13\nab 02.02.\nGütekriterien II"
+  },
+  {
+    "objectID": "slides/guete-inp.html#qualitätsanforderungen-an-tests",
+    "href": "slides/guete-inp.html#qualitätsanforderungen-an-tests",
+    "title": "B.F.3 Übung zu Diagnostik/Testtheorie",
+    "section": "Qualitätsanforderungen an Tests",
+    "text": "Qualitätsanforderungen an Tests\n\nHauptgütekriterien\nNebengütekriterien"
+  },
+  {
+    "objectID": "slides/guete-inp.html#hauptgütekriterien",
+    "href": "slides/guete-inp.html#hauptgütekriterien",
+    "title": "B.F.3 Übung zu Diagnostik/Testtheorie",
+    "section": "Hauptgütekriterien",
+    "text": "Hauptgütekriterien\n\nObjektivität\nReliabilität\nValidität\nSkalierung"
+  },
+  {
+    "objectID": "slides/guete-inp.html#nebengütekriterien",
+    "href": "slides/guete-inp.html#nebengütekriterien",
+    "title": "B.F.3 Übung zu Diagnostik/Testtheorie",
+    "section": "Nebengütekriterien",
+    "text": "Nebengütekriterien\n\nNormierung\nÖkonomie\nNützlichkeit\nZumutbarkeit\nUnverfälschbarkeit\nFairness"
+  },
+  {
+    "objectID": "slides/guete-inp.html#objektivität",
+    "href": "slides/guete-inp.html#objektivität",
+    "title": "B.F.3 Übung zu Diagnostik/Testtheorie",
+    "section": "Objektivität",
+    "text": "Objektivität\nEin Test ist objektiv, wenn die Durchführung und Auswertung des Tests sowie die Interpretation des Testergebnisses unabhängig von der Testleitung sind (Moosbrugger & Kelava, 2020, Kapitel 2).\n\nDurchführungsobjektivität\nAuswertungsobjektivität\nInterpretationsobjektivität"
+  },
+  {
+    "objectID": "slides/guete-inp.html#durchführungsobjektivität",
+    "href": "slides/guete-inp.html#durchführungsobjektivität",
+    "title": "B.F.3 Übung zu Diagnostik/Testtheorie",
+    "section": "Durchführungsobjektivität",
+    "text": "Durchführungsobjektivität\nStandardisierung der Durchführungsbedingungen, z. B.\n\nInstruktion\nZeitbegrenzung"
+  },
+  {
+    "objectID": "slides/guete-inp.html#auswertungsobjektivität",
+    "href": "slides/guete-inp.html#auswertungsobjektivität",
+    "title": "B.F.3 Übung zu Diagnostik/Testtheorie",
+    "section": "Auswertungsobjektivität",
+    "text": "Auswertungsobjektivität\n\nAuswertung mit Schablonen oder Computern\nBei Ratingskalen und Multiple Choice in der Regel leicht zu erreichen\nBei offenen Antwortformaten: Festlegung exakter Auswertungsregeln\nLässt sich angeben als Grad der Übereinstimmung zwischen Testauswerter:innen"
+  },
+  {
+    "objectID": "slides/guete-inp.html#interpretationsobjektivität",
+    "href": "slides/guete-inp.html#interpretationsobjektivität",
+    "title": "B.F.3 Übung zu Diagnostik/Testtheorie",
+    "section": "Interpretationsobjektivität",
+    "text": "Interpretationsobjektivität\nLiegt vor, wenn verschiedene Testauswerter:innen bei identischen Testergebnissen dieselben Schlussfolgerungen ziehen\n\nNormtabellen zur Einordnung der Testperson im Vergleich zu relevanten Bezugsgruppen"
+  },
+  {
+    "objectID": "slides/guete-inp.html#reliabilität",
+    "href": "slides/guete-inp.html#reliabilität",
+    "title": "B.F.3 Übung zu Diagnostik/Testtheorie",
+    "section": "Reliabilität",
+    "text": "Reliabilität\nDie Reliabilität gibt den Grad der Messgenauigkeit eines Messwerts an (Stichwort: Messfehler). Reliabilitätskoeffizienten haben einen Wertebereich von 0 bis 1.\nVerfahren zur Bestimmung der Reliabilität\n\nRetest-Reliabilität\nParalleltest-Reliabilität\nTesthalbierungs-Reliabilität\nInterne Konsistenz"
+  },
+  {
+    "objectID": "slides/guete-inp.html#retest-reliabilität",
+    "href": "slides/guete-inp.html#retest-reliabilität",
+    "title": "B.F.3 Übung zu Diagnostik/Testtheorie",
+    "section": "Retest-Reliabilität",
+    "text": "Retest-Reliabilität\n\nTest wird zu zwei verschiedenen Zeitpunkten durchgeführt\nKorrelation der beiden Testergebnisse\nProbleme: Korrelation kann in Abhängigkeit vom Zeitintervall variieren (Übungs- und Erinnerungseffekte, Merkmalsveränderungen)"
+  },
+  {
+    "objectID": "slides/guete-inp.html#paralleltest-reliabilität",
+    "href": "slides/guete-inp.html#paralleltest-reliabilität",
+    "title": "B.F.3 Übung zu Diagnostik/Testtheorie",
+    "section": "Paralleltest-Reliabilität",
+    "text": "Paralleltest-Reliabilität\n\nKorrelation der Testwerte aus „parallelen“ Testformen, die dasselbe Konstrukt erfassen und aus inhaltlich möglichst ähnlichen Items bestehen („Itemzwillinge“)\nProbleme: schwierig, parallele Testformen herzustellen; Verzerrungseffekte durch Wiederholungsmessung"
+  },
+  {
+    "objectID": "slides/guete-inp.html#testhalbierungs-reliabilität",
+    "href": "slides/guete-inp.html#testhalbierungs-reliabilität",
+    "title": "B.F.3 Übung zu Diagnostik/Testtheorie",
+    "section": "Testhalbierungs-Reliabilität",
+    "text": "Testhalbierungs-Reliabilität\n\nTest wird in möglichst gleiche Hälften geteilt\nKorrelation der Testhälften\nKorrekturfaktor für die Testlänge → aufgewertete Testhalbierungs-Reliabilität"
+  },
+  {
+    "objectID": "slides/guete-inp.html#interne-konsistenz",
+    "href": "slides/guete-inp.html#interne-konsistenz",
+    "title": "B.F.3 Übung zu Diagnostik/Testtheorie",
+    "section": "Interne Konsistenz",
+    "text": "Interne Konsistenz\n\nJedes Item wird als eigenständiger Testteil angesehen\nKorrelation der Testteile (Items) unter Berücksichtigung der Testlänge"
+  },
+  {
+    "objectID": "slides/guete-inp.html#validität",
+    "href": "slides/guete-inp.html#validität",
+    "title": "B.F.3 Übung zu Diagnostik/Testtheorie",
+    "section": "Validität",
+    "text": "Validität\nDie Validität gibt an, ob der Test wirklich das misst, was er zu messen beansprucht.\n\nInhaltsvalidität\nKriteriumsvalidität\nKonstruktvalidität"
+  },
+  {
+    "objectID": "slides/guete-inp.html#inhaltsvalidität",
+    "href": "slides/guete-inp.html#inhaltsvalidität",
+    "title": "B.F.3 Übung zu Diagnostik/Testtheorie",
+    "section": "Inhaltsvalidität",
+    "text": "Inhaltsvalidität\nAusmaß, in dem ein Test oder ein Testitem das zu messende Merkmal repräsentativ erfasst\n\nRepräsentationsschluss: Testitems als repräsentative Stichprobe aus dem „Universum“ von Items, die das interessierende Merkmal abbilden\nBestimmung aufgrund logischer und fachlicher Überlegungen (z. B. Befragung von Expert:innen)\nEng verbunden mit der Augenscheinvalidität eines Tests"
+  },
+  {
+    "objectID": "slides/guete-inp.html#kriteriumsvalidität",
+    "href": "slides/guete-inp.html#kriteriumsvalidität",
+    "title": "B.F.3 Übung zu Diagnostik/Testtheorie",
+    "section": "Kriteriumsvalidität",
+    "text": "Kriteriumsvalidität\nZusammenhang des Testwerts mit Kriterien: Vom Verhalten innerhalb der Testsituation (Testwert) wird auf Verhalten außerhalb der Testsituation (Kriterium) geschlossen.\n\nVorhersagevalidität\nÜbereinstimmungsvalidität\nRetrospektive Validität\nInkrementelle Validität"
+  },
+  {
+    "objectID": "slides/guete-inp.html#vorhersage--und-übereinstimmungsvalidität",
+    "href": "slides/guete-inp.html#vorhersage--und-übereinstimmungsvalidität",
+    "title": "B.F.3 Übung zu Diagnostik/Testtheorie",
+    "section": "Vorhersage- und Übereinstimmungsvalidität",
+    "text": "Vorhersage- und Übereinstimmungsvalidität\nVorhersagevalidität\n\nKorrelation mit einem zeitlich später erhobenen Kriterium\nZ. B. wird die Leistung im Intelligenztest zu Beginn des Studiums mit der Bachelor-Abschlussnote korreliert\n\nÜbereinstimmungsvalidität\n\nKorrelation mit einem zeitgleich erhobenen Kriterium\nZ. B. wird die Leistung im Konzentrationstest mit dem Erfolg in der Führerscheinprüfung korreliert"
+  },
+  {
+    "objectID": "slides/guete-inp.html#retrospektive-und-inkrementelle-validität",
+    "href": "slides/guete-inp.html#retrospektive-und-inkrementelle-validität",
+    "title": "B.F.3 Übung zu Diagnostik/Testtheorie",
+    "section": "Retrospektive und inkrementelle Validität",
+    "text": "Retrospektive und inkrementelle Validität\nRetrospektive Validität\n\nKorrelation mit einem zeitlich vorher erhobenen Kriterium\nZ. B. wird die Leistung im Intelligenztest während des Studiums mit der Abiturnote korreliert\n\nInkrementelle Validität\n\nBeitrag eines Tests zur Verbesserung der Vorhersage eines Kriteriums\nZ. B. Gewissenhaftigkeit zur Vorhersage des Berufserfolgs, inkrementell zur Leistung im Intelligenztest"
+  },
+  {
+    "objectID": "slides/guete-inp.html#konstruktvalidität",
+    "href": "slides/guete-inp.html#konstruktvalidität",
+    "title": "B.F.3 Übung zu Diagnostik/Testtheorie",
+    "section": "Konstruktvalidität",
+    "text": "Konstruktvalidität\nLiegt vor, wenn die Schlussfolgerungen, die aufgrund des Testwerts über das zugrunde liegende Konstrukt gezogen werden, wissenschaftlich fundiert sind\n\nKonvergente Validität: Korrelation mit Tests, die das gleiche oder ein ähnliches Konstrukt erfassen → Erwartung hoher Zusammenhänge\nDiskriminante Validität: Korrelation mit Tests, die ein anderes Konstrukt erfassen → Erwartung niedriger Zusammenhänge\nFaktorielle Validität: Prüfung der Struktur mit Verfahren der Faktorenanalyse (exploratorisch und konfirmatorisch) und der Item-Response-Theorie"
+  },
+  {
+    "objectID": "slides/guete-inp.html#skalierung",
+    "href": "slides/guete-inp.html#skalierung",
+    "title": "B.F.3 Übung zu Diagnostik/Testtheorie",
+    "section": "Skalierung",
+    "text": "Skalierung\nDie Testwerte, die laut Verrechnungsregel resultieren, bilden die empirischen Merkmalsrelationen adäquat ab.\n\nHöhere Merkmalsausprägung → höherer Testwert\nAbhängig vom Skalenniveau des Tests\n\nUngeordnete Kategorien (z. B. Geschlecht, Wohnort)\nGeordnete Kategorien (z. B. Leistungsklasse: unsportlich, Freizeitsport, Hochleistungssport)\nBeurteilung der Größe der Merkmalsunterschiede (z. B. Gewicht, Körpergröße, Intelligenz, Narzissmus)"
+  },
+  {
+    "objectID": "slides/guete-inp.html#normierung",
+    "href": "slides/guete-inp.html#normierung",
+    "title": "B.F.3 Übung zu Diagnostik/Testtheorie",
+    "section": "Normierung",
+    "text": "Normierung\nEinordnung des individuellen Testwerts in eine Referenzgruppe\n\nGeeignete Normstichprobe (auch: Eichstichprobe)\n\nÄhnlichkeit zur Testperson in relevanten Merkmalen (z. B. Alter, Geschlecht, Schulbildung)\nMöglichst groß und repräsentativ\n\nRelativierung an der Normstichprobe\n\nProzentrangnormen (nicht verteilungsgebunden)\nStandardnormen, z. B. z-, IQ-, T-, Stanine-Werte (verteilungsgebunden)\n\nDIN 33430: Normen alle acht Jahre überprüfen, ggf. neu normieren\nNicht erforderlich bei kriteriumsorientiertem Testen (z. B. Kompetenzstufen)"
+  },
+  {
+    "objectID": "slides/guete-inp.html#ökonomie",
+    "href": "slides/guete-inp.html#ökonomie",
+    "title": "B.F.3 Übung zu Diagnostik/Testtheorie",
+    "section": "Ökonomie",
+    "text": "Ökonomie\nGeringe Kosten (Zeit, Geld, …) gemessen am diagnostischen Erkenntnisgewinn\n\nOft nur im Vergleich mit ähnlichen Tests bestimmbar\nHohe Ökonomie darf nicht zulasten anderer Gütekriterien gehen (v. a. Validität)"
+  },
+  {
+    "objectID": "slides/guete-inp.html#nützlichkeit",
+    "href": "slides/guete-inp.html#nützlichkeit",
+    "title": "B.F.3 Übung zu Diagnostik/Testtheorie",
+    "section": "Nützlichkeit",
+    "text": "Nützlichkeit\nPraktische Relevanz und Nutzen der getroffenen Entscheidungen\n\nErfasst der Test ein praktisch relevantes Merkmal oder sagt er es vorher?\nMehr Nutzen als Schaden der auf Grundlage des Tests getroffenen Entscheidungen?\nKein anderer Test für das Merkmal, der die übrigen Gütekriterien genauso gut erfüllt?"
+  },
+  {
+    "objectID": "slides/guete-inp.html#zumutbarkeit",
+    "href": "slides/guete-inp.html#zumutbarkeit",
+    "title": "B.F.3 Übung zu Diagnostik/Testtheorie",
+    "section": "Zumutbarkeit",
+    "text": "Zumutbarkeit\nBelastung der Testperson\n\nKeine übermäßige Belastung in zeitlicher, psychischer und körperlicher Hinsicht\nRelativ zu dem aus der Anwendung resultierenden Nutzen"
+  },
+  {
+    "objectID": "slides/guete-inp.html#unverfälschbarkeit",
+    "href": "slides/guete-inp.html#unverfälschbarkeit",
+    "title": "B.F.3 Übung zu Diagnostik/Testtheorie",
+    "section": "Unverfälschbarkeit",
+    "text": "Unverfälschbarkeit\nIst „Faking“ möglich?\n\nDie Testperson kann die Ausprägung ihrer Testwerte nicht durch gezieltes Testverhalten steuern oder verzerren (meist eine Frage des Grades)\nBedrohung: hohe Durchschaubarkeit, daher Verzerrung durch sozial erwünschtes Antwortverhalten möglich\n\nBeispiel: „Ich achte auf die Bedürfnisse anderer.“\n\nWeniger anfällig: Leistungstests oder „objektive Tests“"
+  },
+  {
+    "objectID": "slides/guete-inp.html#fairness",
+    "href": "slides/guete-inp.html#fairness",
+    "title": "B.F.3 Übung zu Diagnostik/Testtheorie",
+    "section": "Fairness",
+    "text": "Fairness\nKeine systematische Benachteiligung bestimmter Personen aufgrund ihrer Zugehörigkeit zu ethnischen, soziokulturellen oder geschlechtsspezifischen Gruppen\n\nKann Inhalt und Durchführung betreffen\nZ. B. Unfairness durch Itembias: Aufgaben sind systematisch unterschiedlich schwierig für unterschiedliche Gruppen\nV. a. wenn der Testwert neben dem zu erfassenden Merkmal systematisch durch andere, irrelevante Merkmale beeinflusst wird"
+  },
+  {
+    "objectID": "slides/guete-inp.html#interpretation-der-gütekriterien",
+    "href": "slides/guete-inp.html#interpretation-der-gütekriterien",
+    "title": "B.F.3 Übung zu Diagnostik/Testtheorie",
+    "section": "Interpretation der Gütekriterien",
+    "text": "Interpretation der Gütekriterien\n\nGütekriterien sind keine Eigenschaft des Tests\n\nNicht der Test an sich ist valide, sondern die Schlussfolgerungen aus den Testergebnissen\n\nGütekriterien gelten genau genommen für Testkennwerte in bestimmten Stichproben\n\nZ. B. „Cronbachs \\(\\alpha\\) für die Summenscores der Big Five betrug 0.93 für Neurotizismus, 0.89 für Extraversion, …“"
+  },
+  {
+    "objectID": "slides/guete-inp.html#übungen",
+    "href": "slides/guete-inp.html#übungen",
+    "title": "B.F.3 Übung zu Diagnostik/Testtheorie",
+    "section": "Übungen",
+    "text": "Übungen\nÜbungen zu diesem Thema: Übungsheft, Kapitel 3"
+  },
+  {
+    "objectID": "slides/guete-inp.html#literatur",
+    "href": "slides/guete-inp.html#literatur",
+    "title": "B.F.3 Übung zu Diagnostik/Testtheorie",
+    "section": "Literatur",
+    "text": "Literatur\n\n\nMoosbrugger, H., & Kelava, A. (Hrsg.). (2020). Testtheorie und Fragebogenkonstruktion (3. Aufl.). Springer Berlin Heidelberg. https://doi.org/10.1007/978-3-662-61532-4"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "B.F.3 Übung zu Diagnostik/Testtheorie",
+    "section": "",
+    "text": "Diese Seite bündelt die Materialien zur Übung B.F.3 an der RPTU Kaiserslautern-Landau.\n\nFolien: die Folien jeder Sitzung als Präsentation (HTML).\nÜbungsheft: Aufgaben zu jedem Thema.\nR-Paket: Datensätze für die Aufgaben, installierbar in R.\n\nEin Link zur PDF-Version der Folien ist auf der Titelfolie."
+  },
+  {
+    "objectID": "package.html",
+    "href": "package.html",
+    "title": "R-Paket irtea",
+    "section": "",
+    "text": "Das Paket irtea enthält die Datensätze für die Aufgaben im Übungsheft und Funktionen zum Üben."
+  },
+  {
+    "objectID": "package.html#installation",
+    "href": "package.html#installation",
+    "title": "R-Paket irtea",
+    "section": "Installation",
+    "text": "Installation\ninstall.packages(\"pak\")\npak::pak(\"sbissantz/irtea\")"
+  },
+  {
+    "objectID": "package.html#datensätze",
+    "href": "package.html#datensätze",
+    "title": "R-Paket irtea",
+    "section": "Datensätze",
+    "text": "Datensätze\n\n\n\nDatensatz\nInhalt\nÜbungsheft\n\n\n\n\npersonality_items\nAntworten von 7 Personen auf 3 Items\nKapitel 1 & 2\n\n\ntest_anxiety\nAntworten von 2000 Personen auf 20 Items zur Prüfungsangst (simuliert)\nKapitel 8 & 9\n\n\nhmt_short\nAntworten von 800 Personen auf die sechs Aufgaben der Kurzform des Hagen Matrices Test, am Computer oder am Smartphone (simuliert)\nKapitel 11\n\n\n\nEinen Datensatz laden Sie mit:\ndata(personality_items, package = \"irtea\")"
+  },
+  {
+    "objectID": "package.html#funktionen",
+    "href": "package.html#funktionen",
+    "title": "R-Paket irtea",
+    "section": "Funktionen",
+    "text": "Funktionen\n\n\n\nFunktion\nZweck\nÜbungsheft\n\n\n\n\nsimulate_model()\nErzeugt Mittelwerte und Kovarianzmatrix von Items, die einem der fünf Messmodelle der Klassischen Testtheorie folgen\nKapitel 13\n\n\nplay_roulette()\nQuiz in der Konsole: Erkennen Sie das Messmodell?\nKapitel 13\n\n\n\nDas Quiz starten Sie mit:\nirtea::play_roulette()\nMit play_roulette(n_items = 4) spielen Sie nur mit vier Items, mit play_roulette(n = 300) mit simulierten Stichproben, in denen die Muster nur noch ungefähr gelten."
+  },
+  {
     "objectID": "slides/efa-inp.html#semesterübersicht",
     "href": "slides/efa-inp.html#semesterübersicht",
     "title": "B.F.3 Übung zu Diagnostik/Testtheorie",
@@ -117,41 +355,6 @@
     "title": "B.F.3 Übung zu Diagnostik/Testtheorie",
     "section": "Literatur",
     "text": "Literatur\n\n\nGregory, R. J. (2015). Psychological Testing: History, Principles, and Applications (7. Aufl.). Pearson.\n\n\nLorenzo-Seva, U., Timmerman, M. E., & Kiers, H. A. L. (2011). The Hull Method for Selecting the Number of Common Factors. Multivariate Behavioral Research, 46(2), 340–364. https://doi.org/10.1080/00273171.2011.564527\n\n\nTimmerman, M. E., Lorenzo-Seva, U., & Ceulemans, E. (2018). The Number of Factors Problem. In P. Irwing, T. Booth, & D. J. Hughes (Hrsg.), The Wiley Handbook of Psychometric Testing (S. 305–324). Wiley. https://doi.org/10.1002/9781118489772.ch11"
-  },
-  {
-    "objectID": "package.html",
-    "href": "package.html",
-    "title": "R-Paket irtea",
-    "section": "",
-    "text": "Das Paket irtea enthält die Datensätze für die Aufgaben im Übungsheft und Funktionen zum Üben."
-  },
-  {
-    "objectID": "package.html#installation",
-    "href": "package.html#installation",
-    "title": "R-Paket irtea",
-    "section": "Installation",
-    "text": "Installation\ninstall.packages(\"pak\")\npak::pak(\"sbissantz/irtea\")"
-  },
-  {
-    "objectID": "package.html#datensätze",
-    "href": "package.html#datensätze",
-    "title": "R-Paket irtea",
-    "section": "Datensätze",
-    "text": "Datensätze\n\n\n\nDatensatz\nInhalt\nÜbungsheft\n\n\n\n\npersonality_items\nAntworten von 7 Personen auf 3 Items\nKapitel 1 & 2\n\n\ntest_anxiety\nAntworten von 2000 Personen auf 20 Items zur Prüfungsangst (simuliert)\nKapitel 8 & 9\n\n\nhmt_short\nAntworten von 800 Personen auf die sechs Aufgaben der Kurzform des Hagen Matrices Test, am Computer oder am Smartphone (simuliert)\nKapitel 11\n\n\n\nEinen Datensatz laden Sie mit:\ndata(personality_items, package = \"irtea\")"
-  },
-  {
-    "objectID": "package.html#funktionen",
-    "href": "package.html#funktionen",
-    "title": "R-Paket irtea",
-    "section": "Funktionen",
-    "text": "Funktionen\n\n\n\nFunktion\nZweck\nÜbungsheft\n\n\n\n\nsimulate_model()\nErzeugt Mittelwerte und Kovarianzmatrix von Items, die einem der fünf Messmodelle der Klassischen Testtheorie folgen\nKapitel 13\n\n\nplay_roulette()\nQuiz in der Konsole: Erkennen Sie das Messmodell?\nKapitel 13\n\n\n\nDas Quiz starten Sie mit:\nirtea::play_roulette()\nMit play_roulette(n_items = 4) spielen Sie nur mit vier Items, mit play_roulette(n = 300) mit simulierten Stichproben, in denen die Muster nur noch ungefähr gelten."
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "B.F.3 Übung zu Diagnostik/Testtheorie",
-    "section": "",
-    "text": "Diese Seite bündelt die Materialien zur Übung B.F.3 an der RPTU Kaiserslautern-Landau.\n\nFolien: die Folien jeder Sitzung als Präsentation (HTML).\nÜbungsheft: Aufgaben zu jedem Thema.\nR-Paket: Datensätze für die Aufgaben, installierbar in R.\n\nEin Link zur PDF-Version der Folien ist auf der Titelfolie."
   },
   {
     "objectID": "slides/basics-inp.html#einordnung",
