@@ -24,6 +24,8 @@ website:
         menu:
           - href: slides/basics-inp.qmd
             text: "01 Grundlagen"
+          - href: slides/guete-inp.qmd
+            text: "03 Gütekriterien"
           - href: slides/efa-inp.qmd
             text: "08 Exploratorische Faktorenanalyse"
       - text: Übungsheft

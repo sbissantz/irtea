@@ -1,0 +1,256 @@
+---
+title: "B.F.3 Übung zu Diagnostik/Testtheorie"
+subtitle: "Gütekriterien"
+author: "Bißantz, S., Kuch, N. & Gürtler, R.-M."
+institute: "Rheinland-Pfälzische Technische Universität Kaiserslautern-Landau"
+pdf-link: guete-inp.pdf
+---
+
+## Semesterübersicht {.smaller}
+
+| Nr. | Datum     | Thema                                                        |
+|-----|-----------|--------------------------------------------------------------|
+| 1   | ab 20.10. | Einführung & Rechenkompetenzen                                      |
+| 2   | ab 27.10. | Rechenkompetenzen                                |
+| 3   | ab 03.11. | Gütekriterien                                |
+| 4   | ab 10.11. | Schritte der Testkonstruktion & Erstellung eines Testentwurfs                             |
+|     |           | **Lektürewoche**                   |
+| 5   | ab 24.11. | Klassische Testtheorie                                       |
+| 6   | ab 01.12. | *Diagnostische Rechenkompetenzen I*   |
+| 7   | ab 08.12. | *Item-Response-Theorie*                      |
+| 8   | ab 15.12. | Exploratorische Faktorenanalyse I                            |
+|     |           | **Weihnachtsferien**           |
+| 9   | ab 05.01. | *Exploratorische Faktorenanalyse II*                            |
+| 10  | ab 12.01. | Itemanalyse I                                                |
+| 11  | ab 19.01. | Itemanalyse II, Itemselektion und Testrevision               |
+| 12  | ab 26.01. | *Diagnostische Rechenkompetenzen II*                            |
+| 13  | ab 02.02. | Gütekriterien II  |
+
+# Überblick
+
+## Qualitätsanforderungen an Tests
+
+- Hauptgütekriterien
+- Nebengütekriterien
+
+## Hauptgütekriterien
+
+- Objektivität
+- Reliabilität
+- Validität
+- Skalierung
+
+## Nebengütekriterien
+
+- Normierung
+- Ökonomie
+- Nützlichkeit
+- Zumutbarkeit
+- Unverfälschbarkeit
+- Fairness
+
+# Hauptgütekriterien
+
+## Objektivität
+
+Ein Test ist objektiv, wenn die Durchführung und Auswertung des Tests sowie die Interpretation des Testergebnisses unabhängig von der Testleitung sind [@moosbrugger2020, Kap. 2].
+
+- Durchführungsobjektivität
+- Auswertungsobjektivität
+- Interpretationsobjektivität
+
+## Durchführungsobjektivität
+
+Standardisierung der Durchführungsbedingungen, z. B.
+
+- Instruktion
+- Zeitbegrenzung
+
+## Auswertungsobjektivität
+
+- Auswertung mit Schablonen oder Computern
+- Bei Ratingskalen und Multiple Choice in der Regel leicht zu erreichen
+- Bei offenen Antwortformaten: Festlegung exakter Auswertungsregeln
+- Lässt sich angeben als Grad der Übereinstimmung zwischen Testauswerter:innen
+
+## Interpretationsobjektivität
+
+Liegt vor, wenn verschiedene Testauswerter:innen bei identischen Testergebnissen dieselben Schlussfolgerungen ziehen
+
+- Normtabellen zur Einordnung der Testperson im Vergleich zu relevanten Bezugsgruppen
+
+## Reliabilität
+
+Die Reliabilität gibt den Grad der Messgenauigkeit eines Messwerts an (Stichwort: Messfehler). Reliabilitätskoeffizienten haben einen Wertebereich von 0 bis 1.
+
+Verfahren zur Bestimmung der Reliabilität
+
+- Retest-Reliabilität
+- Paralleltest-Reliabilität
+- Testhalbierungs-Reliabilität
+- Interne Konsistenz
+
+## Retest-Reliabilität
+
+- Test wird zu zwei verschiedenen Zeitpunkten durchgeführt
+- Korrelation der beiden Testergebnisse
+- Probleme: Korrelation kann in Abhängigkeit vom Zeitintervall variieren (Übungs- und Erinnerungseffekte, Merkmalsveränderungen)
+
+## Paralleltest-Reliabilität
+
+- Korrelation der Testwerte aus „parallelen“ Testformen, die dasselbe Konstrukt erfassen und aus inhaltlich möglichst ähnlichen Items bestehen („Itemzwillinge“)
+- Probleme: schwierig, parallele Testformen herzustellen; Verzerrungseffekte durch Wiederholungsmessung
+
+## Testhalbierungs-Reliabilität
+
+- Test wird in möglichst gleiche Hälften geteilt
+- Korrelation der Testhälften
+- Korrekturfaktor für die Testlänge → aufgewertete Testhalbierungs-Reliabilität
+
+## Interne Konsistenz
+
+- Jedes Item wird als eigenständiger Testteil angesehen
+- Korrelation der Testteile (Items) unter Berücksichtigung der Testlänge
+
+## Validität
+
+Die Validität gibt an, ob der Test wirklich das misst, was er zu messen beansprucht.
+
+- Inhaltsvalidität
+- Kriteriumsvalidität
+- Konstruktvalidität
+
+## Inhaltsvalidität
+
+Ausmaß, in dem ein Test oder ein Testitem das zu messende Merkmal repräsentativ erfasst
+
+- Repräsentationsschluss: Testitems als repräsentative Stichprobe aus dem „Universum“ von Items, die das interessierende Merkmal abbilden
+- Bestimmung aufgrund logischer und fachlicher Überlegungen (z. B. Befragung von Expert:innen)
+- Eng verbunden mit der Augenscheinvalidität eines Tests
+
+## Kriteriumsvalidität
+
+Zusammenhang des Testwerts mit Kriterien: Vom Verhalten innerhalb der Testsituation (Testwert) wird auf Verhalten außerhalb der Testsituation (Kriterium) geschlossen.
+
+- Vorhersagevalidität
+- Übereinstimmungsvalidität
+- Retrospektive Validität
+- Inkrementelle Validität
+
+## Vorhersage- und Übereinstimmungsvalidität
+
+**Vorhersagevalidität**
+
+- Korrelation mit einem zeitlich später erhobenen Kriterium
+- Z. B. wird die Leistung im Intelligenztest zu Beginn des Studiums mit der Bachelor-Abschlussnote korreliert
+
+**Übereinstimmungsvalidität**
+
+- Korrelation mit einem zeitgleich erhobenen Kriterium
+- Z. B. wird die Leistung im Konzentrationstest mit dem Erfolg in der Führerscheinprüfung korreliert
+
+## Retrospektive und inkrementelle Validität
+
+**Retrospektive Validität**
+
+- Korrelation mit einem zeitlich vorher erhobenen Kriterium
+- Z. B. wird die Leistung im Intelligenztest während des Studiums mit der Abiturnote korreliert
+
+**Inkrementelle Validität**
+
+- Beitrag eines Tests zur Verbesserung der Vorhersage eines Kriteriums
+- Z. B. Gewissenhaftigkeit zur Vorhersage des Berufserfolgs, inkrementell zur Leistung im Intelligenztest
+
+## Konstruktvalidität
+
+Liegt vor, wenn die Schlussfolgerungen, die aufgrund des Testwerts über das zugrunde liegende Konstrukt gezogen werden, wissenschaftlich fundiert sind
+
+- Konvergente Validität: Korrelation mit Tests, die das gleiche oder ein ähnliches Konstrukt erfassen → Erwartung hoher Zusammenhänge
+- Diskriminante Validität: Korrelation mit Tests, die ein anderes Konstrukt erfassen → Erwartung niedriger Zusammenhänge
+- Faktorielle Validität: Prüfung der Struktur mit Verfahren der Faktorenanalyse (exploratorisch und konfirmatorisch) und der Item-Response-Theorie
+
+## Skalierung
+
+Die Testwerte, die laut Verrechnungsregel resultieren, bilden die empirischen Merkmalsrelationen adäquat ab.
+
+- Höhere Merkmalsausprägung → höherer Testwert
+- Abhängig vom Skalenniveau des Tests
+    - Ungeordnete Kategorien (z. B. Geschlecht, Wohnort)
+    - Geordnete Kategorien (z. B. Leistungsklasse: unsportlich, Freizeitsport, Hochleistungssport)
+    - Beurteilung der Größe der Merkmalsunterschiede (z. B. Gewicht, Körpergröße, Intelligenz, Narzissmus)
+
+# Nebengütekriterien
+
+## Normierung
+
+Einordnung des individuellen Testwerts in eine Referenzgruppe
+
+- Geeignete Normstichprobe (auch: Eichstichprobe)
+    - Ähnlichkeit zur Testperson in relevanten Merkmalen (z. B. Alter, Geschlecht, Schulbildung)
+    - Möglichst groß und repräsentativ
+- Relativierung an der Normstichprobe
+    - Prozentrangnormen (nicht verteilungsgebunden)
+    - Standardnormen, z. B. *z*-, IQ-, *T*-, Stanine-Werte (verteilungsgebunden)
+- DIN 33430: Normen alle acht Jahre überprüfen, ggf. neu normieren
+- Nicht erforderlich bei kriteriumsorientiertem Testen (z. B. Kompetenzstufen)
+
+## Ökonomie
+
+Geringe Kosten (Zeit, Geld, …) gemessen am diagnostischen Erkenntnisgewinn
+
+- Oft nur im Vergleich mit ähnlichen Tests bestimmbar
+- Hohe Ökonomie darf nicht zulasten anderer Gütekriterien gehen (v. a. Validität)
+
+## Nützlichkeit
+
+Praktische Relevanz und Nutzen der getroffenen Entscheidungen
+
+- Erfasst der Test ein praktisch relevantes Merkmal oder sagt er es vorher?
+- Mehr Nutzen als Schaden der auf Grundlage des Tests getroffenen Entscheidungen?
+- Kein anderer Test für das Merkmal, der die übrigen Gütekriterien genauso gut erfüllt?
+
+## Zumutbarkeit
+
+Belastung der Testperson
+
+- Keine übermäßige Belastung in zeitlicher, psychischer und körperlicher Hinsicht
+- Relativ zu dem aus der Anwendung resultierenden Nutzen
+
+## Unverfälschbarkeit
+
+Ist „Faking“ möglich?
+
+- Die Testperson kann die Ausprägung ihrer Testwerte nicht durch gezieltes Testverhalten steuern oder verzerren (meist eine Frage des Grades)
+- Bedrohung: hohe Durchschaubarkeit, daher Verzerrung durch sozial erwünschtes Antwortverhalten möglich
+    - Beispiel: „Ich achte auf die Bedürfnisse anderer.“
+- Weniger anfällig: Leistungstests oder „objektive Tests“
+
+## Fairness
+
+Keine systematische Benachteiligung bestimmter Personen aufgrund ihrer Zugehörigkeit zu ethnischen, soziokulturellen oder geschlechtsspezifischen Gruppen
+
+- Kann Inhalt und Durchführung betreffen
+- Z. B. Unfairness durch Itembias: Aufgaben sind systematisch unterschiedlich schwierig für unterschiedliche Gruppen
+- V. a. wenn der Testwert neben dem zu erfassenden Merkmal systematisch durch andere, irrelevante Merkmale beeinflusst wird
+
+# Interpretation
+
+## Interpretation der Gütekriterien
+
+- Gütekriterien sind keine Eigenschaft des Tests
+    - Nicht der Test an sich ist valide, sondern die Schlussfolgerungen aus den Testergebnissen
+- Gütekriterien gelten genau genommen für Testkennwerte in bestimmten Stichproben
+    - Z. B. „Cronbachs $\alpha$ für die Summenscores der Big Five betrug 0.93 für Neurotizismus, 0.89 für Extraversion, …“
+
+# Übungsheft
+
+## Übungen
+
+Übungen zu diesem Thema: [Übungsheft, Kapitel 3]({{< var site-url >}}/workbook/guete-i-ex.html)
+
+# Literaturverzeichnis
+
+## Literatur
+
+::: {#refs}
+:::
