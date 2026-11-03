@@ -11,8 +11,6 @@ invisible(Sys.setlocale("LC_CTYPE", "en_US.UTF-8"))
 colors <- viridisLite::viridis(5)
 ```
 
-{{< include _revision-note.qmd >}}
-
 In diesem Kapitel ordnen Sie Definitionen und Aussagen den Gütekriterien zu, grenzen Reliabilität und Validität voneinander ab, lernen das Testbeurteilungssystem TBS-DTK kennen und beurteilen anhand einer Testrezension, ob sich ein Test für einen Einzelfall eignet.
 
 ::: {#exr-criteria-definitions}
