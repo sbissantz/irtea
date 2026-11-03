@@ -1,0 +1,159 @@
+---
+title: "B.F.3 Übung zu Diagnostik/Testtheorie"
+subtitle: "Gütekriterien"
+author: "Bißantz, S., Kuch, N. & Gürtler, R.-M."
+institute: "Rheinland-Pfälzische Technische Universität Kaiserslautern-Landau"
+pdf-link: guete-inp.pdf
+# draft only: underscore files skip _quarto.yml; remove these three lines on release
+lang: de
+bibliography: ../references.bib
+csl: ../apa.csl
+---
+
+# Hauptgütekriterien
+
+## Objektivität {.smaller}
+
+Unabhängigkeit der Testergebnisse von Testleiter:in und Auswerter:in [@moosbrugger2020, Kap. 2]
+
+:::: {.columns}
+
+::: {.column width="33%"}
+**Durchführungsobjektivität**
+
+- Standardisierung der Durchführung
+:::
+
+::: {.column width="33%"}
+**Auswertungsobjektivität**
+
+- Schablonen
+- Computer
+- Regeln bei offenen Formaten
+- Auswerterübereinstimmung
+:::
+
+::: {.column width="33%"}
+**Interpretationsobjektivität**
+
+- Gleiche Testwerte → gleiche Schlussfolgerungen
+- Regeln für die Interpretation, z. B. Normtabellen
+:::
+
+::::
+
+## Reliabilität
+
+Genauigkeit bzw. Zuverlässigkeit der Messung (Stichwort: Messfehler)
+
+Verfahren zur Bestimmung der Reliabilität
+
+- Retest (2 Messzeitpunkte)
+- Paralleltest (2 Testformen, „Itemzwillinge“)
+- Testhalbierung (2 Testhälften)
+- Interne Konsistenz (k Items als Testteile)
+
+## Validität {.smaller}
+
+„Misst ein Test das, was er messen soll?“
+
+:::: {.columns}
+
+::: {.column width="33%"}
+**Inhaltsvalidität**
+
+- Repräsentativität der Items
+- Logische und fachliche Überlegungen
+:::
+
+::: {.column width="33%"}
+**Kriteriumsvalidität**
+
+- Vorhersage: zeitlich später
+- Übereinstimmung: zeitgleich
+- Retrospektiv: zurückliegend
+- Inkrementell: über andere Tests hinaus
+:::
+
+::: {.column width="33%"}
+**Konstruktvalidität**
+
+- Konvergent: gleiches oder ähnliches Konstrukt
+- Diskriminant: anderes Konstrukt
+- Faktoriell: Struktur des Konstrukts
+:::
+
+::::
+
+## Skalierung
+
+Bilden die Testwerte die empirische Merkmalsausprägung adäquat ab?
+
+- Ungeordnete Kategorien (z. B. Geschlecht, Wohnort)
+- Geordnete Kategorien (z. B. Leistungsklasse; unsportlich, Freizeitsport, Hochleistungssport)
+- Beurteilung der Größe der Merkmalsunterschiede (z. B. Gewicht, Körpergröße, Intelligenz, Narzissmus)
+
+# Nebengütekriterien
+
+## Normierung
+
+Einordnung und Interpretation des individuellen Testwerts in Relation zu einer Referenzgruppe
+
+- Geeignete Referenzgruppe (Eichstichprobe)
+    - Ähnlichkeit zur Testperson hinsichtlich relevanter Merkmale (Geltungsbereich)
+    - Möglichst groß und repräsentativ
+- Relativierung an der Eichstichprobe
+    - Prozentrangnormen (nicht verteilungsgebunden)
+    - Standardnormen, z. B. z-, IQ-, T-, Stanine-Werte (verteilungsgebunden)
+
+## Ökonomie
+
+Wirtschaftlichkeit: Kosten vs. Erkenntnisgewinn
+
+- Oft nur im Vergleich mit ähnlichen Tests bestimmbar
+- Hohe Ökonomie darf nicht zu Lasten anderer Gütekriterien gehen (v. a. Validität)
+
+## Nützlichkeit
+
+Praktische Relevanz und Nutzen der getroffenen Entscheidungen
+
+- Im Sinne der Kriteriumsvalidität nützliche Anwendungsmöglichkeiten?
+- Mehr Nutzen als Schaden der auf Grundlage des Tests getroffenen Entscheidungen?
+- Kein anderes Verfahren, das diesen Nutzen genauso gut erfüllt (Gütekriterien)?
+
+## Zumutbarkeit
+
+Belastung der Testperson
+
+- Keine übermäßige Belastung in zeitlicher, psychischer und körperlicher Hinsicht
+- Relativ zu dem aus der Anwendung resultierenden Nutzen
+
+## Unverfälschbarkeit
+
+Ist „Faking“ möglich?
+
+- Die Testperson kann die Ausprägung ihrer Testwerte nicht durch gezieltes Testverhalten steuern oder verzerren (selten dichotom!)
+- Bedrohung: hohe Durchschaubarkeit, daher Verzerrung durch sozial erwünschtes Antwortverhalten möglich
+- Weniger anfällig: Leistungstests oder „objektive Tests“
+
+## Fairness
+
+Keine systematische Benachteiligung bestimmter Personen aufgrund ihrer Zugehörigkeit zu ethnischen, soziokulturellen oder geschlechtsspezifischen Gruppen
+
+- Z. B. Unfairness durch Itembias: Aufgaben sind systematisch unterschiedlich schwierig für unterschiedliche Gruppen
+- V. a. wenn der Testwert neben dem zu erfassenden Merkmal systematisch durch andere, irrelevante Merkmale beeinflusst wird
+
+# Übungen
+
+## Übungen
+
+Übungen zu diesem Thema: [Übungsheft: 3. Gütekriterien I](../workbook/guete-i-ex.qmd)
+
+# Danke & bis nächste Woche! {.unlisted}
+
+# Literaturverzeichnis
+
+## Literatur
+
+::: {#refs}
+:::
