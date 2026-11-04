@@ -34,6 +34,8 @@ website:
             text: "1. & 2. Rechenkompetenzen"
           - href: workbook/guete-i-ex.qmd
             text: "3. Gütekriterien I"
+          - href: workbook/construction-ex.qmd
+            text: "4. Testkonstruktion"
           - href: workbook/ctt-ex.qmd
             text: "5. Klassische Testtheorie"
           - href: workbook/diagnostic-i-ex.qmd
