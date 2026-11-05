@@ -74,7 +74,7 @@ Befragung von Expert:innen (Top-down)
 ::: {#exr-engagement-preliminaries}
 ## Konstrukt Arbeitsengagement
 
-Bevor ein Test entwickelt werden kann, muss das Konstrukt, das man erfassen möchte, festgelegt und definiert werden. Im Folgenden wird beispielhaft das Konstrukt Arbeitsengagement betrachtet. Eine mögliche Definition liefern @schaufeli2002 in ihrem [Artikel](https://doi.org/10.1023/A:1015630930326):
+Bevor ein psychologisches Testverfahren entwickelt werden kann, muss die wichtigste Frage überhaupt beantwortet werden: Was genau soll eigentlich gemessen werden? Am Anfang steht immer die präzise Definition des sogenannten Konstrukts. Im Folgenden wird beispielhaft das Konstrukt Arbeitsengagement betrachtet. Eine mögliche Definition liefern @schaufeli2002 in ihrem [Artikel](https://doi.org/10.1023/A:1015630930326):
 
 > „Hence, engagement is defined as a positive, fulfilling, work-related state of mind that is characterized by vigor, dedication, and absorption. Rather than a momentary and specific state, engagement refers to a more persistent and pervasive affective cognitive state that is not focused on any particular object, event, individual, or behavior. Vigor is characterized by high levels of energy and mental resilience while working, the willingness to invest effort in one's work, and persistence even in the face of difficulties. Dedication is characterized by a sense of significance, enthusiasm, inspiration, pride, and challenge. Instead of involvement we prefer to use the term dedication. Although, involvement – like dedication (see above) – is usually defined in terms of psychological identification with one's work or one's job (Kanungo, 1982; Lawler and Hall, 1970), whereby the latter goes one step beyond, both quantitatively as well as qualitatively. In a qualitative sense, dedication refers to a particularly strong involvement that goes one step further than the usual level of identification. In a qualitative sense, dedication has a wider scope by not only referring to a particular cognitive or belief state but including the affective dimension as well. The final dimension of engagement, absorption, is characterized by being fully concentrated and deeply engrossed in one's work, whereby time passes quickly and one has difficulties with detaching oneself from work. Being fully absorbed in one's work comes close to what has been called ‚flow', a state of optimal experience that is characterized by focused attention, clear mind, mind and body unison, effortless concentration, complete control, loss of self-consciousness, distortion of time, and intrinsic enjoyment (Csikszentmihalyi, 1990). However, typically, flow is a more complex concept that includes many aspects and refers to rather particular, short-term ‚peak' experiences instead of a more pervasive and persistent state of mind, as is the case with engagement.“ (S. 74–75)
 
@@ -134,6 +134,8 @@ Die Utrecht Work Engagement Scale (UWES) ist ein international verbreiteter Frag
 - Abschnitt **Discussion** (nur bis zum Ende der Aufzählungen)
 - Abschnitt **Final Note**
 
+Bitte ziehen Sie daraus die fehlenden Informationen zu den „Vorüberlegungen“: Testart, Zielgruppe, Testlänge/Testzeit, Testadministration und Nützlichkeit.
+
 a. Um welche Testart handelt es sich bei der UWES-3?
 
 ::: {.callout-tip title="Lösung" collapse="true"}
@@ -143,7 +145,7 @@ Psychometrischer Persönlichkeitstest/-fragebogen
 b. Für welche Zielgruppe wurde die UWES-3 konzipiert?
 
 ::: {.callout-tip title="Lösung" collapse="true"}
-Manager:innen, verschiedene Berufszweige und Arbeitnehmer:innen. Die Validierungsstudie nutzte Stichproben aus Finnland, Japan, den Niederlanden, Belgien (Flandern) und Spanien; sie sind nicht automatisch repräsentativ für alle Beschäftigten dieser Länder.
+Beschäftigte aus verschiedenen Berufskontexten; die Validierungsstudie nutzte Stichproben aus Finnland, Japan, den Niederlanden, Belgien (Flandern) und Spanien; die Ergebnisse sind nicht automatisch repräsentativ für alle Beschäftigten der jeweiligen Länder.
 :::
 
 c. Wie viele Items enthält der Test und welche Dimension(en) wird/werden damit erfasst?
@@ -161,19 +163,26 @@ d. Wie ist die UWES-3 anzuwenden? Bestimmen Sie für jede der beiden folgenden A
 1. Falsch
 2. Richtig
 :::
+
+e. Welche Argumente sprechen für die Nützlichkeit der UWES-3?
+
+::: {.callout-tip title="Lösung" collapse="true"}
+Hohe Ökonomie; Anwendung in großen Surveys und internationalen Studien möglich
+:::
 :::
 
 ::: {#exr-nomological-network}
 ## Nomologisches Netzwerk des Arbeitsengagements
 
-Ein Konstrukt lässt sich zu anderen Konstrukten in Beziehung setzen. Ein zentraler Begriff ist dabei das nomologische Netzwerk, das @cronbach1955 eingeführt haben. Lesen Sie die Abschnitte **Engagement and Employee Well-Being** und **Engagement and the Job Demands-Resources Model** aus der Einführung des [Artikels](https://doi.org/10.1027/1015-5759/a000430) von @schaufeli2019 und beantworten Sie die folgenden Fragen:
+In der psychologischen Forschung reicht eine Definition nicht aus: Für eine hohe Konstruktvalidität muss ein Konstrukt auch präzise von anderen Konstrukten abgegrenzt werden. Nur so lässt sich prüfen, ob ein Test wirklich das misst, was er messen soll. Einen theoretischen Rahmen dafür bietet das nomologische Netzwerk [@cronbach1955].
+
 a. Erklären Sie in eigenen Worten, was ein nomologisches Netzwerk ist und warum es für den Nachweis der Konstruktvalidität eines Fragebogens wie der UWES-3 zur Erfassung des Arbeitsengagements unverzichtbar ist.
 
 ::: {.callout-tip title="Lösung" collapse="true"}
 Ein theoretisch begründetes Muster erwarteter Beziehungen zwischen einem Konstrukt, verwandten Konstrukten, Einflussgrößen und Kriterien. Es liefert Validitätsevidenz, wenn das beobachtete Muster den Erwartungen entspricht: Es zeigt, wo sich Arbeitsengagement mit ähnlichen Konstrukten überschneidet und wo es sich von ihnen abgrenzt.
 :::
 
-b. Lesen Sie nun die beiden Unterabschnitte **Engagement and Employee Well-Being** und **Engagement and the Job Demands-Resources Model** aus der Einführung des [Artikels](https://doi.org/10.1027/1015-5759/a000430) von @schaufeli2019 und beantworten Sie dann die Frage, mit welchen der folgenden Variablen ein positiver/negativer/Null-Zusammenhang mit dem Arbeitsengagement zu erwarten ist:
+b. Lesen Sie nun die beiden Unterabschnitte **Engagement and Employee Well-Being** und **Engagement and the Job Demands-Resources Model** aus der Einführung des [Artikels](https://doi.org/10.1027/1015-5759/a000430) von @schaufeli2019. Geben Sie für jede der folgenden Variablen an, ob im Text ein Zusammenhang mit Arbeitsengagement angenommen wird. Falls ja: Ist er positiv oder negativ, und wie wird er theoretisch begründet?
 
     - Burnout
     - Langeweile (Job Boredom)
@@ -185,13 +194,13 @@ b. Lesen Sie nun die beiden Unterabschnitte **Engagement and Employee Well-Being
     - Narzissmus
 
 ::: {.callout-tip title="Lösung" collapse="true"}
-Burnout und Langeweile sollten im Allgemeinen negativ mit Arbeitsengagement zusammenhängen. Workaholism ist theoretisch unterscheidbar; Richtung und Stärke können von der Operationalisierung abhängen. Arbeitszufriedenheit sollte positiv zusammenhängen, aber nicht identisch sein. Job- und persönliche Ressourcen werden gemäß JD-R-Modell eher positiv erwartet; hinderliche Arbeitsanforderungen eher negativ. Für Narzissmus lässt sich aus dem vorliegenden Text keine eindeutige Richtung ableiten; er kann als theoretisch zu prüfende Abgrenzungsvariable dienen.
+Burnout und Langeweile sollten im Allgemeinen negativ mit Arbeitsengagement zusammenhängen. Workaholism ist theoretisch unterscheidbar; Richtung und Stärke können von der Operationalisierung abhängen. Arbeitszufriedenheit sollte positiv zusammenhängen, aber nicht identisch sein. Job- und persönliche Ressourcen werden gemäß JD-R-Modell eher positiv erwartet; hinderliche Arbeitsanforderungen eher negativ. Narzissmus wird im Text nicht erwähnt.
 :::
 
 c. Angenommen, Sie haben selbst einen Test zur Erfassung des Arbeitsengagements entwickelt und möchten ihn validieren. In Ihren Daten zeigt sich eine sehr hohe Korrelation ($r = 0.85$) zwischen Ihrem Test und einer bestehenden Skala für Arbeitszufriedenheit. Was sagt dieses Ergebnis über die Konstruktvalidität Ihres Messinstruments aus?
 
 ::: {.callout-tip title="Lösung" collapse="true"}
-Mangelnde diskriminante Validität: Arbeitsengagement ist möglicherweise nicht ausreichend von Arbeitszufriedenheit abgegrenzt. Die Korrelation allein beweist aber nicht, dass beide Konstrukte identisch sind; Definitionen, Iteminhalte, Messfehler und weitere Validitätsevidenz sind zu prüfen.
+Hinweis auf eine mögliche Gefährdung der diskriminanten Validität: Die Abgrenzung von Arbeitszufriedenheit ist möglicherweise unzureichend. Die Korrelation allein beweist aber nicht, dass beide Konstrukte identisch sind; Definitionen, Iteminhalte, Messfehler und weitere Validitätsevidenz sind zu prüfen.
 :::
 :::
 
@@ -214,7 +223,7 @@ b. Sollte Prüfungsangst hier als Trait, als State oder je nach Fragestellung al
 ::: {.callout-tip title="Lösung" collapse="true"}
 - State: für den Klassenvergleich und die akute Belastung direkt vor der Prüfung
 - Trait: für die Identifikation besonders belasteter Schüler:innen, um zeitstabile Ängstlichkeit von der Tagesform zu trennen
-- Ideal: Kombination beider Teile oder ein situationsspezifischer Trait (generelle Angst vor Mathematikprüfungen)
+- Fazit: Kombination (zweigeteilter Test) oder Operationalisierung als situationsspezifischer Trait (generelle Angst bezogen auf das Setting „Mathe-Prüfung“) sinnvoll
 :::
 
 c. Formulieren Sie ein Item für eine State-Erfassung und eines für eine Trait-Erfassung.
@@ -248,7 +257,7 @@ Ordnen Sie jeder Situation eines der folgenden Formate zu:
 - Zuordnungsaufgabe
 - Umordnungsaufgabe
 - Dichotome Auswahlaufgabe
-- Mehrfachwahlaufgabe
+- Auswahlaufgabe
 - Analogskala
 - Ratingskala
 - Atypisches Antwortformat
@@ -286,7 +295,7 @@ Dichotome Auswahlaufgabe
 f. Eine Person wählt in einem Wissenstest eine Antwort aus mehreren Alternativen.
 
 ::: {.callout-tip title="Lösung" collapse="true"}
-Mehrfachwahlaufgabe
+Auswahlaufgabe
 :::
 
 g. Eine Person markiert ihre aktuelle Zufriedenheit auf einer visuellen Linie.
@@ -295,7 +304,7 @@ g. Eine Person markiert ihre aktuelle Zufriedenheit auf einer visuellen Linie.
 Analogskala
 :::
 
-h. Eine Person gibt an, wie sehr sie einer Aussage zustimmt.
+h. Eine Person gibt auf einer Skala mit graduell abgestuften Antwortkategorien an, wie sehr sie einer Aussage zustimmt.
 
 ::: {.callout-tip title="Lösung" collapse="true"}
 Ratingskala
