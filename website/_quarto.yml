@@ -26,6 +26,8 @@ website:
             text: "01 Grundlagen"
           - href: slides/guete-inp.qmd
             text: "03 Gütekriterien"
+          - href: slides/construction-inp.qmd
+            text: "04 Schritte der Testkonstruktion"
           - href: slides/efa-inp.qmd
             text: "08 Exploratorische Faktorenanalyse"
       - text: Übungsheft
@@ -35,7 +37,7 @@ website:
           - href: workbook/guete-i-ex.qmd
             text: "3. Gütekriterien I"
           - href: workbook/construction-ex.qmd
-            text: "4. Testkonstruktion"
+            text: "4. Schritte der Testkonstruktion"
           - href: workbook/ctt-ex.qmd
             text: "5. Klassische Testtheorie"
           - href: workbook/diagnostic-i-ex.qmd
