@@ -1,6 +1,5 @@
 ---
 title: "4 Schritte der Testkonstruktion"
-draft: true
 ---
 
 In diesem Kapitel werden Sie anhand verschiedener Beispiele üben, welche Vorüberlegungen getroffen werden müssen, um ein Konstrukt mit einem Testverfahren zu erfassen. Insbesondere lernen Sie das Konstrukt Arbeitsengagement sowie ein Testverfahren zur Erfassung dieses Konstrukts kennen. In weiteren Aufgaben wird thematisiert, welche Antwortformate für welche Itemtypen geeignet sind und welche Vor- und Nachteile die verschiedenen Antwortformate haben.
@@ -76,7 +75,7 @@ Befragung von Expert:innen (Top-down)
 
 Bevor ein psychologisches Testverfahren entwickelt werden kann, muss die wichtigste Frage überhaupt beantwortet werden: Was genau soll eigentlich gemessen werden? Am Anfang steht immer die präzise Definition des sogenannten Konstrukts. Im Folgenden wird beispielhaft das Konstrukt Arbeitsengagement betrachtet. Eine mögliche Definition liefern @schaufeli2002 in ihrem [Artikel](https://doi.org/10.1023/A:1015630930326):
 
-> „Hence, engagement is defined as a positive, fulfilling, work-related state of mind that is characterized by vigor, dedication, and absorption. Rather than a momentary and specific state, engagement refers to a more persistent and pervasive affective cognitive state that is not focused on any particular object, event, individual, or behavior. Vigor is characterized by high levels of energy and mental resilience while working, the willingness to invest effort in one's work, and persistence even in the face of difficulties. Dedication is characterized by a sense of significance, enthusiasm, inspiration, pride, and challenge. Instead of involvement we prefer to use the term dedication. Although, involvement – like dedication (see above) – is usually defined in terms of psychological identification with one's work or one's job (Kanungo, 1982; Lawler and Hall, 1970), whereby the latter goes one step beyond, both quantitatively as well as qualitatively. In a qualitative sense, dedication refers to a particularly strong involvement that goes one step further than the usual level of identification. In a qualitative sense, dedication has a wider scope by not only referring to a particular cognitive or belief state but including the affective dimension as well. The final dimension of engagement, absorption, is characterized by being fully concentrated and deeply engrossed in one's work, whereby time passes quickly and one has difficulties with detaching oneself from work. Being fully absorbed in one's work comes close to what has been called ‚flow', a state of optimal experience that is characterized by focused attention, clear mind, mind and body unison, effortless concentration, complete control, loss of self-consciousness, distortion of time, and intrinsic enjoyment (Csikszentmihalyi, 1990). However, typically, flow is a more complex concept that includes many aspects and refers to rather particular, short-term ‚peak' experiences instead of a more pervasive and persistent state of mind, as is the case with engagement.“ (S. 74–75)
+> „Hence, engagement is defined as a positive, fulfilling, work-related state of mind that is characterized by vigor, dedication, and absorption. Rather than a momentary and specific state, engagement refers to a more persistent and pervasive affective-cognitive state that is not focused on any particular object, event, individual, or behavior. Vigor is characterized by high levels of energy and mental resilience while working, the willingness to invest effort in one's work, and persistence even in the face of difficulties. Dedication is characterized by a sense of significance, enthusiasm, inspiration, pride, and challenge. Instead of involvement we prefer to use the term dedication. Although, involvement – like dedication (see above) – is usually defined in terms of psychological identification with one's work or one's job (Kanungo, 1982; Lawler and Hall, 1970), whereby the latter goes one step beyond, both quantitatively as well as qualitatively. In a qualitative [*sic*] sense, dedication refers to a particularly strong involvement that goes one step further than the usual level of identification. In a qualitative sense, dedication has a wider scope by not only referring to a particular cognitive or belief state but including the affective dimension as well. The final dimension of engagement, absorption, is characterized by being fully concentrated and deeply engrossed in one's work, whereby time passes quickly and one has difficulties with detaching oneself from work. Being fully absorbed in one's work comes close to what has been called ‚flow‘, a state of optimal experience that is characterized by focused attention, clear mind, mind and body unison, effortless concentration, complete control, loss of self-consciousness, distortion of time, and intrinsic enjoyment (Csikszentmihalyi, 1990). However, typically, flow is a more complex concept that includes many aspects and refers to rather particular, short-term ‚peak‘ experiences instead of a more pervasive and persistent state of mind, as is the case with engagement.“ (S. 74–75)
 
 a. Ganz allgemein: Was ist ein Konstrukt?
 
@@ -154,14 +153,14 @@ c. Wie viele Items enthält der Test und welche Dimension(en) wird/werden damit 
 Insgesamt 3 Items, je eines für Vigor, Dedication und Absorption
 :::
 
-d. Wie ist die UWES-3 anzuwenden? Bestimmen Sie für jede der beiden folgenden Aussagen, ob sie richtig oder falsch ist.
+d. Wie ist die UWES-3 anzuwenden? Geben Sie bei jeder der beiden folgenden Aussagen an, ob sie zutrifft oder nicht.
 
     1. Für die UWES-3 wird in den zu lesenden Abschnitten nur die computerbasierte Anwendung empfohlen.
     2. In den zu lesenden Abschnitten fehlt eine Empfehlung zur Einzel- oder Gruppentestung. Es ist aber davon auszugehen, dass die UWES-3 in beiden Formen angewendet werden kann.
 
 ::: {.callout-tip title="Lösung" collapse="true"}
-1. Falsch
-2. Richtig
+1. Trifft nicht zu.
+2. Trifft zu.
 :::
 
 e. Welche Argumente sprechen für die Nützlichkeit der UWES-3?
@@ -390,7 +389,7 @@ c. Wie lautet die Hauptstadt von Nicaragua?
     - Tegucigalpa
 
 ::: {.callout-tip title="Lösung" collapse="true"}
-Dichotomes Antwortformat mit einer Ratewahrscheinlichkeit von 50 %
+Dichotomes Antwortformat mit einer Ratewahrscheinlichkeit von 50 %
 :::
 
 d. Bitte geben Sie Ihren derzeitigen Beziehungsstand an.
