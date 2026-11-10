@@ -1,0 +1,1774 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="de" xml:lang="de"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.10.19">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>4 Schritte der Testkonstruktion – B.F.3 Diagnostik &amp; Testtheorie</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../images/logo.png" rel="icon" type="image/png">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-bf27225e3a48a9273f3daa8f8e829971.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-cbe15cd55579b32cf8c48135cfb2cd9e.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "Keine Treffer",
+    "search-matching-documents-text": "Treffer",
+    "search-copy-link-title": "Link in die Suche kopieren",
+    "search-hide-matches-text": "Zusätzliche Treffer verbergen",
+    "search-more-match-text": "weitere Treffer in diesem Dokument",
+    "search-more-matches-text": "weitere Treffer in diesem Dokument",
+    "search-clear-button-title": "Zurücksetzen",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Abbrechen",
+    "search-submit-button-title": "Abschicken",
+    "search-label": "Suchen"
+  }
+}</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+</head>
+
+<body class="nav-fixed fullcontent quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a href="../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../images/logo.png" alt="" class="navbar-logo light-content">
+    <img src="../images/logo.png" alt="" class="navbar-logo dark-content">
+    </a>
+    <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">B.F.3 Diagnostik &amp; Testtheorie</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Suchen"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Navigation umschalten" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../index.html"> 
+<span class="menu-text">Start</span></a>
+  </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-folien" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Folien</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-folien">    
+        <li>
+    <a class="dropdown-item" href="../slides/basics-inp.html">
+ <span class="dropdown-text">01 Grundlagen</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../slides/guete-inp.html">
+ <span class="dropdown-text">03 Gütekriterien</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../slides/construction-inp.html">
+ <span class="dropdown-text">04 Schritte der Testkonstruktion</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../slides/efa-inp.html">
+ <span class="dropdown-text">08 Exploratorische Faktorenanalyse</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-bungsheft" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Übungsheft</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-bungsheft">    
+        <li>
+    <a class="dropdown-item" href="../workbook/basics-ex.html">
+ <span class="dropdown-text">1. &amp; 2. Rechenkompetenzen</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../workbook/guete-i-ex.html">
+ <span class="dropdown-text">3. Gütekriterien I</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../workbook/construction-ex.html">
+ <span class="dropdown-text">4. Schritte der Testkonstruktion</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../workbook/ctt-ex.html">
+ <span class="dropdown-text">5. Klassische Testtheorie</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../workbook/diagnostic-i-ex.html">
+ <span class="dropdown-text">6. Diagnostische Rechenkompetenzen I</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../workbook/efa-ex.html">
+ <span class="dropdown-text">8. &amp; 9. Exploratorische Faktorenanalyse</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../workbook/item-i-ex.html">
+ <span class="dropdown-text">10. Itemanalyse I</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../workbook/item-ii-ex.html">
+ <span class="dropdown-text">11. Itemanalyse II</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../workbook/diagnostic-ii-ex.html">
+ <span class="dropdown-text">12. Diagnostische Rechenkompetenzen II</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../workbook/guete-ii-ex.html">
+ <span class="dropdown-text">13. Gütekriterien II</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="../package.html"> 
+<span class="menu-text">R-Paket</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">4 Schritte der Testkonstruktion</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>In diesem Kapitel werden Sie anhand verschiedener Beispiele üben, welche Vorüberlegungen getroffen werden müssen, um ein Konstrukt mit einem Testverfahren zu erfassen. Insbesondere lernen Sie das Konstrukt Arbeitsengagement sowie ein Testverfahren zur Erfassung dieses Konstrukts kennen. In weiteren Aufgaben wird thematisiert, welche Antwortformate für welche Itemtypen geeignet sind und welche Vor- und Nachteile die verschiedenen Antwortformate haben.</p>
+<div id="exr-construction-preliminaries" class="theorem exercise">
+<p><span class="theorem-title"><strong>Aufgabe 1 (Vorüberlegungen zur Abiturprüfung)</strong></span> Das Kultusministerium steht alljährlich vor der Aufgabe, neue und rechtssichere Abiturprüfungen im Fach Mathematik zu entwickeln. Welche Vorüberlegungen zur Konstruktdefinition müssen bei der Konzeption einer solchen Abschlussprüfung berücksichtigt werden? Gehen Sie dabei explizit auf die folgenden Aspekte ein:</p>
+<ol type="a">
+<li>Art des gemessenen Merkmals</li>
+</ol>
+<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tipp</span>Lösung
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Kontinuierlich (quantitativ), mehrdimensional, Trait</p>
+</div>
+</div>
+</div>
+<ol start="2" type="a">
+<li>Testart</li>
+</ol>
+<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tipp</span>Lösung
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Leistungstest</p>
+</div>
+</div>
+</div>
+<ol start="3" type="a">
+<li>Zielgruppe</li>
+</ol>
+<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tipp</span>Lösung
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Abiturient:innen</p>
+</div>
+</div>
+</div>
+<ol start="4" type="a">
+<li>Testlänge</li>
+</ol>
+<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tipp</span>Lösung
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-4" class="callout-4-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Eine Länge, die in der Bearbeitungszeit (z. B. 240 min) gut zu bewältigen ist</p>
+</div>
+</div>
+</div>
+<ol start="5" type="a">
+<li>Testadministration</li>
+</ol>
+<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tipp</span>Lösung
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-5" class="callout-5-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Paper-Pencil, Gruppentestung</p>
+</div>
+</div>
+</div>
+<ol start="6" type="a">
+<li>Nützlichkeit (praktische Relevanz)</li>
+</ol>
+<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tipp</span>Lösung
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-6" class="callout-6-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Gegeben: Jedes Jahr wird eine neue Abiturprüfung benötigt, um die Mathematikleistung der Abiturient:innen korrekt einzuschätzen.</p>
+</div>
+</div>
+</div>
+</div>
+<div id="exr-construction-delimitation" class="theorem exercise">
+<p><span class="theorem-title"><strong>Aufgabe 2 (Methoden zur Eingrenzung des Konstrukts)</strong></span> Ein Forschungsteam plant einen Fragebogen zur Erfassung belastender Kindheitserfahrungen. Da es in der Fachliteratur keine einheitliche Definition dieses Konstrukts gibt, muss es zunächst eingegrenzt und operationalisiert werden. Welcher Ansatz zur Konstrukteingrenzung wird in den folgenden Beispielen jeweils beschrieben?</p>
+<ol type="a">
+<li>Das Forschungsteam fasst die gängigen Ansätze, Modelle und Definitionen aus Fachzeitschriften und Lehrbüchern zusammen und entwickelt darauf aufbauend eine neue, integrierte Definition.</li>
+</ol>
+<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tipp</span>Lösung
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-7" class="callout-7-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Literaturrecherche (Top-down)</p>
+</div>
+</div>
+</div>
+<ol start="2" type="a">
+<li>Die Forschenden führen standardisierte Interviews mit 38 Patient:innen einer klinischen Traumastation durch, um deren konkrete, subjektive Belastungserfahrungen in der Kindheit zu erfassen.</li>
+</ol>
+<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tipp</span>Lösung
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-8" class="callout-8-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Standardisiertes Befragungsinstrument, hier ein standardisiertes Interview (Bottom-up)</p>
+</div>
+</div>
+</div>
+<ol start="3" type="a">
+<li>Sie befragen niedergelassene Kinderärzt:innen sowie Kinder- und Jugendlichenpsychotherapeut:innen, welche Kernmerkmale nach ihrer beruflichen Erfahrung eine belastende Kindheitserfahrung ausmachen.</li>
+</ol>
+<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-9-contents" aria-controls="callout-9" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tipp</span>Lösung
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-9" class="callout-9-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Befragung von Expert:innen (Top-down)</p>
+</div>
+</div>
+</div>
+</div>
+<div id="exr-engagement-preliminaries" class="theorem exercise">
+<p><span class="theorem-title"><strong>Aufgabe 3 (Konstrukt Arbeitsengagement)</strong></span> Bevor ein psychologisches Testverfahren entwickelt werden kann, muss die wichtigste Frage überhaupt beantwortet werden: Was genau soll eigentlich gemessen werden? Am Anfang steht immer die präzise Definition des sogenannten Konstrukts. Im Folgenden wird beispielhaft das Konstrukt Arbeitsengagement betrachtet. Eine mögliche Definition liefern <span class="citation" data-cites="schaufeli2002">Schaufeli et al. (<a href="#ref-schaufeli2002" role="doc-biblioref">2002</a>)</span> in ihrem <a href="https://doi.org/10.1023/A:1015630930326">Artikel</a>:</p>
+<blockquote class="blockquote">
+<p>„Hence, engagement is defined as a positive, fulfilling, work-related state of mind that is characterized by vigor, dedication, and absorption. Rather than a momentary and specific state, engagement refers to a more persistent and pervasive affective-cognitive state that is not focused on any particular object, event, individual, or behavior. Vigor is characterized by high levels of energy and mental resilience while working, the willingness to invest effort in one’s work, and persistence even in the face of difficulties. Dedication is characterized by a sense of significance, enthusiasm, inspiration, pride, and challenge. Instead of involvement we prefer to use the term dedication. Although, involvement – like dedication (see above) – is usually defined in terms of psychological identification with one’s work or one’s job (Kanungo, 1982; Lawler and Hall, 1970), whereby the latter goes one step beyond, both quantitatively as well as qualitatively. In a qualitative [<em>sic</em>] sense, dedication refers to a particularly strong involvement that goes one step further than the usual level of identification. In a qualitative sense, dedication has a wider scope by not only referring to a particular cognitive or belief state but including the affective dimension as well. The final dimension of engagement, absorption, is characterized by being fully concentrated and deeply engrossed in one’s work, whereby time passes quickly and one has difficulties with detaching oneself from work. Being fully absorbed in one’s work comes close to what has been called ‚flow‘, a state of optimal experience that is characterized by focused attention, clear mind, mind and body unison, effortless concentration, complete control, loss of self-consciousness, distortion of time, and intrinsic enjoyment (Csikszentmihalyi, 1990). However, typically, flow is a more complex concept that includes many aspects and refers to rather particular, short-term ‚peak‘ experiences instead of a more pervasive and persistent state of mind, as is the case with engagement.“ (S. 74–75)</p>
+</blockquote>
+<ol type="a">
+<li>Ganz allgemein: Was ist ein Konstrukt?</li>
+</ol>
+<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-10-contents" aria-controls="callout-10" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tipp</span>Lösung
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-10" class="callout-10-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Ein theoretisches, nicht direkt beobachtbares Konzept, das erst über beobachtbare Verhaltensweisen (Indikatoren) zugänglich wird.</p>
+</div>
+</div>
+</div>
+<p>Bestimmen Sie anhand der Definition die Art des Merkmals.</p>
+<ol start="2" type="a">
+<li>Kontinuierlich oder kategorial?</li>
+</ol>
+<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-11-contents" aria-controls="callout-11" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tipp</span>Lösung
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-11" class="callout-11-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Kontinuierlich</p>
+</div>
+</div>
+</div>
+<ol start="3" type="a">
+<li>Eindimensional oder mehrdimensional?</li>
+</ol>
+<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-12-contents" aria-controls="callout-12" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tipp</span>Lösung
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-12" class="callout-12-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Mehrdimensional mit drei Dimensionen: Vigor (Energie und mentale Widerstandsfähigkeit), Dedication (Bedeutsamkeit, Begeisterung, Inspiration, Stolz und Herausforderung) und Absorption (Vertiefung in die Arbeit)</p>
+</div>
+</div>
+</div>
+<ol start="4" type="a">
+<li>Stabile Eigenschaft (Trait) oder Zustand (State)?</li>
+</ol>
+<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-13-contents" aria-controls="callout-13" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tipp</span>Lösung
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-13" class="callout-13-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Trait: ein überdauernder Zustand, nicht ein einzelner Moment (ursprünglich mit „im Allgemeinen“-Instruktion). Eine State-Erfassung ist möglich, wenn die Fragestellung auf konkrete Zeiträume oder Situationen zielt.</p>
+</div>
+</div>
+</div>
+</div>
+<div id="exr-engagement-instructions" class="theorem exercise">
+<p><span class="theorem-title"><strong>Aufgabe 4 (Trait- und State-Instruktion für Arbeitsengagement)</strong></span> Arbeitsengagement lässt sich sowohl als stabiles Personenmerkmal (Trait) als auch als schwankender Zustand (State) konzipieren. Wie könnte eine Instruktion lauten, wenn mit den folgenden Items ein Trait erfasst werden soll, und wie, wenn ein State erfasst werden soll?</p>
+<ol type="1">
+<li>Ich bin begeistert von meiner Arbeit.</li>
+<li>Ich fühle mich glücklich, wenn ich viel arbeite.</li>
+<li>Bei der Arbeit strotze ich vor Energie.</li>
+<li>Bei meiner Arbeit fühle ich mich stark und lebhaft.</li>
+<li>Ich bin in meine Arbeit vertieft.</li>
+</ol>
+<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-14-contents" aria-controls="callout-14" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tipp</span>Lösung
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-14" class="callout-14-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ul>
+<li><strong>Trait:</strong> „In der folgenden Liste finden Sie Aussagen dazu, wie man die Arbeit erleben kann. Wählen Sie bitte die Antwort aus, die am besten auf Sie zutrifft.“ (1 = „nie“ bis 6 = „immer (jeden Tag)“)</li>
+<li><strong>State:</strong> „Wie haben Sie heute Ihre Arbeit erlebt?“ (1 = „überhaupt nicht“ bis 5 = „sehr“); die Items stehen dann in der Vergangenheitsform („Ich war begeistert von meiner Arbeit.“).</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div id="exr-uwes-3" class="theorem exercise">
+<p><span class="theorem-title"><strong>Aufgabe 5 (UWES-3 zur Erfassung des Arbeitsengagements)</strong></span> Die Utrecht Work Engagement Scale (UWES) ist ein international verbreiteter Fragebogen zur Erfassung von Arbeitsengagement. Eine Kurzversion ist die UWES-3, die <span class="citation" data-cites="schaufeli2019">Schaufeli et al. (<a href="#ref-schaufeli2019" role="doc-biblioref">2019</a>)</span> in einer Validierungsstudie untersucht haben. Lesen Sie für die Beantwortung der Fragen die folgenden Auszüge aus ihrem <a href="https://doi.org/10.1027/1015-5759/a000430">Artikel</a>:</p>
+<ul>
+<li><strong>Abstract</strong> und Einführung (bis zum Satz „The aim of the current paper …“)</li>
+<li>Abschnitt <strong>Method</strong>, davon nur die Unterabschnitte
+<ul>
+<li><strong>Sample and Procedure</strong> (nur die ersten zwei Sätze)</li>
+<li><strong>Measures</strong> (nur den Teil mit der Überschrift <strong>UWES-3</strong>)</li>
+</ul></li>
+<li>Abschnitt <strong>Discussion</strong> (nur bis zum Ende der Aufzählungen)</li>
+<li>Abschnitt <strong>Final Note</strong></li>
+</ul>
+<p>Bitte ziehen Sie daraus die fehlenden Informationen zu den „Vorüberlegungen“: Testart, Zielgruppe, Testlänge/Testzeit, Testadministration und Nützlichkeit.</p>
+<ol type="a">
+<li>Um welche Testart handelt es sich bei der UWES-3?</li>
+</ol>
+<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-15-contents" aria-controls="callout-15" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tipp</span>Lösung
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-15" class="callout-15-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Psychometrischer Persönlichkeitstest/-fragebogen</p>
+</div>
+</div>
+</div>
+<ol start="2" type="a">
+<li>Für welche Zielgruppe wurde die UWES-3 konzipiert?</li>
+</ol>
+<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-16-contents" aria-controls="callout-16" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tipp</span>Lösung
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-16" class="callout-16-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Beschäftigte aus verschiedenen Berufskontexten; die Validierungsstudie nutzte Stichproben aus Finnland, Japan, den Niederlanden, Belgien (Flandern) und Spanien; die Ergebnisse sind nicht automatisch repräsentativ für alle Beschäftigten der jeweiligen Länder.</p>
+</div>
+</div>
+</div>
+<ol start="3" type="a">
+<li>Wie viele Items enthält der Test und welche Dimension(en) wird/werden damit erfasst?</li>
+</ol>
+<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-17-contents" aria-controls="callout-17" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tipp</span>Lösung
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-17" class="callout-17-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Insgesamt 3 Items, je eines für Vigor, Dedication und Absorption</p>
+</div>
+</div>
+</div>
+<ol start="4" type="a">
+<li><p>Wie ist die UWES-3 anzuwenden? Geben Sie bei jeder der beiden folgenden Aussagen an, ob sie zutrifft oder nicht.</p>
+<ol type="1">
+<li>Für die UWES-3 wird in den zu lesenden Abschnitten nur die computerbasierte Anwendung empfohlen.</li>
+<li>In den zu lesenden Abschnitten fehlt eine Empfehlung zur Einzel- oder Gruppentestung. Es ist aber davon auszugehen, dass die UWES-3 in beiden Formen angewendet werden kann.</li>
+</ol></li>
+</ol>
+<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-18-contents" aria-controls="callout-18" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tipp</span>Lösung
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-18" class="callout-18-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ol type="1">
+<li>Trifft nicht zu.</li>
+<li>Trifft zu.</li>
+</ol>
+</div>
+</div>
+</div>
+<ol start="5" type="a">
+<li>Welche Argumente sprechen für die Nützlichkeit der UWES-3?</li>
+</ol>
+<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-19-contents" aria-controls="callout-19" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tipp</span>Lösung
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-19" class="callout-19-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Hohe Ökonomie; Anwendung in großen Surveys und internationalen Studien möglich</p>
+</div>
+</div>
+</div>
+</div>
+<div id="exr-nomological-network" class="theorem exercise">
+<p><span class="theorem-title"><strong>Aufgabe 6 (Nomologisches Netzwerk des Arbeitsengagements)</strong></span> In der psychologischen Forschung reicht eine Definition nicht aus: Für eine hohe Konstruktvalidität muss ein Konstrukt auch präzise von anderen Konstrukten abgegrenzt werden. Nur so lässt sich prüfen, ob ein Test wirklich das misst, was er messen soll. Einen theoretischen Rahmen dafür bietet das nomologische Netzwerk <span class="citation" data-cites="cronbach1955">(<a href="#ref-cronbach1955" role="doc-biblioref">Cronbach &amp; Meehl, 1955</a>)</span>.</p>
+<ol type="a">
+<li>Erklären Sie in eigenen Worten, was ein nomologisches Netzwerk ist und warum es für den Nachweis der Konstruktvalidität eines Fragebogens wie der UWES-3 zur Erfassung des Arbeitsengagements unverzichtbar ist.</li>
+</ol>
+<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-20-contents" aria-controls="callout-20" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tipp</span>Lösung
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-20" class="callout-20-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Ein theoretisch begründetes Muster erwarteter Beziehungen zwischen einem Konstrukt, verwandten Konstrukten, Einflussgrößen und Kriterien. Es liefert Validitätsevidenz, wenn das beobachtete Muster den Erwartungen entspricht: Es zeigt, wo sich Arbeitsengagement mit ähnlichen Konstrukten überschneidet und wo es sich von ihnen abgrenzt.</p>
+</div>
+</div>
+</div>
+<ol start="2" type="a">
+<li><p>Lesen Sie nun die beiden Unterabschnitte <strong>Engagement and Employee Well-Being</strong> und <strong>Engagement and the Job Demands-Resources Model</strong> aus der Einführung des <a href="https://doi.org/10.1027/1015-5759/a000430">Artikels</a> von <span class="citation" data-cites="schaufeli2019">Schaufeli et al. (<a href="#ref-schaufeli2019" role="doc-biblioref">2019</a>)</span>. Geben Sie für jede der folgenden Variablen an, ob im Text ein Zusammenhang mit Arbeitsengagement angenommen wird. Falls ja: Ist er positiv oder negativ, und wie wird er theoretisch begründet?</p>
+<ul>
+<li>Burnout</li>
+<li>Langeweile (Job Boredom)</li>
+<li>Arbeitszufriedenheit</li>
+<li>Hinderliche Arbeitsanforderungen</li>
+<li>Job-Ressourcen</li>
+<li>Persönliche Ressourcen</li>
+<li>Workaholism</li>
+<li>Narzissmus</li>
+</ul></li>
+</ol>
+<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-21-contents" aria-controls="callout-21" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tipp</span>Lösung
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-21" class="callout-21-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Burnout und Langeweile sollten im Allgemeinen negativ mit Arbeitsengagement zusammenhängen. Workaholism ist theoretisch unterscheidbar; Richtung und Stärke können von der Operationalisierung abhängen. Arbeitszufriedenheit sollte positiv zusammenhängen, aber nicht identisch sein. Job- und persönliche Ressourcen werden gemäß JD-R-Modell eher positiv erwartet; hinderliche Arbeitsanforderungen eher negativ. Narzissmus wird im Text nicht erwähnt.</p>
+</div>
+</div>
+</div>
+<ol start="3" type="a">
+<li>Angenommen, Sie haben selbst einen Test zur Erfassung des Arbeitsengagements entwickelt und möchten ihn validieren. In Ihren Daten zeigt sich eine sehr hohe Korrelation (<span class="math inline">\(r = 0.85\)</span>) zwischen Ihrem Test und einer bestehenden Skala für Arbeitszufriedenheit. Was sagt dieses Ergebnis über die Konstruktvalidität Ihres Messinstruments aus?</li>
+</ol>
+<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-22-contents" aria-controls="callout-22" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tipp</span>Lösung
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-22" class="callout-22-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Hinweis auf eine mögliche Gefährdung der diskriminanten Validität: Die Abgrenzung von Arbeitszufriedenheit ist möglicherweise unzureichend. Die Korrelation allein beweist aber nicht, dass beide Konstrukte identisch sind; Definitionen, Iteminhalte, Messfehler und weitere Validitätsevidenz sind zu prüfen.</p>
+</div>
+</div>
+</div>
+</div>
+<div id="exr-test-anxiety" class="theorem exercise">
+<p><span class="theorem-title"><strong>Aufgabe 7 (Fallbeispiel Prüfungsangst)</strong></span> Ein Forschungsteam entwickelt einen Fragebogen zur Erfassung von Prüfungsangst bei Schüler:innen kurz vor dem Mathematik-Abitur. Die Schule möchte sowohl besonders belastete Schüler:innen identifizieren als auch die durchschnittliche Prüfungsangst zwischen Klassen vergleichen. Der Fragebogen soll während einer Unterrichtsstunde eingesetzt werden.</p>
+<ol type="a">
+<li>Welche Zielgruppe, Testart und Testadministration liegen nahe? Welche Informationen fehlen noch, bevor Sie die Testlänge festlegen?</li>
+</ol>
+<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-23-contents" aria-controls="callout-23" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tipp</span>Lösung
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-23" class="callout-23-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ul>
+<li>Zielgruppe: Schüler:innen der gymnasialen Oberstufe kurz vor dem Mathematik-Abitur</li>
+<li>Testart: psychometrischer Fragebogen zur Erfassung typischen Verhaltens (kein Leistungstest)</li>
+<li>Administration: digitale oder papierbasierte Gruppentestung im Klassenverband</li>
+<li>Fehlende Informationen: reine Bearbeitungszeit innerhalb der Unterrichtsstunde, geplante Struktur (eindimensional oder mit Subskalen), angestrebte Messgenauigkeit (Individualdiagnostik erfordert höhere Reliabilität und meist mehr Items als ein Klassenvergleich)</li>
+</ul>
+</div>
+</div>
+</div>
+<ol start="2" type="a">
+<li>Sollte Prüfungsangst hier als Trait, als State oder je nach Fragestellung als beides operationalisiert werden?</li>
+</ol>
+<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-24-contents" aria-controls="callout-24" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tipp</span>Lösung
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-24" class="callout-24-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ul>
+<li>State: für den Klassenvergleich und die akute Belastung direkt vor der Prüfung</li>
+<li>Trait: für die Identifikation besonders belasteter Schüler:innen, um zeitstabile Ängstlichkeit von der Tagesform zu trennen</li>
+<li>Fazit: Kombination (zweigeteilter Test) oder Operationalisierung als situationsspezifischer Trait (generelle Angst bezogen auf das Setting „Mathe-Prüfung“) sinnvoll</li>
+</ul>
+</div>
+</div>
+</div>
+<ol start="3" type="a">
+<li>Formulieren Sie ein Item für eine State-Erfassung und eines für eine Trait-Erfassung.</li>
+</ol>
+<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-25-contents" aria-controls="callout-25" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tipp</span>Lösung
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-25" class="callout-25-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ul>
+<li>State: „Wenn ich jetzt an das bevorstehende Mathematik-Abitur denke, schlägt mein Herz schneller.“</li>
+<li>Trait: „Vor Mathematikprüfungen bin ich meistens schon Tage vorher nervös.“</li>
+</ul>
+</div>
+</div>
+</div>
+<ol start="4" type="a">
+<li>Welche ethischen und praktischen Aspekte sind zu beachten, wenn die Ergebnisse zur Identifikation besonders belasteter Schüler:innen verwendet werden?</li>
+</ol>
+<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-26-contents" aria-controls="callout-26" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tipp</span>Lösung
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-26" class="callout-26-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ul>
+<li>Ethisch: Vertraulichkeit und Datenschutz, keine Stigmatisierung; Screening nur, wenn konkrete Hilfsangebote (z. B. Schulpsychologie) bereitstehen; informierte Einwilligung der Schüler:innen bzw. Erziehungsberechtigten</li>
+<li>Praktisch: Fehlklassifikationen durch Messfehler oder Verfälschung, daher keine Entscheidung allein auf Basis des Tests; das Ausfüllen direkt vor der Prüfung kann die Angst verstärken (Reaktivität)</li>
+</ul>
+</div>
+</div>
+</div>
+<ol start="5" type="a">
+<li>Eine neue Skala für Prüfungsangst korreliert sehr hoch mit einer etablierten Skala für allgemeine Ängstlichkeit. Was bedeutet das für die Konstruktvalidität?</li>
+</ol>
+<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-27-contents" aria-controls="callout-27" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tipp</span>Lösung
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-27" class="callout-27-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Die diskriminante Validität ist gefährdet: Die Skala misst möglicherweise keine spezifische Prüfungsangst, sondern allgemeine Ängstlichkeit (Konstruktredundanz).</p>
+</div>
+</div>
+</div>
+</div>
+<div id="exr-response-format-match" class="theorem exercise">
+<p><span class="theorem-title"><strong>Aufgabe 8 (Antwortformate)</strong></span> Ordnen Sie jeder Situation eines der folgenden Formate zu:</p>
+<ul>
+<li>Ergänzungsaufgabe</li>
+<li>Kurzaufsatzaufgabe</li>
+<li>Zuordnungsaufgabe</li>
+<li>Umordnungsaufgabe</li>
+<li>Dichotome Auswahlaufgabe</li>
+<li>Auswahlaufgabe</li>
+<li>Analogskala</li>
+<li>Ratingskala</li>
+<li>Atypisches Antwortformat</li>
+</ul>
+<ol type="a">
+<li>Eine Person ergänzt einen fehlenden Fachbegriff.</li>
+</ol>
+<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-28-contents" aria-controls="callout-28" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tipp</span>Lösung
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-28" class="callout-28-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Ergänzungsaufgabe</p>
+</div>
+</div>
+</div>
+<ol start="2" type="a">
+<li>Eine Person verfasst einen kurzen freien Text zu einer Fragestellung.</li>
+</ol>
+<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-29-contents" aria-controls="callout-29" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tipp</span>Lösung
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-29" class="callout-29-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Kurzaufsatzaufgabe</p>
+</div>
+</div>
+</div>
+<ol start="3" type="a">
+<li>Begriffe werden passenden Definitionen zugeordnet.</li>
+</ol>
+<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-30-contents" aria-controls="callout-30" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tipp</span>Lösung
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-30" class="callout-30-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Zuordnungsaufgabe</p>
+</div>
+</div>
+</div>
+<ol start="4" type="a">
+<li>Begriffe werden nach einer Regel sortiert.</li>
+</ol>
+<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-31-contents" aria-controls="callout-31" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tipp</span>Lösung
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-31" class="callout-31-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Umordnungsaufgabe</p>
+</div>
+</div>
+</div>
+<ol start="5" type="a">
+<li>Eine Person beantwortet eine Ja/Nein-Frage zu einer Einstellung.</li>
+</ol>
+<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-32-contents" aria-controls="callout-32" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tipp</span>Lösung
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-32" class="callout-32-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Dichotome Auswahlaufgabe</p>
+</div>
+</div>
+</div>
+<ol start="6" type="a">
+<li>Eine Person wählt in einem Wissenstest eine Antwort aus mehreren Alternativen.</li>
+</ol>
+<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-33-contents" aria-controls="callout-33" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tipp</span>Lösung
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-33" class="callout-33-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Auswahlaufgabe</p>
+</div>
+</div>
+</div>
+<ol start="7" type="a">
+<li>Eine Person markiert ihre aktuelle Zufriedenheit auf einer visuellen Linie.</li>
+</ol>
+<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-34-contents" aria-controls="callout-34" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tipp</span>Lösung
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-34" class="callout-34-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Analogskala</p>
+</div>
+</div>
+</div>
+<ol start="8" type="a">
+<li>Eine Person gibt auf einer Skala mit graduell abgestuften Antwortkategorien an, wie sehr sie einer Aussage zustimmt.</li>
+</ol>
+<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-35-contents" aria-controls="callout-35" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tipp</span>Lösung
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-35" class="callout-35-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Ratingskala</p>
+</div>
+</div>
+</div>
+<ol type="i">
+<li>Eine Person bearbeitet eine Aufgabe in einem Konzentrationstest mit besonderer Aufgabenstruktur.</li>
+</ol>
+<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-36-contents" aria-controls="callout-36" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tipp</span>Lösung
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-36" class="callout-36-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Atypisches Antwortformat</p>
+</div>
+</div>
+</div>
+</div>
+<div id="exr-format-pros-cons" class="theorem exercise">
+<p><span class="theorem-title"><strong>Aufgabe 9 (Vor- und Nachteile der Aufgabenformate)</strong></span> &nbsp;</p>
+<ol type="a">
+<li>Für welche Aufgabenformate benötigt man ein Kodierschema?</li>
+</ol>
+<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-37-contents" aria-controls="callout-37" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tipp</span>Lösung
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-37" class="callout-37-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Ergänzungsaufgaben, Kurzaufsatzaufgaben</p>
+</div>
+</div>
+</div>
+<ol start="2" type="a">
+<li>Sortieren Sie die Aufgabentypen nach der Wahrscheinlichkeit, mit der man die richtige Lösung erraten bzw. zufällig angeben kann: dichotome Aufgabe, Kurzaufsatzaufgabe, Zuordnungsaufgabe, Ergänzungsaufgabe.</li>
+</ol>
+<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-38-contents" aria-controls="callout-38" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tipp</span>Lösung
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-38" class="callout-38-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Von der geringsten zur höchsten Ratewahrscheinlichkeit: Kurzaufsatzaufgabe, Ergänzungsaufgabe, Zuordnungsaufgabe, dichotome Aufgabe</p>
+</div>
+</div>
+</div>
+<ol start="3" type="a">
+<li>Welches Antwortformat eignet sich besonders gut, um Kreativität zu erfassen?</li>
+</ol>
+<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-39-contents" aria-controls="callout-39" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tipp</span>Lösung
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-39" class="callout-39-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Kurzaufsatzaufgaben</p>
+</div>
+</div>
+</div>
+</div>
+<div id="exr-response-alternatives" class="theorem exercise">
+<p><span class="theorem-title"><strong>Aufgabe 10 (Antwortalternativen bei Auswahl- und Zuordnungsaufgaben)</strong></span> &nbsp;</p>
+<ol type="a">
+<li>Worauf muss bei der Generierung von Antwortalternativen für Auswahlaufgaben in Leistungstests besonders geachtet werden, worauf in Persönlichkeitstests?</li>
+</ol>
+<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-40-contents" aria-controls="callout-40" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tipp</span>Lösung
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-40" class="callout-40-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ul>
+<li>Allgemein: Anzahl der Antwortkategorien</li>
+<li>Leistungstests: mehrere disjunkte Antwortkategorien, Qualität der Distraktoren, Anzahl der richtigen Antworten (meist nur eine)</li>
+<li>Persönlichkeitstests: disjunkte Antwortkategorien, Exhaustivität</li>
+</ul>
+</div>
+</div>
+</div>
+<ol start="2" type="a">
+<li>Wie lässt sich bei Zuordnungsaufgaben die Ratewahrscheinlichkeit senken?</li>
+</ol>
+<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-41-contents" aria-controls="callout-41" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tipp</span>Lösung
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-41" class="callout-41-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Viele Antwortalternativen; attraktive Distraktoren</p>
+</div>
+</div>
+</div>
+</div>
+<div id="exr-response-format-flaws" class="theorem exercise">
+<p><span class="theorem-title"><strong>Aufgabe 11 (Unglücklich gewählte Antwortformate)</strong></span> Warum sind die Antwortformate der folgenden Items unglücklich gewählt?</p>
+<ol type="a">
+<li><p>Ich reise gerne allein.</p>
+<ul>
+<li>Niemals</li>
+<li>Selten</li>
+<li>Kaum</li>
+<li>Immer</li>
+</ul></li>
+</ol>
+<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-42-contents" aria-controls="callout-42" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tipp</span>Lösung
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-42" class="callout-42-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Die Abstufungen sind sehr unterschiedlich; „selten“ und „kaum“ sind schwer zu unterscheiden.</p>
+</div>
+</div>
+</div>
+<ol start="2" type="a">
+<li><p>Was war die wichtigste Bezugsperson in Ihrer Kindheit?</p>
+<ul>
+<li>Meine Mutter</li>
+<li>Mein Vater</li>
+<li>Mein Bruder</li>
+<li>Meine Schwester</li>
+</ul></li>
+</ol>
+<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-43-contents" aria-controls="callout-43" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tipp</span>Lösung
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-43" class="callout-43-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Nicht exhaustiv: Andere Personen können nicht angegeben werden.</p>
+</div>
+</div>
+</div>
+<ol start="3" type="a">
+<li><p>Wie lautet die Hauptstadt von Nicaragua?</p>
+<ul>
+<li>Managua</li>
+<li>Tegucigalpa</li>
+</ul></li>
+</ol>
+<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-44-contents" aria-controls="callout-44" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tipp</span>Lösung
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-44" class="callout-44-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Dichotomes Antwortformat mit einer Ratewahrscheinlichkeit von 50 %</p>
+</div>
+</div>
+</div>
+<ol start="4" type="a">
+<li><p>Bitte geben Sie Ihren derzeitigen Beziehungsstand an.</p>
+<ul>
+<li>Single</li>
+<li>In einer Beziehung</li>
+<li>Geschieden</li>
+<li>Verheiratet</li>
+<li>Verwitwet</li>
+</ul></li>
+</ol>
+<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-45-contents" aria-controls="callout-45" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tipp</span>Lösung
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-45" class="callout-45-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Nicht disjunkt: Man kann z. B. geschieden oder verwitwet und trotzdem in einer Beziehung sein.</p>
+</div>
+</div>
+</div>
+<ol start="5" type="a">
+<li><p>Wie ist Ihre Stimmung in diesem Augenblick?</p>
+<p>sehr schlecht |————————————×————————————————————————| sehr gut</p></li>
+</ol>
+<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-46-contents" aria-controls="callout-46" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tipp</span>Lösung
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-46" class="callout-46-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Die Differenziertheit der Messung entspricht in der Regel nicht der Differenziertheit des Urteils.</p>
+</div>
+</div>
+</div>
+<ol start="6" type="a">
+<li><p>Wie sehr stimmen Sie dieser Aussage zu: „Atomkraft sollte abgeschafft werden.“</p>
+<ul>
+<li>Stimme gar nicht zu</li>
+<li>Stimme eher nicht zu</li>
+<li>Teils/teils</li>
+<li>Stimme eher zu</li>
+<li>Stimme völlig zu</li>
+</ul></li>
+</ol>
+<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-47-contents" aria-controls="callout-47" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tipp</span>Lösung
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-47" class="callout-47-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Die Mittelkategorie kann aus anderen Gründen als einer mittleren Ausprägung gewählt werden (fehlende Motivation, Verständnisprobleme, Antwortverweigerung). Eine zusätzliche Kategorie „keine Angabe“ vermeidet Reaktanz.</p>
+</div>
+</div>
+</div>
+<ol start="7" type="a">
+<li><p>Wie oft machen Sie Sport?</p>
+<ul>
+<li>0 – nie</li>
+<li>1 – sehr selten</li>
+<li>2 – selten</li>
+<li>3 – ab und zu</li>
+<li>4 – oft</li>
+<li>5 – sehr oft</li>
+</ul></li>
+</ol>
+<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-48-contents" aria-controls="callout-48" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tipp</span>Lösung
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-48" class="callout-48-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Die Zahlen suggerieren Intervallskalenniveau, obwohl die Abstände zwischen den sehr unterschiedlichen Abstufungen nicht gleich groß sein müssen. Die vielen Stufen können die Befragten überfordern; durchschnittliche Zeitangaben pro Woche wären eventuell sinnvoller.</p>
+</div>
+</div>
+</div>
+<ol start="8" type="a">
+<li><p>Wie oft trinken Sie Alkohol?</p>
+<ul>
+<li>Nie</li>
+<li>Manchmal</li>
+<li>Immer</li>
+</ul></li>
+</ol>
+<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-49-contents" aria-controls="callout-49" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tipp</span>Lösung
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-49" class="callout-49-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Zu wenige Stufen: Die meisten Befragten würden „manchmal“ wählen, das Item differenziert kaum zwischen Personen. Besser wären zusätzlich „selten“ und „oft“ oder durchschnittliche Mengenangaben pro Woche.</p>
+</div>
+</div>
+</div>
+</div>
+
+
+
+
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">Literatur</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" data-line-spacing="2" role="list">
+<div id="ref-cronbach1955" class="csl-entry" role="listitem">
+Cronbach, L. J., &amp; Meehl, P. E. (1955). Construct validity in psychological tests. <em>Psychological Bulletin</em>, <em>52</em>(4), 281–302. <a href="https://doi.org/10.1037/h0040957">https://doi.org/10.1037/h0040957</a>
+</div>
+<div id="ref-schaufeli2002" class="csl-entry" role="listitem">
+Schaufeli, W. B., Salanova, M., González-Romá, V., &amp; Bakker, A. B. (2002). The measurement of engagement and burnout: <span>A</span> two sample confirmatory factor analytic approach. <em>Journal of Happiness Studies</em>, <em>3</em>(1), 71–92. <a href="https://doi.org/10.1023/A:1015630930326">https://doi.org/10.1023/A:1015630930326</a>
+</div>
+<div id="ref-schaufeli2019" class="csl-entry" role="listitem">
+Schaufeli, W. B., Shimazu, A., Hakanen, J., Salanova, M., &amp; De Witte, H. (2019). An ultra-short measure for work engagement: <span>The</span> <span>UWES-3</span> validation across five countries. <em>European Journal of Psychological Assessment</em>, <em>35</em>(4), 577–591. <a href="https://doi.org/10.1027/1015-5759/a000430">https://doi.org/10.1027/1015-5759/a000430</a>
+</div>
+</div></section></div></main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Kopiert");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Kopiert");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/sbissantz\.github\.io\/irtea\/");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+      &nbsp;
+    </div>   
+    <div class="nav-footer-center">
+<p>Lizenz: GPL-3</p>
+</div>
+    <div class="nav-footer-right">
+      &nbsp;
+    </div>
+  </div>
+</footer>
+
+
+
+
+</body></html>

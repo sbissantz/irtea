@@ -35,18 +35,312 @@
     "text": "Aufgabe 1 (Runden)  \n\n\n\n\n\n\nHinweisHinweis\n\n\n\nBeim kaufmännischen Runden auf zwei Nachkommastellen entscheidet die dritte Nachkommastelle: Bei 0 bis 4 wird abgerundet, bei 5 bis 9 aufgerundet. Bei negativen Zahlen rundet man den Betrag und behält das Minuszeichen.\n\n\nRunden Sie kaufmännisch auf zwei Nachkommastellen.\n\n\\(3.14159\\)\n\n\n\n\n\n\n\nTippLösung\n\n\n\n\n\n\\(3.14\\)\n\n\n\n\n\\(2.71828\\)\n\n\n\n\n\n\n\nTippLösung\n\n\n\n\n\n\\(2.72\\)\n\n\n\n\n\\(0.125\\)\n\n\n\n\n\n\n\nTippLösung\n\n\n\n\n\n\\(0.13\\)\n\n\n\n\n\\(1.995\\)\n\n\n\n\n\n\n\nTippLösung\n\n\n\n\n\n\\(2.00\\)\n\n\n\n\n\\(-0.926\\)\n\n\n\n\n\n\n\nTippLösung\n\n\n\n\n\n\\(-0.93\\)\n\n\n\n\n\\(0.004\\)\n\n\n\n\n\n\n\nTippLösung\n\n\n\n\n\n\\(0.00\\)\n\n\n\n\n\nAufgabe 2 (Ergebnisse runden) Berechnen Sie den Ausdruck und runden Sie das Ergebnis kaufmännisch auf zwei Nachkommastellen.\n\n\\(\\frac{1}{3}\\)\n\n\n\n\n\n\n\nTippLösung\n\n\n\n\n\n\\(0.33\\)\n\n\n\n\n\\(\\frac{2}{3}\\)\n\n\n\n\n\n\n\nTippLösung\n\n\n\n\n\n\\(0.67\\)\n\n\n\n\n\\(\\sqrt{2.5}\\)\n\n\n\n\n\n\n\nTippLösung\n\n\n\n\n\n\\(1.58\\)\n\n\n\n\n\\(e^{-1}\\)\n\n\n\n\n\n\n\nTippLösung\n\n\n\n\n\n\\(0.37\\)\n\n\n\n\n\\(\\ln(0.5)\\)\n\n\n\n\n\n\n\nTippLösung\n\n\n\n\n\n\\(-0.69\\)\n\n\n\n\n\nAufgabe 3 (Summenzeichen)  \n\n\n\n\n\n\nHinweisHinweis\n\n\n\nDas Summenzeichen ist eine Kurzschreibweise für eine Summe:\n\\[\n\\sum_{i=a}^{b} x_i = x_a + \\ldots + x_b\n\\]\nDabei bezeichnet \\(i\\) den Index, \\(a\\) die untere Grenze und \\(b\\) die obere Grenze.\n\n\nGegeben sind die Werte \\(x_1 = 2\\), \\(x_2 = 5\\), \\(x_3 = 1\\) und \\(x_4 = 4\\).\n\nBerechnen Sie \\(\\sum_{i=1}^{4} x_i\\).\n\n\n\n\n\n\n\nTippLösung\n\n\n\n\n\n\\(\\sum_{i=1}^{4} x_i = 12\\)\n\n\n\n\nBerechnen Sie \\(\\sum_{i=1}^{4} (x_i - 3)^2\\).\n\n\n\n\n\n\n\nTippLösung\n\n\n\n\n\n\\(\\sum_{i=1}^{4} (x_i - 3)^2 = 10\\)\n\n\n\n\n\nAufgabe 4 (Produktzeichen)  \n\n\n\n\n\n\nHinweisHinweis\n\n\n\nDas Produktzeichen ist eine Kurzschreibweise für ein Produkt:\n\\[\n\\prod_{i=a}^{b} x_i = x_a \\cdot \\ldots \\cdot x_b\n\\]\nDabei bezeichnet \\(i\\) den Index, \\(a\\) die untere Grenze und \\(b\\) die obere Grenze.\n\n\nGegeben sind die Werte \\(x_1 = 2\\), \\(x_2 = 0.5\\) und \\(x_3 = 3\\).\n\nBerechnen Sie \\(\\prod_{i=1}^{3} x_i\\).\n\n\n\n\n\n\n\nTippLösung\n\n\n\n\n\n\\(\\prod_{i=1}^{3} x_i = 3\\)\n\n\n\n\nBerechnen Sie \\(\\prod_{i=1}^{3} x_i^{i - 1}\\).\n\n\n\n\n\n\n\nTippLösung\n\n\n\n\n\n\\(\\prod_{i=1}^{3} x_i^{i - 1} = 4.5\\)\n\n\n\n\n\nAufgabe 5 (Funktionswerte und Logarithmus) Gegeben sind die beiden Funktionen\n\\[\n\\begin{aligned}\nf(y \\mid \\mu, \\sigma^2) &= \\frac{1}{\\sqrt{2\\pi\\sigma^2}} \\exp\\left( -\\frac{(y - \\mu)^2}{2\\sigma^2} \\right) \\\\[2ex]\ng(y \\mid \\mu, \\sigma^2) &= -\\frac{1}{2} \\ln(2\\pi\\sigma^2) - \\frac{(y - \\mu)^2}{2\\sigma^2}\n\\end{aligned}\n\\]\n\n\n\n\n\n\nHinweisHinweis\n\n\n\n\n\nLesen Sie \\(f(y \\mid \\mu, \\sigma^2)\\) als „\\(f\\) von \\(y\\) gegeben \\(\\mu\\) und \\(\\sigma^2\\)“. Es gilt \\(\\exp(x) = e^x\\); \\(\\ln\\) bezeichnet den natürlichen Logarithmus.\n\n\n\n\nBerechnen Sie \\(f(y \\mid \\mu, \\sigma^2)\\) für \\(y = 2\\), \\(\\mu = 2\\) und \\(\\sigma^2 = 1\\).\n\n\n\n\n\n\n\nTippLösung\n\n\n\n\n\n\\(f(2 \\mid 2, 1) \\approx 0.40\\)\n\n\n\n\nBerechnen Sie \\(g(y \\mid \\mu, \\sigma^2)\\) für dieselben Werte.\n\n\n\n\n\n\n\nTippLösung\n\n\n\n\n\n\\(g(2 \\mid 2, 1) \\approx -0.92\\)\n\n\n\n\nLogarithmieren Sie Ihr Ergebnis aus Teil a und vergleichen Sie es mit Teil b. Was fällt Ihnen auf?\n\n\n\n\n\n\n\nTippLösung\n\n\n\n\n\n\\(\\ln(0.40) \\approx -0.92 = g(2 \\mid 2, 1)\\): \\(g\\) ist der Logarithmus von \\(f\\).\n\n\n\n\nSetzt man in \\(f(y \\mid \\mu, \\sigma^2)\\) die Werte \\(\\mu = 0\\) und \\(\\sigma^2 = 1\\) sowie die Werte von \\(y\\) aus der folgenden Tabelle ein, erhält man:\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\\(y\\)\n-2.5\n-2\n-1.5\n-1\n-0.5\n0\n0.5\n1\n1.5\n2\n2.5\n\n\n\n\n\\(f(y \\mid 0, 1)\\)\n0.02\n0.05\n0.13\n0.24\n0.35\n0.40\n0.35\n0.24\n0.13\n0.05\n0.02\n\n\n\nZeichnen Sie die Punkte in ein Koordinatensystem ein und verbinden Sie sie. Woran erinnert Sie der Graph?\n\n\n\n\n\n\nTippLösung\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nDichtefunktion der Normalverteilung.\n\n\n\n\n\nAufgabe 6 (Funktionswerte vergleichen) Gegeben sind für \\(0 &lt; \\theta &lt; 1\\) die beiden Funktionen\n\\[\n\\begin{aligned}\nf(y_1, y_2, y_3 \\mid \\theta) &= \\prod_{i=1}^{3} \\theta^{y_i} (1 - \\theta)^{1 - y_i} \\\\[2ex]\ng(y_1, y_2, y_3 \\mid \\theta) &= \\sum_{i=1}^{3} \\left[ y_i \\ln(\\theta) + (1 - y_i) \\ln(1 - \\theta) \\right]\n\\end{aligned}\n\\]\nund die Werte \\(y_1 = 1\\), \\(y_2 = 0\\) und \\(y_3 = 1\\).\n\n\n\n\n\n\nHinweisHinweis\n\n\n\n\n\nLesen Sie \\(f(y_1, y_2, y_3 \\mid \\theta)\\) als „\\(f\\) von \\(y_1\\), \\(y_2\\) und \\(y_3\\) gegeben \\(\\theta\\)“. Zum Summen- und Produktzeichen siehe die Hinweise zu Aufgabe 3 und Aufgabe 4.\n\n\n\n\nBerechnen Sie \\(f(y_1, y_2, y_3 \\mid \\theta)\\) für \\(\\theta = 0.5\\).\n\n\n\n\n\n\n\nTippLösung\n\n\n\n\n\n\\(f(1, 0, 1 \\mid 0.5) \\approx 0.13\\)\n\n\n\n\nBerechnen Sie \\(g(y_1, y_2, y_3 \\mid \\theta)\\) für \\(\\theta = 0.6\\).\n\n\n\n\n\n\n\nTippLösung\n\n\n\n\n\n\\(g(1, 0, 1 \\mid 0.6) \\approx -1.94\\)\n\n\n\n\nFür welchen der beiden Werte, \\(\\theta = 0.5\\) oder \\(\\theta = 0.6\\), ist \\(f\\) größer? Begründen Sie Ihr Vorgehen.\n\n\n\n\n\n\n\nTippLösung\n\n\n\n\n\nFür \\(\\theta = 0.6\\), denn \\(f(1, 0, 1 \\mid 0.6) \\approx 0.14 &gt; 0.13\\) (oder über \\(g\\): \\(-1.94 &gt; -2.08\\)).\n\n\n\n\nFür welchen Wert von \\(\\theta\\) wird \\(f\\) am größten? Probieren Sie einige Werte aus.\n\n\n\n\n\n\n\nTippLösung\n\n\n\n\n\n\\(\\theta \\approx 0.67\\) (genau \\(\\frac{2}{3}\\), der Anteil der Einsen unter \\(y_1, y_2, y_3\\)) mit \\(f(1, 0, 1 \\mid 0.67) \\approx 0.15\\)\n\n\n\n\n\n\nAufgabe 7 (Varianz, Kovarianz und Korrelation) Gegeben sind die Werte \\(x_i\\) und \\(y_i\\) für \\(i = 1, \\dots, 5\\):\n\n\n\n\n\\(i = 1\\)\n\\(i = 2\\)\n\\(i = 3\\)\n\\(i = 4\\)\n\\(i = 5\\)\n\n\n\n\n\\(x_i\\)\n2\n4\n3\n5\n1\n\n\n\\(y_i\\)\n4\n5\n3\n5\n3\n\n\n\n\nBerechnen Sie \\(\\bar{x}\\) und \\(\\bar{y}\\).\n\n\n\n\n\n\n\nTippLösung\n\n\n\n\n\n\\(\\bar{x} = 3\\), \\(\\bar{y} = 4\\)\n\n\n\n\nBerechnen Sie \\(s_x^2\\) und \\(s_y^2\\).\n\n\n\n\n\n\n\nTippLösung\n\n\n\n\n\n\\(s_x^2 = 2.5\\), \\(s_y^2 = 1\\)\n\n\n\n\nBerechnen Sie \\(s_{xy}\\).\n\n\n\n\n\n\n\nTippLösung\n\n\n\n\n\n\\(s_{xy} = 1.25\\)\n\n\n\n\nBerechnen Sie \\(r_{xy}\\).\n\n\n\n\n\n\n\nTippLösung\n\n\n\n\n\n\\(r_{xy} \\approx 0.79\\)\n\n\n\n\nBerechnen Sie die z-Werte von \\(x_4\\) und \\(y_4\\).\n\n\n\n\n\n\n\nTippLösung\n\n\n\n\n\n\\(z_4 \\approx 1.26\\) (für \\(x_4\\)) und \\(z_4 = 1\\) (für \\(y_4\\))\n\n\n\n\n\nAufgabe 8 (Kovarianz- und Korrelationsmatrix) Stellen Sie sich vor, Sie hätten mit SoSci Survey im Rahmen einer Studienarbeit eine Erhebung mittels eines Persönlichkeitsinventars durchgeführt, das unter anderem die Konstrukte „Introversion“, „Extraversion“ und „soziale Kompetenz“ beinhaltet. Dabei haben Sie den Befragten auch die folgenden drei Items vorgelegt:\n\nItem 1: „Ich ziehe es vor, meine Zeit alleine zu verbringen, als mit anderen Menschen zu interagieren.“\nItem 2: „Ich genieße es, im Mittelpunkt der Aufmerksamkeit zu stehen.“\nItem 3: „Ich finde es wichtig, in sozialen Situationen höflich und respektvoll zu sein.“\n\nIhre Stichprobe besteht aus \\(N = 7\\) Teilnehmenden (Personen \\(i = 1, \\dots, 7\\)), die alle auf einer Schiebereglerskala mit den Endpunkten \\(-12\\) und \\(12\\) geantwortet haben. Die Antwort von Person \\(i\\) auf Item \\(j\\) ist \\(y_{ij}\\). Positive Werte bedeuten Zustimmung, negative Werte Ablehnung. Die Antworten sind in der folgenden Tabelle dargestellt:\n\n\n\nTabelle 1: Transponierte Datenmatrix aus SoSci Survey (Zeilen: Items \\(j\\), Spalten: Personen \\(i\\))\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\\(i = 1\\)\n\\(i = 2\\)\n\\(i = 3\\)\n\\(i = 4\\)\n\\(i = 5\\)\n\\(i = 6\\)\n\\(i = 7\\)\n\n\n\n\n\\(j = 1\\)\n7.68\n7.40\n7.28\n6.80\n7.38\n7.48\n7.72\n\n\n\\(j = 2\\)\n1.16\n4.42\n7.39\n11.89\n2.31\n5.87\n6.34\n\n\n\\(j = 3\\)\n-3.58\n-2.69\n-2.00\n-0.32\n-3.30\n-2.95\n-4.74\n\n\n\n\n\n\n\n\n\n\n\n\nHinweisHinweis\n\n\n\n\n\nDie Inter-Item-Kovarianzmatrix ist bei \\(J\\) Items eine \\(J \\times J\\)-Matrix (hier \\(3 \\times 3\\)), also ein quadratisches Zahlenraster, das aus Itemvarianzen und Inter-Item-Kovarianzen besteht. Auf der Hauptdiagonalen der Matrix befinden sich die Itemvarianzen und außerhalb der Hauptdiagonalen die nicht standardisierten linearen Zusammenhänge, die Inter-Item-Kovarianzen (siehe Gleichung 1). Die Inter-Item-Korrelationsmatrix ist ebenfalls eine \\(J \\times J\\)-Matrix, die jedoch aus Inter-Item-Korrelationen (und Einsen) besteht. Im Gegensatz zur Inter-Item-Kovarianzmatrix werden außerhalb der Hauptdiagonalen die standardisierten linearen Beziehungen zwischen den Items, also deren Korrelationen, abgetragen. Auf der Hauptdiagonalen stehen Einsen (siehe Gleichung 2). Eine wichtige Eigenschaft solcher Matrizen ist ihre Symmetrie. Kovarianz- und Korrelationsmatrizen sind symmetrisch, d. h. die Einträge oberhalb und unterhalb der Hauptdiagonalen sind spiegelbildlich gleich (z. B. \\(s_{1,2} = s_{2,1}\\)). Beide Matrizen sind eng miteinander verbunden, und die Kovarianzmatrix kann durch geeignete Standardisierung in eine Korrelationsmatrix umgewandelt werden.\n\\[\nV =\n\\begin{pmatrix}\ns^2_1 & s_{1,2} & s_{1,3} \\\\\ns_{2,1} & s^2_2 & s_{2,3} \\\\\ns_{3,1} & s_{3,2} & s^2_3\n\\end{pmatrix}\n\\tag{1}\\]\n\\[\nR =\n\\begin{pmatrix}\n1 & r_{1,2} & r_{1,3} \\\\\nr_{2,1} & 1 & r_{2,3} \\\\\nr_{3,1} & r_{3,2} & 1\n\\end{pmatrix}\n\\tag{2}\\]\n\n\n\n\nSie interessiert, ob zwischen den Items ein linearer Zusammenhang besteht und, falls ja, wie stark dieser jeweils ist. Skizzieren Sie zunächst Ihre theoretischen Erwartungen zu den Zusammenhängen in einer Tabelle oder einer Erwartungsmatrix. Für stark positive Zusammenhänge können Sie beispielsweise „++“ und für schwache negative Zusammenhänge „−“ verwenden.\n\n\n\n\n\n\n\nTippLösung\n\n\n\n\n\nEine mögliche Erwartungsmatrix:\n\\[\n\\begin{array}{c|ccc}\n& 1 & 2 & 3 \\\\\n\\hline\n1 & & {-}{-} & - \\\\\n2 & & & {+} \\\\\n3 & & &\n\\end{array}\n\\]\nItem 1 (Introversion), Item 2 (Extraversion), Item 3 (soziale Kompetenz).\n\n\n\n\nUm Ihre Erwartungen bezüglich der Richtung der Zusammenhänge anhand von Daten zu überprüfen, berechnen Sie zunächst die Inter-Item-Kovarianzmatrix \\(V\\). Interpretieren Sie anschließend die Itemvarianzen und Inter-Item-Kovarianzen und setzen Sie sie zueinander in Bezug. Welche Hinweise liefern Ihnen die Itemvarianzen über die vorhandene Stichprobe bzw. den Inhalt des jeweiligen Items? Nutzen Sie zur Beurteilung auch die Itemmittelwerte und den gegebenen Antwortbereich. Evaluieren Sie abschließend Ihre theoretischen Erwartungen mithilfe der Inter-Item-Kovarianzen. Welche Rückschlüsse lassen die Ergebnisse bereits zu und welche müssen noch offenbleiben?\n\n\n\n\n\n\n\nTippLösung\n\n\n\n\n\nItemmittelwerte \\((\\bar{y}_1, \\bar{y}_2, \\bar{y}_3)^\\top \\approx (7.39, 5.63, -2.80)^\\top\\) und \\[\nV \\approx\n\\begin{pmatrix}\n0.09 & -0.82 & -0.40 \\\\\n& 12.55 & 3.42 \\\\\n&  & 1.91\n\\end{pmatrix}\n\\]\nWer mit gerundeten Zwischenergebnissen rechnet, erhält leicht abweichende Werte.\nItem 1 erhält nahezu geschlossene Zustimmung (sehr kleine Varianz bei einem Antwortbereich von \\(-12\\) bis \\(12\\)). Die Vorzeichen der Kovarianzen passen zu den Erwartungen aus Teil a; über die Stärke der Zusammenhänge sagen sie noch nichts.\n\n\n\n\nUm auch die Stärke der linearen Zusammenhänge beurteilen zu können, berechnen Sie die Inter-Item-Korrelationsmatrix \\(R\\). Formalisieren Sie dazu zunächst die Beziehung zwischen Itemvarianz, Inter-Item-Kovarianz und Inter-Item-Korrelation. Wie hilft Ihnen diese Formalisierung bei der Berechnung der Inter-Item-Korrelationsmatrix?\n\n\n\n\n\n\n\nTippLösung\n\n\n\n\n\n\\(r_{jk} = \\dfrac{s_{jk}}{\\sqrt{s_j^2 \\cdot s_k^2}}\\) und\n\\[\nR \\approx\n\\begin{pmatrix}\n1 & -0.75 & -0.96 \\\\\n& 1 & 0.70 \\\\\n&  & 1\n\\end{pmatrix}\n\\]\nWer mit gerundeten Zwischenergebnissen rechnet, erhält leicht abweichende Werte.\n\n\n\n\nInterpretieren Sie abschließend die Ergebnisse der berechneten Inter-Item-Korrelationsmatrix und setzen Sie diese in Bezug zu Ihren theoretischen Erwartungen. Überrascht Sie das Ergebnis? Begründen Sie Ihre Antwort kurz. Stellen Sie im selben Zug auch eine Vermutung über einen möglichen datengenerierenden Prozess auf.\n\n\n\n\n\n\n\nTippLösung\n\n\n\n\n\nAlle Zusammenhänge sind sehr stark. Die negative Korrelation von Item 1 (Introversion) und Item 2 (Extraversion) ist plausibel, die sehr hohen Korrelationen von Item 3 (soziale Kompetenz) mit beiden anderen Items kaum.\nVermutung: Die Daten sind simuliert, z. B. aus einer multivariaten Normalverteilung mit zufällig gezogener Korrelationsmatrix."
   },
   {
-    "objectID": "workbook/diagnostic-i-ex.html",
-    "href": "workbook/diagnostic-i-ex.html",
-    "title": "6 Diagnostische Rechenkompetenzen I",
+    "objectID": "workbook/construction-ex.html",
+    "href": "workbook/construction-ex.html",
+    "title": "4 Schritte der Testkonstruktion",
     "section": "",
-    "text": "WichtigWork in Progress\n\n\n\nDieses Kapitel wird derzeit intern überarbeitet. Aufgaben, Daten und Lösungen können sich noch ändern. Bitte bearbeiten Sie die Aufgaben erst, wenn die Überarbeitung abgeschlossen ist und dieser Hinweis entfernt wurde.\nRunden Sie Ergebnisse bei Berechnungen kaufmännisch auf zwei Nachkommastellen. Alle Fälle und Daten sind fiktiv."
+    "text": "In diesem Kapitel werden Sie anhand verschiedener Beispiele üben, welche Vorüberlegungen getroffen werden müssen, um ein Konstrukt mit einem Testverfahren zu erfassen. Insbesondere lernen Sie das Konstrukt Arbeitsengagement sowie ein Testverfahren zur Erfassung dieses Konstrukts kennen. In weiteren Aufgaben wird thematisiert, welche Antwortformate für welche Itemtypen geeignet sind und welche Vor- und Nachteile die verschiedenen Antwortformate haben.\n\nAufgabe 1 (Vorüberlegungen zur Abiturprüfung) Das Kultusministerium steht alljährlich vor der Aufgabe, neue und rechtssichere Abiturprüfungen im Fach Mathematik zu entwickeln. Welche Vorüberlegungen zur Konstruktdefinition müssen bei der Konzeption einer solchen Abschlussprüfung berücksichtigt werden? Gehen Sie dabei explizit auf die folgenden Aspekte ein:\n\nArt des gemessenen Merkmals\n\n\n\n\n\n\n\nTippLösung\n\n\n\n\n\nKontinuierlich (quantitativ), mehrdimensional, Trait\n\n\n\n\nTestart\n\n\n\n\n\n\n\nTippLösung\n\n\n\n\n\nLeistungstest\n\n\n\n\nZielgruppe\n\n\n\n\n\n\n\nTippLösung\n\n\n\n\n\nAbiturient:innen\n\n\n\n\nTestlänge\n\n\n\n\n\n\n\nTippLösung\n\n\n\n\n\nEine Länge, die in der Bearbeitungszeit (z. B. 240 min) gut zu bewältigen ist\n\n\n\n\nTestadministration\n\n\n\n\n\n\n\nTippLösung\n\n\n\n\n\nPaper-Pencil, Gruppentestung\n\n\n\n\nNützlichkeit (praktische Relevanz)\n\n\n\n\n\n\n\nTippLösung\n\n\n\n\n\nGegeben: Jedes Jahr wird eine neue Abiturprüfung benötigt, um die Mathematikleistung der Abiturient:innen korrekt einzuschätzen.\n\n\n\n\n\nAufgabe 2 (Methoden zur Eingrenzung des Konstrukts) Ein Forschungsteam plant einen Fragebogen zur Erfassung belastender Kindheitserfahrungen. Da es in der Fachliteratur keine einheitliche Definition dieses Konstrukts gibt, muss es zunächst eingegrenzt und operationalisiert werden. Welcher Ansatz zur Konstrukteingrenzung wird in den folgenden Beispielen jeweils beschrieben?\n\nDas Forschungsteam fasst die gängigen Ansätze, Modelle und Definitionen aus Fachzeitschriften und Lehrbüchern zusammen und entwickelt darauf aufbauend eine neue, integrierte Definition.\n\n\n\n\n\n\n\nTippLösung\n\n\n\n\n\nLiteraturrecherche (Top-down)\n\n\n\n\nDie Forschenden führen standardisierte Interviews mit 38 Patient:innen einer klinischen Traumastation durch, um deren konkrete, subjektive Belastungserfahrungen in der Kindheit zu erfassen.\n\n\n\n\n\n\n\nTippLösung\n\n\n\n\n\nStandardisiertes Befragungsinstrument, hier ein standardisiertes Interview (Bottom-up)\n\n\n\n\nSie befragen niedergelassene Kinderärzt:innen sowie Kinder- und Jugendlichenpsychotherapeut:innen, welche Kernmerkmale nach ihrer beruflichen Erfahrung eine belastende Kindheitserfahrung ausmachen.\n\n\n\n\n\n\n\nTippLösung\n\n\n\n\n\nBefragung von Expert:innen (Top-down)\n\n\n\n\n\nAufgabe 3 (Konstrukt Arbeitsengagement) Bevor ein psychologisches Testverfahren entwickelt werden kann, muss die wichtigste Frage überhaupt beantwortet werden: Was genau soll eigentlich gemessen werden? Am Anfang steht immer die präzise Definition des sogenannten Konstrukts. Im Folgenden wird beispielhaft das Konstrukt Arbeitsengagement betrachtet. Eine mögliche Definition liefern Schaufeli et al. (2002) in ihrem Artikel:\n\n„Hence, engagement is defined as a positive, fulfilling, work-related state of mind that is characterized by vigor, dedication, and absorption. Rather than a momentary and specific state, engagement refers to a more persistent and pervasive affective-cognitive state that is not focused on any particular object, event, individual, or behavior. Vigor is characterized by high levels of energy and mental resilience while working, the willingness to invest effort in one’s work, and persistence even in the face of difficulties. Dedication is characterized by a sense of significance, enthusiasm, inspiration, pride, and challenge. Instead of involvement we prefer to use the term dedication. Although, involvement – like dedication (see above) – is usually defined in terms of psychological identification with one’s work or one’s job (Kanungo, 1982; Lawler and Hall, 1970), whereby the latter goes one step beyond, both quantitatively as well as qualitatively. In a qualitative [sic] sense, dedication refers to a particularly strong involvement that goes one step further than the usual level of identification. In a qualitative sense, dedication has a wider scope by not only referring to a particular cognitive or belief state but including the affective dimension as well. The final dimension of engagement, absorption, is characterized by being fully concentrated and deeply engrossed in one’s work, whereby time passes quickly and one has difficulties with detaching oneself from work. Being fully absorbed in one’s work comes close to what has been called ‚flow‘, a state of optimal experience that is characterized by focused attention, clear mind, mind and body unison, effortless concentration, complete control, loss of self-consciousness, distortion of time, and intrinsic enjoyment (Csikszentmihalyi, 1990). However, typically, flow is a more complex concept that includes many aspects and refers to rather particular, short-term ‚peak‘ experiences instead of a more pervasive and persistent state of mind, as is the case with engagement.“ (S. 74–75)\n\n\nGanz allgemein: Was ist ein Konstrukt?\n\n\n\n\n\n\n\nTippLösung\n\n\n\n\n\nEin theoretisches, nicht direkt beobachtbares Konzept, das erst über beobachtbare Verhaltensweisen (Indikatoren) zugänglich wird.\n\n\n\nBestimmen Sie anhand der Definition die Art des Merkmals.\n\nKontinuierlich oder kategorial?\n\n\n\n\n\n\n\nTippLösung\n\n\n\n\n\nKontinuierlich\n\n\n\n\nEindimensional oder mehrdimensional?\n\n\n\n\n\n\n\nTippLösung\n\n\n\n\n\nMehrdimensional mit drei Dimensionen: Vigor (Energie und mentale Widerstandsfähigkeit), Dedication (Bedeutsamkeit, Begeisterung, Inspiration, Stolz und Herausforderung) und Absorption (Vertiefung in die Arbeit)\n\n\n\n\nStabile Eigenschaft (Trait) oder Zustand (State)?\n\n\n\n\n\n\n\nTippLösung\n\n\n\n\n\nTrait: ein überdauernder Zustand, nicht ein einzelner Moment (ursprünglich mit „im Allgemeinen“-Instruktion). Eine State-Erfassung ist möglich, wenn die Fragestellung auf konkrete Zeiträume oder Situationen zielt.\n\n\n\n\n\nAufgabe 4 (Trait- und State-Instruktion für Arbeitsengagement) Arbeitsengagement lässt sich sowohl als stabiles Personenmerkmal (Trait) als auch als schwankender Zustand (State) konzipieren. Wie könnte eine Instruktion lauten, wenn mit den folgenden Items ein Trait erfasst werden soll, und wie, wenn ein State erfasst werden soll?\n\nIch bin begeistert von meiner Arbeit.\nIch fühle mich glücklich, wenn ich viel arbeite.\nBei der Arbeit strotze ich vor Energie.\nBei meiner Arbeit fühle ich mich stark und lebhaft.\nIch bin in meine Arbeit vertieft.\n\n\n\n\n\n\n\nTippLösung\n\n\n\n\n\n\nTrait: „In der folgenden Liste finden Sie Aussagen dazu, wie man die Arbeit erleben kann. Wählen Sie bitte die Antwort aus, die am besten auf Sie zutrifft.“ (1 = „nie“ bis 6 = „immer (jeden Tag)“)\nState: „Wie haben Sie heute Ihre Arbeit erlebt?“ (1 = „überhaupt nicht“ bis 5 = „sehr“); die Items stehen dann in der Vergangenheitsform („Ich war begeistert von meiner Arbeit.“).\n\n\n\n\n\n\nAufgabe 5 (UWES-3 zur Erfassung des Arbeitsengagements) Die Utrecht Work Engagement Scale (UWES) ist ein international verbreiteter Fragebogen zur Erfassung von Arbeitsengagement. Eine Kurzversion ist die UWES-3, die Schaufeli et al. (2019) in einer Validierungsstudie untersucht haben. Lesen Sie für die Beantwortung der Fragen die folgenden Auszüge aus ihrem Artikel:\n\nAbstract und Einführung (bis zum Satz „The aim of the current paper …“)\nAbschnitt Method, davon nur die Unterabschnitte\n\nSample and Procedure (nur die ersten zwei Sätze)\nMeasures (nur den Teil mit der Überschrift UWES-3)\n\nAbschnitt Discussion (nur bis zum Ende der Aufzählungen)\nAbschnitt Final Note\n\nBitte ziehen Sie daraus die fehlenden Informationen zu den „Vorüberlegungen“: Testart, Zielgruppe, Testlänge/Testzeit, Testadministration und Nützlichkeit.\n\nUm welche Testart handelt es sich bei der UWES-3?\n\n\n\n\n\n\n\nTippLösung\n\n\n\n\n\nPsychometrischer Persönlichkeitstest/-fragebogen\n\n\n\n\nFür welche Zielgruppe wurde die UWES-3 konzipiert?\n\n\n\n\n\n\n\nTippLösung\n\n\n\n\n\nBeschäftigte aus verschiedenen Berufskontexten; die Validierungsstudie nutzte Stichproben aus Finnland, Japan, den Niederlanden, Belgien (Flandern) und Spanien; die Ergebnisse sind nicht automatisch repräsentativ für alle Beschäftigten der jeweiligen Länder.\n\n\n\n\nWie viele Items enthält der Test und welche Dimension(en) wird/werden damit erfasst?\n\n\n\n\n\n\n\nTippLösung\n\n\n\n\n\nInsgesamt 3 Items, je eines für Vigor, Dedication und Absorption\n\n\n\n\nWie ist die UWES-3 anzuwenden? Geben Sie bei jeder der beiden folgenden Aussagen an, ob sie zutrifft oder nicht.\n\nFür die UWES-3 wird in den zu lesenden Abschnitten nur die computerbasierte Anwendung empfohlen.\nIn den zu lesenden Abschnitten fehlt eine Empfehlung zur Einzel- oder Gruppentestung. Es ist aber davon auszugehen, dass die UWES-3 in beiden Formen angewendet werden kann.\n\n\n\n\n\n\n\n\nTippLösung\n\n\n\n\n\n\nTrifft nicht zu.\nTrifft zu.\n\n\n\n\n\nWelche Argumente sprechen für die Nützlichkeit der UWES-3?\n\n\n\n\n\n\n\nTippLösung\n\n\n\n\n\nHohe Ökonomie; Anwendung in großen Surveys und internationalen Studien möglich\n\n\n\n\n\nAufgabe 6 (Nomologisches Netzwerk des Arbeitsengagements) In der psychologischen Forschung reicht eine Definition nicht aus: Für eine hohe Konstruktvalidität muss ein Konstrukt auch präzise von anderen Konstrukten abgegrenzt werden. Nur so lässt sich prüfen, ob ein Test wirklich das misst, was er messen soll. Einen theoretischen Rahmen dafür bietet das nomologische Netzwerk (Cronbach & Meehl, 1955).\n\nErklären Sie in eigenen Worten, was ein nomologisches Netzwerk ist und warum es für den Nachweis der Konstruktvalidität eines Fragebogens wie der UWES-3 zur Erfassung des Arbeitsengagements unverzichtbar ist.\n\n\n\n\n\n\n\nTippLösung\n\n\n\n\n\nEin theoretisch begründetes Muster erwarteter Beziehungen zwischen einem Konstrukt, verwandten Konstrukten, Einflussgrößen und Kriterien. Es liefert Validitätsevidenz, wenn das beobachtete Muster den Erwartungen entspricht: Es zeigt, wo sich Arbeitsengagement mit ähnlichen Konstrukten überschneidet und wo es sich von ihnen abgrenzt.\n\n\n\n\nLesen Sie nun die beiden Unterabschnitte Engagement and Employee Well-Being und Engagement and the Job Demands-Resources Model aus der Einführung des Artikels von Schaufeli et al. (2019). Geben Sie für jede der folgenden Variablen an, ob im Text ein Zusammenhang mit Arbeitsengagement angenommen wird. Falls ja: Ist er positiv oder negativ, und wie wird er theoretisch begründet?\n\nBurnout\nLangeweile (Job Boredom)\nArbeitszufriedenheit\nHinderliche Arbeitsanforderungen\nJob-Ressourcen\nPersönliche Ressourcen\nWorkaholism\nNarzissmus\n\n\n\n\n\n\n\n\nTippLösung\n\n\n\n\n\nBurnout und Langeweile sollten im Allgemeinen negativ mit Arbeitsengagement zusammenhängen. Workaholism ist theoretisch unterscheidbar; Richtung und Stärke können von der Operationalisierung abhängen. Arbeitszufriedenheit sollte positiv zusammenhängen, aber nicht identisch sein. Job- und persönliche Ressourcen werden gemäß JD-R-Modell eher positiv erwartet; hinderliche Arbeitsanforderungen eher negativ. Narzissmus wird im Text nicht erwähnt.\n\n\n\n\nAngenommen, Sie haben selbst einen Test zur Erfassung des Arbeitsengagements entwickelt und möchten ihn validieren. In Ihren Daten zeigt sich eine sehr hohe Korrelation (\\(r = 0.85\\)) zwischen Ihrem Test und einer bestehenden Skala für Arbeitszufriedenheit. Was sagt dieses Ergebnis über die Konstruktvalidität Ihres Messinstruments aus?\n\n\n\n\n\n\n\nTippLösung\n\n\n\n\n\nHinweis auf eine mögliche Gefährdung der diskriminanten Validität: Die Abgrenzung von Arbeitszufriedenheit ist möglicherweise unzureichend. Die Korrelation allein beweist aber nicht, dass beide Konstrukte identisch sind; Definitionen, Iteminhalte, Messfehler und weitere Validitätsevidenz sind zu prüfen.\n\n\n\n\n\nAufgabe 7 (Fallbeispiel Prüfungsangst) Ein Forschungsteam entwickelt einen Fragebogen zur Erfassung von Prüfungsangst bei Schüler:innen kurz vor dem Mathematik-Abitur. Die Schule möchte sowohl besonders belastete Schüler:innen identifizieren als auch die durchschnittliche Prüfungsangst zwischen Klassen vergleichen. Der Fragebogen soll während einer Unterrichtsstunde eingesetzt werden.\n\nWelche Zielgruppe, Testart und Testadministration liegen nahe? Welche Informationen fehlen noch, bevor Sie die Testlänge festlegen?\n\n\n\n\n\n\n\nTippLösung\n\n\n\n\n\n\nZielgruppe: Schüler:innen der gymnasialen Oberstufe kurz vor dem Mathematik-Abitur\nTestart: psychometrischer Fragebogen zur Erfassung typischen Verhaltens (kein Leistungstest)\nAdministration: digitale oder papierbasierte Gruppentestung im Klassenverband\nFehlende Informationen: reine Bearbeitungszeit innerhalb der Unterrichtsstunde, geplante Struktur (eindimensional oder mit Subskalen), angestrebte Messgenauigkeit (Individualdiagnostik erfordert höhere Reliabilität und meist mehr Items als ein Klassenvergleich)\n\n\n\n\n\nSollte Prüfungsangst hier als Trait, als State oder je nach Fragestellung als beides operationalisiert werden?\n\n\n\n\n\n\n\nTippLösung\n\n\n\n\n\n\nState: für den Klassenvergleich und die akute Belastung direkt vor der Prüfung\nTrait: für die Identifikation besonders belasteter Schüler:innen, um zeitstabile Ängstlichkeit von der Tagesform zu trennen\nFazit: Kombination (zweigeteilter Test) oder Operationalisierung als situationsspezifischer Trait (generelle Angst bezogen auf das Setting „Mathe-Prüfung“) sinnvoll\n\n\n\n\n\nFormulieren Sie ein Item für eine State-Erfassung und eines für eine Trait-Erfassung.\n\n\n\n\n\n\n\nTippLösung\n\n\n\n\n\n\nState: „Wenn ich jetzt an das bevorstehende Mathematik-Abitur denke, schlägt mein Herz schneller.“\nTrait: „Vor Mathematikprüfungen bin ich meistens schon Tage vorher nervös.“\n\n\n\n\n\nWelche ethischen und praktischen Aspekte sind zu beachten, wenn die Ergebnisse zur Identifikation besonders belasteter Schüler:innen verwendet werden?\n\n\n\n\n\n\n\nTippLösung\n\n\n\n\n\n\nEthisch: Vertraulichkeit und Datenschutz, keine Stigmatisierung; Screening nur, wenn konkrete Hilfsangebote (z. B. Schulpsychologie) bereitstehen; informierte Einwilligung der Schüler:innen bzw. Erziehungsberechtigten\nPraktisch: Fehlklassifikationen durch Messfehler oder Verfälschung, daher keine Entscheidung allein auf Basis des Tests; das Ausfüllen direkt vor der Prüfung kann die Angst verstärken (Reaktivität)\n\n\n\n\n\nEine neue Skala für Prüfungsangst korreliert sehr hoch mit einer etablierten Skala für allgemeine Ängstlichkeit. Was bedeutet das für die Konstruktvalidität?\n\n\n\n\n\n\n\nTippLösung\n\n\n\n\n\nDie diskriminante Validität ist gefährdet: Die Skala misst möglicherweise keine spezifische Prüfungsangst, sondern allgemeine Ängstlichkeit (Konstruktredundanz).\n\n\n\n\n\nAufgabe 8 (Antwortformate) Ordnen Sie jeder Situation eines der folgenden Formate zu:\n\nErgänzungsaufgabe\nKurzaufsatzaufgabe\nZuordnungsaufgabe\nUmordnungsaufgabe\nDichotome Auswahlaufgabe\nAuswahlaufgabe\nAnalogskala\nRatingskala\nAtypisches Antwortformat\n\n\nEine Person ergänzt einen fehlenden Fachbegriff.\n\n\n\n\n\n\n\nTippLösung\n\n\n\n\n\nErgänzungsaufgabe\n\n\n\n\nEine Person verfasst einen kurzen freien Text zu einer Fragestellung.\n\n\n\n\n\n\n\nTippLösung\n\n\n\n\n\nKurzaufsatzaufgabe\n\n\n\n\nBegriffe werden passenden Definitionen zugeordnet.\n\n\n\n\n\n\n\nTippLösung\n\n\n\n\n\nZuordnungsaufgabe\n\n\n\n\nBegriffe werden nach einer Regel sortiert.\n\n\n\n\n\n\n\nTippLösung\n\n\n\n\n\nUmordnungsaufgabe\n\n\n\n\nEine Person beantwortet eine Ja/Nein-Frage zu einer Einstellung.\n\n\n\n\n\n\n\nTippLösung\n\n\n\n\n\nDichotome Auswahlaufgabe\n\n\n\n\nEine Person wählt in einem Wissenstest eine Antwort aus mehreren Alternativen.\n\n\n\n\n\n\n\nTippLösung\n\n\n\n\n\nAuswahlaufgabe\n\n\n\n\nEine Person markiert ihre aktuelle Zufriedenheit auf einer visuellen Linie.\n\n\n\n\n\n\n\nTippLösung\n\n\n\n\n\nAnalogskala\n\n\n\n\nEine Person gibt auf einer Skala mit graduell abgestuften Antwortkategorien an, wie sehr sie einer Aussage zustimmt.\n\n\n\n\n\n\n\nTippLösung\n\n\n\n\n\nRatingskala\n\n\n\n\nEine Person bearbeitet eine Aufgabe in einem Konzentrationstest mit besonderer Aufgabenstruktur.\n\n\n\n\n\n\n\nTippLösung\n\n\n\n\n\nAtypisches Antwortformat\n\n\n\n\n\nAufgabe 9 (Vor- und Nachteile der Aufgabenformate)  \n\nFür welche Aufgabenformate benötigt man ein Kodierschema?\n\n\n\n\n\n\n\nTippLösung\n\n\n\n\n\nErgänzungsaufgaben, Kurzaufsatzaufgaben\n\n\n\n\nSortieren Sie die Aufgabentypen nach der Wahrscheinlichkeit, mit der man die richtige Lösung erraten bzw. zufällig angeben kann: dichotome Aufgabe, Kurzaufsatzaufgabe, Zuordnungsaufgabe, Ergänzungsaufgabe.\n\n\n\n\n\n\n\nTippLösung\n\n\n\n\n\nVon der geringsten zur höchsten Ratewahrscheinlichkeit: Kurzaufsatzaufgabe, Ergänzungsaufgabe, Zuordnungsaufgabe, dichotome Aufgabe\n\n\n\n\nWelches Antwortformat eignet sich besonders gut, um Kreativität zu erfassen?\n\n\n\n\n\n\n\nTippLösung\n\n\n\n\n\nKurzaufsatzaufgaben\n\n\n\n\n\nAufgabe 10 (Antwortalternativen bei Auswahl- und Zuordnungsaufgaben)  \n\nWorauf muss bei der Generierung von Antwortalternativen für Auswahlaufgaben in Leistungstests besonders geachtet werden, worauf in Persönlichkeitstests?\n\n\n\n\n\n\n\nTippLösung\n\n\n\n\n\n\nAllgemein: Anzahl der Antwortkategorien\nLeistungstests: mehrere disjunkte Antwortkategorien, Qualität der Distraktoren, Anzahl der richtigen Antworten (meist nur eine)\nPersönlichkeitstests: disjunkte Antwortkategorien, Exhaustivität\n\n\n\n\n\nWie lässt sich bei Zuordnungsaufgaben die Ratewahrscheinlichkeit senken?\n\n\n\n\n\n\n\nTippLösung\n\n\n\n\n\nViele Antwortalternativen; attraktive Distraktoren\n\n\n\n\n\nAufgabe 11 (Unglücklich gewählte Antwortformate) Warum sind die Antwortformate der folgenden Items unglücklich gewählt?\n\nIch reise gerne allein.\n\nNiemals\nSelten\nKaum\nImmer\n\n\n\n\n\n\n\n\nTippLösung\n\n\n\n\n\nDie Abstufungen sind sehr unterschiedlich; „selten“ und „kaum“ sind schwer zu unterscheiden.\n\n\n\n\nWas war die wichtigste Bezugsperson in Ihrer Kindheit?\n\nMeine Mutter\nMein Vater\nMein Bruder\nMeine Schwester\n\n\n\n\n\n\n\n\nTippLösung\n\n\n\n\n\nNicht exhaustiv: Andere Personen können nicht angegeben werden.\n\n\n\n\nWie lautet die Hauptstadt von Nicaragua?\n\nManagua\nTegucigalpa\n\n\n\n\n\n\n\n\nTippLösung\n\n\n\n\n\nDichotomes Antwortformat mit einer Ratewahrscheinlichkeit von 50 %\n\n\n\n\nBitte geben Sie Ihren derzeitigen Beziehungsstand an.\n\nSingle\nIn einer Beziehung\nGeschieden\nVerheiratet\nVerwitwet\n\n\n\n\n\n\n\n\nTippLösung\n\n\n\n\n\nNicht disjunkt: Man kann z. B. geschieden oder verwitwet und trotzdem in einer Beziehung sein.\n\n\n\n\nWie ist Ihre Stimmung in diesem Augenblick?\nsehr schlecht |————————————×————————————————————————| sehr gut\n\n\n\n\n\n\n\nTippLösung\n\n\n\n\n\nDie Differenziertheit der Messung entspricht in der Regel nicht der Differenziertheit des Urteils.\n\n\n\n\nWie sehr stimmen Sie dieser Aussage zu: „Atomkraft sollte abgeschafft werden.“\n\nStimme gar nicht zu\nStimme eher nicht zu\nTeils/teils\nStimme eher zu\nStimme völlig zu\n\n\n\n\n\n\n\n\nTippLösung\n\n\n\n\n\nDie Mittelkategorie kann aus anderen Gründen als einer mittleren Ausprägung gewählt werden (fehlende Motivation, Verständnisprobleme, Antwortverweigerung). Eine zusätzliche Kategorie „keine Angabe“ vermeidet Reaktanz.\n\n\n\n\nWie oft machen Sie Sport?\n\n0 – nie\n1 – sehr selten\n2 – selten\n3 – ab und zu\n4 – oft\n5 – sehr oft\n\n\n\n\n\n\n\n\nTippLösung\n\n\n\n\n\nDie Zahlen suggerieren Intervallskalenniveau, obwohl die Abstände zwischen den sehr unterschiedlichen Abstufungen nicht gleich groß sein müssen. Die vielen Stufen können die Befragten überfordern; durchschnittliche Zeitangaben pro Woche wären eventuell sinnvoller.\n\n\n\n\nWie oft trinken Sie Alkohol?\n\nNie\nManchmal\nImmer\n\n\n\n\n\n\n\n\nTippLösung\n\n\n\n\n\nZu wenige Stufen: Die meisten Befragten würden „manchmal“ wählen, das Item differenziert kaum zwischen Personen. Besser wären zusätzlich „selten“ und „oft“ oder durchschnittliche Mengenangaben pro Woche.\n\n\n\n\n\n\n\n\nLiteratur\n\nCronbach, L. J., & Meehl, P. E. (1955). Construct validity in psychological tests. Psychological Bulletin, 52(4), 281–302. https://doi.org/10.1037/h0040957\n\n\nSchaufeli, W. B., Salanova, M., González-Romá, V., & Bakker, A. B. (2002). The measurement of engagement and burnout: A two sample confirmatory factor analytic approach. Journal of Happiness Studies, 3(1), 71–92. https://doi.org/10.1023/A:1015630930326\n\n\nSchaufeli, W. B., Shimazu, A., Hakanen, J., Salanova, M., & De Witte, H. (2019). An ultra-short measure for work engagement: The UWES-3 validation across five countries. European Journal of Psychological Assessment, 35(4), 577–591. https://doi.org/10.1027/1015-5759/a000430"
   },
   {
-    "objectID": "workbook/diagnostic-i-ex.html#literatur",
-    "href": "workbook/diagnostic-i-ex.html#literatur",
-    "title": "6 Diagnostische Rechenkompetenzen I",
+    "objectID": "slides/basics-inp.html#einordnung",
+    "href": "slides/basics-inp.html#einordnung",
+    "title": "B.F.3 Übung zu Diagnostik/Testtheorie",
+    "section": "Einordnung",
+    "text": "Einordnung\nB.F.3 Übung zu Diagnostik/Testtheorie\nBasis dieser Übung bilden die zwei Vorlesungen\n\nB.F.1 Grundlagen der Diagnostik\nB.F.2 Grundlagen der Testtheorie\n\nWeitere Informationen finden Sie im Modulhandbuch."
+  },
+  {
+    "objectID": "slides/basics-inp.html#rahmenbedingungen",
+    "href": "slides/basics-inp.html#rahmenbedingungen",
+    "title": "B.F.3 Übung zu Diagnostik/Testtheorie",
+    "section": "Rahmenbedingungen",
+    "text": "Rahmenbedingungen\n\n\n\n\n\n\nVoraussetzungen für die Vergabe von Leistungspunkten\n\n\n\nInsgesamt vier unangekündigte Übungsaufgaben\nBearbeitung der Übungsaufgaben in Präsenzsitzungen\nAktive Teilnahme an mindestens zwei Übungsaufgaben\nUnterschrift auf der Anwesenheitsliste gilt als Nachweis"
+  },
+  {
+    "objectID": "slides/basics-inp.html#auswahl-an-lernzielen",
+    "href": "slides/basics-inp.html#auswahl-an-lernzielen",
+    "title": "B.F.3 Übung zu Diagnostik/Testtheorie",
+    "section": "Auswahl an Lernzielen",
+    "text": "Auswahl an Lernzielen\n\nFormulierung einer diagnostischen Fragestellung\nVerständnis der Gütekriterien für Erfassungsmethoden\nVerständnis der Stärken und Schwächen gängiger Testtheorien\nBestimmung von Itemkennwerten und Gütekriterien\nVerdichtung von Informationen zu einem diagnostischen Urteil"
+  },
+  {
+    "objectID": "slides/basics-inp.html#semesterübersicht",
+    "href": "slides/basics-inp.html#semesterübersicht",
+    "title": "B.F.3 Übung zu Diagnostik/Testtheorie",
+    "section": "Semesterübersicht",
+    "text": "Semesterübersicht\n\n\n\n\n\n\n\n\nNr.\nDatum\nThema\n\n\n\n\n1\nab 20.10.\nEinführung & Rechenkompetenzen\n\n\n2\nab 27.10.\nRechenkompetenzen\n\n\n3\nab 03.11.\nGütekriterien\n\n\n4\nab 10.11.\nSchritte der Testkonstruktion & Erstellung eines Testentwurfs\n\n\n\n\nLektürewoche\n\n\n5\nab 24.11.\nKlassische Testtheorie\n\n\n6\nab 01.12.\nDiagnostische Rechenkompetenzen I\n\n\n7\nab 08.12.\nItem-Response-Theorie\n\n\n8\nab 15.12.\nExploratorische Faktorenanalyse I\n\n\n\n\nWeihnachtsferien\n\n\n9\nab 05.01.\nExploratorische Faktorenanalyse II\n\n\n10\nab 12.01.\nItemanalyse I\n\n\n11\nab 19.01.\nItemanalyse II, Itemselektion und Testrevision\n\n\n12\nab 26.01.\nDiagnostische Rechenkompetenzen II\n\n\n13\nab 02.02.\nGütekriterien II"
+  },
+  {
+    "objectID": "slides/basics-inp.html#übungsmöglichkeiten-kommunikation",
+    "href": "slides/basics-inp.html#übungsmöglichkeiten-kommunikation",
+    "title": "B.F.3 Übung zu Diagnostik/Testtheorie",
+    "section": "Übungsmöglichkeiten & Kommunikation",
+    "text": "Übungsmöglichkeiten & Kommunikation\n\nSynchron: zu den offiziellen Gruppenzeiten\nAsynchron: z. B. in selbstorganisierten Lerngruppen"
+  },
+  {
+    "objectID": "slides/basics-inp.html#synchrone-übungsmöglichkeiten",
+    "href": "slides/basics-inp.html#synchrone-übungsmöglichkeiten",
+    "title": "B.F.3 Übung zu Diagnostik/Testtheorie",
+    "section": "Synchrone Übungsmöglichkeiten",
+    "text": "Synchrone Übungsmöglichkeiten\nDie Übung bietet die Möglichkeit\n\nFragen zu stellen\nAufgaben zu bearbeiten\nErgebnisse zu diskutieren"
+  },
+  {
+    "objectID": "slides/basics-inp.html#übungsaufgaben",
+    "href": "slides/basics-inp.html#übungsaufgaben",
+    "title": "B.F.3 Übung zu Diagnostik/Testtheorie",
+    "section": "Übungsaufgaben",
+    "text": "Übungsaufgaben\nEs gibt zahlreiche Übungsaufgaben\n\nNicht alle stehen im Fokus der Präsenzsitzungen\nErgebnisse zu allen Aufgaben stehen im Übungsheft (ohne Lösungswege)\nSelbststudium ist ein elementarer Bestandteil\nSelbstorganisierte Lerngruppen sind ein bewährtes Mittel"
+  },
+  {
+    "objectID": "slides/basics-inp.html#lernressourcen",
+    "href": "slides/basics-inp.html#lernressourcen",
+    "title": "B.F.3 Übung zu Diagnostik/Testtheorie",
+    "section": "Lernressourcen",
+    "text": "Lernressourcen\n\nVorlesungsfolien und -inhalte\nÜbungsinhalte und -aufgaben auf der Homepage\nWeiterführende Literatur (z. B. Moosbrugger & Kelava, 2020)\nGoogle & Künstliche Intelligenz als Hilfsmittel, nicht als Ersatz!\n\nMaßgeblich sind die Inhalte der Vorlesung, danach die der Übung. Die weiterführende Literatur erhalten Sie in der RPTU-Bibliothek."
+  },
+  {
+    "objectID": "slides/basics-inp.html#übungen",
+    "href": "slides/basics-inp.html#übungen",
+    "title": "B.F.3 Übung zu Diagnostik/Testtheorie",
+    "section": "Übungen",
+    "text": "Übungen\nÜbungen zu diesem Thema: Übungsheft, Kapitel 1 & 2"
+  },
+  {
+    "objectID": "slides/basics-inp.html#literatur",
+    "href": "slides/basics-inp.html#literatur",
+    "title": "B.F.3 Übung zu Diagnostik/Testtheorie",
     "section": "Literatur",
-    "text": "Literatur\n\n\nMoosbrugger, H., & Kelava, A. (Hrsg.). (2020). Testtheorie und Fragebogenkonstruktion (3. Aufl.). Springer Berlin Heidelberg. https://doi.org/10.1007/978-3-662-61532-4"
+    "text": "Literatur\n\n\nMoosbrugger, H., & Kelava, A. (Hrsg.). (2020). Testtheorie und Fragebogenkonstruktion (3. Aufl.). Springer Berlin Heidelberg. https://doi.org/10.1007/978-3-662-61532-4\n\n\n\nB.F.3 Übung zu Diagnostik/Testtheorie – B.F.3 Diagnostik & Testtheorie\nB.F.3 Übung zu Diagnostik/Testtheorie – B.F.3 Diagnostik & Testtheorie\nB.F.3 Übung zu Diagnostik/Testtheorie – B.F.3 Diagnostik & Testtheorie\nB.F.3 Diagnostik & Testtheorie\nEinführung & Rechenkompetenzen\nEinführung & Rechenkompetenzen"
+  },
+  {
+    "objectID": "slides/construction-inp.html#semesterübersicht",
+    "href": "slides/construction-inp.html#semesterübersicht",
+    "title": "B.F.3 Übung zu Diagnostik/Testtheorie",
+    "section": "Semesterübersicht",
+    "text": "Semesterübersicht\n\n\n\n\n\n\n\n\nNr.\nDatum\nThema\n\n\n\n\n1\nab 20.10.\nEinführung & Rechenkompetenzen\n\n\n2\nab 27.10.\nRechenkompetenzen\n\n\n3\nab 03.11.\nGütekriterien\n\n\n4\nab 10.11.\nSchritte der Testkonstruktion & Erstellung eines Testentwurfs\n\n\n\n\nLektürewoche\n\n\n5\nab 24.11.\nKlassische Testtheorie\n\n\n6\nab 01.12.\nDiagnostische Rechenkompetenzen I\n\n\n7\nab 08.12.\nItem-Response-Theorie\n\n\n8\nab 15.12.\nExploratorische Faktorenanalyse I\n\n\n\n\nWeihnachtsferien\n\n\n9\nab 05.01.\nExploratorische Faktorenanalyse II\n\n\n10\nab 12.01.\nItemanalyse I\n\n\n11\nab 19.01.\nItemanalyse II, Itemselektion und Testrevision\n\n\n12\nab 26.01.\nDiagnostische Rechenkompetenzen II\n\n\n13\nab 02.02.\nGütekriterien II"
+  },
+  {
+    "objectID": "slides/construction-inp.html#schritte-der-testkonstruktion",
+    "href": "slides/construction-inp.html#schritte-der-testkonstruktion",
+    "title": "B.F.3 Übung zu Diagnostik/Testtheorie",
+    "section": "Schritte der Testkonstruktion",
+    "text": "Schritte der Testkonstruktion\n\nKonstruktdefinition\nItemgenerierung & Erstellung eines Testentwurfs\n(Qualitative) Pilotierung des ersten Testentwurfs & Revision\nEmpirische Überprüfung des zweiten Testentwurfs & Revision\nEmpirische Überprüfung (ggf. erneute Revision)\nValidierung\nNormierung"
+  },
+  {
+    "objectID": "slides/construction-inp.html#vorüberlegungen-merkmal-und-testart",
+    "href": "slides/construction-inp.html#vorüberlegungen-merkmal-und-testart",
+    "title": "B.F.3 Übung zu Diagnostik/Testtheorie",
+    "section": "Vorüberlegungen: Merkmal und Testart",
+    "text": "Vorüberlegungen: Merkmal und Testart\n\nArt des Merkmals\n\nKontinuierlich oder kategorial?\nEindimensional oder mehrdimensional?\nStabile Eigenschaft (Trait) oder Zustand (State)?\n\nTestart\n\nLeistungstest\nPersönlichkeitstest/-fragebogen\nProjektive Verfahren etc."
+  },
+  {
+    "objectID": "slides/construction-inp.html#vorüberlegungen-rahmenbedingungen",
+    "href": "slides/construction-inp.html#vorüberlegungen-rahmenbedingungen",
+    "title": "B.F.3 Übung zu Diagnostik/Testtheorie",
+    "section": "Vorüberlegungen: Rahmenbedingungen",
+    "text": "Vorüberlegungen: Rahmenbedingungen\n\nZielgruppe\nTestlänge und Testzeit\nTestadministration\n\nPaper-Pencil oder Computer?\nEinzel- oder Gruppentestung?\n\nNützlichkeit"
+  },
+  {
+    "objectID": "slides/construction-inp.html#eingrenzung-des-merkmals",
+    "href": "slides/construction-inp.html#eingrenzung-des-merkmals",
+    "title": "B.F.3 Übung zu Diagnostik/Testtheorie",
+    "section": "Eingrenzung des Merkmals",
+    "text": "Eingrenzung des Merkmals\nErstellung der Konstruktdefinition: Vorgehensweisen\n\nTop-down: zuerst Konstruktdefinition erstellen, dann Items generieren\n\nV. a. sinnvoll, wenn schon Wissen über das Konstrukt vorhanden ist\n\nBottom-up: zuerst Items generieren, dann Konstruktdefinition erstellen\n\nV. a. sinnvoll bei neuen Konstrukten\n\nBeide Vorgehensweisen können auch kombiniert werden"
+  },
+  {
+    "objectID": "slides/construction-inp.html#methoden-zur-eingrenzung-des-merkmals",
+    "href": "slides/construction-inp.html#methoden-zur-eingrenzung-des-merkmals",
+    "title": "B.F.3 Übung zu Diagnostik/Testtheorie",
+    "section": "Methoden zur Eingrenzung des Merkmals",
+    "text": "Methoden zur Eingrenzung des Merkmals\nTop-down\n\nBefragung von Expert:innen (ggf. auch Laien)\nLiteraturrecherche (Bücher, Überblicksartikel, Datenbanken, bestehende Verfahren)\n\nBottom-up\n\nItems generieren, gemeinsame Aspekte als Grundlage der Konstruktdefinition\nStandardisierte Beobachtungs- oder Befragungsinstrumente (z. B. Critical Incident Technique)\n\n→ Alle Methoden liefern Indikatoren des Konstrukts und Zusammenhänge zu anderen Konstrukten („nomologisches Netzwerk“)"
+  },
+  {
+    "objectID": "slides/construction-inp.html#item--und-antwortformate",
+    "href": "slides/construction-inp.html#item--und-antwortformate",
+    "title": "B.F.3 Übung zu Diagnostik/Testtheorie",
+    "section": "Item- und Antwortformate",
+    "text": "Item- und Antwortformate\nWelche beiden grundlegenden Itemformate werden unterschieden?\n\nSingle-Stimulus: Es wird jeweils nur ein Itemstamm vorgegeben.\nForced-Choice: Es werden gleichzeitig zwei oder mehr Itemstämme vorgegeben.\n\nItemstamm und Antwortformat sind eine untrennbare Einheit.\n\nDas Antwortformat ist die reaktive Komponente des Items.\nMit dem Antwortformat wird die Reaktion auf einen Stimulus (Itemstamm) kodiert.\nDie Konstruktion des Antwortformats muss auf den Iteminhalt angepasst werden."
+  },
+  {
+    "objectID": "slides/construction-inp.html#antwortformate",
+    "href": "slides/construction-inp.html#antwortformate",
+    "title": "B.F.3 Übung zu Diagnostik/Testtheorie",
+    "section": "Antwortformate",
+    "text": "Antwortformate\n\nFreies Antwortformat\n\nBeantwortung des Items ist nicht oder nur in geringem Maße durch Antwortvorgaben eingeschränkt\n\nGebundenes Antwortformat\n\nVorgabe konkreter Lösungsmöglichkeiten oder Antwortalternativen\n\nAtypische Antwortformate\n\nZ. B. Durchstreichtests"
+  },
+  {
+    "objectID": "slides/construction-inp.html#fehlerquellen-bei-der-itembeantwortung",
+    "href": "slides/construction-inp.html#fehlerquellen-bei-der-itembeantwortung",
+    "title": "B.F.3 Übung zu Diagnostik/Testtheorie",
+    "section": "Fehlerquellen bei der Itembeantwortung",
+    "text": "Fehlerquellen bei der Itembeantwortung\nSystematische Fehler erzeugen konstruktirrelevante Varianz und verringern dadurch die Validität.\n\nVerzerrungstendenzen\n\nAntwortstile\nSozial erwünschtes Antworten\nUnaufmerksames Antworten\n\nMotivation\nReihenfolgeeffekte\nNegativ gepolte Items"
+  },
+  {
+    "objectID": "slides/construction-inp.html#itemformulierung-i",
+    "href": "slides/construction-inp.html#itemformulierung-i",
+    "title": "B.F.3 Übung zu Diagnostik/Testtheorie",
+    "section": "Itemformulierung I",
+    "text": "Itemformulierung I\n\nItems positiv formulieren, Negationen vermeiden (v. a. doppelte Verneinungen!)\nEinfache Satzkonstruktionen\nFachbegriffe und Abkürzungen vermeiden\nVorwissen und Sprache an die Zielgruppe anpassen; schwierige Begriffe ggf. definieren\nMehrdeutigkeit vermeiden\nNur ein Sachverhalt/Gedanke\nVerallgemeinerungen vermeiden"
+  },
+  {
+    "objectID": "slides/construction-inp.html#itemformulierung-ii",
+    "href": "slides/construction-inp.html#itemformulierung-ii",
+    "title": "B.F.3 Übung zu Diagnostik/Testtheorie",
+    "section": "Itemformulierung II",
+    "text": "Itemformulierung II\n\nHäufigkeits- und Intensitätsangaben vermeiden oder geeignet spezifizieren\nReferenzzeitspanne eindeutig definieren\nDecken- oder Bodeneffekte vermeiden\nAktualität: kurzlebige Inhalte vermeiden\nImplizite Wertungen vermeiden\nSuggestion vermeiden\nMerkmalskonfundierung vermeiden\nAntwortrichtung festlegen"
+  },
+  {
+    "objectID": "slides/construction-inp.html#schlechte-items",
+    "href": "slides/construction-inp.html#schlechte-items",
+    "title": "B.F.3 Übung zu Diagnostik/Testtheorie",
+    "section": "Schlechte Items",
+    "text": "Schlechte Items\n\nItems können von Testautor:in und Teilnehmer:in unterschiedlich verstanden werden.\nItems können von unterschiedlichen Teilnehmer:innen unterschiedlich verstanden werden.\nItems können Teilnehmer:innen irritieren oder verärgern.\nItems können zu sinnlosem Antworten führen.\n…\n\n→ Folge: Man misst nicht das, was man messen möchte!"
+  },
+  {
+    "objectID": "slides/construction-inp.html#reihenfolge-der-items",
+    "href": "slides/construction-inp.html#reihenfolge-der-items",
+    "title": "B.F.3 Übung zu Diagnostik/Testtheorie",
+    "section": "Reihenfolge der Items",
+    "text": "Reihenfolge der Items\nWas ist zu beachten?\nMotivation\n\nZ. B. aufsteigende Schwierigkeit in Leistungstests („Eisbrecher“)\n\nAktualisierungseffekte\n\nUnabhängigkeit der Items sollte sichergestellt werden\n\nKonsistenzeffekte\n\nKonsistentes Antworten\nGegenmaßnahmen: Pufferaufgaben, Randomisierung oder ausbalancierte Reihenfolge"
+  },
+  {
+    "objectID": "slides/construction-inp.html#instruktion",
+    "href": "slides/construction-inp.html#instruktion",
+    "title": "B.F.3 Übung zu Diagnostik/Testtheorie",
+    "section": "Instruktion",
+    "text": "Instruktion\nWas ist zu beachten?\nMotivation und Verständnis\n\nZur Mitarbeit animieren\nKlare Handlungsanweisungen (z. B. Antwortmodus erläutern)\nVerständlichkeit ggf. in einer Pilotstudie mit unterschiedlichen Instruktionen absichern\n\nAnonymität\n\nDatenschutz\nErhöht die Bereitschaft zu ehrlichen Antworten"
+  },
+  {
+    "objectID": "slides/construction-inp.html#weitere-bestandteile-des-testentwurfs",
+    "href": "slides/construction-inp.html#weitere-bestandteile-des-testentwurfs",
+    "title": "B.F.3 Übung zu Diagnostik/Testtheorie",
+    "section": "Weitere Bestandteile des Testentwurfs",
+    "text": "Weitere Bestandteile des Testentwurfs\nInstruktion\n\nJe nach Test ein Beispielitem mit Beispielantwort\nAnweisung, spontan und wahrheitsgetreu zu antworten und keine Items auszulassen\n\nDemografische Angaben\n\nAm Anfang oder am Ende des Tests erheben\nAuf notwendige Auskünfte beschränken\n\nLayout\n\nSprachlich und optisch ansprechend, an die Zielgruppe angepasst\nÜbersichtlich, erleichtert die Bearbeitung"
+  },
+  {
+    "objectID": "slides/construction-inp.html#pilotstudie",
+    "href": "slides/construction-inp.html#pilotstudie",
+    "title": "B.F.3 Übung zu Diagnostik/Testtheorie",
+    "section": "Pilotstudie",
+    "text": "Pilotstudie\nZiel: Verständnisprobleme und technische Probleme aufdecken und lösen\nMethoden\n\nRetrospektive Befragung\nInterview der Testleitung (Debriefing)\nVerhaltenskodierung\nKognitives Vortesten/Technik des lauten Denkens"
+  },
+  {
+    "objectID": "slides/construction-inp.html#übungen",
+    "href": "slides/construction-inp.html#übungen",
+    "title": "B.F.3 Übung zu Diagnostik/Testtheorie",
+    "section": "Übungen",
+    "text": "Übungen\nÜbungen zu diesem Thema: Übungsheft, Kapitel 4"
+  },
+  {
+    "objectID": "slides/construction-inp.html#literatur",
+    "href": "slides/construction-inp.html#literatur",
+    "title": "B.F.3 Übung zu Diagnostik/Testtheorie",
+    "section": "Literatur",
+    "text": "Literatur\n\n\nBandalos, D. L. (2018). Measurement theory and applications for the social sciences. Guilford Press.\n\n\nMoosbrugger, H., & Kelava, A. (Hrsg.). (2020). Testtheorie und Fragebogenkonstruktion (3. Aufl.). Springer Berlin Heidelberg. https://doi.org/10.1007/978-3-662-61532-4"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "B.F.3 Übung zu Diagnostik/Testtheorie",
+    "section": "",
+    "text": "Diese Seite bündelt die Materialien zur Übung B.F.3 an der RPTU Kaiserslautern-Landau.\n\nFolien: die Folien jeder Sitzung als Präsentation (HTML).\nÜbungsheft: Aufgaben zu jedem Thema.\nR-Paket: Datensätze für die Aufgaben, installierbar in R.\n\nEin Link zur PDF-Version der Folien ist auf der Titelfolie."
+  },
+  {
+    "objectID": "package.html",
+    "href": "package.html",
+    "title": "R-Paket irtea",
+    "section": "",
+    "text": "Das Paket irtea enthält die Datensätze für die Aufgaben im Übungsheft und Funktionen zum Üben."
+  },
+  {
+    "objectID": "package.html#installation",
+    "href": "package.html#installation",
+    "title": "R-Paket irtea",
+    "section": "Installation",
+    "text": "Installation\ninstall.packages(\"pak\")\npak::pak(\"sbissantz/irtea\")"
+  },
+  {
+    "objectID": "package.html#datensätze",
+    "href": "package.html#datensätze",
+    "title": "R-Paket irtea",
+    "section": "Datensätze",
+    "text": "Datensätze\n\n\n\nDatensatz\nInhalt\nÜbungsheft\n\n\n\n\npersonality_items\nAntworten von 7 Personen auf 3 Items\nKapitel 1 & 2\n\n\ntest_anxiety\nAntworten von 2000 Personen auf 20 Items zur Prüfungsangst (simuliert)\nKapitel 8 & 9\n\n\nhmt_short\nAntworten von 800 Personen auf die sechs Aufgaben der Kurzform des Hagen Matrices Test, am Computer oder am Smartphone (simuliert)\nKapitel 11\n\n\n\nEinen Datensatz laden Sie mit:\ndata(personality_items, package = \"irtea\")"
+  },
+  {
+    "objectID": "package.html#funktionen",
+    "href": "package.html#funktionen",
+    "title": "R-Paket irtea",
+    "section": "Funktionen",
+    "text": "Funktionen\n\n\n\nFunktion\nZweck\nÜbungsheft\n\n\n\n\nsimulate_model()\nErzeugt Mittelwerte und Kovarianzmatrix von Items, die einem der fünf Messmodelle der Klassischen Testtheorie folgen\nKapitel 13\n\n\nplay_roulette()\nQuiz in der Konsole: Erkennen Sie das Messmodell?\nKapitel 13\n\n\n\nDas Quiz starten Sie mit:\nirtea::play_roulette()\nMit play_roulette(n_items = 4) spielen Sie nur mit vier Items, mit play_roulette(n = 300) mit simulierten Stichproben, in denen die Muster nur noch ungefähr gelten."
+  },
+  {
+    "objectID": "slides/efa-inp.html#semesterübersicht",
+    "href": "slides/efa-inp.html#semesterübersicht",
+    "title": "B.F.3 Übung zu Diagnostik/Testtheorie",
+    "section": "Semesterübersicht",
+    "text": "Semesterübersicht\n\n\n\n\n\n\n\n\nNr.\nDatum\nThema\n\n\n\n\n1\nab 20.10.\nRechenkompetenzen\n\n\n2\nab 27.10.\nGütekriterien I\n\n\n3\nab 03.11.\nSchritte der Testkonstruktion\n\n\n4\nab 10.11.\nErstellung eines Testentwurfs\n\n\n\n\nLektürewoche\n\n\n5\nab 24.11.\nDiagnostische Rechenkompetenzen I\n\n\n6\nab 01.12.\nKlassische Testtheorie\n\n\n7\nab 08.12.\nItem-Response-Theorie\n\n\n8\nab 15.12.\nExploratorische Faktorenanalyse I\n\n\n\n\nWeihnachtsferien\n\n\n9\nab 05.01.\nExploratorische Faktorenanalyse II\n\n\n10\nab 12.01.\nItemanalyse I\n\n\n11\nab 19.01.\nItemanalyse II, Itemselektion und Testrevision\n\n\n12\nab 26.01.\nDiagnostische Rechenkompetenzen II\n\n\n13\nab 02.02.\nGütekriterien II"
+  },
+  {
+    "objectID": "slides/efa-inp.html#datenreduktion-vs.-struktursuche",
+    "href": "slides/efa-inp.html#datenreduktion-vs.-struktursuche",
+    "title": "B.F.3 Übung zu Diagnostik/Testtheorie",
+    "section": "Datenreduktion vs. Struktursuche",
+    "text": "Datenreduktion vs. Struktursuche\n\nDatenreduktion\n\nz. B. Hauptkomponentenanalyse\nz. B. Clusteranalyse\n\nStruktursuche\n\nz. B. explorative Likert-Skalierung\nz. B. Hauptachsenanalyse\nz. B. Maximum-Likelihood-Faktorenanalyse"
+  },
+  {
+    "objectID": "slides/efa-inp.html#faktorenanalyse-disclaimer",
+    "href": "slides/efa-inp.html#faktorenanalyse-disclaimer",
+    "title": "B.F.3 Übung zu Diagnostik/Testtheorie",
+    "section": "Faktorenanalyse: Disclaimer",
+    "text": "Faktorenanalyse: Disclaimer\n\nUnfortunately, factor analysis is frequently misunderstood and often misused. Some researchers appear to use factor analysis as a kind of divining rod, hoping to find gold hidden underneath tons of dirt. But there is nothing magical about the technique. . . . Factor analysis will yield meaningful results only when the research was meaningful to begin with. (Gregory, 2015, S. 165)"
+  },
+  {
+    "objectID": "slides/efa-inp.html#faktorenanalyse-ein-hürdenlauf",
+    "href": "slides/efa-inp.html#faktorenanalyse-ein-hürdenlauf",
+    "title": "B.F.3 Übung zu Diagnostik/Testtheorie",
+    "section": "Faktorenanalyse: ein Hürdenlauf",
+    "text": "Faktorenanalyse: ein Hürdenlauf\n\nExtraktionsproblem\nRotationsproblem\nAnzahl zu extrahierender Faktoren"
+  },
+  {
+    "objectID": "slides/efa-inp.html#minimal-voraussetzungen-der-faktorenanalyse",
+    "href": "slides/efa-inp.html#minimal-voraussetzungen-der-faktorenanalyse",
+    "title": "B.F.3 Übung zu Diagnostik/Testtheorie",
+    "section": "(Minimal-)Voraussetzungen der Faktorenanalyse",
+    "text": "(Minimal-)Voraussetzungen der Faktorenanalyse\nIst die Daten- bzw. Korrelationsmatrix zur faktorenanalytischen Auswertung „geeignet“? Ansätze sind u.a.\n\nBartlett-Test\nKaiser-Meyer-Olkin-Kriterium"
+  },
+  {
+    "objectID": "slides/efa-inp.html#extraktionsproblem",
+    "href": "slides/efa-inp.html#extraktionsproblem",
+    "title": "B.F.3 Übung zu Diagnostik/Testtheorie",
+    "section": "Extraktionsproblem",
+    "text": "Extraktionsproblem\nWie ermittelt man die zur Reproduktion nötigen Faktoren/Komponenten? Ansätze sind u.a.\n\nBestimmung der Hauptkomponenten (PCA)\nIterative Bestimmung der Hauptachsen (PAF)\nSuche nach den plausibelsten Werten (MLFA)"
+  },
+  {
+    "objectID": "slides/efa-inp.html#rotationsproblem",
+    "href": "slides/efa-inp.html#rotationsproblem",
+    "title": "B.F.3 Übung zu Diagnostik/Testtheorie",
+    "section": "Rotationsproblem",
+    "text": "Rotationsproblem\nWie rotiert man die erhaltene Ladungsmatrix derart, dass eine möglichst einfach interpretierbare Lösung daraus hervorgeht? Ansätze sind u.a.\n\nVisuelle Rotation\nOrthogonale Rotation (z. B. Varimax)\nOblique Rotation (z. B. Oblimin)\n\nDie Entscheidung für eine Rotationsmethode sollte (weitgehend) auf Überlegungen zu Zwischenfaktorkorrelationen basieren!"
+  },
+  {
+    "objectID": "slides/efa-inp.html#problem-der-anzahl-zu-extrahierender-faktoren",
+    "href": "slides/efa-inp.html#problem-der-anzahl-zu-extrahierender-faktoren",
+    "title": "B.F.3 Übung zu Diagnostik/Testtheorie",
+    "section": "Problem der Anzahl zu extrahierender Faktoren",
+    "text": "Problem der Anzahl zu extrahierender Faktoren\nWie ermittle ich die Anzahl der zu extrahierenden Faktoren, ohne sie zu kennen? Ansätze sind u.a.\n\nKaiser-Guttman-Kriterium\nScree-Test\nHorns Parallelanalyse\nHull-Methode1\nBayesianische exploratorische Faktorenanalyse\n\n\n\n\n\nEine von zahlreichen Weiterentwicklungen der drei „klassischen Verfahren“ (Lorenzo-Seva et al., 2011; Timmerman et al., 2018)."
+  },
+  {
+    "objectID": "slides/efa-inp.html#übungen",
+    "href": "slides/efa-inp.html#übungen",
+    "title": "B.F.3 Übung zu Diagnostik/Testtheorie",
+    "section": "Übungen",
+    "text": "Übungen\nÜbungen zu diesem Thema: Übungsheft, Kapitel 8 & 9"
+  },
+  {
+    "objectID": "slides/efa-inp.html#literatur",
+    "href": "slides/efa-inp.html#literatur",
+    "title": "B.F.3 Übung zu Diagnostik/Testtheorie",
+    "section": "Literatur",
+    "text": "Literatur\n\n\nGregory, R. J. (2015). Psychological Testing: History, Principles, and Applications (7. Aufl.). Pearson.\n\n\nLorenzo-Seva, U., Timmerman, M. E., & Kiers, H. A. L. (2011). The Hull Method for Selecting the Number of Common Factors. Multivariate Behavioral Research, 46(2), 340–364. https://doi.org/10.1080/00273171.2011.564527\n\n\nTimmerman, M. E., Lorenzo-Seva, U., & Ceulemans, E. (2018). The Number of Factors Problem. In P. Irwing, T. Booth, & D. J. Hughes (Hrsg.), The Wiley Handbook of Psychometric Testing (S. 305–324). Wiley. https://doi.org/10.1002/9781118489772.ch11"
   },
   {
     "objectID": "slides/guete-inp.html#semesterübersicht",
@@ -252,177 +546,16 @@
     "text": "Literatur\n\n\nMoosbrugger, H., & Kelava, A. (Hrsg.). (2020). Testtheorie und Fragebogenkonstruktion (3. Aufl.). Springer Berlin Heidelberg. https://doi.org/10.1007/978-3-662-61532-4"
   },
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "B.F.3 Übung zu Diagnostik/Testtheorie",
+    "objectID": "workbook/diagnostic-i-ex.html",
+    "href": "workbook/diagnostic-i-ex.html",
+    "title": "6 Diagnostische Rechenkompetenzen I",
     "section": "",
-    "text": "Diese Seite bündelt die Materialien zur Übung B.F.3 an der RPTU Kaiserslautern-Landau.\n\nFolien: die Folien jeder Sitzung als Präsentation (HTML).\nÜbungsheft: Aufgaben zu jedem Thema.\nR-Paket: Datensätze für die Aufgaben, installierbar in R.\n\nEin Link zur PDF-Version der Folien ist auf der Titelfolie."
+    "text": "WichtigWork in Progress\n\n\n\nDieses Kapitel wird derzeit intern überarbeitet. Aufgaben, Daten und Lösungen können sich noch ändern. Bitte bearbeiten Sie die Aufgaben erst, wenn die Überarbeitung abgeschlossen ist und dieser Hinweis entfernt wurde.\nRunden Sie Ergebnisse bei Berechnungen kaufmännisch auf zwei Nachkommastellen. Alle Fälle und Daten sind fiktiv."
   },
   {
-    "objectID": "package.html",
-    "href": "package.html",
-    "title": "R-Paket irtea",
-    "section": "",
-    "text": "Das Paket irtea enthält die Datensätze für die Aufgaben im Übungsheft und Funktionen zum Üben."
-  },
-  {
-    "objectID": "package.html#installation",
-    "href": "package.html#installation",
-    "title": "R-Paket irtea",
-    "section": "Installation",
-    "text": "Installation\ninstall.packages(\"pak\")\npak::pak(\"sbissantz/irtea\")"
-  },
-  {
-    "objectID": "package.html#datensätze",
-    "href": "package.html#datensätze",
-    "title": "R-Paket irtea",
-    "section": "Datensätze",
-    "text": "Datensätze\n\n\n\nDatensatz\nInhalt\nÜbungsheft\n\n\n\n\npersonality_items\nAntworten von 7 Personen auf 3 Items\nKapitel 1 & 2\n\n\ntest_anxiety\nAntworten von 2000 Personen auf 20 Items zur Prüfungsangst (simuliert)\nKapitel 8 & 9\n\n\nhmt_short\nAntworten von 800 Personen auf die sechs Aufgaben der Kurzform des Hagen Matrices Test, am Computer oder am Smartphone (simuliert)\nKapitel 11\n\n\n\nEinen Datensatz laden Sie mit:\ndata(personality_items, package = \"irtea\")"
-  },
-  {
-    "objectID": "package.html#funktionen",
-    "href": "package.html#funktionen",
-    "title": "R-Paket irtea",
-    "section": "Funktionen",
-    "text": "Funktionen\n\n\n\nFunktion\nZweck\nÜbungsheft\n\n\n\n\nsimulate_model()\nErzeugt Mittelwerte und Kovarianzmatrix von Items, die einem der fünf Messmodelle der Klassischen Testtheorie folgen\nKapitel 13\n\n\nplay_roulette()\nQuiz in der Konsole: Erkennen Sie das Messmodell?\nKapitel 13\n\n\n\nDas Quiz starten Sie mit:\nirtea::play_roulette()\nMit play_roulette(n_items = 4) spielen Sie nur mit vier Items, mit play_roulette(n = 300) mit simulierten Stichproben, in denen die Muster nur noch ungefähr gelten."
-  },
-  {
-    "objectID": "slides/efa-inp.html#semesterübersicht",
-    "href": "slides/efa-inp.html#semesterübersicht",
-    "title": "B.F.3 Übung zu Diagnostik/Testtheorie",
-    "section": "Semesterübersicht",
-    "text": "Semesterübersicht\n\n\n\n\n\n\n\n\nNr.\nDatum\nThema\n\n\n\n\n1\nab 20.10.\nRechenkompetenzen\n\n\n2\nab 27.10.\nGütekriterien I\n\n\n3\nab 03.11.\nSchritte der Testkonstruktion\n\n\n4\nab 10.11.\nErstellung eines Testentwurfs\n\n\n\n\nLektürewoche\n\n\n5\nab 24.11.\nDiagnostische Rechenkompetenzen I\n\n\n6\nab 01.12.\nKlassische Testtheorie\n\n\n7\nab 08.12.\nItem-Response-Theorie\n\n\n8\nab 15.12.\nExploratorische Faktorenanalyse I\n\n\n\n\nWeihnachtsferien\n\n\n9\nab 05.01.\nExploratorische Faktorenanalyse II\n\n\n10\nab 12.01.\nItemanalyse I\n\n\n11\nab 19.01.\nItemanalyse II, Itemselektion und Testrevision\n\n\n12\nab 26.01.\nDiagnostische Rechenkompetenzen II\n\n\n13\nab 02.02.\nGütekriterien II"
-  },
-  {
-    "objectID": "slides/efa-inp.html#datenreduktion-vs.-struktursuche",
-    "href": "slides/efa-inp.html#datenreduktion-vs.-struktursuche",
-    "title": "B.F.3 Übung zu Diagnostik/Testtheorie",
-    "section": "Datenreduktion vs. Struktursuche",
-    "text": "Datenreduktion vs. Struktursuche\n\nDatenreduktion\n\nz. B. Hauptkomponentenanalyse\nz. B. Clusteranalyse\n\nStruktursuche\n\nz. B. explorative Likert-Skalierung\nz. B. Hauptachsenanalyse\nz. B. Maximum-Likelihood-Faktorenanalyse"
-  },
-  {
-    "objectID": "slides/efa-inp.html#faktorenanalyse-disclaimer",
-    "href": "slides/efa-inp.html#faktorenanalyse-disclaimer",
-    "title": "B.F.3 Übung zu Diagnostik/Testtheorie",
-    "section": "Faktorenanalyse: Disclaimer",
-    "text": "Faktorenanalyse: Disclaimer\n\nUnfortunately, factor analysis is frequently misunderstood and often misused. Some researchers appear to use factor analysis as a kind of divining rod, hoping to find gold hidden underneath tons of dirt. But there is nothing magical about the technique. . . . Factor analysis will yield meaningful results only when the research was meaningful to begin with. (Gregory, 2015, S. 165)"
-  },
-  {
-    "objectID": "slides/efa-inp.html#faktorenanalyse-ein-hürdenlauf",
-    "href": "slides/efa-inp.html#faktorenanalyse-ein-hürdenlauf",
-    "title": "B.F.3 Übung zu Diagnostik/Testtheorie",
-    "section": "Faktorenanalyse: ein Hürdenlauf",
-    "text": "Faktorenanalyse: ein Hürdenlauf\n\nExtraktionsproblem\nRotationsproblem\nAnzahl zu extrahierender Faktoren"
-  },
-  {
-    "objectID": "slides/efa-inp.html#minimal-voraussetzungen-der-faktorenanalyse",
-    "href": "slides/efa-inp.html#minimal-voraussetzungen-der-faktorenanalyse",
-    "title": "B.F.3 Übung zu Diagnostik/Testtheorie",
-    "section": "(Minimal-)Voraussetzungen der Faktorenanalyse",
-    "text": "(Minimal-)Voraussetzungen der Faktorenanalyse\nIst die Daten- bzw. Korrelationsmatrix zur faktorenanalytischen Auswertung „geeignet“? Ansätze sind u.a.\n\nBartlett-Test\nKaiser-Meyer-Olkin-Kriterium"
-  },
-  {
-    "objectID": "slides/efa-inp.html#extraktionsproblem",
-    "href": "slides/efa-inp.html#extraktionsproblem",
-    "title": "B.F.3 Übung zu Diagnostik/Testtheorie",
-    "section": "Extraktionsproblem",
-    "text": "Extraktionsproblem\nWie ermittelt man die zur Reproduktion nötigen Faktoren/Komponenten? Ansätze sind u.a.\n\nBestimmung der Hauptkomponenten (PCA)\nIterative Bestimmung der Hauptachsen (PAF)\nSuche nach den plausibelsten Werten (MLFA)"
-  },
-  {
-    "objectID": "slides/efa-inp.html#rotationsproblem",
-    "href": "slides/efa-inp.html#rotationsproblem",
-    "title": "B.F.3 Übung zu Diagnostik/Testtheorie",
-    "section": "Rotationsproblem",
-    "text": "Rotationsproblem\nWie rotiert man die erhaltene Ladungsmatrix derart, dass eine möglichst einfach interpretierbare Lösung daraus hervorgeht? Ansätze sind u.a.\n\nVisuelle Rotation\nOrthogonale Rotation (z. B. Varimax)\nOblique Rotation (z. B. Oblimin)\n\nDie Entscheidung für eine Rotationsmethode sollte (weitgehend) auf Überlegungen zu Zwischenfaktorkorrelationen basieren!"
-  },
-  {
-    "objectID": "slides/efa-inp.html#problem-der-anzahl-zu-extrahierender-faktoren",
-    "href": "slides/efa-inp.html#problem-der-anzahl-zu-extrahierender-faktoren",
-    "title": "B.F.3 Übung zu Diagnostik/Testtheorie",
-    "section": "Problem der Anzahl zu extrahierender Faktoren",
-    "text": "Problem der Anzahl zu extrahierender Faktoren\nWie ermittle ich die Anzahl der zu extrahierenden Faktoren, ohne sie zu kennen? Ansätze sind u.a.\n\nKaiser-Guttman-Kriterium\nScree-Test\nHorns Parallelanalyse\nHull-Methode1\nBayesianische exploratorische Faktorenanalyse\n\n\n\n\n\nEine von zahlreichen Weiterentwicklungen der drei „klassischen Verfahren“ (Lorenzo-Seva et al., 2011; Timmerman et al., 2018)."
-  },
-  {
-    "objectID": "slides/efa-inp.html#übungen",
-    "href": "slides/efa-inp.html#übungen",
-    "title": "B.F.3 Übung zu Diagnostik/Testtheorie",
-    "section": "Übungen",
-    "text": "Übungen\nÜbungen zu diesem Thema: Übungsheft, Kapitel 8 & 9"
-  },
-  {
-    "objectID": "slides/efa-inp.html#literatur",
-    "href": "slides/efa-inp.html#literatur",
-    "title": "B.F.3 Übung zu Diagnostik/Testtheorie",
-    "section": "Literatur",
-    "text": "Literatur\n\n\nGregory, R. J. (2015). Psychological Testing: History, Principles, and Applications (7. Aufl.). Pearson.\n\n\nLorenzo-Seva, U., Timmerman, M. E., & Kiers, H. A. L. (2011). The Hull Method for Selecting the Number of Common Factors. Multivariate Behavioral Research, 46(2), 340–364. https://doi.org/10.1080/00273171.2011.564527\n\n\nTimmerman, M. E., Lorenzo-Seva, U., & Ceulemans, E. (2018). The Number of Factors Problem. In P. Irwing, T. Booth, & D. J. Hughes (Hrsg.), The Wiley Handbook of Psychometric Testing (S. 305–324). Wiley. https://doi.org/10.1002/9781118489772.ch11"
-  },
-  {
-    "objectID": "slides/basics-inp.html#einordnung",
-    "href": "slides/basics-inp.html#einordnung",
-    "title": "B.F.3 Übung zu Diagnostik/Testtheorie",
-    "section": "Einordnung",
-    "text": "Einordnung\nB.F.3 Übung zu Diagnostik/Testtheorie\nBasis dieser Übung bilden die zwei Vorlesungen\n\nB.F.1 Grundlagen der Diagnostik\nB.F.2 Grundlagen der Testtheorie\n\nWeitere Informationen finden Sie im Modulhandbuch."
-  },
-  {
-    "objectID": "slides/basics-inp.html#rahmenbedingungen",
-    "href": "slides/basics-inp.html#rahmenbedingungen",
-    "title": "B.F.3 Übung zu Diagnostik/Testtheorie",
-    "section": "Rahmenbedingungen",
-    "text": "Rahmenbedingungen\n\n\n\n\n\n\nVoraussetzungen für die Vergabe von Leistungspunkten\n\n\n\nInsgesamt vier unangekündigte Übungsaufgaben\nBearbeitung der Übungsaufgaben in Präsenzsitzungen\nAktive Teilnahme an mindestens zwei Übungsaufgaben\nUnterschrift auf der Anwesenheitsliste gilt als Nachweis"
-  },
-  {
-    "objectID": "slides/basics-inp.html#auswahl-an-lernzielen",
-    "href": "slides/basics-inp.html#auswahl-an-lernzielen",
-    "title": "B.F.3 Übung zu Diagnostik/Testtheorie",
-    "section": "Auswahl an Lernzielen",
-    "text": "Auswahl an Lernzielen\n\nFormulierung einer diagnostischen Fragestellung\nVerständnis der Gütekriterien für Erfassungsmethoden\nVerständnis der Stärken und Schwächen gängiger Testtheorien\nBestimmung von Itemkennwerten und Gütekriterien\nVerdichtung von Informationen zu einem diagnostischen Urteil"
-  },
-  {
-    "objectID": "slides/basics-inp.html#semesterübersicht",
-    "href": "slides/basics-inp.html#semesterübersicht",
-    "title": "B.F.3 Übung zu Diagnostik/Testtheorie",
-    "section": "Semesterübersicht",
-    "text": "Semesterübersicht\n\n\n\n\n\n\n\n\nNr.\nDatum\nThema\n\n\n\n\n1\nab 20.10.\nEinführung & Rechenkompetenzen\n\n\n2\nab 27.10.\nRechenkompetenzen\n\n\n3\nab 03.11.\nGütekriterien\n\n\n4\nab 10.11.\nSchritte der Testkonstruktion & Erstellung eines Testentwurfs\n\n\n\n\nLektürewoche\n\n\n5\nab 24.11.\nKlassische Testtheorie\n\n\n6\nab 01.12.\nDiagnostische Rechenkompetenzen I\n\n\n7\nab 08.12.\nItem-Response-Theorie\n\n\n8\nab 15.12.\nExploratorische Faktorenanalyse I\n\n\n\n\nWeihnachtsferien\n\n\n9\nab 05.01.\nExploratorische Faktorenanalyse II\n\n\n10\nab 12.01.\nItemanalyse I\n\n\n11\nab 19.01.\nItemanalyse II, Itemselektion und Testrevision\n\n\n12\nab 26.01.\nDiagnostische Rechenkompetenzen II\n\n\n13\nab 02.02.\nGütekriterien II"
-  },
-  {
-    "objectID": "slides/basics-inp.html#übungsmöglichkeiten-kommunikation",
-    "href": "slides/basics-inp.html#übungsmöglichkeiten-kommunikation",
-    "title": "B.F.3 Übung zu Diagnostik/Testtheorie",
-    "section": "Übungsmöglichkeiten & Kommunikation",
-    "text": "Übungsmöglichkeiten & Kommunikation\n\nSynchron: zu den offiziellen Gruppenzeiten\nAsynchron: z. B. in selbstorganisierten Lerngruppen"
-  },
-  {
-    "objectID": "slides/basics-inp.html#synchrone-übungsmöglichkeiten",
-    "href": "slides/basics-inp.html#synchrone-übungsmöglichkeiten",
-    "title": "B.F.3 Übung zu Diagnostik/Testtheorie",
-    "section": "Synchrone Übungsmöglichkeiten",
-    "text": "Synchrone Übungsmöglichkeiten\nDie Übung bietet die Möglichkeit\n\nFragen zu stellen\nAufgaben zu bearbeiten\nErgebnisse zu diskutieren"
-  },
-  {
-    "objectID": "slides/basics-inp.html#übungsaufgaben",
-    "href": "slides/basics-inp.html#übungsaufgaben",
-    "title": "B.F.3 Übung zu Diagnostik/Testtheorie",
-    "section": "Übungsaufgaben",
-    "text": "Übungsaufgaben\nEs gibt zahlreiche Übungsaufgaben\n\nNicht alle stehen im Fokus der Präsenzsitzungen\nErgebnisse zu allen Aufgaben stehen im Übungsheft (ohne Lösungswege)\nSelbststudium ist ein elementarer Bestandteil\nSelbstorganisierte Lerngruppen sind ein bewährtes Mittel"
-  },
-  {
-    "objectID": "slides/basics-inp.html#lernressourcen",
-    "href": "slides/basics-inp.html#lernressourcen",
-    "title": "B.F.3 Übung zu Diagnostik/Testtheorie",
-    "section": "Lernressourcen",
-    "text": "Lernressourcen\n\nVorlesungsfolien und -inhalte\nÜbungsinhalte und -aufgaben auf der Homepage\nWeiterführende Literatur (z. B. Moosbrugger & Kelava, 2020)\nGoogle & Künstliche Intelligenz als Hilfsmittel, nicht als Ersatz!\n\nMaßgeblich sind die Inhalte der Vorlesung, danach die der Übung. Die weiterführende Literatur erhalten Sie in der RPTU-Bibliothek."
-  },
-  {
-    "objectID": "slides/basics-inp.html#übungen",
-    "href": "slides/basics-inp.html#übungen",
-    "title": "B.F.3 Übung zu Diagnostik/Testtheorie",
-    "section": "Übungen",
-    "text": "Übungen\nÜbungen zu diesem Thema: Übungsheft, Kapitel 1 & 2"
-  },
-  {
-    "objectID": "slides/basics-inp.html#literatur",
-    "href": "slides/basics-inp.html#literatur",
-    "title": "B.F.3 Übung zu Diagnostik/Testtheorie",
+    "objectID": "workbook/diagnostic-i-ex.html#literatur",
+    "href": "workbook/diagnostic-i-ex.html#literatur",
+    "title": "6 Diagnostische Rechenkompetenzen I",
     "section": "Literatur",
     "text": "Literatur\n\n\nMoosbrugger, H., & Kelava, A. (Hrsg.). (2020). Testtheorie und Fragebogenkonstruktion (3. Aufl.). Springer Berlin Heidelberg. https://doi.org/10.1007/978-3-662-61532-4"
   },
