@@ -1,9 +1,13 @@
 ---
 title: "B.F.3 Übung zu Diagnostik/Testtheorie"
 subtitle: "Klassische Testtheorie"
-author: "Bißantz, S., Kuch, N. & Gürtler, R.-M."
+author: "Bißantz, S., Kuch, S. & Gürtler, R.-M."
 institute: "Rheinland-Pfälzische Technische Universität Kaiserslautern-Landau"
 pdf-link: ctt-inp.pdf
+# underscore decks skip _quarto.yml; remove these three lines when renaming
+lang: de
+bibliography: ../references.bib
+csl: ../apa.csl
 ---
 
 ```{r}
@@ -17,21 +21,21 @@ dark <- "#23373b"
 
 | Nr. | Datum     | Thema                                                        |
 |-----|-----------|--------------------------------------------------------------|
-| 1   | ab 20.10. | Rechenkompetenzen                                      |
-| 2   | ab 27.10. | Gütekriterien I                                |
-| 3   | ab 03.11. | Schritte der Testkonstruktion                                |
-| 4   | ab 10.11. | Erstellung eines Testentwurfs                             |
-|     |           | **Lektürewoche**                   |
-| 5   | ab 24.11. | *Diagnostische Rechenkompetenzen I*   |
-| 6   | ab 01.12. | Klassische Testtheorie                                       |
-| 7   | ab 08.12. | *Item-Response-Theorie*                      |
+| 1   | ab 20.10. | Einführung & Rechenkompetenzen                               |
+| 2   | ab 27.10. | Rechenkompetenzen                                            |
+| 3   | ab 03.11. | Gütekriterien                                                |
+| 4   | ab 10.11. | Schritte der Testkonstruktion & Erstellung eines Testentwurfs |
+|     |           | **Lektürewoche**                                             |
+| 5   | ab 24.11. | Klassische Testtheorie                                       |
+| 6   | ab 01.12. | *Diagnostische Rechenkompetenzen I*                          |
+| 7   | ab 08.12. | *Item-Response-Theorie*                                      |
 | 8   | ab 15.12. | Exploratorische Faktorenanalyse I                            |
-|     |           | **Weihnachtsferien**           |
-| 9   | ab 05.01. | *Exploratorische Faktorenanalyse II*                            |
+|     |           | **Weihnachtsferien**                                         |
+| 9   | ab 05.01. | *Exploratorische Faktorenanalyse II*                         |
 | 10  | ab 12.01. | Itemanalyse I                                                |
 | 11  | ab 19.01. | Itemanalyse II, Itemselektion und Testrevision               |
-| 12  | ab 26.01. | *Diagnostische Rechenkompetenzen II*                            |
-| 13  | ab 02.02. | Gütekriterien II  |
+| 12  | ab 26.01. | *Diagnostische Rechenkompetenzen II*                         |
+| 13  | ab 02.02. | Gütekriterien II                                             |
 
 # Überblick
 
@@ -208,7 +212,7 @@ Hätten wir die Möglichkeit, eine Person unzählige Male unter den gleichen Bed
 - Aussage über die Qualität eines Messinstruments, Tests, einer Skala
 - „Qualität“ in der KTT bedeutet...
   - Abwesenheit von Messfehlern
-  - Konsistente Messwerte bei wiederholter Messung einer LV (Hoyt, 1999)
+  - Konsistente Messwerte bei wiederholter Messung einer LV
   - Akkuratheit bei der Messung von wahren Werten [@coaley2014]
 
 **Reliabilität ($Rel$)**
@@ -516,40 +520,3 @@ $$
 ![](images/ctt-tau-parallel.png){width=90% fig-alt="Pfaddiagramm des τ-parallelen Messmodells: gleiche Ladungen, gleiche Interzepte und gleiche Fehlervarianzen."}
 :::
 ::::
-
-## Rechenregeln für Varianzen
-
-**Varianz einer Linearkombination**
-
-Für $x_i = \alpha_i + \lambda_i \cdot \eta + \varepsilon_i$ gilt:
-
-$$
-Var(x_i) = \lambda_i^2 \cdot Var(\eta) + Var(\varepsilon_i)
-$$
-
-- $\alpha_i$ ist eine Konstante und fällt bei der Varianzberechnung weg
-- $\eta$ und $\varepsilon_i$ sind per Annahme unkorreliert
-
-## Messmodellbasierte Zerlegung der Itemvarianzen
-
-**Zerlegung der Varianz von $x_i$**
-
-Aus der Messmodellgleichung $x_i = \alpha_i + \lambda_i \cdot \eta + \varepsilon_i$ folgt:
-
-$$
-Var(x_i) = \lambda_i^2 \cdot Var(\eta) + Var(\varepsilon_i)
-$$
-
-- $\lambda_i^2 \cdot Var(\eta)$: Varianzanteil, der durch die latente Variable erklärt wird (wahre Varianz)
-- $Var(\varepsilon_i)$: Varianzanteil, der auf den Messfehler zurückgeht (Fehlervarianz)
-
-## Messmodellbasierte Zerlegung der Itemkovarianzen
-
-**Zerlegung der Kovarianz von $x_i$ und $x_k$**
-
-$$
-Cov(x_i, x_k) = \lambda_i \cdot \lambda_k \cdot Var(\eta)
-$$
-
-- Die Kovarianz zweier Items ist vollständig durch ihre Ladungen und die Varianz der latenten Variable bestimmt
-- Messfehler $\varepsilon_i$ und $\varepsilon_k$ sind per Annahme unkorreliert (sowohl untereinander als auch mit $\eta$)

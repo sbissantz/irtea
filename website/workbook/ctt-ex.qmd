@@ -203,54 +203,38 @@ g. In der Praxis ist der wahre Wert $T$ einer Person unbekannt und damit auch $\
 ::: {#exr-ctt-models}
 ## Messmodelle der KTT
 
-Liegen zur Messung eines latenten Konstrukts mehrere Messungen vor (z. B. Items), kann überprüft werden, ob diese dasselbe latente Konstrukt erfassen, indem die Gültigkeit eines angenommenen Messmodells empirisch überprüft wird. In der Modellgleichung wird die True-Score-Variable $\tau_i$ eines Items $i$ als Funktion der latenten Variablen $\eta$ beschrieben:
+Liegen zur Messung eines latenten Konstrukts mehrere Messungen vor (z. B. Items), kann überprüft werden, ob diese dasselbe latente Konstrukt erfassen, indem die Gültigkeit eines angenommenen Messmodells empirisch überprüft wird. Jede Itemantwort ist dabei ein Testwert im Sinne der KTT: Sie setzt sich aus einem wahren Wert und einem Messfehler zusammen, die unkorreliert sind.
 
-$$
-\tau_i = \alpha_i + \lambda_i \cdot \eta,
-$$
-
-wobei $\alpha_i$ der Leichtigkeitsparameter (Interzept) und $\lambda_i$ der Diskriminationsparameter (Faktorladung) ist. Die beobachtete Itemvariable $x_i$ ergibt sich als
-
-$$
-x_i = \alpha_i + \lambda_i \cdot \eta + \varepsilon_i.
-$$
-
-Jede Itemantwort $x_i$ ist damit ein Testwert im Sinne der KTT: Sie setzt sich aus dem wahren Wert $\tau_i$ und dem Messfehler $\varepsilon_i$ zusammen, $x_i = \tau_i + \varepsilon_i$. Dabei wird angenommen, dass wahrer Wert und Messfehler unkorreliert sind: $\text{Cov}(\tau_i, \varepsilon_i) = 0$.
-
-Die fünf Messmodelle der KTT, die Sie in der Vorlesung kennengelernt haben, unterscheiden sich darin, welche Restriktionen sie an die Parameter $\alpha_i$, $\lambda_i$ und $\text{Var}(\varepsilon_i)$ stellen. Daraus ergeben sich unterschiedliche Konsequenzen für Itemvarianzen, Itemkovarianzen und Itemmittelwerte [@moosbrugger2020, Kap. 13].
+Die fünf Messmodelle der KTT, die Sie in der Vorlesung kennengelernt haben, unterscheiden sich darin, welche Annahmen sie über die Items treffen. Daraus ergeben sich unterschiedliche Konsequenzen für Itemmittelwerte, Itemvarianzen und Itemkovarianzen [@moosbrugger2020, Kap. 13].
 
 a. Alle fünf Messmodelle teilen drei gemeinsame Annahmen. Nennen Sie diese.
 
 ::: {.callout-tip title="Lösung" collapse="true"}
-- Unidimensionalität: Alle Items messen dasselbe latente Konstrukt $\eta$.
-- Linearität: Der Zusammenhang zwischen $\eta$ und den True Scores $\tau_i$ ist linear.
-- Unkorrelierte Messfehler: $\text{Cov}(\varepsilon_i, \varepsilon_k) = 0$ für $i \neq k$.
+- Unidimensionalität: Alle Items messen dasselbe latente Konstrukt.
+- Linearität: Der Zusammenhang zwischen dem latenten Konstrukt und den wahren Werten der Items ist linear.
+- Unkorrelierte Messfehler: Die Messfehler verschiedener Items hängen nicht miteinander zusammen.
 :::
 
-b. Vervollständigen Sie @tbl-ctt-models für die fünf Messmodelle, die Sie in der Vorlesung kennengelernt haben. Tragen Sie für jeden Parameter ein, ob er über die Items hinweg *variabel* (itemspezifisch frei) oder *identisch* (für alle Items gleich) ist. Leiten Sie dann die Konsequenzen für Itemvarianzen, Itemkovarianzen und Itemmittelwerte ab.
+b. Vervollständigen Sie @tbl-ctt-models für die fünf Messmodelle, die Sie in der Vorlesung kennengelernt haben. Tragen Sie ein, ob die Itemmittelwerte, Itemvarianzen und Itemkovarianzen über die Items hinweg *variabel* (itemspezifisch) oder *identisch* (für alle Items gleich) sind.
 
-::: {.callout-note title="Hinweis" collapse="true"}
-Die Itemvarianz ergibt sich aus $\text{Var}(x_i) = \lambda_i^2 \cdot \text{Var}(\eta) + \text{Var}(\varepsilon_i)$, die Itemkovarianz aus $\text{Cov}(x_i, x_k) = \lambda_i \cdot \lambda_k \cdot \text{Var}(\eta)$ und der Itemmittelwert aus $\mathbb{E}(x_i) = \alpha_i + \lambda_i \cdot \mathbb{E}(\eta)$.
-:::
+| Messmodell | Itemmittelwerte | Itemvarianzen | Itemkovarianzen |
+|:---|:---:|:---:|:---:|
+| $\tau$-kongenerisch | | | |
+| essentiell $\tau$-äquivalent | | | |
+| $\tau$-äquivalent | | | |
+| essentiell $\tau$-parallel | | | |
+| $\tau$-parallel | | | |
 
-| Messmodell | $\alpha_i$ | $\lambda_i$ | $\text{Var}(\varepsilon_i)$ | Itemvarianzen | Itemkovarianzen | Itemmittelwerte |
-|:---|:---:|:---:|:---:|:---:|:---:|:---:|
-| $\tau$-kongenerisch | | | | | | |
-| essentiell $\tau$-äquivalent | | | | | | |
-| $\tau$-äquivalent | | | | | | |
-| essentiell $\tau$-parallel | | | | | | |
-| $\tau$-parallel | | | | | | |
-
-: Annahmen und Konsequenzen der fünf Messmodelle der KTT {#tbl-ctt-models}
+: Konsequenzen der fünf Messmodelle der KTT {#tbl-ctt-models}
 
 ::: {.callout-tip title="Lösung" collapse="true"}
-| Messmodell | $\alpha_i$ | $\lambda_i$ | $\text{Var}(\varepsilon_i)$ | Itemvarianzen | Itemkovarianzen | Itemmittelwerte |
-|:---|:---:|:---:|:---:|:---:|:---:|:---:|
-| $\tau$-kongenerisch | variabel | variabel | variabel | variabel | variabel | variabel |
-| essentiell $\tau$-äquivalent | variabel | identisch | variabel | variabel | identisch | variabel |
-| $\tau$-äquivalent | identisch | identisch | variabel | variabel | identisch | identisch |
-| essentiell $\tau$-parallel | variabel | identisch | identisch | identisch | identisch | variabel |
-| $\tau$-parallel | identisch | identisch | identisch | identisch | identisch | identisch |
+| Messmodell | Itemmittelwerte | Itemvarianzen | Itemkovarianzen |
+|:---|:---:|:---:|:---:|
+| $\tau$-kongenerisch | variabel | variabel | variabel |
+| essentiell $\tau$-äquivalent | variabel | variabel | identisch |
+| $\tau$-äquivalent | identisch | variabel | identisch |
+| essentiell $\tau$-parallel | variabel | identisch | identisch |
+| $\tau$-parallel | identisch | identisch | identisch |
 :::
 :::
 
