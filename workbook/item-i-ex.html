@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="de" xml:lang="de"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.10.19">
+<meta name="generator" content="quarto-1.11.9">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -59,14 +59,15 @@ div.csl-indent {
 <link href="../images/logo.png" rel="icon" type="image/png">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/scrollable-regions/scrollable-regions.js" type="module"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-bf27225e3a48a9273f3daa8f8e829971.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-63b5708e65d6cd79cd7618c58d0c21e7.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-cbe15cd55579b32cf8c48135cfb2cd9e.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-6519365451b8d29e4b2635fa5bf158c1.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -127,11 +128,11 @@ window.Quarto = {
 
 </head>
 
-<body class="nav-fixed fullcontent quarto-light">
+<body class="nav-fixed fullcontent quarto-light"><a id="quarto-skip-link" class="visually-hidden-focusable" href="#quarto-document-content">Zum Hauptinhalt springen</a>
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
-    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark" aria-label="Website">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
     <a href="../index.html" class="navbar-brand navbar-brand-logo">
@@ -142,8 +143,7 @@ window.Quarto = {
     <span class="navbar-title">B.F.3 Diagnostik &amp; Testtheorie</span>
     </a>
   </div>
-            <div id="quarto-search" class="" title="Suchen"></div>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Navigation umschalten" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Navigation umschalten" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
@@ -168,6 +168,10 @@ window.Quarto = {
         <li>
     <a class="dropdown-item" href="../slides/construction-inp.html">
  <span class="dropdown-text">04 Schritte der Testkonstruktion</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../slides/ctt-inp.html">
+ <span class="dropdown-text">05 Klassische Testtheorie</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../slides/efa-inp.html">
@@ -230,6 +234,7 @@ window.Quarto = {
           </div> <!-- /navcollapse -->
             <div class="quarto-navbar-tools">
 </div>
+            <div id="quarto-search" class="" title="Suchen"></div>
       </div> <!-- /container-fluid -->
     </nav>
 </header>
@@ -239,7 +244,7 @@ window.Quarto = {
 <!-- margin-sidebar -->
     
 <!-- main -->
-<main class="content" id="quarto-document-content">
+<main class="content" id="quarto-document-content" tabindex="-1">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
@@ -260,7 +265,7 @@ window.Quarto = {
 </header>
 
 
-<div class="callout callout-style-default callout-important callout-titled" title="Work in Progress">
+<div class="callout callout-style-default callout-important callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
@@ -275,7 +280,7 @@ window.Quarto = {
 </div>
 <p>Eine Gruppe englischer Forscher:innen möchte ein Instrument zum Screening der Persönlichkeitsdomäne Extraversion entwickeln. In einer Pilotstudie erheben sie eine Reihe potenzieller Items aus dem International Personality Item Pool (IPIP). Dazu verwenden sie eine vollständig beschriftete Ratingskala mit <span class="math inline">\(k = 6\)</span> ordinalen Antwortkategorien (<em>Very Inaccurate</em>, <em>Moderately Inaccurate</em>, <em>Slightly Inaccurate</em>, <em>Slightly Accurate</em>, <em>Moderately Accurate</em>, <em>Very Accurate</em>), kodiert von 0 bis 5. Mit den Pilotdaten möchten die Forscher:innen eine Itemanalyse durchführen.</p>
 <p>In einer Pilotstudie werden oft viele Items in einer großen Stichprobe erhoben. Zum Üben betrachten wir zunächst nur die Antworten von <span class="math inline">\(n = 8\)</span> Personen auf <span class="math inline">\(m = 3\)</span> Items. Die Berechnungen orientieren sich an Kapitel 7 in <span class="citation" data-cites="moosbrugger2020">Moosbrugger &amp; Kelava (<a href="#ref-moosbrugger2020" role="doc-biblioref">2020</a>)</span>. Die Beispieldaten stammen aus dem Datensatz <code>bfi</code> des R-Pakets psych <span class="citation" data-cites="revelle2026">(<a href="#ref-revelle2026" role="doc-biblioref">Revelle, 2026</a>)</span>; das Szenario ist fiktiv.</p>
-<div class="callout callout-style-default callout-note callout-titled" title="Hinweis">
+<div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
@@ -315,7 +320,7 @@ window.Quarto = {
 <ol type="a">
 <li>Schließen Sie vom Itemstamm auf die Messrichtung der Items: Notieren Sie für jedes Item ein <span class="math inline">\(+\)</span> oder ein <span class="math inline">\(-\)</span>.</li>
 </ol>
-<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
@@ -404,7 +409,7 @@ Tabelle&nbsp;1: Antworten <span class="math inline">\(y_{ij}\)</span> von <span 
 <ol start="2" type="a">
 <li>Welche Items müssen Sie aufgrund ihrer Messrichtung rekodieren? Rekodieren Sie die Antworten <span class="math inline">\(y_{ij}\)</span> dieser Items. Beachten Sie, dass <span class="math inline">\(y_{ij} \in \{0, \ldots, k - 1\}\)</span>.</li>
 </ol>
-<div class="callout callout-style-default callout-note callout-titled" title="Hinweis">
+<div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
@@ -420,7 +425,7 @@ Tabelle&nbsp;1: Antworten <span class="math inline">\(y_{ij}\)</span> von <span 
 </div>
 </div>
 </div>
-<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
@@ -497,7 +502,7 @@ P_j = \frac{\sum_{i=1}^{n} y_{ij}}{n \cdot (k - 1)} \cdot 100
 <ol type="a">
 <li>Berechnen Sie für jedes Item die Summe im Zähler. Geben Sie dazu auch die Summenschreibweise an.</li>
 </ol>
-<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
@@ -516,7 +521,7 @@ P_j = \frac{\sum_{i=1}^{n} y_{ij}}{n \cdot (k - 1)} \cdot 100
 <ol start="2" type="a">
 <li>Berechnen Sie <span class="math inline">\(P_j\)</span> für alle drei Items.</li>
 </ol>
-<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
@@ -535,7 +540,7 @@ P_j = \frac{\sum_{i=1}^{n} y_{ij}}{n \cdot (k - 1)} \cdot 100
 <ol start="3" type="a">
 <li>Welches Item ist am leichtesten? Was bedeutet „leicht“ bei diesen Items?</li>
 </ol>
-<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
@@ -557,7 +562,7 @@ P_j = \frac{\sum_{i=1}^{n} y_{ij}}{n \cdot (k - 1)} \cdot 100
 <ol type="a">
 <li>Berechnen Sie für jede Person die Summe ihrer (ggf. rekodierten) Antworten auf die Items 1 und 3 (<a href="#exr-item-direction" class="quarto-xref">Aufgabe&nbsp;1</a>).</li>
 </ol>
-<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-9-contents" aria-controls="callout-9" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
@@ -580,7 +585,7 @@ P_j = \frac{\sum_{i=1}^{n} y_{ij}}{n \cdot (k - 1)} \cdot 100
 \sum_{i=1}^{8} (x_i - \bar{x})^2 = 18.88, \quad \sum_{i=1}^{8} (y_i - \bar{y})^2 = 31.5, \quad \sum_{i=1}^{8} (x_i - \bar{x})(y_i - \bar{y}) = 14.25
 \]</span></p>
 <p>Berechnen Sie die <em>part-whole</em>-korrigierte Trennschärfe <span class="math inline">\(r_{it(2)} = r_{xy}\)</span> von Item 2.</p>
-<div class="callout callout-style-default callout-note callout-titled" title="Hinweis">
+<div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-10-contents" aria-controls="callout-10" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
@@ -596,7 +601,7 @@ P_j = \frac{\sum_{i=1}^{n} y_{ij}}{n \cdot (k - 1)} \cdot 100
 </div>
 </div>
 </div>
-<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-11-contents" aria-controls="callout-11" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
@@ -615,7 +620,7 @@ P_j = \frac{\sum_{i=1}^{n} y_{ij}}{n \cdot (k - 1)} \cdot 100
 <ol start="3" type="a">
 <li>Interpretieren Sie den Wert und begründen Sie kurz, warum die <em>part-whole</em>-Korrektur hier (nicht) sinnvoll ist.</li>
 </ol>
-<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-12-contents" aria-controls="callout-12" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
@@ -668,7 +673,7 @@ P_j = \frac{\sum_{i=1}^{n} y_{ij}}{n \cdot (k - 1)} \cdot 100
 <ol type="a">
 <li>Berechnen Sie den Interquartilabstand (IQA) der Antworten auf Item 1 und interpretieren Sie ihn.</li>
 </ol>
-<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-13-contents" aria-controls="callout-13" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
@@ -687,7 +692,7 @@ P_j = \frac{\sum_{i=1}^{n} y_{ij}}{n \cdot (k - 1)} \cdot 100
 <ol start="2" type="a">
 <li>Einige Antworten auf Item 5 erscheinen im Boxplot als Ausreißer. Berechnen Sie den unteren Grenzwert für Ausreißer auf Item 5.</li>
 </ol>
-<div class="callout callout-style-default callout-note callout-titled" title="Hinweis">
+<div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-14-contents" aria-controls="callout-14" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
@@ -703,7 +708,7 @@ P_j = \frac{\sum_{i=1}^{n} y_{ij}}{n \cdot (k - 1)} \cdot 100
 </div>
 </div>
 </div>
-<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-15-contents" aria-controls="callout-15" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
@@ -779,7 +784,7 @@ Tabelle&nbsp;2: Hauptachsenanalyse der fünf Items (ein Faktor, Varimax)
 </div>
 </figure>
 </div>
-<div class="callout callout-style-default callout-note callout-titled" title="Hinweis">
+<div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-16-contents" aria-controls="callout-16" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
@@ -798,7 +803,7 @@ Tabelle&nbsp;2: Hauptachsenanalyse der fünf Items (ein Faktor, Varimax)
 <ol type="a">
 <li>Berechnen Sie die fehlenden Werte der Tabelle.</li>
 </ol>
-<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-17-contents" aria-controls="callout-17" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
@@ -865,7 +870,7 @@ Tabelle&nbsp;2: Hauptachsenanalyse der fünf Items (ein Faktor, Varimax)
 <ol start="2" type="a">
 <li>Berechnen Sie die Summe der quadrierten Ladungen (SS loadings).</li>
 </ol>
-<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-18-contents" aria-controls="callout-18" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
@@ -884,7 +889,7 @@ Tabelle&nbsp;2: Hauptachsenanalyse der fünf Items (ein Faktor, Varimax)
 <ol start="3" type="a">
 <li>Berechnen Sie den Anteil der Varianz, den der Faktor erklärt (Proportion Var).</li>
 </ol>
-<div class="callout callout-style-default callout-note callout-titled" title="Hinweis">
+<div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-19-contents" aria-controls="callout-19" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
@@ -900,7 +905,7 @@ Tabelle&nbsp;2: Hauptachsenanalyse der fünf Items (ein Faktor, Varimax)
 </div>
 </div>
 </div>
-<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-20-contents" aria-controls="callout-20" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
@@ -919,7 +924,7 @@ Tabelle&nbsp;2: Hauptachsenanalyse der fünf Items (ein Faktor, Varimax)
 <ol start="4" type="a">
 <li>Welchen Wert hätte die Ladung von Item 4, wenn mit Oblimin statt mit Varimax rotiert würde?</li>
 </ol>
-<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-21-contents" aria-controls="callout-21" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
@@ -938,7 +943,7 @@ Tabelle&nbsp;2: Hauptachsenanalyse der fünf Items (ein Faktor, Varimax)
 <ol start="5" type="a">
 <li>Interpretieren Sie die Ladungen.</li>
 </ol>
-<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-22-contents" aria-controls="callout-22" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
@@ -1045,7 +1050,8 @@ Revelle, W. (2026). <em>psych: Procedures for Psychological, Psychometric, and P
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }
       // Inspect non-navigation links and adorn them if external
-     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      window.quartoDecorateExternalLinks = function (root) {
+     var links = (root || window.document).querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
       for (var i=0; i<links.length; i++) {
         const link = links[i];
         if (!isInternal(link.href)) {
@@ -1054,8 +1060,69 @@ Revelle, W. (2026). <em>psych: Procedures for Psychological, Psychometric, and P
           if (link.dataset.originalHref !== undefined) {
             link.href = link.dataset.originalHref;
           }
+          if (!link.classList.contains('no-external-icon')) {
+          }
         }
       }
+      };
+      window.quartoDecorateExternalLinks(window.document);
+    // Esc closes the popup (WCAG 1.4.13) and focus leaving both trigger and
+    // popup closes it (WCAG 2.4.11); tippy handles neither for interactive popups.
+    const hideOnEscAndFocusOut = {
+      name: 'hideOnEscAndFocusOut',
+      defaultValue: true,
+      fn(instance) {
+        const dismiss = () => {
+          // A show scheduled by the trigger delay would otherwise reopen it
+          instance.clearDelayTimeouts();
+          instance.hide();
+        };
+        const onKeyDown = (event) => {
+          if (event.key !== 'Escape') {
+            return;
+          }
+          // Keep Esc from also reaching page handlers (e.g. reveal.js overview),
+          // except an open reveal.js slide menu, which Esc should close too.
+          // The menu handles keys only when its keyboard option is on.
+          const menuHandlesEsc = window.Reveal?.getPlugin?.('menu')?.isOpen() &&
+            window.Reveal.getConfig().menu?.keyboard !== false;
+          if (!menuHandlesEsc) {
+            event.stopPropagation();
+          }
+          if (instance.popper.contains(window.document.activeElement)) {
+            // Disabled while refocusing so the focus trigger does not reopen it
+            instance.disable();
+            instance.reference.focus();
+            instance.enable();
+          }
+          dismiss();
+        };
+        const onFocusOut = (event) => {
+          const target = event.relatedTarget;
+          if (target && !instance.reference.contains(target) &&
+              !instance.popper.contains(target)) {
+            dismiss();
+          }
+        };
+        // On the trigger too: a click trigger (code-annotations: select) has no
+        // blur handling. Attached for the instance's lifetime so leaving the
+        // trigger also cancels a show still pending on the trigger delay.
+        instance.reference.addEventListener('focusout', onFocusOut);
+        return {
+          onShow() {
+            window.document.addEventListener('keydown', onKeyDown, true);
+            instance.popper.addEventListener('focusout', onFocusOut);
+          },
+          onHide() {
+            window.document.removeEventListener('keydown', onKeyDown, true);
+            instance.popper.removeEventListener('focusout', onFocusOut);
+          },
+          onDestroy() {
+            instance.reference.removeEventListener('focusout', onFocusOut);
+          },
+        };
+      },
+    };
     function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
       const config = {
         allowHTML: true,
@@ -1069,6 +1136,7 @@ Revelle, W. (2026). <em>psych: Procedures for Psychological, Psychometric, and P
         interactiveBorder: 10,
         theme: 'quarto',
         placement: 'bottom-start',
+        plugins: [hideOnEscAndFocusOut],
       };
       if (contentFn) {
         config.content = contentFn;
@@ -1231,44 +1299,54 @@ Revelle, W. (2026). <em>psych: Procedures for Psychological, Psychometric, and P
           const lineIds = lines.map((line) => {
             return targetCell + "-" + line;
           })
-          let top = null;
-          let height = null;
-          let parent = null;
+          // Each band is positioned against its own containing block, which is
+          // not the offsetParent of the lines, so place it from client rects.
+          const placeBand = (band, firstEl, lastEl, codeBlock) => {
+            const container = band.offsetParent;
+            if (container === null) {
+              return;
+            }
+            const containerRect = container.getBoundingClientRect();
+            // Reveal.js scales slides with a transform, so convert client
+            // pixels back to the CSS pixels of the container.
+            const scale = containerRect.height / container.offsetHeight || 1;
+            const firstRect = firstEl.getBoundingClientRect();
+            const lastRect = lastEl.getBoundingClientRect();
+            const top = (firstRect.top - containerRect.top) / scale - container.clientTop + container.scrollTop;
+            const height = (lastRect.bottom - firstRect.top) / scale;
+            band.style.top = top - 2 + "px";
+            band.style.height = height + 4 + "px";
+            if (codeBlock) {
+              // Without the copy button wrapper, the containing block is wider
+              // than the code block, so span the code block explicitly.
+              const blockRect = codeBlock.getBoundingClientRect();
+              band.style.left = (blockRect.left - containerRect.left) / scale - container.clientLeft + container.scrollLeft + "px";
+              band.style.width = blockRect.width / scale + "px";
+            }
+          };
           if (lineIds.length > 0) {
-              //compute the position of the single el (top and bottom and make a div)
-              const el = window.document.getElementById(lineIds[0]);
-              top = el.offsetTop;
-              height = el.offsetHeight;
-              parent = el.parentElement.parentElement;
-            if (lineIds.length > 1) {
-              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
-              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
-              height = bottom - top;
+            const el = window.document.getElementById(lineIds[0]);
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const parent = el.parentElement.parentElement;
+            // cook up a div (if necessary) and position it
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
             }
-            if (top !== null && height !== null && parent !== null) {
-              // cook up a div (if necessary) and position it 
-              let div = window.document.getElementById("code-annotation-line-highlight");
-              if (div === null) {
-                div = window.document.createElement("div");
-                div.setAttribute("id", "code-annotation-line-highlight");
-                div.style.position = 'absolute';
-                parent.appendChild(div);
-              }
-              div.style.top = top - 2 + "px";
-              div.style.height = height + 4 + "px";
-              div.style.left = 0;
-              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
-              if (gutterDiv === null) {
-                gutterDiv = window.document.createElement("div");
-                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
-                gutterDiv.style.position = 'absolute';
-                const codeCell = window.document.getElementById(targetCell);
-                const gutter = codeCell.querySelector('.code-annotation-gutter');
-                gutter.appendChild(gutterDiv);
-              }
-              gutterDiv.style.top = top - 2 + "px";
-              gutterDiv.style.height = height + 4 + "px";
+            placeBand(div, el, lastEl, parent.closest("div.sourceCode") || parent);
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
             }
+            placeBand(gutterDiv, el, lastEl);
             selectedAnnoteEl = annoteEl;
           }
         };
@@ -1366,6 +1444,9 @@ Revelle, W. (2026). <em>psych: Procedures for Psychological, Psychometric, and P
       }
     }
   });
+  </script>
+  <script type="application/javascript">
+  window.quartoScrollableRegionsLabels = {"code":"Scrollbarer Code","output":"Scrollbare Ausgabe"};
   </script>
 </div> <!-- /content -->
 <footer class="footer">

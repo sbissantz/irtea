@@ -4,7 +4,7 @@
     "href": "workbook/ctt-ex.html",
     "title": "5 Klassische Testtheorie",
     "section": "",
-    "text": "WichtigWork in Progress\n\n\n\nDieses Kapitel wird derzeit intern überarbeitet. Aufgaben, Daten und Lösungen können sich noch ändern. Bitte bearbeiten Sie die Aufgaben erst, wenn die Überarbeitung abgeschlossen ist und dieser Hinweis entfernt wurde."
+    "text": "Aufgabe 1 (Messfehler) In der Klassischen Testtheorie (KTT) wird jeder beobachtete Messwert \\(X\\) zerlegt in einen wahren Wert \\(T\\) und einen Messfehler \\(E\\):\n\\[\nX = T + E\n\\]\nDer wahre Wert \\(T\\) ist definiert als der Erwartungswert der beobachteten Messwerte einer Person über hypothetisch unendlich viele Messwiederholungen: \\(T = \\mathbb{E}(X)\\). Der Messfehler \\(E\\) beschreibt die zufällige Abweichung des Einzelmesswertes vom wahren Wert, wobei \\(\\mathbb{E}(E) = 0\\) gilt.\nAbbildung 1 zeigt die Ergebnisse von wiederholten Messungen mit einem Messinstrument unter drei verschiedenen Bedingungen (A, B, C). Der wahre Wert beträgt \\(T = 100\\).\n\n\n\n\n\n\n\n\nAbbildung 1: Verteilung gemessener Werte bei wahrem Wert \\(T = 100\\) unter drei Bedingungen\n\n\n\n\n\n\nAuf welcher der Abbildungen ist ein systematischer Messfehler zu sehen? Begründen Sie Ihre Antwort.\n\n\n\n\n\n\n\nTippLösung\n\n\n\n\n\nAbbildung A: Die Messwerte liegen im Mittel über \\(T = 100\\).\n\n\n\n\nFinden Sie jeweils ein Beispiel für eine wiederholte Messung, die zu den Bedingungen der Abbildungen A, B und C passt.\n\n\n\n\n\n\n\nTippLösung\n\n\n\n\n\n\nA: Reaktionszeittest mit einer Geräteverzögerung, sodass alle Reaktionszeiten zu lang erfasst werden.\nB: Reaktionszeittest an verschiedenen Tagen unter stark wechselnden Bedingungen (nach dem Aufstehen, nach dem Sport, nach Koffein, nach einer schlechten Nacht).\nC: Reaktionszeittest in kurz aufeinanderfolgenden Durchgängen (Trials) mit leichten Aufmerksamkeitsschwankungen.\n\n\n\n\n\nBegründen Sie, warum es innerhalb von psychologischen Messungen (z. B. Leistungs- und Persönlichkeitstests) oft problematisch ist, wenn man eine Messung wiederholt mit demselben Messinstrument durchführt.\n\n\n\n\n\n\n\nTippLösung\n\n\n\n\n\n\nErinnerungseffekte\nÜbungseffekte\nReaktivität bzw. Sensibilisierung (z. B. sozial erwünschtes Antworten)\nechte Veränderung des Merkmals zwischen den Messzeitpunkten"
   },
   {
     "objectID": "workbook/ctt-ex.html#literatur",
@@ -109,7 +109,7 @@
     "href": "slides/basics-inp.html#literatur",
     "title": "B.F.3 Übung zu Diagnostik/Testtheorie",
     "section": "Literatur",
-    "text": "Literatur\n\n\nMoosbrugger, H., & Kelava, A. (Hrsg.). (2020). Testtheorie und Fragebogenkonstruktion (3. Aufl.). Springer Berlin Heidelberg. https://doi.org/10.1007/978-3-662-61532-4\n\n\n\nB.F.3 Übung zu Diagnostik/Testtheorie – B.F.3 Diagnostik & Testtheorie\nB.F.3 Übung zu Diagnostik/Testtheorie – B.F.3 Diagnostik & Testtheorie\nB.F.3 Übung zu Diagnostik/Testtheorie – B.F.3 Diagnostik & Testtheorie\nB.F.3 Diagnostik & Testtheorie\nEinführung & Rechenkompetenzen\nEinführung & Rechenkompetenzen"
+    "text": "Literatur\n\n\nMoosbrugger, H., & Kelava, A. (Hrsg.). (2020). Testtheorie und Fragebogenkonstruktion (3. Aufl.). Springer Berlin Heidelberg. https://doi.org/10.1007/978-3-662-61532-4"
   },
   {
     "objectID": "slides/construction-inp.html#semesterübersicht",
@@ -238,46 +238,11 @@
     "text": "Literatur\n\n\nBandalos, D. L. (2018). Measurement theory and applications for the social sciences. Guilford Press.\n\n\nMoosbrugger, H., & Kelava, A. (Hrsg.). (2020). Testtheorie und Fragebogenkonstruktion (3. Aufl.). Springer Berlin Heidelberg. https://doi.org/10.1007/978-3-662-61532-4"
   },
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "B.F.3 Übung zu Diagnostik/Testtheorie",
-    "section": "",
-    "text": "Diese Seite bündelt die Materialien zur Übung B.F.3 an der RPTU Kaiserslautern-Landau.\n\nFolien: die Folien jeder Sitzung als Präsentation (HTML).\nÜbungsheft: Aufgaben zu jedem Thema.\nR-Paket: Datensätze für die Aufgaben, installierbar in R.\n\nEin Link zur PDF-Version der Folien ist auf der Titelfolie."
-  },
-  {
-    "objectID": "package.html",
-    "href": "package.html",
-    "title": "R-Paket irtea",
-    "section": "",
-    "text": "Das Paket irtea enthält die Datensätze für die Aufgaben im Übungsheft und Funktionen zum Üben."
-  },
-  {
-    "objectID": "package.html#installation",
-    "href": "package.html#installation",
-    "title": "R-Paket irtea",
-    "section": "Installation",
-    "text": "Installation\ninstall.packages(\"pak\")\npak::pak(\"sbissantz/irtea\")"
-  },
-  {
-    "objectID": "package.html#datensätze",
-    "href": "package.html#datensätze",
-    "title": "R-Paket irtea",
-    "section": "Datensätze",
-    "text": "Datensätze\n\n\n\nDatensatz\nInhalt\nÜbungsheft\n\n\n\n\npersonality_items\nAntworten von 7 Personen auf 3 Items\nKapitel 1 & 2\n\n\ntest_anxiety\nAntworten von 2000 Personen auf 20 Items zur Prüfungsangst (simuliert)\nKapitel 8 & 9\n\n\nhmt_short\nAntworten von 800 Personen auf die sechs Aufgaben der Kurzform des Hagen Matrices Test, am Computer oder am Smartphone (simuliert)\nKapitel 11\n\n\n\nEinen Datensatz laden Sie mit:\ndata(personality_items, package = \"irtea\")"
-  },
-  {
-    "objectID": "package.html#funktionen",
-    "href": "package.html#funktionen",
-    "title": "R-Paket irtea",
-    "section": "Funktionen",
-    "text": "Funktionen\n\n\n\nFunktion\nZweck\nÜbungsheft\n\n\n\n\nsimulate_model()\nErzeugt Mittelwerte und Kovarianzmatrix von Items, die einem der fünf Messmodelle der Klassischen Testtheorie folgen\nKapitel 13\n\n\nplay_roulette()\nQuiz in der Konsole: Erkennen Sie das Messmodell?\nKapitel 13\n\n\n\nDas Quiz starten Sie mit:\nirtea::play_roulette()\nMit play_roulette(n_items = 4) spielen Sie nur mit vier Items, mit play_roulette(n = 300) mit simulierten Stichproben, in denen die Muster nur noch ungefähr gelten."
-  },
-  {
     "objectID": "slides/efa-inp.html#semesterübersicht",
     "href": "slides/efa-inp.html#semesterübersicht",
     "title": "B.F.3 Übung zu Diagnostik/Testtheorie",
     "section": "Semesterübersicht",
-    "text": "Semesterübersicht\n\n\n\n\n\n\n\n\nNr.\nDatum\nThema\n\n\n\n\n1\nab 20.10.\nRechenkompetenzen\n\n\n2\nab 27.10.\nGütekriterien I\n\n\n3\nab 03.11.\nSchritte der Testkonstruktion\n\n\n4\nab 10.11.\nErstellung eines Testentwurfs\n\n\n\n\nLektürewoche\n\n\n5\nab 24.11.\nDiagnostische Rechenkompetenzen I\n\n\n6\nab 01.12.\nKlassische Testtheorie\n\n\n7\nab 08.12.\nItem-Response-Theorie\n\n\n8\nab 15.12.\nExploratorische Faktorenanalyse I\n\n\n\n\nWeihnachtsferien\n\n\n9\nab 05.01.\nExploratorische Faktorenanalyse II\n\n\n10\nab 12.01.\nItemanalyse I\n\n\n11\nab 19.01.\nItemanalyse II, Itemselektion und Testrevision\n\n\n12\nab 26.01.\nDiagnostische Rechenkompetenzen II\n\n\n13\nab 02.02.\nGütekriterien II"
+    "text": "Semesterübersicht\n\n\n\n\n\n\n\n\nNr.\nDatum\nThema\n\n\n\n\n1\nab 20.10.\nEinführung & Rechenkompetenzen\n\n\n2\nab 27.10.\nRechenkompetenzen\n\n\n3\nab 03.11.\nGütekriterien\n\n\n4\nab 10.11.\nSchritte der Testkonstruktion & Erstellung eines Testentwurfs\n\n\n\n\nLektürewoche\n\n\n5\nab 24.11.\nKlassische Testtheorie\n\n\n6\nab 01.12.\nDiagnostische Rechenkompetenzen I\n\n\n7\nab 08.12.\nItem-Response-Theorie\n\n\n8\nab 15.12.\nExploratorische Faktorenanalyse I\n\n\n\n\nWeihnachtsferien\n\n\n9\nab 05.01.\nExploratorische Faktorenanalyse II\n\n\n10\nab 12.01.\nItemanalyse I\n\n\n11\nab 19.01.\nItemanalyse II, Itemselektion und Testrevision\n\n\n12\nab 26.01.\nDiagnostische Rechenkompetenzen II\n\n\n13\nab 02.02.\nGütekriterien II"
   },
   {
     "objectID": "slides/efa-inp.html#datenreduktion-vs.-struktursuche",
@@ -341,6 +306,195 @@
     "title": "B.F.3 Übung zu Diagnostik/Testtheorie",
     "section": "Literatur",
     "text": "Literatur\n\n\nGregory, R. J. (2015). Psychological Testing: History, Principles, and Applications (7. Aufl.). Pearson.\n\n\nLorenzo-Seva, U., Timmerman, M. E., & Kiers, H. A. L. (2011). The Hull Method for Selecting the Number of Common Factors. Multivariate Behavioral Research, 46(2), 340–364. https://doi.org/10.1080/00273171.2011.564527\n\n\nTimmerman, M. E., Lorenzo-Seva, U., & Ceulemans, E. (2018). The Number of Factors Problem. In P. Irwing, T. Booth, & D. J. Hughes (Hrsg.), The Wiley Handbook of Psychometric Testing (S. 305–324). Wiley. https://doi.org/10.1002/9781118489772.ch11"
+  },
+  {
+    "objectID": "package.html",
+    "href": "package.html",
+    "title": "R-Paket irtea",
+    "section": "",
+    "text": "Das Paket irtea enthält die Datensätze für die Aufgaben im Übungsheft und Funktionen zum Üben."
+  },
+  {
+    "objectID": "package.html#installation",
+    "href": "package.html#installation",
+    "title": "R-Paket irtea",
+    "section": "Installation",
+    "text": "Installation\ninstall.packages(\"pak\")\npak::pak(\"sbissantz/irtea\")"
+  },
+  {
+    "objectID": "package.html#datensätze",
+    "href": "package.html#datensätze",
+    "title": "R-Paket irtea",
+    "section": "Datensätze",
+    "text": "Datensätze\n\n\n\nDatensatz\nInhalt\nÜbungsheft\n\n\n\n\npersonality_items\nAntworten von 7 Personen auf 3 Items\nKapitel 1 & 2\n\n\ntest_anxiety\nAntworten von 2000 Personen auf 20 Items zur Prüfungsangst (simuliert)\nKapitel 8 & 9\n\n\nhmt_short\nAntworten von 800 Personen auf die sechs Aufgaben der Kurzform des Hagen Matrices Test, am Computer oder am Smartphone (simuliert)\nKapitel 11\n\n\n\nEinen Datensatz laden Sie mit:\ndata(personality_items, package = \"irtea\")"
+  },
+  {
+    "objectID": "package.html#funktionen",
+    "href": "package.html#funktionen",
+    "title": "R-Paket irtea",
+    "section": "Funktionen",
+    "text": "Funktionen\n\n\n\nFunktion\nZweck\nÜbungsheft\n\n\n\n\nsimulate_model()\nErzeugt Mittelwerte und Kovarianzmatrix von Items, die einem der fünf Messmodelle der Klassischen Testtheorie folgen\nKapitel 13\n\n\nplay_roulette()\nQuiz in der Konsole: Erkennen Sie das Messmodell?\nKapitel 13\n\n\n\nDas Quiz starten Sie mit:\nirtea::play_roulette()\nMit play_roulette(n_items = 4) spielen Sie nur mit vier Items, mit play_roulette(n = 300) mit simulierten Stichproben, in denen die Muster nur noch ungefähr gelten."
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "B.F.3 Übung zu Diagnostik/Testtheorie",
+    "section": "",
+    "text": "Diese Seite bündelt die Materialien zur Übung B.F.3 an der RPTU Kaiserslautern-Landau.\n\nFolien: die Folien jeder Sitzung als Präsentation (HTML).\nÜbungsheft: Aufgaben zu jedem Thema.\nR-Paket: Datensätze für die Aufgaben, installierbar in R.\n\nEin Link zur PDF-Version der Folien ist auf der Titelfolie."
+  },
+  {
+    "objectID": "slides/ctt-inp.html#semesterübersicht",
+    "href": "slides/ctt-inp.html#semesterübersicht",
+    "title": "B.F.3 Übung zu Diagnostik/Testtheorie",
+    "section": "Semesterübersicht",
+    "text": "Semesterübersicht\n\n\n\n\n\n\n\n\nNr.\nDatum\nThema\n\n\n\n\n1\nab 20.10.\nEinführung & Rechenkompetenzen\n\n\n2\nab 27.10.\nRechenkompetenzen\n\n\n3\nab 03.11.\nGütekriterien\n\n\n4\nab 10.11.\nSchritte der Testkonstruktion & Erstellung eines Testentwurfs\n\n\n\n\nLektürewoche\n\n\n5\nab 24.11.\nKlassische Testtheorie\n\n\n6\nab 01.12.\nDiagnostische Rechenkompetenzen I\n\n\n7\nab 08.12.\nItem-Response-Theorie\n\n\n8\nab 15.12.\nExploratorische Faktorenanalyse I\n\n\n\n\nWeihnachtsferien\n\n\n9\nab 05.01.\nExploratorische Faktorenanalyse II\n\n\n10\nab 12.01.\nItemanalyse I\n\n\n11\nab 19.01.\nItemanalyse II, Itemselektion und Testrevision\n\n\n12\nab 26.01.\nDiagnostische Rechenkompetenzen II\n\n\n13\nab 02.02.\nGütekriterien II"
+  },
+  {
+    "objectID": "slides/ctt-inp.html#themen-der-heutigen-sitzung",
+    "href": "slides/ctt-inp.html#themen-der-heutigen-sitzung",
+    "title": "B.F.3 Übung zu Diagnostik/Testtheorie",
+    "section": "Themen der heutigen Sitzung",
+    "text": "Themen der heutigen Sitzung\nKlassische Testtheorie (KTT)\n\nGrundannahmen\nReliabilität\nMessmodelle"
+  },
+  {
+    "objectID": "slides/ctt-inp.html#wozu-eine-testtheorie",
+    "href": "slides/ctt-inp.html#wozu-eine-testtheorie",
+    "title": "B.F.3 Übung zu Diagnostik/Testtheorie",
+    "section": "Wozu eine Testtheorie?",
+    "text": "Wozu eine Testtheorie?\n\n\n\n\n\nWie hängen Messung und latentes Konstrukt zusammen?\nWelche Rolle spielen Messfehler?\nWie kann ich einen Test-Score berechnen und interpretieren?\nWie muss mein Test konstruiert sein?"
+  },
+  {
+    "objectID": "slides/ctt-inp.html#der-ansatz-der-klassischen-testtheorie",
+    "href": "slides/ctt-inp.html#der-ansatz-der-klassischen-testtheorie",
+    "title": "B.F.3 Übung zu Diagnostik/Testtheorie",
+    "section": "Der Ansatz der Klassischen Testtheorie",
+    "text": "Der Ansatz der Klassischen Testtheorie\nModell der Klassischen Testtheorie\n\\[\nX = T + E \\tag{1}\n\\]\n\n\\(T\\): Wahrer Wert\n\\(X\\): Beobachtungswert, Testwert\n\\(E\\): Fehlerkomponente, Messfehler\nHäufig ist \\(X\\) der Summenscore von \\(k\\) Items \\(i=1,\\dots,k\\), sodass:\n\n\\[\nX = \\sum_{i=1}^k x_i \\tag{2}\n\\]"
+  },
+  {
+    "objectID": "slides/ctt-inp.html#grundannahmen-1",
+    "href": "slides/ctt-inp.html#grundannahmen-1",
+    "title": "B.F.3 Übung zu Diagnostik/Testtheorie",
+    "section": "Grundannahmen",
+    "text": "Grundannahmen\n\n\nPopulation\n\nPersonen sind (daraus) eine Zufallsstichprobe\nFür jede Person liegt theoretisch eine infinite Anzahl von Messergebnissen vor\n\n\nItemuniversum\n\nAlle Items stammen aus einem infiniten Itemuniversum\nJedes Item (darin) ist zur Messung der latenten Variable geeignet\n\n\nVerwandte Konzepte: interindividuelle und intraindividuelle Merkmalsverteilung"
+  },
+  {
+    "objectID": "slides/ctt-inp.html#werteverteilungen-gedankenexperiment",
+    "href": "slides/ctt-inp.html#werteverteilungen-gedankenexperiment",
+    "title": "B.F.3 Übung zu Diagnostik/Testtheorie",
+    "section": "Werteverteilungen & Gedankenexperiment",
+    "text": "Werteverteilungen & Gedankenexperiment\n\n\n\n\n\n\n\n\n\n\nAbbildung 1: Intra- (dunkel) und interindividuelle (hell) Werteverteilungen\n\n\n\n\n\n\n\n\n\n\n\n\nGedankenexperiment\n\n\nHätten wir die Möglichkeit, eine Person unzählige Male unter den gleichen Bedingungen zu messen, dann erhielten wir eine (Normal-)Verteilung ihrer Messwerte. Der Mittelwert der intraindividuellen Messwerte entspräche dem wahren Wert der Person.\n\n\n\n\n\\[\nE \\sim \\mathrm{N}(0, \\sigma^2) \\tag{3}\n\\]"
+  },
+  {
+    "objectID": "slides/ctt-inp.html#fluktuationsphänomen",
+    "href": "slides/ctt-inp.html#fluktuationsphänomen",
+    "title": "B.F.3 Übung zu Diagnostik/Testtheorie",
+    "section": "Fluktuationsphänomen",
+    "text": "Fluktuationsphänomen\n\n\nUnsystematische Fehlerkomponente\n\\[\n\\mathbb{E}(E) = 0 \\tag{4}\n\\]\n\nAnnahme: Messfehler sind Fluktuationen\nFluktuationen gleichen sich im Mittel aus\nFolge: Summe der Beobachtungswerte entspricht erwartungsgemäß dem wahren Wert\n\n\n\n\n\n\n\n\n\n\nAbbildung 2: Zufällige Fehlerwerte streuen ohne Muster um 0"
+  },
+  {
+    "objectID": "slides/ctt-inp.html#fluktuationsphänomen-1",
+    "href": "slides/ctt-inp.html#fluktuationsphänomen-1",
+    "title": "B.F.3 Übung zu Diagnostik/Testtheorie",
+    "section": "Fluktuationsphänomen",
+    "text": "Fluktuationsphänomen\n\nAnnahme: Wenn die Störeinflüsse zufällig sind, gleichen sie sich im Mittel aus\nImplikation: Mittel der Beobachtungswerte entspricht dem wahren Wert\n\nVermutung als formale Implikation\n\\[\n\\mathbb{E}(E) = 0 \\tag{4}\n\\]\n\\[\n\\mathbb{E}(X) = T \\tag{5}\n\\]"
+  },
+  {
+    "objectID": "slides/ctt-inp.html#das-problem-wiederholter-messung",
+    "href": "slides/ctt-inp.html#das-problem-wiederholter-messung",
+    "title": "B.F.3 Übung zu Diagnostik/Testtheorie",
+    "section": "Das Problem wiederholter Messung",
+    "text": "Das Problem wiederholter Messung\n\n\nDas Problem wiederholter Messung\nWir messen (oft) nur ein einziges Mal und ziehen damit (zufällig) aus der Verteilung der intraindividuellen Messwerte. Der Messwert ist ein Schätzer für den wahren Wert der Person, der wegen des Messfehlers unter oder über dem Messwert liegen kann.\n\n\n\n\n\n\n\nGedankenexperiment\n\n\nHätten wir die Möglichkeit, eine Person unzählige Male unter den gleichen Bedingungen zu messen, dann erhielten wir eine (Normal-)Verteilung ihrer Messwerte, wobei im Mittel über alle intraindividuellen Messwerte die Beobachtungswerte dem wahren Wert der Person entsprechen."
+  },
+  {
+    "objectID": "slides/ctt-inp.html#reliabilität-nach-der-ktt",
+    "href": "slides/ctt-inp.html#reliabilität-nach-der-ktt",
+    "title": "B.F.3 Übung zu Diagnostik/Testtheorie",
+    "section": "Reliabilität nach der KTT",
+    "text": "Reliabilität nach der KTT\n\nAussage über die Qualität eines Messinstruments, Tests, einer Skala\n„Qualität“ in der KTT bedeutet…\n\nAbwesenheit von Messfehlern\nKonsistente Messwerte bei wiederholter Messung einer LV\nAkkuratheit bei der Messung von wahren Werten (Coaley, 2014)\n\n\nReliabilität (\\(\\text{Rel}\\))\n\\[\n\\begin{split}\n\\text{Rel}(X) & = \\frac{\\text{Var}(T)}{\\text{Var}(X)} = \\frac{\\text{Var}(T)}{\\text{Var}(T) + \\text{Var}(E)} \\\\\n\\text{Rel}(X) & \\in [0,1]\n\\end{split} \\tag{6}\n\\]"
+  },
+  {
+    "objectID": "slides/ctt-inp.html#methoden-der-reliabilitätsschätzung",
+    "href": "slides/ctt-inp.html#methoden-der-reliabilitätsschätzung",
+    "title": "B.F.3 Übung zu Diagnostik/Testtheorie",
+    "section": "Methoden der Reliabilitätsschätzung",
+    "text": "Methoden der Reliabilitätsschätzung\nDas Berechnungsproblem\n\\(\\text{Rel}(X)\\) ist nicht (direkt) berechenbar, da wir z. B. \\(\\text{Var}(T)\\) nicht kennen.\nMögliche Lösungsansätze\n\n\na. Klassische Methoden:\n\nVerschiedene Items, die dasselbe Merkmal messen\nWiederholte Messung anhand desselben oder mehrerer Tests\nMethoden: Retest-, Paralleltest- und Testhalbierungsreliabilität, interne Konsistenz\n\n\nb. Modellbasierte Methoden\n\nMessmodelle\nBeruhen auf Stichprobenkennwerten (Kovarianzen und Korrelationen)"
+  },
+  {
+    "objectID": "slides/ctt-inp.html#wieso-interessieren-wir-uns-für-messmodelle",
+    "href": "slides/ctt-inp.html#wieso-interessieren-wir-uns-für-messmodelle",
+    "title": "B.F.3 Übung zu Diagnostik/Testtheorie",
+    "section": "Wieso interessieren wir uns für Messmodelle?",
+    "text": "Wieso interessieren wir uns für Messmodelle?\n\n\n\n\nEs kann nützlich sein, zwei gleichwertige Versionen desselben Tests zu haben („Parallelformen“).\n\nMesswiederholung\nGruppentestung\n…\n\n\\(\\rightarrow\\) Wie lässt sich überprüfen, ob die Testwerte vergleichbar sind?"
+  },
+  {
+    "objectID": "slides/ctt-inp.html#messmodellgleichung",
+    "href": "slides/ctt-inp.html#messmodellgleichung",
+    "title": "B.F.3 Übung zu Diagnostik/Testtheorie",
+    "section": "Messmodellgleichung",
+    "text": "Messmodellgleichung\nWahre Werte und Messmodellgleichung\nDer wahre Wert einer Person auf Item \\(i\\) wird definiert als:\n\\[\n\\tau_i = \\alpha_i + \\lambda_i \\cdot \\eta \\tag{7}\n\\]\nDie beobachtete Antwort \\(x_i\\) setzt sich zusammen aus:\n\\[\nx_i = \\alpha_i + \\lambda_i \\cdot \\eta + \\varepsilon_i \\tag{8}\n\\]\n\n\n\n\\(\\alpha_i\\): Interzept (Schwierigkeitsparameter)\n\\(\\lambda_i\\): Ladung (Trennschärfeparameter)\n\n\n\n\\(\\eta\\): Latente Variable\n\\(\\varepsilon_i\\): Messfehler\n\n\n(vgl. Moosbrugger & Kelava, 2020, S. 283)"
+  },
+  {
+    "objectID": "slides/ctt-inp.html#übersicht-eindimensionaler-messmodelle",
+    "href": "slides/ctt-inp.html#übersicht-eindimensionaler-messmodelle",
+    "title": "B.F.3 Übung zu Diagnostik/Testtheorie",
+    "section": "Übersicht eindimensionaler Messmodelle",
+    "text": "Übersicht eindimensionaler Messmodelle\n\n\n\n\n\n\n\n\n\n\n\n\n\nMessmodelle machen unterschiedliche Annahmen über die Modellparameter (Interzept, Ladung, Fehlervarianz) der Items\nDaraus lassen sich Konsequenzen für die Itemmittelwerte, Itemvarianzen und Itemkovarianzen ableiten"
+  },
+  {
+    "objectID": "slides/ctt-inp.html#abschließende-bemerkungen",
+    "href": "slides/ctt-inp.html#abschließende-bemerkungen",
+    "title": "B.F.3 Übung zu Diagnostik/Testtheorie",
+    "section": "Abschließende Bemerkungen",
+    "text": "Abschließende Bemerkungen\n\n\nProbleme der True-Score-Logik\n\nDie Grundgleichung bleibt empirisch ungeprüft (siehe: Gleichung 1)\nAnnahme zu Messfehlern oft problematisch\n\n\nBorsbooms Konklusion\n\nHowever, although various authors have warned against it, the platonic true score interpretation is like an alien in a B-movie: no matter how hard you beat it up, it keeps coming back. (Borsboom, 2005, S. 32)"
+  },
+  {
+    "objectID": "slides/ctt-inp.html#übungen",
+    "href": "slides/ctt-inp.html#übungen",
+    "title": "B.F.3 Übung zu Diagnostik/Testtheorie",
+    "section": "Übungen",
+    "text": "Übungen\nÜbungen zu diesem Thema: Übungsheft, Kapitel 5"
+  },
+  {
+    "objectID": "slides/ctt-inp.html#literatur",
+    "href": "slides/ctt-inp.html#literatur",
+    "title": "B.F.3 Übung zu Diagnostik/Testtheorie",
+    "section": "Literatur",
+    "text": "Literatur\n\n\nBorsboom, D. (2005). Measuring the Mind: Conceptual Issues in Contemporary Psychometrics. Cambridge University Press. https://doi.org/10.1017/CBO9780511490026\n\n\nCoaley, K. (2014). An Introduction to Psychological Assessment and Psychometrics (2. Aufl.). SAGE Publications.\n\n\nMoosbrugger, H., & Kelava, A. (Hrsg.). (2020). Testtheorie und Fragebogenkonstruktion (3. Aufl.). Springer Berlin Heidelberg. https://doi.org/10.1007/978-3-662-61532-4"
+  },
+  {
+    "objectID": "slides/ctt-inp.html#tau-kongenerisches-messmodell",
+    "href": "slides/ctt-inp.html#tau-kongenerisches-messmodell",
+    "title": "B.F.3 Übung zu Diagnostik/Testtheorie",
+    "section": "\\(\\tau\\)-kongenerisches Messmodell",
+    "text": "\\(\\tau\\)-kongenerisches Messmodell\n\n\nMesswerte-Zerlegung\n\\[\n\\begin{split}\nx_i &= \\alpha_i + \\lambda_i \\cdot \\eta + \\varepsilon_i \\\\\nx_j &= \\alpha_j + \\lambda_j \\cdot \\eta + \\varepsilon_j \\\\\n& i \\ne j\n\\end{split}\n\\]"
+  },
+  {
+    "objectID": "slides/ctt-inp.html#essentiell-tau-äquivalentes-messmodell",
+    "href": "slides/ctt-inp.html#essentiell-tau-äquivalentes-messmodell",
+    "title": "B.F.3 Übung zu Diagnostik/Testtheorie",
+    "section": "Essentiell \\(\\tau\\)-äquivalentes Messmodell",
+    "text": "Essentiell \\(\\tau\\)-äquivalentes Messmodell\n\n\nRestriktion\n\\[\n\\lambda_i = \\lambda_j\n\\]\nMesswerte-Zerlegung\n\\[\n\\begin{split}\nx_i &= \\alpha_i + \\lambda \\cdot \\eta + \\varepsilon_i \\\\\nx_j &= \\alpha_j + \\lambda \\cdot \\eta + \\varepsilon_j \\\\\n& i \\ne j\n\\end{split}\n\\]"
+  },
+  {
+    "objectID": "slides/ctt-inp.html#tau-äquivalentes-messmodell",
+    "href": "slides/ctt-inp.html#tau-äquivalentes-messmodell",
+    "title": "B.F.3 Übung zu Diagnostik/Testtheorie",
+    "section": "\\(\\tau\\)-äquivalentes Messmodell",
+    "text": "\\(\\tau\\)-äquivalentes Messmodell\n\n\nRestriktionen\n\\[\n\\begin{split}\n\\lambda_i = \\lambda_j \\\\\n\\alpha_i = \\alpha_j\n\\end{split}\n\\]\nMesswerte-Zerlegung\n\\[\n\\begin{split}\nx_i &= \\alpha + \\lambda \\cdot \\eta + \\varepsilon_i \\\\\nx_j &= \\alpha + \\lambda \\cdot \\eta + \\varepsilon_j \\\\\n& i \\ne j\n\\end{split}\n\\]"
+  },
+  {
+    "objectID": "slides/ctt-inp.html#essentiell-tau-paralleles-messmodell",
+    "href": "slides/ctt-inp.html#essentiell-tau-paralleles-messmodell",
+    "title": "B.F.3 Übung zu Diagnostik/Testtheorie",
+    "section": "Essentiell \\(\\tau\\)-paralleles Messmodell",
+    "text": "Essentiell \\(\\tau\\)-paralleles Messmodell\n\n\nRestriktionen\n\\[\n\\begin{split}\n\\lambda_i = \\lambda_j \\\\\n\\text{Var}(\\varepsilon_i) = \\text{Var}(\\varepsilon_j)\n\\end{split}\n\\]\nMesswerte-Zerlegung\n\\[\n\\begin{split}\nx_i &= \\alpha_i + \\lambda \\cdot \\eta + \\varepsilon_i \\\\\nx_j &= \\alpha_j + \\lambda \\cdot \\eta + \\varepsilon_j \\\\\n& i \\ne j \\\\\n& \\text{Var}(\\varepsilon_i) = \\text{Var}(\\varepsilon_j)\n\\end{split}\n\\]"
+  },
+  {
+    "objectID": "slides/ctt-inp.html#tau-paralleles-messmodell",
+    "href": "slides/ctt-inp.html#tau-paralleles-messmodell",
+    "title": "B.F.3 Übung zu Diagnostik/Testtheorie",
+    "section": "\\(\\tau\\)-paralleles Messmodell",
+    "text": "\\(\\tau\\)-paralleles Messmodell\n\n\nRestriktionen\n\\[\n\\begin{split}\n\\lambda_i = \\lambda_j \\\\\n\\alpha_i = \\alpha_j \\\\\n\\text{Var}(\\varepsilon_i) = \\text{Var}(\\varepsilon_j)\n\\end{split}\n\\]\nMesswerte-Zerlegung\n\\[\n\\begin{split}\nx_i &= \\alpha + \\lambda \\cdot \\eta + \\varepsilon_i \\\\\nx_j &= \\alpha + \\lambda \\cdot \\eta + \\varepsilon_j \\\\\n& i \\ne j \\\\\n& \\text{Var}(\\varepsilon_i) = \\text{Var}(\\varepsilon_j)\n\\end{split}\n\\]"
   },
   {
     "objectID": "slides/guete-inp.html#semesterübersicht",
@@ -571,7 +725,7 @@
     "href": "workbook/guete-i-ex.html#zusatzaufgaben",
     "title": "3 Gütekriterien I",
     "section": "Zusatzaufgaben",
-    "text": "Zusatzaufgaben\n\nDie folgende Aufgabe ist nicht Teil der Vorlesung, kann Ihnen im Studium aber dennoch nützlich sein: Sie zeigt, wie eine Rezension nach dem aktuellen TBS-DTK abläuft. Die Rezension der SCL-90-R in Aufgabe 8 folgt dagegen noch dem älteren TBS-TK.\n\nAufgabe 10 (Der Ablauf einer TBS-DTK-Rezension) Die Abbildung zeigt den Ablauf einer Rezension nach dem TBS-DTK aus Aufgabe 6; drei Schritte fehlen.\n\n\n\n\n\n%%{init: {\"htmlLabels\": false, \"flowchart\": {\"htmlLabels\": false}, \"themeVariables\": {\"fontFamily\": \"Fira Sans\"}, \"themeCSS\": \"background-color: #fafafa;\"}}%%\nflowchart TB\n  classDef step fill:#3B528B,stroke:#3B528B,color:#fff\n  classDef gap fill:#fafafa,stroke:#3B528B,stroke-dasharray: 4 4,color:#23373b\n  classDef done fill:#5DC863,stroke:#5DC863,color:#23373b\n  select[\"Auswahl des Tests durch das DTK\"]:::step\n  commission[\"?\"]:::gap\n  party1[\"Partei 1: Prüfung und Bewertung\"]:::step\n  party2[\"Partei 2: Prüfung und Bewertung\"]:::step\n  joint[\"?\"]:::gap\n  check[\"Prüfung durch das DTK\"]:::step\n  comment[\"?\"]:::gap\n  publish[\"Publikation\"]:::done\n  select --&gt; commission\n  commission --&gt; party1\n  commission --&gt; party2\n  party1 --&gt; joint\n  party2 --&gt; joint\n  joint --&gt; check\n  check --&gt; comment\n  comment --&gt; publish\n\n\n\n\n\n\n\nErgänzen Sie die drei fehlenden Schritte.\n\n\n\n\n\n\n\nTippLösung\n\n\n\n\n\nVon oben nach unten:\n\nBeauftragung von zwei Rezensions-Parteien\nGemeinsame Rezension\nStellungnahme der Testautor:innen\n\n\n\n\n\nWie arbeiten die beiden Rezensions-Parteien, bevor sie die gemeinsame Rezension verfassen?\n\n\n\n\n\n\n\nTippLösung\n\n\n\n\n\nZwei Rezensions-Parteien beurteilen den Test zunächst unabhängig voneinander und anonym; erst danach verfassen sie eine gemeinsame Rezension, bei Uneinigkeit mit beiden Positionen. Die Testautor:innen dürfen nur auf sachliche Fehler hinweisen, nicht die Bewertungen ändern lassen. Bewertet wird kriterienorientiert, ohne Vergleich mit anderen Tests.\n\n\n\n\nWas geschieht, wenn sich die beiden Parteien nicht auf eine gemeinsame Fassung einigen können?\n\n\n\n\n\n\n\nTippLösung\n\n\n\n\n\nDie Rezension stellt die unterschiedlichen Positionen dar; über die formalisierten Bewertungen entscheidet dann das DTK.\n\n\n\n\nWozu dürfen die Testautor:innen Stellung nehmen?\n\n\n\n\n\n\n\nTippLösung\n\n\n\n\n\nNur zu sachlichen Fehlern im Entwurf der Rezension, nicht dazu, ob sie mit den Bewertungen einverstanden sind.\n\n\n\n\nFassen Sie aus Ihren Antworten zu den Teilen a bis d zusammen, was das Besondere an diesem Ablauf ist.\n\n\n\n\n\n\n\nTippLösung\n\n\n\n\n\nZum Beispiel: Zwei unabhängige, anonyme Urteile werden erst danach zu einer gemeinsamen Rezension zusammengeführt, Uneinigkeit wird offen dargestellt, und die Testautor:innen können die Bewertungen nicht beeinflussen. So sollen die Rezensionen möglichst unabhängig und unvoreingenommen sein."
+    "text": "Zusatzaufgaben\n\nDie folgende Aufgabe ist nicht Teil der Vorlesung, kann Ihnen im Studium aber dennoch nützlich sein: Sie zeigt, wie eine Rezension nach dem aktuellen TBS-DTK abläuft. Die Rezension der SCL-90-R in Aufgabe 8 folgt dagegen noch dem älteren TBS-TK.\n\nAufgabe 10 (Der Ablauf einer TBS-DTK-Rezension) Die Abbildung zeigt den Ablauf einer Rezension nach dem TBS-DTK aus Aufgabe 6; drei Schritte fehlen.\n\n\n\n\n\n\n%%{init: {\"htmlLabels\": false, \"flowchart\": {\"htmlLabels\": false}, \"themeVariables\": {\"fontFamily\": \"Fira Sans\"}, \"themeCSS\": \"background-color: #fafafa;\"}}%%\nflowchart TB\n  classDef step fill:#3B528B,stroke:#3B528B,color:#fff\n  classDef gap fill:#fafafa,stroke:#3B528B,stroke-dasharray: 4 4,color:#23373b\n  classDef done fill:#5DC863,stroke:#5DC863,color:#23373b\n  select[\"Auswahl des Tests durch das DTK\"]:::step\n  commission[\"?\"]:::gap\n  party1[\"Partei 1: Prüfung und Bewertung\"]:::step\n  party2[\"Partei 2: Prüfung und Bewertung\"]:::step\n  joint[\"?\"]:::gap\n  check[\"Prüfung durch das DTK\"]:::step\n  comment[\"?\"]:::gap\n  publish[\"Publikation\"]:::done\n  select --&gt; commission\n  commission --&gt; party1\n  commission --&gt; party2\n  party1 --&gt; joint\n  party2 --&gt; joint\n  joint --&gt; check\n  check --&gt; comment\n  comment --&gt; publish\n\n\n\n\n\n\n\nErgänzen Sie die drei fehlenden Schritte.\n\n\n\n\n\n\n\nTippLösung\n\n\n\n\n\nVon oben nach unten:\n\nBeauftragung von zwei Rezensions-Parteien\nGemeinsame Rezension\nStellungnahme der Testautor:innen\n\n\n\n\n\nWie arbeiten die beiden Rezensions-Parteien, bevor sie die gemeinsame Rezension verfassen?\n\n\n\n\n\n\n\nTippLösung\n\n\n\n\n\nZwei Rezensions-Parteien beurteilen den Test zunächst unabhängig voneinander und anonym; erst danach verfassen sie eine gemeinsame Rezension, bei Uneinigkeit mit beiden Positionen. Die Testautor:innen dürfen nur auf sachliche Fehler hinweisen, nicht die Bewertungen ändern lassen. Bewertet wird kriterienorientiert, ohne Vergleich mit anderen Tests.\n\n\n\n\nWas geschieht, wenn sich die beiden Parteien nicht auf eine gemeinsame Fassung einigen können?\n\n\n\n\n\n\n\nTippLösung\n\n\n\n\n\nDie Rezension stellt die unterschiedlichen Positionen dar; über die formalisierten Bewertungen entscheidet dann das DTK.\n\n\n\n\nWozu dürfen die Testautor:innen Stellung nehmen?\n\n\n\n\n\n\n\nTippLösung\n\n\n\n\n\nNur zu sachlichen Fehlern im Entwurf der Rezension, nicht dazu, ob sie mit den Bewertungen einverstanden sind.\n\n\n\n\nFassen Sie aus Ihren Antworten zu den Teilen a bis d zusammen, was das Besondere an diesem Ablauf ist.\n\n\n\n\n\n\n\nTippLösung\n\n\n\n\n\nZum Beispiel: Zwei unabhängige, anonyme Urteile werden erst danach zu einer gemeinsamen Rezension zusammengeführt, Uneinigkeit wird offen dargestellt, und die Testautor:innen können die Bewertungen nicht beeinflussen. So sollen die Rezensionen möglichst unabhängig und unvoreingenommen sein."
   },
   {
     "objectID": "workbook/efa-ex.html",

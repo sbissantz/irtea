@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="de" xml:lang="de"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.10.19">
+<meta name="generator" content="quarto-1.11.9">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -59,14 +59,15 @@ div.csl-indent {
 <link href="../images/logo.png" rel="icon" type="image/png">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/scrollable-regions/scrollable-regions.js" type="module"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-bf27225e3a48a9273f3daa8f8e829971.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-63b5708e65d6cd79cd7618c58d0c21e7.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-cbe15cd55579b32cf8c48135cfb2cd9e.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-6519365451b8d29e4b2635fa5bf158c1.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -127,11 +128,11 @@ window.Quarto = {
 
 </head>
 
-<body class="nav-fixed fullcontent quarto-light">
+<body class="nav-fixed fullcontent quarto-light"><a id="quarto-skip-link" class="visually-hidden-focusable" href="#quarto-document-content">Zum Hauptinhalt springen</a>
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
-    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark" aria-label="Website">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
     <a href="../index.html" class="navbar-brand navbar-brand-logo">
@@ -142,8 +143,7 @@ window.Quarto = {
     <span class="navbar-title">B.F.3 Diagnostik &amp; Testtheorie</span>
     </a>
   </div>
-            <div id="quarto-search" class="" title="Suchen"></div>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Navigation umschalten" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Navigation umschalten" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
@@ -168,6 +168,10 @@ window.Quarto = {
         <li>
     <a class="dropdown-item" href="../slides/construction-inp.html">
  <span class="dropdown-text">04 Schritte der Testkonstruktion</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../slides/ctt-inp.html">
+ <span class="dropdown-text">05 Klassische Testtheorie</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../slides/efa-inp.html">
@@ -230,6 +234,7 @@ window.Quarto = {
           </div> <!-- /navcollapse -->
             <div class="quarto-navbar-tools">
 </div>
+            <div id="quarto-search" class="" title="Suchen"></div>
       </div> <!-- /container-fluid -->
     </nav>
 </header>
@@ -239,7 +244,7 @@ window.Quarto = {
 <!-- margin-sidebar -->
     
 <!-- main -->
-<main class="content" id="quarto-document-content">
+<main class="content" id="quarto-document-content" tabindex="-1">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
@@ -260,7 +265,7 @@ window.Quarto = {
 </header>
 
 
-<div class="callout callout-style-default callout-important callout-titled" title="Work in Progress">
+<div class="callout callout-style-default callout-important callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
@@ -279,7 +284,7 @@ window.Quarto = {
 <ol type="a">
 <li>Bestimmen Sie die Grundquote (<em>base rate</em>, BR) und die Selektionsquote (<em>selection ratio</em>, SR) für das Szenario. Erläutern Sie beide Begriffe in je einem Satz.</li>
 </ol>
-<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
@@ -956,7 +961,7 @@ Tabelle&nbsp;2: Taylor-Russell-Tafel für BR = .40 (Zeilen: Validität <span cla
 <ol start="2" type="a">
 <li>Lesen Sie die Erfolgsquote für das Szenario aus der passenden Tafel ab. Wie viele der 50 ausgewählten Personen werden voraussichtlich die Ausbildung erfolgreich abschließen? Wie hoch ist der inkrementelle Wert dieses Eignungstests?</li>
 </ol>
-<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
@@ -975,7 +980,7 @@ Tabelle&nbsp;2: Taylor-Russell-Tafel für BR = .40 (Zeilen: Validität <span cla
 <ol start="3" type="a">
 <li>Wie hoch wäre die Erfolgsquote, wenn Sie ein Verfahren mit <span class="math inline">\(r_{tc} = 0.00\)</span> heranziehen würden? Begründen Sie Ihre Antwort.</li>
 </ol>
-<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
@@ -1021,7 +1026,7 @@ Tabelle&nbsp;2: Taylor-Russell-Tafel für BR = .40 (Zeilen: Validität <span cla
 </table>
 <p>Ergänzen Sie <span class="math inline">\(&gt;\)</span>, <span class="math inline">\(&lt;\)</span> oder <span class="math inline">\(=\)</span>: (i) <span class="math inline">\(a \, \_ \, c\)</span>, (ii) <span class="math inline">\(b \, \_ \, d\)</span>, (iii) <span class="math inline">\(a \, \_ \, b\)</span>, (iv) <span class="math inline">\(c \, \_ \, d\)</span>.</p></li>
 </ol>
-<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
@@ -1271,7 +1276,7 @@ Tabelle&nbsp;3: Normwerte des NEO-FFI nach dem NEO-FFI-Manual. NEU = Neurotizism
 <ol type="a">
 <li>Welche Normgruppe aus der Tabelle ist für Herrn K. am besten geeignet? Begründen Sie Ihre Wahl.</li>
 </ol>
-<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
@@ -1290,7 +1295,7 @@ Tabelle&nbsp;3: Normwerte des NEO-FFI nach dem NEO-FFI-Manual. NEU = Neurotizism
 <ol start="2" type="a">
 <li>Berechnen Sie den <span class="math inline">\(z\)</span>-Wert und den <span class="math inline">\(T\)</span>-Wert für Herrn K. auf der Dimension Gewissenhaftigkeit. Verwenden Sie dafür die bevölkerungsrepräsentative Quotenstichprobe als Normgruppe. Interpretieren Sie das Ergebnis.</li>
 </ol>
-<div class="callout callout-style-default callout-note callout-titled" title="Hinweis">
+<div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
@@ -1308,7 +1313,7 @@ z = \frac{x - M}{s}, \qquad T = 50 + 10 \cdot z
 </div>
 </div>
 </div>
-<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
@@ -1414,7 +1419,7 @@ Tabelle&nbsp;4: Häufigkeiten <span class="math inline">\(f\)</span> der Rohwert
 </div>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
-<div id="fig-frequencies" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center" alt="Balkendiagramm der Häufigkeiten der Rohwerte 17 bis 35. Die Häufigkeiten steigen langsam bis zum Gipfel bei Rohwert 30 und fallen danach steil ab; die Verteilung ist linksschief. Eine eingezeichnete Normalverteilungskurve mit Mittelwert 28 liegt links davon.">
+<div id="fig-frequencies" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Balkendiagramm der Häufigkeiten der Rohwerte 17 bis 35. Die Häufigkeiten steigen langsam bis zum Gipfel bei Rohwert 30 und fallen danach steil ab; die Verteilung ist linksschief. Eine eingezeichnete Normalverteilungskurve mit Mittelwert 28 liegt links davon." data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-frequencies-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="diagnostic-i-ex_files/figure-html/fig-frequencies-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" alt="Balkendiagramm der Häufigkeiten der Rohwerte 17 bis 35. Die Häufigkeiten steigen langsam bis zum Gipfel bei Rohwert 30 und fallen danach steil ab; die Verteilung ist linksschief. Eine eingezeichnete Normalverteilungskurve mit Mittelwert 28 liegt links davon." width="624">
@@ -1434,7 +1439,7 @@ PR_{\text{emp}}(x) = \frac{f_{\text{kum}}(x)}{N} \cdot 100
 <ol type="a">
 <li>Berechnen Sie den empirischen Prozentrang für Herrn K. anhand der Häufigkeitstabelle.</li>
 </ol>
-<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-9-contents" aria-controls="callout-9" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
@@ -1453,7 +1458,7 @@ PR_{\text{emp}}(x) = \frac{f_{\text{kum}}(x)}{N} \cdot 100
 <ol start="2" type="a">
 <li>Berechnen Sie den Prozentrang von Herrn K. unter der Annahme normalverteilter Testwerte.</li>
 </ol>
-<div class="callout callout-style-default callout-note callout-titled" title="Hinweis">
+<div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-10-contents" aria-controls="callout-10" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
@@ -1469,7 +1474,7 @@ PR_{\text{emp}}(x) = \frac{f_{\text{kum}}(x)}{N} \cdot 100
 </div>
 </div>
 </div>
-<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-11-contents" aria-controls="callout-11" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
@@ -1488,7 +1493,7 @@ PR_{\text{emp}}(x) = \frac{f_{\text{kum}}(x)}{N} \cdot 100
 <ol start="3" type="a">
 <li>Vergleichen Sie den empirischen mit dem normalverteilungsbasierten Prozentrang. Was fällt auf und wie lässt sich der Unterschied erklären?</li>
 </ol>
-<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-12-contents" aria-controls="callout-12" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
@@ -1514,7 +1519,7 @@ PR_{\text{emp}}(x) = \frac{f_{\text{kum}}(x)}{N} \cdot 100
 <ol type="a">
 <li>Formulieren Sie drei verschiedene Entscheidungsregeln (kompensatorische Regel, Oder-Regel, konjunktive Regel), mit denen die Kunsthochschule die beiden Hypothesen verknüpfen könnte.</li>
 </ol>
-<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-13-contents" aria-controls="callout-13" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
@@ -1537,7 +1542,7 @@ PR_{\text{emp}}(x) = \frac{f_{\text{kum}}(x)}{N} \cdot 100
 <ol start="2" type="a">
 <li>Skizzieren Sie in einem Koordinatensystem (IQ von 60 bis 140 auf der <span class="math inline">\(x\)</span>-Achse, <span class="math inline">\(T_{\text{Krea}}\)</span> von 20 bis 80 auf der <span class="math inline">\(y\)</span>-Achse) die Akzeptanzbereiche (positiver Entscheidungsbereich) der konjunktiven Regel und der Oder-Regel. Markieren Sie jeweils den positiven Bereich und die Grenzlinien.</li>
 </ol>
-<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-14-contents" aria-controls="callout-14" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
@@ -1575,7 +1580,7 @@ PR_{\text{emp}}(x) = \frac{f_{\text{kum}}(x)}{N} \cdot 100
 <ol start="3" type="a">
 <li>Wie fällt die Entscheidung unter der kompensatorischen Regel, der Oder-Regel und der konjunktiven Regel aus?</li>
 </ol>
-<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-15-contents" aria-controls="callout-15" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
@@ -1598,7 +1603,7 @@ PR_{\text{emp}}(x) = \frac{f_{\text{kum}}(x)}{N} \cdot 100
 <ol start="4" type="a">
 <li>Skizzieren Sie die kompensatorische Regel im Koordinatensystem. Zeichnen Sie die Kompensationsgerade, markieren Sie den positiven Bereich und tragen Sie Lisas Ergebnis ein.</li>
 </ol>
-<div class="callout callout-style-default callout-note callout-titled" title="Hinweis">
+<div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-16-contents" aria-controls="callout-16" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
@@ -1614,7 +1619,7 @@ PR_{\text{emp}}(x) = \frac{f_{\text{kum}}(x)}{N} \cdot 100
 </div>
 </div>
 </div>
-<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-17-contents" aria-controls="callout-17" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
@@ -1644,7 +1649,7 @@ PR_{\text{emp}}(x) = \frac{f_{\text{kum}}(x)}{N} \cdot 100
 <p><span class="theorem-title"><strong>Aufgabe 5 (Mischformen)</strong></span> In der Praxis werden die drei Entscheidungsregeln häufig zu Mischformen kombiniert. <a href="#fig-mixed-1" class="quarto-xref">Abbildung&nbsp;2</a> und <a href="#fig-mixed-2" class="quarto-xref">Abbildung&nbsp;3</a> zeigen zwei solche Mischformen, angewendet auf das Szenario der Kunsthochschule. Die Grenzen der Regeln sind in den Legenden angegeben.</p>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
-<div id="fig-mixed-1" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center" alt="Koordinatensystem mit IQ auf der x-Achse und Kreativität auf der y-Achse. Der positive Bereich liegt rechts von IQ 115, oberhalb von T-Wert 60 und oberhalb der Kompensationsgeraden. Lisa bei IQ 108 und T-Wert 44 liegt im negativen Bereich.">
+<div id="fig-mixed-1" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Koordinatensystem mit IQ auf der x-Achse und Kreativität auf der y-Achse. Der positive Bereich liegt rechts von IQ 115, oberhalb von T-Wert 60 und oberhalb der Kompensationsgeraden. Lisa bei IQ 108 und T-Wert 44 liegt im negativen Bereich." data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-mixed-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="diagnostic-i-ex_files/figure-html/fig-mixed-1-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" alt="Koordinatensystem mit IQ auf der x-Achse und Kreativität auf der y-Achse. Der positive Bereich liegt rechts von IQ 115, oberhalb von T-Wert 60 und oberhalb der Kompensationsgeraden. Lisa bei IQ 108 und T-Wert 44 liegt im negativen Bereich." width="528">
@@ -1658,7 +1663,7 @@ Abbildung&nbsp;2: Mischform 1
 </div>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
-<div id="fig-mixed-2" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center" alt="Koordinatensystem mit IQ auf der x-Achse und Kreativität auf der y-Achse. Der positive Bereich liegt rechts oben, begrenzt durch IQ 100, T-Wert 50 und eine Gerade, auf der die Summe der z-Werte 2 beträgt. Lisa bei IQ 108 und T-Wert 44 liegt im negativen Bereich.">
+<div id="fig-mixed-2" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Koordinatensystem mit IQ auf der x-Achse und Kreativität auf der y-Achse. Der positive Bereich liegt rechts oben, begrenzt durch IQ 100, T-Wert 50 und eine Gerade, auf der die Summe der z-Werte 2 beträgt. Lisa bei IQ 108 und T-Wert 44 liegt im negativen Bereich." data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-mixed-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="diagnostic-i-ex_files/figure-html/fig-mixed-2-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" alt="Koordinatensystem mit IQ auf der x-Achse und Kreativität auf der y-Achse. Der positive Bereich liegt rechts oben, begrenzt durch IQ 100, T-Wert 50 und eine Gerade, auf der die Summe der z-Werte 2 beträgt. Lisa bei IQ 108 und T-Wert 44 liegt im negativen Bereich." width="528">
@@ -1673,7 +1678,7 @@ Abbildung&nbsp;3: Mischform 2
 <ol type="a">
 <li>Beschreiben Sie die Entscheidungsregel in <a href="#fig-mixed-1" class="quarto-xref">Abbildung&nbsp;2</a>. Wie heißt diese Mischform, und aus welchen Regeln (kompensatorische Regel, Oder-Regel, konjunktive Regel) setzt sie sich zusammen? Wird Lisa nach dieser Entscheidungsregel angenommen oder nicht?</li>
 </ol>
-<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-18-contents" aria-controls="callout-18" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
@@ -1692,7 +1697,7 @@ Abbildung&nbsp;3: Mischform 2
 <ol start="2" type="a">
 <li>Beschreiben Sie die Entscheidungsregel in <a href="#fig-mixed-2" class="quarto-xref">Abbildung&nbsp;3</a>. Wie heißt diese Mischform, und aus welchen Regeln setzt sie sich zusammen? Wird Lisa nach dieser Entscheidungsregel angenommen oder nicht?</li>
 </ol>
-<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-19-contents" aria-controls="callout-19" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
@@ -1799,7 +1804,8 @@ Moosbrugger, H., &amp; Kelava, A. (Hrsg.). (2020). <em>Testtheorie und Frageboge
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }
       // Inspect non-navigation links and adorn them if external
-     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      window.quartoDecorateExternalLinks = function (root) {
+     var links = (root || window.document).querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
       for (var i=0; i<links.length; i++) {
         const link = links[i];
         if (!isInternal(link.href)) {
@@ -1808,8 +1814,69 @@ Moosbrugger, H., &amp; Kelava, A. (Hrsg.). (2020). <em>Testtheorie und Frageboge
           if (link.dataset.originalHref !== undefined) {
             link.href = link.dataset.originalHref;
           }
+          if (!link.classList.contains('no-external-icon')) {
+          }
         }
       }
+      };
+      window.quartoDecorateExternalLinks(window.document);
+    // Esc closes the popup (WCAG 1.4.13) and focus leaving both trigger and
+    // popup closes it (WCAG 2.4.11); tippy handles neither for interactive popups.
+    const hideOnEscAndFocusOut = {
+      name: 'hideOnEscAndFocusOut',
+      defaultValue: true,
+      fn(instance) {
+        const dismiss = () => {
+          // A show scheduled by the trigger delay would otherwise reopen it
+          instance.clearDelayTimeouts();
+          instance.hide();
+        };
+        const onKeyDown = (event) => {
+          if (event.key !== 'Escape') {
+            return;
+          }
+          // Keep Esc from also reaching page handlers (e.g. reveal.js overview),
+          // except an open reveal.js slide menu, which Esc should close too.
+          // The menu handles keys only when its keyboard option is on.
+          const menuHandlesEsc = window.Reveal?.getPlugin?.('menu')?.isOpen() &&
+            window.Reveal.getConfig().menu?.keyboard !== false;
+          if (!menuHandlesEsc) {
+            event.stopPropagation();
+          }
+          if (instance.popper.contains(window.document.activeElement)) {
+            // Disabled while refocusing so the focus trigger does not reopen it
+            instance.disable();
+            instance.reference.focus();
+            instance.enable();
+          }
+          dismiss();
+        };
+        const onFocusOut = (event) => {
+          const target = event.relatedTarget;
+          if (target && !instance.reference.contains(target) &&
+              !instance.popper.contains(target)) {
+            dismiss();
+          }
+        };
+        // On the trigger too: a click trigger (code-annotations: select) has no
+        // blur handling. Attached for the instance's lifetime so leaving the
+        // trigger also cancels a show still pending on the trigger delay.
+        instance.reference.addEventListener('focusout', onFocusOut);
+        return {
+          onShow() {
+            window.document.addEventListener('keydown', onKeyDown, true);
+            instance.popper.addEventListener('focusout', onFocusOut);
+          },
+          onHide() {
+            window.document.removeEventListener('keydown', onKeyDown, true);
+            instance.popper.removeEventListener('focusout', onFocusOut);
+          },
+          onDestroy() {
+            instance.reference.removeEventListener('focusout', onFocusOut);
+          },
+        };
+      },
+    };
     function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
       const config = {
         allowHTML: true,
@@ -1823,6 +1890,7 @@ Moosbrugger, H., &amp; Kelava, A. (Hrsg.). (2020). <em>Testtheorie und Frageboge
         interactiveBorder: 10,
         theme: 'quarto',
         placement: 'bottom-start',
+        plugins: [hideOnEscAndFocusOut],
       };
       if (contentFn) {
         config.content = contentFn;
@@ -1985,44 +2053,54 @@ Moosbrugger, H., &amp; Kelava, A. (Hrsg.). (2020). <em>Testtheorie und Frageboge
           const lineIds = lines.map((line) => {
             return targetCell + "-" + line;
           })
-          let top = null;
-          let height = null;
-          let parent = null;
+          // Each band is positioned against its own containing block, which is
+          // not the offsetParent of the lines, so place it from client rects.
+          const placeBand = (band, firstEl, lastEl, codeBlock) => {
+            const container = band.offsetParent;
+            if (container === null) {
+              return;
+            }
+            const containerRect = container.getBoundingClientRect();
+            // Reveal.js scales slides with a transform, so convert client
+            // pixels back to the CSS pixels of the container.
+            const scale = containerRect.height / container.offsetHeight || 1;
+            const firstRect = firstEl.getBoundingClientRect();
+            const lastRect = lastEl.getBoundingClientRect();
+            const top = (firstRect.top - containerRect.top) / scale - container.clientTop + container.scrollTop;
+            const height = (lastRect.bottom - firstRect.top) / scale;
+            band.style.top = top - 2 + "px";
+            band.style.height = height + 4 + "px";
+            if (codeBlock) {
+              // Without the copy button wrapper, the containing block is wider
+              // than the code block, so span the code block explicitly.
+              const blockRect = codeBlock.getBoundingClientRect();
+              band.style.left = (blockRect.left - containerRect.left) / scale - container.clientLeft + container.scrollLeft + "px";
+              band.style.width = blockRect.width / scale + "px";
+            }
+          };
           if (lineIds.length > 0) {
-              //compute the position of the single el (top and bottom and make a div)
-              const el = window.document.getElementById(lineIds[0]);
-              top = el.offsetTop;
-              height = el.offsetHeight;
-              parent = el.parentElement.parentElement;
-            if (lineIds.length > 1) {
-              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
-              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
-              height = bottom - top;
+            const el = window.document.getElementById(lineIds[0]);
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const parent = el.parentElement.parentElement;
+            // cook up a div (if necessary) and position it
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
             }
-            if (top !== null && height !== null && parent !== null) {
-              // cook up a div (if necessary) and position it 
-              let div = window.document.getElementById("code-annotation-line-highlight");
-              if (div === null) {
-                div = window.document.createElement("div");
-                div.setAttribute("id", "code-annotation-line-highlight");
-                div.style.position = 'absolute';
-                parent.appendChild(div);
-              }
-              div.style.top = top - 2 + "px";
-              div.style.height = height + 4 + "px";
-              div.style.left = 0;
-              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
-              if (gutterDiv === null) {
-                gutterDiv = window.document.createElement("div");
-                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
-                gutterDiv.style.position = 'absolute';
-                const codeCell = window.document.getElementById(targetCell);
-                const gutter = codeCell.querySelector('.code-annotation-gutter');
-                gutter.appendChild(gutterDiv);
-              }
-              gutterDiv.style.top = top - 2 + "px";
-              gutterDiv.style.height = height + 4 + "px";
+            placeBand(div, el, lastEl, parent.closest("div.sourceCode") || parent);
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
             }
+            placeBand(gutterDiv, el, lastEl);
             selectedAnnoteEl = annoteEl;
           }
         };
@@ -2120,6 +2198,9 @@ Moosbrugger, H., &amp; Kelava, A. (Hrsg.). (2020). <em>Testtheorie und Frageboge
       }
     }
   });
+  </script>
+  <script type="application/javascript">
+  window.quartoScrollableRegionsLabels = {"code":"Scrollbarer Code","output":"Scrollbare Ausgabe"};
   </script>
 </div> <!-- /content -->
 <footer class="footer">

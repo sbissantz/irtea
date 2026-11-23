@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="de" xml:lang="de"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.10.19">
+<meta name="generator" content="quarto-1.11.9">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -59,14 +59,15 @@ div.csl-indent {
 <link href="../images/logo.png" rel="icon" type="image/png">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/scrollable-regions/scrollable-regions.js" type="module"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-bf27225e3a48a9273f3daa8f8e829971.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-63b5708e65d6cd79cd7618c58d0c21e7.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-cbe15cd55579b32cf8c48135cfb2cd9e.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-6519365451b8d29e4b2635fa5bf158c1.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -127,11 +128,11 @@ window.Quarto = {
 
 </head>
 
-<body class="nav-fixed fullcontent quarto-light">
+<body class="nav-fixed fullcontent quarto-light"><a id="quarto-skip-link" class="visually-hidden-focusable" href="#quarto-document-content">Zum Hauptinhalt springen</a>
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
-    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark" aria-label="Website">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
     <a href="../index.html" class="navbar-brand navbar-brand-logo">
@@ -142,8 +143,7 @@ window.Quarto = {
     <span class="navbar-title">B.F.3 Diagnostik &amp; Testtheorie</span>
     </a>
   </div>
-            <div id="quarto-search" class="" title="Suchen"></div>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Navigation umschalten" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Navigation umschalten" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
@@ -168,6 +168,10 @@ window.Quarto = {
         <li>
     <a class="dropdown-item" href="../slides/construction-inp.html">
  <span class="dropdown-text">04 Schritte der Testkonstruktion</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../slides/ctt-inp.html">
+ <span class="dropdown-text">05 Klassische Testtheorie</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../slides/efa-inp.html">
@@ -230,6 +234,7 @@ window.Quarto = {
           </div> <!-- /navcollapse -->
             <div class="quarto-navbar-tools">
 </div>
+            <div id="quarto-search" class="" title="Suchen"></div>
       </div> <!-- /container-fluid -->
     </nav>
 </header>
@@ -239,7 +244,7 @@ window.Quarto = {
 <!-- margin-sidebar -->
     
 <!-- main -->
-<main class="content" id="quarto-document-content">
+<main class="content" id="quarto-document-content" tabindex="-1">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
@@ -260,7 +265,7 @@ window.Quarto = {
 </header>
 
 
-<div class="callout callout-style-default callout-important callout-titled" title="Work in Progress">
+<div class="callout callout-style-default callout-important callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
@@ -302,7 +307,7 @@ window.Quarto = {
 <ol type="a">
 <li>Eine Schulpsychologin prüft mit einem Konfidenzkoeffizienten von 99 %, ob die Rechenleistung eines Kindes unterdurchschnittlich ist.</li>
 </ol>
-<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
@@ -321,7 +326,7 @@ window.Quarto = {
 <ol start="2" type="a">
 <li>Eine Klinik prüft mit einem Konfidenzkoeffizienten von 95 %, ob ein Wert im Normalbereich liegt, also weder zu niedrig noch zu hoch ist.</li>
 </ol>
-<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
@@ -340,7 +345,7 @@ window.Quarto = {
 <ol start="3" type="a">
 <li>Ein Unternehmen prüft mit einem Konfidenzkoeffizienten von 95 %, ob eine Bewerberin überdurchschnittlich belastbar ist.</li>
 </ol>
-<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
@@ -359,7 +364,7 @@ window.Quarto = {
 </div>
 <div id="exr-standard-values" class="theorem exercise">
 <p><span class="theorem-title"><strong>Aufgabe 2 (Standardwerte)</strong></span> Eine Forschungsgruppe der RPTU untersucht, wie sich eine schlaflose Nacht auf die Konzentration auswirkt. Damit die Ergebnisse nicht von besonders schwachen oder besonders starken Ausgangswerten abhängen, nimmt sie nur Personen mit durchschnittlicher Konzentrationsleistung auf. Jonas ist 19, studiert im ersten Semester und sammelt Versuchspersonenstunden. Um abzuklären, ob Jonas’ Konzentrationsleistung durchschnittlich ist und er an der Studie teilnehmen kann, führt man mit ihm im Vorfeld den Aufmerksamkeits- und Konzentrationstest d2-R <span class="citation" data-cites="brickenkamp2010">(<a href="#ref-brickenkamp2010" role="doc-biblioref">Brickenkamp et al., 2010</a>)</span> durch. Für seine Konzentrationsleistung erhält Jonas einen Standardwert von 108. Nehmen Sie als Reliabilitätsschätzer Cronbachs Alpha von 0.90 an und prüfen Sie damit die Hypothese, ob Jonas’ Konzentrationsleistung im d2-R im Vergleich zu Gleichaltrigen im durchschnittlichen Bereich liegt (<span class="math inline">\(90 \le \text{SW} \le 110\)</span>).</p>
-<div class="callout callout-style-default callout-note callout-titled" title="Hinweis">
+<div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
@@ -386,7 +391,7 @@ KI_u = X - z_{\alpha} \cdot s_e \quad \text{bzw.} \quad KI_o = X + z_{\alpha} \c
 <ol type="a">
 <li>Berechnen Sie den Standardmessfehler.</li>
 </ol>
-<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
@@ -405,7 +410,7 @@ KI_u = X - z_{\alpha} \cdot s_e \quad \text{bzw.} \quad KI_o = X + z_{\alpha} \c
 <ol start="2" type="a">
 <li>Berechnen Sie das passende Konfidenzintervall mit einem Konfidenzkoeffizienten von 95 % um Jonas’ Standardwert.</li>
 </ol>
-<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
@@ -424,7 +429,7 @@ KI_u = X - z_{\alpha} \cdot s_e \quad \text{bzw.} \quad KI_o = X + z_{\alpha} \c
 <ol start="3" type="a">
 <li>Wie lässt sich das Intervall interpretieren?</li>
 </ol>
-<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
@@ -443,7 +448,7 @@ KI_u = X - z_{\alpha} \cdot s_e \quad \text{bzw.} \quad KI_o = X + z_{\alpha} \c
 <ol start="4" type="a">
 <li>Wird die Hypothese positiv oder negativ beantwortet?</li>
 </ol>
-<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-9-contents" aria-controls="callout-9" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
@@ -462,7 +467,7 @@ KI_u = X - z_{\alpha} \cdot s_e \quad \text{bzw.} \quad KI_o = X + z_{\alpha} \c
 <ol start="5" type="a">
 <li>Was folgt daraus für die globale Fragestellung?</li>
 </ol>
-<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-10-contents" aria-controls="callout-10" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
@@ -481,7 +486,7 @@ KI_u = X - z_{\alpha} \cdot s_e \quad \text{bzw.} \quad KI_o = X + z_{\alpha} \c
 <ol start="6" type="a">
 <li>Zwischen welchen Standardwerten muss ein Messwert im d2-R liegen, damit die Hypothese bei dieser Reliabilität positiv beantwortet wird?</li>
 </ol>
-<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-11-contents" aria-controls="callout-11" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
@@ -500,7 +505,7 @@ KI_u = X - z_{\alpha} \cdot s_e \quad \text{bzw.} \quad KI_o = X + z_{\alpha} \c
 </div>
 <div id="exr-giftedness" class="theorem exercise">
 <p><span class="theorem-title"><strong>Aufgabe 3 (Hochbegabung)</strong></span> Ida ist 13 und besucht die 7. Klasse eines Gymnasiums. In Mathematik löst sie die Aufgaben schneller als ihre Mitschüler:innen, und in ihrer Freizeit programmiert sie gerne kleine Computerspiele. Im Unterricht langweilt sie sich und zieht sich immer mehr zurück. Ihre Eltern schlagen deshalb vor, Ida auf eine Schule mit besonderer Förderung für hochbegabte Kinder zu schicken. Diese Schule verlangt im Berliner Intelligenzstrukturtest für Jugendliche <span class="citation" data-cites="jaeger2006">(BIS-HB, <a href="#ref-jaeger2006" role="doc-biblioref">Jäger et al., 2006</a>)</span> einen IQ im Bereich der Hochbegabung, also über 130, und bittet die Eltern, sich an den schulpsychologischen Dienst zu wenden. Ida erhält im BIS-HB einen IQ von 134. Nehmen Sie an, dass das Testmanual für Idas Altersgruppe als Reliabilitätsschätzer Cronbachs Alpha von 0.95 und eine Retest-Reliabilität von 0.85 angibt. Prüfen Sie die Hypothese, ob Idas IQ im BIS-HB im Vergleich zu Gleichaltrigen im Bereich der Hochbegabung liegt (<span class="math inline">\(\text{IQ} &gt; 130\)</span>).</p>
-<div class="callout callout-style-default callout-note callout-titled" title="Hinweis">
+<div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-12-contents" aria-controls="callout-12" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
@@ -519,7 +524,7 @@ KI_u = X - z_{\alpha} \cdot s_e \quad \text{bzw.} \quad KI_o = X + z_{\alpha} \c
 <ol type="a">
 <li>Welchen Reliabilitätsschätzer verwenden Sie? Begründen Sie Ihre Antwort.</li>
 </ol>
-<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-13-contents" aria-controls="callout-13" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
@@ -538,7 +543,7 @@ KI_u = X - z_{\alpha} \cdot s_e \quad \text{bzw.} \quad KI_o = X + z_{\alpha} \c
 <ol start="2" type="a">
 <li>Welchen Konfidenzkoeffizienten würden Sie wählen? Begründen Sie Ihre Antwort.</li>
 </ol>
-<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-14-contents" aria-controls="callout-14" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
@@ -557,7 +562,7 @@ KI_u = X - z_{\alpha} \cdot s_e \quad \text{bzw.} \quad KI_o = X + z_{\alpha} \c
 <ol start="3" type="a">
 <li>Würden Sie ein ein- oder ein zweiseitiges Konfidenzintervall berechnen? Begründen Sie Ihre Antwort.</li>
 </ol>
-<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-15-contents" aria-controls="callout-15" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
@@ -576,7 +581,7 @@ KI_u = X - z_{\alpha} \cdot s_e \quad \text{bzw.} \quad KI_o = X + z_{\alpha} \c
 <ol start="4" type="a">
 <li>Nehmen Sie einen Konfidenzkoeffizienten von 95 % an und berechnen Sie das entsprechende Konfidenzintervall.</li>
 </ol>
-<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-16-contents" aria-controls="callout-16" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
@@ -595,7 +600,7 @@ KI_u = X - z_{\alpha} \cdot s_e \quad \text{bzw.} \quad KI_o = X + z_{\alpha} \c
 <ol start="5" type="a">
 <li>Wird die Hypothese positiv oder negativ beantwortet?</li>
 </ol>
-<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-17-contents" aria-controls="callout-17" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
@@ -614,7 +619,7 @@ KI_u = X - z_{\alpha} \cdot s_e \quad \text{bzw.} \quad KI_o = X + z_{\alpha} \c
 <ol start="6" type="a">
 <li>Was folgt daraus für die globale Fragestellung?</li>
 </ol>
-<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-18-contents" aria-controls="callout-18" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
@@ -638,7 +643,7 @@ KI_u = X - z_{\alpha} \cdot s_e \quad \text{bzw.} \quad KI_o = X + z_{\alpha} \c
 <li>H2: Liegt Dragans Wert auf der Skala Gewissenhaftigkeit des BFI-2 im Vergleich zu Gleichaltrigen mindestens im durchschnittlichen Bereich (<span class="math inline">\(T \ge 40\)</span>)?</li>
 </ul>
 <p>Dragan erreicht im d2-R einen Standardwert von 102 und im BFI-2 einen <em>T</em>-Wert von 52. Nehmen Sie als Reliabilitätsschätzer Cronbachs Alpha von 0.90 für den d2-R und von 0.85 für das BFI-2 an.</p>
-<div class="callout callout-style-default callout-note callout-titled" title="Hinweis">
+<div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-19-contents" aria-controls="callout-19" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
@@ -657,7 +662,7 @@ KI_u = X - z_{\alpha} \cdot s_e \quad \text{bzw.} \quad KI_o = X + z_{\alpha} \c
 <ol type="a">
 <li>Welchen Konfidenzkoeffizienten würden Sie wählen? Begründen Sie Ihre Antwort.</li>
 </ol>
-<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-20-contents" aria-controls="callout-20" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
@@ -676,7 +681,7 @@ KI_u = X - z_{\alpha} \cdot s_e \quad \text{bzw.} \quad KI_o = X + z_{\alpha} \c
 <ol start="2" type="a">
 <li>Berechnen Sie für beide Hypothesen das passende Konfidenzintervall mit einem Konfidenzkoeffizienten von 99 %.</li>
 </ol>
-<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-21-contents" aria-controls="callout-21" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
@@ -695,7 +700,7 @@ KI_u = X - z_{\alpha} \cdot s_e \quad \text{bzw.} \quad KI_o = X + z_{\alpha} \c
 <ol start="3" type="a">
 <li>Werden H1 und H2 positiv oder negativ beantwortet?</li>
 </ol>
-<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-22-contents" aria-controls="callout-22" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
@@ -714,7 +719,7 @@ KI_u = X - z_{\alpha} \cdot s_e \quad \text{bzw.} \quad KI_o = X + z_{\alpha} \c
 <ol start="4" type="a">
 <li>Welche Entscheidungsregel legt die Aufgabenstellung fest?</li>
 </ol>
-<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-23-contents" aria-controls="callout-23" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
@@ -733,7 +738,7 @@ KI_u = X - z_{\alpha} \cdot s_e \quad \text{bzw.} \quad KI_o = X + z_{\alpha} \c
 <ol start="5" type="a">
 <li>Was folgt daraus für die globale Fragestellung?</li>
 </ol>
-<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-24-contents" aria-controls="callout-24" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
@@ -752,7 +757,7 @@ KI_u = X - z_{\alpha} \cdot s_e \quad \text{bzw.} \quad KI_o = X + z_{\alpha} \c
 <ol start="6" type="a">
 <li>Wie fiele die Entscheidung mit einem Konfidenzkoeffizienten von 95 % aus?</li>
 </ol>
-<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-25-contents" aria-controls="callout-25" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
@@ -830,7 +835,7 @@ KI_u = X - z_{\alpha} \cdot s_e \quad \text{bzw.} \quad KI_o = X + z_{\alpha} \c
 <ol type="a">
 <li>Berechnen Sie den Summenwert, den die Hypothese betrifft.</li>
 </ol>
-<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-26-contents" aria-controls="callout-26" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
@@ -849,7 +854,7 @@ KI_u = X - z_{\alpha} \cdot s_e \quad \text{bzw.} \quad KI_o = X + z_{\alpha} \c
 <ol start="2" type="a">
 <li>Welches Messmodell wird in Teil a angenommen?</li>
 </ol>
-<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-27-contents" aria-controls="callout-27" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
@@ -868,7 +873,7 @@ KI_u = X - z_{\alpha} \cdot s_e \quad \text{bzw.} \quad KI_o = X + z_{\alpha} \c
 <ol start="3" type="a">
 <li>Rechnen Sie Noras Summenwert in einen <em>z</em>-Wert um.</li>
 </ol>
-<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-28-contents" aria-controls="callout-28" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
@@ -887,7 +892,7 @@ KI_u = X - z_{\alpha} \cdot s_e \quad \text{bzw.} \quad KI_o = X + z_{\alpha} \c
 <ol start="4" type="a">
 <li>Berechnen Sie das passende Konfidenzintervall um Noras <em>z</em>-Wert.</li>
 </ol>
-<div class="callout callout-style-default callout-note callout-titled" title="Hinweis">
+<div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-29-contents" aria-controls="callout-29" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
@@ -903,7 +908,7 @@ KI_u = X - z_{\alpha} \cdot s_e \quad \text{bzw.} \quad KI_o = X + z_{\alpha} \c
 </div>
 </div>
 </div>
-<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-30-contents" aria-controls="callout-30" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
@@ -922,7 +927,7 @@ KI_u = X - z_{\alpha} \cdot s_e \quad \text{bzw.} \quad KI_o = X + z_{\alpha} \c
 <ol start="5" type="a">
 <li>Wird die Hypothese positiv oder negativ beantwortet?</li>
 </ol>
-<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-31-contents" aria-controls="callout-31" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
@@ -941,7 +946,7 @@ KI_u = X - z_{\alpha} \cdot s_e \quad \text{bzw.} \quad KI_o = X + z_{\alpha} \c
 <ol start="6" type="a">
 <li>Was folgt daraus für die Empfehlung der Psychologin?</li>
 </ol>
-<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-32-contents" aria-controls="callout-32" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
@@ -960,7 +965,7 @@ KI_u = X - z_{\alpha} \cdot s_e \quad \text{bzw.} \quad KI_o = X + z_{\alpha} \c
 <ol start="7" type="a">
 <li>Ist die NARQ-S für diese Einzelfallentscheidung gut geeignet? Begründen Sie Ihre Antwort.</li>
 </ol>
-<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-33-contents" aria-controls="callout-33" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
@@ -1012,7 +1017,7 @@ Tabelle&nbsp;1: Konfusionsmatrix des LRS-Screenings bei 400 Kindern
 <ol type="a">
 <li>Ordnen Sie den vier Zellen der Konfusionsmatrix die Begriffe richtig positiv (RP, Treffer), falsch positiv (FP, falscher Alarm), falsch negativ (FN, Verpasser) und richtig negativ (RN, korrekte Ablehnung) zu.</li>
 </ol>
-<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-34-contents" aria-controls="callout-34" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
@@ -1031,7 +1036,7 @@ Tabelle&nbsp;1: Konfusionsmatrix des LRS-Screenings bei 400 Kindern
 <ol start="2" type="a">
 <li>Berechnen Sie Sensitivität und Spezifität des Screenings.</li>
 </ol>
-<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-35-contents" aria-controls="callout-35" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
@@ -1050,7 +1055,7 @@ Tabelle&nbsp;1: Konfusionsmatrix des LRS-Screenings bei 400 Kindern
 <ol start="3" type="a">
 <li>Berechnen Sie den Youden-Index.</li>
 </ol>
-<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-36-contents" aria-controls="callout-36" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
@@ -1069,7 +1074,7 @@ Tabelle&nbsp;1: Konfusionsmatrix des LRS-Screenings bei 400 Kindern
 <ol start="4" type="a">
 <li>Interpretieren Sie die Sensitivität und Spezifität inhaltlich.</li>
 </ol>
-<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-37-contents" aria-controls="callout-37" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
@@ -1114,7 +1119,7 @@ Tabelle&nbsp;1: Konfusionsmatrix des LRS-Screenings bei 400 Kindern
 </tr>
 </tbody>
 </table>
-<div class="callout callout-style-default callout-note callout-titled" title="Hinweis">
+<div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-38-contents" aria-controls="callout-38" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
@@ -1139,7 +1144,7 @@ Tabelle&nbsp;1: Konfusionsmatrix des LRS-Screenings bei 400 Kindern
 </div>
 </div>
 </div>
-<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-39-contents" aria-controls="callout-39" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
@@ -1158,7 +1163,7 @@ Tabelle&nbsp;1: Konfusionsmatrix des LRS-Screenings bei 400 Kindern
 <ol start="6" type="a">
 <li>Die Schulen entscheiden sich trotzdem für den Schwellenwert 11.5. Wie verändern sich Sensitivität und Spezifität dadurch, und warum könnte diese Entscheidung sinnvoll sein?</li>
 </ol>
-<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-40-contents" aria-controls="callout-40" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
@@ -1177,7 +1182,7 @@ Tabelle&nbsp;1: Konfusionsmatrix des LRS-Screenings bei 400 Kindern
 </div>
 <div id="exr-accuracy" class="theorem exercise">
 <p><span class="theorem-title"><strong>Aufgabe 7 (Diagnostische Genauigkeit)</strong></span> Die Schulen aus <a href="#exr-classification" class="quarto-xref">Aufgabe&nbsp;6</a> möchten die Güte des Screenings in einer einzigen Zahl ausdrücken. Sie schlagen dafür die diagnostische Genauigkeit (engl. accuracy) vor, die sich aus der Konfusionsmatrix in <a href="#tbl-confusion" class="quarto-xref">Tabelle&nbsp;1</a> ergibt.</p>
-<div class="callout callout-style-default callout-note callout-titled" title="Hinweis">
+<div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
@@ -1195,7 +1200,7 @@ Tabelle&nbsp;1: Konfusionsmatrix des LRS-Screenings bei 400 Kindern
 <ol type="a">
 <li>Was gibt die diagnostische Genauigkeit an?</li>
 </ol>
-<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-42-contents" aria-controls="callout-42" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
@@ -1214,7 +1219,7 @@ Tabelle&nbsp;1: Konfusionsmatrix des LRS-Screenings bei 400 Kindern
 <ol start="2" type="a">
 <li>Berechnen Sie die diagnostische Genauigkeit des Screenings.</li>
 </ol>
-<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-43-contents" aria-controls="callout-43" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
@@ -1233,7 +1238,7 @@ Tabelle&nbsp;1: Konfusionsmatrix des LRS-Screenings bei 400 Kindern
 <ol start="3" type="a">
 <li>Berechnen Sie die Prävalenz (auch Basisrate), also den Anteil der Kinder mit LRS.</li>
 </ol>
-<div class="callout callout-style-default callout-note callout-titled" title="Hinweis">
+<div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-44-contents" aria-controls="callout-44" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
@@ -1251,7 +1256,7 @@ Tabelle&nbsp;1: Konfusionsmatrix des LRS-Screenings bei 400 Kindern
 </div>
 </div>
 </div>
-<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-45-contents" aria-controls="callout-45" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
@@ -1270,7 +1275,7 @@ Tabelle&nbsp;1: Konfusionsmatrix des LRS-Screenings bei 400 Kindern
 <ol start="4" type="a">
 <li>Eine Lehrerin schlägt vor, auf das Screening zu verzichten und einfach jedes Kind als unauffällig einzustufen. Wie hoch wäre die diagnostische Genauigkeit dieser Regel?</li>
 </ol>
-<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-46-contents" aria-controls="callout-46" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
@@ -1289,7 +1294,7 @@ Tabelle&nbsp;1: Konfusionsmatrix des LRS-Screenings bei 400 Kindern
 <ol start="5" type="a">
 <li>Welche Sensitivität und welchen Youden-Index hätte die Regel aus Teil d?</li>
 </ol>
-<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-47-contents" aria-controls="callout-47" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
@@ -1308,7 +1313,7 @@ Tabelle&nbsp;1: Konfusionsmatrix des LRS-Screenings bei 400 Kindern
 <ol start="6" type="a">
 <li>Was folgt daraus für die diagnostische Genauigkeit als Gütemaß?</li>
 </ol>
-<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-48-contents" aria-controls="callout-48" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
@@ -1339,7 +1344,7 @@ Tabelle&nbsp;1: Konfusionsmatrix des LRS-Screenings bei 400 Kindern
 <ol type="a">
 <li>Welches Screening trennt Kinder mit und ohne LRS am besten, welches kaum besser als der Zufall? Begründen Sie Ihre Antwort.</li>
 </ol>
-<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-49-contents" aria-controls="callout-49" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
@@ -1358,7 +1363,7 @@ Tabelle&nbsp;1: Konfusionsmatrix des LRS-Screenings bei 400 Kindern
 <ol start="2" type="a">
 <li>Ordnen Sie die Punkte 1 bis 3 den drei Schwellenwerten aus Teil e von <a href="#exr-classification" class="quarto-xref">Aufgabe&nbsp;6</a> zu.</li>
 </ol>
-<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-50-contents" aria-controls="callout-50" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
@@ -1377,7 +1382,7 @@ Tabelle&nbsp;1: Konfusionsmatrix des LRS-Screenings bei 400 Kindern
 <ol start="3" type="a">
 <li>An welchem der drei Punkte verläuft eine Tangente an die Kurve am ehesten parallel zur Diagonalen? Was bedeutet das?</li>
 </ol>
-<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-51-contents" aria-controls="callout-51" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
@@ -1396,7 +1401,7 @@ Tabelle&nbsp;1: Konfusionsmatrix des LRS-Screenings bei 400 Kindern
 <ol start="4" type="a">
 <li>Im Nachbarlandkreis haben nur 5 % der Kinder LRS. Ändert sich dort die ROC-Kurve von Screening B? Ändert sich die diagnostische Genauigkeit aus <a href="#exr-accuracy" class="quarto-xref">Aufgabe&nbsp;7</a>?</li>
 </ol>
-<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-52-contents" aria-controls="callout-52" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
@@ -1432,7 +1437,7 @@ Tabelle&nbsp;1: Konfusionsmatrix des LRS-Screenings bei 400 Kindern
 <ol type="a">
 <li>Berechnen Sie den Cut-off nach Kriterium 2.</li>
 </ol>
-<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-53-contents" aria-controls="callout-53" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
@@ -1451,7 +1456,7 @@ Tabelle&nbsp;1: Konfusionsmatrix des LRS-Screenings bei 400 Kindern
 <ol start="2" type="a">
 <li>Berechnen Sie den Reliable Change Index (RC) für Ole.</li>
 </ol>
-<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-54-contents" aria-controls="callout-54" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
@@ -1470,7 +1475,7 @@ Tabelle&nbsp;1: Konfusionsmatrix des LRS-Screenings bei 400 Kindern
 <ol start="3" type="a">
 <li>Wird H1 positiv oder negativ beantwortet?</li>
 </ol>
-<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-55-contents" aria-controls="callout-55" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
@@ -1489,7 +1494,7 @@ Tabelle&nbsp;1: Konfusionsmatrix des LRS-Screenings bei 400 Kindern
 <ol start="4" type="a">
 <li>Wird H2 positiv oder negativ beantwortet?</li>
 </ol>
-<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-56-contents" aria-controls="callout-56" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
@@ -1508,7 +1513,7 @@ Tabelle&nbsp;1: Konfusionsmatrix des LRS-Screenings bei 400 Kindern
 <ol start="5" type="a">
 <li>Was folgt daraus für die globale Fragestellung?</li>
 </ol>
-<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-57-contents" aria-controls="callout-57" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
@@ -1527,7 +1532,7 @@ Tabelle&nbsp;1: Konfusionsmatrix des LRS-Screenings bei 400 Kindern
 <ol start="6" type="a">
 <li>In welche Veränderungskategorie fällt Ole? Begründen Sie Ihre Antwort mithilfe der Abbildung.</li>
 </ol>
-<div class="callout callout-style-default callout-note callout-titled" title="Hinweis">
+<div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-58-contents" aria-controls="callout-58" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
@@ -1552,7 +1557,7 @@ Tabelle&nbsp;1: Konfusionsmatrix des LRS-Screenings bei 400 Kindern
 </div>
 </div>
 </div>
-<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-59-contents" aria-controls="callout-59" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
@@ -1677,7 +1682,8 @@ Soto, C. J., &amp; John, O. P. (2017). The next Big Five Inventory (<span>BFI-2<
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }
       // Inspect non-navigation links and adorn them if external
-     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      window.quartoDecorateExternalLinks = function (root) {
+     var links = (root || window.document).querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
       for (var i=0; i<links.length; i++) {
         const link = links[i];
         if (!isInternal(link.href)) {
@@ -1686,8 +1692,69 @@ Soto, C. J., &amp; John, O. P. (2017). The next Big Five Inventory (<span>BFI-2<
           if (link.dataset.originalHref !== undefined) {
             link.href = link.dataset.originalHref;
           }
+          if (!link.classList.contains('no-external-icon')) {
+          }
         }
       }
+      };
+      window.quartoDecorateExternalLinks(window.document);
+    // Esc closes the popup (WCAG 1.4.13) and focus leaving both trigger and
+    // popup closes it (WCAG 2.4.11); tippy handles neither for interactive popups.
+    const hideOnEscAndFocusOut = {
+      name: 'hideOnEscAndFocusOut',
+      defaultValue: true,
+      fn(instance) {
+        const dismiss = () => {
+          // A show scheduled by the trigger delay would otherwise reopen it
+          instance.clearDelayTimeouts();
+          instance.hide();
+        };
+        const onKeyDown = (event) => {
+          if (event.key !== 'Escape') {
+            return;
+          }
+          // Keep Esc from also reaching page handlers (e.g. reveal.js overview),
+          // except an open reveal.js slide menu, which Esc should close too.
+          // The menu handles keys only when its keyboard option is on.
+          const menuHandlesEsc = window.Reveal?.getPlugin?.('menu')?.isOpen() &&
+            window.Reveal.getConfig().menu?.keyboard !== false;
+          if (!menuHandlesEsc) {
+            event.stopPropagation();
+          }
+          if (instance.popper.contains(window.document.activeElement)) {
+            // Disabled while refocusing so the focus trigger does not reopen it
+            instance.disable();
+            instance.reference.focus();
+            instance.enable();
+          }
+          dismiss();
+        };
+        const onFocusOut = (event) => {
+          const target = event.relatedTarget;
+          if (target && !instance.reference.contains(target) &&
+              !instance.popper.contains(target)) {
+            dismiss();
+          }
+        };
+        // On the trigger too: a click trigger (code-annotations: select) has no
+        // blur handling. Attached for the instance's lifetime so leaving the
+        // trigger also cancels a show still pending on the trigger delay.
+        instance.reference.addEventListener('focusout', onFocusOut);
+        return {
+          onShow() {
+            window.document.addEventListener('keydown', onKeyDown, true);
+            instance.popper.addEventListener('focusout', onFocusOut);
+          },
+          onHide() {
+            window.document.removeEventListener('keydown', onKeyDown, true);
+            instance.popper.removeEventListener('focusout', onFocusOut);
+          },
+          onDestroy() {
+            instance.reference.removeEventListener('focusout', onFocusOut);
+          },
+        };
+      },
+    };
     function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
       const config = {
         allowHTML: true,
@@ -1701,6 +1768,7 @@ Soto, C. J., &amp; John, O. P. (2017). The next Big Five Inventory (<span>BFI-2<
         interactiveBorder: 10,
         theme: 'quarto',
         placement: 'bottom-start',
+        plugins: [hideOnEscAndFocusOut],
       };
       if (contentFn) {
         config.content = contentFn;
@@ -1863,44 +1931,54 @@ Soto, C. J., &amp; John, O. P. (2017). The next Big Five Inventory (<span>BFI-2<
           const lineIds = lines.map((line) => {
             return targetCell + "-" + line;
           })
-          let top = null;
-          let height = null;
-          let parent = null;
+          // Each band is positioned against its own containing block, which is
+          // not the offsetParent of the lines, so place it from client rects.
+          const placeBand = (band, firstEl, lastEl, codeBlock) => {
+            const container = band.offsetParent;
+            if (container === null) {
+              return;
+            }
+            const containerRect = container.getBoundingClientRect();
+            // Reveal.js scales slides with a transform, so convert client
+            // pixels back to the CSS pixels of the container.
+            const scale = containerRect.height / container.offsetHeight || 1;
+            const firstRect = firstEl.getBoundingClientRect();
+            const lastRect = lastEl.getBoundingClientRect();
+            const top = (firstRect.top - containerRect.top) / scale - container.clientTop + container.scrollTop;
+            const height = (lastRect.bottom - firstRect.top) / scale;
+            band.style.top = top - 2 + "px";
+            band.style.height = height + 4 + "px";
+            if (codeBlock) {
+              // Without the copy button wrapper, the containing block is wider
+              // than the code block, so span the code block explicitly.
+              const blockRect = codeBlock.getBoundingClientRect();
+              band.style.left = (blockRect.left - containerRect.left) / scale - container.clientLeft + container.scrollLeft + "px";
+              band.style.width = blockRect.width / scale + "px";
+            }
+          };
           if (lineIds.length > 0) {
-              //compute the position of the single el (top and bottom and make a div)
-              const el = window.document.getElementById(lineIds[0]);
-              top = el.offsetTop;
-              height = el.offsetHeight;
-              parent = el.parentElement.parentElement;
-            if (lineIds.length > 1) {
-              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
-              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
-              height = bottom - top;
+            const el = window.document.getElementById(lineIds[0]);
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const parent = el.parentElement.parentElement;
+            // cook up a div (if necessary) and position it
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
             }
-            if (top !== null && height !== null && parent !== null) {
-              // cook up a div (if necessary) and position it 
-              let div = window.document.getElementById("code-annotation-line-highlight");
-              if (div === null) {
-                div = window.document.createElement("div");
-                div.setAttribute("id", "code-annotation-line-highlight");
-                div.style.position = 'absolute';
-                parent.appendChild(div);
-              }
-              div.style.top = top - 2 + "px";
-              div.style.height = height + 4 + "px";
-              div.style.left = 0;
-              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
-              if (gutterDiv === null) {
-                gutterDiv = window.document.createElement("div");
-                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
-                gutterDiv.style.position = 'absolute';
-                const codeCell = window.document.getElementById(targetCell);
-                const gutter = codeCell.querySelector('.code-annotation-gutter');
-                gutter.appendChild(gutterDiv);
-              }
-              gutterDiv.style.top = top - 2 + "px";
-              gutterDiv.style.height = height + 4 + "px";
+            placeBand(div, el, lastEl, parent.closest("div.sourceCode") || parent);
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
             }
+            placeBand(gutterDiv, el, lastEl);
             selectedAnnoteEl = annoteEl;
           }
         };
@@ -1998,6 +2076,9 @@ Soto, C. J., &amp; John, O. P. (2017). The next Big Five Inventory (<span>BFI-2<
       }
     }
   });
+  </script>
+  <script type="application/javascript">
+  window.quartoScrollableRegionsLabels = {"code":"Scrollbarer Code","output":"Scrollbare Ausgabe"};
   </script>
 </div> <!-- /content -->
 <footer class="footer">

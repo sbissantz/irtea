@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="de" xml:lang="de"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.10.19">
+<meta name="generator" content="quarto-1.11.9">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -59,14 +59,15 @@ div.csl-indent {
 <link href="../images/logo.png" rel="icon" type="image/png">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/scrollable-regions/scrollable-regions.js" type="module"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-bf27225e3a48a9273f3daa8f8e829971.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-63b5708e65d6cd79cd7618c58d0c21e7.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-cbe15cd55579b32cf8c48135cfb2cd9e.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-6519365451b8d29e4b2635fa5bf158c1.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -127,11 +128,11 @@ window.Quarto = {
 
 </head>
 
-<body class="nav-fixed fullcontent quarto-light">
+<body class="nav-fixed fullcontent quarto-light"><a id="quarto-skip-link" class="visually-hidden-focusable" href="#quarto-document-content">Zum Hauptinhalt springen</a>
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
-    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark" aria-label="Website">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
     <a href="../index.html" class="navbar-brand navbar-brand-logo">
@@ -142,8 +143,7 @@ window.Quarto = {
     <span class="navbar-title">B.F.3 Diagnostik &amp; Testtheorie</span>
     </a>
   </div>
-            <div id="quarto-search" class="" title="Suchen"></div>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Navigation umschalten" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Navigation umschalten" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
@@ -168,6 +168,10 @@ window.Quarto = {
         <li>
     <a class="dropdown-item" href="../slides/construction-inp.html">
  <span class="dropdown-text">04 Schritte der Testkonstruktion</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../slides/ctt-inp.html">
+ <span class="dropdown-text">05 Klassische Testtheorie</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../slides/efa-inp.html">
@@ -230,6 +234,7 @@ window.Quarto = {
           </div> <!-- /navcollapse -->
             <div class="quarto-navbar-tools">
 </div>
+            <div id="quarto-search" class="" title="Suchen"></div>
       </div> <!-- /container-fluid -->
     </nav>
 </header>
@@ -239,7 +244,7 @@ window.Quarto = {
 <!-- margin-sidebar -->
     
 <!-- main -->
-<main class="content" id="quarto-document-content">
+<main class="content" id="quarto-document-content" tabindex="-1">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
@@ -260,19 +265,6 @@ window.Quarto = {
 </header>
 
 
-<div class="callout callout-style-default callout-important callout-titled" title="Work in Progress">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Wichtig</span>Work in Progress
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Dieses Kapitel wird derzeit intern überarbeitet. Aufgaben, Daten und Lösungen können sich noch ändern. Bitte bearbeiten Sie die Aufgaben erst, wenn die Überarbeitung abgeschlossen ist und dieser Hinweis entfernt wurde.</p>
-</div>
-</div>
 <div id="exr-ctt-error-types" class="theorem exercise">
 <p><span class="theorem-title"><strong>Aufgabe 1 (Messfehler)</strong></span> In der Klassischen Testtheorie (KTT) wird jeder beobachtete Messwert <span class="math inline">\(X\)</span> zerlegt in einen <em>wahren Wert</em> <span class="math inline">\(T\)</span> und einen <em>Messfehler</em> <span class="math inline">\(E\)</span>:</p>
 <p><span class="math display">\[
@@ -297,7 +289,26 @@ Abbildung&nbsp;1: Verteilung gemessener Werte bei wahrem Wert <span class="math 
 <ol type="a">
 <li>Auf welcher der Abbildungen ist ein <em>systematischer</em> Messfehler zu sehen? Begründen Sie Ihre Antwort.</li>
 </ol>
-<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tipp</span>Lösung
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Abbildung A: Die Messwerte liegen im Mittel über <span class="math inline">\(T = 100\)</span>.</p>
+</div>
+</div>
+</div>
+<ol start="2" type="a">
+<li>Finden Sie jeweils ein Beispiel für eine wiederholte Messung, die zu den Bedingungen der Abbildungen A, B und C passt.</li>
+</ol>
+<div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
@@ -308,25 +319,6 @@ Abbildung&nbsp;1: Verteilung gemessener Werte bei wahrem Wert <span class="math 
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
 <div id="callout-2" class="callout-2-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<p>Abbildung A: Die Messwerte liegen im Mittel über <span class="math inline">\(T = 100\)</span>.</p>
-</div>
-</div>
-</div>
-<ol start="2" type="a">
-<li>Finden Sie jeweils ein Beispiel für eine wiederholte Messung, die zu den Bedingungen der Abbildungen A, B und C passt.</li>
-</ol>
-<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Tipp</span>Lösung
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-3" class="callout-3-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <ul>
 <li>A: Reaktionszeittest mit einer Geräteverzögerung, sodass alle Reaktionszeiten zu lang erfasst werden.</li>
@@ -339,8 +331,8 @@ Abbildung&nbsp;1: Verteilung gemessener Werte bei wahrem Wert <span class="math 
 <ol start="3" type="a">
 <li>Begründen Sie, warum es innerhalb von psychologischen Messungen (z. B. Leistungs- und Persönlichkeitstests) oft problematisch ist, wenn man eine Messung wiederholt mit demselben Messinstrument durchführt.</li>
 </ol>
-<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -349,7 +341,7 @@ Abbildung&nbsp;1: Verteilung gemessener Werte bei wahrem Wert <span class="math 
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-4" class="callout-4-contents callout-collapse collapse">
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <ul>
 <li>Erinnerungseffekte</li>
@@ -374,8 +366,8 @@ Abbildung&nbsp;1: Verteilung gemessener Werte bei wahrem Wert <span class="math 
 <li>Bei einer Person funktioniert der Kugelschreiber, mit dem sie den Konzentrationstest bearbeitet, nicht richtig, sodass sie weniger Aufgaben schafft.</li>
 </ol></li>
 </ol>
-<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -384,7 +376,7 @@ Abbildung&nbsp;1: Verteilung gemessener Werte bei wahrem Wert <span class="math 
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-5" class="callout-5-contents callout-collapse collapse">
+<div id="callout-4" class="callout-4-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <ol type="1">
 <li>Unsystematisch: Die Müdigkeit betrifft nur diese eine Person in dieser einen Testsituation.</li>
@@ -398,7 +390,26 @@ Abbildung&nbsp;1: Verteilung gemessener Werte bei wahrem Wert <span class="math 
 <ol start="2" type="a">
 <li>Um welche Art von Einfluss auf die Messung handelt es sich dabei?</li>
 </ol>
-<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tipp</span>Lösung
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-5" class="callout-5-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Um einen systematischen Messfehler, denn alle Bewerber:innen der Gruppe sind betroffen.</p>
+</div>
+</div>
+</div>
+<ol start="3" type="a">
+<li>Begründen Sie, wie sich dieses Versäumnis auf die <em>Reliabilität</em> und die <em>Validität</em> der Testergebnisse des Konzentrationstests ausgewirkt haben könnte.</li>
+</ol>
+<div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
@@ -410,14 +421,14 @@ Abbildung&nbsp;1: Verteilung gemessener Werte bei wahrem Wert <span class="math 
 </div>
 <div id="callout-6" class="callout-6-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Um einen systematischen Messfehler, denn alle Bewerber:innen der Gruppe sind betroffen.</p>
+<p>Die Reliabilität sinkt nicht zwingend, weil der Fehler bei allen ähnlich wirkt. Die Validität ist beeinträchtigt, weil nur die Genauigkeit und nicht mehr die Geschwindigkeit erfasst wird.</p>
 </div>
 </div>
 </div>
-<ol start="3" type="a">
-<li>Begründen Sie, wie sich dieses Versäumnis auf die <em>Reliabilität</em> und die <em>Validität</em> der Testergebnisse des Konzentrationstests ausgewirkt haben könnte.</li>
+<ol start="4" type="a">
+<li>Ist der Vergleich der Konzentrationsleistung <em>zwischen</em> den Bewerber:innen dieser Gruppe noch möglich? Und wäre ein Vergleich mit einer anderen Kohorte bzw. der Grundgesamtheit (Normstichprobe) noch sinnvoll?</li>
 </ol>
-<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
@@ -429,14 +440,14 @@ Abbildung&nbsp;1: Verteilung gemessener Werte bei wahrem Wert <span class="math 
 </div>
 <div id="callout-7" class="callout-7-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Die Reliabilität sinkt nicht zwingend, weil der Fehler bei allen ähnlich wirkt. Die Validität ist beeinträchtigt, weil nur die Genauigkeit und nicht mehr die Geschwindigkeit erfasst wird.</p>
+<p>Innerhalb der Gruppe eingeschränkt möglich (die Rangfolge bleibt erhalten, bedeutet aber inhaltlich etwas anderes). Der Vergleich mit der Normstichprobe ist nicht sinnvoll, weil die Normen auf standardisierter Durchführung beruhen.</p>
 </div>
 </div>
 </div>
-<ol start="4" type="a">
-<li>Ist der Vergleich der Konzentrationsleistung <em>zwischen</em> den Bewerber:innen dieser Gruppe noch möglich? Und wäre ein Vergleich mit einer anderen Kohorte bzw. der Grundgesamtheit (Normstichprobe) noch sinnvoll?</li>
+<ol start="5" type="a">
+<li>Wie gehen Sie als Testleiter:in mit dieser Situation um?</li>
 </ol>
-<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
@@ -447,25 +458,6 @@ Abbildung&nbsp;1: Verteilung gemessener Werte bei wahrem Wert <span class="math 
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
 <div id="callout-8" class="callout-8-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<p>Innerhalb der Gruppe eingeschränkt möglich (die Rangfolge bleibt erhalten, bedeutet aber inhaltlich etwas anderes). Der Vergleich mit der Normstichprobe ist nicht sinnvoll, weil die Normen auf standardisierter Durchführung beruhen.</p>
-</div>
-</div>
-</div>
-<ol start="5" type="a">
-<li>Wie gehen Sie als Testleiter:in mit dieser Situation um?</li>
-</ol>
-<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-9-contents" aria-controls="callout-9" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Tipp</span>Lösung
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-9" class="callout-9-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>Test mit korrekter Instruktion wiederholen oder, falls das nicht möglich ist, die Ergebnisse gesondert dokumentieren (ggf. nicht als Entscheidungsgrundlage verwenden).</p>
 </div>
@@ -560,8 +552,8 @@ Tabelle&nbsp;1: Intelligenz- und Konzentrationswerte (Original und verschoben) v
 <ol start="6" type="a">
 <li>Welche Auswirkung hat die Verschiebung um die Konstante <span class="math inline">\(c = 5\)</span> auf die Korrelation zwischen Intelligenz- und Konzentrationswerten? Begründen Sie Ihre Antwort.</li>
 </ol>
-<div class="callout callout-style-default callout-note callout-titled" title="Hinweis">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-10-contents" aria-controls="callout-10" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-9-contents" aria-controls="callout-9" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -570,14 +562,14 @@ Tabelle&nbsp;1: Intelligenz- und Konzentrationswerte (Original und verschoben) v
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-10" class="callout-10-contents callout-collapse collapse">
+<div id="callout-9" class="callout-9-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>Sie müssen hier keine Korrelation ausrechnen.</p>
 </div>
 </div>
 </div>
-<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-11-contents" aria-controls="callout-11" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-10-contents" aria-controls="callout-10" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -586,7 +578,7 @@ Tabelle&nbsp;1: Intelligenz- und Konzentrationswerte (Original und verschoben) v
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-11" class="callout-11-contents callout-collapse collapse">
+<div id="callout-10" class="callout-10-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>Keine: Die Korrelation bleibt bei <span class="math inline">\(r(IQ, K') = r(IQ, K) = 0.60\)</span>. <span class="math inline">\(K'\)</span> ist eine lineare Transformation von <span class="math inline">\(K\)</span>, es gilt <span class="math inline">\(r(K, K') = 1\)</span>. Eine Konstante ändert weder Varianz noch Kovarianz, sondern nur das Niveau (die Mittelwerte).</p>
 </div>
@@ -606,7 +598,26 @@ Tabelle&nbsp;1: Intelligenz- und Konzentrationswerte (Original und verschoben) v
 <ol type="a">
 <li>Vervollständigen Sie den folgenden Satz zur Interpretation der Reliabilität: Die Reliabilität gibt an, wie gut ein Test _____ Personen hinsichtlich ihrer _____ Merkmalsausprägung differenziert. Je mehr der beobachteten Varianz auf wahre Unterschiede zurückgeht (und je weniger auf Messfehler), desto _____ ist die Reliabilität.</li>
 </ol>
-<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-11-contents" aria-controls="callout-11" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tipp</span>Lösung
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-11" class="callout-11-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>zwischen, wahren, höher</p>
+</div>
+</div>
+</div>
+<ol start="2" type="a">
+<li>Welche Auswirkung hat es auf die Reliabilität, wenn sich die True-Score-Varianz <span class="math inline">\(\text{Var}(T)\)</span> erhöht (bei gleichbleibender Fehlervarianz)?</li>
+</ol>
+<div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-12-contents" aria-controls="callout-12" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
@@ -618,14 +629,14 @@ Tabelle&nbsp;1: Intelligenz- und Konzentrationswerte (Original und verschoben) v
 </div>
 <div id="callout-12" class="callout-12-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>zwischen, wahren, höher</p>
+<p>Die Reliabilität steigt.</p>
 </div>
 </div>
 </div>
-<ol start="2" type="a">
-<li>Welche Auswirkung hat es auf die Reliabilität, wenn sich die True-Score-Varianz <span class="math inline">\(\text{Var}(T)\)</span> erhöht (bei gleichbleibender Fehlervarianz)?</li>
+<ol start="3" type="a">
+<li>Welche Auswirkung hat es auf die Reliabilität, wenn sich die Fehlervarianz <span class="math inline">\(\text{Var}(E)\)</span> erhöht (bei gleichbleibender True-Score-Varianz)?</li>
 </ol>
-<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-13-contents" aria-controls="callout-13" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
@@ -637,14 +648,14 @@ Tabelle&nbsp;1: Intelligenz- und Konzentrationswerte (Original und verschoben) v
 </div>
 <div id="callout-13" class="callout-13-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Die Reliabilität steigt.</p>
+<p>Die Reliabilität sinkt.</p>
 </div>
 </div>
 </div>
-<ol start="3" type="a">
-<li>Welche Auswirkung hat es auf die Reliabilität, wenn sich die Fehlervarianz <span class="math inline">\(\text{Var}(E)\)</span> erhöht (bei gleichbleibender True-Score-Varianz)?</li>
+<ol start="4" type="a">
+<li>Welchen minimalen und maximalen Wert kann die Reliabilität annehmen? Wie können diese Extremwerte interpretiert werden?</li>
 </ol>
-<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-14-contents" aria-controls="callout-14" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
@@ -656,14 +667,14 @@ Tabelle&nbsp;1: Intelligenz- und Konzentrationswerte (Original und verschoben) v
 </div>
 <div id="callout-14" class="callout-14-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Die Reliabilität sinkt.</p>
+<p>Die Reliabilität liegt in <span class="math inline">\([0, 1]\)</span>. Bei 0 geht die gesamte Varianz auf Messfehler zurück, bei 1 gibt es keinen Messfehler.</p>
 </div>
 </div>
 </div>
-<ol start="4" type="a">
-<li>Welchen minimalen und maximalen Wert kann die Reliabilität annehmen? Wie können diese Extremwerte interpretiert werden?</li>
+<ol start="5" type="a">
+<li>Was bedeutet es inhaltlich, wenn die Fehlervarianz genauso groß ist wie die True-Score-Varianz, d. h. <span class="math inline">\(\text{Var}(E) = \text{Var}(T)\)</span>? Berechnen Sie die Reliabilität für diesen Fall.</li>
 </ol>
-<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-15-contents" aria-controls="callout-15" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
@@ -675,14 +686,14 @@ Tabelle&nbsp;1: Intelligenz- und Konzentrationswerte (Original und verschoben) v
 </div>
 <div id="callout-15" class="callout-15-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Die Reliabilität liegt in <span class="math inline">\([0, 1]\)</span>. Bei 0 geht die gesamte Varianz auf Messfehler zurück, bei 1 gibt es keinen Messfehler.</p>
+<p>Die Hälfte der beobachteten Varianz geht auf Messfehler zurück: <span class="math inline">\(\text{Rel} = 0.50\)</span>.</p>
 </div>
 </div>
 </div>
-<ol start="5" type="a">
-<li>Was bedeutet es inhaltlich, wenn die Fehlervarianz genauso groß ist wie die True-Score-Varianz, d. h. <span class="math inline">\(\text{Var}(E) = \text{Var}(T)\)</span>? Berechnen Sie die Reliabilität für diesen Fall.</li>
+<ol start="6" type="a">
+<li>Angenommen, Sie setzen den Intelligenztest aus <a href="#exr-ctt-assessment-center" class="quarto-xref">Aufgabe&nbsp;2</a> nur bei einer leistungshomogenen Teilgruppe ein (z. B. nur bei Personen mit Abiturnote 1.0 bis 1.5). Welche Auswirkung auf die Reliabilität erwarten Sie, unter der Annahme, dass die Fehlervarianz in dieser homogeneren Stichprobe gleich bleibt?</li>
 </ol>
-<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-16-contents" aria-controls="callout-16" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
@@ -694,14 +705,14 @@ Tabelle&nbsp;1: Intelligenz- und Konzentrationswerte (Original und verschoben) v
 </div>
 <div id="callout-16" class="callout-16-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Die Hälfte der beobachteten Varianz geht auf Messfehler zurück: <span class="math inline">\(\text{Rel} = 0.50\)</span>.</p>
+<p>Die Reliabilität sinkt, weil <span class="math inline">\(\text{Var}(T)\)</span> kleiner wird.</p>
 </div>
 </div>
 </div>
-<ol start="6" type="a">
-<li>Angenommen, Sie setzen den Intelligenztest aus <a href="#exr-ctt-assessment-center" class="quarto-xref">Aufgabe&nbsp;2</a> nur bei einer leistungshomogenen Teilgruppe ein (z. B. nur bei Personen mit Abiturnote 1.0 bis 1.5). Welche Auswirkung auf die Reliabilität erwarten Sie, unter der Annahme, dass die Fehlervarianz in dieser homogeneren Stichprobe gleich bleibt?</li>
+<ol start="7" type="a">
+<li>In der Praxis ist der wahre Wert <span class="math inline">\(T\)</span> einer Person unbekannt und damit auch <span class="math inline">\(\text{Var}(T)\)</span>. Die Reliabilität lässt sich deshalb nicht direkt nach der Formel berechnen. Welche Möglichkeiten kennen Sie, die Reliabilität eines Tests zu schätzen?</li>
 </ol>
-<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-17-contents" aria-controls="callout-17" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
@@ -712,25 +723,6 @@ Tabelle&nbsp;1: Intelligenz- und Konzentrationswerte (Original und verschoben) v
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
 <div id="callout-17" class="callout-17-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<p>Die Reliabilität sinkt, weil <span class="math inline">\(\text{Var}(T)\)</span> kleiner wird.</p>
-</div>
-</div>
-</div>
-<ol start="7" type="a">
-<li>In der Praxis ist der wahre Wert <span class="math inline">\(T\)</span> einer Person unbekannt und damit auch <span class="math inline">\(\text{Var}(T)\)</span>. Die Reliabilität lässt sich deshalb nicht direkt nach der Formel berechnen. Welche Möglichkeiten kennen Sie, die Reliabilität eines Tests zu schätzen?</li>
-</ol>
-<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-18-contents" aria-controls="callout-18" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Tipp</span>Lösung
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-18" class="callout-18-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <ul>
 <li>Retest-Reliabilität: Korrelation zweier Messungen mit demselben Test</li>
@@ -743,20 +735,86 @@ Tabelle&nbsp;1: Intelligenz- und Konzentrationswerte (Original und verschoben) v
 </div>
 </div>
 <div id="exr-ctt-models" class="theorem exercise">
-<p><span class="theorem-title"><strong>Aufgabe 4 (Messmodelle der KTT)</strong></span> Liegen zur Messung eines latenten Konstrukts mehrere Messungen vor (z. B. Items), kann überprüft werden, ob diese dasselbe latente Konstrukt erfassen, indem die Gültigkeit eines angenommenen Messmodells empirisch überprüft wird. In der Modellgleichung wird die True-Score-Variable <span class="math inline">\(\tau_i\)</span> eines Items <span class="math inline">\(i\)</span> als Funktion der latenten Variablen <span class="math inline">\(\eta\)</span> beschrieben:</p>
-<p><span class="math display">\[
-\tau_i = \alpha_i + \lambda_i \cdot \eta,
-\]</span></p>
-<p>wobei <span class="math inline">\(\alpha_i\)</span> der Leichtigkeitsparameter (Interzept) und <span class="math inline">\(\lambda_i\)</span> der Diskriminationsparameter (Faktorladung) ist. Die beobachtete Itemvariable <span class="math inline">\(x_i\)</span> ergibt sich als</p>
-<p><span class="math display">\[
-x_i = \alpha_i + \lambda_i \cdot \eta + \varepsilon_i.
-\]</span></p>
-<p>Jede Itemantwort <span class="math inline">\(x_i\)</span> ist damit ein Testwert im Sinne der KTT: Sie setzt sich aus dem wahren Wert <span class="math inline">\(\tau_i\)</span> und dem Messfehler <span class="math inline">\(\varepsilon_i\)</span> zusammen, <span class="math inline">\(x_i = \tau_i + \varepsilon_i\)</span>. Dabei wird angenommen, dass wahrer Wert und Messfehler unkorreliert sind: <span class="math inline">\(\text{Cov}(\tau_i, \varepsilon_i) = 0\)</span>.</p>
-<p>Die fünf Messmodelle der KTT, die Sie in der Vorlesung kennengelernt haben, unterscheiden sich darin, welche Restriktionen sie an die Parameter <span class="math inline">\(\alpha_i\)</span>, <span class="math inline">\(\lambda_i\)</span> und <span class="math inline">\(\text{Var}(\varepsilon_i)\)</span> stellen. Daraus ergeben sich unterschiedliche Konsequenzen für Itemvarianzen, Itemkovarianzen und Itemmittelwerte <span class="citation" data-cites="moosbrugger2020">(<a href="#ref-moosbrugger2020" role="doc-biblioref">Moosbrugger &amp; Kelava, 2020, Kapitel 13</a>)</span>.</p>
+<p><span class="theorem-title"><strong>Aufgabe 4 (Messmodelle der KTT)</strong></span> Liegen zur Messung eines latenten Konstrukts mehrere Messungen vor (z. B. Items), kann überprüft werden, ob diese dasselbe latente Konstrukt erfassen, indem die Gültigkeit eines angenommenen Messmodells empirisch überprüft wird. Jede Itemantwort ist dabei ein Testwert im Sinne der KTT: Sie setzt sich aus einem wahren Wert und einem Messfehler zusammen, die unkorreliert sind.</p>
+<p>Die fünf Messmodelle der KTT, die Sie in der Vorlesung kennengelernt haben, unterscheiden sich darin, welche Annahmen sie über die Items treffen. Daraus ergeben sich unterschiedliche Konsequenzen für Itemmittelwerte, Itemvarianzen und Itemkovarianzen <span class="citation" data-cites="moosbrugger2020">(<a href="#ref-moosbrugger2020" role="doc-biblioref">Moosbrugger &amp; Kelava, 2020, Kapitel 13</a>)</span>.</p>
 <ol type="a">
 <li>Alle fünf Messmodelle teilen drei gemeinsame Annahmen. Nennen Sie diese.</li>
 </ol>
-<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-18-contents" aria-controls="callout-18" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tipp</span>Lösung
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-18" class="callout-18-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ul>
+<li>Unidimensionalität: Alle Items messen dasselbe latente Konstrukt.</li>
+<li>Linearität: Der Zusammenhang zwischen dem latenten Konstrukt und den wahren Werten der Items ist linear.</li>
+<li>Unkorrelierte Messfehler: Die Messfehler verschiedener Items hängen nicht miteinander zusammen.</li>
+</ul>
+</div>
+</div>
+</div>
+<ol start="2" type="a">
+<li>Vervollständigen Sie <a href="#tbl-ctt-models" class="quarto-xref">Tabelle&nbsp;2</a> für die fünf Messmodelle, die Sie in der Vorlesung kennengelernt haben. Tragen Sie ein, ob die Itemmittelwerte, Itemvarianzen und Itemkovarianzen über die Items hinweg <em>variabel</em> (itemspezifisch) oder <em>identisch</em> (für alle Items gleich) sind.</li>
+</ol>
+<div id="tbl-ctt-models" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-ctt-models-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Tabelle&nbsp;2: Konsequenzen der fünf Messmodelle der KTT
+</figcaption>
+<div aria-describedby="tbl-ctt-models-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Messmodell</th>
+<th style="text-align: center;">Itemmittelwerte</th>
+<th style="text-align: center;">Itemvarianzen</th>
+<th style="text-align: center;">Itemkovarianzen</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\(\tau\)</span>-kongenerisch</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">essentiell <span class="math inline">\(\tau\)</span>-äquivalent</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\(\tau\)</span>-äquivalent</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">essentiell <span class="math inline">\(\tau\)</span>-parallel</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\(\tau\)</span>-parallel</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+</tbody>
+</table>
+</div>
+</figure>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-19-contents" aria-controls="callout-19" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
@@ -768,142 +826,13 @@ x_i = \alpha_i + \lambda_i \cdot \eta + \varepsilon_i.
 </div>
 <div id="callout-19" class="callout-19-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<ul>
-<li>Unidimensionalität: Alle Items messen dasselbe latente Konstrukt <span class="math inline">\(\eta\)</span>.</li>
-<li>Linearität: Der Zusammenhang zwischen <span class="math inline">\(\eta\)</span> und den True Scores <span class="math inline">\(\tau_i\)</span> ist linear.</li>
-<li>Unkorrelierte Messfehler: <span class="math inline">\(\text{Cov}(\varepsilon_i, \varepsilon_k) = 0\)</span> für <span class="math inline">\(i \neq k\)</span>.</li>
-</ul>
-</div>
-</div>
-</div>
-<ol start="2" type="a">
-<li>Vervollständigen Sie <a href="#tbl-ctt-models" class="quarto-xref">Tabelle&nbsp;2</a> für die fünf Messmodelle, die Sie in der Vorlesung kennengelernt haben. Tragen Sie für jeden Parameter ein, ob er über die Items hinweg <em>variabel</em> (itemspezifisch frei) oder <em>identisch</em> (für alle Items gleich) ist. Leiten Sie dann die Konsequenzen für Itemvarianzen, Itemkovarianzen und Itemmittelwerte ab.</li>
-</ol>
-<div class="callout callout-style-default callout-note callout-titled" title="Hinweis">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-20-contents" aria-controls="callout-20" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Hinweis</span>Hinweis
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-20" class="callout-20-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<p>Die Itemvarianz ergibt sich aus <span class="math inline">\(\text{Var}(x_i) = \lambda_i^2 \cdot \text{Var}(\eta) + \text{Var}(\varepsilon_i)\)</span>, die Itemkovarianz aus <span class="math inline">\(\text{Cov}(x_i, x_k) = \lambda_i \cdot \lambda_k \cdot \text{Var}(\eta)\)</span> und der Itemmittelwert aus <span class="math inline">\(\mathbb{E}(x_i) = \alpha_i + \lambda_i \cdot \mathbb{E}(\eta)\)</span>.</p>
-</div>
-</div>
-</div>
-<div id="tbl-ctt-models" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-tbl figure">
-<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-ctt-models-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Tabelle&nbsp;2: Annahmen und Konsequenzen der fünf Messmodelle der KTT
-</figcaption>
-<div aria-describedby="tbl-ctt-models-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <table class="caption-top table">
-<colgroup>
-<col style="width: 11%">
-<col style="width: 14%">
-<col style="width: 14%">
-<col style="width: 14%">
-<col style="width: 14%">
-<col style="width: 14%">
-<col style="width: 14%">
-</colgroup>
 <thead>
 <tr class="header">
 <th style="text-align: left;">Messmodell</th>
-<th style="text-align: center;"><span class="math inline">\(\alpha_i\)</span></th>
-<th style="text-align: center;"><span class="math inline">\(\lambda_i\)</span></th>
-<th style="text-align: center;"><span class="math inline">\(\text{Var}(\varepsilon_i)\)</span></th>
+<th style="text-align: center;">Itemmittelwerte</th>
 <th style="text-align: center;">Itemvarianzen</th>
 <th style="text-align: center;">Itemkovarianzen</th>
-<th style="text-align: center;">Itemmittelwerte</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;"><span class="math inline">\(\tau\)</span>-kongenerisch</td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">essentiell <span class="math inline">\(\tau\)</span>-äquivalent</td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;"><span class="math inline">\(\tau\)</span>-äquivalent</td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">essentiell <span class="math inline">\(\tau\)</span>-parallel</td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;"><span class="math inline">\(\tau\)</span>-parallel</td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-</tr>
-</tbody>
-</table>
-</div>
-</figure>
-</div>
-<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-21-contents" aria-controls="callout-21" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Tipp</span>Lösung
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-21" class="callout-21-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<table class="caption-top table">
-<colgroup>
-<col style="width: 11%">
-<col style="width: 14%">
-<col style="width: 14%">
-<col style="width: 14%">
-<col style="width: 14%">
-<col style="width: 14%">
-<col style="width: 14%">
-</colgroup>
-<thead>
-<tr class="header">
-<th style="text-align: left;">Messmodell</th>
-<th style="text-align: center;"><span class="math inline">\(\alpha_i\)</span></th>
-<th style="text-align: center;"><span class="math inline">\(\lambda_i\)</span></th>
-<th style="text-align: center;"><span class="math inline">\(\text{Var}(\varepsilon_i)\)</span></th>
-<th style="text-align: center;">Itemvarianzen</th>
-<th style="text-align: center;">Itemkovarianzen</th>
-<th style="text-align: center;">Itemmittelwerte</th>
 </tr>
 </thead>
 <tbody>
@@ -912,26 +841,17 @@ Tabelle&nbsp;2: Annahmen und Konsequenzen der fünf Messmodelle der KTT
 <td style="text-align: center;">variabel</td>
 <td style="text-align: center;">variabel</td>
 <td style="text-align: center;">variabel</td>
-<td style="text-align: center;">variabel</td>
-<td style="text-align: center;">variabel</td>
-<td style="text-align: center;">variabel</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">essentiell <span class="math inline">\(\tau\)</span>-äquivalent</td>
 <td style="text-align: center;">variabel</td>
-<td style="text-align: center;">identisch</td>
-<td style="text-align: center;">variabel</td>
 <td style="text-align: center;">variabel</td>
 <td style="text-align: center;">identisch</td>
-<td style="text-align: center;">variabel</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;"><span class="math inline">\(\tau\)</span>-äquivalent</td>
 <td style="text-align: center;">identisch</td>
-<td style="text-align: center;">identisch</td>
 <td style="text-align: center;">variabel</td>
-<td style="text-align: center;">variabel</td>
-<td style="text-align: center;">identisch</td>
 <td style="text-align: center;">identisch</td>
 </tr>
 <tr class="even">
@@ -939,15 +859,9 @@ Tabelle&nbsp;2: Annahmen und Konsequenzen der fünf Messmodelle der KTT
 <td style="text-align: center;">variabel</td>
 <td style="text-align: center;">identisch</td>
 <td style="text-align: center;">identisch</td>
-<td style="text-align: center;">identisch</td>
-<td style="text-align: center;">identisch</td>
-<td style="text-align: center;">variabel</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;"><span class="math inline">\(\tau\)</span>-parallel</td>
-<td style="text-align: center;">identisch</td>
-<td style="text-align: center;">identisch</td>
-<td style="text-align: center;">identisch</td>
 <td style="text-align: center;">identisch</td>
 <td style="text-align: center;">identisch</td>
 <td style="text-align: center;">identisch</td>
@@ -1048,7 +962,8 @@ Moosbrugger, H., &amp; Kelava, A. (Hrsg.). (2020). <em>Testtheorie und Frageboge
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }
       // Inspect non-navigation links and adorn them if external
-     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      window.quartoDecorateExternalLinks = function (root) {
+     var links = (root || window.document).querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
       for (var i=0; i<links.length; i++) {
         const link = links[i];
         if (!isInternal(link.href)) {
@@ -1057,8 +972,69 @@ Moosbrugger, H., &amp; Kelava, A. (Hrsg.). (2020). <em>Testtheorie und Frageboge
           if (link.dataset.originalHref !== undefined) {
             link.href = link.dataset.originalHref;
           }
+          if (!link.classList.contains('no-external-icon')) {
+          }
         }
       }
+      };
+      window.quartoDecorateExternalLinks(window.document);
+    // Esc closes the popup (WCAG 1.4.13) and focus leaving both trigger and
+    // popup closes it (WCAG 2.4.11); tippy handles neither for interactive popups.
+    const hideOnEscAndFocusOut = {
+      name: 'hideOnEscAndFocusOut',
+      defaultValue: true,
+      fn(instance) {
+        const dismiss = () => {
+          // A show scheduled by the trigger delay would otherwise reopen it
+          instance.clearDelayTimeouts();
+          instance.hide();
+        };
+        const onKeyDown = (event) => {
+          if (event.key !== 'Escape') {
+            return;
+          }
+          // Keep Esc from also reaching page handlers (e.g. reveal.js overview),
+          // except an open reveal.js slide menu, which Esc should close too.
+          // The menu handles keys only when its keyboard option is on.
+          const menuHandlesEsc = window.Reveal?.getPlugin?.('menu')?.isOpen() &&
+            window.Reveal.getConfig().menu?.keyboard !== false;
+          if (!menuHandlesEsc) {
+            event.stopPropagation();
+          }
+          if (instance.popper.contains(window.document.activeElement)) {
+            // Disabled while refocusing so the focus trigger does not reopen it
+            instance.disable();
+            instance.reference.focus();
+            instance.enable();
+          }
+          dismiss();
+        };
+        const onFocusOut = (event) => {
+          const target = event.relatedTarget;
+          if (target && !instance.reference.contains(target) &&
+              !instance.popper.contains(target)) {
+            dismiss();
+          }
+        };
+        // On the trigger too: a click trigger (code-annotations: select) has no
+        // blur handling. Attached for the instance's lifetime so leaving the
+        // trigger also cancels a show still pending on the trigger delay.
+        instance.reference.addEventListener('focusout', onFocusOut);
+        return {
+          onShow() {
+            window.document.addEventListener('keydown', onKeyDown, true);
+            instance.popper.addEventListener('focusout', onFocusOut);
+          },
+          onHide() {
+            window.document.removeEventListener('keydown', onKeyDown, true);
+            instance.popper.removeEventListener('focusout', onFocusOut);
+          },
+          onDestroy() {
+            instance.reference.removeEventListener('focusout', onFocusOut);
+          },
+        };
+      },
+    };
     function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
       const config = {
         allowHTML: true,
@@ -1072,6 +1048,7 @@ Moosbrugger, H., &amp; Kelava, A. (Hrsg.). (2020). <em>Testtheorie und Frageboge
         interactiveBorder: 10,
         theme: 'quarto',
         placement: 'bottom-start',
+        plugins: [hideOnEscAndFocusOut],
       };
       if (contentFn) {
         config.content = contentFn;
@@ -1234,44 +1211,54 @@ Moosbrugger, H., &amp; Kelava, A. (Hrsg.). (2020). <em>Testtheorie und Frageboge
           const lineIds = lines.map((line) => {
             return targetCell + "-" + line;
           })
-          let top = null;
-          let height = null;
-          let parent = null;
+          // Each band is positioned against its own containing block, which is
+          // not the offsetParent of the lines, so place it from client rects.
+          const placeBand = (band, firstEl, lastEl, codeBlock) => {
+            const container = band.offsetParent;
+            if (container === null) {
+              return;
+            }
+            const containerRect = container.getBoundingClientRect();
+            // Reveal.js scales slides with a transform, so convert client
+            // pixels back to the CSS pixels of the container.
+            const scale = containerRect.height / container.offsetHeight || 1;
+            const firstRect = firstEl.getBoundingClientRect();
+            const lastRect = lastEl.getBoundingClientRect();
+            const top = (firstRect.top - containerRect.top) / scale - container.clientTop + container.scrollTop;
+            const height = (lastRect.bottom - firstRect.top) / scale;
+            band.style.top = top - 2 + "px";
+            band.style.height = height + 4 + "px";
+            if (codeBlock) {
+              // Without the copy button wrapper, the containing block is wider
+              // than the code block, so span the code block explicitly.
+              const blockRect = codeBlock.getBoundingClientRect();
+              band.style.left = (blockRect.left - containerRect.left) / scale - container.clientLeft + container.scrollLeft + "px";
+              band.style.width = blockRect.width / scale + "px";
+            }
+          };
           if (lineIds.length > 0) {
-              //compute the position of the single el (top and bottom and make a div)
-              const el = window.document.getElementById(lineIds[0]);
-              top = el.offsetTop;
-              height = el.offsetHeight;
-              parent = el.parentElement.parentElement;
-            if (lineIds.length > 1) {
-              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
-              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
-              height = bottom - top;
+            const el = window.document.getElementById(lineIds[0]);
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const parent = el.parentElement.parentElement;
+            // cook up a div (if necessary) and position it
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
             }
-            if (top !== null && height !== null && parent !== null) {
-              // cook up a div (if necessary) and position it 
-              let div = window.document.getElementById("code-annotation-line-highlight");
-              if (div === null) {
-                div = window.document.createElement("div");
-                div.setAttribute("id", "code-annotation-line-highlight");
-                div.style.position = 'absolute';
-                parent.appendChild(div);
-              }
-              div.style.top = top - 2 + "px";
-              div.style.height = height + 4 + "px";
-              div.style.left = 0;
-              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
-              if (gutterDiv === null) {
-                gutterDiv = window.document.createElement("div");
-                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
-                gutterDiv.style.position = 'absolute';
-                const codeCell = window.document.getElementById(targetCell);
-                const gutter = codeCell.querySelector('.code-annotation-gutter');
-                gutter.appendChild(gutterDiv);
-              }
-              gutterDiv.style.top = top - 2 + "px";
-              gutterDiv.style.height = height + 4 + "px";
+            placeBand(div, el, lastEl, parent.closest("div.sourceCode") || parent);
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
             }
+            placeBand(gutterDiv, el, lastEl);
             selectedAnnoteEl = annoteEl;
           }
         };
@@ -1369,6 +1356,9 @@ Moosbrugger, H., &amp; Kelava, A. (Hrsg.). (2020). <em>Testtheorie und Frageboge
       }
     }
   });
+  </script>
+  <script type="application/javascript">
+  window.quartoScrollableRegionsLabels = {"code":"Scrollbarer Code","output":"Scrollbare Ausgabe"};
   </script>
 </div> <!-- /content -->
 <footer class="footer">

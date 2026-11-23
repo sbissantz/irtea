@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="de" xml:lang="de"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.10.19">
+<meta name="generator" content="quarto-1.11.9">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -94,14 +94,15 @@ div.csl-indent {
 <link href="../images/logo.png" rel="icon" type="image/png">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/scrollable-regions/scrollable-regions.js" type="module"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-bf27225e3a48a9273f3daa8f8e829971.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-63b5708e65d6cd79cd7618c58d0c21e7.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-cbe15cd55579b32cf8c48135cfb2cd9e.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-6519365451b8d29e4b2635fa5bf158c1.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -171,11 +172,11 @@ window.Quarto = {
 
 </head>
 
-<body class="nav-fixed fullcontent quarto-light">
+<body class="nav-fixed fullcontent quarto-light"><a id="quarto-skip-link" class="visually-hidden-focusable" href="#quarto-document-content">Zum Hauptinhalt springen</a>
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
-    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark" aria-label="Website">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
     <a href="../index.html" class="navbar-brand navbar-brand-logo">
@@ -186,8 +187,7 @@ window.Quarto = {
     <span class="navbar-title">B.F.3 Diagnostik &amp; Testtheorie</span>
     </a>
   </div>
-            <div id="quarto-search" class="" title="Suchen"></div>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Navigation umschalten" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Navigation umschalten" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
@@ -212,6 +212,10 @@ window.Quarto = {
         <li>
     <a class="dropdown-item" href="../slides/construction-inp.html">
  <span class="dropdown-text">04 Schritte der Testkonstruktion</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../slides/ctt-inp.html">
+ <span class="dropdown-text">05 Klassische Testtheorie</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../slides/efa-inp.html">
@@ -274,6 +278,7 @@ window.Quarto = {
           </div> <!-- /navcollapse -->
             <div class="quarto-navbar-tools">
 </div>
+            <div id="quarto-search" class="" title="Suchen"></div>
       </div> <!-- /container-fluid -->
     </nav>
 </header>
@@ -283,7 +288,7 @@ window.Quarto = {
 <!-- margin-sidebar -->
     
 <!-- main -->
-<main class="content" id="quarto-document-content">
+<main class="content" id="quarto-document-content" tabindex="-1">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
@@ -304,7 +309,7 @@ window.Quarto = {
 </header>
 
 
-<div class="callout callout-style-default callout-important callout-titled" title="Work in Progress">
+<div class="callout callout-style-default callout-important callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
@@ -434,7 +439,7 @@ Tabelle&nbsp;1: Items des Fragebogens zur Prüfungsangst
 <ol type="a">
 <li>Wie viele Dimensionen würden Sie theoretisch erwarten?</li>
 </ol>
-<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
@@ -453,7 +458,7 @@ Tabelle&nbsp;1: Items des Fragebogens zur Prüfungsangst
 <ol start="2" type="a">
 <li>Erwarten Sie, dass die Dimensionen miteinander zusammenhängen? Begründen Sie Ihre Antwort.</li>
 </ol>
-<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
@@ -472,7 +477,7 @@ Tabelle&nbsp;1: Items des Fragebogens zur Prüfungsangst
 <ol start="3" type="a">
 <li>Suchen Sie aus <a href="#tbl-items" class="quarto-xref">Tabelle&nbsp;1</a> die Items heraus, die Ihrer Meinung nach die Komponente <em>Besorgtheit</em> messen.</li>
 </ol>
-<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
@@ -503,7 +508,7 @@ Tabelle&nbsp;1: Items des Fragebogens zur Prüfungsangst
 <ol type="a">
 <li>Warum ist es hier schwierig, eine Struktur zu erkennen?</li>
 </ol>
-<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
@@ -532,7 +537,7 @@ Tabelle&nbsp;1: Items des Fragebogens zur Prüfungsangst
 <ol start="2" type="a">
 <li>Wie viele Itemgruppen (Blöcke) erkennen Sie, und welche Items gehören Ihrer Meinung nach zusammen?</li>
 </ol>
-<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
@@ -558,7 +563,7 @@ Tabelle&nbsp;1: Items des Fragebogens zur Prüfungsangst
 <ol start="3" type="a">
 <li>Vergleichen Sie die Blöcke mit Ihrer Erwartung aus <a href="#exr-efa-construct" class="quarto-xref">Aufgabe&nbsp;1</a>, Teil a. Stimmen Anzahl und Zusammensetzung überein?</li>
 </ol>
-<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
@@ -577,7 +582,7 @@ Tabelle&nbsp;1: Items des Fragebogens zur Prüfungsangst
 <ol start="4" type="a">
 <li>Finden Sie Ihre Erwartung über die Komponente <em>Besorgtheit</em> aus <a href="#exr-efa-construct" class="quarto-xref">Aufgabe&nbsp;1</a>, Teil c, in den Blöcken wieder?</li>
 </ol>
-<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
@@ -596,7 +601,7 @@ Tabelle&nbsp;1: Items des Fragebogens zur Prüfungsangst
 <ol start="5" type="a">
 <li>Hängen die Blöcke untereinander zusammen? Woran sehen Sie das?</li>
 </ol>
-<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-9-contents" aria-controls="callout-9" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
@@ -615,7 +620,7 @@ Tabelle&nbsp;1: Items des Fragebogens zur Prüfungsangst
 <ol start="6" type="a">
 <li>Wie viele Faktoren würden Sie allein aufgrund der Abbildung extrahieren?</li>
 </ol>
-<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-10-contents" aria-controls="callout-10" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
@@ -650,7 +655,7 @@ MSA for each item =
 <ol type="a">
 <li>Interpretieren Sie den KMO-Koeffizienten.</li>
 </ol>
-<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-11-contents" aria-controls="callout-11" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
@@ -669,7 +674,7 @@ MSA for each item =
 <ol start="2" type="a">
 <li>Welche Hypothese prüft der Bartlett-Test?</li>
 </ol>
-<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-12-contents" aria-controls="callout-12" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
@@ -702,7 +707,7 @@ $df
 <ol start="3" type="a">
 <li>Interpretieren Sie das Ergebnis des Bartlett-Tests.</li>
 </ol>
-<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-13-contents" aria-controls="callout-13" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
@@ -731,7 +736,7 @@ $df
 <ol start="4" type="a">
 <li>Gibt es Ausreißerwerte?</li>
 </ol>
-<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-14-contents" aria-controls="callout-14" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
@@ -750,7 +755,7 @@ $df
 <ol start="5" type="a">
 <li>Reichen Stichprobengröße und Itemzahl Ihrer Meinung nach aus?</li>
 </ol>
-<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-15-contents" aria-controls="callout-15" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
@@ -772,7 +777,7 @@ $df
 <ol type="a">
 <li>Welche Matrix würden Sie für die Analyse der Faktoren heranziehen?</li>
 </ol>
-<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-16-contents" aria-controls="callout-16" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
@@ -791,7 +796,7 @@ $df
 <ol start="2" type="a">
 <li>Im Folgenden wird eine Maximum-Likelihood-Faktorenanalyse durchgeführt. Was ist die Grundidee der Schätzmethode und was wird dabei maximiert?</li>
 </ol>
-<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-17-contents" aria-controls="callout-17" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
@@ -810,7 +815,7 @@ $df
 <ol start="3" type="a">
 <li>Warum führen Sie keine Hauptkomponentenanalyse durch?</li>
 </ol>
-<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-18-contents" aria-controls="callout-18" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
@@ -856,7 +861,7 @@ $df
 <ol type="a">
 <li>Wie viele Faktoren extrahieren Sie nach dem Kaiser-Guttman-Kriterium?</li>
 </ol>
-<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-19-contents" aria-controls="callout-19" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
@@ -875,7 +880,7 @@ $df
 <ol start="2" type="a">
 <li>Wie viele Faktoren extrahieren Sie mithilfe des Screeplots?</li>
 </ol>
-<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-20-contents" aria-controls="callout-20" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
@@ -894,7 +899,7 @@ $df
 <ol start="3" type="a">
 <li>Wie viele Faktoren extrahieren Sie mithilfe der Parallelanalyse?</li>
 </ol>
-<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-21-contents" aria-controls="callout-21" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
@@ -947,7 +952,7 @@ Proportion Var 0.24 0.06 0.06 0.03
 Cumulative Var 0.24 0.31 0.36 0.40</code></pre>
 </div>
 </div>
-<div class="callout callout-style-default callout-note callout-titled" title="Hinweis">
+<div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-22-contents" aria-controls="callout-22" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
@@ -966,7 +971,7 @@ Cumulative Var 0.24 0.31 0.36 0.40</code></pre>
 <ol type="a">
 <li>Wie hoch ist die Ladung von Item i01 auf Faktor ML1? Interpretieren Sie das Ergebnis.</li>
 </ol>
-<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-23-contents" aria-controls="callout-23" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
@@ -985,7 +990,7 @@ Cumulative Var 0.24 0.31 0.36 0.40</code></pre>
 <ol start="2" type="a">
 <li>Berechnen Sie die Kommunalität von Item i11. Interpretieren Sie das Ergebnis.</li>
 </ol>
-<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-24-contents" aria-controls="callout-24" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
@@ -1004,7 +1009,7 @@ Cumulative Var 0.24 0.31 0.36 0.40</code></pre>
 <ol start="3" type="a">
 <li>Berechnen Sie die Spezifität von Item i11. Interpretieren Sie das Ergebnis.</li>
 </ol>
-<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-25-contents" aria-controls="callout-25" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
@@ -1023,7 +1028,7 @@ Cumulative Var 0.24 0.31 0.36 0.40</code></pre>
 <ol start="4" type="a">
 <li>Welchen Eigenwert hat Faktor ML1? Welchen Anteil der Varianz aller Items erklärt er?</li>
 </ol>
-<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-26-contents" aria-controls="callout-26" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
@@ -1042,7 +1047,7 @@ Cumulative Var 0.24 0.31 0.36 0.40</code></pre>
 <ol start="5" type="a">
 <li>Welchen Anteil der Varianz aller Items erklärt der Faktor ML1?</li>
 </ol>
-<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-27-contents" aria-controls="callout-27" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
@@ -1061,7 +1066,7 @@ Cumulative Var 0.24 0.31 0.36 0.40</code></pre>
 <ol start="6" type="a">
 <li>Welchen Anteil der Varianz aller Items erklären die vier Faktoren zusammen?</li>
 </ol>
-<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-28-contents" aria-controls="callout-28" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
@@ -1080,7 +1085,7 @@ Cumulative Var 0.24 0.31 0.36 0.40</code></pre>
 <ol start="7" type="a">
 <li>Liegt eine Einfachstruktur vor? Begründen Sie Ihre Antwort.</li>
 </ol>
-<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-29-contents" aria-controls="callout-29" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
@@ -1108,7 +1113,7 @@ Cumulative Var 0.24 0.31 0.36 0.40</code></pre>
 </div>
 </div>
 </div>
-<div class="callout callout-style-default callout-note callout-titled" title="Hinweis">
+<div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-30-contents" aria-controls="callout-30" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
@@ -1133,7 +1138,7 @@ Cumulative Var 0.24 0.31 0.36 0.40</code></pre>
 <ol type="a">
 <li>Was verändert die Rotation an der Lage der Items?</li>
 </ol>
-<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-31-contents" aria-controls="callout-31" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
@@ -1150,7 +1155,7 @@ Cumulative Var 0.24 0.31 0.36 0.40</code></pre>
 </div>
 </div>
 <p>Welche Rotation kommt einer Einfachstruktur näher?</p>
-<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-32-contents" aria-controls="callout-32" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
@@ -1204,7 +1209,7 @@ Cumulative Var 0.11 0.22 0.32 0.40</code></pre>
 <ol start="2" type="a">
 <li>Berechnen Sie die Kommunalität von i11 aus den Varimax-Ladungen. Vergleichen Sie sie mit <a href="#exr-efa-parameters" class="quarto-xref">Aufgabe&nbsp;6</a>, Teil b.</li>
 </ol>
-<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-33-contents" aria-controls="callout-33" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
@@ -1266,7 +1271,7 @@ ML4 0.41 0.26 0.18 1.00</code></pre>
 <ol start="3" type="a">
 <li>Quadrieren und summieren Sie die Oblimin-Ladungen von i11. Erhalten Sie die Kommunalität? Warum (nicht)?</li>
 </ol>
-<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-34-contents" aria-controls="callout-34" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
@@ -1285,7 +1290,7 @@ ML4 0.41 0.26 0.18 1.00</code></pre>
 <ol start="4" type="a">
 <li>Interpretieren Sie die Faktorkorrelationen der Oblimin-Lösung. Welche Faktoren hängen am stärksten zusammen, welche am schwächsten? Passt das zu <a href="#exr-efa-construct" class="quarto-xref">Aufgabe&nbsp;1</a>, Teil b?</li>
 </ol>
-<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-35-contents" aria-controls="callout-35" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
@@ -1304,7 +1309,7 @@ ML4 0.41 0.26 0.18 1.00</code></pre>
 <ol start="5" type="a">
 <li>Warum zeigt die Varimax-Lösung größere Nebenladungen als die Oblimin-Lösung?</li>
 </ol>
-<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-36-contents" aria-controls="callout-36" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
@@ -1323,7 +1328,7 @@ ML4 0.41 0.26 0.18 1.00</code></pre>
 <ol start="6" type="a">
 <li>Für welche Rotationsmethode würden Sie sich entscheiden? Begründen Sie Ihre Wahl.</li>
 </ol>
-<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-37-contents" aria-controls="callout-37" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
@@ -1395,7 +1400,7 @@ i20 0.07 0.05 0.02 0.15</code></pre>
 <ol type="a">
 <li>Berechnen Sie das Residuum <span class="math inline">\(D = S - \Sigma(\theta)\)</span> für die Items i13 und i07.</li>
 </ol>
-<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-38-contents" aria-controls="callout-38" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
@@ -1441,7 +1446,7 @@ i20  0.02  0.01  0.01  0.02</code></pre>
 <ol start="2" type="a">
 <li>Residuen über 0.1 oder unter −0.1 deuten auf Abweichungen zwischen Modell und Daten hin. Welche Residuen außerhalb der Diagonalen erfüllen dieses Kriterium?</li>
 </ol>
-<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-39-contents" aria-controls="callout-39" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
@@ -1460,7 +1465,7 @@ i20  0.02  0.01  0.01  0.02</code></pre>
 <ol start="3" type="a">
 <li>Schauen Sie sich die Formulierungen von i07 und i13 (<a href="#tbl-items" class="quarto-xref">Tabelle&nbsp;1</a>) an. Warum korrelieren die beiden Items höher, als das Modell vorhersagt?</li>
 </ol>
-<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-40-contents" aria-controls="callout-40" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
@@ -1479,7 +1484,7 @@ i20  0.02  0.01  0.01  0.02</code></pre>
 <ol start="4" type="a">
 <li>Was steht auf den Diagonalen von <span class="math inline">\(\Sigma(\theta)\)</span> und <span class="math inline">\(D\)</span>?</li>
 </ol>
-<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-41-contents" aria-controls="callout-41" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
@@ -1498,7 +1503,7 @@ i20  0.02  0.01  0.01  0.02</code></pre>
 <ol start="5" type="a">
 <li>Wie beurteilen Sie die Modellanpassung insgesamt?</li>
 </ol>
-<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-42-contents" aria-controls="callout-42" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
@@ -1553,7 +1558,7 @@ Cumulative Var 0.11 0.21 0.30 0.38</code></pre>
 <ol type="a">
 <li>Vergleichen Sie die Lösung mit Ihrer Zuordnung aus <a href="#exr-efa-construct" class="quarto-xref">Aufgabe&nbsp;1</a>, Teil c, und mit den Blöcken aus <a href="#exr-efa-corrplot" class="quarto-xref">Aufgabe&nbsp;2</a>, Teil b.</li>
 </ol>
-<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-43-contents" aria-controls="callout-43" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
@@ -1593,7 +1598,7 @@ Cumulative Var 0.11 0.21 0.30 0.38</code></pre>
 <ol type="a">
 <li>Vergleichen Sie die Summenwerte der beiden Stichproben.</li>
 </ol>
-<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-44-contents" aria-controls="callout-44" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
@@ -1612,7 +1617,7 @@ Cumulative Var 0.11 0.21 0.30 0.38</code></pre>
 <ol start="2" type="a">
 <li>Erwarten Sie in dieser Stichprobe dieselbe Faktorenstruktur? Begründen Sie Ihre Vermutung, bevor Sie die Ausgaben ansehen.</li>
 </ol>
-<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-45-contents" aria-controls="callout-45" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
@@ -1656,7 +1661,7 @@ Cumulative Var 0.11 0.21 0.30 0.38</code></pre>
 <ol start="3" type="a">
 <li>Wie viele Faktoren würden Sie hier nach dem Kaiser-Guttman-Kriterium extrahieren, wie viele nach der Parallelanalyse? Vergleichen Sie mit <a href="#exr-efa-number" class="quarto-xref">Aufgabe&nbsp;5</a>.</li>
 </ol>
-<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-46-contents" aria-controls="callout-46" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
@@ -1718,7 +1723,7 @@ ML4 0.19 0.07 0.11 1.00</code></pre>
 <ol start="4" type="a">
 <li>Vergleichen Sie die Ladungen und die Faktorkorrelationen der Studierendenstichprobe mit der Oblimin-Lösung der Online-Stichprobe (<a href="#exr-efa-rotation" class="quarto-xref">Aufgabe&nbsp;7</a>). Was beobachten Sie?</li>
 </ol>
-<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-47-contents" aria-controls="callout-47" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
@@ -1737,7 +1742,7 @@ ML4 0.19 0.07 0.11 1.00</code></pre>
 <ol start="5" type="a">
 <li>Wie erklären Sie die Unterschiede?</li>
 </ol>
-<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-48-contents" aria-controls="callout-48" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
@@ -1756,7 +1761,7 @@ ML4 0.19 0.07 0.11 1.00</code></pre>
 <ol start="6" type="a">
 <li>Beide Datensätze sind mit demselben Messmodell simuliert: dieselben vier Faktoren, dieselben Ladungen, dieselben Items. Nur die Personen unterscheiden sich. Was bedeutet das für die Aussage „Der Fragebogen misst vier Dimensionen“? Welche Stichprobe eignet sich für die Testkonstruktion?</li>
 </ol>
-<div class="callout callout-style-default callout-tip callout-titled" title="Lösung">
+<div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-49-contents" aria-controls="callout-49" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
@@ -1863,7 +1868,8 @@ Hodapp, V., Rohrmann, S., &amp; Ringeisen, T. (2011). <em>Prüfungsangstfragebog
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }
       // Inspect non-navigation links and adorn them if external
-     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      window.quartoDecorateExternalLinks = function (root) {
+     var links = (root || window.document).querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
       for (var i=0; i<links.length; i++) {
         const link = links[i];
         if (!isInternal(link.href)) {
@@ -1872,8 +1878,69 @@ Hodapp, V., Rohrmann, S., &amp; Ringeisen, T. (2011). <em>Prüfungsangstfragebog
           if (link.dataset.originalHref !== undefined) {
             link.href = link.dataset.originalHref;
           }
+          if (!link.classList.contains('no-external-icon')) {
+          }
         }
       }
+      };
+      window.quartoDecorateExternalLinks(window.document);
+    // Esc closes the popup (WCAG 1.4.13) and focus leaving both trigger and
+    // popup closes it (WCAG 2.4.11); tippy handles neither for interactive popups.
+    const hideOnEscAndFocusOut = {
+      name: 'hideOnEscAndFocusOut',
+      defaultValue: true,
+      fn(instance) {
+        const dismiss = () => {
+          // A show scheduled by the trigger delay would otherwise reopen it
+          instance.clearDelayTimeouts();
+          instance.hide();
+        };
+        const onKeyDown = (event) => {
+          if (event.key !== 'Escape') {
+            return;
+          }
+          // Keep Esc from also reaching page handlers (e.g. reveal.js overview),
+          // except an open reveal.js slide menu, which Esc should close too.
+          // The menu handles keys only when its keyboard option is on.
+          const menuHandlesEsc = window.Reveal?.getPlugin?.('menu')?.isOpen() &&
+            window.Reveal.getConfig().menu?.keyboard !== false;
+          if (!menuHandlesEsc) {
+            event.stopPropagation();
+          }
+          if (instance.popper.contains(window.document.activeElement)) {
+            // Disabled while refocusing so the focus trigger does not reopen it
+            instance.disable();
+            instance.reference.focus();
+            instance.enable();
+          }
+          dismiss();
+        };
+        const onFocusOut = (event) => {
+          const target = event.relatedTarget;
+          if (target && !instance.reference.contains(target) &&
+              !instance.popper.contains(target)) {
+            dismiss();
+          }
+        };
+        // On the trigger too: a click trigger (code-annotations: select) has no
+        // blur handling. Attached for the instance's lifetime so leaving the
+        // trigger also cancels a show still pending on the trigger delay.
+        instance.reference.addEventListener('focusout', onFocusOut);
+        return {
+          onShow() {
+            window.document.addEventListener('keydown', onKeyDown, true);
+            instance.popper.addEventListener('focusout', onFocusOut);
+          },
+          onHide() {
+            window.document.removeEventListener('keydown', onKeyDown, true);
+            instance.popper.removeEventListener('focusout', onFocusOut);
+          },
+          onDestroy() {
+            instance.reference.removeEventListener('focusout', onFocusOut);
+          },
+        };
+      },
+    };
     function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
       const config = {
         allowHTML: true,
@@ -1887,6 +1954,7 @@ Hodapp, V., Rohrmann, S., &amp; Ringeisen, T. (2011). <em>Prüfungsangstfragebog
         interactiveBorder: 10,
         theme: 'quarto',
         placement: 'bottom-start',
+        plugins: [hideOnEscAndFocusOut],
       };
       if (contentFn) {
         config.content = contentFn;
@@ -2049,44 +2117,54 @@ Hodapp, V., Rohrmann, S., &amp; Ringeisen, T. (2011). <em>Prüfungsangstfragebog
           const lineIds = lines.map((line) => {
             return targetCell + "-" + line;
           })
-          let top = null;
-          let height = null;
-          let parent = null;
+          // Each band is positioned against its own containing block, which is
+          // not the offsetParent of the lines, so place it from client rects.
+          const placeBand = (band, firstEl, lastEl, codeBlock) => {
+            const container = band.offsetParent;
+            if (container === null) {
+              return;
+            }
+            const containerRect = container.getBoundingClientRect();
+            // Reveal.js scales slides with a transform, so convert client
+            // pixels back to the CSS pixels of the container.
+            const scale = containerRect.height / container.offsetHeight || 1;
+            const firstRect = firstEl.getBoundingClientRect();
+            const lastRect = lastEl.getBoundingClientRect();
+            const top = (firstRect.top - containerRect.top) / scale - container.clientTop + container.scrollTop;
+            const height = (lastRect.bottom - firstRect.top) / scale;
+            band.style.top = top - 2 + "px";
+            band.style.height = height + 4 + "px";
+            if (codeBlock) {
+              // Without the copy button wrapper, the containing block is wider
+              // than the code block, so span the code block explicitly.
+              const blockRect = codeBlock.getBoundingClientRect();
+              band.style.left = (blockRect.left - containerRect.left) / scale - container.clientLeft + container.scrollLeft + "px";
+              band.style.width = blockRect.width / scale + "px";
+            }
+          };
           if (lineIds.length > 0) {
-              //compute the position of the single el (top and bottom and make a div)
-              const el = window.document.getElementById(lineIds[0]);
-              top = el.offsetTop;
-              height = el.offsetHeight;
-              parent = el.parentElement.parentElement;
-            if (lineIds.length > 1) {
-              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
-              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
-              height = bottom - top;
+            const el = window.document.getElementById(lineIds[0]);
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const parent = el.parentElement.parentElement;
+            // cook up a div (if necessary) and position it
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
             }
-            if (top !== null && height !== null && parent !== null) {
-              // cook up a div (if necessary) and position it 
-              let div = window.document.getElementById("code-annotation-line-highlight");
-              if (div === null) {
-                div = window.document.createElement("div");
-                div.setAttribute("id", "code-annotation-line-highlight");
-                div.style.position = 'absolute';
-                parent.appendChild(div);
-              }
-              div.style.top = top - 2 + "px";
-              div.style.height = height + 4 + "px";
-              div.style.left = 0;
-              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
-              if (gutterDiv === null) {
-                gutterDiv = window.document.createElement("div");
-                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
-                gutterDiv.style.position = 'absolute';
-                const codeCell = window.document.getElementById(targetCell);
-                const gutter = codeCell.querySelector('.code-annotation-gutter');
-                gutter.appendChild(gutterDiv);
-              }
-              gutterDiv.style.top = top - 2 + "px";
-              gutterDiv.style.height = height + 4 + "px";
+            placeBand(div, el, lastEl, parent.closest("div.sourceCode") || parent);
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
             }
+            placeBand(gutterDiv, el, lastEl);
             selectedAnnoteEl = annoteEl;
           }
         };
@@ -2184,6 +2262,9 @@ Hodapp, V., Rohrmann, S., &amp; Ringeisen, T. (2011). <em>Prüfungsangstfragebog
       }
     }
   });
+  </script>
+  <script type="application/javascript">
+  window.quartoScrollableRegionsLabels = {"code":"Scrollbarer Code","output":"Scrollbare Ausgabe"};
   </script>
 </div> <!-- /content -->
 <footer class="footer">
