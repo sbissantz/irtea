@@ -5,8 +5,6 @@ knitr:
     comment: ""
 ---
 
-{{< include _revision-note.qmd >}}
-
 ::: {#exr-ctt-error-types}
 ## Messfehler
 
@@ -203,7 +201,7 @@ g. In der Praxis ist der wahre Wert $T$ einer Person unbekannt und damit auch $\
 ::: {#exr-ctt-models}
 ## Messmodelle der KTT
 
-Liegen zur Messung eines latenten Konstrukts mehrere Messungen vor (z. B. Items), kann überprüft werden, ob diese dasselbe latente Konstrukt erfassen, indem die Gültigkeit eines angenommenen Messmodells empirisch überprüft wird. Jede Itemantwort ist dabei ein Testwert im Sinne der KTT: Sie setzt sich aus einem wahren Wert und einem Messfehler zusammen, die unkorreliert sind.
+Liegen zur Messung eines latenten Konstrukts mehrere Messungen vor (z. B. Items), kann überprüft werden, ob diese dasselbe latente Konstrukt erfassen, indem die Gültigkeit eines angenommenen Messmodells empirisch überprüft wird. Jede Itemantwort ist dabei ein Testwert im Sinne der KTT: Sie setzt sich aus einem wahren Wert und einem Messfehler zusammen, die unkorreliert sind.
 
 Die fünf Messmodelle der KTT, die Sie in der Vorlesung kennengelernt haben, unterscheiden sich darin, welche Annahmen sie über die Items treffen. Daraus ergeben sich unterschiedliche Konsequenzen für Itemmittelwerte, Itemvarianzen und Itemkovarianzen [@moosbrugger2020, Kap. 13].
 

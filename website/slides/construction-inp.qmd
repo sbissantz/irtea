@@ -1,7 +1,7 @@
 ---
 title: "B.F.3 Übung zu Diagnostik/Testtheorie"
 subtitle: "Schritte der Testkonstruktion"
-author: "Bißantz, S., Kuch, N. & Gürtler, R.-M."
+author: "Bißantz, S., Kuch, S. & Gürtler, R.-M."
 institute: "Rheinland-Pfälzische Technische Universität Kaiserslautern-Landau"
 pdf-link: construction-inp.pdf
 # readings of the matching lecture sessions (VL_TT_02, VL_TT_03); not cited in the text

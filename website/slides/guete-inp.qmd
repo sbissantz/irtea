@@ -1,7 +1,7 @@
 ---
 title: "B.F.3 Übung zu Diagnostik/Testtheorie"
 subtitle: "Gütekriterien"
-author: "Bißantz, S., Kuch, N. & Gürtler, R.-M."
+author: "Bißantz, S., Kuch, S. & Gürtler, R.-M."
 institute: "Rheinland-Pfälzische Technische Universität Kaiserslautern-Landau"
 pdf-link: guete-inp.pdf
 ---

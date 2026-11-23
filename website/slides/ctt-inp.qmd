@@ -4,10 +4,6 @@ subtitle: "Klassische Testtheorie"
 author: "Bißantz, S., Kuch, S. & Gürtler, R.-M."
 institute: "Rheinland-Pfälzische Technische Universität Kaiserslautern-Landau"
 pdf-link: ctt-inp.pdf
-# underscore decks skip _quarto.yml; remove these three lines when renaming
-lang: de
-bibliography: ../references.bib
-csl: ../apa.csl
 ---
 
 ```{r}
@@ -130,14 +126,14 @@ abline(h = 0, col = dark)
 
 ::: {.column width="60%"}
 ::: {.callout-note title="Gedankenexperiment"}
-Hätten wir die Möglichkeit, eine Person unzählige Male unter den gleichen Bedingungen zu messen, dann erhielten wir eine (Normal-)verteilung seiner/ihrer Messwerte. Der Mittelwert der intraindividuellen Messwerte entspräche dem wahren Wert der Person.
+Hätten wir die Möglichkeit, eine Person unzählige Male unter den gleichen Bedingungen zu messen, dann erhielten wir eine (Normal-)Verteilung ihrer Messwerte. Der Mittelwert der intraindividuellen Messwerte entspräche dem wahren Wert der Person.
 :::
 
 :::
 ::::
 
 $$
-E \sim \mathcal{N}(0, \sigma^2) \tag{3}
+E \sim \mathrm{N}(0, \sigma^2) \tag{3}
 $$
 
 ## Fluktuationsphänomen
@@ -162,7 +158,7 @@ $$
 #| fig-width: 5
 #| fig-height: 4
 #| out-width: "90%"
-#| fig-cap: "Werteverteilungen"
+#| fig-cap: "Zufällige Fehlerwerte streuen ohne Muster um 0"
 #| fig-alt: "Streudiagramm von 100 zufälligen Fehlerwerten, die ohne erkennbares Muster um die gestrichelte Linie bei 0 streuen."
 set.seed(1)
 par(mar = c(4, 4, 3, 1))
@@ -200,7 +196,7 @@ Wir messen (oft) nur ein einziges Mal und ziehen damit (zufällig) aus der Verte
 
 ::: {.column width="55%"}
 ::: {.callout-note title="Gedankenexperiment"}
-Hätten wir die Möglichkeit, eine Person unzählige Male unter den gleichen Bedingungen zu messen, dann erhalten wir eine (Normal-)verteilung seiner/ihrer Messwerte, wobei im Mittel über alle intraindividuellen Messwerte die Beobachtungswerte dem wahren Wert der Person entsprechen.
+Hätten wir die Möglichkeit, eine Person unzählige Male unter den gleichen Bedingungen zu messen, dann erhielten wir eine (Normal-)Verteilung ihrer Messwerte, wobei im Mittel über alle intraindividuellen Messwerte die Beobachtungswerte dem wahren Wert der Person entsprechen.
 :::
 :::
 ::::
@@ -215,12 +211,12 @@ Hätten wir die Möglichkeit, eine Person unzählige Male unter den gleichen Bed
   - Konsistente Messwerte bei wiederholter Messung einer LV
   - Akkuratheit bei der Messung von wahren Werten [@coaley2014]
 
-**Reliabilität ($Rel$)**
+**Reliabilität ($\text{Rel}$)**
 
 $$
 \begin{split}
-Rel(X) & = \frac{Var(T)}{Var(X)} = \frac{Var(T)}{Var(T) + Var(E)} \\
-Rel(X) & \in [0,1]
+\text{Rel}(X) & = \frac{\text{Var}(T)}{\text{Var}(X)} = \frac{\text{Var}(T)}{\text{Var}(T) + \text{Var}(E)} \\
+\text{Rel}(X) & \in [0,1]
 \end{split} \tag{6}
 $$
 
@@ -228,7 +224,7 @@ $$
 
 **Das Berechnungsproblem**
 
-$Rel(X)$ ist nicht (direkt) berechenbar; da wir z. B. $Var(T)$ nicht kennen.
+$\text{Rel}(X)$ ist nicht (direkt) berechenbar, da wir z. B. $\text{Var}(T)$ nicht kennen.
 
 **Mögliche Lösungsansätze**
 
@@ -364,7 +360,6 @@ Probleme der True-Score-Logik
 
 - Die Grundgleichung bleibt empirisch ungeprüft (siehe: Gleichung 1)
 - Annahme zu Messfehlern oft problematisch
-- Ausblick: nächste Woche IRT
 :::
 
 ::: {.column width="50%"}
@@ -374,7 +369,11 @@ Probleme der True-Score-Logik
 :::
 ::::
 
-# Danke & bis nächste Woche! {.unlisted}
+# Übungsheft
+
+## Übungen
+
+Übungen zu diesem Thema: [Übungsheft, Kapitel 5]({{< var site-url >}}/workbook/ctt-ex.html)
 
 # Literaturverzeichnis
 
@@ -469,7 +468,7 @@ $$
 $$
 \begin{split}
 \lambda_i = \lambda_j \\
-Var(\varepsilon_i) = Var(\varepsilon_j)
+\text{Var}(\varepsilon_i) = \text{Var}(\varepsilon_j)
 \end{split}
 $$
 
@@ -480,7 +479,7 @@ $$
 x_i &= \alpha_i + \lambda \cdot \eta + \varepsilon_i \\
 x_j &= \alpha_j + \lambda \cdot \eta + \varepsilon_j \\
 & i \ne j \\
-& Var(\varepsilon_i) = Var(\varepsilon_j)
+& \text{Var}(\varepsilon_i) = \text{Var}(\varepsilon_j)
 \end{split}
 $$
 :::
@@ -500,7 +499,7 @@ $$
 \begin{split}
 \lambda_i = \lambda_j \\
 \alpha_i = \alpha_j \\
-Var(\varepsilon_i) = Var(\varepsilon_j)
+\text{Var}(\varepsilon_i) = \text{Var}(\varepsilon_j)
 \end{split}
 $$
 
@@ -511,7 +510,7 @@ $$
 x_i &= \alpha + \lambda \cdot \eta + \varepsilon_i \\
 x_j &= \alpha + \lambda \cdot \eta + \varepsilon_j \\
 & i \ne j \\
-& Var(\varepsilon_i) = Var(\varepsilon_j)
+& \text{Var}(\varepsilon_i) = \text{Var}(\varepsilon_j)
 \end{split}
 $$
 :::

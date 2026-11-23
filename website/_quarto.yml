@@ -28,6 +28,8 @@ website:
             text: "03 Gütekriterien"
           - href: slides/construction-inp.qmd
             text: "04 Schritte der Testkonstruktion"
+          - href: slides/ctt-inp.qmd
+            text: "05 Klassische Testtheorie"
           - href: slides/efa-inp.qmd
             text: "08 Exploratorische Faktorenanalyse"
       - text: Übungsheft
