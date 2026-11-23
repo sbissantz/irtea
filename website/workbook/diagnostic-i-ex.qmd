@@ -412,6 +412,51 @@ Schwach konjunktive Regel aus konjunktiver und kompensatorischer Regel: Beide Mi
 :::
 :::
 
+::: {#exr-assessment-plans}
+## Untersuchungspläne
+
+Für den Studiengang „Kreatives Gestalten“ (@exr-decision-rules) gehen insgesamt $400$ Bewerbungen ein. Die Hochschule entscheidet nach der konjunktiven Regel ($\text{IQ} \geq 100$ und $T_{\text{Krea}} \geq 50$) und diskutiert zwei mögliche Abläufe:
+
+1. Alle Bewerber:innen bearbeiten an einem gemeinsamen Testtag den Intelligenztest und den Kreativitätstest. Über die Zulassung wird entschieden, wenn beide Ergebnisse vorliegen.
+2. Alle Bewerber:innen bearbeiten zunächst einen Online-Intelligenztest von zu Hause aus. Wer $\text{IQ} < 100$ erreicht, erhält eine Absage. Nur wer $\text{IQ} \geq 100$ erreicht, wird zum Kreativitätstest vor Ort eingeladen; danach wird über die Zulassung entschieden.
+
+a. Um welche Art von Untersuchungsplan handelt es sich bei Ablauf 1?
+
+::: {.callout-tip title="Lösung" collapse="true"}
+Einstufiger Untersuchungsplan, genauer eine nicht-sequenzielle Untersuchungsbatterie: Es werden mehrere Verfahren eingesetzt, und entschieden wird erst, wenn alle Informationen vorliegen.
+:::
+
+b. Handelt es sich bei Ablauf 2 um eine Vorauswahl (*pre-reject*), eine Vorentscheidung (*pre-select*) oder einen vollständig sequenziellen Untersuchungsplan? Begründen Sie Ihre Antwort.
+
+::: {.callout-tip title="Lösung" collapse="true"}
+Vorauswahl (*pre-reject*): Nach dem Intelligenztest werden Personen nur terminal ausgeschlossen, aber niemand wird terminal aufgenommen.
+:::
+
+c. Führt Ablauf 2 zu anderen Zulassungsentscheidungen als Ablauf 1? Begründen Sie Ihre Antwort.
+
+::: {.callout-tip title="Lösung" collapse="true"}
+Nein. Nach der konjunktiven Regel wird jede Person mit $\text{IQ} < 100$ ohnehin abgelehnt, unabhängig von ihrem Kreativitätswert. Es ändert sich nur, wann entschieden wird.
+:::
+
+d. Die beiden Verfahren unterscheiden sich hinsichtlich ihres zeitlichen und finanziellen Aufwands erheblich: Die Durchführung des Online-Intelligenztests verursacht Kosten von ca. $10$ € pro Person. Der Kreativitätstest hingegen wird als individuelle Testung vor Ort durchgeführt und anschließend von zwei unabhängigen Jurymitgliedern ausgewertet. Die Kosten hierfür belaufen sich auf ca. $120$ € pro Person.
+
+Gehen Sie davon aus, dass die IQ-Werte der Bewerber:innen normalverteilt sind ($M = 100$, $SD = 15$). Begründen Sie unter Berücksichtigung dieser Annahme, weshalb Ablauf 2 gegenüber Ablauf 1 aus ökonomischer Perspektive deutlich vorteilhafter ist.
+
+::: {.callout-tip title="Lösung" collapse="true"}
+Ablauf 1: $400 \cdot (10 + 120) = 52\,000$ €. Ablauf 2: Die Hälfte erreicht $\text{IQ} \geq 100$, also $400 \cdot 10 + 200 \cdot 120 = 28\,000$ €. Ablauf 2 spart $24\,000$ € bei gleichen Entscheidungen, weil das teure Verfahren nur noch bei Personen eingesetzt wird, die nach dem günstigen Verfahren noch infrage kommen.
+:::
+
+e. Entwickeln Sie für die Kunsthochschule ein Beispiel für einen vollständig sequenziellen Untersuchungsplan. Legen Sie dabei fest, welche Bewerber:innen nach dem ersten Testverfahren unmittelbar (terminal) ausgeschlossen, welche unmittelbar aufgenommen werden und bei welchen Bewerber:innen eine weitere Diagnostik erforderlich ist. Beschreiben Sie, wie in der zweiten Auswahlstufe mit den verbleibenden Bewerber:innen verfahren wird.
+Nennen Sie je einen Vor- und einen Nachteil Ihres Plans.
+
+::: {.callout-tip title="Lösung" collapse="true"}
+Beispiel: Nach dem Intelligenztest werden Bewerber:innen mit $\text{IQ} < 85$ terminal ausgeschlossen und Bewerber:innen mit $\text{IQ} \geq 130$ terminal aufgenommen. Alle übrigen bearbeiten den Kreativitätstest; über sie wird nach der kompensatorischen Regel aus @exr-decision-rules entschieden ($z_{\text{IQ}} + z_{\text{Krea}} \geq 0$).
+
+- Vorteil: Noch weniger Personen müssen den teuren Kreativitätstest bearbeiten; über eindeutige Fälle wird früh entschieden.
+- Nachteil: Terminale Entscheidungen beruhen nur auf einem Teil der Informationen. Wer sehr intelligent, aber wenig kreativ ist, wird ohne Kreativitätstest in einen kreativen Studiengang aufgenommen (falsch-positive Entscheidung). Wer sehr kreativ ist, aber $\text{IQ} < 85$ erreicht, wird ausgeschlossen, obwohl eine Kompensation möglich wäre (falsch-negative Entscheidung).
+:::
+:::
+
 ## Literatur {.unnumbered}
 
 ::: {#refs}
