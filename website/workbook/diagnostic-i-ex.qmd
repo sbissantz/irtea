@@ -60,8 +60,7 @@ plot_and <- function() {
   rect(100, 50, 140, 80, col = fill_pos, border = NA)
   abline(v = 100, col = colors[2], lwd = 2)
   abline(h = 50, col = colors[2], lwd = 2)
-  text(120, 65, "positiv", cex = 1.1, font = 2, col = dark)
-  add_lisa()
+  text(120, 65, "ausgewählt", cex = 1.1, font = 2, col = dark)
 }
 
 plot_or <- function() {
@@ -70,10 +69,9 @@ plot_or <- function() {
   rect(60, 50, 100, 80, col = fill_pos, border = NA)
   abline(v = 100, col = colors[2], lwd = 2)
   abline(h = 50, col = colors[2], lwd = 2)
-  text(120, 35, "positiv", cex = 1.1, font = 2, col = dark)
-  text(80, 65, "positiv", cex = 1.1, font = 2, col = dark)
-  text(120, 65, "positiv", cex = 1.1, font = 2, col = dark)
-  add_lisa()
+  text(120, 35, "ausgewählt", cex = 1.1, font = 2, col = dark)
+  text(80, 65, "ausgewählt", cex = 1.1, font = 2, col = dark)
+  text(120, 65, "ausgewählt", cex = 1.1, font = 2, col = dark)
 }
 
 plot_comp <- function() {
@@ -84,7 +82,7 @@ plot_comp <- function() {
   polygon(c(iq, rev(iq)), c(pmax(20, pmin(80, t_bound)), rep(80, length(iq))),
           col = fill_pos, border = NA)
   lines(iq, t_bound, col = colors[2], lwd = 2)
-  text(120, 65, "positiv", cex = 1.1, font = 2, col = dark)
+  text(120, 65, "ausgewählt", cex = 1.1, font = 2, col = dark)
   add_lisa()
 }
 
@@ -99,8 +97,8 @@ plot_mixed1 <- function() {
   lines(iq_c, t_c, col = colors[2], lwd = 2)
   segments(115, 20, 115, 40, col = colors[2], lwd = 2, lty = 2)
   segments(60, 60, 85, 60, col = colors[2], lwd = 2, lty = 2)
-  text(120, 65, "positiv", cex = 1.0, font = 2, col = dark)
-  text(75, 35, "negativ", cex = 1.0, font = 2, col = dark)
+  text(120, 65, "ausgewählt", cex = 1.0, font = 2, col = dark)
+  text(75, 35, "abgelehnt", cex = 1.0, font = 2, col = dark)
   legend("bottomleft",
          legend = c(expression(z[IQ] + z[Krea] >= 0), expression(IQ >= 115 ~ "bzw." ~ T[Krea] >= 60)),
          lty = c(1, 2), col = colors[2], lwd = 2, cex = 0.7, bg = "white",
@@ -122,7 +120,7 @@ plot_mixed2 <- function() {
   lines(right, 70 - (10 / 15) * (right - 100), col = colors[2], lwd = 1, lty = 3)
   abline(v = 100, col = colors[2], lwd = 1.5, lty = 2)
   abline(h = 50, col = colors[2], lwd = 1.5, lty = 2)
-  text(125, 72, "positiv", cex = 1.0, font = 2, col = dark)
+  text(125, 72, "ausgewählt", cex = 1.0, font = 2, col = dark)
   legend("bottomleft",
          legend = c(expression(z[IQ] + z[Krea] >= 2), expression(IQ >= 100 * "," ~ T[Krea] >= 50)),
          lty = c(1, 2), col = colors[2], lwd = c(2, 1.5), cex = 0.7,
@@ -138,7 +136,7 @@ Runden Sie Ergebnisse bei Berechnungen kaufmännisch auf zwei Nachkommastellen. 
 ::: {#exr-taylor-russell}
 ## Taylor-Russell-Tafeln
 
-Ein Logistikunternehmen besetzt jedes Jahr Ausbildungsplätze. Für die Vorauswahl setzt die Personalabteilung einen Eignungstest ein. In diesem Jahr gehen $n = 250$ Bewerbungen für $50$ Ausbildungsplätze ein. Aus den Vorjahren ist bekannt, dass etwa die Hälfte aller Bewerber:innen die Ausbildung erfolgreich abschließen würde. Laut Testmanual beträgt die Kriteriumsvalidität dieses Eignungstests für den Ausbildungserfolg $r_{tc} = 0.40$.
+Ein Logistikunternehmen besetzt jedes Jahr Ausbildungsplätze. Für die Vorauswahl setzt die Personalabteilung einen Eignungstest ein. In diesem Jahr gehen $n = 250$ Bewerbungen für $50$ Ausbildungsplätze ein. Aus den Vorjahren ist bekannt, dass etwa die Hälfte aller Bewerber:innen die Ausbildung erfolgreich abschließen würde. Laut Testmanual beträgt die Kriteriumsvalidität dieses Eignungstests für den Ausbildungserfolg $r_{tc} = 0.50$.
 
 a. Bestimmen Sie die Grundquote (*base rate*, BR) und die Selektionsquote (*selection ratio*, SR) für das Szenario. Erläutern Sie beide Begriffe in je einem Satz.
 
@@ -166,7 +164,7 @@ knitr::kable(tr_table(0.40), format = "pipe", align = "c")
 b. Lesen Sie die Erfolgsquote für das Szenario aus der passenden Tafel ab. Wie viele der 50 ausgewählten Personen werden voraussichtlich die Ausbildung erfolgreich abschließen? Wie hoch ist der inkrementelle Wert dieses Eignungstests?
 
 ::: {.callout-tip title="Lösung" collapse="true"}
-Erfolgsquote (@tbl-tr50, $r_{tc} = 0.40$, SR = 0.20): 0.72. Erwartet werden $0.72 \cdot 50 = 36$ erfolgreiche Auszubildende. Ohne Test (Zufallsauswahl) wären es $0.50 \cdot 50 = 25$. Der Test erhöht die Erfolgsquote um 22 Prozentpunkte (11 Personen mehr).
+Erfolgsquote (@tbl-tr50, $r_{tc} = 0.50$, SR = 0.20): 0.78. Erwartet werden $0.78 \cdot 50 = 39$ erfolgreiche Auszubildende. Ohne Test (Zufallsauswahl) wären es $0.50 \cdot 50 = 25$. Der Test erhöht die Erfolgsquote um 28 Prozentpunkte (14 Personen mehr).
 :::
 
 c. Wie hoch wäre die Erfolgsquote, wenn Sie ein Verfahren mit $r_{tc} = 0.00$ heranziehen würden? Begründen Sie Ihre Antwort.
@@ -197,7 +195,7 @@ Bei gleicher Selektionsquote führt eine höhere Grundquote zu einer höheren Er
 
 Herr K. ist 28 Jahre alt und hat im Rahmen einer psychologischen Untersuchung das NEO-Fünf-Faktoren-Inventar (NEO-FFI) bearbeitet. Auf der Dimension Gewissenhaftigkeit erzielte er einen Rohwert von $x = 38$. @tbl-neo-norms zeigt die Normwerte des NEO-FFI mit Mittelwerten ($M$) und Standardabweichungen ($s$) für verschiedene Normgruppen und alle fünf Dimensionen (zu Normwerten allgemein vgl. [@moosbrugger2020]).
 
-| Stichprobe | $N$ | $M$ NEU | $s$ NEU | $M$ EXT | $s$ EXT | $M$ OFF | $s$ OFF | $M$ VER | $s$ VER | $M$ GEW | $s$ GEW |
+| Stichprobe | $N$ | $M_\text{N}$ | $s_\text{N}$ | $M_\text{E}$ | $s_\text{E}$ | $M_\text{O}$ | $s_\text{O}$ | $M_\text{V}$ | $s_\text{V}$ | $M_\text{G}$ | $s_\text{G}$ |
 |:-----------|----:|------:|------:|------:|------:|------:|------:|------:|------:|------:|------:|
 | Männer, 16–20 | 480 | 20.82 | 7.59 | 28.59 | 6.52 | 31.12 | 7.39 | 28.26 | 6.06 | 28.81 | 7.74 |
 | Männer, 21–24 | 1358 | 19.86 | 8.10 | 28.63 | 6.89 | 32.63 | 6.72 | 28.65 | 6.08 | 29.72 | 7.55 |
@@ -213,7 +211,7 @@ Herr K. ist 28 Jahre alt und hat im Rahmen einer psychologischen Untersuchung da
 | Frauen, repräsentativ | 448 | 22.22 | 7.97 | 27.41 | 6.52 | 29.71 | 6.54 | 31.68 | 5.15 | 33.08 | 5.90 |
 | Bevölkerungsrepräsentative Quotenstichprobe | 871 | 20.99 | 7.89 | 26.88 | 6.47 | 29.47 | 6.53 | 30.45 | 5.38 | 32.61 | 6.11 |
 
-: Normwerte des NEO-FFI nach dem NEO-FFI-Manual. NEU = Neurotizismus, EXT = Extraversion, OFF = Offenheit für Erfahrung, VER = Verträglichkeit, GEW = Gewissenhaftigkeit. {#tbl-neo-norms}
+: Normwerte des NEO-FFI nach dem NEO-FFI-Manual. N = Neurotizismus, E = Extraversion, O = Offenheit für Erfahrung, V = Verträglichkeit, G = Gewissenhaftigkeit. {#tbl-neo-norms}
 
 a. Welche Normgruppe aus der Tabelle ist für Herrn K. am besten geeignet? Begründen Sie Ihre Wahl.
 
@@ -307,7 +305,7 @@ Der empirische Prozentrang (98.50) liegt deutlich über dem normalverteilungsbas
 
 Eine Kunsthochschule möchte Studierende für den Studiengang „Kreatives Gestalten“ auswählen. Dazu werden zwei diagnostische Hypothesen aufgestellt:
 
-- H.1: Die Bewerberin bzw. der Bewerber verfügt über mindestens durchschnittliche intellektuelle Fähigkeiten (IQ $\geq$ 100).
+- H.1: Die Bewerberin bzw. der Bewerber verfügt über mindestens durchschnittliche intellektuelle Fähigkeiten ($\text{IQ} \geq 100$).
 - H.2: Die Bewerberin bzw. der Bewerber verfügt über mindestens durchschnittliche Kreativität (Kreativitätstest, $T_{\text{Krea}} \geq 50$).
 
 a. Formulieren Sie drei verschiedene Entscheidungsregeln (kompensatorische Regel, Oder-Regel, konjunktive Regel), mit denen die Kunsthochschule die beiden Hypothesen verknüpfen könnte.
@@ -326,7 +324,7 @@ b. Skizzieren Sie in einem Koordinatensystem (IQ von 60 bis 140 auf der $x$-Achs
 #| fig-width: 5.5
 #| fig-height: 4.5
 #| fig-align: center
-#| fig-alt: "Koordinatensystem mit IQ auf der x-Achse und Kreativität auf der y-Achse. Der positive Bereich der konjunktiven Regel ist der Quadrant rechts oberhalb der Grenzlinien bei IQ 100 und T-Wert 50. Lisa liegt bei IQ 108 und T-Wert 44 außerhalb dieses Bereichs."
+#| fig-alt: "Koordinatensystem mit IQ auf der x-Achse und Kreativität auf der y-Achse. Der Bereich der Ausgewählten der konjunktiven Regel ist der Quadrant rechts oberhalb der Grenzlinien bei IQ 100 und T-Wert 50."
 plot_and()
 ```
 
@@ -335,14 +333,14 @@ plot_and()
 #| fig-width: 5.5
 #| fig-height: 4.5
 #| fig-align: center
-#| fig-alt: "Koordinatensystem mit IQ auf der x-Achse und Kreativität auf der y-Achse. Der positive Bereich der Oder-Regel umfasst drei Quadranten, nur der Bereich links unten mit IQ unter 100 und T-Wert unter 50 ist negativ. Lisa liegt bei IQ 108 und T-Wert 44 im positiven Bereich."
+#| fig-alt: "Koordinatensystem mit IQ auf der x-Achse und Kreativität auf der y-Achse. Der Bereich der Ausgewählten der Oder-Regel umfasst drei Quadranten, nur der Bereich links unten mit IQ unter 100 und T-Wert unter 50 führt zur Ablehnung."
 plot_or()
 ```
 
 Bei der konjunktiven Regel ist der Quadrant rechts oben positiv. Bei der Oder-Regel sind drei Quadranten positiv; nur der Bereich links unten ($\text{IQ} < 100$ und $T_{\text{Krea}} < 50$) führt zu einer negativen Entscheidung.
 :::
 
-Lisa bewirbt sich an der Kunsthochschule. Ihre Testergebnisse: IQ = 108, $T_{\text{Krea}} = 44$.
+Lisa bewirbt sich an der Kunsthochschule für den Studiengang „Kreatives Gestalten“ und bearbeitet beide Tests. Ihre Testergebnisse lauten: Im Intelligenztest erreicht sie $\text{IQ} = 108$, im Kreativitätstest $T_{\text{Krea}} = 44$.
 
 c. Wie fällt die Entscheidung unter der kompensatorischen Regel, der Oder-Regel und der konjunktiven Regel aus?
 
@@ -364,7 +362,7 @@ Kompensationsgerade: $z_{\text{IQ}} + z_{\text{Krea}} = 0$, d. h. $\frac{\text
 #| fig-width: 5.5
 #| fig-height: 4.5
 #| fig-align: center
-#| fig-alt: "Koordinatensystem mit IQ auf der x-Achse und Kreativität auf der y-Achse. Die Kompensationsgerade verläuft von links oben nach rechts unten, der positive Bereich liegt oberhalb der Geraden. Lisa bei IQ 108 und T-Wert 44 liegt knapp unterhalb der Geraden im negativen Bereich."
+#| fig-alt: "Koordinatensystem mit IQ auf der x-Achse und Kreativität auf der y-Achse. Die Kompensationsgerade verläuft von links oben nach rechts unten, der Bereich der Ausgewählten liegt oberhalb der Geraden. Lisa bei IQ 108 und T-Wert 44 liegt knapp unterhalb der Geraden im Bereich der Abgelehnten."
 plot_comp()
 ```
 
@@ -384,7 +382,7 @@ In der Praxis werden die drei Entscheidungsregeln häufig zu Mischformen kombini
 #| fig-height: 4.5
 #| fig-align: center
 #| fig-cap: "Mischform 1"
-#| fig-alt: "Koordinatensystem mit IQ auf der x-Achse und Kreativität auf der y-Achse. Der positive Bereich liegt rechts von IQ 115, oberhalb von T-Wert 60 und oberhalb der Kompensationsgeraden. Lisa bei IQ 108 und T-Wert 44 liegt im negativen Bereich."
+#| fig-alt: "Koordinatensystem mit IQ auf der x-Achse und Kreativität auf der y-Achse. Der Bereich der Ausgewählten liegt rechts von IQ 115, oberhalb von T-Wert 60 und oberhalb der Kompensationsgeraden. Lisa bei IQ 108 und T-Wert 44 liegt im Bereich der Abgelehnten."
 plot_mixed1()
 ```
 
@@ -395,14 +393,14 @@ plot_mixed1()
 #| fig-height: 4.5
 #| fig-align: center
 #| fig-cap: "Mischform 2"
-#| fig-alt: "Koordinatensystem mit IQ auf der x-Achse und Kreativität auf der y-Achse. Der positive Bereich liegt rechts oben, begrenzt durch IQ 100, T-Wert 50 und eine Gerade, auf der die Summe der z-Werte 2 beträgt. Lisa bei IQ 108 und T-Wert 44 liegt im negativen Bereich."
+#| fig-alt: "Koordinatensystem mit IQ auf der x-Achse und Kreativität auf der y-Achse. Der Bereich der Ausgewählten liegt rechts oben, begrenzt durch IQ 100, T-Wert 50 und eine Gerade, auf der die Summe der z-Werte 2 beträgt. Lisa bei IQ 108 und T-Wert 44 liegt im Bereich der Abgelehnten."
 plot_mixed2()
 ```
 
 a. Beschreiben Sie die Entscheidungsregel in @fig-mixed-1. Wie heißt diese Mischform, und aus welchen Regeln (kompensatorische Regel, Oder-Regel, konjunktive Regel) setzt sie sich zusammen? Wird Lisa nach dieser Entscheidungsregel angenommen oder nicht?
 
 ::: {.callout-tip title="Lösung" collapse="true"}
-Schwache Oder-Regel aus Oder-Regel und kompensatorischer Regel: Positiv ist, wer in mindestens einem Bereich einen Mindestwert erreicht ($\text{IQ} \geq 115$ oder $T_{\text{Krea}} \geq 60$) oder wessen $z$-Werte sich zu mindestens null summieren ($z_{\text{IQ}} + z_{\text{Krea}} \geq 0$, entspricht einem gemittelten $T$-Wert von mindestens 50). Lisa erreicht keine der beiden Schwellen und hat eine Summe von $-0.07$: Lisa wird nicht angenommen.
+Schwache Oder-Regel aus Oder-Regel und kompensatorischer Regel: Ausgewählt wird, wer in mindestens einem Bereich einen Mindestwert erreicht ($\text{IQ} \geq 115$ oder $T_{\text{Krea}} \geq 60$) oder wessen $z$-Werte sich zu mindestens null summieren ($z_{\text{IQ}} + z_{\text{Krea}} \geq 0$, entspricht einem gemittelten $T$-Wert von mindestens 50). Lisa erreicht keine der beiden Schwellen und hat eine Summe von $-0.07$: Lisa wird nicht angenommen.
 :::
 
 b. Beschreiben Sie die Entscheidungsregel in @fig-mixed-2. Wie heißt diese Mischform, und aus welchen Regeln setzt sie sich zusammen? Wird Lisa nach dieser Entscheidungsregel angenommen oder nicht?
