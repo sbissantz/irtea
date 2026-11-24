@@ -1,0 +1,386 @@
+---
+title: "B.F.3 Übung zu Diagnostik/Testtheorie"
+subtitle: "Diagnostische Rechenkompetenzen I"
+author: "Bißantz, S., Kuch, S. & Gürtler, R.-M."
+institute: "Rheinland-Pfälzische Technische Universität Kaiserslautern-Landau"
+pdf-link: diagnostic-i-inp.pdf
+# underscore decks skip _quarto.yml; remove these three lines when renaming
+lang: de
+bibliography: ../references.bib
+csl: ../apa.csl
+# readings of the matching lecture sessions (VL_PsyDia_02, VL_PsyDia_05)
+nocite: |
+  @ziegler2012, @schmidtatzert2012
+---
+
+```{r}
+#| label: setup
+#| include: false
+# plot labels contain umlauts, which need a UTF-8 locale
+invisible(Sys.setlocale("LC_CTYPE", "en_US.UTF-8"))
+colors <- viridisLite::viridis(5)
+dark <- "#23373b"
+light <- "#d6dadb"
+
+# diagnostic process after Ziegler and Buehner (2012, Abb. 2); boxes named in
+# `highlight` are filled, and `frame` draws a box around a region
+plot_process <- function(highlight = character(0), frame = NULL) {
+  par(mar = c(0, 0, 0, 0), family = "sans", bg = NA)
+  plot.new()
+  plot.window(xlim = c(0, 100), ylim = c(0, 100), xaxs = "i", yaxs = "i")
+  # phase bands
+  rect(0, 46, 100, 100, col = "#f1f3f3", border = NA)
+  rect(0, 25, 100, 46, col = "#e4e7e8", border = NA)
+  rect(0, 0, 100, 25, col = light, border = NA)
+  text(3, 73, "Planung", srt = 90, font = 2, col = dark, cex = 0.8)
+  text(3, 35.5, "Durchführung", srt = 90, font = 2, col = dark, cex = 0.8)
+  text(3, 12.5, "Integration", srt = 90, font = 2, col = dark, cex = 0.8)
+  boxes <- list(
+    auftrag = c(55, 95.5, 18, 5, "Auftraggeber"),
+    frage = c(55, 88.5, 18, 5, "Fragestellung"),
+    ausarb = c(24, 82, 24, 5, "Ausarbeiten einer Fragestellung"),
+    diff = c(55, 75.5, 34, 5, "Ausarbeiten einer differenzierten Fragestellung"),
+    umsetz = c(55, 66.5, 34, 5, "Umsetzbarkeit in psychologische Hypothesen"),
+    rueck1 = c(87, 66.5, 20, 7, "Rückgabe des Auftrags/\nUmformulierung"),
+    hypo = c(55, 57.5, 34, 5, "Hypothesenformulierung"),
+    oper = c(55, 50, 34, 5, "Operationalisierung"),
+    rueck2 = c(87, 50, 20, 5, "Rückgabe des Auftrags"),
+    durchf = c(55, 39.5, 34, 7, "Untersuchungsplanung und\nDurchführung der Untersuchung"),
+    auswert = c(55, 30.5, 34, 5, "Datenauswertung"),
+    absich = c(52, 18.5, 30, 8, "Absicherung der Hypothesen/\nIntegration der Ergebnisse\nunterschiedlicher Verfahren"),
+    weitere = c(87, 18.5, 20, 7, "Weitere Untersuchungen/\nVerfahren"),
+    beantw = c(52, 6.5, 30, 8, "Beantwortung der Fragestellung/\nIntegration der Ergebnisse\nzu den einzelnen Hypothesen"),
+    zusatz = c(87, 6.5, 20, 7, "Zusätzliche Hypothesen/\nVerfahren"),
+    rueckm = c(19, 6.5, 18, 8, "Rückmeldung an den\nAuftraggeber/\nGutachten")
+  )
+  b <- function(id, side) {
+    v <- as.numeric(boxes[[id]][1:4])
+    switch(side, top = c(v[1], v[2] + v[4] / 2), bottom = c(v[1], v[2] - v[4] / 2),
+           left = c(v[1] - v[3] / 2, v[2]), right = c(v[1] + v[3] / 2, v[2]))
+  }
+  arr <- function(...) arrows(..., length = 0.05, col = dark, lwd = 1)
+  lbl <- function(x, y, s) text(x, y, s, cex = 0.55, col = dark, font = 3)
+  # main path
+  for (p in list(c("auftrag", "frage"), c("frage", "diff"), c("diff", "umsetz"),
+                 c("umsetz", "hypo"), c("hypo", "oper"), c("oper", "durchf"),
+                 c("durchf", "auswert"), c("auswert", "absich"), c("absich", "beantw"))) {
+    from <- b(p[1], "bottom"); to <- b(p[2], "top")
+    arr(from[1], from[2], to[1], to[2])
+  }
+  lbl(57.5, 81.5, "ja"); lbl(57.5, 62, "ja"); lbl(57.5, 45.2, "ja")
+  # branches to the right
+  for (p in list(c("umsetz", "rueck1"), c("oper", "rueck2"), c("absich", "weitere"),
+                 c("beantw", "zusatz"))) {
+    from <- b(p[1], "right"); to <- b(p[2], "left")
+    arr(from[1], from[2], to[1], to[2])
+    lbl((from[1] + to[1]) / 2, from[2] + 1.6, "nein")
+  }
+  # "nein" from Fragestellung to Ausarbeiten, then on to the differentiated question
+  segments(b("frage", "left")[1], 88.5, 24, 88.5, col = dark)
+  arr(24, 88.5, 24, b("ausarb", "top")[2])
+  lbl(30, 90, "nein")
+  segments(24, b("ausarb", "bottom")[2], 24, 75.5, col = dark)
+  arr(24, 75.5, b("diff", "left")[1], 75.5)
+  # Rueckgabe/Umformulierung back to Fragestellung
+  segments(87, b("rueck1", "top")[2], 87, 88.5, col = dark)
+  arr(87, 88.5, b("frage", "right")[1], 88.5)
+  # further investigations and hypotheses back to Hypothesenformulierung
+  segments(b("weitere", "right")[1], 18.5, 98.5, 18.5, col = dark)
+  segments(b("zusatz", "right")[1], 6.5, 98.5, 6.5, col = dark)
+  segments(98.5, 6.5, 98.5, 57.5, col = dark)
+  arr(98.5, 57.5, b("hypo", "right")[1], 57.5)
+  # answer and feedback to the client
+  arr(b("beantw", "left")[1], 6.5, b("rueckm", "right")[1], 6.5)
+  lbl(33.5, 8.1, "ja")
+  segments(b("rueckm", "left")[1], 6.5, 7, 6.5, col = dark)
+  segments(7, 6.5, 7, 95.5, col = dark)
+  arr(7, 95.5, b("auftrag", "left")[1], 95.5)
+  # boxes on top of the lines
+  for (id in names(boxes)) {
+    v <- boxes[[id]]
+    x <- as.numeric(v[1]); y <- as.numeric(v[2]); w <- as.numeric(v[3]); h <- as.numeric(v[4])
+    hl <- id %in% highlight
+    rect(x - w / 2, y - h / 2, x + w / 2, y + h / 2,
+         col = if (hl) colors[2] else "white", border = if (hl) colors[2] else light)
+    text(x, y, v[5], cex = 0.6, col = if (hl) "white" else dark)
+  }
+  if (!is.null(frame)) {
+    rect(frame[1], frame[2], frame[3], frame[4], border = colors[2], lwd = 3)
+  }
+}
+
+# common norm scales under the normal curve (after Moosbrugger & Kelava)
+plot_norms <- function() {
+  par(mar = c(0, 0, 0, 0), family = "sans", bg = NA)
+  plot.new()
+  plot.window(xlim = c(-3.6, 6.2), ylim = c(-0.4, 11), xaxs = "i", yaxs = "i")
+  z <- seq(-3.6, 3.6, length.out = 300)
+  base <- 6.2
+  polygon(c(z, rev(z)), c(base + 11 * dnorm(z), rep(base, length(z))),
+          col = adjustcolor(colors[3], 0.25), border = NA)
+  lines(z, base + 11 * dnorm(z), col = dark, lwd = 1.5)
+  segments(-3:3, base, -3:3, base + 11 * dnorm(-3:3) + c(0.6, 0.9, 1, 0.6, 1, 0.9, 0.6),
+           col = dark, lty = 3)
+  text(c(-2.5, -1.5, -0.5, 0.5, 1.5, 2.5), base + 0.35,
+       c("2.1 %", "13.6 %", "34.1 %", "34.1 %", "13.6 %", "2.1 %"),
+       cex = 0.6, col = dark)
+  scale_row <- function(y, at, labels, name, formula) {
+    segments(-3.5, y, 3.5, y, col = dark)
+    segments(at, y, at, y + 0.15, col = dark)
+    text(at, y - 0.3, labels, cex = 0.6, col = dark)
+    text(0, y - 0.75, name, cex = 0.62, col = dark, font = 2)
+    text(3.9, y, formula, cex = 0.65, col = dark, adj = 0)
+  }
+  scale_row(5.3, -3:3, -3:3, "z-Skala",
+            expression(z == frac(x - bar(x), SD(x))))
+  scale_row(4.1, -3:3, seq(55, 145, 15), "IQ-Skala", expression(IQ == 100 + 15 %.% z))
+  scale_row(2.9, -3:3, seq(20, 80, 10), "T-Skala", expression(T == 50 + 10 %.% z))
+  # stanine: boundaries at +-0.25, +-0.75, ...; labels at the centers
+  y <- 1.7
+  segments(-3.5, y, 3.5, y, col = dark)
+  segments(seq(-1.75, 1.75, 0.5), y, seq(-1.75, 1.75, 0.5), y + 0.15, col = dark)
+  text(seq(-2, 2, 0.5), y - 0.3, 1:9, cex = 0.6, col = dark)
+  text(0, y - 0.75, "Stanine", cex = 0.62, col = dark, font = 2)
+  text(3.9, y, expression(S %~~% 5 + 2 %.% z), cex = 0.65, col = dark, adj = 0)
+  pr <- c(1, 5, 10, 20, 30, 50, 70, 80, 90, 95, 99)
+  y <- 0.5
+  segments(-3.5, y, 3.5, y, col = dark)
+  segments(qnorm(pr / 100), y, qnorm(pr / 100), y + 0.15, col = dark)
+  text(qnorm(pr / 100), y - 0.3, pr, cex = 0.5, col = dark)
+  text(0, y - 0.75, "Prozentrang", cex = 0.62, col = dark, font = 2)
+  text(3.9, y, expression(PR == 100 %.% frac(f[kum](x), N)), cex = 0.65, col = dark, adj = 0)
+}
+
+# selection ratio, base rate and success ratio (after Ziegler & Buehner, 2012, Abb. 6)
+plot_selection <- function() {
+  par(mar = c(0, 0, 0, 0), family = "sans", bg = NA)
+  plot.new()
+  plot.window(xlim = c(-4.2, 3.6), ylim = c(-3.6, 3.2), xaxs = "i", yaxs = "i")
+  t <- seq(0, 2 * pi, length.out = 300)
+  r <- 0.6
+  ex <- 2.3 * (cos(t) * sqrt((1 + r) / 2) - sin(t) * sqrt((1 - r) / 2))
+  ey <- 2.3 * (cos(t) * sqrt((1 + r) / 2) + sin(t) * sqrt((1 - r) / 2))
+  xc <- 0.6; yc <- 0.3
+  fills <- adjustcolor(colors[c(4, 3, 2, 1)], 0.35)
+  quads <- list(c(xc, 9, yc, 9), c(xc, 9, -9, yc), c(-9, xc, yc, 9), c(-9, xc, -9, yc))
+  for (i in 1:4) {
+    q <- quads[[i]]
+    clip(q[1], q[2], q[3], q[4])
+    polygon(ex, ey, col = fills[i], border = NA)
+  }
+  do.call(clip, as.list(par("usr")))
+  polygon(ex, ey, border = dark)
+  segments(xc, -2.75, xc, 3, col = dark, lwd = 2, lty = 2)
+  segments(-2.75, yc, 3.4, yc, col = dark, lwd = 2, lty = 2)
+  text(xc, 3.1, "Cutoff Test", cex = 0.7, col = dark)
+  text(3.4, yc + 0.25, "Cutoff Kriterium", cex = 0.7, col = dark, adj = 1)
+  text(1.6, 1.6, "Ausgewählte\nGeeignete", cex = 0.75, col = dark, font = 2)
+  text(-0.8, 1.1, "Abgelehnte\nGeeignete", cex = 0.75, col = dark, font = 2)
+  text(-1.4, -1.1, "Abgelehnte\nUngeeignete", cex = 0.75, col = dark, font = 2)
+  text(1.4, -0.6, "Ausgewählte\nUngeeignete", cex = 0.75, col = dark, font = 2)
+  # axes
+  arrows(-2.8, -2.8, 3.3, -2.8, length = 0.08, col = dark)
+  arrows(-2.8, -2.8, -2.8, 3, length = 0.08, col = dark)
+  text(0.25, -3.1, "Prädiktor (Testwert)", cex = 0.75, col = dark)
+  text(-3.05, 0.1, "Kriterium (Leistung)", srt = 90, cex = 0.75, col = dark)
+  # what the cutoffs set
+  arrows(xc - 1.2, -3.45, xc + 1.2, -3.45, length = 0.06, code = 3, col = colors[2])
+  text(xc + 1.35, -3.45, "Selektionsquote", adj = 0, cex = 0.7, col = colors[2])
+  arrows(-3.65, yc - 1.2, -3.65, yc + 1.2, length = 0.06, code = 3, col = colors[2])
+  text(-3.95, yc, "Grundquote", srt = 90, cex = 0.7, col = colors[2])
+}
+```
+
+## Semesterübersicht {.smaller}
+
+| Nr. | Datum     | Thema                                                        |
+|-----|-----------|--------------------------------------------------------------|
+| 1   | ab 20.10. | Einführung & Rechenkompetenzen                               |
+| 2   | ab 27.10. | Rechenkompetenzen                                            |
+| 3   | ab 03.11. | Gütekriterien                                                |
+| 4   | ab 10.11. | Schritte der Testkonstruktion & Erstellung eines Testentwurfs |
+|     |           | **Lektürewoche**                                             |
+| 5   | ab 24.11. | Klassische Testtheorie                                       |
+| 6   | ab 01.12. | *Diagnostische Rechenkompetenzen I*                          |
+| 7   | ab 08.12. | *Item-Response-Theorie*                                      |
+| 8   | ab 15.12. | Exploratorische Faktorenanalyse I                            |
+|     |           | **Weihnachtsferien**                                         |
+| 9   | ab 05.01. | *Exploratorische Faktorenanalyse II*                         |
+| 10  | ab 12.01. | Itemanalyse I                                                |
+| 11  | ab 19.01. | Itemanalyse II, Itemselektion und Testrevision               |
+| 12  | ab 26.01. | *Diagnostische Rechenkompetenzen II*                         |
+| 13  | ab 02.02. | Gütekriterien II                                             |
+
+# Überblick
+
+## Themen der heutigen Sitzung
+
+Diagnostische Rechenkompetenzen I
+
+1. Planungsphase
+    - Hypothesen formulieren
+    - Einschub: Normwerte
+    - Entscheidungsregeln
+2. Durchführungsphase
+    - Untersuchungspläne
+    - Taylor-Russell-Tafeln
+
+# Planungsphase
+
+## Der diagnostische Prozess
+
+```{r}
+#| label: fig-process-planning
+#| echo: false
+#| fig-width: 9
+#| fig-height: 4.6
+#| out-width: "80%"
+#| fig-align: center
+#| fig-cap: "In Anlehnung an @ziegler2012 [Abb. 2, S. 16]"
+#| fig-alt: "Flussdiagramm des diagnostischen Prozesses in drei Phasen: Planung, Durchführung und Integration. Hervorgehoben sind in der Planungsphase die Schritte Umsetzbarkeit in psychologische Hypothesen und Hypothesenformulierung."
+plot_process(highlight = c("umsetz", "hypo"), frame = c(36, 54, 74, 70))
+```
+
+## Ausdifferenzierung der Fragestellung
+
+- Die globale Fragestellung ist oft sehr abstrakt
+- Sie wird in spezifische Fragestellungen ausdifferenziert, die zusammen die globale Fragestellung beantworten
+
+**Beispiel**
+
+- Global: Ist Erik für ein Kunststudium geeignet?
+- Spezifisch: Ist Erik in zwei Kreativitätstests überdurchschnittlich kreativ?
+
+## Hypothesenformulierung
+
+:::: {.columns}
+::: {.column width="50%"}
+Eine spezifische Fragestellung kann aus einer oder mehreren Hypothesen bestehen.
+
+**Beispiel**
+
+- H.1: Ist Eriks Kreativität in Kreativitätstest A im Vergleich zu Gleichaltrigen überdurchschnittlich (T > 60)?
+- H.2: Ist Eriks Kreativität in Kreativitätstest B im Vergleich zu Gleichaltrigen überdurchschnittlich (T > 60)?
+:::
+
+::: {.column width="50%"}
+**Aspekte**
+
+- Ein Sachverhalt pro Hypothese
+- Hypothese als Frage formulieren
+- Trennscharfe Hypothesen
+- Bezug zur globalen Fragestellung
+- Normbezug
+- Richtung/Cut-off-Setzung
+:::
+::::
+
+# Einschub: Normwerte
+
+## Normwerte
+
+:::: {.columns}
+::: {.column width="40%"}
+**Normorientierte Testwertinterpretation**
+
+- Ausprägung der Person auf dem Konstrukt relativ zu einer relevanten Bezugsgruppe bestimmen
+- Individuellen Testwert in einen Normwert transformieren
+:::
+
+::: {.column width="60%"}
+```{r}
+#| label: fig-norms
+#| echo: false
+#| fig-width: 6.6
+#| fig-height: 4.6
+#| out-width: "95%"
+#| fig-cap: "In Anlehnung an @moosbrugger2020"
+#| fig-alt: "Standardnormalverteilung mit den Flächenanteilen 2.1, 13.6, 34.1, 34.1, 13.6 und 2.1 Prozent zwischen den ganzzahligen z-Werten von -3 bis 3. Darunter stehen die zugehörigen Werte auf der IQ-Skala (55 bis 145), der T-Skala (20 bis 80), der Stanine-Skala (1 bis 9) und der Prozentrangskala, jeweils mit Umrechnungsformel."
+plot_norms()
+```
+:::
+::::
+
+# Entscheidungsregeln
+
+## Entscheidungsregeln
+
+Vor der Untersuchung festlegen, wie die Hypothesen beantwortet werden:
+
+- **Kompensatorische Regel**: Informationen zu verschiedenen Konstrukten/aus verschiedenen Verfahren werden zu einem Wert zusammengefasst; derselbe Gesamtwert kann durch verschiedene Merkmalskombinationen hervorgerufen werden
+- **Oder-Regel**: Die Werte werden nicht verrechnet, sondern es reicht, in einem der Bereiche die Anforderung zu erfüllen
+- **Konjunktive Regel**: Merkmale sind nicht kompensierbar; in jedem Merkmalsbereich müssen bestimmte Mindestanforderungen erfüllt werden
+- **Mischformen**: schwach konjunktiv, schwache Oder-Regel
+
+# Durchführungsphase
+
+## Der diagnostische Prozess
+
+```{r}
+#| label: fig-process-execution
+#| echo: false
+#| fig-width: 9
+#| fig-height: 4.6
+#| out-width: "80%"
+#| fig-align: center
+#| fig-cap: "In Anlehnung an @ziegler2012 [Abb. 2, S. 16]"
+#| fig-alt: "Flussdiagramm des diagnostischen Prozesses in drei Phasen: Planung, Durchführung und Integration. Hervorgehoben ist die Durchführungsphase mit den Schritten Untersuchungsplanung und Durchführung der Untersuchung sowie Datenauswertung."
+plot_process(highlight = c("durchf", "auswert"), frame = c(0.5, 25.3, 99.5, 45.7))
+```
+
+## Untersuchungspläne
+
+:::: {.columns}
+::: {.column width="50%"}
+**Einstufige Untersuchungspläne**
+
+- Single Screen
+- Nicht-sequenzielle Untersuchungsbatterie
+:::
+
+::: {.column width="50%"}
+**Mehrstufige Untersuchungspläne**
+
+- Vorauswahl (*pre-reject*)
+- Vorentscheidung (*pre-select*)
+- Vollständig sequenzieller Untersuchungsplan
+:::
+::::
+
+## Taylor-Russell-Tafeln
+
+Begriffe im Kontext eines Auswahlverfahrens:
+
+- **Trefferquote**: Anteil Geeigneter unter den Ausgewählten (Werte in den Taylor-Russell-Tafeln)
+- **Grundquote**: Anteil Geeigneter unter allen Bewerber:innen
+    - Bei mehrstufigen Untersuchungsplänen: Trefferquote der vorangegangenen Stufe
+- **Selektionsquote**: Anteil auszuwählender Bewerber:innen
+
+## Grundquote, Selektionsquote und Trefferquote
+
+```{r}
+#| label: fig-selection
+#| echo: false
+#| fig-width: 7
+#| fig-height: 4.4
+#| out-width: "56%"
+#| fig-align: center
+#| fig-cap: "In Anlehnung an @ziegler2012 [Abb. 6, S. 112]"
+#| fig-alt: "Ellipse als Punktwolke mit positivem Zusammenhang zwischen Prädiktor (Testwert, x-Achse) und Kriterium (Leistung, y-Achse). Ein senkrechter Cutoff beim Test legt die Selektionsquote fest, ein waagerechter Cutoff beim Kriterium die Grundquote. So entstehen vier Bereiche: ausgewählte Geeignete oben rechts, abgelehnte Geeignete oben links, abgelehnte Ungeeignete unten links und ausgewählte Ungeeignete unten rechts."
+plot_selection()
+```
+
+<!-- underscore decks do not see _quarto.yml: use the site-url var again when renaming -->
+
+# Übungsheft
+
+## Übungen
+
+Übungen zu diesem Thema: [Übungsheft, Kapitel 6](https://sbissantz.github.io/irtea/workbook/diagnostic-i-ex.html)
+
+# Literaturverzeichnis
+
+## Literatur
+
+::: {#refs}
+:::
