@@ -11,11 +11,11 @@
 Datensätze für die Aufgaben im Übungsheft der Übung B.F.3 Diagnostik und Testtheorie an der RPTU Kaiserslautern-Landau sowie Funktionen zum Üben, etwa ein Quiz zu den Messmodellen der Klassischen Testtheorie.
 }
 \author{
-\strong{Maintainer}: Steven Bi<c3><9f>antz \email{steven.bissantz@gmail.com}
+\strong{Maintainer}: Steven Bißantz \email{steven.bissantz@gmail.com}
 
 Authors:
 \itemize{
-  \item Steven Bi<c3><9f>antz \email{steven.bissantz@gmail.com}
+  \item Steven Bißantz \email{steven.bissantz@gmail.com}
 }
 
 }

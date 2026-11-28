@@ -1,0 +1,466 @@
+---
+title: "7 Item-Response-Theorie"
+draft: true
+knitr:
+  opts_chunk:
+    comment: ""
+---
+
+```{r}
+#| label: setup
+#| include: false
+# plot labels contain umlauts, which need a UTF-8 locale; the shell that runs
+# the render may start R in the C locale
+invisible(Sys.setlocale("LC_CTYPE", "en_US.UTF-8"))
+load("../../data/raven.rda")
+colors <- viridisLite::viridis(5)
+# end below 1 keeps the brightest yellow, which is hard to see on white, out
+item_colors <- viridisLite::viridis(6, end = 0.85)
+theta_grid <- seq(-4, 4, length.out = 401)
+
+# round half up, as by hand (round() rounds half to even)
+round2 <- function(x) sign(x) * floor(abs(x) * 100 + 0.5 + 1e-9) / 100
+fmt <- function(x) sprintf("%.2f", round2(x))
+# likelihoods are tiny; two decimals would leave one significant digit
+fmt4 <- function(x) sprintf("%.4f", x)
+
+# solution probability in the Rasch model
+p_rasch <- function(theta, beta) plogis(theta - beta)
+
+# the four-item test of all hand calculations
+b1 <- c(-1.20, -0.50, 0.30, 1.40)
+# answer pattern of person D
+pattern <- c(1, 0, 1, 1)
+# abilities of the three persons in the test information exercise
+theta_persons <- c(-3, 0, 2)
+
+# Probabilities rounded up to two decimal places
+p_hand <- function(theta, beta) round2(p_rasch(theta, beta))
+info_hand <- function(theta, beta) {
+  p <- p_hand(theta, beta)
+  round2(p * (1 - p))
+}
+test_info_hand <- function(theta, beta) sum(info_hand(theta, beta))
+lik_hand <- function(theta, x, beta) {
+  p <- p_hand(theta, beta)
+  prod(ifelse(x == 1, p, 1 - p))
+}
+loglik_hand <- function(theta, x, beta) log(lik_hand(theta, x, beta))
+```
+
+{{< include _revision-note.qmd >}}
+
+In diesem Kapitel üben Sie das Rasch-Modell [@moosbrugger2020]. Sie berechnen von Hand Lösungswahrscheinlichkeiten, Likelihoods und die Testinformation für einen Test aus vier Items mit bekannten Itemparametern. In @exr-rasch-r schätzen Sie das Modell in R für einen echten Datensatz und interpretieren den Output.
+
+::: {#exr-rasch-basics}
+## Lösungswahrscheinlichkeiten
+
+Ein Test erfasst eine Fähigkeit mit vier Items, die dem Rasch-Modell folgen. Die Items sind bereits kalibriert:
+
+| Item | 1 | 2 | 3 | 4 |
+|---|---:|---:|---:|---:|
+| $\beta_j$ | $`r fmt(b1[1])`$ | $`r fmt(b1[2])`$ | $`r fmt(b1[3])`$ | $`r fmt(b1[4])`$ |
+
+: Itemschwierigkeiten der vier Items {#tbl-rasch-b1}
+
+::: {.callout-note title="Hinweis" collapse="true"}
+$$
+P_j(\theta) = \frac{e^{\theta - \beta_j}}{1 + e^{\theta - \beta_j}}
+$$
+:::
+
+a. Welches der vier Items ist am leichtesten? Begründen Sie Ihre Antwort.
+
+::: {.callout-tip title="Lösung" collapse="true"}
+Item 1: Es hat den kleinsten Schwierigkeitsparameter ($\beta_1 = `r fmt(b1[1])`$).
+:::
+
+b. Eine Person hat die Fähigkeit $\theta = 0$. Wie wahrscheinlich löst sie Item 3 *nicht*?
+
+::: {.callout-tip title="Lösung" collapse="true"}
+$1 - P_3(0) = `r fmt(1 - p_hand(0, b1[3]))`$
+:::
+
+c. Eine Person hat genau die Fähigkeit $\theta = \beta_4 = `r fmt(b1[4])`$. Wie wahrscheinlich löst sie Item 4?
+
+::: {.callout-note title="Hinweis" collapse="true"}
+Hinweis: Sie müssen dafür nicht rechnen.
+:::
+
+::: {.callout-tip title="Lösung" collapse="true"}
+0.50, denn bei $\theta = \beta_j$ ist $P_j(\theta) = e^0 / (1 + e^0) = 0.50$.
+:::
+:::
+
+::: {#exr-rasch-icc-choice}
+## Itemcharakteristische Kurven zuordnen
+
+Die Abbildung zeigt drei Grafiken mit je vier itemcharakteristischen Kurven (ICC).
+
+```{r}
+#| label: icc-choice
+#| echo: false
+#| fig-width: 9
+#| fig-height: 3.5
+#| fig-alt: "Drei Grafiken A, B und C mit je vier S-förmigen Kurven für Item 1 bis 4 über der Fähigkeit von −4 bis 4. In A und B verlaufen die Kurven parallel, in C sind sie unterschiedlich steil."
+b_wrong <- c(0.30, -1.20, -0.50, 1.40)
+a_2pl <- c(2.2, 1.3, 0.7, 0.4)
+panels <- list(
+  A = sapply(b1, function(beta) p_rasch(theta_grid, beta)),
+  B = sapply(b_wrong, function(beta) p_rasch(theta_grid, beta)),
+  C = mapply(function(a, beta) plogis(a * (theta_grid - beta)), a_2pl, b1)
+)
+par(mfrow = c(1, 3), mar = c(4, 4, 2.5, 1))
+for (panel in names(panels)) {
+  plot(NA,
+    xlim = c(-4, 4), ylim = c(0, 1), las = 1, main = panel,
+    xlab = expression("Fähigkeit " * theta), ylab = "Lösungswahrscheinlichkeit"
+  )
+  abline(h = 0.5, v = -2:2, col = "grey90")
+  matlines(theta_grid, panels[[panel]], lty = 1, lwd = 2, col = colors[1:4])
+  legend("bottomright",
+    legend = paste("Item", 1:4), col = colors[1:4], lwd = 2,
+    bg = "white", cex = 0.8
+  )
+}
+```
+
+a. Welche Grafik passt zu den vier Rasch-Items aus @tbl-rasch-b1?
+
+::: {.callout-tip title="Lösung" collapse="true"}
+Grafik A: parallele Kurven, die die Linie 0.5 an den Schwierigkeiten aus @tbl-rasch-b1 schneiden.
+:::
+
+b. Warum passen die beiden anderen Grafiken nicht?
+
+::: {.callout-tip title="Lösung" collapse="true"}
+- B: Die Schwierigkeiten liegen an den falschen Stellen.
+- C: Die Kurven sind unterschiedlich steil (2PL-Modell); im Rasch-Modell haben alle Items dieselbe Steigung.
+:::
+:::
+
+::: {#exr-rasch-likelihood}
+## Likelihood eines Antwortmusters
+
+Vier Personen haben den Test (@tbl-rasch-b1) bearbeitet (1 = gelöst, 0 = nicht gelöst):
+
+| Person | Item 1 | Item 2 | Item 3 | Item 4 | Summenwert |
+|---|---:|---:|---:|---:|---:|
+| A | 1 | 1 | 0 | 0 | 2 |
+| B | 1 | 0 | 0 | 1 | 2 |
+| C | 1 | 1 | 1 | 0 | 3 |
+| D | 1 | 0 | 1 | 1 | 3 |
+
+: Antwortmuster von vier Personen {#tbl-rasch-persons}
+
+Betrachten Sie das Antwortmuster von Person D, $\mathbf{u} = (`r paste(pattern, collapse = ", ")`)$. Unter lokaler stochastischer Unabhängigkeit ist die Likelihood dieses Musters bei der Fähigkeit $\theta$ das Produkt der Wahrscheinlichkeiten der einzelnen Antworten. Für eine Person mit $\theta = 0$ gelten näherungsweise diese Lösungswahrscheinlichkeiten:
+
+| Item | 1 | 2 | 3 | 4 |
+|---|---:|---:|---:|---:|
+| $P_j(0)$ | $`r fmt(p_hand(0, b1[1]))`$ | $`r fmt(p_hand(0, b1[2]))`$ | $`r fmt(p_hand(0, b1[3]))`$ | $`r fmt(p_hand(0, b1[4]))`$ |
+
+::: {.callout-note title="Hinweis" collapse="true"}
+$$
+L(\theta_i) = \prod_{j=1}^{m} P_j(\theta_i)^{u_{ij}} \bigl(1 - P_j(\theta_i)\bigr)^{1 - u_{ij}}
+$$
+
+$$
+\begin{aligned}
+\ell(\theta_i) &= \ln L(\theta_i) \\
+&= \sum_{j=1}^{m} \Bigl[u_{ij} \ln P_j(\theta_i) \\
+&\qquad + (1 - u_{ij}) \ln\bigl(1 - P_j(\theta_i)\bigr)\Bigr]
+\end{aligned}
+$$
+
+- $i$: Person, $j$: Item, $m$: Anzahl der Items (hier $m = 4$)
+- $u_{ij}$: Antwort von Person $i$ auf Item $j$ (1 = gelöst, 0 = nicht gelöst)
+- $P_j(\theta_i)$: Wahrscheinlichkeit, dass eine Person mit der Fähigkeit $\theta_i$ Item $j$ löst
+
+Für ein gelöstes Item geht $P_j(\theta_i)$ ein, für ein nicht gelöstes $1 - P_j(\theta_i)$.
+:::
+
+a. Berechnen Sie die Likelihood $L(0)$ und die Log-Likelihood $\ell(0)$ für das Muster von Person D.
+
+::: {.callout-tip title="Lösung" collapse="true"}
+$L(0) = `r fmt4(lik_hand(0, pattern, b1))`$, $\ell(0) = `r fmt(loglik_hand(0, pattern, b1))`$
+:::
+
+b. Warum maximiert man in der Praxis meist die Log-Likelihood $\ell(\theta)$ statt der Likelihood $L(\theta)$?
+
+::: {.callout-tip title="Lösung" collapse="true"}
+$L(\theta)$ wird bei vielen Items extrem klein; $\ell(\theta)$ ist eine Summe, lässt sich stabil berechnen und hat ihr Maximum an derselben Stelle.
+:::
+
+c. Ist $L(-1)$ für dasselbe Muster größer oder kleiner als $L(0)$? Begründen Sie Ihre Antwort, ohne zu rechnen.
+
+::: {.callout-tip title="Lösung" collapse="true"}
+Kleiner ($L(-1) = `r fmt4(lik_hand(-1, pattern, b1))`$): Person D hat drei Items gelöst, bei $\theta = -1$ erwartet man nur `r fmt(sum(p_hand(-1, b1)))` gelöste Items.
+:::
+
+d. Welche der vier Personen erhalten im Rasch-Modell denselben Schätzwert $\hat{\theta}$? Begründen Sie Ihre Antwort.
+
+::: {.callout-tip title="Lösung" collapse="true"}
+A und B sowie C und D: Sie haben denselben Summenwert, und der ist im Rasch-Modell suffizient für $\theta$.
+:::
+:::
+
+::: {#exr-rasch-r}
+## Das Rasch-Modell in R
+
+```{r}
+#| label: raven-setup
+#| include: false
+n_persons <- nrow(raven)
+```
+
+Die Advanced Progressive Matrices von Raven sind ein sprachfreier Test des schlussfolgernden Denkens: Jede Aufgabe zeigt ein Muster aus Figuren, in dem ein Feld fehlt, und die Person wählt unter mehreren Antworten das passende Feld aus. @wicherts2012 haben die Daten von `r n_persons` Psychologiestudierenden veröffentlicht, die die Aufgaben 1 bis 33 dieses Tests bearbeitet haben. Sie stehen im Paket `irtea` als Datensatz `raven` bereit: Die Spalten `rav1` bis `rav33` enthalten die Antworten (1 = gelöst, 0 = nicht gelöst). Das Rasch-Modell wird mit dem Paket mirt geschätzt [@chalmers2012].
+
+```{r}
+#| label: raven-sum-scores
+#| message: false
+#| warning: false
+library(mirt)
+# sum score of each person
+sumsc <- rowSums(raven)
+```
+
+a. Der folgende Aufruf zählt, wie viele Personen jeden Summenwert erreicht haben. Wie viele Personen haben genau 14 Aufgaben gelöst?
+
+```{r}
+#| label: raven-table
+table(sumsc)
+```
+
+::: {.callout-tip title="Lösung" collapse="true"}
+`r sum(sumsc == 14)` Personen.
+:::
+
+b. Ergänzen Sie den Aufruf, der das Rasch-Modell schätzt. Welche weiteren IRT-Modelle könnte man mit `mirt()` schätzen? Die möglichen Werte von `itemtype` finden Sie in der [Dokumentation der Funktion `mirt()`](https://philchalmers.github.io/mirt/html/mirt.html).
+
+```{r}
+#| label: raven-fill-in
+#| eval: false
+rm1 <- mirt(data = raven, model = 1, itemtype = ________)
+```
+
+```{r}
+#| label: raven-rasch
+#| include: false
+rm1 <- mirt(data = raven, model = 1, itemtype = "Rasch", verbose = FALSE)
+items <- coef(rm1, simplify = TRUE, IRTpars = TRUE)$items
+difficulty <- items[, "b"]
+```
+
+::: {.callout-tip title="Lösung" collapse="true"}
+`itemtype = "Rasch"`; außerdem z. B. `"2PL"`, `"3PL"` und `"4PL"`.
+:::
+
+c. Die geschätzten Itemparameter gibt dieser Aufruf aus; die Spalte `b` enthält die Schwierigkeitsparameter $\beta_j$. Welche Aufgabe ist am leichtesten?
+
+```{r}
+#| label: raven-coef
+round(coef(rm1, simplify = TRUE, IRTpars = TRUE)$items, 2)
+```
+
+::: {.callout-tip title="Lösung" collapse="true"}
+`r names(which.min(difficulty))` ($\beta = `r fmt(min(difficulty))`$).
+:::
+
+d. Der erste Aufruf berechnet die Summe der Schwierigkeitsparameter aller 33 Aufgaben:
+
+```{r}
+#| label: raven-sum-b
+round(sum(coef(rm1, simplify = TRUE, IRTpars = TRUE)$items[, "b"]), 2)
+```
+
+Der zweite Aufruf gibt den Mittelwert der Personenparameter $\theta$ aus, also den Mittelwert der Fähigkeitsverteilung im Modell:
+
+```{r}
+#| label: raven-mean-theta
+coef(rm1, simplify = TRUE)$means
+```
+
+Welche Normierung hat mirt hier vorgenommen? Begründen Sie Ihre Antwort mit den beiden Ausgaben.
+
+::: {.callout-tip title="Lösung" collapse="true"}
+Normiert sind die Personen ($\bar{\theta} = 0$), nicht die Items ($\sum_j \beta_j = `r fmt(sum(difficulty))`$).
+:::
+
+e. Die Abbildung zeigt die ICC von Aufgabe `rav27` (in R z. B. mit `itemplot(rm1, item = 27)`). Lesen Sie ihre Schwierigkeit ab. Wie gehen Sie vor?
+
+```{r}
+#| label: raven-icc
+#| echo: false
+#| fig-width: 6
+#| fig-height: 4
+#| fig-alt: "Itemcharakteristische Kurve der Aufgabe rav27 vor einem Punktraster; die Kurve erreicht die Lösungswahrscheinlichkeit 0.5 bei etwa 1"
+dot_grid <- expand.grid(x = seq(-4, 4, by = 0.5), y = seq(0, 1, by = 0.1))
+plot(NA,
+  xlim = c(-4, 4), ylim = c(0, 1), las = 1,
+  xlab = expression("Fähigkeit " * theta), ylab = "Lösungswahrscheinlichkeit"
+)
+points(dot_grid$x, dot_grid$y, pch = 19, cex = 0.4, col = "grey75")
+lines(theta_grid, p_rasch(theta_grid, difficulty["rav27"]), lwd = 2, col = colors[2])
+```
+
+::: {.callout-tip title="Lösung" collapse="true"}
+Von 0.50 geht man waagerecht zur Kurve und senkrecht hinunter zur $\theta$-Achse und liest $\beta \approx `r sprintf("%.1f", round(difficulty["rav27"], 1))`$ ab.
+:::
+
+f. Jede Person erhält einen Personenparameter $\hat{\theta}$. Für alle Personen, die genau 15 Aufgaben gelöst haben, ergibt sich:
+
+```{r}
+#| label: raven-thetas
+thetas <- fscores(rm1, method = "EAP")
+score_theta <- cbind(sumsc, theta = round(thetas[, 1], 2))
+score_theta[sumsc == 15, ]
+```
+
+Warum erhalten alle diese Personen denselben Personenparameter?
+
+::: {.callout-tip title="Lösung" collapse="true"}
+Im Rasch-Modell ist der Summenwert suffizient für $\theta$: Es zählt nur, *wie viele* Aufgaben gelöst wurden, nicht *welche*.
+:::
+
+g. Für das 2PL-Modell schätzt mirt zusätzlich eine Diskrimination $a_j$ je Aufgabe:
+
+```{r}
+#| label: raven-2pl
+rm2 <- mirt(data = raven, model = 1, itemtype = "2PL", verbose = FALSE)
+```
+
+Die Abbildung zeigt die ICC von sechs Aufgaben in diesem Modell. Warum ist die spezifische Objektivität im 2PL-Modell nicht gegeben?
+
+```{r}
+#| label: raven-2pl-trace
+#| echo: false
+#| fig-width: 7
+#| fig-height: 4
+#| fig-alt: "Itemcharakteristische Kurven von rav2, rav13, rav17, rav24, rav31 und rav33 im 2PL-Modell: unterschiedlich steile Kurven, die sich schneiden"
+items_2pl <- coef(rm2, simplify = TRUE, IRTpars = TRUE)$items
+subset_2pl <- c("rav2", "rav13", "rav17", "rav24", "rav31", "rav33")
+# wide right margin: the legend sits outside the plot, away from the curves
+par(mar = c(4, 4, 1, 9))
+plot(NA,
+  xlim = c(-4, 4), ylim = c(0, 1), las = 1,
+  xlab = expression("Fähigkeit " * theta), ylab = "Lösungswahrscheinlichkeit"
+)
+abline(h = 0.5, v = -2:2, col = "grey90")
+for (j in seq_along(subset_2pl)) {
+  a <- items_2pl[subset_2pl[j], "a"]
+  beta <- items_2pl[subset_2pl[j], "b"]
+  lines(theta_grid, plogis(a * (theta_grid - beta)), lwd = 2, col = item_colors[j])
+}
+legend(par("usr")[2], 1,
+  legend = sprintf("%s (a = %s)", subset_2pl, fmt(items_2pl[subset_2pl, "a"])),
+  col = item_colors, lwd = 2, bty = "n", cex = 0.8, xpd = TRUE
+)
+```
+
+::: {.callout-tip title="Lösung" collapse="true"}
+Die ICC schneiden sich: Welche Aufgabe leichter ist, hängt von $\theta$ ab, und der Summenwert ist nicht mehr suffizient.
+:::
+
+h. Die Person-Item-Map stellt die Verteilung der Personenparameter (oben) den Itemschwierigkeiten (unten) auf derselben Skala gegenüber. Sie wird hier mit dem Paket eRm erzeugt [@mair2007]. Eignet sich der Test, um sehr hohe Fähigkeiten zu erfassen? Begründen Sie Ihre Antwort mit der Grafik.
+
+```{r}
+#| label: raven-pimap
+#| message: false
+#| fig-width: 6.5
+#| fig-height: 7
+#| fig-alt: "Person-Item-Map aus eRm: oben die Verteilung der Personenparameter, die meisten zwischen etwa −1 und 3; unten die Schwierigkeiten der 33 Aufgaben zwischen etwa −2.9 und 4.6, mit einer Lücke zwischen etwa 2 und 3.2."
+library(eRm)
+rm_erm <- RM(raven)
+plotPImap(rm_erm,
+  main = "Person-Item-Map", latdim = "Latente Dimension",
+  pplabel = "Personen-\nparameter"
+)
+```
+
+```{r}
+#| label: raven-pimap-values
+#| include: false
+# eRm stores easiness parameters; difficulties are their negatives
+erm_b <- setNames(-rm_erm$betapar, colnames(raven))
+hard <- sort(erm_b[erm_b > 2])
+below_hard <- erm_b[erm_b < 2]
+gap_low <- names(which.max(below_hard))
+```
+
+::: {.callout-tip title="Lösung" collapse="true"}
+Nur eingeschränkt: Zwischen `r gap_low` ($\beta = `r fmt(max(below_hard))`$) und `r names(hard)[1]` ($\beta = `r fmt(hard[1])`$) fehlen Aufgaben, und darüber liegen nur `r length(hard)`.
+:::
+:::
+
+::: {#exr-rasch-information}
+## Item- und Testinformation
+
+Die folgenden Aufgaben beziehen sich wieder auf die vier Items aus @tbl-rasch-b1 ($\beta_j = `r paste(fmt(b1), collapse = ", ")`$). Die Iteminformation $I_j(\theta)$ gibt an, wie genau Item $j$ Personen mit der Fähigkeit $\theta$ misst; die Testinformation $I(\theta)$ ist die Summe der Iteminformationen.
+
+::: {.callout-note title="Hinweis" collapse="true"}
+$$
+I_j(\theta) = P_j(\theta) \cdot \bigl(1 - P_j(\theta)\bigr), \qquad I(\theta) = \sum_{j=1}^{m} I_j(\theta)
+$$
+:::
+
+a. Eine Person hat die Fähigkeit $\theta = -1$. Berechnen Sie für jedes der vier Items die Lösungswahrscheinlichkeit $P_j(-1)$ und die Iteminformation $I_j(-1)$.
+
+::: {.callout-tip title="Lösung" collapse="true"}
+| Item | $\theta - \beta_j$ | $P_j(-1)$ | $I_j(-1)$ |
+|---|---:|---:|---:|
+| 1 | $`r fmt(-1 - b1[1])`$ | $`r fmt(p_hand(-1, b1[1]))`$ | $`r fmt(info_hand(-1, b1[1]))`$ |
+| 2 | $`r fmt(-1 - b1[2])`$ | $`r fmt(p_hand(-1, b1[2]))`$ | $`r fmt(info_hand(-1, b1[2]))`$ |
+| 3 | $`r fmt(-1 - b1[3])`$ | $`r fmt(p_hand(-1, b1[3]))`$ | $`r fmt(info_hand(-1, b1[3]))`$ |
+| 4 | $`r fmt(-1 - b1[4])`$ | $`r fmt(p_hand(-1, b1[4]))`$ | $`r fmt(info_hand(-1, b1[4]))`$ |
+:::
+
+b. Berechnen Sie die Testinformation $I(-1)$ für diese Person.
+
+::: {.callout-tip title="Lösung" collapse="true"}
+$I(-1) = `r paste(fmt(info_hand(-1, b1)), collapse = " + ")` = `r fmt(test_info_hand(-1, b1))`$
+:::
+
+c. Berechnen Sie den Standardmessfehler $s_e(-1)$ für diese Person. Was bedeutet eine größere Testinformation für die Messung?
+
+::: {.callout-note title="Hinweis" collapse="true"}
+$$
+s_e(\theta) = \frac{1}{\sqrt{I(\theta)}}
+$$
+:::
+
+::: {.callout-tip title="Lösung" collapse="true"}
+$s_e(-1) = `r fmt(1 / sqrt(test_info_hand(-1, b1)))`$; je größer die Testinformation, desto kleiner der Standardmessfehler.
+:::
+
+d. Die Abbildung zeigt die Iteminformation der vier Items über den ganzen Fähigkeitsbereich. Drei Personen haben die Fähigkeiten $\theta = `r theta_persons[1]`$, $\theta = `r theta_persons[2]`$ und $\theta = `r theta_persons[3]`$. Für welche Person ist die Testinformation am größten? Begründen Sie Ihre Antwort mit der Grafik, ohne zu rechnen.
+
+```{r}
+#| label: item-information
+#| echo: false
+#| fig-width: 6
+#| fig-height: 4
+#| fig-alt: "Iteminformationskurven der vier Items: gleich hohe Glockenkurven mit dem Maximum 0.25 bei −1.2, −0.5, 0.3 und 1.4, um 0 herum angeordnet"
+plot(NA,
+  xlim = c(-4, 4), ylim = c(0, 0.27), las = 1,
+  xlab = expression("Fähigkeit " * theta), ylab = "Iteminformation"
+)
+abline(v = -4:4, col = "grey90")
+for (j in seq_along(b1)) {
+  p <- p_rasch(theta_grid, b1[j])
+  lines(theta_grid, p * (1 - p), lwd = 2, col = colors[j])
+}
+legend("topright",
+  legend = paste("Item", 1:4), col = colors[1:4], lwd = 2,
+  bg = "white", cex = 0.8
+)
+```
+
+::: {.callout-tip title="Lösung" collapse="true"}
+$\theta = `r theta_persons[2]`$: Dort tragen alle vier Items deutlich zur Information bei (jede Kurve liegt bei mindestens $`r fmt(min(info_hand(0, b1)))`$). Bei $\theta = `r theta_persons[1]`$ und $\theta = `r theta_persons[3]`$ tragen nur die Items mit nahe gelegener Schwierigkeit nennenswert bei.
+:::
+:::
+
+## Literatur {.unnumbered}
+
+::: {#refs}
+:::

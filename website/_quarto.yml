@@ -44,6 +44,8 @@ website:
             text: "5. Klassische Testtheorie"
           - href: workbook/diagnostic-i-ex.qmd
             text: "6. Diagnostische Rechenkompetenzen I"
+          - href: workbook/irt-ex.qmd
+            text: "7. Item-Response-Theorie"
           - href: workbook/efa-ex.qmd
             text: "8. & 9. Exploratorische Faktorenanalyse"
           - href: workbook/item-i-ex.qmd

@@ -81,3 +81,24 @@
 #'   GitHub-Repository des Pakets). Zum echten Test: Heydasch, Haubrich und
 #'   Renner (2013), \doi{10.12758/mda.2013.011}.
 "hmt_short"
+
+#' Antworten auf die Advanced Progressive Matrices von Raven
+#'
+#' Antworten von 521 Psychologiestudierenden im ersten Studienjahr an der
+#' Universität Amsterdam auf die Aufgaben 1 bis 33 der Advanced Progressive
+#' Matrices (Raven, Court & Raven, 1996), erhoben im Testprogramm
+#' „Testweek“. Von den 537 Personen im Originaldatensatz fehlen bei 16 alle
+#' Antworten; sie sind entfernt. Die übrigen Daten sind vollständig.
+#'
+#' @format Ein Data Frame mit 521 Zeilen (Personen) und 33 Spalten:
+#' \describe{
+#'   \item{rav1, rav2, ..., rav33}{Aufgaben 1 bis 33: 1 = gelöst,
+#'     0 = nicht gelöst.}
+#' }
+#' @source Wicherts, J. M. & Bakker, M. (2012). Publish (your data) or (let
+#'   the data) perish! Why not publish your data too? *Intelligence, 40*(2),
+#'   73–76. \doi{10.1016/j.intell.2012.01.004}. Die Daten sind dort als
+#'   Online-Anhang veröffentlicht; die Autoren erlauben jede Nutzung und
+#'   bitten nur darum, den Artikel zu zitieren. Aufbereitung im Skript
+#'   `data-raw/raven.R` im GitHub-Repository des Pakets.
+"raven"
